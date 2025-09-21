@@ -3,6 +3,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Data Structure Colors */
+  --color-stacks: #10b981;
+  --color-arrays: #8b5cf6;
+  --color-linked-lists: #06b6d4;
+  --color-queues: #f59e0b;
+  --color-trees: #84cc16;
+  --color-graphs: #ec4899;
+  --color-hash-tables: #f97316;
+  
+  /* Algorithm Colors */
+  --color-sorting: #6366f1;
+  --color-searching: #8b5cf6;
+  --color-graph-algorithms: #ec4899;
+  --color-dynamic-programming: #06b6d4;
+  --color-greedy: #84cc16;
+  --color-divide-and-conquer: #f97316;
 }
 
 @theme inline {
@@ -23,4 +40,48 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utility classes for compatibility */
+.text-heading-primary {
+  color: rgb(17 24 39);
+  font-weight: 700;
+}
+
+.text-heading-secondary {
+  color: rgb(31 41 55);
+  font-weight: 600;
+}
+
+.text-secondary {
+  color: rgb(75 85 99);
+}
+
+.text-stacks {
+  color: var(--color-stacks);
+}
+
+.bg-stacks {
+  background-color: var(--color-stacks);
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

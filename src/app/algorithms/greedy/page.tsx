@@ -416,7 +416,7 @@ export default function GreedyAlgorithmsPage() {
                 </div>
                 <div className="border-l-4 border-red-500 pl-4">
                   <h4 className="font-semibold text-slate-700">Longest Path Problem</h4>
-                  <p className="text-sm text-slate-600">Greedy choices don't lead to global optimum</p>
+                  <p className="text-sm text-slate-600">Greedy choices don&apos;t lead to global optimum</p>
                 </div>
                 <div className="border-l-4 border-red-500 pl-4">
                   <h4 className="font-semibold text-slate-700">Non-canonical Coin Systems</h4>
