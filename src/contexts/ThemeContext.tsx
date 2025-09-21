@@ -116,12 +116,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     isLight: mode === 'light',
   };
 
-  // Don't render until mounted to avoid hydration mismatch
+  // Provide context even before mount to avoid errors during prerender/SSR
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-white">
-        {children}
-      </div>
+      <ThemeContext.Provider value={contextValue}>
+        <div className="min-h-screen bg-white">
+          {children}
+        </div>
+      </ThemeContext.Provider>
     );
   }
 

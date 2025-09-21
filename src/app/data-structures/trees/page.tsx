@@ -99,7 +99,7 @@ export default function TreesPage() {
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Trees are hierarchical data structures with a root node and child nodes forming 
-            a hierarchy. Each node can have zero or more children, and there's exactly one 
+            a hierarchy. Each node can have zero or more children, and there&apos;s exactly one 
             path between any two nodes. Perfect for representing hierarchical relationships.
           </p>
         </motion.div>

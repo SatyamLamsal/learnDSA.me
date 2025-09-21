@@ -718,7 +718,7 @@ export default function ArraysSimulationPage() {
               </ul>
               <ul className="space-y-1">
                 <li>• Insert multiple elements and see the pattern</li>
-                <li>• Search for elements that don't exist</li>
+                <li>• Search for elements that don&apos;t exist</li>
                 <li>• Notice the step-by-step algorithm execution</li>
               </ul>
             </div>

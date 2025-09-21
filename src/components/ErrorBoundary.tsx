@@ -1,6 +1,7 @@
 'use client';
 
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import Link from 'next/link';
 import { AlertTriangle, RefreshCw, Home, Bug } from 'lucide-react';
 
 interface Props {
@@ -86,7 +87,7 @@ export class ErrorBoundary extends Component<Props, State> {
             
             <p className="text-lg text-gray-600 mb-8">
               We encountered an unexpected error while processing your request. 
-              Don't worry, we're working to fix this issue.
+              Don&apos;t worry, we&apos;re working to fix this issue.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -108,13 +109,13 @@ export class ErrorBoundary extends Component<Props, State> {
                 </button>
               </div>
               
-              <a
+              <Link
                 href="/"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
               >
                 <Home className="h-5 w-5 mr-2" />
                 Go to Homepage
-              </a>
+              </Link>
             </div>
 
             {/* Error details for development */}

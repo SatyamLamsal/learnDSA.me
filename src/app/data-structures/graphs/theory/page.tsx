@@ -269,7 +269,7 @@ const GraphTheoryPage: React.FC = () => {
                   <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                     <h4 className="font-semibold text-purple-800 mb-2">Directed Graph (Digraph)</h4>
                     <p className="text-sm text-gray-700 mb-2">
-                      Edges have direction. Connection from A to B doesn't imply B to A.
+                      Edges have direction. Connection from A to B doesn&apos;t imply B to A.
                     </p>
                     <p className="text-xs text-gray-600">
                       <strong>Examples:</strong> Twitter followers, web page links
@@ -284,7 +284,7 @@ const GraphTheoryPage: React.FC = () => {
                   <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                     <h4 className="font-semibold text-green-800 mb-2">Unweighted Graph</h4>
                     <p className="text-sm text-gray-700 mb-2">
-                      All edges are equal. Only connection matters, not the "cost" of traversal.
+                      All edges are equal. Only connection matters, not the &quot;cost&quot; of traversal.
                     </p>
                     <p className="text-xs text-gray-600">
                       <strong>Examples:</strong> Social networks, family trees
@@ -337,7 +337,7 @@ const GraphTheoryPage: React.FC = () => {
                 <h3 className="text-lg font-semibold mb-3 text-blue-800">Adjacency Matrix</h3>
                 <div className="space-y-3 text-sm">
                   <p className="text-gray-700">
-                    2D array where element [i][j] indicates if there's an edge between vertex i and j.
+                    2D array where element [i][j] indicates if there&apos;s an edge between vertex i and j.
                   </p>
                   <div className="bg-blue-100 p-3 rounded">
                     <h4 className="font-semibold text-blue-800 mb-1">Example Matrix:</h4>
@@ -606,7 +606,7 @@ function DFSIterative(graph, start) {
                   <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                     <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
                       <Target className="h-4 w-4 mr-2" />
-                      Dijkstra's Algorithm
+                      Dijkstra&apos;s Algorithm
                     </h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Finds shortest path from source to all vertices in weighted graphs with non-negative weights.
@@ -621,7 +621,7 @@ function DFSIterative(graph, start) {
                   <div className="bg-red-50 p-4 rounded-lg border border-red-200">
                     <h4 className="font-semibold text-red-800 mb-2">Bellman-Ford Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
-                      Handles negative weights and detects negative cycles. Slower but more versatile than Dijkstra's.
+                      Handles negative weights and detects negative cycles. Slower but more versatile than Dijkstra&apos;s.
                     </p>
                     <div className="text-xs space-y-1">
                       <p><strong>Time:</strong> O(VE)</p>
@@ -648,9 +648,9 @@ function DFSIterative(graph, start) {
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">Minimum Spanning Tree</h3>
                 <div className="space-y-4">
                   <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                    <h4 className="font-semibold text-green-800 mb-2">Kruskal's Algorithm</h4>
+                    <h4 className="font-semibold text-green-800 mb-2">Kruskal&apos;s Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
-                      Finds MST by sorting edges and adding smallest edges that don't create cycles.
+                      Finds MST by sorting edges and adding smallest edges that don&apos;t create cycles.
                     </p>
                     <div className="text-xs space-y-1">
                       <p><strong>Time:</strong> O(E log E)</p>
@@ -660,7 +660,7 @@ function DFSIterative(graph, start) {
                   </div>
 
                   <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                    <h4 className="font-semibold text-blue-800 mb-2">Prim's Algorithm</h4>
+                    <h4 className="font-semibold text-blue-800 mb-2">Prim&apos;s Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Builds MST by starting from a vertex and adding minimum weight edges to unvisited vertices.
                     </p>
@@ -827,7 +827,7 @@ function DFSIterative(graph, start) {
                     <span className="font-mono">O(V + E)</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Dijkstra's:</span>
+                    <span>Dijkstra&apos;s:</span>
                     <span className="font-mono">O((V + E) log V)</span>
                   </div>
                   <div className="flex justify-between">
@@ -839,11 +839,11 @@ function DFSIterative(graph, start) {
                     <span className="font-mono">O(V³)</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Kruskal's MST:</span>
+                    <span>Kruskal&apos;s MST:</span>
                     <span className="font-mono">O(E log E)</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Prim's MST:</span>
+                    <span>Prim&apos;s MST:</span>
                     <span className="font-mono">O(E log V)</span>
                   </div>
                 </div>

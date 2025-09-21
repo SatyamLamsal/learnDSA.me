@@ -371,7 +371,7 @@ const HashTableSimulation: React.FC = () => {
                   </label>
                   <select
                     value={hashFunction}
-                    onChange={(e) => setHashFunction(e.target.value as any)}
+                    onChange={(e) => setHashFunction(e.target.value as 'division' | 'multiplication' | 'djb2')}
                     className="w-full p-2 border border-gray-300 rounded-lg"
                   >
                     <option value="division">Division Method</option>
@@ -386,7 +386,7 @@ const HashTableSimulation: React.FC = () => {
                   </label>
                   <select
                     value={collisionMethod}
-                    onChange={(e) => setCollisionMethod(e.target.value as any)}
+                    onChange={(e) => setCollisionMethod(e.target.value as 'chaining' | 'linear' | 'quadratic')}
                     className="w-full p-2 border border-gray-300 rounded-lg"
                   >
                     <option value="chaining">Separate Chaining</option>

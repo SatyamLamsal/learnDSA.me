@@ -279,7 +279,7 @@ const BubbleSortPage: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Bubble Sort</h1>
           <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
             The simplest sorting algorithm that works by repeatedly swapping adjacent elements 
-            if they are in the wrong order. Named "bubble sort" because smaller elements "bubble" to the top.
+            if they are in the wrong order. Named &ldquo;bubble sort&rdquo; because smaller elements &ldquo;bubble&rdquo; to the top.
           </p>
         </motion.div>
 

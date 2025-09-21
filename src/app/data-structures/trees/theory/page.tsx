@@ -110,7 +110,7 @@ const TreeTheoryPage: React.FC = () => {
                 <div className="space-y-4 text-gray-700">
                   <p>
                     A <strong>tree</strong> is a hierarchical data structure consisting of nodes connected by edges. 
-                    It's called a tree because it resembles an inverted tree with the root at the top and leaves at the bottom.
+                    It&apos;s called a tree because it resembles an inverted tree with the root at the top and leaves at the bottom.
                   </p>
                   <p>
                     <strong>Key Properties:</strong>
@@ -391,8 +391,8 @@ class BinaryTree {
                       For every node in the tree:
                     </p>
                     <ul className="list-disc pl-4 text-sm mt-2">
-                      <li>All values in the left subtree are less than the node's value</li>
-                      <li>All values in the right subtree are greater than the node's value</li>
+                      <li>All values in the left subtree are less than the node&apos;s value</li>
+                      <li>All values in the right subtree are greater than the node&apos;s value</li>
                       <li>Both left and right subtrees are also BSTs</li>
                     </ul>
                   </div>

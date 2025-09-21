@@ -308,21 +308,21 @@ const ThemeDemoPage: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-2">1. Use the Theme Context</h4>
               <div className="bg-blue-100 dark:bg-blue-900/40 p-4 rounded-lg font-mono text-sm">
-                <div>import {'{ useTheme }'} from '@/contexts/ThemeContext';</div>
+                <div>import {'{ useTheme }'} from &apos;@/contexts/ThemeContext&apos;;</div>
                 <div>const {'{ theme, toggleTheme, isDark }'} = useTheme();</div>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-2">2. Add Theme Toggle Component</h4>
               <div className="bg-blue-100 dark:bg-blue-900/40 p-4 rounded-lg font-mono text-sm">
-                <div>import {'{ ThemeToggle }'} from '@/components/ThemeToggle';</div>
-                <div>{'<ThemeToggle variant="button" size="md" />'}</div>
+                <div>import {'{ ThemeToggle }'} from &apos;@/components/ThemeToggle&apos;;</div>
+                <div>{'<ThemeToggle variant=&quot;button&quot; size=&quot;md&quot; />'}</div>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-2">3. Use Tailwind Dark Mode Classes</h4>
               <div className="bg-blue-100 dark:bg-blue-900/40 p-4 rounded-lg font-mono text-sm">
-                <div>className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"</div>
+                <div>className=&quot;bg-white dark:bg-gray-800 text-gray-900 dark:text-white&quot;</div>
               </div>
             </div>
           </div>

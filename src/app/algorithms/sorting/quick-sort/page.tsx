@@ -380,7 +380,7 @@ const QuickSortPage: React.FC = () => {
                       value={strategy.value}
                       checked={pivotStrategy === strategy.value}
                       onChange={(e) => {
-                        setPivotStrategy(e.target.value as any);
+                        setPivotStrategy(e.target.value as 'first' | 'last' | 'middle' | 'median');
                         resetAnimation();
                       }}
                       className="mr-3"

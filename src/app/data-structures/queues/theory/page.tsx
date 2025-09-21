@@ -162,7 +162,7 @@ export default function QueuesTheoryPage() {
                   <div>• Higher priority elements dequeued first</div>
                   <div>• Can be implemented using heaps</div>
                   <div>• FIFO for elements with same priority</div>
-                  <div>• Used in: Dijkstra's algorithm, task scheduling</div>
+                  <div>• Used in: Dijkstra&apos;s algorithm, task scheduling</div>
                 </div>
               </div>
 
@@ -468,7 +468,7 @@ class LinkedQueue {
                 </div>
                 <div className="text-sm text-secondary">
                   <strong>Time Complexity:</strong> Enqueue O(log n), Dequeue O(log n)<br/>
-                  <strong>Use Cases:</strong> Task scheduling, Dijkstra's algorithm
+                  <strong>Use Cases:</strong> Task scheduling, Dijkstra&apos;s algorithm
                 </div>
               </div>
             </div>
