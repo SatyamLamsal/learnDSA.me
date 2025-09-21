@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronLeft, ChevronRight, BookOpen, Play, Home, ArrowLeft } from 'lucide-react';
-import { useDataStructureColor, useAlgorithmColor } from '@/theme/ThemeProvider';
+import { useDataStructureColor, useAlgorithmColor } from '@/contexts/ThemeContext';
 
 interface NavigationItem {
   name: string;
@@ -41,35 +41,49 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   nextLabel = 'Next',
 }) => {
   const pathname = usePathname();
-  const stacksColor = useDataStructureColor('stacks');
+  
+  // Get all necessary colors at the component level (not in a function)
   const arraysColor = useDataStructureColor('arrays');
+  const linkedListsColor = useDataStructureColor('linkedLists');
+  const stacksColor = useDataStructureColor('stacks');
+  const queuesColor = useDataStructureColor('queues');
+  const treesColor = useDataStructureColor('trees');
+  const graphsColor = useDataStructureColor('graphs');
+  const hashTablesColor = useDataStructureColor('hashTables');
+  
+  const sortingColor = useAlgorithmColor('sorting');
+  const searchingColor = useAlgorithmColor('searching');
+  const graphAlgoColor = useAlgorithmColor('graph');
+  const dynamicProgrammingColor = useAlgorithmColor('dynamicProgramming');
+  const greedyColor = useAlgorithmColor('greedy');
+  const divideAndConquerColor = useAlgorithmColor('divideAndConquer');
   
   // Find current section and topic
   const currentSectionData = sections.find(section => 
     section.path.includes(currentTopic)
   );
 
-  // Get topic-specific color
+  // Get topic-specific color using the pre-fetched colors
   const getTopicColor = (topic: string) => {
     if (currentSection === 'data-structures') {
       switch (topic) {
-        case 'arrays': return useDataStructureColor('arrays');
-        case 'linked-lists': return useDataStructureColor('linkedLists');
-        case 'stacks': return useDataStructureColor('stacks');
-        case 'queues': return useDataStructureColor('queues');
-        case 'trees': return useDataStructureColor('trees');
-        case 'graphs': return useDataStructureColor('graphs');
-        case 'hash-tables': return useDataStructureColor('hashTables');
+        case 'arrays': return arraysColor;
+        case 'linked-lists': return linkedListsColor;
+        case 'stacks': return stacksColor;
+        case 'queues': return queuesColor;
+        case 'trees': return treesColor;
+        case 'graphs': return graphsColor;
+        case 'hash-tables': return hashTablesColor;
         default: return '#3b82f6';
       }
     } else {
       switch (topic) {
-        case 'sorting': return useAlgorithmColor('sorting');
-        case 'searching': return useAlgorithmColor('searching');
-        case 'graph': return useAlgorithmColor('graph');
-        case 'dynamic-programming': return useAlgorithmColor('dynamicProgramming');
-        case 'greedy': return useAlgorithmColor('greedy');
-        case 'divide-and-conquer': return useAlgorithmColor('divideAndConquer');
+        case 'sorting': return sortingColor;
+        case 'searching': return searchingColor;
+        case 'graph': return graphAlgoColor;
+        case 'dynamic-programming': return dynamicProgrammingColor;
+        case 'greedy': return greedyColor;
+        case 'divide-and-conquer': return divideAndConquerColor;
         default: return '#3b82f6';
       }
     }
