@@ -179,25 +179,25 @@ export default function AlgorithmsPage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Common Time Complexities</h3>
               <div className="space-y-2">
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                  <span className="font-mono">O(1)</span>
-                  <span className="text-green-600">Excellent</span>
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+                  <span className="font-mono font-semibold text-gray-800">O(1)</span>
+                  <span className="text-green-700 font-semibold">Excellent</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                  <span className="font-mono">O(log n)</span>
-                  <span className="text-green-600">Good</span>
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+                  <span className="font-mono font-semibold text-gray-800">O(log n)</span>
+                  <span className="text-green-700 font-semibold">Good</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded">
-                  <span className="font-mono">O(n)</span>
-                  <span className="text-yellow-600">Fair</span>
+                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded border border-yellow-300">
+                  <span className="font-mono font-semibold text-gray-800">O(n)</span>
+                  <span className="text-yellow-700 font-semibold">Fair</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-orange-50 rounded">
-                  <span className="font-mono">O(n log n)</span>
-                  <span className="text-orange-600">Bad</span>
+                <div className="flex justify-between items-center p-2 bg-orange-50 rounded border border-orange-300">
+                  <span className="font-mono font-semibold text-gray-800">O(n log n)</span>
+                  <span className="text-orange-700 font-semibold">Bad</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-red-50 rounded">
-                  <span className="font-mono">O(n²)</span>
-                  <span className="text-red-600">Horrible</span>
+                <div className="flex justify-between items-center p-2 bg-red-50 rounded border border-red-300">
+                  <span className="font-mono font-semibold text-gray-800">O(n²)</span>
+                  <span className="text-red-700 font-semibold">Horrible</span>
                 </div>
               </div>
             </div>

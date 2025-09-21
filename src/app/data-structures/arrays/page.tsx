@@ -77,7 +77,7 @@ export default function ArraysPage() {
           >
             <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">O(1) Access</h3>
-            <p className="text-gray-600">Constant time access to any element using its index</p>
+            <p className="text-gray-800 font-medium">Constant time access to any element using its index</p>
           </motion.div>
 
           <motion.div
@@ -88,7 +88,7 @@ export default function ArraysPage() {
           >
             <HardDrive className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Memory Efficient</h3>
-            <p className="text-gray-600">Elements stored in contiguous memory locations</p>
+            <p className="text-gray-800 font-medium">Elements stored in contiguous memory locations</p>
           </motion.div>
 
           <motion.div
@@ -99,7 +99,7 @@ export default function ArraysPage() {
           >
             <BookOpen className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Simple Structure</h3>
-            <p className="text-gray-600">Easy to understand and implement basic operations</p>
+            <p className="text-gray-800 font-medium">Easy to understand and implement basic operations</p>
           </motion.div>
 
           <motion.div
@@ -110,7 +110,7 @@ export default function ArraysPage() {
           >
             <Play className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Cache Friendly</h3>
-            <p className="text-gray-600">Sequential access patterns optimize cache performance</p>
+            <p className="text-gray-800 font-medium">Sequential access patterns optimize cache performance</p>
           </motion.div>
         </div>
 

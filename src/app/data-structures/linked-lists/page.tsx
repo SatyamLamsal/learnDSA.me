@@ -43,7 +43,7 @@ const LinkedListVisualization = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: index * 0.2 + 0.1 }}
-                className="mx-2 text-gray-400 font-bold"
+                className="mx-2 text-gray-600 font-bold"
               >
                 NULL
               </motion.div>
@@ -102,7 +102,7 @@ export default function LinkedListsPage() {
           >
             <Zap className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Dynamic Size</h3>
-            <p className="text-gray-600">Size can grow or shrink during runtime</p>
+            <p className="text-gray-800 font-medium">Size can grow or shrink during runtime</p>
           </motion.div>
 
           <motion.div
@@ -113,7 +113,7 @@ export default function LinkedListsPage() {
           >
             <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">O(1) Insertion</h3>
-            <p className="text-gray-600">Constant time insertion at the beginning</p>
+            <p className="text-gray-800 font-medium">Constant time insertion at the beginning</p>
           </motion.div>
 
           <motion.div
@@ -124,7 +124,7 @@ export default function LinkedListsPage() {
           >
             <BookOpen className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Memory Efficient</h3>
-            <p className="text-gray-600">No memory waste, allocates as needed</p>
+            <p className="text-gray-800 font-medium">No memory waste, allocates as needed</p>
           </motion.div>
 
           <motion.div
@@ -135,7 +135,7 @@ export default function LinkedListsPage() {
           >
             <Play className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Flexible</h3>
-            <p className="text-gray-600">Easy insertion and deletion at any position</p>
+            <p className="text-gray-800 font-medium">Easy insertion and deletion at any position</p>
           </motion.div>
         </div>
 

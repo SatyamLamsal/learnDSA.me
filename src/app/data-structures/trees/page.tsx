@@ -127,7 +127,7 @@ export default function TreesPage() {
           >
             <GitBranch className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Hierarchical Structure</h3>
-            <p className="text-gray-600">Natural representation of hierarchical data</p>
+            <p className="text-gray-800 font-medium">Natural representation of hierarchical data</p>
           </motion.div>
 
           <motion.div
@@ -138,7 +138,7 @@ export default function TreesPage() {
           >
             <Clock className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Efficient Operations</h3>
-            <p className="text-gray-600">O(log n) search, insertion, and deletion in balanced trees</p>
+            <p className="text-gray-800 font-medium">O(log n) search, insertion, and deletion in balanced trees</p>
           </motion.div>
 
           <motion.div
@@ -149,7 +149,7 @@ export default function TreesPage() {
           >
             <BookOpen className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Recursive Nature</h3>
-            <p className="text-gray-600">Each subtree is also a tree, enabling recursive algorithms</p>
+            <p className="text-gray-800 font-medium">Each subtree is also a tree, enabling recursive algorithms</p>
           </motion.div>
 
           <motion.div
@@ -160,7 +160,7 @@ export default function TreesPage() {
           >
             <Play className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Multiple Traversals</h3>
-            <p className="text-gray-600">Various ways to visit nodes: inorder, preorder, postorder</p>
+            <p className="text-gray-800 font-medium">Various ways to visit nodes: inorder, preorder, postorder</p>
           </motion.div>
         </div>
 

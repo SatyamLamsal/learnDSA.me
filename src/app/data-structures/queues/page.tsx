@@ -87,7 +87,7 @@ export default function QueuesPage() {
           >
             <Users className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">FIFO Principle</h3>
-            <p className="text-gray-600">First element added is the first to be removed</p>
+            <p className="text-gray-800 font-medium">First element added is the first to be removed</p>
           </motion.div>
 
           <motion.div
@@ -98,7 +98,7 @@ export default function QueuesPage() {
           >
             <Clock className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">O(1) Operations</h3>
-            <p className="text-gray-600">Constant time enqueue and dequeue operations</p>
+            <p className="text-gray-800 font-medium">Constant time enqueue and dequeue operations</p>
           </motion.div>
 
           <motion.div
@@ -109,7 +109,7 @@ export default function QueuesPage() {
           >
             <BookOpen className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Fair Scheduling</h3>
-            <p className="text-gray-600">Ensures fair order of processing elements</p>
+            <p className="text-gray-800 font-medium">Ensures fair order of processing elements</p>
           </motion.div>
 
           <motion.div
@@ -120,7 +120,7 @@ export default function QueuesPage() {
           >
             <Play className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Buffer Management</h3>
-            <p className="text-gray-600">Perfect for managing data flow and buffering</p>
+            <p className="text-gray-800 font-medium">Perfect for managing data flow and buffering</p>
           </motion.div>
         </div>
 

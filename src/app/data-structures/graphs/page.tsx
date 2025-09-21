@@ -111,7 +111,7 @@ export default function GraphsPage() {
           >
             <Network className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Versatile Connections</h3>
-            <p className="text-gray-600">Model any type of relationship between entities</p>
+            <p className="text-gray-800 font-medium">Model any type of relationship between entities</p>
           </motion.div>
 
           <motion.div
@@ -122,7 +122,7 @@ export default function GraphsPage() {
           >
             <Clock className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Efficient Algorithms</h3>
-            <p className="text-gray-600">Powerful algorithms for pathfinding and analysis</p>
+            <p className="text-gray-800 font-medium">Powerful algorithms for pathfinding and analysis</p>
           </motion.div>
 
           <motion.div
@@ -133,7 +133,7 @@ export default function GraphsPage() {
           >
             <BookOpen className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Multiple Representations</h3>
-            <p className="text-gray-600">Adjacency matrix, adjacency list, edge list</p>
+            <p className="text-gray-800 font-medium">Adjacency matrix, adjacency list, edge list</p>
           </motion.div>
 
           <motion.div
@@ -144,7 +144,7 @@ export default function GraphsPage() {
           >
             <Play className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Real-world Applications</h3>
-            <p className="text-gray-600">Social networks, maps, web crawling, AI</p>
+            <p className="text-gray-800 font-medium">Social networks, maps, web crawling, AI</p>
           </motion.div>
         </div>
 

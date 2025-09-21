@@ -53,11 +53,11 @@ const HashTableVisualization = () => {
                     </motion.div>
                   ))}
                   {bucket.values.length > 1 && (
-                    <span className="text-gray-500 text-sm">← Collision!</span>
+                    <span className="text-gray-700 text-sm font-medium">← Collision!</span>
                   )}
                 </div>
               ) : (
-                <span className="text-gray-400 text-sm">Empty</span>
+                <span className="text-gray-600 text-sm font-medium">Empty</span>
               )}
             </div>
           </motion.div>

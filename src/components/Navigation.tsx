@@ -74,7 +74,7 @@ const Navigation = () => {
               Home
             </Link>
             <div className="py-2">
-              <span className="text-gray-300 font-semibold">Data Structures</span>
+              <span className="text-gray-100 font-semibold">Data Structures</span>
               {dataStructures.map((ds) => (
                 <Link
                   key={ds.path}

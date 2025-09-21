@@ -79,7 +79,7 @@ export default function StacksPage() {
           >
             <Layers className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">LIFO Principle</h3>
-            <p className="text-gray-600">Last element added is the first to be removed</p>
+            <p className="text-gray-800 font-medium">Last element added is the first to be removed</p>
           </motion.div>
 
           <motion.div
@@ -90,7 +90,7 @@ export default function StacksPage() {
           >
             <Clock className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">O(1) Operations</h3>
-            <p className="text-gray-600">Constant time push, pop, and top operations</p>
+            <p className="text-gray-800 font-medium">Constant time push, pop, and top operations</p>
           </motion.div>
 
           <motion.div
@@ -101,7 +101,7 @@ export default function StacksPage() {
           >
             <BookOpen className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Simple Interface</h3>
-            <p className="text-gray-600">Easy to understand and implement operations</p>
+            <p className="text-gray-800 font-medium">Easy to understand and implement operations</p>
           </motion.div>
 
           <motion.div
@@ -112,7 +112,7 @@ export default function StacksPage() {
           >
             <Play className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">Versatile Applications</h3>
-            <p className="text-gray-600">Used in recursion, parsing, and function calls</p>
+            <p className="text-gray-800 font-medium">Used in recursion, parsing, and function calls</p>
           </motion.div>
         </div>
 
@@ -235,7 +235,7 @@ export default function StacksPage() {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Learn Theory</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800 font-medium">
                 Deep dive into stack implementation, applications, and problem-solving techniques
               </p>
             </Link>
@@ -253,7 +253,7 @@ export default function StacksPage() {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Interactive Simulation</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800 font-medium">
                 Practice stack operations with hands-on exercises and real-time visualization
               </p>
             </Link>
