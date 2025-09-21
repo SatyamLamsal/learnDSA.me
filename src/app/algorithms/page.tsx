@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, Target, ArrowRight } from 'lucide-react';
+import { Colors } from '../../theme/colors';
 
 const algorithms = [
   {
@@ -177,7 +178,7 @@ export default function AlgorithmsPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Common Time Complexities</h3>
+              <h3 className="text-lg font-semibold text-red-600 mb-4">Common Time Complexities</h3>
               <div className="space-y-2">
                 <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
                   <span className="font-mono font-semibold text-gray-800">O(1)</span>
@@ -202,21 +203,21 @@ export default function AlgorithmsPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Algorithm Examples</h3>
+              <h3 className="text-lg font-semibold  mb-4"style={{ color: Colors.accent }}>Algorithm Examples</h3>
               <div className="space-y-2 text-sm">
-                <div className="p-2 border-l-4 border-green-500">
+                <div className="p-2 border-l-4 border-green-500 text-green-500">
                   <strong>O(1):</strong> Array access, Hash table lookup
                 </div>
-                <div className="p-2 border-l-4 border-green-500">
+                <div className="p-2 border-l-4 border-green-500 text-green-500">
                   <strong>O(log n):</strong> Binary search, Balanced tree operations
                 </div>
-                <div className="p-2 border-l-4 border-yellow-500">
+                <div className="p-2 border-l-4 border-yellow-500 text-yellow-500">
                   <strong>O(n):</strong> Linear search, Array traversal
                 </div>
-                <div className="p-2 border-l-4 border-orange-500">
+                <div className="p-2 border-l-4 border-orange-500 text-orange-500">
                   <strong>O(n log n):</strong> Merge sort, Quick sort (average)
                 </div>
-                <div className="p-2 border-l-4 border-red-500">
+                <div className="p-2 border-l-4 border-red-500 text-red-500">
                   <strong>O(n²):</strong> Bubble sort, Selection sort
                 </div>
               </div>
@@ -236,15 +237,15 @@ export default function AlgorithmsPage() {
             Start with sorting and searching, then progress to more complex algorithms
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
               1. Sorting & Searching
             </span>
             <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
               2. Graph Algorithms
             </span>
             <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm">
+            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-600">
               3. Dynamic Programming
             </span>
           </div>
