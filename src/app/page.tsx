@@ -1,103 +1,218 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { BookOpen, Play, Code, Target, Users, Award } from 'lucide-react';
+
+const dataStructures = [
+  {
+    name: 'Arrays',
+    description: 'Learn about contiguous memory storage and indexing',
+    path: '/data-structures/arrays',
+    color: 'bg-red-500',
+    icon: '[]'
+  },
+  {
+    name: 'Linked Lists',
+    description: 'Understand dynamic memory allocation and pointers',
+    path: '/data-structures/linked-lists',
+    color: 'bg-blue-500',
+    icon: '→'
+  },
+  {
+    name: 'Stacks',
+    description: 'Master Last-In-First-Out (LIFO) data structure',
+    path: '/data-structures/stacks',
+    color: 'bg-green-500',
+    icon: '⇈'
+  },
+  {
+    name: 'Queues',
+    description: 'Explore First-In-First-Out (FIFO) operations',
+    path: '/data-structures/queues',
+    color: 'bg-yellow-500',
+    icon: '⇄'
+  },
+  {
+    name: 'Trees',
+    description: 'Dive into hierarchical data organization',
+    path: '/data-structures/trees',
+    color: 'bg-purple-500',
+    icon: '⚘'
+  },
+  {
+    name: 'Graphs',
+    description: 'Understand networks and relationships',
+    path: '/data-structures/graphs',
+    color: 'bg-indigo-500',
+    icon: '◉'
+  },
+  {
+    name: 'Hash Tables',
+    description: 'Learn efficient key-value pair storage',
+    path: '/data-structures/hash-tables',
+    color: 'bg-pink-500',
+    icon: '#'
+  }
+];
+
+const features = [
+  {
+    icon: <BookOpen className="h-8 w-8" />,
+    title: 'Interactive Learning',
+    description: 'Learn through hands-on visualization and step-by-step explanations'
+  },
+  {
+    icon: <Play className="h-8 w-8" />,
+    title: 'Live Simulations',
+    description: 'Practice with real-time interactive data structure operations'
+  },
+  {
+    icon: <Code className="h-8 w-8" />,
+    title: 'Code Examples',
+    description: 'See implementation details in multiple programming languages'
+  },
+  {
+    icon: <Target className="h-8 w-8" />,
+    title: 'Complexity Analysis',
+    description: 'Understand time and space complexity for each operation'
+  }
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
+        >
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
+            Master <span className="text-blue-600">Data Structures</span>
+            <br />
+            & <span className="text-purple-600">Algorithms</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
+            Interactive visualizations, hands-on practice, and comprehensive theory
+            to help you excel in computer science fundamentals.
+          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+              Start Learning
+            </Link>
+            <Link href="/algorithms" className="border-2 border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+              Explore Algorithms
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Features Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Why Choose LearnDSA.me?</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Our platform combines theory with practice to provide the most effective learning experience.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow"
+              >
+                <div className="text-blue-600 mb-4 flex justify-center">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Data Structures Grid */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Explore Data Structures</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Start your journey with any data structure. Each comes with interactive visualizations and practical examples.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {dataStructures.map((ds, index) => (
+              <motion.div
+                key={ds.path}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                <Link href={ds.path}>
+                  <div className={`${ds.color} h-20 flex items-center justify-center`}>
+                    <span className="text-4xl text-white font-bold">{ds.icon}</span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-slate-800 mb-2">{ds.name}</h3>
+                    <p className="text-slate-600 text-sm">{ds.description}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-slate-900 text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold mb-4">Ready to Start Learning?</h2>
+            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of students mastering data structures and algorithms through interactive learning.
+            </p>
+            <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
+              Begin Your Journey
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
