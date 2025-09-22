@@ -96,8 +96,8 @@ export default function Home() {
             & <span className="text-purple-600">Algorithms</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
-            Interactive visualizations, hands-on practice, and comprehensive theory
-            to help you excel in computer science fundamentals.
+            Learn through interactive theory, dynamic visualizations, and hands-on simulations. 
+            Build your coding skills with comprehensive learning resources for all data structures.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,9 +125,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Why Choose LearnDSA.me?</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Why Choose Learn DSA?</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Our platform combines theory with practice to provide the most effective learning experience.
+              Our platform combines theory with practice to provide the most effective learning experience 
+              for mastering data structures and algorithms.
             </p>
           </motion.div>
           
@@ -139,13 +140,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-xl transition-all duration-300 border border-gray-200"
               >
-                <div className="text-blue-600 mb-4 flex justify-center">
+                <div className="text-blue-600 mb-6 flex justify-center p-4 bg-blue-50 rounded-full w-20 h-20 mx-auto items-center">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">{feature.title}</h3>
-                <p className="text-slate-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-slate-800 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -153,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Data Structures Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -164,7 +165,8 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold text-slate-800 mb-4">Explore Data Structures</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Start your journey with any data structure. Each comes with interactive visualizations and practical examples.
+              Start your journey with any data structure. Each comes with interactive theory, 
+              dynamic visualizations, and hands-on simulations to master the concepts.
             </p>
           </motion.div>
 
@@ -176,16 +178,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
               >
                 <Link href={ds.path}>
-                  <div className={`${ds.color} h-20 flex items-center justify-center`}>
-                    <span className="text-4xl text-white font-bold">{ds.icon}</span>
+                  <div className={`${ds.color} h-24 flex items-center justify-center relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <span className="text-5xl text-white font-bold relative z-10">{ds.icon}</span>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">{ds.name}</h3>
-                    <p className="text-slate-600 text-sm">{ds.description}</p>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">{ds.name}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{ds.description}</p>
+                    <div className="mt-4 text-blue-600 font-semibold text-sm flex items-center">
+                      Learn More →
+                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -195,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-gradient-to-r from-slate-900 to-blue-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -204,12 +210,18 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold mb-4">Ready to Start Learning?</h2>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of students mastering data structures and algorithms through interactive learning.
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Join thousands of students mastering data structures and algorithms through 
+              interactive theory, visualizations, and simulations.
             </p>
-            <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
-              Begin Your Journey
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
+                Begin Your Journey
+              </Link>
+              <Link href="/algorithms" className="border-2 border-blue-300 hover:border-blue-200 text-blue-100 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
+                View All Algorithms
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

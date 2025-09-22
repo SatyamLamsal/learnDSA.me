@@ -10,6 +10,11 @@ interface ThemeContextType {
   setTheme: (mode: ThemeMode) => void;
   isDark: boolean;
   isLight: boolean;
+  // Runtime color overrides API
+  overrides: Record<string, string>;
+  setOverride: (cssVar: string, value: string) => void;
+  removeOverride: (cssVar: string) => void;
+  clearOverrides: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -25,6 +30,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 }) => {
   const [mode, setMode] = useState<ThemeMode>(defaultMode);
   const [mounted, setMounted] = useState(false);
+  const [overrides, setOverrides] = useState<Record<string, string>>({});
 
   // Get the current theme based on mode
   const theme = getCurrentTheme(mode);
@@ -35,6 +41,15 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       try {
         // Check localStorage first
         const savedTheme = localStorage.getItem('theme-mode') as ThemeMode | null;
+        const savedOverrides = localStorage.getItem('theme-overrides');
+        if (savedOverrides) {
+          try {
+            const parsed = JSON.parse(savedOverrides) as Record<string, string>;
+            setOverrides(parsed || {});
+          } catch {
+            // ignore parse errors
+          }
+        }
         
         if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
           setMode(savedTheme);
@@ -66,6 +81,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       root.style.setProperty(property, value);
     });
 
+    // Apply overrides on top
+    Object.entries(overrides).forEach(([property, value]) => {
+      if (property.startsWith('--color-')) {
+        root.style.setProperty(property, value);
+      }
+    });
+
     // Update the class on html element for Tailwind dark mode
     const htmlElement = document.documentElement;
     if (mode === 'dark') {
@@ -77,10 +99,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     // Save to localStorage
     try {
       localStorage.setItem('theme-mode', mode);
+      localStorage.setItem('theme-overrides', JSON.stringify(overrides));
     } catch (error) {
       console.warn('Failed to save theme to localStorage:', error);
     }
-  }, [theme, mode, mounted]);
+  }, [theme, mode, mounted, overrides]);
 
   // Listen for system theme changes
   useEffect(() => {
@@ -107,6 +130,20 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     setMode(newMode);
   };
 
+  // Runtime overrides controls
+  const setOverride = (cssVar: string, value: string) => {
+    setOverrides(prev => ({ ...prev, [cssVar]: value }));
+  };
+
+  const removeOverride = (cssVar: string) => {
+    setOverrides(prev => {
+      const { [cssVar]: _removed, ...rest } = prev;
+      return rest;
+    });
+  };
+
+  const clearOverrides = () => setOverrides({});
+
   const contextValue: ThemeContextType = {
     theme,
     mode,
@@ -114,6 +151,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     setTheme,
     isDark: mode === 'dark',
     isLight: mode === 'light',
+    overrides,
+    setOverride,
+    removeOverride,
+    clearOverrides,
   };
 
   // Provide context even before mount to avoid errors during prerender/SSR

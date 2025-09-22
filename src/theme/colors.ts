@@ -13,6 +13,13 @@ export interface ColorTheme {
     secondary: string;
     tertiary: string;
     inverse: string;
+    muted: string;
+    disabled: string;
+    placeholder: string;
+    heading: string;
+    subheading: string;
+    caption: string;
+    dimmed: string;
   };
   background: {
     primary: string;
@@ -65,6 +72,13 @@ export const lightTheme: ColorTheme = {
     secondary: '#475569',
     tertiary: '#94a3b8',
     inverse: '#ffffff',
+    muted: '#64748b',
+    disabled: '#cbd5e1',
+    placeholder: '#94a3b8',
+    heading: '#1e293b',
+    subheading: '#334155',
+    caption: '#64748b',
+    dimmed: '#94a3b8',
   },
   background: {
     primary: '#ffffff',
@@ -117,6 +131,13 @@ export const darkTheme: ColorTheme = {
     secondary: '#cbd5e1',
     tertiary: '#94a3b8',
     inverse: '#0f172a',
+    muted: '#94a3b8',
+    disabled: '#64748b',
+    placeholder: '#64748b',
+    heading: '#f1f5f9',
+    subheading: '#e2e8f0',
+    caption: '#94a3b8',
+    dimmed: '#64748b',
   },
   background: {
     primary: '#0f172a',

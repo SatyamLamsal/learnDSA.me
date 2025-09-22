@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 const ThemeDemoPage: React.FC = () => {
-  const { theme, mode, isDark } = useTheme();
+  const { theme, mode, overrides, setOverride, clearOverrides } = useTheme();
 
   const features = [
     {
@@ -216,7 +216,7 @@ const ThemeDemoPage: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Color Palettes */}
+  {/* Color Palettes */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Data Structure Colors */}
           <motion.div
@@ -290,6 +290,60 @@ const ThemeDemoPage: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Live Color Controls */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-12 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Live Color Controls
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { label: 'Primary', var: '--color-primary', defaultValue: theme.primary },
+              { label: 'Accent', var: '--color-accent', defaultValue: theme.accent },
+              { label: 'Text Primary', var: '--color-text-primary', defaultValue: theme.text.primary },
+              { label: 'BG Primary', var: '--color-bg-primary', defaultValue: theme.background.primary },
+              { label: 'Arrays', var: '--color-arrays', defaultValue: theme.dataStructures.arrays },
+              { label: 'Graphs', var: '--color-graphs', defaultValue: theme.dataStructures.graphs },
+              { label: 'Sorting', var: '--color-sorting', defaultValue: theme.algorithms.sorting },
+              { label: 'Searching', var: '--color-searching', defaultValue: theme.algorithms.searching },
+              { label: 'Divide & Conquer', var: '--color-divide-and-conquer', defaultValue: theme.algorithms.divideAndConquer },
+            ].map((item) => (
+              <div key={item.var} className="p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  {item.label}
+                </label>
+                <div className="flex items-center space-x-3">
+                  <input
+                    type="color"
+                    defaultValue={(overrides[item.var] as string) || item.defaultValue}
+                    onChange={(e) => setOverride(item.var, e.target.value)}
+                    className="h-10 w-16 rounded bg-transparent cursor-pointer"
+                    aria-label={`Pick color for ${item.label}`}
+                  />
+                  <input
+                    type="text"
+                    defaultValue={(overrides[item.var] as string) || item.defaultValue}
+                    onBlur={(e) => setOverride(item.var, e.target.value)}
+                    className="flex-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-2 py-1 text-sm text-gray-900 dark:text-gray-100"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex justify-end">
+            <button
+              onClick={clearOverrides}
+              className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100"
+            >
+              Reset Overrides
+            </button>
+          </div>
+        </motion.div>
 
         {/* Usage Instructions */}
         <motion.div
