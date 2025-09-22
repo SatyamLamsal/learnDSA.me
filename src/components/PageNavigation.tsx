@@ -3,13 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronLeft, ChevronRight, BookOpen, Play, Home, ArrowLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Play, Home, ArrowLeft, Code } from 'lucide-react';
 import { useDataStructureColor, useAlgorithmColor } from '@/contexts/ThemeContext';
 
 interface NavigationItem {
   name: string;
   path: string;
-  type: 'theory' | 'simulation';
+  type: 'theory' | 'simulation' | 'pseudocode';
 }
 
 interface Section {
@@ -155,11 +155,9 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
                     backgroundColor: pathname === item.path ? topicColor : undefined,
                   }}
                 >
-                  {item.type === 'theory' ? (
-                    <BookOpen className="h-4 w-4 mr-2" />
-                  ) : (
-                    <Play className="h-4 w-4 mr-2" />
-                  )}
+                  {item.type === 'theory' && <BookOpen className="h-4 w-4 mr-2" />}
+                  {item.type === 'simulation' && <Play className="h-4 w-4 mr-2" />}
+                  {item.type === 'pseudocode' && <Code className="h-4 w-4 mr-2" />}
                   {item.name}
                 </Link>
               ))}
@@ -202,6 +200,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/arrays/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/arrays/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/arrays/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -210,6 +209,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/linked-lists/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/linked-lists/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/linked-lists/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -218,6 +218,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/stacks/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/stacks/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/stacks/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -226,6 +227,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/queues/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/queues/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/queues/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -234,6 +236,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/trees/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/trees/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/trees/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -242,6 +245,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/graphs/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/graphs/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/graphs/pseudocode', type: 'pseudocode' },
     ],
   },
   {
@@ -250,6 +254,7 @@ export const dataStructureSections: Section[] = [
     items: [
       { name: 'Theory', path: '/data-structures/hash-tables/theory', type: 'theory' },
       { name: 'Simulation', path: '/data-structures/hash-tables/simulation', type: 'simulation' },
+      { name: 'Pseudocode', path: '/data-structures/hash-tables/pseudocode', type: 'pseudocode' },
     ],
   },
 ];
