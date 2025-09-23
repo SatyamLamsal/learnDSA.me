@@ -443,10 +443,6 @@ export default function GreedyAlgorithmsPage() {
             Visualize greedy choices and see how local optimizations lead to global solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/algorithms/greedy/visualizer" className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              <Target className="h-5 w-5 inline mr-2" />
-              Greedy Visualizer
-            </Link>
             <Link href="/algorithms/greedy/activity-selection" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
               <BookOpen className="h-5 w-5 inline mr-2" />
               Start with Activity Selection
