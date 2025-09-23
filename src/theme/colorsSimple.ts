@@ -1,4 +1,6 @@
-// Global Color Theme System for LearnDSA.me
+// Simple Color System for LearnDSA.me
+// For complex color management, use customColors.ts instead
+
 export interface ColorTheme {
   primary: string;
   primaryHover: string;
@@ -13,13 +15,6 @@ export interface ColorTheme {
     secondary: string;
     tertiary: string;
     inverse: string;
-    muted: string;
-    disabled: string;
-    placeholder: string;
-    heading: string;
-    subheading: string;
-    caption: string;
-    dimmed: string;
   };
   background: {
     primary: string;
@@ -59,8 +54,8 @@ export interface ColorTheme {
 
 // Light Theme (Default)
 export const lightTheme: ColorTheme = {
-  primary: '#065de9ff',
-  primaryHover: '#2c4d95ff',
+  primary: '#3b82f6',
+  primaryHover: '#2563eb',
   primaryLight: '#dbeafe',
   primaryDark: '#1d4ed8',
   secondary: '#64748b',
@@ -72,13 +67,6 @@ export const lightTheme: ColorTheme = {
     secondary: '#475569',
     tertiary: '#94a3b8',
     inverse: '#ffffff',
-    muted: '#64748b',
-    disabled: '#cbd5e1',
-    placeholder: '#94a3b8',
-    heading: '#1e293b',
-    subheading: '#334155',
-    caption: '#64748b',
-    dimmed: '#94a3b8',
   },
   background: {
     primary: '#ffffff',
@@ -131,13 +119,6 @@ export const darkTheme: ColorTheme = {
     secondary: '#cbd5e1',
     tertiary: '#94a3b8',
     inverse: '#0f172a',
-    muted: '#94a3b8',
-    disabled: '#64748b',
-    placeholder: '#64748b',
-    heading: '#f1f5f9',
-    subheading: '#e2e8f0',
-    caption: '#94a3b8',
-    dimmed: '#64748b',
   },
   background: {
     primary: '#0f172a',
@@ -185,48 +166,6 @@ export const getCurrentTheme = (mode: ThemeMode = 'light'): ColorTheme => {
 
 // Legacy export for backward compatibility
 export const Colors = lightTheme;
-
-// CSS Custom Properties Generator
-export const generateCSSVariables = (theme: ColorTheme): Record<string, string> => {
-  return {
-    '--color-primary': theme.primary,
-    '--color-primary-hover': theme.primaryHover,
-    '--color-primary-light': theme.primaryLight,
-    '--color-primary-dark': theme.primaryDark,
-    '--color-secondary': theme.secondary,
-    '--color-secondary-hover': theme.secondaryHover,
-    '--color-accent': theme.accent,
-    '--color-accent-hover': theme.accentHover,
-    '--color-text-primary': theme.text.primary,
-    '--color-text-secondary': theme.text.secondary,
-    '--color-text-tertiary': theme.text.tertiary,
-    '--color-text-inverse': theme.text.inverse,
-    '--color-bg-primary': theme.background.primary,
-    '--color-bg-secondary': theme.background.secondary,
-    '--color-bg-tertiary': theme.background.tertiary,
-    '--color-bg-elevated': theme.background.elevated,
-    '--color-border-light': theme.border.light,
-    '--color-border-medium': theme.border.medium,
-    '--color-border-dark': theme.border.dark,
-    '--color-success': theme.status.success,
-    '--color-warning': theme.status.warning,
-    '--color-error': theme.status.error,
-    '--color-info': theme.status.info,
-    '--color-arrays': theme.dataStructures.arrays,
-    '--color-linked-lists': theme.dataStructures.linkedLists,
-    '--color-stacks': theme.dataStructures.stacks,
-    '--color-queues': theme.dataStructures.queues,
-    '--color-trees': theme.dataStructures.trees,
-    '--color-graphs': theme.dataStructures.graphs,
-    '--color-hash-tables': theme.dataStructures.hashTables,
-    '--color-sorting': theme.algorithms.sorting,
-    '--color-searching': theme.algorithms.searching,
-    '--color-graph-algorithms': theme.algorithms.graph,
-    '--color-dynamic-programming': theme.algorithms.dynamicProgramming,
-    '--color-greedy': theme.algorithms.greedy,
-    '--color-divide-and-conquer': theme.algorithms.divideAndConquer,
-  };
-};
 
 // Utility functions for theme colors
 export const getDataStructureColor = (structure: keyof ColorTheme['dataStructures']): string => {

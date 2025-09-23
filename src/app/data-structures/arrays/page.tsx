@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, HardDrive, ArrowRight } from 'lucide-react';
 
+
 const ArrayVisualization = () => {
   const arrayElements = [10, 23, 45, 67, 89, 12, 34];
   

@@ -18,7 +18,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-slate-900 text-white shadow-lg">
+        <nav className="bg-slate-900 text-white shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors">
