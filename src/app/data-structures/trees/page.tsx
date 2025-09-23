@@ -164,6 +164,8 @@ export default function TreesPage() {
           </motion.div>
         </div>
 
+        
+
         {/* Tree Types */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -313,15 +315,15 @@ export default function TreesPage() {
           </div>
         </motion.div>
 
-        {/* Navigation Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+  {/* Navigation Cards */}
+  <div className="grid md:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.1 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/trees/theory" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+            <Link href="/data-structures/trees/theory" className="block bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-purple-200 transition-all">
               <div className="flex items-center justify-between mb-4">
                 <BookOpen className="h-8 w-8 text-purple-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
@@ -339,7 +341,7 @@ export default function TreesPage() {
             transition={{ duration: 0.6, delay: 1.2 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/trees/simulation" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+            <Link href="/data-structures/trees/simulation" className="block bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-purple-200 transition-all">
               <div className="flex items-center justify-between mb-4">
                 <Play className="h-8 w-8 text-purple-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
@@ -347,6 +349,24 @@ export default function TreesPage() {
               <h3 className="text-xl font-semibold mb-2">Interactive Simulation</h3>
               <p className="text-gray-600">
                 Build and manipulate trees with interactive tools and visualization
+              </p>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <Link href="/data-structures/trees/pseudocode" className="block bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-purple-200 transition-all">
+              <div className="flex items-center justify-between mb-4">
+                <BookOpen className="h-8 w-8 text-purple-600" />
+                <ArrowRight className="h-6 w-6 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Pseudocode</h3>
+              <p className="text-gray-600">
+                Reference tree traversals and BST operations in clean pseudocode
               </p>
             </Link>
           </motion.div>

@@ -186,13 +186,15 @@ export default function GraphsPage() {
           </div>
         </motion.div>
 
-        {/* Graph Algorithms & Use Cases */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        
+
+  {/* Graph Algorithms & Use Cases */}
+  <div className="grid md:grid-cols-3 gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg border border-gray-100 shadow-lg p-8"
           >
             <h3 className="text-2xl font-semibold mb-6 text-slate-700">Common Algorithms</h3>
             <div className="space-y-4">
@@ -219,7 +221,7 @@ export default function GraphsPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg border border-gray-100 shadow-lg p-8"
           >
             <h3 className="text-2xl font-semibold mb-6 text-slate-700">Real-world Applications</h3>
             <div className="space-y-4">
@@ -240,6 +242,24 @@ export default function GraphsPage() {
                 <p className="text-gray-600">Product recommendations based on connections</p>
               </div>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-indigo-200 transition-all"
+          >
+            <Link href="/data-structures/graphs/pseudocode" className="block">
+              <div className="flex items-center justify-between mb-4">
+                <BookOpen className="h-8 w-8 text-indigo-600" />
+                <ArrowRight className="h-6 w-6 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Pseudocode</h3>
+              <p className="text-gray-600">
+                Reference BFS, DFS, Dijkstra and more in clean pseudocode
+              </p>
+            </Link>
           </motion.div>
         </div>
 
@@ -305,7 +325,7 @@ export default function GraphsPage() {
             transition={{ duration: 0.6, delay: 1.1 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/graphs/theory" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+            <Link href="/data-structures/graphs/theory" className="block bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-indigo-200 transition-all">
               <div className="flex items-center justify-between mb-4">
                 <BookOpen className="h-8 w-8 text-indigo-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
@@ -323,7 +343,7 @@ export default function GraphsPage() {
             transition={{ duration: 0.6, delay: 1.2 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/graphs/simulation" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+            <Link href="/data-structures/graphs/simulation" className="block bg-white rounded-lg border border-gray-100 shadow-lg p-8 hover:shadow-xl hover:border-indigo-200 transition-all">
               <div className="flex items-center justify-between mb-4">
                 <Play className="h-8 w-8 text-indigo-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
