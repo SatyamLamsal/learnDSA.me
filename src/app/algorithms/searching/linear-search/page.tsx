@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, ArrowLeft, Clock, Cpu, Zap, Eye, Code, CheckCircle } from 'lucide-react';
+import { BookOpen, Search, ArrowLeft, Clock, Cpu, Zap, Eye, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const LinearSearchVisualization = () => {
@@ -506,7 +506,7 @@ export default function LinearSearchPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-red-600 mr-2">•</span>
-                <span className="text-slate-700">Doesn't utilize data ordering</span>
+                <span className="text-slate-700">Doesn&apos;t utilize data ordering</span>
               </li>
             </ul>
           </div>

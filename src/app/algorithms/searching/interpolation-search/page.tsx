@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, ArrowLeft, ArrowRight, Clock, Cpu, Zap, Eye, Code, CheckCircle, Calculator } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, CheckCircle, Calculator } from 'lucide-react';
 import { useState } from 'react';
 
 const InterpolationSearchVisualization = () => {
@@ -27,7 +27,7 @@ const InterpolationSearchVisualization = () => {
     let leftPtr = 0;
     let rightPtr = array.length - 1;
     let compCount = 0;
-  let history: Step[] = [];
+  const history: Step[] = [];
 
     while (leftPtr <= rightPtr && target >= array[leftPtr] && target <= array[rightPtr]) {
       // Handle single element

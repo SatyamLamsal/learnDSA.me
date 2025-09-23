@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, ArrowLeft, ArrowRight, Clock, Cpu, Zap, Eye, Code, CheckCircle, SkipForward } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, CheckCircle, SkipForward } from 'lucide-react';
 import { useState } from 'react';
 
 const JumpSearchVisualization = () => {
@@ -31,7 +31,7 @@ const JumpSearchVisualization = () => {
     let step = Math.floor(Math.sqrt(array.length));
     let prev = 0;
     let compCount = 0;
-  let history: Step[] = [];
+  const history: Step[] = [];
 
     // Jumping phase
     while (array[Math.min(step, array.length) - 1] < target) {

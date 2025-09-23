@@ -49,7 +49,7 @@ export default function SortingVisualizerPage(){
       }
     } else if (algo==='insertion'){
       for (let i=1;i<n;i++){
-        let key = arr[i]; let j = i-1;
+        const key = arr[i]; let j = i-1;
         while (j>=0 && arr[j] > key){ setHighlight({i:j, j:j+1}); await sleep(speed); arr[j+1] = arr[j]; j--; setBars([...arr]); }
         arr[j+1] = key; setBars([...arr]); await sleep(speed);
       }
@@ -68,7 +68,7 @@ export default function SortingVisualizerPage(){
           <div className="flex flex-wrap items-end gap-3">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Algorithm</label>
-              <select value={algo} onChange={e=>setAlgo(e.target.value as any)} className="px-3 py-2 border rounded">
+              <select value={algo} onChange={e=>setAlgo(e.target.value as 'bubble' | 'selection' | 'insertion')} className="px-3 py-2 border rounded">
                 <option value="bubble">Bubble Sort</option>
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>

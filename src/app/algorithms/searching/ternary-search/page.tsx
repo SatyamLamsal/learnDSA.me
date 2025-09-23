@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, Code, CheckCircle, AlertTriangle, Target } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, CheckCircle, AlertTriangle } from 'lucide-react';
 import { useState } from 'react';
 
 // Ternary Search works best for unimodal functions; here we demonstrate element search on sorted arrays
@@ -18,7 +18,8 @@ const TernarySearchVisualization = () => {
   const [foundIndex, setFoundIndex] = useState(-1);
   const [isSearching, setIsSearching] = useState(false);
   const [comparisons, setComparisons] = useState(0);
-  const [steps, setSteps] = useState<any[]>([]);
+  type Step = { l: number; r: number; m1: number; m2: number; a1?: number; a2?: number; action: string };
+  const [steps, setSteps] = useState<Step[]>([]);
 
   const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -53,8 +54,8 @@ const TernarySearchVisualization = () => {
 
     await sleep(400);
 
-    let comps = 0;
-    const localSteps: any[] = [];
+  let comps = 0;
+  const localSteps: Step[] = [];
 
     while (l <= r) {
       const third = Math.floor((r - l) / 3);
@@ -364,7 +365,7 @@ export default function TernarySearchPage() {
             <Clock className="h-12 w-12 text-pink-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-pink-600">O(log n)</div>
-            <p className="text-xs text-slate-600 mt-1">Base change doesn't affect Big-O</p>
+            <p className="text-xs text-slate-600 mt-1">Base change doesn&apos;t affect Big-O</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <Cpu className="h-12 w-12 text-rose-600 mx-auto mb-4" />

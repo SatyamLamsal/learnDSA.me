@@ -12,7 +12,8 @@ const FibonacciSearchViz = () => {
   const [offset, setOffset] = useState(-1);
   const [idx, setIdx] = useState(-1);
   const [found, setFound] = useState(-1);
-  const [steps, setSteps] = useState<any[]>([]);
+  type Step = { fibM?: number; fibMm1?: number; fibMm2?: number; off?: number; i?: number; val?: number; action: string };
+  const [steps, setSteps] = useState<Step[]>([]);
   const [searching, setSearching] = useState(false);
 
   const sleep = (ms: number) => new Promise(res => setTimeout(res, ms));
@@ -29,7 +30,7 @@ const FibonacciSearchViz = () => {
     let fibMm1 = 1; // (m-1)'th Fibonacci No.
     let fibM = fibMm2 + fibMm1; // m'th Fibonacci
 
-    const local: any[] = [];
+  const local: Step[] = [];
     while (fibM < n) { fibMm2 = fibMm1; fibMm1 = fibM; fibM = fibMm2 + fibMm1; }
 
     let off = -1;

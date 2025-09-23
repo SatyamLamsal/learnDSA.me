@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, ArrowLeft, ArrowRight, Clock, Cpu, Zap, Eye, Code, CheckCircle, Divide } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Zap, CheckCircle, Divide } from 'lucide-react';
 import { useState } from 'react';
 
 const BinarySearchVisualization = () => {
@@ -26,7 +26,7 @@ const BinarySearchVisualization = () => {
     let leftPtr = 0;
     let rightPtr = array.length - 1;
     let compCount = 0;
-  let history: Step[] = [];
+  const history: Step[] = [];
 
     while (leftPtr <= rightPtr) {
       const midPtr = Math.floor((leftPtr + rightPtr) / 2);

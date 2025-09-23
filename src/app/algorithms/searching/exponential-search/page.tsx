@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, ArrowLeft, ArrowRight, Clock, Cpu, Zap, Eye, Code, CheckCircle, TrendingUp } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, CheckCircle, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 type ExponentialStep = {
@@ -45,8 +45,8 @@ const ExponentialSearchVisualization = () => {
     setBinaryMid(-1);
     
     let compCount = 0;
-  let history: ExponentialStep[] = [];
-  let boundHistory: number[] = [];
+  const history: ExponentialStep[] = [];
+  const boundHistory: number[] = [];
 
     // Phase 1: Find range where element may exist
     if (array[0] === target) {
@@ -997,7 +997,7 @@ export default function ExponentialSearchPage() {
                 <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
                   <h4 className="font-semibold text-emerald-800 mb-2">Unbounded Arrays</h4>
                   <p className="text-sm text-gray-700">
-                    When you don't know the size of the array in advance. Exponential search can work with streams or dynamic data.
+                    When you don&apos;t know the size of the array in advance. Exponential search can work with streams or dynamic data.
                   </p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
@@ -1009,7 +1009,7 @@ export default function ExponentialSearchPage() {
                 <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                   <h4 className="font-semibold text-purple-800 mb-2">Memory-Constrained Systems</h4>
                   <p className="text-sm text-gray-700">
-                    When you can't hold the entire array in memory and need to search as you read the data.
+                    When you can&apos;t hold the entire array in memory and need to search as you read the data.
                   </p>
                 </div>
               </div>

@@ -285,7 +285,7 @@ export const LoadingButton: React.FC<{
   );
 };
 
-export default {
+const LoadingComponents = {
   LoadingSpinner,
   PageLoader,
   SimulationLoader,
@@ -298,3 +298,5 @@ export default {
   VisualizationSkeleton,
   LoadingButton,
 };
+
+export default LoadingComponents;

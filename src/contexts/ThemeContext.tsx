@@ -111,7 +111,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      // Only auto-update if user hasn't manually set a preference
+  // Only auto-update if user hasn\'t manually set a preference
       const savedTheme = localStorage.getItem('theme-mode');
       if (!savedTheme) {
         setMode(e.matches ? 'dark' : 'light');

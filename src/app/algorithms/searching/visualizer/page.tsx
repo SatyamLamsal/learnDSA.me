@@ -55,7 +55,7 @@ export default function SearchingVisualizerPage(){
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Mode</label>
-              <select value={mode} onChange={e=>setMode(e.target.value as any)} className="px-2 py-1 border rounded">
+              <select value={mode} onChange={e=>setMode(e.target.value as 'linear' | 'binary')} className="px-2 py-1 border rounded">
                 <option value="linear">Linear</option>
                 <option value="binary">Binary (requires sorted)</option>
               </select>
