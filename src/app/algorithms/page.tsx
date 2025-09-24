@@ -54,7 +54,7 @@ const algorithms = [
   {
     name: 'Divide & Conquer',
     description: 'Break problems into smaller subproblems recursively',
-    path: '/algorithms/divide-conquer',
+    path: '/algorithms/divide-and-conquer',
     color: 'bg-indigo-500',
     icon: '⚔️',
     complexity: 'O(n log n)',
