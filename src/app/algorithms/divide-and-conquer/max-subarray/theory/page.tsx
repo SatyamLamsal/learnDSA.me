@@ -10,7 +10,7 @@ const { prev, next } = getPrevNext('max-subarray');
 
 export default function MaxSubarrayTheory(){
   return <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
-  <div className="container mx-auto px-4 py-10 max-w-7xl">
+  <div className="container mx-auto px-4 py-10 max-w-screen-2xl">
       <Link href="/algorithms/divide-and-conquer/max-subarray" className="inline-flex items-center text-amber-700 hover:text-amber-800 mb-8"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
       <div className="grid gap-6">
         {/* Hero */}

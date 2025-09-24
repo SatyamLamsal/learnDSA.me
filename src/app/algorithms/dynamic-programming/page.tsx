@@ -456,10 +456,6 @@ export default function DynamicProgrammingPage() {
             Practice with interactive visualizations and step-by-step solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/algorithms/dynamic-programming/visualizer" className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              <Brain className="h-5 w-5 inline mr-2" />
-              DP Visualizer
-            </Link>
             <Link href="/algorithms/dynamic-programming/fibonacci" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
               <BookOpen className="h-5 w-5 inline mr-2" />
               Start with Fibonacci

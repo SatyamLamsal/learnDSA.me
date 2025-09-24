@@ -10,7 +10,7 @@ const { prev, next } = getPrevNext('binary-search');
 export default function BinarySearchOverview() {
   if(!algo) return null;
   return <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
-  <div className="container mx-auto px-4 py-10 max-w-7xl">
+  <div className="container mx-auto px-4 py-10 max-w-screen-2xl">
       <Link href="/algorithms/divide-and-conquer" className="inline-flex items-center text-emerald-700 hover:text-emerald-800 mb-8"><ArrowLeft className="h-5 w-5 mr-2"/>All Divide & Conquer</Link>
       <div className="grid gap-6">
         {/* Hero */}

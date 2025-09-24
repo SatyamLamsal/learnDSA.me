@@ -69,13 +69,11 @@ export default function QuickSortTheory(){
             <li>Three-way partitioning improves duplicate-heavy datasets.</li>
             <li>Switching to insertion sort for small segments lowers constant factors.</li>
           </ul>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/algorithms/divide-and-conquer/quick-sort/simulation" className="px-6 py-2 rounded bg-amber-600 text-white hover:bg-amber-700 text-sm font-semibold">Run Simulation</Link>
-          </div>
         </motion.div>
 
         <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.25,duration:0.5}} className="flex justify-between items-center">
           {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/theory`} className="inline-flex items-center px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"><ArrowLeft className="h-4 w-4 mr-2"/>{prev.name}</Link>: <span/>}
+          <Link href="/algorithms/divide-and-conquer/quick-sort/simulation" className="px-6 py-2 rounded bg-amber-600 text-white hover:bg-amber-700 text-sm font-semibold">Run Simulation</Link>
           {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/theory`} className="inline-flex items-center px-4 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">{next.name}<ArrowRight className="h-4 w-4 ml-2"/></Link>: <span/>}
         </motion.div>
       </div>
