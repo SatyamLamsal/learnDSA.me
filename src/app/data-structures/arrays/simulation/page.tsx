@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Plus, Search, Trash2, Edit, Play, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Plus, Search, Trash2, Play, ChevronRight } from 'lucide-react';
 
 interface ArrayElement {
   value: number;

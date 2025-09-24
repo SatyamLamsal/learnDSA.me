@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Brain, Layers, ArrowLeft, ArrowRight, Zap, Target, Puzzle } from 'lucide-react';
+import { BookOpen, Brain, Layers, ArrowLeft, ArrowRight, Zap, Target, Puzzle } from 'lucide-react';
 
 const dpAlgorithms = [
   {
@@ -25,7 +26,7 @@ const dpAlgorithms = [
     spaceComplexity: 'O(n × W) / O(W)',
     difficulty: 'Intermediate',
     pattern: '2D DP',
-    path: '/algorithms/dynamic-programming/knapsack',
+    path: '/algorithms/dynamic-programming/knapsack-01',
     color: 'bg-blue-500',
     approach: ['2D Table', 'Space Optimized', 'Backtracking'],
     recurrence: 'dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i])',

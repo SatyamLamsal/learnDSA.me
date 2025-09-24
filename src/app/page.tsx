@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Code, Target, Users, Award } from 'lucide-react';
+import { BookOpen, Play, Code, Target} from 'lucide-react';
 
 const dataStructures = [
   {
@@ -228,3 +229,4 @@ export default function Home() {
     </div>
   );
 }
+

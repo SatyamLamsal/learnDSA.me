@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Network, Route, ArrowLeft, ArrowRight, GitBranch, Zap, MapPin, Shuffle } from 'lucide-react';
+import { BookOpen, Network, Route, ArrowLeft, ArrowRight, GitBranch, MapPin } from 'lucide-react';
 
 const graphAlgorithms = [
   {

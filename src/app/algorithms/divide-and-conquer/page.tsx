@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Zap, Split, ArrowLeft, ArrowRight, Layers, Target, GitBranch, Shuffle } from 'lucide-react';
+import { BookOpen, Zap, Split, ArrowLeft, ArrowRight, Layers, Target, GitBranch, Shuffle } from 'lucide-react';
 
 const divideConquerAlgorithms = [
   {

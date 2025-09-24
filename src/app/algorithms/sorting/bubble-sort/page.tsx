@@ -1,20 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Play, 
   Pause, 
   RotateCcw, 
   SkipForward,
-  ArrowUpDown,
-  CheckCircle,
-  Clock,
-  BarChart3,
-  Zap,
-  AlertTriangle
+CheckCircle,
+BarChart3,
+AlertTriangle
 } from 'lucide-react';
 
 interface ArrayElement {
@@ -36,12 +33,7 @@ const BubbleSortPage: React.FC = () => {
   const [currentPass, setCurrentPass] = useState(0);
   const [algorithm, setAlgorithm] = useState<'bubble' | 'optimized'>('bubble');
 
-  // Initialize array
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
-  const generateRandomArray = (size = 8) => {
+  const generateRandomArray = useCallback((size = 8) => {
     const newArray: ArrayElement[] = [];
     for (let i = 0; i < size; i++) {
       newArray.push({
@@ -55,11 +47,13 @@ const BubbleSortPage: React.FC = () => {
     }
     setArray(newArray);
     resetAnimation();
-  };
+  }, []);
+
+  // Initialize array
+  useEffect(() => { generateRandomArray(); }, [generateRandomArray]);
 
   const resetAnimation = () => {
     setIsPlaying(false);
-    setCurrentStep(0);
     setComparisons(0);
     setSwaps(0);
     setCurrentPass(0);
@@ -210,7 +204,7 @@ const BubbleSortPage: React.FC = () => {
       const step = steps[stepIndex];
       
       // Update array visualization based on step
-      setArray(prev => {
+      setArray(_ => {
         const newArray = [...step.array];
         
         // Reset all states
@@ -245,7 +239,7 @@ const BubbleSortPage: React.FC = () => {
       setComparisons(step.comparisons);
       setSwaps(step.swaps);
       setCurrentPass(step.pass);
-      setCurrentStep(stepIndex);
+      // Animation step removed
 
       stepIndex++;
       if (stepIndex < steps.length) {
@@ -507,7 +501,7 @@ const BubbleSortPage: React.FC = () => {
                 
                 {/* Index labels */}
                 <div className="flex justify-center space-x-2 mt-2">
-                  {array.map((_, index) => (
+                  {array.map((item, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
                     </div>
@@ -654,3 +648,4 @@ const BubbleSortPage: React.FC = () => {
 };
 
 export default BubbleSortPage;
+

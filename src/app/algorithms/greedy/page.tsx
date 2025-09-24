@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Target, Zap, ArrowLeft, ArrowRight, TrendingUp, Award, Clock, DollarSign } from 'lucide-react';
+import { BookOpen, Target, Zap, ArrowLeft, ArrowRight, TrendingUp, Award, Clock, DollarSign } from 'lucide-react';
 
 const greedyAlgorithms = [
   {

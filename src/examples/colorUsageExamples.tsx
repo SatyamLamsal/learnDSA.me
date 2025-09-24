@@ -1,6 +1,6 @@
 // Example: How to use the custom colors in your components
 
-import { colors, getDataStructureColor, navigation, content } from '@/theme/customColors';
+import { colors, getDataStructureColor, content } from '@/theme/customColors';
 
 // Example 1: Using colors directly
 const MyComponent = () => {

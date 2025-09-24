@@ -1,9 +1,10 @@
+"use client";
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Play,ArrowUpDown,SkipForward, RotateCcw, Timer, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowLeft, Play,SkipForward, RotateCcw, Timer, CheckCircle2, XCircle } from 'lucide-react';
 import PseudocodeBlock from '@/components/PseudocodeBlock';
 
 type Interval = { id: string; start: number; end: number };
@@ -205,3 +206,4 @@ end procedure`;
     </div>
   );
 }
+

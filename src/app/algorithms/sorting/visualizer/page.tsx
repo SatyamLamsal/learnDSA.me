@@ -1,6 +1,7 @@
+"use client";
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Play, Settings2 } from 'lucide-react';
@@ -101,3 +102,4 @@ export default function SortingVisualizerPage(){
     </div>
   );
 }
+

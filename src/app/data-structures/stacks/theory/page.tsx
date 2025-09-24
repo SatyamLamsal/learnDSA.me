@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, RotateCcw, Plus, Minus, Search, Code, BookOpen, Zap, Layers, TrendingUp, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Code, BookOpen, Zap, Layers, TrendingUp, Clock } from 'lucide-react';
 
 export default function StacksTheoryPage() {
   return (

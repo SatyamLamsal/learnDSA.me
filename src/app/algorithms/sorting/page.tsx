@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Clock, TrendingUp, ArrowLeft, ArrowRight, BarChart3, Shuffle, Zap } from 'lucide-react';
+import { BookOpen, Play, ArrowLeft, ArrowRight, BarChart3, Shuffle, Zap } from 'lucide-react';
 
 const sortingAlgorithms = [
   {

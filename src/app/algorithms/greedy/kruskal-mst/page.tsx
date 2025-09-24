@@ -1,3 +1,4 @@
+"use client";
 'use client';
 
 import { useMemo, useState } from 'react';
@@ -30,7 +31,7 @@ export default function KruskalMSTPage(){
 
   const sleep = (ms:number)=> new Promise(res=>setTimeout(res, ms));
 
-  let parentRef = useMemo(()=> Array.from({length: n}, (_,i)=>i), [n, runId]);
+  let parentRef = useMemo(()=> Array.from({length: n}, (_,i)=>i), [n]);
   const find = (x:number):number => parentRef[x]===x? x : (parentRef[x]=find(parentRef[x]));
   const unite = (a:number,b:number)=>{ a=find(a); b=find(b); if (a!==b) parentRef[b]=a; };
 
@@ -70,7 +71,7 @@ end procedure`;
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50">
       <div className="container mx-auto px-4 py-12">
         <Link href="/algorithms/greedy" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Greedy</Link>
-        <h1 className="text-4xl font-bold text-slate-800 mb-2">Kruskal's Minimum Spanning Tree</h1>
+  <h1 className="text-4xl font-bold text-slate-800 mb-2">Kruskal&apos;s Minimum Spanning Tree</h1>
         <p className="text-lg text-slate-600 mb-6">Add edges in increasing weight, skipping those that form a cycle. Greedy is optimal by the cut property: the lightest edge crossing any cut belongs to an MST.</p>
 
         <div className="bg-white rounded-lg shadow p-6 mb-8">
@@ -154,7 +155,7 @@ end procedure`;
           className="mt-12 flex justify-between items-center"
         >
           <Link
-            href="\algorithms\greedy\coin-change-greedy"
+            href="/algorithms/greedy/coin-change-greedy"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
@@ -162,10 +163,10 @@ end procedure`;
           </Link>
           
           <Link
-            href="\algorithms\greedy\prim-mst"
+            href="/algorithms/greedy/prim-mst"
             className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
-            Next: Prim's MST
+            Next: Prim&apos;s MST
             <SkipForward className="h-5 w-5 ml-2" />
           </Link>
         </motion.div>
@@ -173,3 +174,4 @@ end procedure`;
     </div>
   );
 }
+

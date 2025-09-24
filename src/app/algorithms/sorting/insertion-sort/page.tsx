@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Play, 
@@ -11,10 +11,8 @@ import {
   SkipForward,
   ArrowRight,
   CheckCircle,
-  Clock,
-  BarChart3,
-  Zap,
-  AlertTriangle
+BarChart3,
+AlertTriangle
 } from 'lucide-react';
 
 interface ArrayElement {
@@ -51,12 +49,7 @@ const InsertionSortPage: React.FC = () => {
   const [currentPass, setCurrentPass] = useState(0);
   const [sortingSteps, setSortingSteps] = useState<SortingStep[]>([]);
 
-  // Initialize array
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
-  const generateRandomArray = (size = 8) => {
+  const generateRandomArray = useCallback((size = 8) => {
     const newArray: ArrayElement[] = [];
     for (let i = 0; i < size; i++) {
       newArray.push({
@@ -71,7 +64,10 @@ const InsertionSortPage: React.FC = () => {
     }
     setArray(newArray);
     resetAnimation();
-  };
+  }, []);
+
+  // Initialize array
+  useEffect(() => { generateRandomArray(); }, [generateRandomArray]);
 
   const resetAnimation = () => {
     setIsPlaying(false);
@@ -235,7 +231,7 @@ const InsertionSortPage: React.FC = () => {
       const step = steps[stepIndex];
       
       // Update array visualization
-      setArray(prev => {
+      setArray(_ => {
         const newArray = [...step.array];
         
         // Reset dynamic states
@@ -535,7 +531,7 @@ const InsertionSortPage: React.FC = () => {
                 
                 {/* Index labels */}
                 <div className="flex justify-center space-x-2 mt-2">
-                  {array.map((_, index) => (
+                  {array.map((element, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
                     </div>
@@ -841,3 +837,4 @@ const InsertionSortPage: React.FC = () => {
 };
 
 export default InsertionSortPage;
+

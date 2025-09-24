@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, CheckCircle, AlertTriangle } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight, Clock, Cpu, Eye, AlertTriangle } from 'lucide-react';
 import { useState } from 'react';
 
 // Ternary Search works best for unimodal functions; here we demonstrate element search on sorted arrays
@@ -436,3 +437,4 @@ export default function TernarySearchPage() {
     </div>
   );
 }
+

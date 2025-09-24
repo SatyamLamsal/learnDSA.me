@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Play, 
@@ -11,10 +11,8 @@ import {
   SkipForward,
   Search,
   CheckCircle,
-  Clock,
-  BarChart3,
-  Zap,
-  AlertTriangle
+BarChart3,
+AlertTriangle
 } from 'lucide-react';
 
 interface ArrayElement {
@@ -48,12 +46,8 @@ const SelectionSortPage: React.FC = () => {
   const [currentPass, setCurrentPass] = useState(0);
   const [sortingSteps, setSortingSteps] = useState<SortingStep[]>([]);
 
-  // Initialize array
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
-  const generateRandomArray = (size = 8) => {
+  // Place generator before useEffect to avoid TS hoisting error
+  const generateRandomArray = useCallback((size = 8) => {
     const newArray: ArrayElement[] = [];
     for (let i = 0; i < size; i++) {
       newArray.push({
@@ -68,7 +62,10 @@ const SelectionSortPage: React.FC = () => {
     }
     setArray(newArray);
     resetAnimation();
-  };
+  }, []);
+
+  // Initialize array AFTER function defined
+  useEffect(() => { generateRandomArray(); }, [generateRandomArray]);
 
   const resetAnimation = () => {
     setIsPlaying(false);
@@ -236,7 +233,7 @@ const SelectionSortPage: React.FC = () => {
       const step = steps[stepIndex];
       
       // Update array visualization
-      setArray(prev => {
+      setArray(_ => {
         const newArray = [...step.array];
         
         // Reset all states
@@ -838,3 +835,4 @@ const SelectionSortPage: React.FC = () => {
 };
 
 export default SelectionSortPage;
+

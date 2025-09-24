@@ -1,3 +1,4 @@
+"use client";
 'use client';
 
 import { useState } from 'react';
@@ -150,3 +151,4 @@ end procedure`;
     </div>
   );
 }
+

@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Cpu, Rocket, BookOpen, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
 // Simple hash table demo with chaining
@@ -123,3 +124,4 @@ export default function HashSearchPage(){
     </div>
   );
 }
+

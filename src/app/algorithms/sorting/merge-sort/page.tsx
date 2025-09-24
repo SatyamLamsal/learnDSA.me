@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Play, 
@@ -11,9 +11,7 @@ import {
   SkipForward,
   ArrowUpDown,
   CheckCircle,
-  Clock,
   BarChart3,
-  Zap,
   AlertTriangle
 } from 'lucide-react';
 
@@ -55,30 +53,8 @@ const MergeSortPage: React.FC = () => {
   const [maxRecursionDepth, setMaxRecursionDepth] = useState(0);
   const [sortingSteps, setSortingSteps] = useState<SortingStep[]>([]);
 
-  // Initialize array
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
-  const generateRandomArray = (size = 8) => {
-    const newArray: ArrayElement[] = [];
-    for (let i = 0; i < size; i++) {
-      newArray.push({
-        value: Math.floor(Math.random() * 90) + 10,
-        id: `element-${i}-${Date.now()}`,
-        isComparing: false,
-        isMerging: false,
-        isSorted: false,
-        isActive: false,
-        leftHalf: false,
-        rightHalf: false
-      });
-    }
-    setArray(newArray);
-    resetAnimation();
-  };
-
-  const resetAnimation = () => {
+  // Reset animation helper (defined first so generator can depend on it)
+  const resetAnimation = useCallback(() => {
     setIsPlaying(false);
     setCurrentStep(0);
     setComparisons(0);
@@ -95,7 +71,33 @@ const MergeSortPage: React.FC = () => {
       leftHalf: false,
       rightHalf: false
     })));
-  };
+  }, []);
+
+  // Define generator after resetAnimation
+  const generateRandomArray = useCallback((size = 8) => {
+    const newArray: ArrayElement[] = [];
+    for (let i = 0; i < size; i++) {
+      newArray.push({
+        value: Math.floor(Math.random() * 90) + 10,
+        id: `element-${i}-${Date.now()}`,
+        isComparing: false,
+        isMerging: false,
+        isSorted: false,
+        isActive: false,
+        leftHalf: false,
+        rightHalf: false
+      });
+    }
+    setArray(newArray);
+    resetAnimation();
+  }, [resetAnimation]);
+
+  // Initialize array (dependency included to satisfy exhaustive-deps)
+  useEffect(() => {
+    generateRandomArray();
+  }, [generateRandomArray]);
+
+  // (resetAnimation moved above)
 
   // Generate sorting steps for Merge Sort
   const generateMergeSortSteps = () => {

@@ -27,7 +27,6 @@ export default function PseudocodeBlock({ title, languageLabel = 'Pseudocode', c
     if (typeof highlight === 'number') {
       setCursor(Math.max(0, Math.min(lines.length, highlight)));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [highlight, lines.length]);
 
   useEffect(() => {

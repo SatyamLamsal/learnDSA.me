@@ -1,9 +1,10 @@
+"use client";
 'use client';
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Play, SkipForward, RotateCcw, Binary } from 'lucide-react';
+import { ArrowLeft, Play, SkipForward, RotateCcw } from 'lucide-react';
 import PseudocodeBlock from '@/components/PseudocodeBlock';
 
 type Node = { id: string; freq: number; left?: Node; right?: Node };
@@ -19,7 +20,7 @@ export default function HuffmanCodingPage(){
 
   const run = async () => {
     setRunning(true); setSteps([]);
-    let q = [...queue];
+  const q = [...queue];
     while (q.length>1){
       q.sort((a,b)=>a.freq-b.freq);
       const a = q.shift()!; const b = q.shift()!;
@@ -167,3 +168,4 @@ end procedure`;
     </div>
   );
 }
+

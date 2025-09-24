@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
   Play, 
@@ -10,13 +10,10 @@ import {
   RotateCcw, 
   SkipForward,
   Triangle,
-  ArrowUp,
-  ArrowDown,
+ArrowDown,
   CheckCircle,
-  Clock,
-  BarChart3,
-  Zap,
-  AlertTriangle
+BarChart3,
+AlertTriangle
 } from 'lucide-react';
 
 interface HeapElement {
@@ -60,12 +57,7 @@ const HeapSortPage: React.FC = () => {
   const [currentPhase, setCurrentPhase] = useState<'heapify' | 'sorting' | 'complete'>('heapify');
   const [sortingSteps, setSortingSteps] = useState<SortingStep[]>([]);
 
-  // Initialize array
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
-  const generateRandomArray = (size = 8) => {
+  const generateRandomArray = useCallback((size = 8) => {
     const newArray: HeapElement[] = [];
     for (let i = 0; i < size; i++) {
       newArray.push({
@@ -87,7 +79,7 @@ const HeapSortPage: React.FC = () => {
     setHeap([...newArray]);
     setHeapSize(size);
     resetAnimation();
-  };
+  }, []);
 
   const resetAnimation = () => {
     setIsPlaying(false);
@@ -105,6 +97,9 @@ const HeapSortPage: React.FC = () => {
       isHeapifying: false
     })));
   };
+
+  // Initialize array
+  useEffect(() => { generateRandomArray(); }, [generateRandomArray]);
 
   // Heap utility functions
   const getLeftChild = (i: number) => 2 * i + 1;
@@ -364,7 +359,7 @@ const HeapSortPage: React.FC = () => {
       const step = steps[stepIndex];
       
       // Update array and heap visualization
-      setArray(prev => {
+      setArray(_ => {
         const newArray = [...step.array];
         
         // Reset dynamic states
@@ -760,7 +755,7 @@ const HeapSortPage: React.FC = () => {
                 
                 {/* Index labels */}
                 <div className="flex justify-center space-x-2 mt-2">
-                  {array.map((_, index) => (
+                  {array.map((element, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
                     </div>
@@ -1073,3 +1068,4 @@ function minHeapify(arr, n, i) {
 };
 
 export default HeapSortPage;
+

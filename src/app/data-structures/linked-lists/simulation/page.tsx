@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Plus, Trash2, Search, Play, ChevronRight, RotateCcw, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Plus, Trash2, Search, Play, ChevronRight, Link as LinkIcon } from 'lucide-react';
 
 interface LinkedListNode {
   id: string;

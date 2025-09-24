@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronLeft, ChevronRight, BookOpen, Play, Home, ArrowLeft, Code } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Play, Home, Code } from 'lucide-react';
 import { useDataStructureColor, useAlgorithmColor } from '@/contexts/ThemeContext';
 
 interface NavigationItem {

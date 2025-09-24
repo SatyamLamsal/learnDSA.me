@@ -1,8 +1,9 @@
+"use client";
 'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Search, Target, ArrowLeft, ArrowRight, Zap, Eye, Brain } from 'lucide-react';
+import { BookOpen, Search, ArrowLeft, ArrowRight, Zap, Eye, Brain } from 'lucide-react';
 
 const searchingAlgorithms = [
   {

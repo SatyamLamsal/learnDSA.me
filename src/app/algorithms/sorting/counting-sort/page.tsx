@@ -1,6 +1,7 @@
+"use client";
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, RotateCw, StepForward, Cpu } from 'lucide-react';
@@ -189,3 +190,4 @@ export default function CountingSortPage() {
     </div>
   );
 }
+

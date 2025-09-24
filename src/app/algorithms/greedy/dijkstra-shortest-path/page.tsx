@@ -1,9 +1,10 @@
+"use client";
 'use client';
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Play, SkipForward, RotateCcw, Map } from 'lucide-react';
+import { ArrowLeft, Play, SkipForward, RotateCcw} from 'lucide-react';
 import PseudocodeBlock from '@/components/PseudocodeBlock';
 
 type Edge = { u:number; v:number; w:number };
@@ -86,7 +87,7 @@ end procedure`;
     <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50">
       <div className="container mx-auto px-4 py-12">
         <Link href="/algorithms/greedy" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Greedy</Link>
-        <h1 className="text-4xl font-bold text-slate-800 mb-2">Dijkstra's Shortest Path</h1>
+  <h1 className="text-4xl font-bold text-slate-800 mb-2">Dijkstra&apos;s Shortest Path</h1>
         <p className="text-lg text-slate-600 mb-6">Find shortest paths from a source in graphs with non-negative edge weights. Greedy picks the closest unvisited node; optimality follows from triangle inequality and non-negative edges.</p>
 
         <div className="bg-white rounded-lg shadow p-6 mb-8">
@@ -170,15 +171,15 @@ end procedure`;
           className="mt-12 flex justify-between items-center"
         >
           <Link
-            href="\algorithms\greedy\prim-mst"
+            href="/algorithms/greedy/prim-mst"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
-            Back to Prim's MST
+            Back to Prim&apos;s MST
           </Link>
           
           <Link
-            href="\algorithms\greedy\gas-station"
+            href="/algorithms/greedy/gas-station"
             className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
             Next: Gas Station
@@ -189,3 +190,4 @@ end procedure`;
     </div>
   );
 }
+
