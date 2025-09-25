@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                 <BookOpen className="h-4 w-4 mr-2" />
                 Quick Links
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-gray-400">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -250,7 +250,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Disclaimer */}
-          <div className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500 text-center">
+          <div className="mt-4 pt-4 border-t border-gray-400 text-xs text-gray-400 text-center">
             <p>
               Learn DSA is an educational platform designed to help students and professionals 
               master data structures and algorithms. All content is provided for educational 
