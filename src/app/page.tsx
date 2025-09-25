@@ -171,7 +171,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Centered wrap so last row (with fewer items) is centered, not left-gapped */}
+          <div className="flex flex-wrap justify-center gap-6">
             {dataStructures.map((ds, index) => (
               <motion.div
                 key={ds.path}
@@ -180,16 +181,16 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 w-full sm:w-[300px] md:w-[280px] lg:w-[260px]"
               >
-                <Link href={ds.path}>
+                <Link href={ds.path} className="flex flex-col h-full">
                   <div className={`${ds.color} h-24 flex items-center justify-center relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                     <span className="text-5xl text-white font-bold relative z-10">{ds.icon}</span>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold text-slate-800 mb-3">{ds.name}</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">{ds.description}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed flex-grow">{ds.description}</p>
                     <div className="mt-4 text-blue-600 font-semibold text-sm flex items-center">
                       Learn More →
                     </div>
