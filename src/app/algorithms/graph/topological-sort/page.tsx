@@ -31,7 +31,7 @@ export default function TopoSortOverview(){
         </div>
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16">
-        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2"/>Back: Prim's</Link>
+        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2"/>Back: Prim&apos;s</Link>
   <Link href="/algorithms/graph/strongly-connected-components" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">Next: SCC <ArrowRight className="h-5 w-5 ml-2"/></Link>
       </motion.div>
     </div>
@@ -57,7 +57,7 @@ function ApproachesCard(){
   return <Card>
     <Heading icon={<Layers className="h-6 w-6 text-amber-600"/>}>Core Approaches</Heading>
     <ul className="text-sm text-slate-600 space-y-2 leading-relaxed list-disc list-inside">
-      <li><span className="font-semibold">Kahn's Algorithm:</span> Maintain vertices with in-degree 0 in queue; remove layer by layer.</li>
+      <li><span className="font-semibold">Kahn&apos;s Algorithm:</span> Maintain vertices with in-degree 0 in queue; remove layer by layer.</li>
       <li><span className="font-semibold">DFS Postorder:</span> Reverse finishing times of DFS on DAG.</li>
       <li>Kahn gives natural cycle detection (leftover vertices).</li>
     </ul>
@@ -137,4 +137,4 @@ function NavigationCard(){
   </Card>;
 }
 
-function Metric({color,label,value}:{color:string;label:string;value:string}){ const map:Record<string,string>={amber:'amber',emerald:'emerald',rose:'rose'}; const c=map[color]||'amber'; return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}><div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div><div className="font-mono">{value}</div></div>; }
+function Metric({color,label,value}:{color:string;label:string;value:string}){ const map:Record<string,string>={amber:'amber',emerald:'emerald',rose:'rose'}; const c = map[color] || 'amber'; return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}><div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div><div className="font-mono">{value}</div></div>; }

@@ -54,7 +54,7 @@ function Header(){
   return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mb-10">
     <Link href="/algorithms/graph/dijkstra-shortest-path" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Dijkstra Overview</Link>
     <h1 className="text-4xl font-bold text-slate-800 mb-4 flex items-center gap-3"><span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-blue-600 text-white shadow"><Map className="h-8 w-8"/></span>Dijkstra Theory</h1>
-    <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Dijkstra's algorithm computes single-source shortest paths in graphs with non‑negative edge weights by repeatedly <em>settling</em> the closest unsettled vertex and relaxing its outgoing edges using a priority queue.</p>
+    <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Dijkstra&apos;s algorithm computes single-source shortest paths in graphs with non‑negative edge weights by repeatedly <em>settling</em> the closest unsettled vertex and relaxing its outgoing edges using a priority queue.</p>
   </motion.div>;
 }
 
@@ -67,7 +67,7 @@ function Card({children,title,icon}:{children:React.ReactNode;title:string;icon?
 
 function DefinitionCard(){
   return <Card title="Definition" icon={<Route className="h-5 w-5 text-blue-600"/>}>
-    <p className="text-sm text-slate-600 leading-relaxed">Given a weighted graph G = (V, E) with non‑negative edge weights w(u,v) ≥ 0 and a source vertex s, Dijkstra's algorithm computes the shortest path distance dist[v] from s to every vertex reachable from s. It maintains a <span className="font-medium text-slate-700">frontier</span> of tentative distances and progressively finalizes (settles) the minimum one.</p>
+    <p className="text-sm text-slate-600 leading-relaxed">Given a weighted graph G = (V, E) with non‑negative edge weights w(u,v) ≥ 0 and a source vertex s, Dijkstra&apos;s algorithm computes the shortest path distance dist[v] from s to every vertex reachable from s. It maintains a <span className="font-medium text-slate-700">frontier</span> of tentative distances and progressively finalizes (settles) the minimum one.</p>
   </Card>;
 }
 
@@ -145,7 +145,7 @@ function ApplicationsCard(){
       <li>GPS / road network routing (non‑negative distances)</li>
       <li>Network latency / bandwidth path optimization</li>
       <li>Game AI pathfinding (when weights non‑negative)</li>
-      <li>Preprocessing for Johnson's algorithm (reweight + run)</li>
+      <li>Preprocessing for Johnson&apos;s algorithm (reweight + run)</li>
       <li>Emergency response / logistics planning</li>
       <li>Telecom routing & QoS calculations</li>
     </ul>

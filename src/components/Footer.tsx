@@ -8,7 +8,6 @@ import {
   Twitter, 
   Mail, 
   Heart,
-  ExternalLink,
   BookOpen,
   Code,
   Users,

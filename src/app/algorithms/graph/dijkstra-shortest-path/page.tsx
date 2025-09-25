@@ -16,9 +16,9 @@ export default function DijkstraOverviewPage(){
           <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-blue-600 text-white shadow">
             <Map className="h-8 w-8"/>
           </span>
-          Dijkstra's Shortest Path
+          Dijkstra&apos;s Shortest Path
         </h1>
-        <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Dijkstra's algorithm finds shortest path distances from a single source in a weighted graph with non‑negative edges using a greedy frontier guided by a priority queue that always settles the closest tentative vertex.</p>
+        <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Dijkstra&apos;s algorithm finds shortest path distances from a single source in a weighted graph with non‑negative edges using a greedy frontier guided by a priority queue that always settles the closest tentative vertex.</p>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -35,13 +35,13 @@ export default function DijkstraOverviewPage(){
               <li>Shortest path with non‑negative edge weights</li>
               <li>Routing (road networks, latency graphs)</li>
               <li>Weighted grid pathfinding (terrain cost)</li>
-              <li>As a subroutine in Johnson's algorithm</li>
+              <li>As a subroutine in Johnson&apos;s algorithm</li>
               <li>Incremental expansion for partial queries</li>
             </ul>
           </div>
           <div className="bg-white rounded-2xl shadow-sm p-6">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">Core Idea</h2>
-            <p className="text-sm text-slate-600 leading-relaxed">Maintain a set of settled vertices whose distances are finalized. Keep a priority queue of frontier vertices keyed by tentative dist. Extract the minimum, settle it, and relax all outgoing edges—updating neighbors' tentative distances if a shorter path is found. Non‑negative weights guarantee greedy correctness: once extracted, a vertex cannot later receive a shorter path.</p>
+            <p className="text-sm text-slate-600 leading-relaxed">Maintain a set of settled vertices whose distances are finalized. Keep a priority queue of frontier vertices keyed by tentative dist. Extract the minimum, settle it, and relax all outgoing edges—updating neighbors&apos; tentative distances if a shorter path is found. Non‑negative weights guarantee greedy correctness: once extracted, a vertex cannot later receive a shorter path.</p>
           </div>
         </div>
         <div className="space-y-6">

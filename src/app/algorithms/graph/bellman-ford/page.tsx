@@ -31,7 +31,7 @@ export default function BellmanFordOverviewPage(){
             <ul className="list-disc pl-5 text-sm text-slate-600 space-y-2">
               <li>Graphs with negative edge weights (no requirement of non-negative)</li>
               <li>Need to detect negative weight cycles reachable from source</li>
-              <li>Preparation for Johnson's algorithm (initial reweight phase)</li>
+              <li>Preparation for Johnson&apos;s algorithm (initial reweight phase)</li>
               <li>Currency arbitrage / profit cycle detection (negative log weights)</li>
               <li>Edge list processing where adjacency build is expensive</li>
             </ul>

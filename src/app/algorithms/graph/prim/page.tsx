@@ -12,7 +12,7 @@ export default function PrimOverview(){
           <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-emerald-600 text-white shadow">
             <TreePine className="h-8 w-8"/>
           </span>
-          Prim's Minimum Spanning Tree
+          Prim&apos;s Minimum Spanning Tree
         </h1>
         <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">Tree-expanding greedy MST algorithm leveraging key[] frontier weights and a priority queue to choose the minimum crossing edge each step.</p>
       </motion.div>
@@ -43,7 +43,7 @@ function Heading({icon,children}:{icon:React.ReactNode;children:React.ReactNode}
 function OverviewCard(){
   return <Card>
     <Heading icon={<GitBranch className="h-6 w-6 text-emerald-600"/>}>Overview</Heading>
-    <p className="text-sm text-slate-600 leading-relaxed mb-4">Prim's algorithm grows a <span className="font-semibold text-slate-800">minimum spanning tree</span> from an arbitrary start vertex by repeatedly taking the minimum-weight edge that connects the current tree to a new vertex (the cut frontier). It parallels Dijkstra's style but tracks edge weights instead of distances.</p>
+    <p className="text-sm text-slate-600 leading-relaxed mb-4">Prim&apos;s algorithm grows a <span className="font-semibold text-slate-800">minimum spanning tree</span> from an arbitrary start vertex by repeatedly taking the minimum-weight edge that connects the current tree to a new vertex (the cut frontier). It parallels Dijkstra&apos;s style but tracks edge weights instead of distances.</p>
     <div className="grid md:grid-cols-3 gap-4 text-xs">
       <Metric color="emerald" label="Category" value="Greedy"/>
       <Metric color="sky" label="Structure" value="Growing Tree"/>
@@ -130,7 +130,7 @@ function NavigationCard(){
 }
 
 function Metric({color,label,value}:{color:string;label:string;value:string}){
-  const map:Record<string,string>={emerald:'emerald',sky:'sky',rose:'rose'}; const c = map[color]||'emerald';
+  const map:Record<string,string>={emerald:'emerald',sky:'sky',rose:'rose'}; const c = map[color] || 'emerald';
   return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}>
     <div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div>
     <div className="font-mono">{value}</div>

@@ -127,7 +127,7 @@ function ApplicationsCard(){
     <ul className="list-disc pl-5 text-sm text-slate-600 space-y-2">
       <li>Shortest paths with negative weights (no negative cycles)</li>
       <li>Negative cycle detection (arbitrage, fraud loops)</li>
-      <li>Preprocessing for Johnson's all-pairs algorithm</li>
+      <li>Preprocessing for Johnson&apos;s all-pairs algorithm</li>
       <li>Distance constraints analysis in scheduling</li>
       <li>Evaluating feasibility in difference constraints systems</li>
     </ul>

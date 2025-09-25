@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const algo = getAlgorithm('merge-sort');
 const { prev, next } = getPrevNext('merge-sort');
 
-function StatCard({icon:Icon,title,value,subtitle,color}:{icon:any; title:string; value:string; subtitle:string; color:string;}){
+function StatCard({icon:Icon,title,value,subtitle,color}:{icon:React.ComponentType<{className?: string}>; title:string; value:string; subtitle:string; color:string;}){
   return <div className="bg-white rounded-2xl shadow-xl p-7 text-center">
     <Icon className={`h-12 w-12 mx-auto mb-4 ${color}`} />
     <h3 className="text-xl font-semibold text-slate-800 mb-2">{title}</h3>

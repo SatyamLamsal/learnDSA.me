@@ -12,7 +12,7 @@ export default function KruskalOverview(){
           <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-indigo-600 text-white shadow">
             <Scissors className="h-8 w-8"/>
           </span>
-          Kruskal's Minimum Spanning Tree
+          Kruskal&apos;s Minimum Spanning Tree
         </h1>
         <p className="text-lg text-slate-600 leading-relaxed max-w-3xl">Greedy MST formation by selecting safe edges in non-decreasing weight order validated through Disjoint Set Union cycle tests.</p>
       </motion.div>
@@ -31,7 +31,7 @@ export default function KruskalOverview(){
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16">
         <Link href="\algorithms\graph\floyd-warshall" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2"/>Back: floyd-warshall</Link>
-        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">Next:prim's <ArrowRight className="h-5 w-5 ml-2"/></Link>
+        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">Next:prim&apos;s <ArrowRight className="h-5 w-5 ml-2"/></Link>
       </motion.div>
     </div>
   </div>;
@@ -43,7 +43,7 @@ function Heading({icon,children}:{icon:React.ReactNode;children:React.ReactNode}
 function OverviewCard(){
   return <Card>
     <Heading icon={<GitBranch className="h-6 w-6 text-indigo-600"/>}>Overview</Heading>
-    <p className="text-sm text-slate-600 leading-relaxed mb-4">Kruskal's algorithm builds a <span className="font-semibold text-slate-800">minimum spanning tree</span> by scanning edges in non-decreasing weight order and greedily adding those that do not form a cycle (detected via Disjoint Set Union). It treats the graph as a forest that gradually merges.</p>
+    <p className="text-sm text-slate-600 leading-relaxed mb-4">Kruskal&apos;s algorithm builds a <span className="font-semibold text-slate-800">minimum spanning tree</span> by scanning edges in non-decreasing weight order and greedily adding those that do not form a cycle (detected via Disjoint Set Union). It treats the graph as a forest that gradually merges.</p>
     <div className="grid md:grid-cols-3 gap-4 text-xs">
       <Metric color="indigo" label="Category" value="Greedy"/>
       <Metric color="emerald" label="Structure" value="Forest Merge"/>
@@ -129,7 +129,7 @@ function NavigationCard(){
 }
 
 function Metric({color,label,value}:{color:string;label:string;value:string}){
-  const map:Record<string,string>={indigo:'indigo',emerald:'emerald',rose:'rose'}; const c = map[color]||'indigo';
+  const map:Record<string,string>={indigo:'indigo',emerald:'emerald',rose:'rose'}; const c = map[color] || 'indigo';
   return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}>
     <div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div>
     <div className="font-mono">{value}</div>

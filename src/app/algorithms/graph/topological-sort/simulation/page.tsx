@@ -58,7 +58,7 @@ export default function TopoSortSimulationPage(){
     for(let tries=0; tries<count*2; tries++){ const aIndex=Math.floor(Math.random()*count); const bIndex=aIndex+1+Math.floor(Math.random()*(count-aIndex-1)); if(bIndex>=count) continue; const a=newNodes[aIndex].id; const b=newNodes[bIndex].id; if(newEdges.some(e=> e.from===a && e.to===b)) continue; if(Math.random()<0.5) continue; newEdges.push({id:'e'+(newEdges.length+1), from:a,to:b}); }
     setNodes(newNodes); setEdges(newEdges); setResetKey(k=> k+1); setPlaying(false); setIndex(0); setFrames([]); }
   function introduceCycle(){ // add back edge from later to earlier if possible
-    setEdges(es=> { for(let e of es){ /* check existing */ } const sorted=nodes.slice(); if(sorted.length<2) return es; const a=sorted[sorted.length-1].id; const b=sorted[0].id; if(es.some(e=> e.from===a && e.to===b)) return es; return [...es,{id:'e'+(es.length+1+Math.random()).toString(36).slice(2,6), from:a,to:b}]; }); }
+    setEdges(es=> { for(const e of es){ /* check existing */ } const sorted=nodes.slice(); if(sorted.length<2) return es; const a=sorted[sorted.length-1].id; const b=sorted[0].id; if(es.some(e=> e.from===a && e.to===b)) return es; return [...es,{id:'e'+(es.length+1+Math.random()).toString(36).slice(2,6), from:a,to:b}]; }); }
   function reset(){ randomizeGraph(); }
 
   return <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">

@@ -19,7 +19,7 @@ export default function KruskalTheory(){
   return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50">
   <div className="container max-w-screen-2xl mx-auto px-4 py-12">
       <Link href="/algorithms/graph/kruskal" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
-      <h1 className="text-3xl font-bold text-slate-800 mb-8 flex items-center gap-3"><Scissors className="h-8 w-8 text-indigo-600"/> Kruskal's Algorithm Theory</h1>
+      <h1 className="text-3xl font-bold text-slate-800 mb-8 flex items-center gap-3"><Scissors className="h-8 w-8 text-indigo-600"/> Kruskal&apos;s Algorithm Theory</h1>
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           <Section title="Problem" icon={<GitBranch className="h-6 w-6 text-indigo-600"/>}>
@@ -83,7 +83,7 @@ function Section({title,icon,children}:{title:string;icon:React.ReactNode;childr
 }
 
 function Metric({color,label,value}:{color:string;label:string;value:string}){
-  const map:Record<string,string>={indigo:'indigo',emerald:'emerald',rose:'rose'}; const c=map[color]||'indigo';
+  const map:Record<string,string>={indigo:'indigo',emerald:'emerald',rose:'rose'}; const c = map[color] || 'indigo';
   return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}>
     <div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div>
     <div className="font-mono">{value}</div>

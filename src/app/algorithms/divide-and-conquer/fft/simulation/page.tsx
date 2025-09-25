@@ -86,8 +86,8 @@ export default function FFTSimulation(){
           <div>
             <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Activity className="h-5 w-5"/> Butterfly Computation</h2>
             <ul className="text-xs font-mono bg-slate-900 text-fuchsia-100 rounded p-4 space-y-1">
-              <li>a' = a + w*b</li>
-              <li>b' = a - w*b</li>
+              <li>a&apos; = a + w*b</li>
+              <li>b&apos; = a - w*b</li>
               <li>w = exp(-2*pi*i*j/m)</li>
               <li>m = {`2^stage segment size`}</li>
             </ul>

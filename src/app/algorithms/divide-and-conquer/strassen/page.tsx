@@ -13,7 +13,7 @@ export default function StrassenOverview(){
       {/* Hero */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-12">
         <Link href="/algorithms/divide-and-conquer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>All Divide & Conquer</Link>
-        <h1 className="text-5xl font-extrabold tracking-tight text-slate-800 mb-5"><span className="text-indigo-600">Strassen's</span> Matrix Multiplication</h1>
+        <h1 className="text-5xl font-extrabold tracking-tight text-slate-800 mb-5"><span className="text-indigo-600">Strassen&apos;s</span> Matrix Multiplication</h1>
   <p className="text-xl text-slate-600 max-w-4xl leading-relaxed">Reduce 8 naive block multiplications to <span className="font-semibold text-indigo-700">7 strategically combined</span> products — cutting complexity to <span className="font-semibold text-indigo-700">O(n^(log2 7)) ~ O(n^2.807)</span> by trading multiplies for additions.</p>
       </motion.div>
 

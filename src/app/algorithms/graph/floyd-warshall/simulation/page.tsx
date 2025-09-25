@@ -27,7 +27,7 @@ export default function FloydWarshallSimulation(){
         for(let j=0;j<n;j++){
           const via = (dist[i][k] >= INF || dist[k][j] >= INF)? INF : dist[i][k] + dist[k][j];
           const improved = via < dist[i][j];
-            frames.push({k:k+1,i,j,improved, dist: dist.map(r=> r.slice()), description:`Check i=${i}, j=${j}: current=${fmt(dist[i][j])}, via k=${k} gives ${fmt(via)} ${improved? '→ improvement':''}`, negativeCycle:false});
+          frames.push({k:k+1,i,j,improved, dist: dist.map(r=> r.slice()), description:`Check i=${i}, j=${j}: current=${fmt(dist[i][j])}, via k=${k} gives ${fmt(via)} ${improved? '→ improvement':''}`, negativeCycle:false});
           if(improved){
             dist[i][j]=via;
             frames.push({k:k+1,i,j,improved:true, dist: dist.map(r=> r.slice()), description:`Update dist[${i}][${j}] = ${fmt(via)}`, negativeCycle:false});
@@ -38,7 +38,7 @@ export default function FloydWarshallSimulation(){
     // negative cycle detection
     let neg = false;
     for(let v=0; v<n; v++) if(dist[v][v] < 0){ neg=true; break; }
-    frames.push({k:n,i:-1,j:-1,improved:false, dist: dist.map(r=> r.slice()), description: neg? 'Negative cycle detected (dist[v][v] < 0).':'No negative cycle detected (all dist[v][v] ≥ 0).', negativeCycle:neg});
+    frames.push({k:n,i:-1,j:-1,improved:false, dist: dist.map(r=> r.slice()), description: neg ? 'Negative cycle detected (dist[v][v] < 0).' : 'No negative cycle detected (all dist[v][v] ≥ 0).', negativeCycle:neg});
     return frames;
   },[matrix,n]);
 
@@ -69,7 +69,7 @@ export default function FloydWarshallSimulation(){
               <button onClick={randomize} className="px-4 py-2 rounded-lg bg-rose-600 text-white font-semibold hover:bg-rose-700 inline-flex items-center gap-1"><Shuffle className="h-4 w-4"/>Random</button>
               <button onClick={reset} className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 inline-flex items-center gap-1"><RotateCcw className="h-4 w-4"/>Reset</button>
             </div>
-            <p className="text-[11px] text-slate-500 mb-4">Weights in [-5,9]; '∞' indicates no direct edge. k-iteration groups separate matrix states. Improved entries flash highlight. Negative cycle flagged if any dist[v][v] &lt; 0 at end.</p>
+            <p className="text-[11px] text-slate-500 mb-4">Weights in [-5,9]; ∞ indicates no direct edge. k-iteration groups separate matrix states. Improved entries flash highlight. Negative cycle flagged if any dist[v][v] &lt; 0 at end.</p>
             <MatrixView frame={current} />
           </motion.div>
           <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm border border-indigo-100 p-6">
