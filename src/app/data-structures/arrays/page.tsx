@@ -78,7 +78,7 @@ export default function ArraysPage() {
             className="bg-white rounded-lg p-6 shadow-lg text-center"
           >
             <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">O(1) Access</h3>
+            <h3 className="text-lg font-semibold mb-2 text-slate-600">O(1) Access</h3>
             <p className="text-gray-800 font-medium">Constant time access to any element using its index</p>
           </motion.div>
 
@@ -89,7 +89,7 @@ export default function ArraysPage() {
             className="bg-white rounded-lg p-6 shadow-lg text-center"
           >
             <HardDrive className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Memory Efficient</h3>
+            <h3 className="text-lg font-semibold mb-2 text-slate-600">Memory Efficient</h3>
             <p className="text-gray-800 font-medium">Elements stored in contiguous memory locations</p>
           </motion.div>
 
@@ -100,7 +100,7 @@ export default function ArraysPage() {
             className="bg-white rounded-lg p-6 shadow-lg text-center"
           >
             <BookOpen className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Simple Structure</h3>
+            <h3 className="text-lg font-semibold mb-2 text-slate-600 ">Simple Structure</h3>
             <p className="text-gray-800 font-medium">Easy to understand and implement basic operations</p>
           </motion.div>
 
@@ -111,7 +111,7 @@ export default function ArraysPage() {
             className="bg-white rounded-lg p-6 shadow-lg text-center"
           >
             <Play className="h-12 w-12 text-red-600 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Cache Friendly</h3>
+            <h3 className="text-lg font-semibold mb-2 text-slate-600">Cache Friendly</h3>
             <p className="text-gray-800 font-medium">Sequential access patterns optimize cache performance</p>
           </motion.div>
         </div>
@@ -130,33 +130,33 @@ export default function ArraysPage() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-red-100">
-                  <th className="border border-red-300 px-4 py-3 font-semibold">Operation</th>
-                  <th className="border border-red-300 px-4 py-3 font-semibold">Best Case</th>
-                  <th className="border border-red-300 px-4 py-3 font-semibold">Average Case</th>
-                  <th className="border border-red-300 px-4 py-3 font-semibold">Worst Case</th>
+                  <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Operation</th>
+                  <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Best Case</th>
+                  <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Average Case</th>
+                  <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Worst Case</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-red-300 px-4 py-3">Access</td>
+                  <td className="border border-red-300 px-4 py-3 text-blue-600">Access</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                 </tr>
                 <tr className="bg-gray-50">
-                  <td className="border border-red-300 px-4 py-3">Search</td>
+                  <td className="border border-red-300 px-4 py-3 text-blue-600">Search</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
                   <td className="border border-red-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                 </tr>
                 <tr>
-                  <td className="border border-red-300 px-4 py-3">Insertion</td>
+                  <td className="border border-red-300 px-4 py-3 text-blue-600">Insertion</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
                   <td className="border border-red-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                 </tr>
                 <tr className="bg-gray-50">
-                  <td className="border border-red-300 px-4 py-3">Deletion</td>
+                  <td className="border border-red-300 px-4 py-3 text-blue-600">Deletion</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
                   <td className="border border-red-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
@@ -182,7 +182,7 @@ export default function ArraysPage() {
                 <BookOpen className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Learn Theory</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600" >Learn Theory</h3>
               <p className="text-gray-600">
                 Dive deep into array concepts, implementation details, and real-world applications
               </p>
@@ -200,7 +200,7 @@ export default function ArraysPage() {
                 <Play className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Interactive Simulation</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">Interactive Simulation</h3>
               <p className="text-gray-600">
                 Practice array operations with hands-on interactive exercises and visualizations
               </p>
@@ -218,7 +218,7 @@ export default function ArraysPage() {
                 <BookOpen className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Pseudocode</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">Pseudocode</h3>
               <p className="text-gray-600">
                 Reference common array operations in clean, copyable pseudocode
               </p>

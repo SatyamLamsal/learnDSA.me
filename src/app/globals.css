@@ -42,6 +42,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Global readable defaults without touching every file */
+h1, h2, h3, h4, h5, h6 { color: #0f172a; } /* slate-900 */
+p, li, dt, dd { color: #334155; }          /* slate-700 */
+small, .muted, .text-dim { color: #64748b; } /* slate-500 */
+
+/* Optional: Brighten commonly dim utility classes in LIGHT mode without touching each file.
+   Keeps your existing markup but upgrades visual contrast where text-* utilities were omitted
+   or older content used softer shades by default. */
+@media (prefers-color-scheme: light) {
+  /* Slate palette boosts */
+  .text-slate-500 { color: rgb(75 85 99) !important; }   /* upgrade ~500 → ~600 */
+  .text-slate-600 { color: rgb(55 65 81) !important; }   /* upgrade ~600 → ~700 */
+
+  /* Gray palette boosts */
+  .text-gray-500 { color: rgb(75 85 99) !important; }    /* 500 → 600 */
+  .text-gray-600 { color: rgb(55 65 81) !important; }    /* 600 → 700 */
+}
+
 /* Custom utility classes for compatibility */
 .text-heading-primary {
   color: rgb(17 24 39);

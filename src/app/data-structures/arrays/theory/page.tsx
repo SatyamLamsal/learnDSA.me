@@ -162,7 +162,7 @@ function maxSubarraySum(arr, k) {
           </h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-3">What is an Array?</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">What is an Array?</h3>
               <p className="text-gray-700 leading-relaxed">
                 An array is a collection of elements stored in contiguous memory locations. Each element 
                 can be directly accessed using its index, which represents its position in the array. 
@@ -170,7 +170,7 @@ function maxSubarraySum(arr, k) {
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Key Characteristics</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Key Characteristics</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700">
                 <li><strong>Fixed Size:</strong> In most languages, array size is determined at creation time</li>
                 <li><strong>Homogeneous:</strong> All elements are of the same data type</li>
@@ -194,12 +194,12 @@ function maxSubarraySum(arr, k) {
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Memory Layout & Indexing</h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold mb-3">Memory Allocation</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Memory Allocation</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Arrays store elements in contiguous memory locations. If an array starts at memory address 
                 1000 and each element takes 4 bytes, then:
               </p>
-              <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+              <div className="bg-gray-100 p-4 rounded-lg font-mono text-sm text-red-600">
                 Element[0] → Address: 1000<br/>
                 Element[1] → Address: 1004<br/>
                 Element[2] → Address: 1008<br/>
@@ -207,13 +207,13 @@ function maxSubarraySum(arr, k) {
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Address Calculation Formula</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Address Calculation Formula</h3>
               <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="font-mono text-center text-lg text-blue-800">
+                <p className="font-mono text-center text-lg text-red-800">
                   Address = Base_Address + (Index × Element_Size)
                 </p>
               </div>
-              <p className="text-gray-700 mt-4">
+              <p className="text-gray-700 mt-4 text-blue-600">
                 This formula enables O(1) random access to any element, making arrays highly efficient 
                 for scenarios requiring frequent element access.
               </p>
@@ -238,7 +238,7 @@ function maxSubarraySum(arr, k) {
           <div className="space-y-8">
             {/* Declaration */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Array Declaration</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Array Declaration</h3>
               <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
                 <pre className="text-green-400 text-sm">
                   <code>{codeExamples.declaration}</code>
@@ -248,7 +248,7 @@ function maxSubarraySum(arr, k) {
 
             {/* Basic Operations */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Basic Operations</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Basic Operations</h3>
               <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
                 <pre className="text-green-400 text-sm">
                   <code>{codeExamples.operations}</code>
@@ -274,40 +274,40 @@ function maxSubarraySum(arr, k) {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Time Complexities</h3>
+              <h3 className="text-xl font-semibold mb-4 text-violet-600">Time Complexities</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center p-3 bg-green-50 rounded">
-                  <span className="font-semibold">Access/Update</span>
+                  <span className="font-semibold text-green-600">Access/Update</span>
                   <span className="font-mono text-green-600">O(1)</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-yellow-50 rounded">
-                  <span className="font-semibold">Linear Search</span>
+                  <span className="font-semibold text-yellow-600">Linear Search</span>
                   <span className="font-mono text-yellow-600">O(n)</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-blue-50 rounded">
-                  <span className="font-semibold">Binary Search</span>
+                  <span className="font-semibold text-blue-600">Binary Search</span>
                   <span className="font-mono text-blue-600">O(log n)</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-red-50 rounded">
-                  <span className="font-semibold">Insertion/Deletion</span>
+                  <span className="font-semibold text-red-600">Insertion/Deletion</span>
                   <span className="font-mono text-red-600">O(n)</span>
                 </div>
               </div>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Why These Complexities?</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Why These Complexities?</h3>
               <div className="space-y-4 text-sm">
-                <div className="p-3 border-l-4 border-green-500">
+                <div className="p-3 border-l-4 border-green-500 text-green-600">
                   <strong>O(1) Access:</strong> Direct calculation using index formula
                 </div>
-                <div className="p-3 border-l-4 border-yellow-500">
+                <div className="p-3 border-l-4 border-yellow-500 text-yellow-500">
                   <strong>O(n) Search:</strong> May need to check every element
                 </div>
-                <div className="p-3 border-l-4 border-blue-500">
+                <div className="p-3 border-l-4 border-blue-500 text-blue-500">
                   <strong>O(log n) Binary Search:</strong> Eliminates half the elements each step
                 </div>
-                <div className="p-3 border-l-4 border-red-500">
+                <div className="p-3 border-l-4 border-red-500 text-red-500">
                   <strong>O(n) Insert/Delete:</strong> May need to shift all elements
                 </div>
               </div>
@@ -367,8 +367,8 @@ function maxSubarraySum(arr, k) {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Common Use Cases</h3>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Common Use Cases</h3>
+              <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <div>
@@ -397,8 +397,8 @@ function maxSubarraySum(arr, k) {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Industry Examples</h3>
-              <ul className="space-y-3">
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Industry Examples</h3>
+              <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <div>
