@@ -211,7 +211,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-4">Ready to Start Learning?</h2>
+            <h2 className="text-4xl font-bold mb-4 text-white">Ready to Start Learning?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Join thousands of students mastering data structures and algorithms through 
               interactive theory, visualizations, and simulations.
