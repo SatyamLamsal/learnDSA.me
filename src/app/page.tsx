@@ -1,57 +1,72 @@
 "use client";
-'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Code, Target} from 'lucide-react';
+import { BookOpen, Play, Code, Target } from 'lucide-react';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 
 const dataStructures = [
   {
+    id: 'arrays-overview',
     name: 'Arrays',
     description: 'Learn about contiguous memory storage and indexing',
     path: '/data-structures/arrays',
+    category: 'data-structures',
     color: 'bg-red-500',
     icon: '[]'
   },
   {
+    id: 'linked-lists-overview',
     name: 'Linked Lists',
     description: 'Understand dynamic memory allocation and pointers',
     path: '/data-structures/linked-lists',
+    category: 'data-structures',
     color: 'bg-blue-500',
     icon: '→'
   },
   {
+    id: 'stacks-overview',
     name: 'Stacks',
     description: 'Master Last-In-First-Out (LIFO) data structure',
     path: '/data-structures/stacks',
+    category: 'data-structures',
     color: 'bg-green-500',
     icon: '⇈'
   },
   {
+    id: 'queues-overview',
     name: 'Queues',
     description: 'Explore First-In-First-Out (FIFO) operations',
     path: '/data-structures/queues',
+    category: 'data-structures',
     color: 'bg-yellow-500',
     icon: '⇄'
   },
   {
+    id: 'trees-overview',
     name: 'Trees',
     description: 'Dive into hierarchical data organization',
     path: '/data-structures/trees',
+    category: 'data-structures',
     color: 'bg-purple-500',
     icon: '⚘'
   },
   {
+    id: 'graphs-overview',
     name: 'Graphs',
     description: 'Understand networks and relationships',
     path: '/data-structures/graphs',
+    category: 'data-structures',
     color: 'bg-indigo-500',
     icon: '◉'
   },
   {
+    id: 'hash-tables-overview',
     name: 'Hash Tables',
     description: 'Learn efficient key-value pair storage',
     path: '/data-structures/hash-tables',
+    category: 'data-structures',
     color: 'bg-pink-500',
     icon: '#'
   }
@@ -181,15 +196,33 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 w-full sm:w-[300px] md:w-[280px] lg:w-[260px]"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 w-full sm:w-[300px] md:w-[280px] lg:w-[260px] relative"
               >
+                <div className="absolute top-4 right-4 z-20">
+                  <BookmarkButton 
+                    topicId={ds.id}
+                    topicType="overview"
+                    category={ds.category}
+                    title={ds.name}
+                    url={ds.path}
+                  />
+                </div>
                 <Link href={ds.path} className="flex flex-col h-full">
                   <div className={`${ds.color} h-24 flex items-center justify-center relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                     <span className="text-5xl text-white font-bold relative z-10">{ds.icon}</span>
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-slate-800 mb-3">{ds.name}</h3>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xl font-bold text-slate-800">{ds.name}</h3>
+                      <ProgressIndicator 
+                        topicId={ds.id}
+                        topicType="overview" 
+                        category={ds.category}
+                        title={ds.name}
+                        className="w-6 h-6"
+                      />
+                    </div>
                     <p className="text-slate-600 text-sm leading-relaxed flex-grow">{ds.description}</p>
                     <div className="mt-4 text-blue-600 font-semibold text-sm flex items-center">
                       Learn More →

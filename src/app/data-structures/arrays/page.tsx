@@ -1,9 +1,10 @@
 "use client";
-'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, HardDrive, ArrowRight } from 'lucide-react';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 
 
 const ArrayVisualization = () => {
@@ -44,8 +45,23 @@ export default function ArraysPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-12 relative"
         >
+          <div className="absolute top-0 right-0 flex items-center space-x-4">
+            <ProgressIndicator 
+              topicId="arrays-main"
+              topicType="theory"
+              category="data-structures"
+              title="Arrays Data Structure"
+            />
+            <BookmarkButton 
+              topicId="arrays-main"
+              topicType="theory"
+              category="data-structures"
+              title="Arrays Data Structure"
+              url="/data-structures/arrays"
+            />
+          </div>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
             <span className="text-red-600">Arrays</span> Data Structure
           </h1>

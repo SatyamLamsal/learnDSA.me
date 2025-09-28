@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, Home, BookOpen, Play } from 'lucide-react';
+import { SignInButton } from '@/components/auth/SignInButton';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +57,8 @@ const Navigation = () => {
               <Play size={18} />
               <span>Algorithms</span>
             </Link>
+            
+            <SignInButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,6 +91,9 @@ const Navigation = () => {
             <Link href="/algorithms" className="block py-2 hover:text-blue-400 transition-colors">
               Algorithms
             </Link>
+            <div className="pt-4 border-t border-slate-700">
+              <SignInButton />
+            </div>
           </div>
         )}
       </div>

@@ -1,61 +1,74 @@
 "use client";
-'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, Target, ArrowRight } from 'lucide-react';
 import { Colors } from '../../theme/colors';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 
 const algorithms = [
   {
+    id: 'sorting-overview',
     name: 'Sorting Algorithms',
     description: 'Learn bubble sort, merge sort, quick sort, and more',
     path: '/algorithms/sorting',
+    category: 'algorithms',
     color: 'bg-blue-500',
     icon: '↕️',
     complexity: 'O(n log n)',
     difficulty: 'Beginner to Advanced'
   },
   {
+    id: 'searching-overview',
     name: 'Searching Algorithms',
     description: 'Master linear search, binary search, and search optimizations',
     path: '/algorithms/searching',
+    category: 'algorithms',
     color: 'bg-green-500',
     icon: '🔍',
     complexity: 'O(log n)',
     difficulty: 'Beginner'
   },
   {
+    id: 'graph-overview',
     name: 'Graph Algorithms',
     description: 'Explore BFS, DFS, Dijkstra, and shortest path algorithms',
     path: '/algorithms/graph',
+    category: 'algorithms',
     color: 'bg-purple-500',
     icon: '🌐',
     complexity: 'O(V + E)',
     difficulty: 'Intermediate'
   },
   {
+    id: 'dynamic-programming-overview',
     name: 'Dynamic Programming',
     description: 'Solve complex problems by breaking them into subproblems',
     path: '/algorithms/dynamic-programming',
+    category: 'algorithms',
     color: 'bg-orange-500',
     icon: '🧩',
     complexity: 'Varies',
     difficulty: 'Advanced'
   },
   {
+    id: 'greedy-overview',
     name: 'Greedy Algorithms',
     description: 'Make locally optimal choices for global optimization',
     path: '/algorithms/greedy',
+    category: 'algorithms',
     color: 'bg-red-500',
     icon: '🎯',
     complexity: 'O(n log n)',
     difficulty: 'Intermediate'
   },
   {
+    id: 'divide-conquer-overview',
     name: 'Divide & Conquer',
     description: 'Break problems into smaller subproblems recursively',
     path: '/algorithms/divide-and-conquer',
+    category: 'algorithms',
     color: 'bg-indigo-500',
     icon: '⚔️',
     complexity: 'O(n log n)',
@@ -147,14 +160,32 @@ export default function AlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
               >
+                <div className="absolute top-4 right-4 z-20">
+                  <BookmarkButton 
+                    topicId={algorithm.id}
+                    topicType="overview"
+                    category={algorithm.category}
+                    title={algorithm.name}
+                    url={algorithm.path}
+                  />
+                </div>
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-24 flex items-center justify-center`}>
                     <span className="text-4xl">{algorithm.icon}</span>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">{algorithm.name}</h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold text-slate-800">{algorithm.name}</h3>
+                      <ProgressIndicator 
+                        topicId={algorithm.id}
+                        topicType="overview" 
+                        category={algorithm.category}
+                        title={algorithm.name}
+                        className="w-6 h-6"
+                      />
+                    </div>
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     <div className="flex justify-between items-center text-xs text-slate-500">
                       <span className="bg-gray-100 px-2 py-1 rounded">{algorithm.complexity}</span>
