@@ -59,7 +59,7 @@ export function useBookmarks() {
         // Merge local bookmarks if switching from local to authenticated
         const localData = localStorage.getItem(LOCAL_STORAGE_KEY)
         if (localData) {
-          const localBookmarks = JSON.parse(localData)
+          const _localBookmarks = JSON.parse(localData)
           // TODO: Merge local bookmarks with server bookmarks
           localStorage.removeItem(LOCAL_STORAGE_KEY)
         }

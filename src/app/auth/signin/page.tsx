@@ -6,9 +6,10 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { AlertCircle, ArrowLeft, Trophy } from 'lucide-react'
+import type { ClientSafeProvider } from 'next-auth/react'
 
 export default function SignInPage() {
-  const [providers, setProviders] = useState<Record<string, any> | null>(null)
+  const [providers, setProviders] = useState<Record<string, ClientSafeProvider> | null>(null)
   const [error, setError] = useState('')
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/'

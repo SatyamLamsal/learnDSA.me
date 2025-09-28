@@ -14,6 +14,8 @@ import {
   BarChart3,
   AlertTriangle
 } from 'lucide-react';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface ArrayElement {
   value: number;
@@ -386,11 +388,29 @@ const MergeSortPage: React.FC = () => {
             <ArrowLeft className="h-5 w-5 mr-2" />
             Back to Sorting Algorithms
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Merge Sort</h1>
-          <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
-            A stable, divide-and-conquer algorithm that consistently delivers O(n log n) performance. 
-            It divides the array into halves, sorts them recursively, and merges the sorted halves.
-          </p>
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Merge Sort</h1>
+              <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
+                A stable, divide-and-conquer algorithm that consistently delivers O(n log n) performance. 
+                It divides the array into halves, sorts them recursively, and merges the sorted halves.
+              </p>
+            </div>
+            <div className="flex items-center space-x-3 ml-6">
+              <BookmarkButton 
+                topicId="merge-sort"
+                topicType="algorithm"
+                category="sorting"
+                title="Merge Sort"
+                url="/algorithms/sorting/merge-sort"
+              />
+              <ProgressIndicator 
+                topicId="merge-sort"
+                topicType="algorithm"
+                category="sorting"
+              />
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-8">

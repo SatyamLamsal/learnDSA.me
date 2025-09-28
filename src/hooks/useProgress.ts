@@ -61,7 +61,7 @@ export function useProgress() {
         // Merge local progress if switching from local to authenticated
         const localData = localStorage.getItem(LOCAL_STORAGE_KEY)
         if (localData) {
-          const localProgress = JSON.parse(localData)
+          const _localProgress = JSON.parse(localData)
           // TODO: Merge local progress with server progress
           localStorage.removeItem(LOCAL_STORAGE_KEY)
         }

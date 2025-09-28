@@ -273,7 +273,7 @@ export default function DynamicProgrammingPage() {
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Memoization vs Tabulation</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {dpTechniques.map((technique, index) => (
+            {dpTechniques.map((technique, _index) => (
               <div key={technique.name} className="border rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-slate-800 mb-3">{technique.name}</h3>
                 <p className="text-slate-600 mb-4">{technique.description}</p>
@@ -432,7 +432,7 @@ export default function DynamicProgrammingPage() {
               { step: '2', title: 'Define State', desc: 'What parameters uniquely identify a subproblem?' },
               { step: '3', title: 'Write Recurrence', desc: 'Express solution in terms of smaller subproblems' },
               { step: '4', title: 'Implement & Optimize', desc: 'Choose memoization or tabulation, optimize space' }
-            ].map((item, index) => (
+            ].map((item, _index) => (
               <div key={item.step} className="text-center">
                 <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-orange-600 font-bold">{item.step}</span>

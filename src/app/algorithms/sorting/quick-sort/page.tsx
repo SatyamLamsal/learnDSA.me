@@ -14,6 +14,8 @@ import {
 BarChart3,
 AlertTriangle
 } from 'lucide-react';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface ArrayElement {
   value: number;
@@ -349,11 +351,29 @@ const QuickSortPage: React.FC = () => {
             <ArrowLeft className="h-5 w-5 mr-2" />
             Back to Sorting Algorithms
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Quick Sort</h1>
-          <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
-            A highly efficient divide-and-conquer algorithm that picks a pivot element and partitions 
-            the array around it. Generally performs better than other O(n log n) algorithms in practice.
-          </p>
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Quick Sort</h1>
+              <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
+                A highly efficient divide-and-conquer algorithm that picks a pivot element and partitions 
+                the array around it. Generally performs better than other O(n log n) algorithms in practice.
+              </p>
+            </div>
+            <div className="flex items-center space-x-3 ml-6">
+              <BookmarkButton 
+                topicId="quick-sort"
+                topicType="algorithm"
+                category="sorting"
+                title="Quick Sort"
+                url="/algorithms/sorting/quick-sort"
+              />
+              <ProgressIndicator 
+                topicId="quick-sort"
+                topicType="algorithm"
+                category="sorting"
+              />
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-4 gap-8">

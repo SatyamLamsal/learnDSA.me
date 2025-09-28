@@ -374,7 +374,7 @@ export default function DivideAndConquerPage() {
           </div>
 
           <div className="space-y-6">
-            {masterTheoremCases.map((caseData, index) => (
+            {masterTheoremCases.map((caseData, _index) => (
               <div key={caseData.case} className="border-l-4 border-blue-500 pl-6">
                 <h3 className="text-lg font-semibold text-blue-700 mb-2">{caseData.case}</h3>
                 <div className="grid md:grid-cols-2 gap-4">

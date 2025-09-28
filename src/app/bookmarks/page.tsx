@@ -54,7 +54,7 @@ export default function BookmarksPage() {
             {!session && (
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
                 <p className="text-yellow-800 text-sm">
-                  <strong>Note:</strong> You're viewing locally saved bookmarks. Sign in to sync across devices.
+                  <strong>Note:</strong> You&apos;re viewing locally saved bookmarks. Sign in to sync across devices.
                 </p>
               </div>
             )}
