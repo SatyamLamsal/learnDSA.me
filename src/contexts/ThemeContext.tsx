@@ -137,7 +137,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   const removeOverride = (cssVar: string) => {
     setOverrides(prev => {
-      const { [cssVar]: _removed, ...rest } = prev;
+      const { [cssVar]: _, ...rest } = prev;
       return rest;
     });
   };

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useProgress } from '@/hooks/useProgress'
 import { CheckCircle, Clock, Trophy } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -15,15 +16,30 @@ interface ProgressIndicatorProps {
 export function ProgressIndicator({ 
   topicId, 
   topicType, 
-  category, 
-  title,
+  category,
   className = '' 
 }: ProgressIndicatorProps) {
-  const { getTopicProgress, updateProgress } = useProgress()
+  const { getTopicProgress, updateProgress, loading } = useProgress()
   const progress = getTopicProgress(topicId)
+  const [isUpdating, setIsUpdating] = useState(false)
 
-  const handleMarkComplete = () => {
-    updateProgress(topicId, topicType, category, !progress?.completed)
+  const handleMarkComplete = async () => {
+    setIsUpdating(true)
+    try {
+      await updateProgress(topicId, topicType, category, !progress?.completed)
+    } catch (error) {
+      console.error('Failed to update progress:', error)
+    } finally {
+      setIsUpdating(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className={`flex items-center space-x-2 ${className}`}>
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+      </div>
+    )
   }
 
   return (
@@ -40,12 +56,17 @@ export function ProgressIndicator({
       ) : (
         <motion.button
           onClick={handleMarkComplete}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors"
+          disabled={isUpdating}
+          whileHover={{ scale: isUpdating ? 1 : 1.05 }}
+          whileTap={{ scale: isUpdating ? 1 : 0.95 }}
+          className={`flex items-center px-3 py-1 rounded-full text-sm transition-colors ${
+            isUpdating 
+              ? 'bg-gray-100 text-gray-500 cursor-not-allowed' 
+              : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
+          }`}
         >
           <CheckCircle className="h-4 w-4 mr-1" />
-          Mark Complete
+          {isUpdating ? 'Updating...' : 'Mark Complete'}
         </motion.button>
       )}
       

@@ -1,16 +1,15 @@
 'use client'
 
-import { getProviders, signIn, getSession } from 'next-auth/react'
+import { getProviders, signIn } from 'next-auth/react'
 import { useEffect, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { AlertCircle, ArrowLeft, Trophy } from 'lucide-react'
 
 export default function SignInPage() {
-  const [providers, setProviders] = useState<any>(null)
+  const [providers, setProviders] = useState<Record<string, any> | null>(null)
   const [error, setError] = useState('')
-  const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/'
   const errorParam = searchParams.get('error')

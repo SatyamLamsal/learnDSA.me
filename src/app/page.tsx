@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookOpen, Play, Code, Target } from 'lucide-react';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
-import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { CompletionCardWrapper } from '@/components/progress/CompletionCardWrapper';
+import { useProgress } from '@/hooks/useProgress';
 
 const dataStructures = [
   {
@@ -96,6 +97,8 @@ const features = [
 ];
 
 export default function Home() {
+  const { getTopicProgress } = useProgress()
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Hero Section */}
@@ -196,8 +199,12 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 w-full sm:w-[300px] md:w-[280px] lg:w-[260px] relative"
               >
+                <CompletionCardWrapper
+                  topicId={ds.id}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden w-full sm:w-[300px] md:w-[280px] lg:w-[260px] relative"
+                >
+                {/* Bookmark Button - Top Right */}
                 <div className="absolute top-4 right-4 z-20">
                   <BookmarkButton 
                     topicId={ds.id}
@@ -213,22 +220,24 @@ export default function Home() {
                     <span className="text-5xl text-white font-bold relative z-10">{ds.icon}</span>
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="mb-3">
                       <h3 className="text-xl font-bold text-slate-800">{ds.name}</h3>
-                      <ProgressIndicator 
-                        topicId={ds.id}
-                        topicType="overview" 
-                        category={ds.category}
-                        title={ds.name}
-                        className="w-6 h-6"
-                      />
                     </div>
                     <p className="text-slate-600 text-sm leading-relaxed flex-grow">{ds.description}</p>
-                    <div className="mt-4 text-blue-600 font-semibold text-sm flex items-center">
-                      Learn More →
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="text-blue-600 font-semibold text-sm flex items-center">
+                        Learn More →
+                      </div>
+                      {getTopicProgress(ds.id)?.completed && (
+                        <div className="flex items-center text-green-600 text-xs font-medium">
+                          <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
+                          Completed
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Link>
+                </CompletionCardWrapper>
               </motion.div>
             ))}
           </div>

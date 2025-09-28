@@ -54,7 +54,9 @@ export function useProgress() {
       const response = await fetch('/api/progress')
       if (response.ok) {
         const data = await response.json()
-        setProgress(data)
+        // Handle both array response and object with progress property
+        const progressData = Array.isArray(data) ? data : (data.progress || [])
+        setProgress(progressData)
         
         // Merge local progress if switching from local to authenticated
         const localData = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -88,6 +90,10 @@ export function useProgress() {
       lastVisited: new Date().toISOString()
     }
 
+    // Immediately update local state for better UX
+    const newProgress = [...progress.filter(p => p.topicId !== topicId), progressItem]
+    setProgress(newProgress)
+
     if (session?.user) {
       // Save to server
       try {
@@ -104,15 +110,20 @@ export function useProgress() {
         })
 
         if (response.ok) {
-          await fetchProgress() // Refresh progress
+          // Don't refetch, just trust our local update
+          console.log('Progress saved to server')
+        } else {
+          console.error('Failed to save progress to server')
+          // Revert local changes if server save failed
+          await fetchProgress()
         }
       } catch (error) {
         console.error('Failed to update progress:', error)
+        // Revert local changes if request failed
+        await fetchProgress()
       }
     } else {
       // Save to local storage
-      const newProgress = [...progress.filter(p => p.id !== progressItem.id), progressItem]
-      setProgress(newProgress)
       saveLocalProgress(newProgress)
     }
   }

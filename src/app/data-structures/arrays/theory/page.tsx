@@ -1,11 +1,18 @@
 "use client";
-'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Code, Clock, BookOpen } from 'lucide-react';
+import { usePageTracking } from '@/hooks/usePageTracking';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 
 export default function ArraysTheoryPage() {
+  // Track this page visit
+  usePageTracking({
+    topicId: 'arrays-theory',
+    topicType: 'theory',
+    category: 'data-structures'
+  });
   const codeExamples = {
     declaration: `// Array Declaration in Different Languages
 
@@ -118,9 +125,16 @@ function maxSubarraySum(arr, k) {
             Back to Arrays Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Arrays: Theory & Implementation</h1>
-          <p className="text-xl text-slate-600 max-w-3xl">
-            Master the fundamentals of arrays, from basic operations to advanced techniques and real-world applications.
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-xl text-slate-600 max-w-3xl">
+              Master the fundamentals of arrays, from basic operations to advanced techniques and real-world applications.
+            </p>
+            <ProgressIndicator 
+              topicId="arrays-theory"
+              topicType="theory"
+              category="data-structures"
+            />
+          </div>
         </motion.div>
 
         {/* Table of Contents */}

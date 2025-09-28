@@ -1,12 +1,13 @@
 'use client'
 
 import { signIn, signOut, useSession } from 'next-auth/react'
-import { User, LogOut, BookmarkCheck, Clock, Trophy } from 'lucide-react'
+import { User, LogOut, BookmarkCheck, Trophy } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 import { useProgress } from '@/hooks/useProgress'
 import { useBookmarks } from '@/hooks/useBookmarks'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function SignInButton({ className = '' }: { className?: string }) {
   const { data: session, status } = useSession()
@@ -39,8 +40,29 @@ export function SignInButton({ className = '' }: { className?: string }) {
   }
 
   if (session?.user) {
+    // Define specific topic IDs for accurate progress calculation
+    const dataStructureTopics = [
+      'arrays-overview', 'linked-lists-overview', 'stacks-overview', 
+      'queues-overview', 'trees-overview', 'graphs-overview', 'hash-tables-overview'
+    ]
+    const algorithmTopics = [
+      'sorting-overview', 'searching-overview', 'dynamic-programming-overview',
+      'divide-and-conquer-overview', 'greedy-overview', 'graph-algorithms-overview'
+    ]
+    
     const dsProgress = getCategoryProgress('data-structures')
     const algProgress = getCategoryProgress('algorithms')
+    
+    // Calculate completion based on specific topics
+    const dsCompleted = dataStructureTopics.filter(topicId => 
+      dsProgress.find(p => p.topicId === topicId)?.completed
+    ).length
+    const algCompleted = algorithmTopics.filter(topicId => 
+      algProgress.find(p => p.topicId === topicId)?.completed
+    ).length
+    
+    const dsPercentage = Math.round((dsCompleted / dataStructureTopics.length) * 100)
+    const algPercentage = Math.round((algCompleted / algorithmTopics.length) * 100)
     
     return (
       <div className={`relative ${className}`} ref={dropdownRef}>
@@ -110,11 +132,11 @@ export function SignInButton({ className = '' }: { className?: string }) {
                       <div className="w-16 bg-gray-200 rounded-full h-2">
                         <div 
                           className="bg-red-500 h-2 rounded-full transition-all" 
-                          style={{ width: `${Math.round((dsProgress.filter(p => p.completed).length / Math.max(dsProgress.length, 1)) * 100)}%` }}
+                          style={{ width: `${dsPercentage}%` }}
                         />
                       </div>
                       <span className="text-xs font-medium text-gray-500">
-                        {Math.round((dsProgress.filter(p => p.completed).length / Math.max(dsProgress.length, 1)) * 100)}%
+                        {dsPercentage}%
                       </span>
                     </div>
                   </div>
@@ -124,11 +146,11 @@ export function SignInButton({ className = '' }: { className?: string }) {
                       <div className="w-16 bg-gray-200 rounded-full h-2">
                         <div 
                           className="bg-blue-500 h-2 rounded-full transition-all" 
-                          style={{ width: `${Math.round((algProgress.filter(p => p.completed).length / Math.max(algProgress.length, 1)) * 100)}%` }}
+                          style={{ width: `${algPercentage}%` }}
                         />
                       </div>
                       <span className="text-xs font-medium text-gray-500">
-                        {Math.round((algProgress.filter(p => p.completed).length / Math.max(algProgress.length, 1)) * 100)}%
+                        {algPercentage}%
                       </span>
                     </div>
                   </div>
@@ -139,10 +161,13 @@ export function SignInButton({ className = '' }: { className?: string }) {
                     <BookmarkCheck className="h-4 w-4 mr-1" />
                     <span>{bookmarks.length} bookmarks</span>
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{dsProgress.reduce((sum, p) => sum + (p.timeSpent || 0), 0) + algProgress.reduce((sum, p) => sum + (p.timeSpent || 0), 0)}min learned</span>
-                  </div>
+                  <Link 
+                    href="/bookmarks"
+                    className="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    View All →
+                  </Link>
                 </div>
               </div>
 
