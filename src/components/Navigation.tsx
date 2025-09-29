@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Home, BookOpen, Play } from 'lucide-react';
+import { Menu, X, Home, BookOpen, Play, Map } from 'lucide-react';
 import { SignInButton } from '@/components/auth/SignInButton';
 
 const Navigation = () => {
@@ -31,6 +31,11 @@ const Navigation = () => {
             <Link href="/" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
               <Home size={18} />
               <span>Home</span>
+            </Link>
+            
+            <Link href="/learning-path" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
+              <Map size={18} />
+              <span>Learning Path</span>
             </Link>
             
             <div className="relative group">
@@ -75,6 +80,9 @@ const Navigation = () => {
           <div className="md:hidden bg-slate-800 rounded-lg mb-4 p-4">
             <Link href="/" className="block py-2 hover:text-blue-400 transition-colors">
               Home
+            </Link>
+            <Link href="/learning-path" className="block py-2 hover:text-blue-400 transition-colors">
+              Learning Path
             </Link>
             <div className="py-2">
               <span className="text-gray-100 font-semibold">Data Structures</span>

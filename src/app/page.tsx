@@ -124,7 +124,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+            <Link href="/learning-path" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
               Start Learning
             </Link>
             <Link href="/algorithms" className="border-2 border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
@@ -259,7 +259,7 @@ export default function Home() {
               interactive theory, visualizations, and simulations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/data-structures/arrays" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
+              <Link href="/learning-path" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
                 Begin Your Journey
               </Link>
               <Link href="/algorithms" className="border-2 border-blue-300 hover:border-blue-200 text-blue-100 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg inline-block">
