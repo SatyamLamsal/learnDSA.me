@@ -2,23 +2,21 @@
 
 import { useState } from 'react'
 import { useProgress } from '@/hooks/useProgress'
-import { CheckCircle, Clock } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface SectionProgressIndicatorProps {
   moduleId: string
   sectionId: string
-  sectionName: string
   className?: string
 }
 
 export function SectionProgressIndicator({ 
   moduleId,
   sectionId, 
-  sectionName,
   className = '' 
 }: SectionProgressIndicatorProps) {
-  const { getTopicProgress, updateProgress, updateModuleProgress, loading } = useProgress()
+  const { getTopicProgress, updateProgress, loading } = useProgress()
   const fullSectionId = `${moduleId}-${sectionId}`
   const sectionProgress = getTopicProgress(fullSectionId)
   const [isUpdating, setIsUpdating] = useState(false)

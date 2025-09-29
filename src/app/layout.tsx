@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthContextProvider } from "@/contexts/AuthContext";
+import { ClientLayout } from "@/components/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,11 +76,13 @@ export default function RootLayout({
       >
         <AuthContextProvider>
           <ThemeProvider>
-            <Navigation />
-            <main className="min-h-screen">
-              {children}
-            </main>
-            <Footer />
+            <ClientLayout>
+              <Navigation />
+              <main className="min-h-screen">
+                {children}
+              </main>
+              <Footer />
+            </ClientLayout>
           </ThemeProvider>
         </AuthContextProvider>
       </body>

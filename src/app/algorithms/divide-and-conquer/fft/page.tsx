@@ -4,7 +4,7 @@ import { getAlgorithm, getPrevNext } from '../dcAlgorithms';
 import { ArrowLeft, ArrowRight, Waves, Signal, Activity, Clock, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const algo = getAlgorithm('fft');
+const _algo = getAlgorithm('fft');
 const { prev, next } = getPrevNext('fft');
 
 export default function FFTOverview(){

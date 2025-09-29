@@ -7,14 +7,12 @@ import { useSession } from 'next-auth/react'
 
 interface ModuleBookmarkButtonProps {
   moduleId: string
-  moduleName: string
   moduleUrl: string
   className?: string
 }
 
 export function ModuleBookmarkButton({
   moduleId,
-  moduleName,
   moduleUrl,
   className = ''
 }: ModuleBookmarkButtonProps) {
@@ -28,7 +26,7 @@ export function ModuleBookmarkButton({
     if (isBookmarked) {
       await removeBookmark(moduleId)
     } else {
-      await addModuleBookmark(moduleId, moduleName, moduleUrl)
+      await addModuleBookmark(moduleId, `Module ${moduleId}`, moduleUrl)
     }
   }
 

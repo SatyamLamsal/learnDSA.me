@@ -4,7 +4,7 @@ import { getAlgorithm, getPrevNext } from '../dcAlgorithms';
 import { ArrowLeft, ArrowRight, Grid3x3, Cpu, Layers, Calculator, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const algo = getAlgorithm('strassen');
+const _algo = getAlgorithm('strassen');
 const { prev, next } = getPrevNext('strassen');
 
 export default function StrassenOverview(){

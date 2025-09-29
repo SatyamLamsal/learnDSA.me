@@ -1,6 +1,5 @@
 import { NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "./prisma"
 
 export const authOptions: NextAuthOptions = {
@@ -12,7 +11,7 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   callbacks: {
-    async session({ session, token }) {
+    async session({ session, token: _token }) {
       console.log('🔄 Session callback:', session?.user?.email);
       if (session?.user?.email) {
         // Manually sync user data with database
@@ -38,11 +37,11 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account, profile: _profile }) {
       console.log('🔐 SignIn callback:', user?.email, account?.provider);
       return true;
     },
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account: _account }) {
       console.log('🎯 JWT callback:', token?.email);
       // Store user info in token for session callback
       if (user) {

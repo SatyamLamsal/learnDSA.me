@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { CheckCircle, Clock, BookOpen, Play, Star, Users, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckCircle, Clock, BookOpen, Play, Star, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
 
@@ -334,11 +334,9 @@ export default function LearningPathPage() {
                         <div className="flex items-center gap-2">
                           <ModuleProgressIndicator 
                             moduleId={module.id}
-                            moduleName={module.title}
                           />
                           <ModuleBookmarkButton
                             moduleId={module.id}
-                            moduleName={module.title}
                             moduleUrl={`/learning-path/${module.id}`}
                           />
                         </div>
@@ -397,8 +395,8 @@ export default function LearningPathPage() {
                         onClick={() => {
                           const moduleRoutes: { [key: string]: string } = {
                             'foundations': '/learning-path/foundations',
-                            'arrays': '/data-structures/arrays',
-                            'searching-sorting': '/algorithms/sorting',
+                            'arrays': '/learning-path/module-2',
+                            'searching-sorting': '/learning-path/module-3',
                             'linked-lists': '/data-structures/linked-lists',
                             'stacks-queues': '/data-structures/stacks',
                             'trees': '/data-structures/trees',

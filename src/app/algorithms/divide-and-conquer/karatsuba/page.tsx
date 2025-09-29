@@ -4,7 +4,7 @@ import { getAlgorithm, getPrevNext } from '../dcAlgorithms';
 import { ArrowLeft, ArrowRight, SplitSquareHorizontal, Calculator, Layers, Activity, Sigma, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const algo = getAlgorithm('karatsuba');
+const _algo = getAlgorithm('karatsuba');
 const { prev, next } = getPrevNext('karatsuba');
 
 export default function KaratsubaOverview(){

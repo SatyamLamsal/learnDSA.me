@@ -4,7 +4,7 @@ import { getAlgorithm, getPrevNext } from '../dcAlgorithms';
 import { ArrowLeft, ArrowRight, Activity, Clock, Database, Shield, Layers, Info, Sigma } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const algo = getAlgorithm('merge-sort');
+const _algo = getAlgorithm('merge-sort');
 const { prev, next } = getPrevNext('merge-sort');
 
 function StatCard({icon:Icon,title,value,subtitle,color}:{icon:React.ComponentType<{className?: string}>; title:string; value:string; subtitle:string; color:string;}){

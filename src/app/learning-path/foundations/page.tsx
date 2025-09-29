@@ -296,9 +296,8 @@ export default function ComprehensiveFoundationsPage() {
           {/* Progress Indicator in Sidebar */}
           <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">Module Progress</h3>
-            <ModuleProgressIndicator 
+            <ModuleProgressIndicator
               moduleId="foundations"
-              moduleName="DSA Foundations"
             />
             <p className="text-xs text-gray-600 mt-2">
               Section {sections.findIndex(s => s.id === activeSection) + 1} of {sections.length}
@@ -307,9 +306,8 @@ export default function ComprehensiveFoundationsPage() {
 
           {/* Bookmark Button in Sidebar */}
           <div className="mt-6">
-            <ModuleBookmarkButton 
+            <ModuleBookmarkButton
               moduleId="foundations"
-              moduleName="DSA Foundations"
               moduleUrl="/learning-path/foundations"
             />
           </div>
@@ -430,7 +428,6 @@ export default function ComprehensiveFoundationsPage() {
                 <SectionProgressIndicator 
                   moduleId="foundations"
                   sectionId="why-study"
-                  sectionName="Why Study DSA"
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-8">
@@ -479,7 +476,6 @@ export default function ComprehensiveFoundationsPage() {
                 <SectionProgressIndicator 
                   moduleId="foundations"
                   sectionId="data-information"
-                  sectionName="Data vs Information"
                 />
               </div>
               <div className="grid lg:grid-cols-3 gap-8">

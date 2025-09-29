@@ -4,7 +4,7 @@ import { getAlgorithm, getPrevNext } from '../dcAlgorithms';
 import { ArrowLeft, ArrowRight, Ruler, Radar, Layers, Clock, Database, BoxSelect } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const algo = getAlgorithm('closest-pair');
+const _algo = getAlgorithm('closest-pair');
 const { prev, next } = getPrevNext('closest-pair');
 
 export default function ClosestPairOverview(){

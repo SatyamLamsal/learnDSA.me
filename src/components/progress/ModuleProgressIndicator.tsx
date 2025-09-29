@@ -2,18 +2,16 @@
 
 import { useState } from 'react'
 import { useProgress } from '@/hooks/useProgress'
-import { CheckCircle, Clock, Trophy } from 'lucide-react'
+import { CheckCircle, Clock } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface ModuleProgressIndicatorProps {
   moduleId: string
-  moduleName: string
   className?: string
 }
 
 export function ModuleProgressIndicator({ 
   moduleId, 
-  moduleName,
   className = '' 
 }: ModuleProgressIndicatorProps) {
   const { getTopicProgress, updateModuleProgress, isModuleProgressed, loading } = useProgress()

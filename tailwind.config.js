@@ -1,6 +1,6 @@
-const { colors } = require("./src/theme/pixe.js");
+import { colors } from "./src/theme/pixe.js";
 
-module.exports = {
+export default {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}"

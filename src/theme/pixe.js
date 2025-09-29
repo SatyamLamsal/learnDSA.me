@@ -1,5 +1,5 @@
 // src/theme/pixe.js
-exports.colors = {
+export const colors = {
   primary: "#1E90FF",
   cardHeader: "#292020ff",
   secondary: "#FF69B4",
