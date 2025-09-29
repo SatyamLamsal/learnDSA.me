@@ -24,6 +24,22 @@ export const metadata: Metadata = {
   authors: [{ name: "Learn DSA Team" }],
   creator: "Learn DSA",
   publisher: "Learn DSA",
+  icons: {
+    icon: [
+      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon.ico', sizes: 'any' }
+    ],
+    apple: [
+      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/icons/favicon.ico',
+      }
+    ]
+  },
   openGraph: {
     title: "Learn DSA - Master Data Structures & Algorithms",
     description: "Interactive platform to master DSA with theory, visualizations, and simulations",
@@ -31,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Learn DSA",
     images: [
       {
-        url: "https://learndsa.me/og-image.png",
+        url: "/logos/main-logo.png",
         width: 1200,
         height: 630,
         alt: "Learn DSA - Interactive Data Structures and Algorithms Learning Platform",
@@ -44,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Learn DSA - Master Data Structures & Algorithms",
     description: "Interactive platform to master DSA with theory, visualizations, and simulations",
-    images: ["https://learndsa.me/twitter-image.png"],
+    images: ["/logos/main-logo.png"],
     creator: "@learndsa",
   },
   robots: {
@@ -71,6 +87,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3b82f6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="LearnDSA" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Script+MT+Bold&display=swap" rel="stylesheet" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >

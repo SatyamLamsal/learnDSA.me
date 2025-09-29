@@ -22,8 +22,13 @@ const Navigation = () => {
         <nav className="bg-slate-900 text-white shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors">
-            Learn DSA
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <span 
+              className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors"
+              style={{ fontFamily: '"Script MT Bold", cursive, serif' }}
+            >
+              Learn DSA
+            </span>
           </Link>
           
           {/* Desktop Menu */}
