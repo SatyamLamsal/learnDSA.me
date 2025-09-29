@@ -118,6 +118,28 @@ export function useBookmarks() {
     }
   }
 
+  // NEW: Atomic module bookmark
+  const addModuleBookmark = async (
+    moduleId: string,
+    title: string,
+    url: string
+  ) => {
+    return await addBookmark(moduleId, 'module', 'learning-path', title, url)
+  }
+
+  // NEW: Check if module is bookmarked (if any section is bookmarked)
+  const isModuleBookmarked = (moduleId: string) => {
+    // Check if the module itself is bookmarked
+    const moduleBookmarked = bookmarks.some(b => b.topicId === moduleId && b.topicType === 'module')
+    if (moduleBookmarked) return true
+    
+    // Check if any section in the module is bookmarked
+    const sections = ['introduction', 'data-structures', 'algorithms', 'complexity', 'adt']
+    return sections.some(sectionId => {
+      return bookmarks.some(b => b.topicId === `${moduleId}-${sectionId}`)
+    })
+  }
+
   const removeBookmark = async (topicId: string) => {
     if (session?.user) {
       try {
@@ -150,6 +172,8 @@ export function useBookmarks() {
     bookmarks,
     loading,
     addBookmark,
+    addModuleBookmark,
+    isModuleBookmarked,
     removeBookmark,
     isBookmarked,
     refetch: fetchBookmarks

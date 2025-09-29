@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { CheckCircle, Clock, BookOpen, Play, Star, Users, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
+import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
 
 interface LearningModule {
   id: string;
@@ -328,9 +330,18 @@ export default function LearningPathPage() {
                         <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(module.difficulty)}`}>
                           {module.difficulty}
                         </span>
-                        {module.completed && (
-                          <CheckCircle className="w-5 h-5 text-green-500" />
-                        )}
+                        {/* Atomic Module Progress & Bookmark */}
+                        <div className="flex items-center gap-2">
+                          <ModuleProgressIndicator 
+                            moduleId={module.id}
+                            moduleName={module.title}
+                          />
+                          <ModuleBookmarkButton
+                            moduleId={module.id}
+                            moduleName={module.title}
+                            moduleUrl={`/learning-path/${module.id}`}
+                          />
+                        </div>
                       </div>
                       <p className="text-gray-600 mb-2">{module.description}</p>
                       

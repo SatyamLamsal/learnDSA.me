@@ -128,6 +128,39 @@ export function useProgress() {
     }
   }
 
+  // NEW: Atomic module progress update
+  const updateModuleProgress = async (
+    moduleId: string,
+    completed: boolean = false,
+    timeSpent: number = 0
+  ) => {
+    // Update the main module
+    await updateProgress(moduleId, 'module', 'learning-path', completed, timeSpent)
+    
+    // If marking as completed, also mark all sections as completed
+    if (completed) {
+      const sections = ['introduction', 'data-structures', 'algorithms', 'complexity', 'adt']
+      for (const sectionId of sections) {
+        await updateProgress(
+          `${moduleId}-${sectionId}`,
+          'section',
+          'learning-path',
+          true,
+          0
+        )
+      }
+    }
+  }
+
+  // NEW: Check if any section in module is completed
+  const isModuleProgressed = (moduleId: string) => {
+    const sections = ['introduction', 'data-structures', 'algorithms', 'complexity', 'adt']
+    return sections.some(sectionId => {
+      const sectionProgress = getTopicProgress(`${moduleId}-${sectionId}`)
+      return sectionProgress?.completed
+    })
+  }
+
   const getTopicProgress = (topicId: string) => {
     return progress.find(p => p.topicId === topicId)
   }
@@ -146,6 +179,8 @@ export function useProgress() {
     progress,
     loading,
     updateProgress,
+    updateModuleProgress,
+    isModuleProgressed,
     getTopicProgress,
     getCategoryProgress,
     getTotalProgress,

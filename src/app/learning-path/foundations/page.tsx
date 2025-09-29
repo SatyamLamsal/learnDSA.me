@@ -34,6 +34,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator'
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton'
+import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator'
+import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton'
+import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator'
 
 const algorithmDesignTechniques = [
   { 
@@ -293,10 +296,9 @@ export default function ComprehensiveFoundationsPage() {
           {/* Progress Indicator in Sidebar */}
           <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">Module Progress</h3>
-            <ProgressIndicator 
-              topicId="foundations-comprehensive" 
-              topicType="foundations"
-              category="learning-path"
+            <ModuleProgressIndicator 
+              moduleId="foundations"
+              moduleName="DSA Foundations"
             />
             <p className="text-xs text-gray-600 mt-2">
               Section {sections.findIndex(s => s.id === activeSection) + 1} of {sections.length}
@@ -305,12 +307,10 @@ export default function ComprehensiveFoundationsPage() {
 
           {/* Bookmark Button in Sidebar */}
           <div className="mt-6">
-            <BookmarkButton 
-              topicId="foundations-module"
-              topicType="module"
-              category="learning-path"
-              title="DSA Foundations"
-              url="/learning-path/foundations"
+            <ModuleBookmarkButton 
+              moduleId="foundations"
+              moduleName="DSA Foundations"
+              moduleUrl="/learning-path/foundations"
             />
           </div>
 
@@ -422,10 +422,17 @@ export default function ComprehensiveFoundationsPage() {
           >
             {/* Why Study DSA */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                <Target className="w-8 h-8 mr-3 text-blue-600" />
-                Why Study Data Structures and Algorithms?
-              </h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                  <Target className="w-8 h-8 mr-3 text-blue-600" />
+                  Why Study Data Structures and Algorithms?
+                </h2>
+                <SectionProgressIndicator 
+                  moduleId="foundations"
+                  sectionId="why-study"
+                  sectionName="Why Study DSA"
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -464,10 +471,17 @@ export default function ComprehensiveFoundationsPage() {
 
             {/* Data vs Information */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                <Info className="w-8 h-8 mr-3 text-purple-600" />
-                Understanding Data and Information
-              </h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                  <Info className="w-8 h-8 mr-3 text-purple-600" />
+                  Understanding Data and Information
+                </h2>
+                <SectionProgressIndicator 
+                  moduleId="foundations"
+                  sectionId="data-information"
+                  sectionName="Data vs Information"
+                />
+              </div>
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-1">
                   <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
