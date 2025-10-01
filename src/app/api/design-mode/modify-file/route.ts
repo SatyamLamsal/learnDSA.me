@@ -50,85 +50,70 @@ export async function POST(request: NextRequest) {
 }
 
 async function modifyPageContent(content: string, elementInfo: any): Promise<string> {
-  const { styles, tagName, className, textContent } = elementInfo;
-  
+  const { styles, tagName, className, textContent } = sanitizeElementInfo(elementInfo);
+
+  // Only allow whitelisted style props and defined values
+  const safeStyles = filterAllowedStyles(styles);
+  if (Object.keys(safeStyles).length === 0) return content;
+
   let modifiedContent = content;
   let hasModifications = false;
 
   // Strategy 1: Find by className and add/update style prop
   if (className) {
     const classNames = className.split(' ').filter(Boolean);
-    
     for (const cls of classNames) {
-      // Look for className usage and add style prop
-      const classNameRegex = new RegExp(
-        `className=['"\`]([^'"\`]*\\b${escapeRegex(cls)}\\b[^'"\`]*)['"\`](?!\\s*style=)`,
+      // Add style if missing
+      const addRegex = new RegExp(
+        `className=["'\`]([^"'\`]*\\b${escapeRegex(cls)}\\b[^"'\`]*)["'\`](?!\\s*style=)`,
         'g'
       );
-      
-      modifiedContent = modifiedContent.replace(classNameRegex, (match) => {
+      modifiedContent = modifiedContent.replace(addRegex, (match) => {
         hasModifications = true;
-        const styleString = generateStyleString(styles);
-        return match + ` style={${styleString}}`;
+        return match + ` style={${styleObjectToString(safeStyles)}}`;
       });
 
-      // Update existing style props
-      const existingStyleRegex = new RegExp(
-        `className=['"\`]([^'"\`]*\\b${escapeRegex(cls)}\\b[^'"\`]*)['"\`]\\s*style=\\{([^}]+)\\}`,
+      // Merge if style exists
+      const updateRegex = new RegExp(
+        `className=["'\`]([^"'\`]*\\b${escapeRegex(cls)}\\b[^"'\`]*)["'\`]\\s*style=\\{([^}]+)\\}`,
         'g'
       );
-      
-      modifiedContent = modifiedContent.replace(existingStyleRegex, (match, classMatch, existingStyle) => {
+      modifiedContent = modifiedContent.replace(updateRegex, (_m, classMatch, existing) => {
         hasModifications = true;
-        const mergedStyle = mergeStyles(existingStyle, styles);
-        return `className="${classMatch.trim()}" style={${mergedStyle}}`;
+        const merged = mergeStyleStrings(existing, safeStyles);
+        return `className="${classMatch.trim()}" style={${styleObjectToString(merged)}}`;
       });
     }
   }
 
-  // Strategy 2: Find by text content and wrap in styled element
-  if (textContent && textContent.length > 5 && !hasModifications) {
-    // Clean the text for searching
-    const cleanText = textContent.trim().replace(/\s+/g, ' ');
-    
-    // Look for the exact text in JSX
-    const textRegex = new RegExp(
-      `(?<!<[^>]*>)\\b${escapeRegex(cleanText)}\\b(?![^<]*>)`,
-      'g'
-    );
-    
-    modifiedContent = modifiedContent.replace(textRegex, (match) => {
+  // Strategy 2: Find by exact text content (fallback)
+  if (!hasModifications && textContent && textContent.length > 3) {
+    const clean = textContent.trim().replace(/\s+/g, ' ');
+    const textRegex = new RegExp(`(>\s*)${escapeRegex(clean)}(\s*<)`, 'g');
+    modifiedContent = modifiedContent.replace(textRegex, (_m, before, after) => {
       hasModifications = true;
-      const styleString = generateStyleString(styles);
-      return `<span style={${styleString}}>${match}</span>`;
+      return `${before}<span style={${styleObjectToString(safeStyles)}}>${clean}</span>${after}`;
     });
   }
 
-  // Strategy 3: Find by tag + class combination
-  if (tagName && className && !hasModifications) {
+  // Strategy 3: tag + class combo
+  if (!hasModifications && tagName && className) {
     const tag = tagName.toLowerCase();
-    const firstClass = className.split(' ')[0];
-    
+    const firstClass = className.split(' ').filter(Boolean)[0];
     if (firstClass) {
       const tagClassRegex = new RegExp(
-        `<${tag}([^>]*className=['"\`][^'"\`]*\\b${escapeRegex(firstClass)}\\b[^'"\`]*['"\`][^>]*)>`,
+        `<${tag}([^>]*className=["'\`][^"'\`]*\\b${escapeRegex(firstClass)}\\b[^"'\`]*["'\`][^>]*)>`,
         'g'
       );
-      
-      modifiedContent = modifiedContent.replace(tagClassRegex, (match, attributes) => {
+      modifiedContent = modifiedContent.replace(tagClassRegex, (match, attrs) => {
         hasModifications = true;
-        const styleString = generateStyleString(styles);
-        
-        if (attributes.includes('style=')) {
-          // Update existing style
-          return match.replace(/style=\{([^}]+)\}/, (styleMatch, existingStyle) => {
-            const mergedStyle = mergeStyles(existingStyle, styles);
-            return `style={${mergedStyle}}`;
+        if (/style=\{[^}]+\}/.test(attrs)) {
+          return match.replace(/style=\{([^}]+)\}/, (_sm, ex) => {
+            const merged = mergeStyleStrings(ex, safeStyles);
+            return `style={${styleObjectToString(merged)}}`;
           });
-        } else {
-          // Add new style
-          return match.replace('>', ` style={${styleString}}>`);
         }
+        return match.replace('>', ` style={${styleObjectToString(safeStyles)}}>`);
       });
     }
   }
@@ -136,37 +121,57 @@ async function modifyPageContent(content: string, elementInfo: any): Promise<str
   return modifiedContent;
 }
 
-function generateStyleString(styles: any): string {
-  const validStyles = Object.entries(styles)
-    .filter(([_, value]) => value && value !== 'inherit' && value !== 'transparent')
-    .map(([key, value]) => `${key}: '${value}'`)
-    .join(', ');
-  
-  return `{ ${validStyles} }`;
+function sanitizeElementInfo(info: any) {
+  return {
+    tagName: String(info?.tagName || ''),
+    className: String(info?.className || ''),
+    textContent: String(info?.textContent || ''),
+    styles: info?.styles || {}
+  };
 }
 
-function mergeStyles(existingStyle: string, newStyles: any): string {
-  // Parse existing styles (simple approach)
-  const existing = existingStyle.trim();
-  const newStyleString = generateStyleString(newStyles);
-  
-  if (existing === '{}') {
-    return newStyleString;
+const ALLOWED_PROPS = new Set(['color', 'backgroundColor', 'fontFamily', 'fontSize', 'fontWeight']);
+
+function filterAllowedStyles(styles: Record<string, any>): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(styles || {})) {
+    if (!ALLOWED_PROPS.has(k)) continue;
+    if (v === undefined || v === null || v === '' || v === 'inherit') continue;
+    out[k] = String(v);
   }
-  
-  // Simple merge - add new styles to existing
-  const existingWithoutBraces = existing.slice(1, -1).trim();
-  const newWithoutBraces = newStyleString.slice(1, -1).trim();
-  
-  if (existingWithoutBraces && newWithoutBraces) {
-    return `{ ${existingWithoutBraces}, ${newWithoutBraces} }`;
-  } else if (newWithoutBraces) {
-    return newStyleString;
-  } else {
-    return existing;
-  }
+  return out;
 }
 
-function escapeRegex(string: string): string {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function styleObjectToString(obj: Record<string, string>): string {
+  const pairs = Object.entries(obj).map(([k, v]) => `${k}: '${escapeSingleQuotes(v)}'`);
+  return `{ ${pairs.join(', ')} }`;
+}
+
+function mergeStyleStrings(existing: string, add: Record<string, string>): Record<string, string> {
+  const parsed = parseStyleString(existing);
+  // Override with new values
+  for (const [k, v] of Object.entries(add)) parsed[k] = v;
+  return parsed;
+}
+
+function parseStyleString(styleStr: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  if (!styleStr) return out;
+  // Extract key: 'value' or key: "value"
+  const regex = /([\w-]+)\s*:\s*['"]([^'"\\]*(?:\\.[^'"\\]*)*)['"]/g;
+  let m: RegExpExecArray | null;
+  while ((m = regex.exec(styleStr)) !== null) {
+    const key = m[1];
+    const raw = m[2].replace(/\\(['"])/g, '$1');
+    out[key] = raw;
+  }
+  return out;
+}
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function escapeSingleQuotes(v: string): string {
+  return v.replace(/'/g, "\\'");
 }
