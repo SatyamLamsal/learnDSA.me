@@ -160,29 +160,129 @@ const DesignMode: React.FC<DesignModeProps> = ({ children }) => {
 
   return (
     <>
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        @keyframes slideDown {
+          from { transform: translateY(-100%); }
+          to { transform: translateY(0); }
+        }
+      `}</style>
+      
       {children}
       
-      {/* Toggle Button */}
+      {/* Toggle Button - More Prominent */}
       <button
         onClick={() => setIsActive(!isActive)}
         style={{
           position: 'fixed',
-          top: '20px',
+          bottom: '20px',
           right: '20px',
           zIndex: 9999,
           background: isActive ? '#ef4444' : '#3b82f6',
           color: 'white',
-          border: 'none',
-          borderRadius: '12px',
-          padding: '12px 20px',
+          border: '3px solid white',
+          borderRadius: '50%',
+          width: '70px',
+          height: '70px',
           fontWeight: 'bold',
           cursor: 'pointer',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-          fontSize: '14px'
+          boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+          fontSize: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.3s ease',
+          animation: isActive ? 'none' : 'pulse 2s infinite'
         }}
+        title={isActive ? 'Exit Design Mode' : 'Enter Design Mode'}
+        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
+        onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
       >
-        {isActive ? '🎨 Exit Design' : '🎨 Design Mode'}
+        {isActive ? '✕' : '🎨'}
       </button>
+
+      {/* Design Mode Overlay Indicator */}
+      {isActive && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            right: '0',
+            zIndex: 9997,
+            background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)',
+            color: 'white',
+            padding: '12px',
+            textAlign: 'center',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            animation: 'slideDown 0.3s ease'
+          }}
+        >
+          🎨 DESIGN MODE ACTIVE - Click any element to edit its style
+        </div>
+      )}
+
+      {/* Helper Panel - Shows when design mode is active but no element selected */}
+      {isActive && !selectedElement && (
+        <div
+          style={{
+            position: 'fixed',
+            left: '20px',
+            top: '80px',
+            zIndex: 9998,
+            background: 'linear-gradient(135deg, #1e293b, #334155)',
+            border: '2px solid #facc15',
+            borderRadius: '16px',
+            padding: '24px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+            maxWidth: '350px',
+            color: '#f1f5f9'
+          }}
+        >
+          <div style={{
+            fontSize: '20px',
+            fontWeight: '800',
+            color: '#facc15',
+            marginBottom: '16px',
+            textAlign: 'center'
+          }}>
+            🎨 Design Mode Instructions
+          </div>
+          <div style={{ fontSize: '14px', lineHeight: '1.6' }}>
+            <div style={{ marginBottom: '12px' }}>
+              <strong style={{ color: '#facc15' }}>1.</strong> Click any element on the page
+            </div>
+            <div style={{ marginBottom: '12px' }}>
+              <strong style={{ color: '#facc15' }}>2.</strong> Use the style panel to modify:
+              <ul style={{ marginLeft: '20px', marginTop: '8px' }}>
+                <li>• Text color</li>
+                <li>• Background color</li>
+                <li>• Font family</li>
+              </ul>
+            </div>
+            <div>
+              <strong style={{ color: '#facc15' }}>3.</strong> Changes are saved automatically to your files!
+            </div>
+          </div>
+          <div style={{
+            marginTop: '16px',
+            padding: '12px',
+            background: 'rgba(59, 130, 246, 0.1)',
+            borderRadius: '8px',
+            fontSize: '12px',
+            textAlign: 'center',
+            color: '#93c5fd'
+          }}>
+            Hover over elements to see them highlighted
+          </div>
+        </div>
+      )}
 
       {/* Design Panel */}
       {isActive && selectedElement && (
