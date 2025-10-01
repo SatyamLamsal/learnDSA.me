@@ -7,193 +7,35 @@ import { parse } from '@babel/parser';
 const b = recast.types.builders;
 
 export async function POST(request: NextRequest) {
-  // Only allow in development
   if (process.env.NODE_ENV !== 'development') {
     return NextResponse.json({ error: 'Not available in production' }, { status: 403 });
   }
-
   try {
     const elementInfo = await request.json();
-    
     if (!elementInfo || !elementInfo.styles) {
       return NextResponse.json({ error: 'Missing element info or styles' }, { status: 400 });
     }
-
-    // Path to the current page.tsx
     const pagePath = join(process.cwd(), 'src', 'app', 'page.tsx');
-    
-    // Read current file content
     const fileContent = await readFile(pagePath, 'utf8');
-
-    // Modify using AST for safety
     const modifiedContent = await modifyPageContentAST(fileContent, elementInfo);
-
     if (modifiedContent && modifiedContent !== fileContent) {
-      // Write the modified content back
       await writeFile(pagePath, modifiedContent, 'utf8');
-      
-      console.log(`✅ Modified page.tsx for element: ${elementInfo.tagName || 'unknown'}`);
-      
-      return NextResponse.json({
-        success: true,
-        message: 'Page modified successfully',
-        filePath: 'src/app/page.tsx',
-        changes: 'Applied inline styles'
-      });
-    } else {
-      return NextResponse.json({
-        success: false,
-        error: 'No matching element found to modify'
-      });
+      return NextResponse.json({ success: true, filePath: 'src/app/page.tsx' });
     }
-
+    return NextResponse.json({ success: false, error: 'No matching element found to modify' });
   } catch (error) {
     console.error('Error modifying file:', error);
     return NextResponse.json({ error: 'Failed to modify file' }, { status: 500 });
   }
 }
 
-async function modifyPageContentAST(content: string, elementInfo: any): Promise<string | null> {
-  const { styles, tagName, className, textContent } = sanitizeElementInfo(elementInfo);
-  let safeStyles = filterAllowedStyles(styles);
-
-  // Early exit if nothing to apply
-  if (Object.keys(safeStyles).length === 0) return null;
-
-  // Parse TSX using Babel via Recast to preserve formatting
-  const ast = recast.parse(content, {
-    parser: {
-      parse: (source: string) =>
-        parse(source, {
-          sourceType: 'module',
-          plugins: ['typescript', 'jsx'],
-        }),
-    },
-  });
-
-  let changed = false;
-
-  recast.types.visit(ast, {
-    // Use loose typing to avoid build-time type dependency on recast internals
-    visitJSXElement(path: any) {
-      const opening = path.node.openingElement;
-      const name = opening.name.type === 'JSXIdentifier' ? opening.name.name : null;
-
-      // Match by tag if provided
-      if (tagName && name && name.toLowerCase() !== String(tagName).toLowerCase()) {
-        return this.traverse(path);
-      }
-
-      // Get className string literal if present
-      const clsAttr = opening.attributes.find(
-        (a: any) => a.type === 'JSXAttribute' && a.name?.name === 'className'
-      ) as any;
-
-      let classStr: string | null = null;
-      if (clsAttr && clsAttr.value) {
-        if (clsAttr.value.type === 'StringLiteral') classStr = clsAttr.value.value;
-        if (clsAttr.value.type === 'JSXExpressionContainer' && clsAttr.value.expression.type === 'StringLiteral') {
-          classStr = clsAttr.value.expression.value;
-        }
-      }
-
-      // If className filter provided, require at least one class to match
-      if (className) {
-        const required = String(className).split(/\s+/).filter(Boolean);
-        if (!classStr) return this.traverse(path);
-        const hasAny = required.some((c) => new RegExp(`(^|\n|\t|\s)${escapeRegex(c)}(\n|\t|\s|$)`).test(classStr!));
-        if (!hasAny) return this.traverse(path);
-      }
-
-      // Fallback: match textContent if provided and not already matched by class
-      if (!className && textContent) {
-        const wanted = String(textContent).trim().replace(/\s+/g, ' ');
-        const hasText = path.node.children.some((ch: any) =>
-          (ch.type === 'JSXText' && ch.value.trim().replace(/\s+/g, ' ') === wanted)
-        );
-        if (!hasText) return this.traverse(path);
-      }
-
-      // Gradient guard: if class has gradient text, remove color from styles
-      if (classStr && /\bbg-clip-text\b/.test(classStr) && /\btext-transparent\b/.test(classStr)) {
-        const { color, ...rest } = safeStyles;
-        safeStyles = rest;
-      }
-
-      if (Object.keys(safeStyles).length === 0) return this.traverse(path);
-
-      // Find style attribute
-      const styleAttrIndex = opening.attributes.findIndex(
-        (a: any) => a.type === 'JSXAttribute' && a.name?.name === 'style'
-      );
-
-      if (styleAttrIndex >= 0) {
-        const styleAttr: any = opening.attributes[styleAttrIndex];
-        if (
-          styleAttr.value &&
-          styleAttr.value.type === 'JSXExpressionContainer' &&
-          styleAttr.value.expression.type === 'ObjectExpression'
-        ) {
-          const obj = styleAttr.value.expression;
-          const existingMap = new Map<string, any>();
-          for (const prop of obj.properties) {
-            if (prop.type === 'ObjectProperty' && prop.key.type === 'Identifier') {
-              existingMap.set(prop.key.name, prop);
-            }
-          }
-          // Merge values
-          for (const [k, v] of Object.entries(safeStyles)) {
-            const lit = b.stringLiteral(String(v));
-            if (existingMap.has(k)) {
-              const p: any = existingMap.get(k);
-              p.value = lit;
-            } else {
-              obj.properties.push(b.objectProperty(b.identifier(k), lit));
-            }
-          }
-          changed = true;
-        }
-        // If style is non-object expression, skip to avoid unsafe edits
-      } else {
-        // Create a new style object literal
-        const props = Object.entries(safeStyles).map(([k, v]) =>
-          b.objectProperty(b.identifier(k), b.stringLiteral(String(v)))
-        );
-        const jsxAttr = b.jsxAttribute(
-          b.jsxIdentifier('style'),
-          b.jsxExpressionContainer(b.objectExpression(props))
-        );
-        opening.attributes.push(jsxAttr);
-        changed = true;
-      }
-
-      return false; // don't traverse into children after modification
-    },
-  });
-
-  if (!changed) return null;
-
-  const output = recast.print(ast, { quote: 'single' }).code;
-
-  // Validate by parsing again to ensure we didn't corrupt JSX
-  try {
-    recast.parse(output, {
-      parser: { parse: (source: string) => parse(source, { sourceType: 'module', plugins: ['typescript', 'jsx'] }) },
-    });
-  } catch (e) {
-    console.error('AST output failed to parse, aborting write:', e);
-    return null;
-  }
-
-  return output;
-}
-
 function sanitizeElementInfo(info: any) {
   return {
-    tagName: String(info?.tagName || ''),
+    tagName: String(info?.tagName || '').toLowerCase(),
     className: String(info?.className || ''),
+    id: String(info?.id || ''),
     textContent: String(info?.textContent || ''),
-    styles: info?.styles || {}
+    styles: info?.styles || {},
   };
 }
 
@@ -209,35 +51,136 @@ function filterAllowedStyles(styles: Record<string, any>): Record<string, string
   return out;
 }
 
-function styleObjectToString(obj: Record<string, string>): string {
-  const pairs = Object.entries(obj).map(([k, v]) => `${k}: '${escapeSingleQuotes(v)}'`);
-  return `{ ${pairs.join(', ')} }`;
-}
-
-// Legacy regex helpers kept for potential future utilities
-function mergeStyleStrings(existing: string, add: Record<string, string>): Record<string, string> {
-  const parsed = parseStyleString(existing);
-  for (const [k, v] of Object.entries(add)) parsed[k] = v;
-  return parsed;
-}
-
-function parseStyleString(styleStr: string): Record<string, string> {
-  const out: Record<string, string> = {};
-  if (!styleStr) return out;
-  const regex = /([\w-]+)\s*:\s*['"]([^'"\\]*(?:\\.[^'"\\]*)*)['"]/g;
-  let m: RegExpExecArray | null;
-  while ((m = regex.exec(styleStr)) !== null) {
-    const key = m[1];
-    const raw = m[2].replace(/\\(['"]) /g, '$1');
-    out[key] = raw;
+function baseTagName(node: any): string | null {
+  if (!node) return null;
+  if (node.type === 'JSXIdentifier') return String(node.name || '').toLowerCase();
+  if (node.type === 'JSXMemberExpression') {
+    const prop = node.property;
+    if (prop && prop.type === 'JSXIdentifier') return String(prop.name || '').toLowerCase();
   }
-  return out;
+  return null;
+}
+
+function getStaticClassText(attrValue: any): string {
+  if (!attrValue) return '';
+  if (attrValue.type === 'StringLiteral') return attrValue.value || '';
+  if (attrValue.type === 'JSXExpressionContainer') {
+    const expr = attrValue.expression;
+    if (!expr) return '';
+    if (expr.type === 'StringLiteral') return expr.value || '';
+    if (expr.type === 'TemplateLiteral') {
+      return expr.quasis.map((q: any) => q.value?.cooked || '').join(' ');
+    }
+    const collectBinary = (e: any): string => {
+      if (!e) return '';
+      if (e.type === 'StringLiteral') return e.value || '';
+      if (e.type === 'TemplateLiteral') return e.quasis.map((q: any) => q.value?.cooked || '').join(' ');
+      if (e.type === 'BinaryExpression' && e.operator === '+') {
+        return `${collectBinary(e.left)} ${collectBinary(e.right)}`.trim();
+      }
+      return '';
+    };
+    return collectBinary(expr);
+  }
+  return '';
+}
+
+function staticHasAnyToken(staticText: string, tokens: string[]): boolean {
+  if (!staticText) return false;
+  const words = new Set(staticText.split(/\s+/).filter(Boolean));
+  return tokens.some(t => words.has(t));
+}
+
+async function modifyPageContentAST(content: string, elementInfo: any): Promise<string | null> {
+  const { styles, tagName, className, id, textContent } = sanitizeElementInfo(elementInfo);
+  let safeStyles = filterAllowedStyles(styles);
+  if (Object.keys(safeStyles).length === 0) return null;
+
+  const ast = recast.parse(content, {
+    parser: {
+      parse: (source: string) => parse(source, { sourceType: 'module', plugins: ['typescript', 'jsx'] }),
+    },
+  });
+
+  let changed = false;
+
+  recast.types.visit(ast, {
+    visitJSXElement(path: any) {
+      const opening = path.node.openingElement;
+      const tagBase = baseTagName(opening.name);
+
+      if (tagName && tagBase && tagBase !== tagName) {
+        return this.traverse(path);
+      }
+
+      // Attributes
+      const clsAttr = opening.attributes.find((a: any) => a.type === 'JSXAttribute' && a.name?.name === 'className') as any;
+      const idAttr = opening.attributes.find((a: any) => a.type === 'JSXAttribute' && a.name?.name === 'id') as any;
+      const staticClass = clsAttr ? getStaticClassText(clsAttr.value) : '';
+      const idStr = idAttr && idAttr.value && idAttr.value.type === 'StringLiteral' ? idAttr.value.value : '';
+
+      const wantClasses = className ? className.split(/\s+/).filter(Boolean) : [];
+
+      // Matching logic priority: id > className > textContent
+      if (id) {
+        if (idStr !== id) return this.traverse(path);
+      } else if (wantClasses.length) {
+        if (!staticHasAnyToken(staticClass, wantClasses)) return this.traverse(path);
+      } else if (textContent) {
+        const wanted = textContent.trim().replace(/\s+/g, ' ');
+        const hasText = path.node.children.some((ch: any) => ch.type === 'JSXText' && ch.value.trim().replace(/\s+/g, ' ') === wanted);
+        if (!hasText) return this.traverse(path);
+      }
+
+      // Gradient text guard
+      if (staticClass && /\bbg-clip-text\b/.test(staticClass) && /\btext-transparent\b/.test(staticClass)) {
+        const { color, ...rest } = safeStyles;
+        safeStyles = rest;
+      }
+      if (Object.keys(safeStyles).length === 0) return this.traverse(path);
+
+      const styleIdx = opening.attributes.findIndex((a: any) => a.type === 'JSXAttribute' && a.name?.name === 'style');
+      if (styleIdx >= 0) {
+        const styleAttr: any = opening.attributes[styleIdx];
+        if (styleAttr.value && styleAttr.value.type === 'JSXExpressionContainer' && styleAttr.value.expression.type === 'ObjectExpression') {
+          const obj = styleAttr.value.expression;
+          const existing = new Map<string, any>();
+          for (const p of obj.properties) {
+            if (p.type === 'ObjectProperty' && p.key.type === 'Identifier') existing.set(p.key.name, p);
+          }
+          for (const [k, v] of Object.entries(safeStyles)) {
+            const lit = b.stringLiteral(String(v));
+            if (existing.has(k)) {
+              (existing.get(k) as any).value = lit;
+            } else {
+              obj.properties.push(b.objectProperty(b.identifier(k), lit));
+            }
+          }
+          changed = true;
+        }
+      } else {
+        const props = Object.entries(safeStyles).map(([k, v]) => b.objectProperty(b.identifier(k), b.stringLiteral(String(v))));
+        const jsxAttr = b.jsxAttribute(b.jsxIdentifier('style'), b.jsxExpressionContainer(b.objectExpression(props)));
+        opening.attributes.push(jsxAttr);
+        changed = true;
+      }
+
+      return false;
+    },
+  });
+
+  if (!changed) return null;
+  const output = recast.print(ast, { quote: 'single' }).code;
+  // Validate
+  try {
+    parse(output, { sourceType: 'module', plugins: ['typescript', 'jsx'] });
+  } catch (e) {
+    console.error('AST output failed to parse:', e);
+    return null;
+  }
+  return output;
 }
 
 function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function escapeSingleQuotes(v: string): string {
-  return v.replace(/'/g, "\\'");
 }
