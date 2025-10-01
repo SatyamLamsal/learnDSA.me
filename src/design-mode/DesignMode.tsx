@@ -18,6 +18,7 @@ const DesignMode: React.FC<DesignModeProps> = ({ children }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const panelRef = useRef<HTMLDivElement>(null);
+  const hotkeyShownRef = useRef(false);
 
   // Color presets for easy selection
   const colorPresets = [
@@ -89,6 +90,48 @@ const DesignMode: React.FC<DesignModeProps> = ({ children }) => {
       document.removeEventListener('mouseout', handleMouseOut);
     };
   }, [isActive]);
+
+  // Global hotkey: Ctrl + Shift + D to toggle Design Mode
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      // Toggle design mode
+      if (e.ctrlKey && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+        e.preventDefault();
+        setIsActive(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  // Brief helper tip on first mount in dev
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') return;
+    if (hotkeyShownRef.current) return;
+    hotkeyShownRef.current = true;
+
+    const tip = document.createElement('div');
+    tip.textContent = 'Press Ctrl + Shift + D to toggle Design Mode';
+    tip.setAttribute('data-design-tip', 'true');
+    Object.assign(tip.style, {
+      position: 'fixed',
+      bottom: '100px',
+      right: '20px',
+      zIndex: '9999',
+      background: 'rgba(15,23,42,0.9)',
+      color: '#f8fafc',
+      border: '1px solid rgba(148,163,184,0.4)',
+      borderRadius: '10px',
+      padding: '10px 14px',
+      fontSize: '12px',
+      boxShadow: '0 6px 18px rgba(0,0,0,0.25)'
+    } as CSSStyleDeclaration);
+    document.body.appendChild(tip);
+    const t = setTimeout(() => {
+      tip.remove();
+    }, 3000);
+    return () => clearTimeout(t);
+  }, []);
 
   // Handle panel dragging
   const handleMouseDown = (e: React.MouseEvent) => {
