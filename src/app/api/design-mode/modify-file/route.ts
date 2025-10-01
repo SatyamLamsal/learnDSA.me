@@ -17,12 +17,16 @@ export async function POST(request: NextRequest) {
     }
     const pagePath = join(process.cwd(), 'src', 'app', 'page.tsx');
     const fileContent = await readFile(pagePath, 'utf8');
-    const modifiedContent = await modifyPageContentAST(fileContent, elementInfo);
-    if (modifiedContent && modifiedContent !== fileContent) {
-      await writeFile(pagePath, modifiedContent, 'utf8');
+    const result = await modifyPageContentAST(fileContent, elementInfo);
+    if (result.code && result.code !== fileContent) {
+      await writeFile(pagePath, result.code, 'utf8');
       return NextResponse.json({ success: true, filePath: 'src/app/page.tsx' });
     }
-    return NextResponse.json({ success: false, error: 'No matching element found to modify' });
+    // Provide better diagnostics in dev
+    if (result.reason?.startsWith('parse-error') || result.reason?.startsWith('validate-error')) {
+      return NextResponse.json({ success: false, error: result.reason }, { status: 500 });
+    }
+    return NextResponse.json({ success: false, error: result.reason || 'No matching element found to modify' });
   } catch (error) {
     console.error('Error modifying file:', error);
     return NextResponse.json({ error: 'Failed to modify file' }, { status: 500 });
@@ -91,16 +95,24 @@ function staticHasAnyToken(staticText: string, tokens: string[]): boolean {
   return tokens.some(t => words.has(t));
 }
 
-async function modifyPageContentAST(content: string, elementInfo: any): Promise<string | null> {
-  const { styles, tagName, className, id, textContent } = sanitizeElementInfo(elementInfo);
-  let safeStyles = filterAllowedStyles(styles);
-  if (Object.keys(safeStyles).length === 0) return null;
+type ModifyResult = { code: string | null; reason?: string };
 
-  const ast = recast.parse(content, {
-    parser: {
-      parse: (source: string) => parse(source, { sourceType: 'module', plugins: ['typescript', 'jsx'] }),
-    },
-  });
+export async function modifyPageContentAST(content: string, elementInfo: any): Promise<ModifyResult> {
+  const { styles, tagName, className, id, textContent } = sanitizeElementInfo(elementInfo);
+  const safeStyles = filterAllowedStyles(styles);
+  if (Object.keys(safeStyles).length === 0) return { code: null, reason: 'no-styles' };
+
+  let ast: any;
+  try {
+    ast = recast.parse(content, {
+      parser: {
+        parse: (source: string) => parse(source, { sourceType: 'module', plugins: ['typescript', 'jsx'] }),
+      },
+    });
+  } catch (e: any) {
+    console.error('Parse failed for page.tsx:', e);
+    return { code: null, reason: `parse-error: ${e?.message || String(e)}` };
+  }
 
   let changed = false;
 
@@ -128,16 +140,18 @@ async function modifyPageContentAST(content: string, elementInfo: any): Promise<
         if (!staticHasAnyToken(staticClass, wantClasses)) return this.traverse(path);
       } else if (textContent) {
         const wanted = textContent.trim().replace(/\s+/g, ' ');
-        const hasText = path.node.children.some((ch: any) => ch.type === 'JSXText' && ch.value.trim().replace(/\s+/g, ' ') === wanted);
-        if (!hasText) return this.traverse(path);
+        const contains = elementContainsText(path.node, wanted);
+        if (!contains) return this.traverse(path);
       }
 
+      // Copy per element so we don't mutate shared state across matches
+      let stylesToApply: Record<string, string> = { ...safeStyles };
       // Gradient text guard
       if (staticClass && /\bbg-clip-text\b/.test(staticClass) && /\btext-transparent\b/.test(staticClass)) {
-        const { color, ...rest } = safeStyles;
-        safeStyles = rest;
+        const { color, ...rest } = stylesToApply;
+        stylesToApply = rest;
       }
-      if (Object.keys(safeStyles).length === 0) return this.traverse(path);
+      if (Object.keys(stylesToApply).length === 0) return this.traverse(path);
 
       const styleIdx = opening.attributes.findIndex((a: any) => a.type === 'JSXAttribute' && a.name?.name === 'style');
       if (styleIdx >= 0) {
@@ -148,7 +162,7 @@ async function modifyPageContentAST(content: string, elementInfo: any): Promise<
           for (const p of obj.properties) {
             if (p.type === 'ObjectProperty' && p.key.type === 'Identifier') existing.set(p.key.name, p);
           }
-          for (const [k, v] of Object.entries(safeStyles)) {
+          for (const [k, v] of Object.entries(stylesToApply)) {
             const lit = b.stringLiteral(String(v));
             if (existing.has(k)) {
               (existing.get(k) as any).value = lit;
@@ -159,7 +173,7 @@ async function modifyPageContentAST(content: string, elementInfo: any): Promise<
           changed = true;
         }
       } else {
-        const props = Object.entries(safeStyles).map(([k, v]) => b.objectProperty(b.identifier(k), b.stringLiteral(String(v))));
+        const props = Object.entries(stylesToApply).map(([k, v]) => b.objectProperty(b.identifier(k), b.stringLiteral(String(v))));
         const jsxAttr = b.jsxAttribute(b.jsxIdentifier('style'), b.jsxExpressionContainer(b.objectExpression(props)));
         opening.attributes.push(jsxAttr);
         changed = true;
@@ -169,18 +183,39 @@ async function modifyPageContentAST(content: string, elementInfo: any): Promise<
     },
   });
 
-  if (!changed) return null;
+  if (!changed) return { code: null, reason: 'no-match' };
   const output = recast.print(ast, { quote: 'single' }).code;
   // Validate
   try {
     parse(output, { sourceType: 'module', plugins: ['typescript', 'jsx'] });
   } catch (e) {
     console.error('AST output failed to parse:', e);
-    return null;
+    return { code: null, reason: `validate-error: ${(e as any)?.message || String(e)}` };
   }
-  return output;
+  return { code: output };
 }
 
 function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Ensure Node.js runtime (fs is not available on the edge runtime)
+export const runtime = 'nodejs';
+// Avoid caching in dev to guarantee fresh writes are picked up
+export const dynamic = 'force-dynamic';
+
+// Recursively check whether an element contains the wanted text in any descendant JSXText
+function elementContainsText(node: any, wanted: string): boolean {
+  const norm = (s: string) => s.trim().replace(/\s+/g, ' ');
+  if (!node || !node.children) return false;
+  for (const ch of node.children) {
+    if (ch.type === 'JSXText' && norm(ch.value) === wanted) return true;
+    if (ch.type === 'JSXExpressionContainer' && ch.expression && ch.expression.type === 'StringLiteral') {
+      if (norm(ch.expression.value) === wanted) return true;
+    }
+    if (ch.type === 'JSXElement') {
+      if (elementContainsText(ch, wanted)) return true;
+    }
+  }
+  return false;
 }

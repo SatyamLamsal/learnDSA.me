@@ -189,10 +189,22 @@ const DesignMode: React.FC<DesignModeProps> = ({ children }) => {
         body: JSON.stringify(elementInfo)
       });
 
-      if (response.ok) {
-        const result = await response.json();
+      const result = await response.json().catch(() => null as any);
+      if (!response.ok) {
+        const msg = result?.error ? String(result.error) : `HTTP ${response.status}`;
+        alert('Failed to save style: ' + msg);
+        console.warn('DesignMode save failed (HTTP):', response.status, result);
+        return;
+      }
+
+      if (result?.success) {
         console.log('✅ File modified:', result);
         alert('Style applied and saved to file!');
+      } else {
+        // Provide a helpful message when persistence didn't happen
+        const detail = result?.error || 'No matching element found to modify. Try selecting a parent element or choose a different property.';
+        alert('Did not persist to file: ' + detail);
+        console.warn('DesignMode save returned no-op:', result);
       }
     } catch (error) {
       console.warn('Could not save to file:', error);
