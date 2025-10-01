@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthContextProvider } from "@/contexts/AuthContext";
 import { ClientLayout } from "@/components/ClientLayout";
+import DesignMode from "@/design-mode/DesignMode";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,6 +109,7 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
+              {process.env.NODE_ENV === 'development' && <DesignMode />}
             </ClientLayout>
           </ThemeProvider>
         </AuthContextProvider>

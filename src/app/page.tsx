@@ -235,7 +235,7 @@ export default function Home() {
             Interactive Learning Platform
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#3b82f6' }}>
             Master{" "}
             <motion.span 
               className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
@@ -299,7 +299,7 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#fef3c7', color: '#92400e' }}>
                   Welcome back, {session.user?.name?.split(' ')[0] || 'Learner'}! 👋
                 </h2>
                 <p className="text-slate-600">
@@ -444,7 +444,7 @@ export default function Home() {
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
