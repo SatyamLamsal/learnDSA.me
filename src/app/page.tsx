@@ -235,7 +235,7 @@ export default function Home() {
             Interactive Learning Platform
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#3b82f6' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#ffffff' }}>
             Master{" "}
             <motion.span 
               className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
@@ -299,7 +299,7 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#fef3c7', color: '#92400e' }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#fef3c7', color: '#ffffff' }}>
                   Welcome back, {session.user?.name?.split(' ')[0] || 'Learner'}! 👋
                 </h2>
                 <p className="text-slate-600">
@@ -317,11 +317,11 @@ export default function Home() {
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-10 translate-x-10"></div>
                 <div className="relative z-10">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-4" style={{ color: '#ffffff' }}>
                     <Play className="w-6 h-6 mr-3" />
                     <h3 className="text-lg font-semibold">Continue Learning</h3>
                   </div>
-                  <p className="text-blue-100 text-sm mb-4">
+                  <p className="text-blue-100 text-sm mb-4" style={{ color: '#ffffff' }}>
                     Pick up where you left off
                   </p>
                   <Link 
@@ -336,7 +336,7 @@ export default function Home() {
 
               {/* Recent Bookmarks */}
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4" style={{ color: '#ffffff' }}>
                   <BookmarkIcon className="w-6 h-6 mr-3 text-orange-500" />
                   <h3 className="text-lg font-semibold text-slate-800">Your Bookmarks</h3>
                 </div>
@@ -371,7 +371,7 @@ export default function Home() {
 
               {/* Quick Stats & Actions */}
               <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4" style={{ color: '#ffffff' }}>
                   <Activity className="w-6 h-6 mr-3 text-emerald-600" />
                   <h3 className="text-lg font-semibold text-slate-800">Quick Actions</h3>
                 </div>
@@ -444,7 +444,7 @@ export default function Home() {
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -478,14 +478,14 @@ export default function Home() {
                       <Map className="w-10 h-10 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-slate-800 mb-2">Guided Learning Path</h3>
+                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#ffffff' }}>Guided Learning Path</h3>
                       <p className="text-slate-500 text-lg">Structured • 12-16 weeks • Certificate</p>
                     </div>
                   </div>
 
                   {/* Progress Visualization */}
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-4" style={{ color: '#ffffff' }}>
                       <span className="text-sm font-semibold text-slate-700">Learning Progress</span>
                       <span className="text-sm text-blue-600">Module 1 → 10</span>
                     </div>
@@ -563,14 +563,14 @@ export default function Home() {
                       <Compass className="w-10 h-10 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-slate-800 mb-2">Flexible Exploration</h3>
+                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#ffffff' }}>Flexible Exploration</h3>
                       <p className="text-slate-500 text-lg">Self-paced • Any topic • Instant access</p>
                     </div>
                   </div>
 
                   {/* Topic Grid Visualization */}
                   <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 mb-8">
-                    <div className="mb-4">
+                    <div className="mb-4" style={{ color: '#ffffff' }}>
                       <span className="text-sm font-semibold text-slate-700">Available Topics</span>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
@@ -649,7 +649,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Popular Data Structures</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Popular Data Structures</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Master the fundamental building blocks of computer science
           </p>
@@ -683,14 +683,14 @@ export default function Home() {
                 <Link href={ds.path} className="flex flex-col h-full">
                   <div className={`${ds.color} h-20 flex items-center justify-center relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-black/20"></div>
-                    <span className="text-4xl text-white font-bold relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-4xl text-white font-bold relative z-10 group-hover:scale-110 transition-transform duration-300" style={{ color: '#ffffff' }}>
                       {ds.icon}
                     </span>
                   </div>
                   
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
                         {ds.name}
                       </h3>
                       <span className={`px-2 py-1 text-xs font-medium rounded-full ${
@@ -702,7 +702,7 @@ export default function Home() {
                       </span>
                     </div>
                     
-                    <p className="text-slate-600 text-sm leading-relaxed flex-grow mb-4">
+                    <p className="text-slate-600 text-sm leading-relaxed flex-grow mb-4" style={{ color: '#ffffff' }}>
                       {ds.description}
                     </p>
                     
@@ -736,7 +736,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Algorithm Categories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Algorithm Categories</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Explore different types of algorithms and their real-world applications
             </p>
@@ -755,9 +755,9 @@ export default function Home() {
                 <Link href={category.path}>
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center group">
                     <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <span className="text-2xl text-white font-bold">{category.icon}</span>
+                      <span className="text-2xl text-white font-bold" style={{ color: '#ffffff' }}>{category.icon}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
                       {category.name}
                     </h3>
                     <p className="text-slate-600 text-sm mb-3">{category.description}</p>
@@ -779,7 +779,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Choose LearnDSA.me?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Why Choose LearnDSA.me?</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Experience the most effective way to learn data structures and algorithms
           </p>
@@ -823,7 +823,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Students Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>What Students Say</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Join thousands of successful learners who&apos;ve mastered DSA with our platform
             </p>
@@ -838,8 +838,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 text-center"
             >
-              <div className="text-6xl mb-4">{testimonials[currentTestimonial].avatar}</div>
-              <div className="flex justify-center mb-4">
+              <div className="text-6xl mb-4" style={{ color: '#ffffff' }}>{testimonials[currentTestimonial].avatar}</div>
+              <div className="flex justify-center mb-4" style={{ color: '#ffffff' }}>
                 {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
@@ -878,7 +878,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Platform Statistics</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ color: '#ffffff' }}>Platform Statistics</h2>
             <p className="text-blue-100 max-w-2xl mx-auto">
               Comprehensive learning resources backed by real results
             </p>
@@ -900,7 +900,7 @@ export default function Home() {
                     {stat.icon}
                   </div>
                 </div>
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: '#ffffff' }}>{stat.value}</div>
                 <div className="text-blue-100 text-sm font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -917,7 +917,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>How It Works</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Three simple steps to master data structures and algorithms
           </p>
@@ -967,7 +967,7 @@ export default function Home() {
                     {step.icon}
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
                     {step.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
@@ -1008,7 +1008,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{ color: '#ffffff' }}>
                 Ready to Start Learning?
               </h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">

@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
+import * as recast from 'recast';
+import { parse } from '@babel/parser';
+
+const b = recast.types.builders;
 
 export async function POST(request: NextRequest) {
   // Only allow in development
@@ -20,15 +24,15 @@ export async function POST(request: NextRequest) {
     
     // Read current file content
     const fileContent = await readFile(pagePath, 'utf8');
-    
-    // Modify the file based on element info
-    const modifiedContent = await modifyPageContent(fileContent, elementInfo);
-    
-    if (modifiedContent !== fileContent) {
+
+    // Modify using AST for safety
+    const modifiedContent = await modifyPageContentAST(fileContent, elementInfo);
+
+    if (modifiedContent && modifiedContent !== fileContent) {
       // Write the modified content back
       await writeFile(pagePath, modifiedContent, 'utf8');
       
-      console.log(`✅ Modified page.tsx for element: ${elementInfo.tagName}`);
+      console.log(`✅ Modified page.tsx for element: ${elementInfo.tagName || 'unknown'}`);
       
       return NextResponse.json({
         success: true,
@@ -49,76 +53,139 @@ export async function POST(request: NextRequest) {
   }
 }
 
-async function modifyPageContent(content: string, elementInfo: any): Promise<string> {
+async function modifyPageContentAST(content: string, elementInfo: any): Promise<string | null> {
   const { styles, tagName, className, textContent } = sanitizeElementInfo(elementInfo);
+  let safeStyles = filterAllowedStyles(styles);
 
-  // Only allow whitelisted style props and defined values
-  const safeStyles = filterAllowedStyles(styles);
-  if (Object.keys(safeStyles).length === 0) return content;
+  // Early exit if nothing to apply
+  if (Object.keys(safeStyles).length === 0) return null;
 
-  let modifiedContent = content;
-  let hasModifications = false;
+  // Parse TSX using Babel via Recast to preserve formatting
+  const ast = recast.parse(content, {
+    parser: {
+      parse: (source: string) =>
+        parse(source, {
+          sourceType: 'module',
+          plugins: ['typescript', 'jsx'],
+        }),
+    },
+  });
 
-  // Strategy 1: Find by className and add/update style prop
-  if (className) {
-    const classNames = className.split(' ').filter(Boolean);
-    for (const cls of classNames) {
-      // Add style if missing
-      const addRegex = new RegExp(
-        `className=["'\`]([^"'\`]*\\b${escapeRegex(cls)}\\b[^"'\`]*)["'\`](?!\\s*style=)`,
-        'g'
-      );
-      modifiedContent = modifiedContent.replace(addRegex, (match) => {
-        hasModifications = true;
-        return match + ` style={${styleObjectToString(safeStyles)}}`;
-      });
+  let changed = false;
 
-      // Merge if style exists
-      const updateRegex = new RegExp(
-        `className=["'\`]([^"'\`]*\\b${escapeRegex(cls)}\\b[^"'\`]*)["'\`]\\s*style=\\{([^}]+)\\}`,
-        'g'
-      );
-      modifiedContent = modifiedContent.replace(updateRegex, (_m, classMatch, existing) => {
-        hasModifications = true;
-        const merged = mergeStyleStrings(existing, safeStyles);
-        return `className="${classMatch.trim()}" style={${styleObjectToString(merged)}}`;
-      });
-    }
-  }
+  recast.types.visit(ast, {
+    // Use loose typing to avoid build-time type dependency on recast internals
+    visitJSXElement(path: any) {
+      const opening = path.node.openingElement;
+      const name = opening.name.type === 'JSXIdentifier' ? opening.name.name : null;
 
-  // Strategy 2: Find by exact text content (fallback)
-  if (!hasModifications && textContent && textContent.length > 3) {
-    const clean = textContent.trim().replace(/\s+/g, ' ');
-    const textRegex = new RegExp(`(>\s*)${escapeRegex(clean)}(\s*<)`, 'g');
-    modifiedContent = modifiedContent.replace(textRegex, (_m, before, after) => {
-      hasModifications = true;
-      return `${before}<span style={${styleObjectToString(safeStyles)}}>${clean}</span>${after}`;
-    });
-  }
+      // Match by tag if provided
+      if (tagName && name && name.toLowerCase() !== String(tagName).toLowerCase()) {
+        return this.traverse(path);
+      }
 
-  // Strategy 3: tag + class combo
-  if (!hasModifications && tagName && className) {
-    const tag = tagName.toLowerCase();
-    const firstClass = className.split(' ').filter(Boolean)[0];
-    if (firstClass) {
-      const tagClassRegex = new RegExp(
-        `<${tag}([^>]*className=["'\`][^"'\`]*\\b${escapeRegex(firstClass)}\\b[^"'\`]*["'\`][^>]*)>`,
-        'g'
-      );
-      modifiedContent = modifiedContent.replace(tagClassRegex, (match, attrs) => {
-        hasModifications = true;
-        if (/style=\{[^}]+\}/.test(attrs)) {
-          return match.replace(/style=\{([^}]+)\}/, (_sm, ex) => {
-            const merged = mergeStyleStrings(ex, safeStyles);
-            return `style={${styleObjectToString(merged)}}`;
-          });
+      // Get className string literal if present
+      const clsAttr = opening.attributes.find(
+        (a: any) => a.type === 'JSXAttribute' && a.name?.name === 'className'
+      ) as any;
+
+      let classStr: string | null = null;
+      if (clsAttr && clsAttr.value) {
+        if (clsAttr.value.type === 'StringLiteral') classStr = clsAttr.value.value;
+        if (clsAttr.value.type === 'JSXExpressionContainer' && clsAttr.value.expression.type === 'StringLiteral') {
+          classStr = clsAttr.value.expression.value;
         }
-        return match.replace('>', ` style={${styleObjectToString(safeStyles)}}>`);
-      });
-    }
+      }
+
+      // If className filter provided, require at least one class to match
+      if (className) {
+        const required = String(className).split(/\s+/).filter(Boolean);
+        if (!classStr) return this.traverse(path);
+        const hasAny = required.some((c) => new RegExp(`(^|\n|\t|\s)${escapeRegex(c)}(\n|\t|\s|$)`).test(classStr!));
+        if (!hasAny) return this.traverse(path);
+      }
+
+      // Fallback: match textContent if provided and not already matched by class
+      if (!className && textContent) {
+        const wanted = String(textContent).trim().replace(/\s+/g, ' ');
+        const hasText = path.node.children.some((ch: any) =>
+          (ch.type === 'JSXText' && ch.value.trim().replace(/\s+/g, ' ') === wanted)
+        );
+        if (!hasText) return this.traverse(path);
+      }
+
+      // Gradient guard: if class has gradient text, remove color from styles
+      if (classStr && /\bbg-clip-text\b/.test(classStr) && /\btext-transparent\b/.test(classStr)) {
+        const { color, ...rest } = safeStyles;
+        safeStyles = rest;
+      }
+
+      if (Object.keys(safeStyles).length === 0) return this.traverse(path);
+
+      // Find style attribute
+      const styleAttrIndex = opening.attributes.findIndex(
+        (a: any) => a.type === 'JSXAttribute' && a.name?.name === 'style'
+      );
+
+      if (styleAttrIndex >= 0) {
+        const styleAttr: any = opening.attributes[styleAttrIndex];
+        if (
+          styleAttr.value &&
+          styleAttr.value.type === 'JSXExpressionContainer' &&
+          styleAttr.value.expression.type === 'ObjectExpression'
+        ) {
+          const obj = styleAttr.value.expression;
+          const existingMap = new Map<string, any>();
+          for (const prop of obj.properties) {
+            if (prop.type === 'ObjectProperty' && prop.key.type === 'Identifier') {
+              existingMap.set(prop.key.name, prop);
+            }
+          }
+          // Merge values
+          for (const [k, v] of Object.entries(safeStyles)) {
+            const lit = b.stringLiteral(String(v));
+            if (existingMap.has(k)) {
+              const p: any = existingMap.get(k);
+              p.value = lit;
+            } else {
+              obj.properties.push(b.objectProperty(b.identifier(k), lit));
+            }
+          }
+          changed = true;
+        }
+        // If style is non-object expression, skip to avoid unsafe edits
+      } else {
+        // Create a new style object literal
+        const props = Object.entries(safeStyles).map(([k, v]) =>
+          b.objectProperty(b.identifier(k), b.stringLiteral(String(v)))
+        );
+        const jsxAttr = b.jsxAttribute(
+          b.jsxIdentifier('style'),
+          b.jsxExpressionContainer(b.objectExpression(props))
+        );
+        opening.attributes.push(jsxAttr);
+        changed = true;
+      }
+
+      return false; // don't traverse into children after modification
+    },
+  });
+
+  if (!changed) return null;
+
+  const output = recast.print(ast, { quote: 'single' }).code;
+
+  // Validate by parsing again to ensure we didn't corrupt JSX
+  try {
+    recast.parse(output, {
+      parser: { parse: (source: string) => parse(source, { sourceType: 'module', plugins: ['typescript', 'jsx'] }) },
+    });
+  } catch (e) {
+    console.error('AST output failed to parse, aborting write:', e);
+    return null;
   }
 
-  return modifiedContent;
+  return output;
 }
 
 function sanitizeElementInfo(info: any) {
@@ -147,9 +214,9 @@ function styleObjectToString(obj: Record<string, string>): string {
   return `{ ${pairs.join(', ')} }`;
 }
 
+// Legacy regex helpers kept for potential future utilities
 function mergeStyleStrings(existing: string, add: Record<string, string>): Record<string, string> {
   const parsed = parseStyleString(existing);
-  // Override with new values
   for (const [k, v] of Object.entries(add)) parsed[k] = v;
   return parsed;
 }
@@ -157,12 +224,11 @@ function mergeStyleStrings(existing: string, add: Record<string, string>): Recor
 function parseStyleString(styleStr: string): Record<string, string> {
   const out: Record<string, string> = {};
   if (!styleStr) return out;
-  // Extract key: 'value' or key: "value"
   const regex = /([\w-]+)\s*:\s*['"]([^'"\\]*(?:\\.[^'"\\]*)*)['"]/g;
   let m: RegExpExecArray | null;
   while ((m = regex.exec(styleStr)) !== null) {
     const key = m[1];
-    const raw = m[2].replace(/\\(['"])/g, '$1');
+    const raw = m[2].replace(/\\(['"]) /g, '$1');
     out[key] = raw;
   }
   return out;

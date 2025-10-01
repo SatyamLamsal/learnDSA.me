@@ -28,6 +28,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@babel/parser": "^7.28.4",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
+    "recast": "^0.23.11",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
