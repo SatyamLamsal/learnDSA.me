@@ -277,7 +277,7 @@ export default function Home() {
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-medium text-slate-700">4.9★ Rating</span>
+              <span className="text-sm font-medium text-slate-700">4.9/5 Rating</span>
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Globe className="w-5 h-5 text-green-600 mr-2" />

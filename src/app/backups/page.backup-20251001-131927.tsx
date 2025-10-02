@@ -140,7 +140,7 @@ const features = [
     color: 'from-indigo-500 to-blue-500'
   },
   {
-    icon: <Award className="h-8 w-8" />,
+    icon: <Award className="h-8 w-8"  style={{ color: '#ffffff' }}/>,
     title: 'Progress Tracking',
     description: 'Track your learning journey with detailed progress analytics',
     color: 'from-yellow-500 to-orange-500'
@@ -277,7 +277,7 @@ export default function Home() {
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-medium text-slate-700">4.9★ Rating</span>
+              <span className="text-sm font-medium text-slate-700">4.9/5 Rating</span>
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Globe className="w-5 h-5 text-green-600 mr-2" />
@@ -306,7 +306,7 @@ export default function Home() {
                   Ready to continue your data structures and algorithms journey?
                 </p>
               </div>
-              <div className="mt-4 md:mt-0 flex items-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-lg">
+              <div className="mt-4 md:mt-0 flex items-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-lg" style={{ color: '#ffffff' }}>
                 <Award className="w-5 h-5 mr-2" />
                 <span className="font-semibold">{recentActivity?.totalCompleted || 0} Topics Completed</span>
               </div>
@@ -327,7 +327,7 @@ export default function Home() {
                   <Link 
                     href="/learning-path"
                     className="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/30 transition-all duration-300"
-                  >
+                   style={{ color: '#ffffff' }}>
                     Resume Path
                     <ChevronRight className="w-4 h-4 ml-1" />
                   </Link>
@@ -354,7 +354,7 @@ export default function Home() {
                             {bookmark.title}
                           </span>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600"  style={{ color: '#ffffff' }}/>
                       </Link>
                     ))
                   ) : (
@@ -379,7 +379,7 @@ export default function Home() {
                   <Link
                     href="/algorithms"
                     className="flex items-center p-3 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-white transition-all duration-300 group"
-                  >
+                   style={{ color: '#ffffff' }}>
                     <Code className="w-5 h-5 text-emerald-600 mr-3" />
                     <div className="flex-1">
                       <div className="text-sm font-medium text-slate-700 group-hover:text-emerald-600">Practice Algorithms</div>
@@ -444,7 +444,7 @@ export default function Home() {
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif', color: '#000000' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -606,13 +606,13 @@ export default function Home() {
                     <Link
                       href="/data-structures"
                       className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-4 px-6 rounded-2xl font-semibold text-center hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-                    >
+                     style={{ color: '#ffffff' }}>
                       Data Structures
                     </Link>
                     <Link
                       href="/algorithms"
                       className="border-2 border-emerald-500 text-emerald-600 py-4 px-6 rounded-2xl font-semibold text-center hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                    >
+                     style={{ color: '#ffffff' }}>
                       Algorithms
                     </Link>
                   </div>
@@ -918,7 +918,7 @@ export default function Home() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>How It Works</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto" style={{ color: '#ffffff' }}>
             Three simple steps to master data structures and algorithms
           </p>
         </motion.div>

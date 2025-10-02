@@ -235,7 +235,7 @@ export default function Home() {
             Interactive Learning Platform
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#ffffff' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#000000' }}>
             Master{" "}
             <motion.span 
               className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
@@ -277,7 +277,7 @@ export default function Home() {
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-medium text-slate-700">4.9★ Rating</span>
+              <span className="text-sm font-medium text-slate-700">4.9/5 Rating</span>
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Globe className="w-5 h-5 text-green-600 mr-2" />
@@ -299,14 +299,14 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#fef3c7', color: '#ffffff' }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={ { backgroundColor: '#fef3c7', color: '#000000' } }>
                   Welcome back, {session.user?.name?.split(' ')[0] || 'Learner'}! 👋
                 </h2>
                 <p className="text-slate-600">
                   Ready to continue your data structures and algorithms journey?
                 </p>
               </div>
-              <div className="mt-4 md:mt-0 flex items-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-lg">
+              <div className="mt-4 md:mt-0 flex items-center bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-lg" style={{ color: '#ffffff' }}>
                 <Award className="w-5 h-5 mr-2" />
                 <span className="font-semibold">{recentActivity?.totalCompleted || 0} Topics Completed</span>
               </div>
@@ -354,7 +354,7 @@ export default function Home() {
                             {bookmark.title}
                           </span>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
+                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" style={{ color: '#ffffff' }} />
                       </Link>
                     ))
                   ) : (
@@ -612,7 +612,7 @@ export default function Home() {
                     <Link
                       href="/algorithms"
                       className="border-2 border-emerald-500 text-emerald-600 py-4 px-6 rounded-2xl font-semibold text-center hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                    >
+                     style={{ color: '#ffffff' }}>
                       Algorithms
                     </Link>
                   </div>
