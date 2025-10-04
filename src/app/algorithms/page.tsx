@@ -11,68 +11,80 @@ const algorithms = [
   {
     id: 'sorting-overview',
     name: 'Sorting Algorithms',
-    description: 'Learn bubble sort, merge sort, quick sort, and more',
+    description: 'Learn bubble sort, merge sort, quick sort, heap sort, and advanced sorting techniques',
     path: '/algorithms/sorting',
     category: 'algorithms',
     color: 'bg-blue-500',
     icon: '↕️',
     complexity: 'O(n log n)',
-    difficulty: 'Beginner to Advanced'
+    difficulty: 'Beginner to Advanced',
+    concepts: ['Comparison Sort', 'Stability', 'In-place', 'Time Complexity'],
+    algorithms: ['Bubble Sort', 'Merge Sort', 'Quick Sort', 'Heap Sort', 'Counting Sort']
   },
   {
     id: 'searching-overview',
     name: 'Searching Algorithms',
-    description: 'Master linear search, binary search, and search optimizations',
+    description: 'Master linear search, binary search, interpolation search, and search optimizations',
     path: '/algorithms/searching',
     category: 'algorithms',
     color: 'bg-green-500',
     icon: '🔍',
     complexity: 'O(log n)',
-    difficulty: 'Beginner'
+    difficulty: 'Beginner',
+    concepts: ['Binary Search', 'Linear Search', 'Hash Search', 'Interpolation'],
+    algorithms: ['Linear Search', 'Binary Search', 'Jump Search', 'Exponential Search']
   },
   {
     id: 'graph-overview',
     name: 'Graph Algorithms',
-    description: 'Explore BFS, DFS, Dijkstra, and shortest path algorithms',
+    description: 'Explore BFS, DFS, Dijkstra, shortest path, MST, and advanced graph algorithms',
     path: '/algorithms/graph',
     category: 'algorithms',
     color: 'bg-purple-500',
     icon: '🌐',
     complexity: 'O(V + E)',
-    difficulty: 'Intermediate'
+    difficulty: 'Intermediate',
+    concepts: ['Graph Traversal', 'Shortest Path', 'MST', 'Cycle Detection'],
+    algorithms: ['BFS', 'DFS', 'Dijkstra', 'Kruskal', 'Prim', 'Floyd-Warshall']
   },
   {
     id: 'dynamic-programming-overview',
     name: 'Dynamic Programming',
-    description: 'Solve complex problems by breaking them into subproblems',
+    description: 'Solve complex optimization problems by breaking them into overlapping subproblems',
     path: '/algorithms/dynamic-programming',
     category: 'algorithms',
     color: 'bg-orange-500',
     icon: '🧩',
     complexity: 'Varies',
-    difficulty: 'Advanced'
+    difficulty: 'Advanced',
+    concepts: ['Memoization', 'Tabulation', 'Optimal Substructure', 'Overlapping Subproblems'],
+    algorithms: ['Fibonacci', 'Knapsack', 'LCS', 'Edit Distance', 'Matrix Chain']
   },
   {
     id: 'greedy-overview',
     name: 'Greedy Algorithms',
-    description: 'Make locally optimal choices for global optimization',
+    description: 'Make locally optimal choices to achieve global optimization solutions',
     path: '/algorithms/greedy',
     category: 'algorithms',
     color: 'bg-red-500',
     icon: '🎯',
     complexity: 'O(n log n)',
-    difficulty: 'Intermediate'
+    difficulty: 'Intermediate',
+    concepts: ['Greedy Choice', 'Local Optimum', 'Activity Selection', 'Optimization'],
+    algorithms: ['Activity Selection', 'Fractional Knapsack', 'Huffman Coding', 'Job Scheduling']
   },
   {
     id: 'divide-conquer-overview',
     name: 'Divide & Conquer',
-    description: 'Break problems into smaller subproblems recursively',
+    description: 'Break complex problems into smaller subproblems and combine solutions recursively',
     path: '/algorithms/divide-and-conquer',
     category: 'algorithms',
     color: 'bg-indigo-500',
     icon: '⚔️',
     complexity: 'O(n log n)',
-    difficulty: 'Intermediate'
+    difficulty: 'Intermediate',
+    concepts: ['Divide', 'Conquer', 'Combine', 'Recursion', 'Master Theorem'],
+    algorithms: ['Merge Sort', 'Quick Sort', 'Binary Search', 'Strassen', 'Closest Pair']
   }
 ];
 
@@ -114,9 +126,13 @@ export default function AlgorithmsPage() {
             Master <span className="text-blue-600">Algorithms</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
-            Learn essential algorithms through interactive visualizations and hands-on practice. 
-            From basic sorting to advanced graph algorithms.
+            Perfect for self-directed learners. Flexible exploration with self-paced learning,
+            any algorithm access, and step-by-step visualizations.
           </p>
+          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-lg font-medium">
+            <Target className="w-5 h-5 mr-2" />
+            ⚡ Perfect for Self-Directed Learners
+          </div>
         </motion.div>
 
         {/* Features Section */}
@@ -143,14 +159,41 @@ export default function AlgorithmsPage() {
           ))}
         </motion.div>
 
-        {/* Algorithms Grid */}
+        {/* Flexible Exploration Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="bg-white rounded-xl p-8 shadow-lg mb-16"
+        >
+          <h2 className="text-3xl font-bold text-slate-800 text-center mb-6">Flexible Exploration</h2>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">Self-paced</h3>
+              <p className="text-slate-600">Learn algorithms at your own speed with no time pressure</p>
+            </div>
+            <div>
+              <div className="text-4xl mb-4">🧮</div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">Any algorithm</h3>
+              <p className="text-slate-600">Jump to any algorithm category that interests you</p>
+            </div>
+            <div>
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">Instant access</h3>
+              <p className="text-slate-600">Step-by-step explanations with live visualizations</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Available Topics Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">Explore Algorithm Categories</h2>
+          <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">Available Algorithm Topics</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {algorithms.map((algorithm, index) => (
@@ -160,9 +203,9 @@ export default function AlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden relative"
               >
-                <div className="absolute top-4 right-4 z-20">
+                <div className="absolute top-3 right-3 z-20">
                   <BookmarkButton 
                     topicId={algorithm.id}
                     topicType="overview"
@@ -171,30 +214,60 @@ export default function AlgorithmsPage() {
                     url={algorithm.path}
                   />
                 </div>
+                
                 <Link href={algorithm.path}>
-                  <div className={`${algorithm.color} h-24 flex items-center justify-center`}>
-                    <span className="text-4xl">{algorithm.icon}</span>
+                  <div className={`${algorithm.color} h-20 flex items-center justify-center`}>
+                    <span className="text-3xl text-white">{algorithm.icon}</span>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-slate-800">{algorithm.name}</h3>
-                      <ProgressIndicator 
-                        topicId={algorithm.id}
-                        topicType="overview" 
-                        category={algorithm.category}
-                        title={algorithm.name}
-                        className="w-6 h-6"
-                      />
-                    </div>
-                    <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
-                    <div className="flex justify-between items-center text-xs text-slate-500">
-                      <span className="bg-gray-100 px-2 py-1 rounded">{algorithm.complexity}</span>
-                      <span className="bg-gray-100 px-2 py-1 rounded">{algorithm.difficulty}</span>
-                    </div>
+                  
+                  <div className="p-4">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{algorithm.name}</h3>
+                    <p className="text-gray-600 text-sm mb-3">{algorithm.description}</p>
+                    <p className="text-gray-500 text-xs">{algorithm.difficulty}</p>
                   </div>
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* What You Get Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="bg-white rounded-lg shadow-lg p-8 mb-16"
+        >
+          <h2 className="text-2xl font-semibold mb-6 text-center text-slate-800">What Each Topic Includes</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div className="p-4">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-slate-800 mb-2">Algorithm Theory</h3>
+              <p className="text-slate-600 text-sm">Step-by-step explanations and pseudocode</p>
+            </div>
+            <div className="p-4">
+              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Play className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-slate-800 mb-2">Live Simulations</h3>
+              <p className="text-slate-600 text-sm">Watch algorithms execute with animations</p>
+            </div>
+            <div className="p-4">
+              <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-slate-800 mb-2">Practice Problems</h3>
+              <p className="text-slate-600 text-sm">Coding challenges for each algorithm</p>
+            </div>
+            <div className="p-4">
+              <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Clock className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-slate-800 mb-2">Complexity Analysis</h3>
+              <p className="text-slate-600 text-sm">Time and space complexity breakdowns</p>
+            </div>
           </div>
         </motion.div>
 
@@ -262,28 +335,36 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center"
+          className="bg-gradient-to-r from-lightblue-600 to-purple-600 rounded-lg p-8 text-white text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Recommended Learning Path</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue">Recommended Learning Path</h2>
           <p className="text-xl mb-8 opacity-90">
-            Start with sorting and searching, then progress to more complex algorithms
+            Start with fundamental algorithms, then progress to advanced problem-solving techniques
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
-              1. Sorting & Searching
-            </span>
-            <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
-              2. Graph Algorithms
-            </span>
-            <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-600">
-              3. Dynamic Programming
-            </span>
+          <div className="flex flex-wrap justify-center gap-4 items-center">
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+              <div className="font-semibold text-sm text-blue-500 ">Sorting & Searching</div>
+              <div className="text-xs opacity-80 text-black">Master the basics</div>
+            </div>
+            <ArrowRight className="h-6 w-6 opacity-70" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+              <div className="font-semibold text-sm text-blue-500">Divide & Conquer</div>
+              <div className="text-xs opacity-80 text-black">Break down problems</div>
+            </div>
+            <ArrowRight className="h-6 w-6 opacity-70" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+              <div className="font-semibold text-sm text-blue-500">Graph Algorithms</div>
+              <div className="text-xs opacity-80 text-black">Network problems</div>
+            </div>
+            <ArrowRight className="h-6 w-6 opacity-70" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+              <div className="font-semibold text-sm text-blue-500">Dynamic Programming</div>
+              <div className="text-xs opacity-80 text-black">Optimization mastery</div>
+            </div>
           </div>
           <div className="mt-8">
             <Link href="/algorithms/sorting" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Start Learning →
+              Start with Sorting →
             </Link>
           </div>
         </motion.div>

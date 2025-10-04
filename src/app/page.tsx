@@ -668,9 +668,9 @@ export default function Home() {
             >
               <CompletionCardWrapper
                 topicId={ds.id}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full relative border border-gray-100"
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden h-full relative"
               >
-                <div className="absolute top-4 right-4 z-20">
+                <div className="absolute top-3 right-3 z-20">
                   <BookmarkButton 
                     topicId={ds.id}
                     topicType="overview"
@@ -681,43 +681,20 @@ export default function Home() {
                 </div>
                 
                 <Link href={ds.path} className="flex flex-col h-full">
-                  <div className={`${ds.color} h-20 flex items-center justify-center relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-black/20"></div>
-                    <span className="text-4xl text-white font-bold relative z-10 group-hover:scale-110 transition-transform duration-300" style={{ color: '#ffffff' }}>
+                  <div className={`${ds.color} h-20 flex items-center justify-center`}>
+                    <span className="text-3xl text-white font-bold">
                       {ds.icon}
                     </span>
                   </div>
                   
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
-                        {ds.name}
-                      </h3>
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${
-                        ds.difficulty === 'Beginner' ? 'bg-green-100 text-green-700' :
-                        ds.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-700' :
-                        'bg-red-100 text-red-700'
-                      }`}>
-                        {ds.difficulty}
-                      </span>
-                    </div>
-                    
-                    <p className="text-slate-600 text-sm leading-relaxed flex-grow mb-4" style={{ color: '#ffffff' }}>
+                  <div className="p-4 flex flex-col flex-grow">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {ds.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-grow mb-3">
                       {ds.description}
                     </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="text-blue-600 font-semibold text-sm flex items-center group-hover:text-blue-700">
-                        Explore
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                      {getTopicProgress(ds.id)?.completed && (
-                        <div className="flex items-center text-green-600 text-xs font-medium">
-                          <CheckCircle className="w-4 h-4 mr-1" />
-                          Completed
-                        </div>
-                      )}
-                    </div>
+                    <p className="text-gray-500 text-xs">{ds.difficulty}</p>
                   </div>
                 </Link>
               </CompletionCardWrapper>
@@ -753,15 +730,17 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Link href={category.path}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 text-center group">
-                    <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <span className="text-2xl text-white font-bold" style={{ color: '#ffffff' }}>{category.icon}</span>
+                  <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                    <div className={`${category.color} h-20 flex items-center justify-center`}>
+                      <span className="text-3xl text-white font-bold">{category.icon}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
-                      {category.name}
-                    </h3>
-                    <p className="text-slate-600 text-sm mb-3">{category.description}</p>
-                    <div className="text-xs text-blue-600 font-medium">{category.count}</div>
+                    <div className="p-4 text-center">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        {category.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3">{category.description}</p>
+                      <div className="text-xs text-gray-500">{category.count}</div>
+                    </div>
                   </div>
                 </Link>
               </motion.div>
@@ -793,21 +772,17 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="text-center p-6 rounded-xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group relative overflow-hidden"
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-              
-              <div className={`relative mb-4 flex justify-center p-4 bg-gradient-to-br ${feature.color} bg-opacity-10 rounded-full w-20 h-20 mx-auto items-center group-hover:scale-110 transition-transform duration-300`}>
-                <div className={`text-transparent bg-gradient-to-br ${feature.color} bg-clip-text`}>
-                  {feature.icon}
-                </div>
+              <div className={`${feature.color} h-20 flex items-center justify-center`}>
+                {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors relative z-10">
-                {feature.title}
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm relative z-10">{feature.description}</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -836,19 +811,23 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 text-center"
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
-              <div className="text-6xl mb-4" style={{ color: '#ffffff' }}>{testimonials[currentTestimonial].avatar}</div>
-              <div className="flex justify-center mb-4" style={{ color: '#ffffff' }}>
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+              <div className="bg-blue-600 h-20 flex items-center justify-center">
+                <div className="text-5xl text-white">{testimonials[currentTestimonial].avatar}</div>
               </div>
-              <blockquote className="text-lg md:text-xl text-slate-700 mb-6 italic leading-relaxed">
-                &ldquo;{testimonials[currentTestimonial].content}&rdquo;
-              </blockquote>
-              <div className="font-semibold text-slate-900">{testimonials[currentTestimonial].name}</div>
-              <div className="text-slate-500 text-sm">{testimonials[currentTestimonial].role}</div>
+              <div className="p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="text-lg text-gray-700 mb-4 italic leading-relaxed">
+                  &ldquo;{testimonials[currentTestimonial].content}&rdquo;
+                </blockquote>
+                <div className="font-semibold text-gray-900">{testimonials[currentTestimonial].name}</div>
+                <div className="text-gray-500 text-sm">{testimonials[currentTestimonial].role}</div>
+              </div>
             </motion.div>
 
             {/* Testimonial indicators */}
