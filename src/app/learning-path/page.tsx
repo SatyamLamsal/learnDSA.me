@@ -222,10 +222,20 @@ export default function LearningPathPage() {
               <Play className="inline-block w-5 h-5 mr-2" />
               Start Learning
             </Link>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors">
+            <Link 
+              href="#learning-modules"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors inline-flex items-center"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('learning-modules');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <BookOpen className="inline-block w-5 h-5 mr-2" />
               Preview Course
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -277,7 +287,7 @@ export default function LearningPathPage() {
       </div>
 
       {/* Learning Modules */}
-      <div className="max-w-6xl mx-auto px-4 pb-16">
+      <div id="learning-modules" className="max-w-6xl mx-auto px-4 pb-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800">Learning Path</h2>
           

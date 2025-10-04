@@ -633,9 +633,12 @@ export default function Home() {
             <p className="text-slate-600 text-lg mb-6">
               Not sure which path to choose? Start with our quick assessment
             </p>
-            <button className="bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300">
-              Take Learning Style Quiz
-            </button>
+            <Link href="/learning-style-quiz" className="inline-block">
+              <button className="bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center">
+                <Brain className="w-5 h-5 mr-2" />
+                Take Learning Style Quiz
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -774,7 +777,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
             >
-              <div className={`${feature.color} h-20 flex items-center justify-center`}>
+              <div className={`${feature.color} h-20 flex items-center justify-center text-black`}>
                 {feature.icon}
               </div>
               <div className="p-4 text-center">
