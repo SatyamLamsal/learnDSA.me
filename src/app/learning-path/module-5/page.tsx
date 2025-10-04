@@ -431,7 +431,7 @@ export default function StacksQueuesModule() {
             className="mb-20"
           >
             <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-center">What You'll Master</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center">What You&apos;ll Master</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
                   <StackIcon className="w-12 h-12 mx-auto mb-4" />
@@ -733,7 +733,7 @@ export default function StacksQueuesModule() {
                 
                 <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
                   <h3 className="text-xl font-semibold text-purple-900 mb-4">
-                    Balanced Parentheses Check: "((()))"
+                    Balanced Parentheses Check: &quot;((()))&quot;
                   </h3>
                   
                   <div className="grid lg:grid-cols-2 gap-8">
@@ -767,22 +767,22 @@ export default function StacksQueuesModule() {
                       <h4 className="font-semibold text-purple-900 mb-3">Trace Example:</h4>
                       <div className="space-y-3 font-mono text-sm">
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push '(' → Stack: ['(']</span>
+                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push &apos;(&apos; → Stack: [&apos;(&apos;]</span>
                         </div>
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push '(' → Stack: ['(', '(']</span>
+                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push &apos;(&apos; → Stack: [&apos;(&apos;, &apos;(&apos;]</span>
                         </div>
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push '(' → Stack: ['(', '(', '(']</span>
+                          <span className="text-purple-600">Input:</span> ( → <span className="text-green-600">Push &apos;(&apos; → Stack: [&apos;(&apos;, &apos;(&apos;, &apos;(&apos;]</span>
                         </div>
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop '(' → Stack: ['(', '(']</span>
+                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop &apos;(&apos; → Stack: [&apos;(&apos;, &apos;(&apos;]</span>
                         </div>
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop '(' → Stack: ['(']</span>
+                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop &apos;(&apos; → Stack: [&apos;(&apos;]</span>
                         </div>
                         <div className="bg-white p-2 rounded border">
-                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop '(' → Stack: []</span>
+                          <span className="text-purple-600">Input:</span> ) → <span className="text-orange-600">Pop &apos;(&apos; → Stack: []</span>
                         </div>
                         <div className="bg-green-100 p-2 rounded border border-green-300">
                           <span className="text-green-800 font-semibold">Result: BALANCED ✓</span>

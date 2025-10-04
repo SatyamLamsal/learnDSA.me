@@ -320,7 +320,7 @@ export default function LinkedListsModule() {
             className="mb-20"
           >
             <div className="bg-gradient-to-r from-green-500 to-teal-600 rounded-3xl p-8 text-white mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-center">What You'll Master</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center">What You&apos;ll Master</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
                   <LinkIcon className="w-12 h-12 mx-auto mb-4" />
