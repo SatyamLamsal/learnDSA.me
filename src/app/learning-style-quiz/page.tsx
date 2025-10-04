@@ -368,7 +368,7 @@ export default function LearningStyleQuiz() {
                 Your Learning Style Results
               </h1>
               <p className="text-xl text-slate-600">
-                Based on your responses, here's your personalized learning profile.
+                Based on your responses, here&apos;s your personalized learning profile.
               </p>
             </div>
 
@@ -386,7 +386,7 @@ export default function LearningStyleQuiz() {
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                       <div className={`${learningStyles[topStyle].color} p-8 text-white text-center`}>
                         <IconComponent className="w-16 h-16 mx-auto mb-4" />
-                        <h2 className="text-3xl font-bold mb-2">You're a {learningStyles[topStyle].name}!</h2>
+                        <h2 className="text-3xl font-bold mb-2">You&apos;re a {learningStyles[topStyle].name}!</h2>
                         <p className="text-xl opacity-90">{learningStyles[topStyle].description}</p>
                       </div>
                       
