@@ -273,11 +273,11 @@ export default function Home() {
           >
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Users className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="text-sm font-medium text-slate-700">10,000+ Learners</span>
+              <span className="text-sm font-medium text-slate-700">Many Learners</span>
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Star className="w-5 h-5 text-yellow-500 mr-2" />
-              <span className="text-sm font-medium text-slate-700">4.9★ Rating</span>
+              <span className="text-sm font-medium text-slate-700">Good Rating</span>
             </div>
             <div className="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
               <Globe className="w-5 h-5 text-green-600 mr-2" />
@@ -444,7 +444,7 @@ export default function Home() {
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-slate-600 mb-6" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
