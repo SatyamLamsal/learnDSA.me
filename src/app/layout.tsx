@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://learndsa.me' : 'http://localhost:3000'),
   title: "Learn DSA - Master Data Structures & Algorithms with Interactive Learning",
   description: "Master Data Structures and Algorithms with comprehensive theory, dynamic visualizations, and hands-on simulations. Free interactive learning platform for students and professionals.",
   keywords: "data structures, algorithms, DSA, programming, computer science, coding, visualizations, simulations, learning, tutorial, interactive",

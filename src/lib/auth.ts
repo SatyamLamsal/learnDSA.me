@@ -12,7 +12,6 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token: _token }) {
-      console.log('🔄 Session callback:', session?.user?.email);
       if (session?.user?.email) {
         // Manually sync user data with database
         try {
@@ -38,11 +37,9 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
     async signIn({ user, account, profile: _profile }) {
-      console.log('🔐 SignIn callback:', user?.email, account?.provider);
       return true;
     },
     async jwt({ token, user, account: _account }) {
-      console.log('🎯 JWT callback:', token?.email);
       // Store user info in token for session callback
       if (user) {
         token.id = user.id;
@@ -54,24 +51,14 @@ export const authOptions: NextAuthOptions = {
     signIn: '/auth/signin',
     error: '/auth/signin',
   },
-  debug: true,
   logger: {
     error(code, metadata) {
-      console.error('❌ NextAuth Error:', code, metadata);
+      console.error('NextAuth Error:', code, metadata);
     },
     warn(code) {
-      console.warn('⚠️ NextAuth Warning:', code);
-    },
-    debug(code, metadata) {
-      console.log('🐛 NextAuth Debug:', code, metadata);
-    },
-  },
-  events: {
-    async signIn({ user }) {
-      console.log('✅ User signed in:', user.email);
-    },
-    async signOut() {
-      console.log('👋 User signed out');
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('NextAuth Warning:', code);
+      }
     },
   },
 }
