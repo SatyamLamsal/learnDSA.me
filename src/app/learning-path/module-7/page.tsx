@@ -2,68 +2,68 @@
 
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { 
-  Link as LinkIcon,
-  Plus,
+  TreePine,
+  Network,
+  Search,
+  RotateCcw,
   Clock,
   Target,
   CheckCircle,
   Award,
-  Grid3X3,
-  List,
-  ArrowUpDown
+  Grid3X3
 } from 'lucide-react';
 
-export default function Module5Page() {
+export default function Module7Page() {
   const sections = [
-    { id: 'introduction', name: 'Linked Lists Intro', icon: LinkIcon },
-    { id: 'operations', name: 'Basic Operations', icon: Plus },
-    { id: 'types', name: 'List Types', icon: List },
-    { id: 'advanced', name: 'Advanced Techniques', icon: ArrowUpDown }
+    { id: 'basics', name: 'Tree Basics', icon: TreePine },
+    { id: 'binary-trees', name: 'Binary Trees', icon: Network },
+    { id: 'traversal', name: 'Tree Traversal', icon: Search },
+    { id: 'applications', name: 'Applications', icon: RotateCcw }
   ];
 
   return (
     <ModuleLayout
-      moduleId="module-4"
-      moduleTitle="Module 4: Linked Lists"
-      moduleDescription="Master dynamic data structures and pointer manipulation"
+      moduleId="module-7"
+      moduleTitle="Module 7: Trees"
+      moduleDescription="Master hierarchical data structures and tree algorithms"
       sections={sections}
-      estimatedTime="120 minutes"
-      difficulty="Intermediate"
+      estimatedTime="150 minutes"
+      difficulty="Advanced"
       totalSections={4}
     >
       <div className="space-y-8">
-        <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 rounded-2xl">
+        <div className="bg-gradient-to-r from-emerald-600 to-green-600 text-white p-8 rounded-2xl">
           <div className="flex items-center space-x-4 mb-4">
-            <LinkIcon className="w-12 h-12" />
+            <TreePine className="w-12 h-12" />
             <div>
-              <h1 className="text-4xl font-bold">Linked Lists</h1>
-              <p className="text-orange-100 text-lg">Master dynamic data structures</p>
+              <h1 className="text-4xl font-bold">Trees</h1>
+              <p className="text-emerald-100 text-lg">Master hierarchical data structures</p>
             </div>
           </div>
-          <p className="text-orange-50">
-            Learn how to work with dynamic data structures that grow and shrink at runtime.
+          <p className="text-emerald-50">
+            Explore powerful hierarchical data structures used in databases, file systems, and more.
           </p>
         </div>
 
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You'll Learn
+            What You'll Master
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-800">Dynamic Memory</h3>
-                  <p className="text-gray-600 text-sm">Understanding pointers and dynamic allocation</p>
+                  <h3 className="font-semibold text-gray-800">Tree Fundamentals</h3>
+                  <p className="text-gray-600 text-sm">Nodes, edges, roots, leaves, and tree properties</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-800">List Operations</h3>
-                  <p className="text-gray-600 text-sm">Insertion, deletion, and traversal techniques</p>
+                  <h3 className="font-semibold text-gray-800">Binary Trees</h3>
+                  <p className="text-gray-600 text-sm">Binary search trees, AVL trees, and balancing</p>
                 </div>
               </div>
             </div>
@@ -71,15 +71,15 @@ export default function Module5Page() {
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-800">List Variants</h3>
-                  <p className="text-gray-600 text-sm">Singly, doubly, and circular linked lists</p>
+                  <h3 className="font-semibold text-gray-800">Tree Traversal</h3>
+                  <p className="text-gray-600 text-sm">In-order, pre-order, post-order, and level-order</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-800">Real Applications</h3>
-                  <p className="text-gray-600 text-sm">Practical use cases in software development</p>
+                  <h3 className="font-semibold text-gray-800">Advanced Topics</h3>
+                  <p className="text-gray-600 text-sm">Heaps, tries, and tree-based algorithms</p>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function Module5Page() {
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-3xl font-bold">120</div>
+                <div className="text-3xl font-bold">150</div>
                 <div className="text-blue-100">Minutes</div>
               </div>
               <Clock className="w-8 h-8 text-blue-100" />
@@ -108,7 +108,7 @@ export default function Module5Page() {
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-xl font-bold">Intermediate</div>
+                <div className="text-xl font-bold">Advanced</div>
                 <div className="text-purple-100">Level</div>
               </div>
               <Award className="w-8 h-8 text-purple-100" />

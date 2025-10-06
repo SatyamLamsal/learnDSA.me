@@ -66,7 +66,7 @@ export default function FoundationsDataStructuresPage() {
   return (
     <ModuleLayout
       moduleId="foundations"
-      moduleTitle="Module 1: Foundations"
+      moduleTitle="Foundations"
       moduleDescription="Jump to any section"
       sections={sections}
       activeSection={activeSection}

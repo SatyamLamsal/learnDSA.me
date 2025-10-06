@@ -60,14 +60,25 @@ const learningPath: LearningPath = {
       ]
     },
     {
+      id: "memory-efficiency",
+      title: "Memory & Efficiency Fundamentals",
+      description: "Understand why data structures exist through computer memory systems and performance analysis.",
+      duration: "1-2 weeks",
+      lessons: 12,
+      difficulty: "Beginner",
+      completed: false,
+      prerequisites: ["foundations"],
+      topics: ["Memory Hierarchy", "CPU Cache vs RAM vs Storage", "Why Data Structures Matter", "Performance Trade-offs", "Cache Optimization", "Access Patterns"]
+    },
+    {
       id: "arrays",
       title: "Arrays & Basic Operations",
-      description: "Now that you understand the foundations, let&apos;s dive into data structures starting with Arrays and Strings.",
+      description: "Now that you understand memory fundamentals, let&apos;s dive into data structures starting with Arrays and Strings.",
       duration: "1-2 weeks", 
       lessons: 15,
       difficulty: "Beginner",
       completed: false,
-      prerequisites: ["foundations"],
+      prerequisites: ["memory-efficiency"],
       topics: ["Array Traversal", "Two Pointer Technique", "Sliding Window", "Prefix Sums", "Array Rotations"]
     },
     {
@@ -405,8 +416,9 @@ export default function LearningPathPage() {
                         onClick={() => {
                           const moduleRoutes: { [key: string]: string } = {
                             'foundations': '/learning-path/foundations',
-                            'arrays': '/learning-path/module-2',
-                            'searching-sorting': '/learning-path/module-3',
+                            'memory-efficiency': '/learning-path/module-1',
+                            'arrays': '/learning-path/module-3',
+                            'searching-sorting': '/learning-path/module-4',
                             'linked-lists': '/data-structures/linked-lists',
                             'stacks-queues': '/data-structures/stacks',
                             'trees': '/data-structures/trees',

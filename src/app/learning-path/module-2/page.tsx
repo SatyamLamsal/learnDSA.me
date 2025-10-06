@@ -15,7 +15,7 @@ import {
   Award
 } from 'lucide-react';
 
-export default function Module2Page() {
+export default function Module3Page() {
   const sections = [
     {
       id: 'guide',
@@ -88,8 +88,8 @@ export default function Module2Page() {
   return (
     <ModuleLayout
       moduleId="module-2"
-      moduleTitle="Module 2: Arrays"
-      moduleDescription="Master the foundation of all data structures"
+      moduleTitle="Module 2: Arrays Deep Dive"
+      moduleDescription="Advanced array concepts and optimization techniques"
       sections={sections}
       estimatedTime="90 minutes"
       difficulty="Beginner"
