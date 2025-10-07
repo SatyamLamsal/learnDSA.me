@@ -8,8 +8,6 @@ import {
   Eye, 
   Headphones, 
   Hand, 
-  Book, 
-  Play, 
   Target, 
   ArrowRight, 
   ChevronLeft, 
@@ -18,8 +16,6 @@ import {
   BarChart3,
   Lightbulb,
   Code,
-  Users,
-  Clock,
   Zap,
   BookOpen
 } from 'lucide-react';

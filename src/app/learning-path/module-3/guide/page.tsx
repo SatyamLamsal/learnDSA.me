@@ -412,7 +412,7 @@ export default function ArrayGuidePage() {
           <div className="bg-green-50 rounded-xl p-6 border border-green-200">
             <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center">
               <ChevronRight className="w-6 h-6 mr-2" />
-              What's Next
+              What&apos;s Next
             </h3>
             <ul className="space-y-2 text-green-800">
               <li className="flex items-center">

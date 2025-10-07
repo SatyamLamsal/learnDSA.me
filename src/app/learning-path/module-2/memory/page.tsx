@@ -157,7 +157,7 @@ const CachePerformanceDemo = () => {
     
     let hits = 0;
     let misses = 0;
-    let loadedCacheLines = new Set<number>();
+    const loadedCacheLines = new Set<number>();
     
     pattern.forEach((index, step) => {
       setTimeout(() => {
@@ -449,7 +449,7 @@ free(buffer);`}
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold text-red-800 mb-4">❌ Don't</h3>
+              <h3 className="text-lg font-semibold text-red-800 mb-4">❌ Don&apos;t</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />

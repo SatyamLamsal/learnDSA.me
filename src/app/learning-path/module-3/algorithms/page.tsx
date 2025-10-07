@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
-import { PseudocodeBlock } from '@/components/PseudocodeBlock';
+import PseudocodeBlock from '@/components/PseudocodeBlock';
 
 // Two Pointer Technique Visualization
 const TwoPointerDemo = () => {
@@ -39,7 +39,7 @@ const TwoPointerDemo = () => {
     let left = 0;
     let right = array.length - 1;
     let stepCount = 0;
-    let newSteps: string[] = [];
+    const newSteps: string[] = [];
 
     while (left < right && stepCount < 10) {
       setLeftPointer(left);
@@ -169,7 +169,7 @@ const SlidingWindowDemo = () => {
     let currentSum = 0;
     let maxSumFound = 0;
     let maxWindowFound: number[] = [];
-    let newSteps: string[] = [];
+    const newSteps: string[] = [];
 
     // Calculate initial window sum
     for (let i = 0; i < windowSize; i++) {

@@ -34,7 +34,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
   activeSection,
   onSectionChange,
   backUrl = '/learning-path',
-  nextUrl,
+  nextUrl: _nextUrl,
   estimatedTime = '45 minutes',
   difficulty = 'Beginner',
   totalSections,

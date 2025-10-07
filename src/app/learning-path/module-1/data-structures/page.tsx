@@ -238,7 +238,7 @@ export default function DataStructuresPage() {
               Why Do Data Structures Exist?
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Data structures aren't academic concepts - they're practical solutions to real-world problems
+              Data structures aren&apos;t academic concepts - they&apos;re practical solutions to real-world problems
             </p>
           </motion.div>
         </div>
@@ -416,7 +416,7 @@ export default function DataStructuresPage() {
         <div className="bg-white rounded-2xl p-8 shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <TrendingUp className="w-7 h-7 mr-3 text-blue-600" />
-            The Big Picture: It's All About Trade-offs
+            The Big Picture: It&apos;s All About Trade-offs
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-8">
@@ -491,7 +491,7 @@ export default function DataStructuresPage() {
               <div className="bg-orange-50 p-6 rounded-xl border border-orange-200">
                 <h3 className="text-xl font-semibold text-orange-900 mb-4">Key Insight</h3>
                 <p className="text-orange-800 leading-relaxed">
-                  <strong>There's no "perfect" data structure.</strong> Each one optimizes for specific 
+                  <strong>There&apos;s no &quot;perfect&quot; data structure.</strong> Each one optimizes for specific 
                   operations at the cost of others. The art is choosing the right tool for your specific 
                   use case based on what operations you do most frequently.
                 </p>

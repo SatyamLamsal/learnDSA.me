@@ -84,7 +84,7 @@ export default function Module1Page() {
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You'll Understand
+            What You&apos;ll Understand
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
@@ -382,7 +382,7 @@ export default function Module1Page() {
           <div className="bg-gray-50 p-6 rounded-xl">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">The Big Picture</h3>
             <p className="text-gray-700 mb-4">
-              Data structures aren't arbitrary - they're engineered solutions to specific problems. 
+              Data structures aren&apos;t arbitrary - they&apos;re engineered solutions to specific problems. 
               Each structure optimizes for different trade-offs between time complexity, space complexity, 
               and memory access patterns.
             </p>
@@ -559,8 +559,8 @@ export default function Module1Page() {
         <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-4">Ready to Explore Data Structures?</h2>
           <p className="text-indigo-100 mb-6">
-            Now that you understand why data structures exist and how memory works, let's start building them! 
-            We'll begin with Arrays - the foundation of most data structures.
+            Now that you understand why data structures exist and how memory works, let&apos;s start building them! 
+            We&apos;ll begin with Arrays - the foundation of most data structures.
           </p>
           <a 
             href="/learning-path/module-3"

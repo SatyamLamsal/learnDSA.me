@@ -77,12 +77,12 @@ export default function FoundationsIntroductionPage() {
         </h1>
         
         <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Discover what data structures and algorithms are, why they're fundamental to computer science, 
+          Discover what data structures and algorithms are, why they&apos;re fundamental to computer science, 
           and understand the key distinctions between data and information that every programmer should know.
         </p>
       </motion.div>
 
-      {/* What You'll Master - Only in Introduction */}
+      {/* What You&apos;ll Master - Only in Introduction */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

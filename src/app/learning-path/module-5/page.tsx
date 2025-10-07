@@ -43,7 +43,7 @@ export default function Module6Page() {
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Users className="w-7 h-7 mr-3 text-green-600" />
-            What You'll Master
+            What You&apos;ll Master
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

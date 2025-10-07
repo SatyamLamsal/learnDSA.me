@@ -283,7 +283,7 @@ export default function ArrayGuidePage() {
               <div className="text-sm font-medium text-blue-200 mb-2">Module 2 • Data Structures</div>
               <h1 className="text-5xl font-bold mb-4">Arrays Complete Guide</h1>
               <p className="text-xl text-blue-100 max-w-2xl">
-                Master the fundamental building block of computer science. From memory layout to advanced algorithms, 
+                                  Let&apos;s explore the fundamental building block of computer science: From memory layout to advanced algorithms, 
                 become proficient in one of the most versatile data structures.
               </p>
             </div>
@@ -412,7 +412,7 @@ export default function ArrayGuidePage() {
           <div className="bg-green-50 rounded-xl p-6 border border-green-200">
             <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center">
               <ChevronRight className="w-6 h-6 mr-2" />
-              What's Next
+              What&apos;s Next
             </h3>
             <ul className="space-y-2 text-green-800">
               <li className="flex items-center">

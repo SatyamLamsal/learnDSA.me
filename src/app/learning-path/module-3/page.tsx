@@ -102,7 +102,7 @@ export default function Module3Page() {
           <h2 className="text-lg font-semibold text-indigo-900 mb-3">Building on Memory Fundamentals</h2>
           <p className="text-indigo-700 mb-4">
             In Module 1, we learned why data structures exist and how computer memory works. 
-            Now we'll apply that knowledge to build and optimize our first data structure: Arrays.
+            Now we&apos;ll apply that knowledge to build and optimize our first data structure: Arrays.
           </p>
           <a 
             href="/learning-path/module-1"
@@ -122,7 +122,7 @@ export default function Module3Page() {
           </div>
           <p className="text-blue-50">
             Arrays are the cornerstone of computer science and programming. In this comprehensive module, 
-            you'll master everything from basic array operations to advanced algorithmic patterns like 
+            you&apos;ll master everything from basic array operations to advanced algorithmic patterns like 
             two-pointer technique and sliding window.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function Module3Page() {
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You'll Master
+            What You&apos;ll Master
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

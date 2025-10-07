@@ -400,7 +400,7 @@ export default function MemoryHierarchyPage() {
           
           <div className="space-y-6">
             <p className="text-gray-600">
-              If accessing a CPU register took 1 second, here's how long other memory accesses would take:
+              If accessing a CPU register took 1 second, here&apos;s how long other memory accesses would take:
             </p>
             
             <div className="space-y-4">

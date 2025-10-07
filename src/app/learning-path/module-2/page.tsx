@@ -106,7 +106,7 @@ export default function Module3Page() {
           </div>
           <p className="text-blue-50">
             Arrays are the cornerstone of computer science and programming. In this comprehensive module, 
-            you'll master everything from basic array operations to advanced algorithmic patterns like 
+            you&apos;ll master everything from basic array operations to advanced algorithmic patterns like 
             two-pointer technique and sliding window.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Module3Page() {
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You'll Master
+            What You&apos;ll Master
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">

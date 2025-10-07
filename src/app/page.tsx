@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Play, Code, Target, ArrowRight, CheckCircle, Zap, Map, Compass, Users, Clock, Star, Award, TrendingUp, Brain, Monitor, Globe, BookmarkIcon, Activity, Calendar, ChevronRight } from 'lucide-react';
+import { BookOpen, Play, Code, Target, ArrowRight, CheckCircle, Zap, Map, Compass, Users, Clock, Star, Award, TrendingUp, Brain, Monitor, Globe, BookmarkIcon, Activity, ChevronRight } from 'lucide-react';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { CompletionCardWrapper } from '@/components/progress/CompletionCardWrapper';
 import { useProgress } from '@/hooks/useProgress';

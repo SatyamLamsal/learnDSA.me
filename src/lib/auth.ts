@@ -36,7 +36,7 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
-    async signIn({ user, account, profile: _profile }) {
+    async signIn({ user: _user, account: _account, profile: _profile }) {
       return true;
     },
     async jwt({ token, user, account: _account }) {

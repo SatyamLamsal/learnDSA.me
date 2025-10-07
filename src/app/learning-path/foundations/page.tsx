@@ -137,7 +137,7 @@ export default function FoundationsPage() {
         <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-4">Ready for the Next Step?</h2>
           <p className="text-blue-100 mb-6">
-            Now that you understand the fundamentals, let's explore why data structures exist by diving into computer memory systems.
+            Now that you understand the fundamentals, let&apos;s explore why data structures exist by diving into computer memory systems.
           </p>
           <a 
             href="/learning-path/module-1"
