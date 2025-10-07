@@ -419,7 +419,7 @@ export default function LearningPathPage() {
                             'memory-efficiency': '/learning-path/module-1',
                             'arrays': '/learning-path/module-3',
                             'searching-sorting': '/learning-path/module-4',
-                            'linked-lists': '/data-structures/linked-lists',
+                            'linked-lists': '/learning-path/module-4',
                             'stacks-queues': '/data-structures/stacks',
                             'trees': '/data-structures/trees',
                             'hash-tables': '/data-structures/hash-tables',
