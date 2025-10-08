@@ -5,20 +5,32 @@ import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, HardDrive, ArrowRight } from 'lucide-react';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { useEffect, useRef } from 'react';
 
 
 const ArrayVisualization = () => {
   const arrayElements = [10, 23, 45, 67, 89, 12, 34];
+  const isMounted = useRef(true);
+  
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
   
   return (
     <div className="bg-white rounded-lg p-6 shadow-lg">
       <div className="flex justify-center items-center space-x-2 mb-4">
         {arrayElements.map((element, index) => (
           <motion.div
-            key={index}
+            key={`element-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ 
+              delay: index * 0.1,
+              duration: 0.5,
+              ease: "easeOut"
+            }}
             className="w-16 h-16 bg-red-500 text-white rounded-lg flex items-center justify-center font-bold border-2 border-red-600"
           >
             {element}
@@ -27,7 +39,7 @@ const ArrayVisualization = () => {
       </div>
       <div className="flex justify-center items-center space-x-2 text-sm text-gray-600">
         {arrayElements.map((_, index) => (
-          <div key={index} className="w-16 text-center">
+          <div key={`index-${index}`} className="w-16 text-center">
             [{index}]
           </div>
         ))}
@@ -37,6 +49,14 @@ const ArrayVisualization = () => {
 };
 
 export default function ArraysPage() {
+  const isMounted = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
       <div className="container mx-auto px-4 py-12">

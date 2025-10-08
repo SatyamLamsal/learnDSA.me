@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Plus, Search, Trash2, Play, ChevronRight } from 'lucide-react';
 
@@ -38,10 +38,35 @@ export default function ArraysSimulationPage() {
   const [animationSteps, setAnimationSteps] = useState<AnimationStep[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [showSteps, setShowSteps] = useState(false);
+  const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
+
+  // Cleanup function to clear all pending timeouts
+  useEffect(() => {
+    return () => {
+      timeoutRefs.current.forEach(timeout => clearTimeout(timeout));
+      timeoutRefs.current = [];
+    };
+  }, []);
+
+  // Cancel animations when component unmounts or user navigates away
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      setIsAnimating(false);
+      timeoutRefs.current.forEach(timeout => clearTimeout(timeout));
+      timeoutRefs.current = [];
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      handleBeforeUnload();
+    };
+  }, []);
 
   const showMessage = (msg: string) => {
     setMessage(msg);
-    setTimeout(() => setMessage(''), 3000);
+    const timeout = setTimeout(() => setMessage(''), 3000);
+    timeoutRefs.current.push(timeout);
   };
 
   const resetHighlights = () => {
@@ -54,17 +79,36 @@ export default function ArraysSimulationPage() {
     })));
   };
 
-  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+  const stopAnimation = () => {
+    setIsAnimating(false);
+    setShowSteps(false);
+    timeoutRefs.current.forEach(timeout => clearTimeout(timeout));
+    timeoutRefs.current = [];
+    resetHighlights();
+    setSearchResult(null);
+    showMessage('Animation stopped');
+  };
+
+  const delay = (ms: number) => new Promise(resolve => {
+    const timeout = setTimeout(resolve, ms);
+    timeoutRefs.current.push(timeout);
+  });
 
   const addElement = async () => {
-    if (!inputValue || isNaN(Number(inputValue))) {
-      showMessage('Please enter a valid number');
-      return;
-    }
+    try {
+      if (!inputValue || isNaN(Number(inputValue))) {
+        showMessage('Please enter a valid number');
+        return;
+      }
 
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setShowSteps(true);
+      if (isAnimating) return;
+      if (array.length >= 20) {
+        showMessage('Array size limit reached (20 elements)');
+        return;
+      }
+      
+      setIsAnimating(true);
+      setShowSteps(true);
     
     const value = Number(inputValue);
     const steps: AnimationStep[] = [
@@ -97,26 +141,38 @@ export default function ArraysSimulationPage() {
     showMessage(`Successfully added ${value} to the array`);
     setIsAnimating(false);
     setShowSteps(false);
+    } catch (error) {
+      console.error('Error adding element:', error);
+      setIsAnimating(false);
+      setShowSteps(false);
+      showMessage('Error occurred while adding element');
+    }
   };
 
   const insertAt = async () => {
-    if (!inputValue || !insertIndex || isNaN(Number(inputValue)) || isNaN(Number(insertIndex))) {
-      showMessage('Please enter valid number and index');
-      return;
-    }
+    try {
+      if (!inputValue || !insertIndex || isNaN(Number(inputValue)) || isNaN(Number(insertIndex))) {
+        showMessage('Please enter valid number and index');
+        return;
+      }
 
-    if (isAnimating) return;
-    const index = Number(insertIndex);
-    const value = Number(inputValue);
+      if (isAnimating) return;
+      const index = Number(insertIndex);
+      const value = Number(inputValue);
 
-    if (index < 0 || index > array.length) {
-      showMessage(`Index must be between 0 and ${array.length}`);
-      return;
-    }
+      if (index < 0 || index > array.length) {
+        showMessage(`Index must be between 0 and ${array.length}`);
+        return;
+      }
 
-    setIsAnimating(true);
-    setShowSteps(true);
-    resetHighlights();
+      if (array.length >= 20) {
+        showMessage('Array size limit reached (20 elements)');
+        return;
+      }
+
+      setIsAnimating(true);
+      setShowSteps(true);
+      resetHighlights();
     
     const steps: AnimationStep[] = [
       { message: `Step 1: Insert ${value} at index ${index}` },
@@ -170,6 +226,12 @@ export default function ArraysSimulationPage() {
     showMessage(`Successfully inserted ${value} at index ${index}`);
     setIsAnimating(false);
     setShowSteps(false);
+    } catch (error) {
+      console.error('Error inserting element:', error);
+      setIsAnimating(false);
+      setShowSteps(false);
+      showMessage('Error occurred while inserting element');
+    }
   };
 
   const deleteElement = async (index: number) => {
@@ -218,16 +280,17 @@ export default function ArraysSimulationPage() {
   };
 
   const searchElement = async () => {
-    if (!searchValue || isNaN(Number(searchValue))) {
-      showMessage('Please enter a valid number to search');
-      return;
-    }
+    try {
+      if (!searchValue || isNaN(Number(searchValue))) {
+        showMessage('Please enter a valid number to search');
+        return;
+      }
 
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setShowSteps(true);
-    setSearchResult(null);
-    resetHighlights();
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setShowSteps(true);
+      setSearchResult(null);
+      resetHighlights();
     
     const target = Number(searchValue);
     const steps: AnimationStep[] = [
@@ -242,8 +305,10 @@ export default function ArraysSimulationPage() {
     setCurrentStep(1);
     await delay(1000);
 
-    // Animate linear search
-    for (let i = 0; i < array.length; i++) {
+    // Animate linear search with safety checks
+    for (let i = 0; i < array.length && i < 100; i++) { // Safety limit
+      if (!isAnimating) break; // Early exit if animation was cancelled
+      
       setCurrentStep(2);
       setAnimationSteps(prev => [
         ...prev.slice(0, 2),
@@ -258,7 +323,7 @@ export default function ArraysSimulationPage() {
 
       await delay(1200);
 
-      if (array[i].value === target) {
+      if (array[i] && array[i].value === target) {
         setAnimationSteps(prev => [
           ...prev,
           { message: `Step 4: Found! ${target} is at index ${i}`, action: 'found' }
@@ -283,6 +348,13 @@ export default function ArraysSimulationPage() {
     showMessage(`${target} not found in the array`);
     setIsAnimating(false);
     setShowSteps(false);
+    } catch (error) {
+      console.error('Error searching element:', error);
+      setIsAnimating(false);
+      setShowSteps(false);
+      resetHighlights();
+      showMessage('Error occurred while searching');
+    }
   };
 
   const clearArray = () => {
@@ -645,6 +717,14 @@ export default function ArraysSimulationPage() {
             >
               Clear Array
             </button>
+            {isAnimating && (
+              <button
+                onClick={stopAnimation}
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+              >
+                Stop Animation
+              </button>
+            )}
           </div>
         </motion.div>
 

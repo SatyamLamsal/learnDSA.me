@@ -5,14 +5,23 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Code, Clock, BookOpen } from 'lucide-react';
 import { usePageTracking } from '@/hooks/usePageTracking';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { useEffect, useRef } from 'react';
 
 export default function ArraysTheoryPage() {
+  const isMounted = useRef(true);
+
   // Track this page visit
   usePageTracking({
     topicId: 'arrays-theory',
     topicType: 'theory',
     category: 'data-structures'
   });
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
   const codeExamples = {
     declaration: `// Array Declaration in Different Languages
 
@@ -110,9 +119,10 @@ function maxSubarraySum(arr, k) {
 }`
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
+  try {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
+        <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -166,8 +176,8 @@ function maxSubarraySum(arr, k) {
           id="fundamentals"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
@@ -201,8 +211,8 @@ function maxSubarraySum(arr, k) {
           id="memory"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Memory Layout & Indexing</h2>
@@ -240,8 +250,8 @@ function maxSubarraySum(arr, k) {
           id="operations"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
@@ -277,8 +287,8 @@ function maxSubarraySum(arr, k) {
           id="complexity"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
@@ -334,8 +344,8 @@ function maxSubarraySum(arr, k) {
           id="algorithms"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Advanced Array Algorithms</h2>
@@ -373,8 +383,8 @@ function maxSubarraySum(arr, k) {
           id="applications"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
           className="bg-white rounded-lg shadow-lg p-8 mb-12"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Real-world Applications</h2>
@@ -457,7 +467,21 @@ function maxSubarraySum(arr, k) {
             Try Interactive Simulation →
           </Link>
         </motion.div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error('Arrays theory page error:', error);
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">Something went wrong</h1>
+          <p className="text-gray-600">Please refresh the page or try again later.</p>
+          <Link href="/data-structures/arrays" className="text-red-600 hover:text-red-700 mt-4 inline-block">
+            ← Back to Arrays Overview
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
