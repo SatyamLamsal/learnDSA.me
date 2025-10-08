@@ -13,7 +13,7 @@ import {
   Grid3X3
 } from 'lucide-react';
 
-export default function Module7Page() {
+export default function Module6Page() {
   const sections = [
     { id: 'basics', name: 'Tree Basics', icon: TreePine },
     { id: 'binary-trees', name: 'Binary Trees', icon: Network },

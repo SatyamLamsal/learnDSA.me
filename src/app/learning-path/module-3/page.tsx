@@ -88,27 +88,27 @@ export default function Module3Page() {
   return (
     <ModuleLayout
       moduleId="module-3"
-      moduleTitle="Module 3: Arrays"
-      moduleDescription="Master the foundation of all data structures"
+      moduleTitle="Module 3: Advanced Arrays & Patterns"
+      moduleDescription="Advanced array concepts, optimization techniques, and algorithmic patterns"
       sections={sections}
-      estimatedTime="90 minutes"
-      difficulty="Beginner"
+      estimatedTime="120 minutes"
+      difficulty="Intermediate"
       totalSections={4}
     >
       <div className="space-y-8">
         
         {/* Previous Module Reference */}
         <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 p-6 rounded-2xl">
-          <h2 className="text-lg font-semibold text-indigo-900 mb-3">Building on Memory Fundamentals</h2>
+          <h2 className="text-lg font-semibold text-indigo-900 mb-3">Building on Array Fundamentals</h2>
           <p className="text-indigo-700 mb-4">
-            In Module 1, we learned why data structures exist and how computer memory works. 
-            Now we&apos;ll apply that knowledge to build and optimize our first data structure: Arrays.
+            In Module 2, we learned array basics and fundamental operations. 
+            Now we&apos;ll explore advanced patterns, optimization techniques, and complex algorithms.
           </p>
           <a 
-            href="/learning-path/module-1"
+            href="/learning-path/module-2"
             className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
           >
-            ← Review Module 1: Memory & Efficiency
+            ← Review Module 2: Array Fundamentals
           </a>
         </div>
         
@@ -116,14 +116,14 @@ export default function Module3Page() {
           <div className="flex items-center space-x-4 mb-4">
             <Database className="w-12 h-12" />
             <div>
-              <h1 className="text-4xl font-bold">Module 3: Arrays</h1>
-              <p className="text-blue-100 text-lg">Master the foundation of all data structures</p>
+              <h1 className="text-4xl font-bold">Module 3: Advanced Arrays</h1>
+              <p className="text-blue-100 text-lg">Advanced patterns and optimization techniques</p>
             </div>
           </div>
           <p className="text-blue-50">
-            Arrays are the cornerstone of computer science and programming. In this comprehensive module, 
-            you&apos;ll master everything from basic array operations to advanced algorithmic patterns like 
-            two-pointer technique and sliding window.
+            Building upon your array foundations, this advanced module explores sophisticated patterns 
+            and optimization techniques. Master two-pointer, sliding window, and other algorithmic 
+            patterns essential for complex problem-solving.
           </p>
         </div>
 

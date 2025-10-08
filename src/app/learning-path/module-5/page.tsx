@@ -8,7 +8,7 @@ import {
   Zap
 } from 'lucide-react';
 
-export default function Module6Page() {
+export default function Module5Page() {
   const sections = [
     { id: 'stacks', name: 'Stacks (LIFO)', icon: ArrowUpDown },
     { id: 'queues', name: 'Queues (FIFO)', icon: Layers },

@@ -61,80 +61,80 @@ const learningPath: LearningPath = {
     },
     {
       id: "memory-efficiency",
-      title: "Memory & Efficiency Fundamentals",
-      description: "Understand why data structures exist through computer memory systems and performance analysis.",
+      title: "Module 1: Memory & Performance",
+      description: "Understand computer memory hierarchy, performance impact, and why data structures matter.",
       duration: "1-2 weeks",
       lessons: 12,
       difficulty: "Beginner",
       completed: false,
       prerequisites: ["foundations"],
-      topics: ["Memory Hierarchy", "CPU Cache vs RAM vs Storage", "Why Data Structures Matter", "Performance Trade-offs", "Cache Optimization", "Access Patterns"]
+      topics: ["Memory Hierarchy", "CPU Cache vs RAM vs Storage", "Performance Analysis", "Why Data Structures Matter", "Cache Optimization", "Access Patterns"]
     },
     {
       id: "arrays",
-      title: "Arrays & Basic Operations",
-      description: "Now that you understand memory fundamentals, let&apos;s dive into data structures starting with Arrays and Strings.",
+      title: "Module 2: Arrays & Fundamentals",
+      description: "Master arrays with comprehensive understanding of memory layout, operations, and algorithms.",
       duration: "1-2 weeks", 
       lessons: 15,
       difficulty: "Beginner",
       completed: false,
       prerequisites: ["memory-efficiency"],
-      topics: ["Array Traversal", "Two Pointer Technique", "Sliding Window", "Prefix Sums", "Array Rotations"]
+      topics: ["Array Guide", "Memory Layout", "Basic Operations", "Array Algorithms", "Two Pointer Technique", "Sliding Window"]
     },
     {
       id: "searching-sorting",
-      title: "Searching & Sorting Algorithms",
-      description: "Learn essential sorting algorithms and efficient searching techniques.",
+      title: "Module 3: Advanced Arrays & Patterns",
+      description: "Build upon array fundamentals with advanced techniques and common algorithm patterns.",
       duration: "2 weeks",
       lessons: 18,
-      difficulty: "Beginner",
+      difficulty: "Intermediate",
       completed: false,
       prerequisites: ["arrays"],
-      topics: ["Binary Search", "Merge Sort", "Quick Sort", "Heap Sort", "Counting Sort", "Search Optimizations"]
+      topics: ["Advanced Array Guide", "Memory Patterns", "Complex Operations", "Advanced Algorithms", "Pattern Recognition", "Optimization Techniques"]
     },
     {
       id: "linked-lists",
-      title: "Linked Lists & Pointers",
-      description: "Understand dynamic data structures and pointer manipulations.",
+      title: "Module 4: Linked Lists & Pointers",
+      description: "Master dynamic data structures, pointer manipulation, memory management, and various linked list types.",
       duration: "1-2 weeks",
       lessons: 14,
       difficulty: "Intermediate",
       completed: false,
-      prerequisites: ["arrays"],
-      topics: ["Singly Linked Lists", "Doubly Linked Lists", "Circular Lists", "Floyd's Cycle Detection", "List Reversal"]
+      prerequisites: ["searching-sorting"],
+      topics: ["Pointers & Memory", "Introduction to Linked Lists", "Types of Linked Lists", "Core Operations", "Problems & Practice"]
     },
     {
       id: "stacks-queues",
-      title: "Stacks & Queues",
-      description: "Master LIFO and FIFO data structures with practical applications.",
+      title: "Module 5: Stacks & Queues",
+      description: "Master LIFO and FIFO data structures with practical applications and advanced implementations.",
       duration: "1-2 weeks",
       lessons: 16,
       difficulty: "Intermediate", 
       completed: false,
       prerequisites: ["linked-lists"],
-      topics: ["Stack Operations", "Queue Implementations", "Deque", "Priority Queues", "Expression Evaluation"]
+      topics: ["Stacks (LIFO)", "Queues (FIFO)", "Applications", "Advanced Topics", "Priority Queues", "Expression Evaluation"]
     },
     {
       id: "trees",
-      title: "Trees & Binary Trees",
-      description: "Explore hierarchical data structures and tree algorithms.",
+      title: "Module 6: Trees & Hierarchical Structures",
+      description: "Explore hierarchical data structures, tree algorithms, and binary tree operations.",
       duration: "2-3 weeks",
       lessons: 22,
-      difficulty: "Intermediate",
+      difficulty: "Advanced",
       completed: false,
       prerequisites: ["stacks-queues"],
-      topics: ["Binary Trees", "BST Operations", "Tree Traversals", "AVL Trees", "Tree Construction", "LCA Problems"]
+      topics: ["Tree Basics", "Binary Trees", "Tree Traversal", "Applications", "BST Operations", "Advanced Tree Algorithms"]
     },
     {
       id: "hash-tables",
-      title: "Hash Tables & Hashing",
-      description: "Learn efficient key-value storage and collision resolution techniques.",
-      duration: "1-2 weeks",
-      lessons: 13,
-      difficulty: "Intermediate",
+      title: "Module 7: Hash Tables & Advanced Structures",
+      description: "Master hash tables, collision resolution, and explore advanced data structures.",
+      duration: "2-3 weeks",
+      lessons: 16,
+      difficulty: "Advanced",
       completed: false,
-      prerequisites: ["arrays"],
-      topics: ["Hash Functions", "Collision Resolution", "Load Factor", "Hash Maps", "Hash Sets", "Consistent Hashing"]
+      prerequisites: ["trees"],
+      topics: ["Hash Tables", "Collision Resolution", "Applications", "Advanced Topics", "Hash Maps", "Consistent Hashing"]
     },
     {
       id: "graphs",
@@ -417,12 +417,12 @@ export default function LearningPathPage() {
                           const moduleRoutes: { [key: string]: string } = {
                             'foundations': '/learning-path/foundations',
                             'memory-efficiency': '/learning-path/module-1',
-                            'arrays': '/learning-path/module-3',
-                            'searching-sorting': '/learning-path/module-4',
+                            'arrays': '/learning-path/module-2',
+                            'searching-sorting': '/learning-path/module-3', 
                             'linked-lists': '/learning-path/module-4',
-                            'stacks-queues': '/data-structures/stacks',
-                            'trees': '/data-structures/trees',
-                            'hash-tables': '/data-structures/hash-tables',
+                            'stacks-queues': '/learning-path/module-5',
+                            'trees': '/learning-path/module-6',
+                            'hash-tables': '/learning-path/module-7',
                             'graphs': '/data-structures/graphs',
                             'dynamic-programming': '/algorithms/dynamic-programming',
                             'advanced-topics': '/algorithms/greedy'

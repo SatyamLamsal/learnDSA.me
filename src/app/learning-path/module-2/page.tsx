@@ -15,7 +15,7 @@ import {
   Award
 } from 'lucide-react';
 
-export default function Module3Page() {
+export default function Module2Page() {
   const sections = [
     {
       id: 'guide',

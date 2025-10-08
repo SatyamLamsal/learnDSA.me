@@ -2,10 +2,10 @@
 
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { 
-  TreePine,
-  Network,
+  Hash,
+  Database,
   Search,
-  RotateCcw,
+  Zap,
   Clock,
   Target,
   CheckCircle,
@@ -15,33 +15,33 @@ import {
 
 export default function Module7Page() {
   const sections = [
-    { id: 'basics', name: 'Tree Basics', icon: TreePine },
-    { id: 'binary-trees', name: 'Binary Trees', icon: Network },
-    { id: 'traversal', name: 'Tree Traversal', icon: Search },
-    { id: 'applications', name: 'Applications', icon: RotateCcw }
+    { id: 'hash-tables', name: 'Hash Tables', icon: Hash },
+    { id: 'collision-resolution', name: 'Collision Resolution', icon: Database },
+    { id: 'applications', name: 'Applications', icon: Search },
+    { id: 'advanced', name: 'Advanced Topics', icon: Zap }
   ];
 
   return (
     <ModuleLayout
       moduleId="module-7"
-      moduleTitle="Module 7: Trees"
-      moduleDescription="Master hierarchical data structures and tree algorithms"
+      moduleTitle="Module 7: Hash Tables & Advanced Structures"
+      moduleDescription="Master hash tables, collision resolution, and advanced data structures"
       sections={sections}
-      estimatedTime="150 minutes"
+      estimatedTime="180 minutes"
       difficulty="Advanced"
       totalSections={4}
     >
       <div className="space-y-8">
-        <div className="bg-gradient-to-r from-emerald-600 to-green-600 text-white p-8 rounded-2xl">
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-2xl">
           <div className="flex items-center space-x-4 mb-4">
-            <TreePine className="w-12 h-12" />
+            <Hash className="w-12 h-12" />
             <div>
-              <h1 className="text-4xl font-bold">Trees</h1>
-              <p className="text-emerald-100 text-lg">Master hierarchical data structures</p>
+              <h1 className="text-4xl font-bold">Hash Tables & Advanced Structures</h1>
+              <p className="text-purple-100 text-lg">Master efficient key-value storage and advanced data structures</p>
             </div>
           </div>
-          <p className="text-emerald-50">
-            Explore powerful hierarchical data structures used in databases, file systems, and more.
+          <p className="text-purple-50">
+            Explore hash tables, collision resolution techniques, and advanced data structures used in modern systems.
           </p>
         </div>
 
