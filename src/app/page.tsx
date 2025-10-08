@@ -235,7 +235,7 @@ export default function Home() {
             Interactive Learning Platform
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#ffffff' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#000000ff' }}>
             Master{" "}
             <motion.span 
               className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-black"
@@ -299,7 +299,7 @@ export default function Home() {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 text-gray-700">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#fef3c7', color: '#ffffff' }}>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2" style={{ backgroundColor: '#ebecf5ff', color: '#2e3301ff' }}>
                   Welcome back, {session.user?.name?.split(' ')[0] || 'Learner'}! 👋
                 </h2>
                 <p className="text-slate-600">
@@ -319,7 +319,7 @@ export default function Home() {
                 <div className="relative z-10 text-gray-700">
                   <div className="flex items-center mb-4 text-gray-700" style={{ color: '#ffffff' }}>
                     <Play className="w-6 h-6 mr-3 text-gray-700" />
-                    <h3 className="text-lg font-semibold text-gray-800">Continue Learning</h3>
+                    <h3 className="text-lg font-semibold text-white">Continue Learning</h3>
                   </div>
                   <p className="text-blue-100 text-sm mb-4" style={{ color: '#ffffff' }}>
                     Pick up where you left off
@@ -444,7 +444,7 @@ export default function Home() {
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-slate-600 mb-6" style={{ fontFamily: 'Georgia, serif', color: '#ffffff' }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-slate-600 mb-6" style={{ fontFamily: 'Georgia, serif', color: '#2e2828ff' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -478,7 +478,7 @@ export default function Home() {
                       <Map className="w-10 h-10 text-white text-gray-700" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#ffffff' }}>Guided Learning Path</h3>
+                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#201f1fff' }}>Guided Learning Path</h3>
                       <p className="text-slate-500 text-lg">Structured • 12-16 weeks • Certificate</p>
                     </div>
                   </div>
@@ -563,7 +563,7 @@ export default function Home() {
                       <Compass className="w-10 h-10 text-white text-gray-700" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#ffffff' }}>Flexible Exploration</h3>
+                      <h3 className="text-3xl font-bold text-slate-800 mb-2" style={{ color: '#201f1fff' }}>Flexible Exploration</h3>
                       <p className="text-slate-500 text-lg">Self-paced • Any topic • Instant access</p>
                     </div>
                   </div>
@@ -652,7 +652,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Popular Data Structures</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#2e2828ff' }}>Popular Data Structures</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Master the fundamental building blocks of computer science
           </p>
@@ -716,7 +716,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12 text-gray-700"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Algorithm Categories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#2e2828ff' }}>Algorithm Categories</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Explore different types of algorithms and their real-world applications
             </p>
@@ -761,7 +761,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>Why Choose LearnDSA.me?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#001380ff' }}>Why Choose LearnDSA.me?</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Experience the most effective way to learn data structures and algorithms
           </p>
@@ -801,7 +801,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12 text-gray-700"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>What Students Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#2e2828ff' }}>What Students Say</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Join thousands of successful learners who&apos;ve mastered DSA with our platform
             </p>
@@ -875,10 +875,10 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: stat.delay }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-gray-700"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-white"
               >
-                <div className="flex justify-center mb-3 text-gray-700">
-                  <div className="bg-white/20 p-3 rounded-full text-gray-700">
+                <div className="flex justify-center mb-3 text-white">
+                  <div className="bg-white/20 p-3 rounded-full text-white">
                     {stat.icon}
                   </div>
                 </div>
@@ -899,7 +899,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#ffffff' }}>How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ color: '#2e2828ff' }}>How It Works</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Three simple steps to master data structures and algorithms
           </p>
@@ -949,7 +949,7 @@ export default function Home() {
                     {step.icon}
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors" style={{ color: '#ffffff' }}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors" style={{ color: '#100f0fff' }}>
                     {step.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed">
@@ -1001,25 +1001,25 @@ export default function Home() {
               {/* Quick benefits */}
               <div className="flex flex-wrap justify-center gap-4 mb-8 text-gray-700">
                 <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-gray-700">
-                  <Clock className="w-4 h-4 mr-2 text-gray-700" />
-                  <span className="text-sm text-gray-600">Learn at your pace</span>
+                  <Clock className="w-4 h-4 mr-2 text-yellow-300" />
+                  <span className="text-sm text-white">Learn at your pace</span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-gray-700">
-                  <Award className="w-4 h-4 mr-2 text-gray-700" />
-                  <span className="text-sm text-gray-600">Get certified</span>
+                  <Award className="w-4 h-4 mr-2 text-yellow-300" />
+                  <span className="text-sm text-white">Get certified</span>
                 </div>
                 <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-gray-700">
-                  <Globe className="w-4 h-4 mr-2 text-gray-700" />
-                  <span className="text-sm text-gray-600">100% Free</span>
+                  <Globe className="w-4 h-4 mr-2 text-yellow-300" />
+                  <span className="text-sm text-white">100% Free</span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto text-gray-700">
                 <Link 
                   href="/learning-path" 
-                  className="flex-1 bg-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-white"
+                  className="flex-1 bg-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-black"
                 >
-                  <Map className="w-5 h-5 mr-2 text-gray-700" />
+                  <Map className="w-5 h-5 mr-2 text-black" />
                   Learning Path
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-gray-700" />
                 </Link>
@@ -1027,7 +1027,7 @@ export default function Home() {
                   href="/data-structures" 
                   className="flex-1 border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <Compass className="w-5 h-5 mr-2 text-gray-700" />
+                  <Compass className="w-5 h-5 mr-2 text-white" />
                   Explore Topics
                 </Link>
               </div>
