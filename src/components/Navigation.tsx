@@ -19,10 +19,10 @@ const Navigation = () => {
   ];
 
   return (
-        <nav className="bg-slate-900 text-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+        <nav className="bg-slate-900 text-white shadow-lg text-gray-100">
+      <div className="container mx-auto px-4 text-gray-100">
+        <div className="flex justify-between items-center py-4 text-gray-100">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity text-gray-100">
             <span 
               className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors"
               style={{ fontFamily: '"Script MT Bold", cursive, serif' }}
@@ -32,7 +32,7 @@ const Navigation = () => {
           </Link>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 text-gray-100">
             <Link href="/" className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
               <Home size={18} />
               <span>Home</span>
@@ -43,18 +43,18 @@ const Navigation = () => {
               <span>Learning Path</span>
             </Link>
             
-            <div className="relative group">
+            <div className="relative group text-gray-100">
               <button className="flex items-center space-x-1 hover:text-blue-400 transition-colors">
                 <BookOpen size={18} />
                 <span>Data Structures</span>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="p-2">
+              <div className="absolute top-full left-0 mt-2 w-48 bg-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 text-gray-100">
+                <div className="p-2 text-gray-100">
                   {dataStructures.map((ds) => (
                     <Link
                       key={ds.path}
                       href={ds.path}
-                      className="block px-4 py-2 rounded hover:bg-slate-700 transition-colors"
+                      className="block px-4 py-2 rounded hover:bg-slate-700 transition-colors text-gray-100"
                     >
                       {ds.name}
                     </Link>
@@ -82,14 +82,14 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-slate-800 rounded-lg mb-4 p-4">
+          <div className="md:hidden bg-slate-800 rounded-lg mb-4 p-4 text-gray-100">
             <Link href="/" className="block py-2 hover:text-blue-400 transition-colors">
               Home
             </Link>
             <Link href="/learning-path" className="block py-2 hover:text-blue-400 transition-colors">
               Learning Path
             </Link>
-            <div className="py-2">
+            <div className="py-2 text-gray-100">
               <span className="text-gray-100 font-semibold">Data Structures</span>
               {dataStructures.map((ds) => (
                 <Link
@@ -104,7 +104,7 @@ const Navigation = () => {
             <Link href="/algorithms" className="block py-2 hover:text-blue-400 transition-colors">
               Algorithms
             </Link>
-            <div className="pt-4 border-t border-slate-700">
+            <div className="pt-4 border-t border-slate-700 text-gray-100">
               <SignInButton />
             </div>
           </div>

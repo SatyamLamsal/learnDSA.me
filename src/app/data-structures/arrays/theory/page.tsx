@@ -121,21 +121,21 @@ function maxSubarraySum(arr, k) {
 
   try {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-        <div className="container mx-auto px-4 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+        <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <Link href="/data-structures/arrays" className="inline-flex items-center text-red-600 hover:text-red-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Arrays Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Arrays: Theory & Implementation</h1>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between text-gray-700">
             <p className="text-xl text-slate-600 max-w-3xl">
               Master the fundamentals of arrays, from basic operations to advanced techniques and real-world applications.
             </p>
@@ -152,17 +152,17 @@ function maxSubarraySum(arr, k) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-slate-700">Table of Contents</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+          <div className="grid md:grid-cols-2 gap-4 text-gray-700">
+            <div className="space-y-2 text-gray-700">
               <a href="#fundamentals" className="block text-red-600 hover:text-red-700">1. Array Fundamentals</a>
               <a href="#memory" className="block text-red-600 hover:text-red-700">2. Memory Layout</a>
               <a href="#operations" className="block text-red-600 hover:text-red-700">3. Basic Operations</a>
               <a href="#complexity" className="block text-red-600 hover:text-red-700">4. Time Complexity Analysis</a>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 text-gray-700">
               <a href="#types" className="block text-red-600 hover:text-red-700">5. Types of Arrays</a>
               <a href="#algorithms" className="block text-red-600 hover:text-red-700">6. Common Algorithms</a>
               <a href="#applications" className="block text-red-600 hover:text-red-700">7. Real-world Applications</a>
@@ -178,13 +178,13 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
             <BookOpen className="h-8 w-8 text-red-600 mr-3" />
             Array Fundamentals
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-xl font-semibold mb-3 text-blue-600">What is an Array?</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -213,10 +213,10 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Memory Layout & Indexing</h2>
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-xl font-semibold mb-3 text-blue-600">Memory Allocation</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -232,7 +232,7 @@ function maxSubarraySum(arr, k) {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-3 text-blue-600">Address Calculation Formula</h3>
-              <div className="bg-blue-50 p-4 rounded-lg">
+              <div className="bg-blue-50 p-4 rounded-lg text-gray-700">
                 <p className="font-mono text-center text-lg text-red-800">
                   Address = Base_Address + (Index × Element_Size)
                 </p>
@@ -252,18 +252,18 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
             <Code className="h-8 w-8 text-red-600 mr-3" />
             Basic Operations
           </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-8 text-gray-700">
             {/* Declaration */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Array Declaration</h3>
-              <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+              <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto text-gray-100">
                 <pre className="text-green-400 text-sm">
                   <code>{codeExamples.declaration}</code>
                 </pre>
@@ -273,7 +273,7 @@ function maxSubarraySum(arr, k) {
             {/* Basic Operations */}
             <div>
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Basic Operations</h3>
-              <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+              <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto text-gray-100">
                 <pre className="text-green-400 text-sm">
                   <code>{codeExamples.operations}</code>
                 </pre>
@@ -289,30 +289,30 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700 flex items-center">
             <Clock className="h-8 w-8 text-red-600 mr-3" />
             Time Complexity Analysis
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-violet-600">Time Complexities</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-3 bg-green-50 rounded">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between items-center p-3 bg-green-50 rounded text-gray-700">
                   <span className="font-semibold text-green-600">Access/Update</span>
                   <span className="font-mono text-green-600">O(1)</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                <div className="flex justify-between items-center p-3 bg-yellow-50 rounded text-gray-700">
                   <span className="font-semibold text-yellow-600">Linear Search</span>
                   <span className="font-mono text-yellow-600">O(n)</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-blue-50 rounded">
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded text-gray-700">
                   <span className="font-semibold text-blue-600">Binary Search</span>
                   <span className="font-mono text-blue-600">O(log n)</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-red-50 rounded">
+                <div className="flex justify-between items-center p-3 bg-red-50 rounded text-gray-700">
                   <span className="font-semibold text-red-600">Insertion/Deletion</span>
                   <span className="font-mono text-red-600">O(n)</span>
                 </div>
@@ -321,7 +321,7 @@ function maxSubarraySum(arr, k) {
             
             <div>
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Why These Complexities?</h3>
-              <div className="space-y-4 text-sm">
+              <div className="space-y-4 text-sm text-gray-600">
                 <div className="p-3 border-l-4 border-green-500 text-green-600">
                   <strong>O(1) Access:</strong> Direct calculation using index formula
                 </div>
@@ -346,31 +346,31 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Advanced Array Algorithms</h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <p className="text-gray-700 leading-relaxed">
               Beyond basic operations, arrays are used in many sophisticated algorithms and techniques:
             </p>
             
-            <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+            <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto text-gray-100">
               <pre className="text-green-400 text-sm">
                 <code>{codeExamples.advanced}</code>
               </pre>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-4 border-2 border-red-200 rounded-lg">
+            <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+              <div className="p-4 border-2 border-red-200 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-red-700 mb-2">Two Pointers</h4>
                 <p className="text-sm text-gray-600">Use two pointers moving towards each other to solve problems efficiently</p>
               </div>
-              <div className="p-4 border-2 border-red-200 rounded-lg">
+              <div className="p-4 border-2 border-red-200 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-red-700 mb-2">Sliding Window</h4>
                 <p className="text-sm text-gray-600">Maintain a window of elements and slide it to find optimal solutions</p>
               </div>
-              <div className="p-4 border-2 border-red-200 rounded-lg">
+              <div className="p-4 border-2 border-red-200 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-red-700 mb-2">Binary Search</h4>
                 <p className="text-sm text-gray-600">Efficiently search sorted arrays by eliminating half the search space</p>
               </div>
@@ -385,34 +385,34 @@ function maxSubarraySum(arr, k) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-12"
+          className="bg-white rounded-lg shadow-lg p-8 mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-semibold mb-6 text-slate-700">Real-world Applications</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Common Use Cases</h3>
               <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Database Records:</strong> Storing and accessing database rows
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Image Processing:</strong> Pixel data representation
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Mathematical Operations:</strong> Matrix operations, vectors
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Buffers:</strong> Input/output buffers, caching mechanisms
                   </div>
@@ -423,26 +423,26 @@ function maxSubarraySum(arr, k) {
             <div>
               <h3 className="text-xl font-semibold mb-4 text-blue-600">Industry Examples</h3>
               <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Gaming:</strong> Game boards, sprite animations, score tables
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Finance:</strong> Stock prices, trading data, portfolios
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Web Development:</strong> DOM elements, API responses
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <li className="flex items-start text-gray-700">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 text-gray-600"></span>
                   <div>
                     <strong>Scientific Computing:</strong> Data analysis, simulations
                   </div>
@@ -457,13 +457,13 @@ function maxSubarraySum(arr, k) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link href="/data-structures/arrays" className="flex items-center text-red-600 hover:text-red-700">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Overview
           </Link>
-          <Link href="/data-structures/arrays/simulation" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+          <Link href="/data-structures/arrays/simulation" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-gray-100">
             Try Interactive Simulation →
           </Link>
         </motion.div>
@@ -473,8 +473,8 @@ function maxSubarraySum(arr, k) {
   } catch (error) {
     console.error('Arrays theory page error:', error);
     return (
-      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center text-gray-700">
+        <div className="text-center text-gray-700">
           <h1 className="text-2xl font-bold text-red-600 mb-4">Something went wrong</h1>
           <p className="text-gray-600">Please refresh the page or try again later.</p>
           <Link href="/data-structures/arrays" className="text-red-600 hover:text-red-700 mt-4 inline-block">

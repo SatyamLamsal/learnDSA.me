@@ -139,13 +139,13 @@ const InterpolationSearchVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
-      <div className="mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
+      <div className="mb-6 text-gray-700">
         <h3 className="text-xl font-semibold text-slate-800 mb-4">Interactive Interpolation Search</h3>
         
         {/* Controls */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap gap-4 mb-6 text-gray-700">
+          <div className="flex items-center gap-2 text-gray-700">
             <label className="text-sm font-medium text-slate-700">Target:</label>
             <input
               type="number"
@@ -158,25 +158,25 @@ const InterpolationSearchVisualization = () => {
           <button
             onClick={interpolationSearch}
             disabled={isSearching}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateUniformArray}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-sm"
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-sm text-gray-600"
           >
             Uniform Array
           </button>
           <button
             onClick={generateNonUniformArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-sm"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-sm text-gray-600"
           >
             Non-Uniform Array
           </button>
@@ -184,7 +184,7 @@ const InterpolationSearchVisualization = () => {
 
         {/* Interpolation Formula Display */}
         {interpolationFormula && (
-          <div className="bg-orange-50 p-4 rounded mb-4 border border-orange-200">
+          <div className="bg-orange-50 p-4 rounded mb-4 border border-orange-200 text-gray-700">
             <h4 className="font-semibold text-orange-800 mb-2">Interpolation Formula:</h4>
             <div className="font-mono text-sm text-orange-700 break-all">
               pos = {interpolationFormula}
@@ -193,7 +193,7 @@ const InterpolationSearchVisualization = () => {
         )}
 
         {/* Array Visualization */}
-        <div className="flex justify-center items-center space-x-2 mb-4">
+        <div className="flex justify-center items-center space-x-2 mb-4 text-gray-700">
           {array.map((element, index) => (
             <motion.div
               key={index}
@@ -225,16 +225,16 @@ const InterpolationSearchVisualization = () => {
         {/* Array Indices */}
         <div className="flex justify-center items-center space-x-2 mb-4 text-sm text-gray-600">
           {array.map((_, index) => (
-            <div key={index} className="w-12 text-center">
+            <div key={index} className="w-12 text-center text-gray-700">
               [{index}]
             </div>
           ))}
         </div>
 
         {/* Pointers */}
-        <div className="flex justify-center items-center space-x-2 mb-6 text-sm">
+        <div className="flex justify-center items-center space-x-2 mb-6 text-sm text-gray-600">
           {array.map((_, index) => (
-            <div key={index} className="w-12 text-center h-6">
+            <div key={index} className="w-12 text-center h-6 text-gray-700">
               {left === index && <span className="text-red-600 font-bold">L</span>}
               {pos === index && <span className="text-orange-600 font-bold">P</span>}
               {right === index && <span className="text-green-600 font-bold">R</span>}
@@ -243,36 +243,36 @@ const InterpolationSearchVisualization = () => {
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-4 mb-4 text-sm">
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-orange-500 rounded mr-2"></div>
+        <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-600">
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-orange-500 rounded mr-2 text-gray-700"></div>
             <span>Interpolated Position</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-yellow-500 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-yellow-500 rounded mr-2 text-gray-700"></div>
             <span>Search Range</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-green-500 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-green-500 rounded mr-2 text-gray-700"></div>
             <span>Found</span>
           </div>
         </div>
 
         {/* Status */}
-        <div className="grid grid-cols-4 gap-4 mb-4 text-sm">
-          <div className="bg-red-50 p-3 rounded">
+        <div className="grid grid-cols-4 gap-4 mb-4 text-sm text-gray-600">
+          <div className="bg-red-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-red-700">Left:</span>
             <div className="text-xl font-bold text-red-600">{left === -1 ? '-' : left}</div>
           </div>
-          <div className="bg-orange-50 p-3 rounded">
+          <div className="bg-orange-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-orange-700">Position:</span>
             <div className="text-xl font-bold text-orange-600">{pos === -1 ? '-' : pos}</div>
           </div>
-          <div className="bg-green-50 p-3 rounded">
+          <div className="bg-green-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-green-700">Right:</span>
             <div className="text-xl font-bold text-green-600">{right === -1 ? '-' : right}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded">
+          <div className="bg-blue-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-blue-700">Comparisons:</span>
             <div className="text-xl font-bold text-blue-600">{comparisons}</div>
           </div>
@@ -280,16 +280,16 @@ const InterpolationSearchVisualization = () => {
 
         {/* Search History */}
         {searchHistory.length > 0 && (
-          <div className="bg-gray-50 p-4 rounded mt-4">
+          <div className="bg-gray-50 p-4 rounded mt-4 text-gray-700">
             <h4 className="font-semibold text-gray-800 mb-2">Search Steps:</h4>
-            <div className="space-y-3 max-h-48 overflow-y-auto">
+            <div className="space-y-3 max-h-48 overflow-y-auto text-gray-700">
               {searchHistory.map((step, index) => (
-                <div key={index} className="text-sm border-l-4 border-orange-300 pl-3">
-                  <div className="font-medium">Step {step.comparison}:</div>
+                <div key={index} className="text-sm border-l-4 border-orange-300 pl-3 text-gray-600">
+                  <div className="font-medium text-gray-700">Step {step.comparison}:</div>
                   <div className="text-orange-600 font-mono text-xs mb-1">{step.formula}</div>
                   <div>
                     <span className="text-gray-600">Left={step.left}, Pos={step.pos}, Right={step.right}</span>
-                    <span className="ml-2">Element: {step.element}</span>
+                    <span className="ml-2 text-gray-600">Element: {step.element}</span>
                   </div>
                   <div className="text-blue-600">→ {step.action}</div>
                 </div>
@@ -299,7 +299,7 @@ const InterpolationSearchVisualization = () => {
         )}
         
         {/* Result */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 text-gray-700">
           {found && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
               ✅ Target {target} found at index {pos} after {comparisons} comparisons!
@@ -585,11 +585,11 @@ console.log("Non-uniform data result:", interpolationSearch(nonUniformData, 50))
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
       <h3 className="text-xl font-semibold text-slate-800 mb-4">Implementation</h3>
       
       {/* Language Tabs */}
-      <div className="flex border-b border-gray-200 mb-4">
+      <div className="flex border-b border-gray-200 mb-4 text-gray-700">
         {(['python','java','cpp','javascript'] as TabKey[]).map((lang) => (
           <button
             key={lang}
@@ -607,7 +607,7 @@ console.log("Non-uniform data result:", interpolationSearch(nonUniformData, 50))
       
       {/* Code Display */}
       <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <pre className="text-sm">
+        <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
       </div>
@@ -617,17 +617,17 @@ console.log("Non-uniform data result:", interpolationSearch(nonUniformData, 50))
 
 export default function InterpolationSearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/searching" className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching Algorithms
           </Link>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
@@ -643,27 +643,27 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Clock className="h-12 w-12 text-orange-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-orange-600">O(log log n)</div>
             <p className="text-sm text-slate-600 mt-2">For uniform data</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Cpu className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Space Complexity</h3>
             <div className="text-2xl font-bold text-green-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Constant extra space</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Calculator className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Worst Case</h3>
             <div className="text-2xl font-bold text-blue-600">O(n)</div>
             <p className="text-sm text-slate-600 mt-2">Non-uniform data</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Eye className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Best For</h3>
             <div className="text-2xl font-bold text-purple-600">Uniform</div>
@@ -676,7 +676,7 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <InterpolationSearchVisualization />
         </motion.div>
@@ -686,41 +686,41 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center">
             <BookOpen className="h-6 w-6 mr-2 text-orange-600" />
             How Interpolation Search Works
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Algorithm Steps:</h3>
-              <ol className="space-y-3">
-                <li className="flex items-start">
+              <ol className="space-y-3 text-gray-700">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                   <span className="text-slate-700">Check if target is within array bounds</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
                   <span className="text-slate-700">Calculate interpolated position using the formula</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
                   <span className="text-slate-700">Compare element at interpolated position with target</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
                   <span className="text-slate-700">If equal, return index (found!)</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</span>
                   <span className="text-slate-700">If target is smaller, search left portion</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">6</span>
                   <span className="text-slate-700">If target is larger, search right portion</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-orange-100 text-orange-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">7</span>
                   <span className="text-slate-700">Repeat until found or search space exhausted</span>
                 </li>
@@ -728,31 +728,31 @@ export default function InterpolationSearchPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Interpolation Formula:</h3>
-              <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mb-4">
-                <div className="text-center">
+              <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 mb-4 text-gray-700">
+                <div className="text-center text-gray-700">
                   <div className="text-lg font-bold text-orange-800 mb-2">Position Calculation</div>
-                  <div className="font-mono text-sm bg-white p-3 rounded border">
+                  <div className="font-mono text-sm bg-white p-3 rounded border text-gray-600">
                     pos = left + ⌊((target - arr[left]) / (arr[right] - arr[left])) × (right - left)⌋
                   </div>
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Linear Interpolation</div>
                     <div className="text-sm text-slate-600">Assumes uniform distribution to predict position</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Adaptive Positioning</div>
                     <div className="text-sm text-slate-600">Position adapts based on value distribution</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-orange-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Superior to Binary Search</div>
@@ -769,7 +769,7 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <CodeExample />
         </motion.div>
@@ -779,25 +779,25 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">Performance Analysis</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-green-700 mb-4">✅ Best Case (Uniform Data)</h3>
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Time Complexity:</span>
+              <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-gray-700">
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex justify-between text-gray-700">
+                    <span className="font-medium text-gray-600">Time Complexity:</span>
                     <span className="font-mono text-green-600">O(log log n)</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium">Example (1M elements):</span>
+                  <div className="flex justify-between text-gray-700">
+                    <span className="font-medium text-gray-600">Example (1M elements):</span>
                     <span className="font-mono text-green-600">~4-5 comparisons</span>
                   </div>
                   <div className="text-sm text-gray-600">
-                    <p className="mb-2"><strong>When data is uniformly distributed:</strong></p>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <p className="mb-2 text-gray-700"><strong>When data is uniformly distributed:</strong></p>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li>Each interpolation gets very close to target</li>
                       <li>Dramatically reduces search space</li>
                       <li>Much faster than binary search</li>
@@ -809,19 +809,19 @@ export default function InterpolationSearchPage() {
             
             <div>
               <h3 className="text-lg font-semibold text-red-700 mb-4">❌ Worst Case (Non-Uniform Data)</h3>
-              <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Time Complexity:</span>
+              <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-gray-700">
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex justify-between text-gray-700">
+                    <span className="font-medium text-gray-600">Time Complexity:</span>
                     <span className="font-mono text-red-600">O(n)</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium">Example (1M elements):</span>
+                  <div className="flex justify-between text-gray-700">
+                    <span className="font-medium text-gray-600">Example (1M elements):</span>
                     <span className="font-mono text-red-600">Up to 1M comparisons</span>
                   </div>
                   <div className="text-sm text-gray-600">
-                    <p className="mb-2"><strong>When data is skewed:</strong></p>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <p className="mb-2 text-gray-700"><strong>When data is skewed:</strong></p>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li>Interpolation may be very inaccurate</li>
                       <li>Can degrade to linear search performance</li>
                       <li>Binary search might be better choice</li>
@@ -833,19 +833,19 @@ export default function InterpolationSearchPage() {
           </div>
           
           {/* Performance Comparison Table */}
-          <div className="mt-8">
+          <div className="mt-8 text-gray-700">
             <h3 className="text-lg font-semibold text-slate-800 mb-4">Algorithm Comparison (1 Million Elements)</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-gray-200">
+            <div className="overflow-x-auto text-gray-700">
+              <table className="w-full text-sm border border-gray-200 text-gray-600">
                 <thead>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-gray-50 text-gray-700">
                     <th className="p-3 text-left font-semibold text-slate-800 border-r">Algorithm</th>
                     <th className="p-3 text-left font-semibold text-slate-800 border-r">Uniform Data</th>
                     <th className="p-3 text-left font-semibold text-slate-800 border-r">Random Data</th>
                     <th className="p-3 text-left font-semibold text-slate-800">Skewed Data</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-gray-200 text-gray-700">
                   <tr>
                     <td className="p-3 font-medium text-red-600 border-r">Linear Search</td>
                     <td className="p-3 text-slate-700 border-r">~500,000 comparisons</td>
@@ -858,7 +858,7 @@ export default function InterpolationSearchPage() {
                     <td className="p-3 text-slate-700 border-r">~20 comparisons</td>
                     <td className="p-3 text-slate-700">~20 comparisons</td>
                   </tr>
-                  <tr className="bg-orange-50">
+                  <tr className="bg-orange-50 text-gray-700">
                     <td className="p-3 font-medium text-orange-600 border-r">Interpolation Search</td>
                     <td className="p-3 text-slate-700 border-r">~4-5 comparisons ⭐</td>
                     <td className="p-3 text-slate-700 border-r">~10-15 comparisons</td>
@@ -875,53 +875,53 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
+          className="grid md:grid-cols-2 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-green-700 mb-4">✅ Advantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Extremely fast for uniform data O(log log n)</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Outperforms binary search on suitable data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Adaptive positioning based on value distribution</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Constant space complexity O(1)</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Excellent for large uniformly distributed datasets</span>
               </li>
             </ul>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-red-700 mb-4">❌ Disadvantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Poor performance on non-uniform data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Can degrade to O(n) in worst case</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Requires knowledge of data distribution</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">More complex than binary search</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Potential floating-point precision issues</span>
               </li>
@@ -934,11 +934,11 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">When to Use Interpolation Search</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-green-500 pl-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="border-l-4 border-green-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-green-700 mb-2">✅ Perfect For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Uniformly distributed data</li>
@@ -948,7 +948,7 @@ export default function InterpolationSearchPage() {
                 <li>• When you know data characteristics</li>
               </ul>
             </div>
-            <div className="border-l-4 border-red-500 pl-4">
+            <div className="border-l-4 border-red-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-red-700 mb-2">❌ Avoid For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Skewed or clustered data</li>
@@ -958,7 +958,7 @@ export default function InterpolationSearchPage() {
                 <li>• Safety-critical systems</li>
               </ul>
             </div>
-            <div className="border-l-4 border-blue-500 pl-4">
+            <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">💡 Real Examples:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Phone directories (alphabetical)</li>
@@ -976,22 +976,22 @@ export default function InterpolationSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/searching/jump-search"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Jump Search
           </Link>
           
           <Link
             href="/algorithms/searching/exponential-search"
-            className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-gray-100"
           >
             Next: Exponential Search
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

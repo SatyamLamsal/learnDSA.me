@@ -442,17 +442,17 @@ const HeapSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/sorting" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Heap Sort</h1>
@@ -462,33 +462,33 @@ const HeapSortPage: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Phase Indicator */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Current Phase</h3>
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 <div className={`flex items-center p-2 rounded ${currentPhase === 'heapify' ? 'bg-indigo-100 border border-indigo-300' : 'bg-gray-100'}`}>
                   <Triangle className="h-4 w-4 mr-2 text-indigo-600" />
-                  <span className="text-sm font-medium">1. Build Max Heap</span>
+                  <span className="text-sm font-medium text-gray-600">1. Build Max Heap</span>
                 </div>
                 <div className={`flex items-center p-2 rounded ${currentPhase === 'sorting' ? 'bg-purple-100 border border-purple-300' : 'bg-gray-100'}`}>
                   <ArrowDown className="h-4 w-4 mr-2 text-purple-600" />
-                  <span className="text-sm font-medium">2. Extract & Sort</span>
+                  <span className="text-sm font-medium text-gray-600">2. Extract & Sort</span>
                 </div>
                 <div className={`flex items-center p-2 rounded ${currentPhase === 'complete' ? 'bg-green-100 border border-green-300' : 'bg-gray-100'}`}>
                   <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                  <span className="text-sm font-medium">3. Complete</span>
+                  <span className="text-sm font-medium text-gray-600">3. Complete</span>
                 </div>
               </div>
             </div>
 
             {/* Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Array Size
@@ -520,13 +520,13 @@ const HeapSortPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center"
+                    className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+                    {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
                   </button>
                   
@@ -535,30 +535,30 @@ const HeapSortPage: React.FC = () => {
                     disabled={isPlaying}
                     className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Statistics</h3>
               
-              <div className="space-y-3">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Heap Size:</span>
-                  <span className="font-semibold">{heapSize}</span>
+                  <span className="font-semibold text-gray-800">{heapSize}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Array Size:</span>
-                  <span className="font-semibold">{array.length}</span>
+                  <span className="font-semibold text-gray-800">{array.length}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Comparisons:</span>
                   <span className="font-semibold text-blue-600">{comparisons}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Swaps:</span>
                   <span className="font-semibold text-indigo-600">{swaps}</span>
                 </div>
@@ -566,14 +566,14 @@ const HeapSortPage: React.FC = () => {
             </div>
 
             {/* Complexity Info */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Complexity</h3>
               
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm text-gray-600">
                 <div>
                   <span className="font-semibold text-gray-700">Time Complexity:</span>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex justify-between">
+                  <div className="mt-1 space-y-1 text-gray-700">
+                    <div className="flex justify-between text-gray-700">
                       <span>All Cases:</span>
                       <span className="font-mono text-green-600">O(n log n)</span>
                     </div>
@@ -582,7 +582,7 @@ const HeapSortPage: React.FC = () => {
                 
                 <div>
                   <span className="font-semibold text-gray-700">Space Complexity:</span>
-                  <div className="mt-1">
+                  <div className="mt-1 text-gray-700">
                     <span className="font-mono text-green-600">O(1)</span>
                     <span className="text-gray-500 text-xs block">In-place sorting</span>
                   </div>
@@ -590,16 +590,16 @@ const HeapSortPage: React.FC = () => {
 
                 <div>
                   <span className="font-semibold text-gray-700">Properties:</span>
-                  <div className="mt-1 text-xs space-y-1">
-                    <div className="flex items-center">
+                  <div className="mt-1 text-xs space-y-1 text-gray-600">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-red-500 mr-1" />
                       <span>Unstable</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>In-place</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-yellow-500 mr-1" />
                       <span>Not adaptive</span>
                     </div>
@@ -610,9 +610,9 @@ const HeapSortPage: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900">Heap Visualization</h3>
                 <div className="text-sm text-gray-600">
                   {currentPhase === 'heapify' ? 'Building Heap' : 
@@ -621,9 +621,9 @@ const HeapSortPage: React.FC = () => {
               </div>
               
               {/* Heap Tree Visualization */}
-              <div className="mb-8">
+              <div className="mb-8 text-gray-700">
                 <h4 className="text-md font-semibold mb-4 text-gray-800">Binary Heap Tree</h4>
-                <div className="relative h-80 bg-gray-50 rounded-lg overflow-hidden">
+                <div className="relative h-80 bg-gray-50 rounded-lg overflow-hidden text-gray-700">
                   <svg className="w-full h-full">
                     {/* Draw connections */}
                     {heap.slice(0, heapSize).map((element, index) => {
@@ -688,7 +688,7 @@ const HeapSortPage: React.FC = () => {
                             x={pos.x}
                             y={pos.y + 5}
                             textAnchor="middle"
-                            className="text-white font-bold text-sm"
+                            className="text-white font-bold text-sm text-gray-600"
                           >
                             {element.value}
                           </text>
@@ -700,9 +700,9 @@ const HeapSortPage: React.FC = () => {
               </div>
 
               {/* Array Representation */}
-              <div className="mb-8">
+              <div className="mb-8 text-gray-700">
                 <h4 className="text-md font-semibold mb-4 text-gray-800">Array Representation</h4>
-                <div className="flex items-end justify-center space-x-2 h-48">
+                <div className="flex items-end justify-center space-x-2 h-48 text-gray-700">
                   {array.map((element, index) => (
                     <motion.div
                       key={element.id}
@@ -736,16 +736,16 @@ const HeapSortPage: React.FC = () => {
                         height: `${(element.value / 100) * 160 + 20}px`,
                       }}
                     >
-                      <div className="text-white font-bold text-sm p-2">
+                      <div className="text-white font-bold text-sm p-2 text-gray-600">
                         {element.value}
                       </div>
                       {element.isRoot && index === 0 && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <Triangle className="h-4 w-4 text-purple-600" />
                         </div>
                       )}
                       {index >= heapSize && (
-                        <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <span className="text-xs text-gray-500">Sorted</span>
                         </div>
                       )}
@@ -754,7 +754,7 @@ const HeapSortPage: React.FC = () => {
                 </div>
                 
                 {/* Index labels */}
-                <div className="flex justify-center space-x-2 mt-2">
+                <div className="flex justify-center space-x-2 mt-2 text-gray-700">
                   {array.map((element, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
@@ -765,8 +765,8 @@ const HeapSortPage: React.FC = () => {
 
               {/* Heap Property Indicator */}
               {heapSize > 0 && (
-                <div className="mb-6 bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-                  <div className="flex items-center justify-between">
+                <div className="mb-6 bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-gray-700">
+                  <div className="flex items-center justify-between text-gray-700">
                     <span className="text-indigo-800 font-medium">Active Heap Size: {heapSize}</span>
                     <span className="text-indigo-600 text-sm">
                       {currentPhase === 'heapify' ? 'Building max heap...' : 
@@ -777,33 +777,33 @@ const HeapSortPage: React.FC = () => {
               )}
 
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-indigo-400 border border-indigo-500 rounded mr-2"></div>
+              <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-indigo-400 border border-indigo-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">In Heap</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <Triangle className="h-4 w-4 text-purple-600 mr-1" />
                   <span className="text-sm text-gray-600">Root/Current</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Comparing</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-red-500 border border-red-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-red-500 border border-red-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Swapping</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Sorted</span>
                 </div>
               </div>
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6">
-                  <div className="flex items-center">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6 text-gray-700">
+                  <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-indigo-600 mr-2" />
                     <span className="text-indigo-800 font-medium">
                       {sortingSteps[currentStep]?.message}
@@ -813,12 +813,12 @@ const HeapSortPage: React.FC = () => {
               )}
 
               {/* Algorithm Description */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-3">How Heap Sort Works:</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                   <div>
-                    <h5 className="font-semibold mb-2">Phase 1: Build Max Heap</h5>
-                    <ol className="list-decimal pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Phase 1: Build Max Heap</h5>
+                    <ol className="list-decimal pl-4 space-y-1 text-gray-700">
                       <li>Start from last non-leaf node</li>
                       <li>Apply heapify procedure</li>
                       <li>Compare with children</li>
@@ -827,8 +827,8 @@ const HeapSortPage: React.FC = () => {
                     </ol>
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-2">Phase 2: Extract & Sort</h5>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Phase 2: Extract & Sort</h5>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li>Move root (max) to sorted position</li>
                       <li>Reduce heap size by 1</li>
                       <li>Restore heap property at root</li>
@@ -847,11 +847,11 @@ const HeapSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Implementation</h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Heap Sort Implementation</h3>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -904,7 +904,7 @@ function heapify(arr, n, i) {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">Iterative Heapify</h3>
                 <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -987,15 +987,15 @@ function minHeapify(arr, n, i) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Performance Analysis</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Time Complexity</h3>
-              <div className="space-y-4">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-green-800 mb-2">Consistent O(n log n)</h4>
                   <p className="text-sm text-gray-700">
                     Unlike Quick Sort, Heap Sort always guarantees O(n log n) performance 
@@ -1003,7 +1003,7 @@ function minHeapify(arr, n, i) {
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-blue-800 mb-2">Phase Breakdown</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li><strong>Build Heap:</strong> O(n) - surprisingly linear!</li>
@@ -1016,8 +1016,8 @@ function minHeapify(arr, n, i) {
 
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Practical Considerations</h3>
-              <div className="space-y-4">
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-orange-800 mb-2">Cache Performance</h4>
                   <p className="text-sm text-gray-700">
                     Heap Sort has poor cache locality compared to Quick Sort and Merge Sort, 
@@ -1025,7 +1025,7 @@ function minHeapify(arr, n, i) {
                   </p>
                 </div>
                 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-purple-800 mb-2">When to Use</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li>Need guaranteed O(n log n) performance</li>
@@ -1044,22 +1044,22 @@ function minHeapify(arr, n, i) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting/insertion-sort"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Insertion Sort
           </Link>
           
           <Link
             href="/algorithms/sorting/counting-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Counting Sort
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

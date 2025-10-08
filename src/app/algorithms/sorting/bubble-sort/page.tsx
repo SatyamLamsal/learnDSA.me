@@ -259,28 +259,28 @@ const BubbleSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/sorting" className="inline-flex items-center text-red-600 hover:text-red-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting Algorithms
           </Link>
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
+          <div className="flex items-start justify-between mb-4 text-gray-700">
+            <div className="flex-1 text-gray-700">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Bubble Sort</h1>
               <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
                 The simplest sorting algorithm that works by repeatedly swapping adjacent elements 
                 if they are in the wrong order. Named &ldquo;bubble sort&rdquo; because smaller elements &ldquo;bubble&rdquo; to the top.
               </p>
             </div>
-            <div className="flex items-center space-x-3 ml-6">
+            <div className="flex items-center space-x-3 ml-6 text-gray-700">
               <BookmarkButton 
                 topicId="bubble-sort"
                 topicType="algorithm"
@@ -297,14 +297,14 @@ const BubbleSortPage: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Algorithm Selection */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Algorithm</h3>
-              <div className="space-y-3">
-                <label className="flex items-center">
+              <div className="space-y-3 text-gray-700">
+                <label className="flex items-center text-gray-700">
                   <input
                     type="radio"
                     name="algorithm"
@@ -318,7 +318,7 @@ const BubbleSortPage: React.FC = () => {
                   />
                   <span>Basic Bubble Sort</span>
                 </label>
-                <label className="flex items-center">
+                <label className="flex items-center text-gray-700">
                   <input
                     type="radio"
                     name="algorithm"
@@ -336,10 +336,10 @@ const BubbleSortPage: React.FC = () => {
             </div>
 
             {/* Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Array Size
@@ -371,13 +371,13 @@ const BubbleSortPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center justify-center"
+                    className="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+                    {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
                   </button>
                   
@@ -386,53 +386,53 @@ const BubbleSortPage: React.FC = () => {
                     disabled={isPlaying}
                     className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Statistics</h3>
               
-              <div className="space-y-3">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Pass:</span>
-                  <span className="font-semibold">{currentPass}</span>
+                  <span className="font-semibold text-gray-800">{currentPass}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Comparisons:</span>
                   <span className="font-semibold text-blue-600">{comparisons}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Swaps:</span>
                   <span className="font-semibold text-red-600">{swaps}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Array Size:</span>
-                  <span className="font-semibold">{array.length}</span>
+                  <span className="font-semibold text-gray-800">{array.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Complexity Info */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Complexity</h3>
               
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm text-gray-600">
                 <div>
                   <span className="font-semibold text-gray-700">Time Complexity:</span>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex justify-between">
+                  <div className="mt-1 space-y-1 text-gray-700">
+                    <div className="flex justify-between text-gray-700">
                       <span>Best:</span>
                       <span className="font-mono text-green-600">O(n)</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-700">
                       <span>Average:</span>
                       <span className="font-mono text-yellow-600">O(n²)</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-700">
                       <span>Worst:</span>
                       <span className="font-mono text-red-600">O(n²)</span>
                     </div>
@@ -441,7 +441,7 @@ const BubbleSortPage: React.FC = () => {
                 
                 <div>
                   <span className="font-semibold text-gray-700">Space Complexity:</span>
-                  <div className="mt-1">
+                  <div className="mt-1 text-gray-700">
                     <span className="font-mono text-blue-600">O(1)</span>
                     <span className="text-gray-500 text-xs block">In-place sorting</span>
                   </div>
@@ -449,16 +449,16 @@ const BubbleSortPage: React.FC = () => {
 
                 <div>
                   <span className="font-semibold text-gray-700">Properties:</span>
-                  <div className="mt-1 text-xs space-y-1">
-                    <div className="flex items-center">
+                  <div className="mt-1 text-xs space-y-1 text-gray-600">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>Stable</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>In-place</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>Adaptive*</span>
                     </div>
@@ -470,9 +470,9 @@ const BubbleSortPage: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900">Array Visualization</h3>
                 <div className="text-sm text-gray-600">
                   Pass {currentPass} - {isPlaying ? 'Sorting...' : 'Ready'}
@@ -480,8 +480,8 @@ const BubbleSortPage: React.FC = () => {
               </div>
               
               {/* Array Visualization */}
-              <div className="mb-8">
-                <div className="flex items-end justify-center space-x-2 h-64">
+              <div className="mb-8 text-gray-700">
+                <div className="flex items-end justify-center space-x-2 h-64 text-gray-700">
                   {array.map((element, index) => (
                     <motion.div
                       key={element.id}
@@ -512,7 +512,7 @@ const BubbleSortPage: React.FC = () => {
                         height: `${(element.value / 100) * 200 + 20}px`,
                       }}
                     >
-                      <div className="text-white font-bold text-sm p-2">
+                      <div className="text-white font-bold text-sm p-2 text-gray-600">
                         {element.value}
                       </div>
                     </motion.div>
@@ -520,7 +520,7 @@ const BubbleSortPage: React.FC = () => {
                 </div>
                 
                 {/* Index labels */}
-                <div className="flex justify-center space-x-2 mt-2">
+                <div className="flex justify-center space-x-2 mt-2 text-gray-700">
                   {array.map((item, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
@@ -530,32 +530,32 @@ const BubbleSortPage: React.FC = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-red-300 border border-red-400 rounded mr-2"></div>
+              <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-red-300 border border-red-400 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Comparing</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-red-500 border border-red-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-red-500 border border-red-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Swapping</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Sorted</span>
                 </div>
               </div>
 
               {/* Algorithm Description */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-3">How Bubble Sort Works:</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                   <div>
-                    <h5 className="font-semibold mb-2">Basic Algorithm:</h5>
-                    <ol className="list-decimal pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Basic Algorithm:</h5>
+                    <ol className="list-decimal pl-4 space-y-1 text-gray-700">
                       <li>Compare adjacent elements</li>
                       <li>Swap if they are in wrong order</li>
                       <li>Continue through the array</li>
@@ -563,8 +563,8 @@ const BubbleSortPage: React.FC = () => {
                     </ol>
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-2">Optimization:</h5>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Optimization:</h5>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li>Track if any swaps occurred in a pass</li>
                       <li>If no swaps, array is sorted</li>
                       <li>Reduces best-case to O(n)</li>
@@ -582,11 +582,11 @@ const BubbleSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Implementation</h2>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Basic Bubble Sort</h3>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -644,22 +644,22 @@ const BubbleSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting
           </Link>
           
           <Link
             href="/algorithms/sorting/selection-sort"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
           >
             Next: Selection Sort
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

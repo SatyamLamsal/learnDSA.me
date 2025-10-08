@@ -63,19 +63,19 @@ export default function MedianOfMediansSimulation(){
 
   function groupIndex(i:number){ if(!frame.groups) return -1; let count=0; for(let gi=0; gi<frame.groups.length; gi++){ const g=frame.groups[gi]; if(i < count+g.length) return gi; count+=g.length; } return -1; }
 
-  return <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
-    <div className="container mx-auto px-4 py-16 max-w-7xl">
+  return <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50 text-gray-700">
+    <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-14">
-        <Link href="/algorithms/divide-and-conquer/median-of-medians" className="inline-flex items-center text-rose-600 hover:text-rose-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-14 text-gray-700">
+        <Link href="/algorithms/divide-and-conquer/median-of-medians" className="inline-flex items-center text-rose-600 hover:text-rose-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Overview</Link>
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-800 mb-5">Median of Medians Simulation</h1>
         <p className="text-xl text-slate-600 max-w-4xl leading-relaxed">Watch deterministic pivot selection refine search space and enforce linear-time guarantees.</p>
       </motion.div>
 
       {/* Controls */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-12 text-gray-700">
         <h2 className="text-2xl font-bold text-slate-800 mb-6">Controls</h2>
-        <div className="flex flex-wrap gap-6 items-end">
+        <div className="flex flex-wrap gap-6 items-end text-gray-700">
           <div>
             <label className="text-xs font-semibold text-slate-600">Elements</label>
             <input type="range" min={10} max={50} value={n} onChange={e=> { const v=Number(e.target.value); setN(v); const arr=Array.from({length:v},()=> Math.floor(Math.random()*100)); setData(arr); setK(Math.floor(v/2)); setIdx(0); setPlaying(false); }} />
@@ -86,19 +86,19 @@ export default function MedianOfMediansSimulation(){
             <input type="range" min={0} max={n-1} value={k} onChange={e=> { setK(Number(e.target.value)); setIdx(0); setPlaying(false); }} />
             <div className="text-xs text-slate-500 mt-1">{k}</div>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2"/>: <Play className="h-4 w-4 mr-2"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIdx(i=> Math.max(0,i-1))} disabled={idx===0} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Prev</button>
-          <div className="text-[11px] font-mono tracking-tight">{idx+1}/{frames.length}</div>
+          <div className="text-[11px] font-mono tracking-tight text-gray-700">{idx+1}/{frames.length}</div>
           <button onClick={()=> setIdx(i=> Math.min(frames.length-1,i+1))} disabled={idx===frames.length-1} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Next</button>
-          <button onClick={()=> { const arr=Array.from({length:n},()=> Math.floor(Math.random()*100)); setData(arr); setK(Math.floor(n/2)); setIdx(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-pink-600 text-white hover:bg-pink-700 text-xs font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
-          <button onClick={()=> { setData(d=> [...d]); setIdx(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-xs font-semibold shadow"><Shuffle className="h-4 w-4 mr-2"/>Rebuild</button>
+          <button onClick={()=> { const arr=Array.from({length:n},()=> Math.floor(Math.random()*100)); setData(arr); setK(Math.floor(n/2)); setIdx(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-pink-600 text-white hover:bg-pink-700 text-xs font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+          <button onClick={()=> { setData(d=> [...d]); setIdx(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-xs font-semibold shadow"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Rebuild</button>
         </div>
       </motion.div>
 
       {/* Visualization */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.1}} className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Layers className="h-6 w-6"/> Current Frame</h2>
-        <div className="flex flex-wrap gap-1 mb-5">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.1}} className="bg-white rounded-2xl shadow-xl p-8 mb-12 text-gray-700">
+        <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Layers className="h-6 w-6 text-gray-700"/> Current Frame</h2>
+        <div className="flex flex-wrap gap-1 mb-5 text-gray-700">
           {frame.arr.map((v,i)=> {
             const pivot = frame.pivot;
             const inLeft = frame.left?.includes(v);
@@ -121,8 +121,8 @@ export default function MedianOfMediansSimulation(){
           })}
         </div>
 
-        {frame.groups && <div className="space-y-2 mb-6">
-          {frame.groups.map((g,gi)=> <div key={gi} className="flex gap-1 items-center flex-wrap">
+        {frame.groups && <div className="space-y-2 mb-6 text-gray-700">
+          {frame.groups.map((g,gi)=> <div key={gi} className="flex gap-1 items-center flex-wrap text-gray-700">
             {g.map((v,idx2)=> {
               const med = [...g].sort((a,b)=>a-b)[Math.floor(g.length/2)];
               const isMed = v===med;
@@ -134,20 +134,20 @@ export default function MedianOfMediansSimulation(){
           </div>)}
         </div>}
 
-        {frame.pivot!==undefined && <div className="mb-5 text-xs text-rose-700">Pivot: <span className="font-semibold">{frame.pivot}</span> {frame.stage.startsWith('recurse') && <span className="text-slate-500 ml-2">(discarding {discardRight? 'right':'left'} side)</span>}</div>}
+        {frame.pivot!==undefined && <div className="mb-5 text-xs text-rose-700">Pivot: <span className="font-semibold text-gray-800">{frame.pivot}</span> {frame.stage.startsWith('recurse') && <span className="text-slate-500 ml-2">(discarding {discardRight? 'right':'left'} side)</span>}</div>}
 
-        {frame.left && frame.right && <div className="grid md:grid-cols-3 gap-4 mb-6">
+        {frame.left && frame.right && <div className="grid md:grid-cols-3 gap-4 mb-6 text-gray-700">
           <div>
             <div className="text-[10px] font-semibold text-slate-500 mb-1">Left (&lt; pivot)</div>
-            <div className="flex flex-wrap gap-1">{frame.left.map((v,i)=> <span key={i} className={`px-2 py-1 rounded bg-rose-100 text-[10px] font-mono ${discardLeft? 'opacity-30':''}`}>{v}</span>)}</div>
+            <div className="flex flex-wrap gap-1 text-gray-700">{frame.left.map((v,i)=> <span key={i} className={`px-2 py-1 rounded bg-rose-100 text-[10px] font-mono ${discardLeft? 'opacity-30':''}`}>{v}</span>)}</div>
           </div>
           <div>
             <div className="text-[10px] font-semibold text-slate-500 mb-1">Equal (pivot)</div>
-            <div className="flex flex-wrap gap-1">{(frame.equal||[]).map((v,i)=> <span key={i} className="px-2 py-1 rounded bg-rose-600 text-white text-[10px] font-mono">{v}</span>)}</div>
+            <div className="flex flex-wrap gap-1 text-gray-700">{(frame.equal||[]).map((v,i)=> <span key={i} className="px-2 py-1 rounded bg-rose-600 text-white text-[10px] font-mono text-gray-600">{v}</span>)}</div>
           </div>
             <div>
             <div className="text-[10px] font-semibold text-slate-500 mb-1">Right (&gt; pivot)</div>
-            <div className="flex flex-wrap gap-1">{frame.right.map((v,i)=> <span key={i} className={`px-2 py-1 rounded bg-fuchsia-100 text-[10px] font-mono ${discardRight? 'opacity-30':''}`}>{v}</span>)}</div>
+            <div className="flex flex-wrap gap-1 text-gray-700">{frame.right.map((v,i)=> <span key={i} className={`px-2 py-1 rounded bg-fuchsia-100 text-[10px] font-mono ${discardRight? 'opacity-30':''}`}>{v}</span>)}</div>
           </div>
         </div>}
 
@@ -158,32 +158,32 @@ export default function MedianOfMediansSimulation(){
       </motion.div>
 
       {/* Step Detail + Pseudocode */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.15}} className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Split className="h-6 w-6"/> Step Detail</h2>
-        <div className="text-sm bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[110px] mb-8">{frame.desc}</div>
-        <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><Target className="h-5 w-5"/> Pseudocode</h3>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.15}} className="bg-white rounded-2xl shadow-xl p-8 mb-12 text-gray-700">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Split className="h-6 w-6 text-gray-700"/> Step Detail</h2>
+        <div className="text-sm bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[110px] mb-8 text-gray-600">{frame.desc}</div>
+        <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><Target className="h-5 w-5 text-gray-700"/> Pseudocode</h3>
         <PseudocodeBlock code={(algo?.pseudocode||[]).join('\n')} />
       </motion.div>
 
       {/* Guarantee */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.2}} className="bg-white rounded-2xl shadow-xl p-8 mb-14">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Shield className="h-6 w-6"/> Guarantee Mechanism</h2>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.2}} className="bg-white rounded-2xl shadow-xl p-8 mb-14 text-gray-700">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Shield className="h-6 w-6 text-gray-700"/> Guarantee Mechanism</h2>
         <p className="text-sm text-slate-700 leading-relaxed mb-4">Grouping by 5 ensures the pivot is never among the worst 30% nor best 30% of remaining elements: at least 3/10 are &lt;= pivot and 3/10 are &gt;= pivot, shrinking the problem linearly. This yields recurrence T(n) = T(n/5) + T(7n/10) + O(n) ⇒ linear time.</p>
         {frame.left && frame.right && frame.equal && <div className="text-[11px] text-slate-500">Current partition sizes: left {frame.left.length}, equal {frame.equal.length}, right {frame.right.length} (n={frame.arr.length})</div>}
         <div className="mt-4 flex flex-wrap gap-3 text-[10px] text-slate-500">
-          <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded bg-pink-600"/>Group median</span>
-          <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded bg-rose-600"/>Pivot</span>
-          <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded bg-rose-100"/>Left subset</span>
-          <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded bg-fuchsia-100"/>Right subset</span>
-          <span className="inline-flex items-center gap-1"><span className="w-3 h-3 rounded bg-slate-300"/>Other / unclassified</span>
+          <span className="inline-flex items-center gap-1 text-gray-600"><span className="w-3 h-3 rounded bg-pink-600 text-gray-600"/>Group median</span>
+          <span className="inline-flex items-center gap-1 text-gray-600"><span className="w-3 h-3 rounded bg-rose-600 text-gray-600"/>Pivot</span>
+          <span className="inline-flex items-center gap-1 text-gray-600"><span className="w-3 h-3 rounded bg-rose-100 text-gray-600"/>Left subset</span>
+          <span className="inline-flex items-center gap-1 text-gray-600"><span className="w-3 h-3 rounded bg-fuchsia-100 text-gray-600"/>Right subset</span>
+          <span className="inline-flex items-center gap-1 text-gray-600"><span className="w-3 h-3 rounded bg-slate-300 text-gray-600"/>Other / unclassified</span>
         </div>
       </motion.div>
 
       {/* Navigation */}
-      <div className="flex justify-between items-center mt-4">
-        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/median-of-medians/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold">{next.name}<ArrowRight className="h-4 w-4 ml-2"/></Link>: <span/>}
+      <div className="flex justify-between items-center mt-4 text-gray-700">
+        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/median-of-medians/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold text-gray-300">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

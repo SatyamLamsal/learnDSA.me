@@ -447,7 +447,7 @@ const TreesSimulationPage: React.FC = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.3 }}
-          className="cursor-pointer"
+          className="cursor-pointer text-gray-700"
         />
 
         {/* Node value */}
@@ -470,17 +470,17 @@ const TreesSimulationPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/data-structures/trees" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Trees Overview
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Interactive Tree Simulation</h1>
@@ -490,24 +490,24 @@ const TreesSimulationPage: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 text-gray-700"
           >
-            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4 space-y-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4 space-y-6 text-gray-700">
               <h2 className="text-2xl font-semibold text-gray-900">Controls</h2>
               
               {/* Tree Operations */}
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Insert Node
                   </label>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 text-gray-700">
                     <input
                       type="number"
                       value={inputValue}
@@ -522,7 +522,7 @@ const TreesSimulationPage: React.FC = () => {
                       disabled={isAnimating || !inputValue}
                       className="flex items-center justify-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                     >
-                      <Plus className="h-4 w-4" />
+                      <Plus className="h-4 w-4 text-gray-700" />
                     </button>
                   </div>
                 </div>
@@ -531,7 +531,7 @@ const TreesSimulationPage: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Search Node
                   </label>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 text-gray-700">
                     <input
                       type="number"
                       value={searchValue}
@@ -546,7 +546,7 @@ const TreesSimulationPage: React.FC = () => {
                       disabled={isAnimating || !searchValue || !root}
                       className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                     >
-                      <Search className="h-4 w-4" />
+                      <Search className="h-4 w-4 text-gray-700" />
                     </button>
                   </div>
                 </div>
@@ -555,7 +555,7 @@ const TreesSimulationPage: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Delete Node
                   </label>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 text-gray-700">
                     <input
                       type="number"
                       value={inputValue}
@@ -569,7 +569,7 @@ const TreesSimulationPage: React.FC = () => {
                       disabled={isAnimating || !inputValue || !root}
                       className="flex items-center justify-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                     >
-                      <Minus className="h-4 w-4" />
+                      <Minus className="h-4 w-4 text-gray-700" />
                     </button>
                   </div>
                 </div>
@@ -577,17 +577,17 @@ const TreesSimulationPage: React.FC = () => {
                 <button
                   onClick={clearTree}
                   disabled={isAnimating}
-                  className="w-full flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                  className="w-full flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white"
                 >
-                  <RotateCcw className="h-4 w-4 mr-2" />
+                  <RotateCcw className="h-4 w-4 mr-2 text-gray-700" />
                   Clear Tree
                 </button>
               </div>
 
               {/* Traversal Controls */}
-              <div className="border-t pt-6">
+              <div className="border-t pt-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Tree Traversal</h3>
-                <div className="space-y-3">
+                <div className="space-y-3 text-gray-700">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Traversal Type
@@ -610,12 +610,12 @@ const TreesSimulationPage: React.FC = () => {
                     disabled={isTraversing || !root}
                     className="w-full flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                   >
-                    <Eye className="h-4 w-4 mr-2" />
+                    <Eye className="h-4 w-4 mr-2 text-gray-700" />
                     {isTraversing ? 'Traversing...' : 'Start Traversal'}
                   </button>
 
                   {traversalResult.length > 0 && (
-                    <div className="bg-green-50 p-3 rounded border border-green-200">
+                    <div className="bg-green-50 p-3 rounded border border-green-200 text-gray-700">
                       <p className="text-sm font-medium text-green-800 mb-1">Result:</p>
                       <p className="text-sm text-green-700">[{traversalResult.join(', ')}]</p>
                     </div>
@@ -624,9 +624,9 @@ const TreesSimulationPage: React.FC = () => {
               </div>
 
               {/* Auto-play Demo */}
-              <div className="border-t pt-6">
+              <div className="border-t pt-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Auto-play Demo</h3>
-                <div className="space-y-4">
+                <div className="space-y-4 text-gray-700">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Speed: {playbackSpeed}ms
@@ -657,12 +657,12 @@ const TreesSimulationPage: React.FC = () => {
                   >
                     {autoPlay ? (
                       <>
-                        <Pause className="h-4 w-4 mr-2" />
+                        <Pause className="h-4 w-4 mr-2 text-gray-700" />
                         Stop Demo
                       </>
                     ) : (
                       <>
-                        <Play className="h-4 w-4 mr-2" />
+                        <Play className="h-4 w-4 mr-2 text-gray-700" />
                         Start Demo
                       </>
                     )}
@@ -671,24 +671,24 @@ const TreesSimulationPage: React.FC = () => {
               </div>
 
               {/* Tree Statistics */}
-              <div className="border-t pt-6">
+              <div className="border-t pt-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Tree Info</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between text-gray-700">
                     <span className="text-gray-600">Nodes:</span>
-                    <span className="font-medium">{nodeCount}</span>
+                    <span className="font-medium text-gray-600">{nodeCount}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span className="text-gray-600">Height:</span>
-                    <span className="font-medium">{treeHeight}</span>
+                    <span className="font-medium text-gray-600">{treeHeight}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span className="text-gray-600">Is Empty:</span>
-                    <span className="font-medium">{nodeCount === 0 ? 'Yes' : 'No'}</span>
+                    <span className="font-medium text-gray-600">{nodeCount === 0 ? 'Yes' : 'No'}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span className="text-gray-600">Is Balanced:</span>
-                    <span className="font-medium">{treeHeight <= Math.log2(nodeCount + 1) + 1 ? 'Yes' : 'No'}</span>
+                    <span className="font-medium text-gray-600">{treeHeight <= Math.log2(nodeCount + 1) + 1 ? 'Yes' : 'No'}</span>
                   </div>
                 </div>
               </div>
@@ -700,9 +700,9 @@ const TreesSimulationPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 text-gray-700"
           >
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white rounded-lg shadow-lg p-8 text-gray-700">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Binary Search Tree Visualization</h2>
               
               {/* Current Operation Display */}
@@ -712,25 +712,25 @@ const TreesSimulationPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-6 p-4 rounded-lg bg-blue-50 border border-blue-200 text-blue-700"
                 >
-                  <div className="flex items-center">
-                    <AlertCircle className="h-5 w-5 mr-2" />
-                    <span className="font-medium">{currentOperation}</span>
+                  <div className="flex items-center text-gray-700">
+                    <AlertCircle className="h-5 w-5 mr-2 text-gray-700" />
+                    <span className="font-medium text-gray-600">{currentOperation}</span>
                   </div>
                 </motion.div>
               )}
 
               {/* Tree Visualization */}
-              <div className="bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 p-4 min-h-[500px] overflow-auto">
+              <div className="bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 p-4 min-h-[500px] overflow-auto text-gray-700">
                 {root ? (
                   <svg width="100%" height="500" viewBox="0 0 800 500" className="w-full">
                     {renderTree(root)}
                   </svg>
                 ) : (
                   <div className="flex items-center justify-center h-full text-gray-500">
-                    <div className="text-center">
+                    <div className="text-center text-gray-700">
                       <TreePine className="h-16 w-16 mx-auto mb-4 text-gray-300" />
-                      <p className="text-lg font-medium">Tree is empty</p>
-                      <p className="text-sm">Add some nodes to get started</p>
+                      <p className="text-lg font-medium text-gray-700">Tree is empty</p>
+                      <p className="text-sm text-gray-600">Add some nodes to get started</p>
                     </div>
                   </div>
                 )}
@@ -738,10 +738,10 @@ const TreesSimulationPage: React.FC = () => {
 
               {/* Operation History */}
               {operationHistory.length > 0 && (
-                <div className="mt-6">
+                <div className="mt-6 text-gray-700">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Operation History</h3>
-                  <div className="bg-gray-50 rounded-lg p-4 max-h-32 overflow-y-auto">
-                    <div className="space-y-1">
+                  <div className="bg-gray-50 rounded-lg p-4 max-h-32 overflow-y-auto text-gray-700">
+                    <div className="space-y-1 text-gray-700">
                       {operationHistory.slice(-5).map((operation, index) => (
                         <motion.div
                           key={index}
@@ -766,32 +766,32 @@ const TreesSimulationPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 bg-white rounded-lg shadow-lg p-6"
+          className="mt-8 bg-white rounded-lg shadow-lg p-6 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Time & Space Complexity</h2>
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
+          <div className="grid md:grid-cols-4 gap-4 text-gray-700">
+            <div className="text-center p-4 bg-purple-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-purple-700 mb-2">Search</h3>
               <p className="text-sm text-gray-600">
                 Average: <span className="font-mono text-purple-600">O(log n)</span><br/>
                 Worst: <span className="font-mono text-red-600">O(n)</span>
               </p>
             </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
+            <div className="text-center p-4 bg-green-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-green-700 mb-2">Insert</h3>
               <p className="text-sm text-gray-600">
                 Average: <span className="font-mono text-green-600">O(log n)</span><br/>
                 Worst: <span className="font-mono text-red-600">O(n)</span>
               </p>
             </div>
-            <div className="text-center p-4 bg-red-50 rounded-lg">
+            <div className="text-center p-4 bg-red-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-red-700 mb-2">Delete</h3>
               <p className="text-sm text-gray-600">
                 Average: <span className="font-mono text-yellow-600">O(log n)</span><br/>
                 Worst: <span className="font-mono text-red-600">O(n)</span>
               </p>
             </div>
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
+            <div className="text-center p-4 bg-blue-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">Traversal</h3>
               <p className="text-sm text-gray-600">
                 All cases: <span className="font-mono text-blue-600">O(n)</span><br/>
@@ -806,22 +806,22 @@ const TreesSimulationPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 flex justify-between items-center"
+          className="mt-8 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/data-structures/trees/theory"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Theory
           </Link>
           
           <Link
             href="/data-structures/graphs"
-            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-gray-100"
           >
             Next: Graphs
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

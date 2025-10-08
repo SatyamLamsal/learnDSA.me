@@ -534,7 +534,7 @@ export default function LinkedListsSimulationPage() {
           stiffness: 300,
           damping: 25
         }}
-        className="flex items-center"
+        className="flex items-center text-gray-700"
       >
         {/* Node */}
         <div className={`relative bg-blue-600 text-white rounded-lg p-4 min-w-[80px] flex flex-col items-center justify-center border-2 shadow-lg
@@ -544,36 +544,36 @@ export default function LinkedListsSimulationPage() {
             node.isBeingDeleted ? 'border-red-400 ring-2 ring-red-300' : 
             'border-blue-700'}`}
         >
-          <div className="text-lg font-bold">{node.value}</div>
-          <div className="text-xs opacity-75">ID: {node.id.slice(-4)}</div>
+          <div className="text-lg font-bold text-gray-800">{node.value}</div>
+          <div className="text-xs opacity-75 text-gray-600">ID: {node.id.slice(-4)}</div>
           
           {!isAnimating && (
             <button
               onClick={() => deleteNode(node.id)}
               className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center text-white text-xs transition-colors"
             >
-              <Trash2 className="h-3 w-3" />
+              <Trash2 className="h-3 w-3 text-gray-700" />
             </button>
           )}
           
           {/* Status indicators */}
           {node.isTraversing && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-xs px-2 py-1 rounded">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-xs px-2 py-1 rounded text-gray-600">
               Checking
             </div>
           )}
           {node.isHighlighted && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs px-2 py-1 rounded text-gray-600">
               Found
             </div>
           )}
           {node.isNew && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white text-xs px-2 py-1 rounded text-gray-600">
               New
             </div>
           )}
           {node.isBeingDeleted && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-xs px-2 py-1 rounded text-gray-600">
               Deleting
             </div>
           )}
@@ -581,7 +581,7 @@ export default function LinkedListsSimulationPage() {
         
         {/* Arrow to next node */}
         {node.next && (
-          <div className="flex items-center mx-2">
+          <div className="flex items-center mx-2 text-gray-700">
             <ArrowRight className="h-6 w-6 text-gray-600" />
             <div className="text-xs text-gray-700 ml-1 font-medium">next</div>
           </div>
@@ -589,7 +589,7 @@ export default function LinkedListsSimulationPage() {
         
         {/* NULL indicator for last node */}
         {!node.next && (
-          <div className="flex items-center mx-2">
+          <div className="flex items-center mx-2 text-gray-700">
             <ArrowRight className="h-6 w-6 text-gray-500" />
             <div className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded border border-gray-300 font-medium">
               NULL
@@ -601,17 +601,17 @@ export default function LinkedListsSimulationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <Link href="/data-structures/linked-lists" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Linked Lists Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Interactive Linked List Simulation</h1>
@@ -641,13 +641,13 @@ export default function LinkedListsSimulationPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6"
+              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-gray-700"
             >
               <h3 className="text-lg font-semibold text-purple-800 mb-4 flex items-center">
-                <Play className="h-5 w-5 mr-2" />
+                <Play className="h-5 w-5 mr-2 text-gray-700" />
                 Algorithm Execution Steps
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-2 text-gray-700">
                 {animationSteps.map((step, index) => (
                   <motion.div
                     key={index}
@@ -692,22 +692,22 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          className="bg-white rounded-lg shadow-lg p-8 mb-8 text-gray-700"
         >
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold flex items-center">
+          <div className="flex items-center justify-between mb-6 text-gray-700">
+            <h2 className="text-2xl font-semibold flex items-center text-slate-800">
               <LinkIcon className="h-6 w-6 text-blue-600 mr-2" />
               Linked List Visualization
             </h2>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 text-gray-700">
               <span className="text-sm text-gray-600">Head:</span>
-              <div className="bg-blue-600 text-white px-3 py-1 rounded text-sm font-medium">
+              <div className="bg-blue-600 text-white px-3 py-1 rounded text-sm font-medium text-gray-600">
                 {head ? head.slice(-4) : 'NULL'}
               </div>
             </div>
           </div>
           
-          <div className="flex items-center justify-start space-x-4 overflow-x-auto pb-4 min-h-[120px]">
+          <div className="flex items-center justify-start space-x-4 overflow-x-auto pb-4 min-h-[120px] text-gray-700">
             <AnimatePresence>
               {nodes.length === 0 ? (
                 <div className="text-gray-700 text-center py-8 w-full font-medium">
@@ -721,7 +721,7 @@ export default function LinkedListsSimulationPage() {
 
           {/* Search Result */}
           {searchResult && (
-            <div className="text-center mt-4">
+            <div className="text-center mt-4 text-gray-700">
               <span className="text-green-600 font-semibold">
                 Found node with ID: {searchResult.slice(-4)}
               </span>
@@ -734,16 +734,16 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 text-gray-700"
         >
           {/* Insertion Operations */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+            <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
               <Plus className="h-6 w-6 text-blue-600 mr-2" />
               Insertion Operations
             </h3>
-            <div className="space-y-4">
-              <div className="flex space-x-2">
+            <div className="space-y-4 text-gray-700">
+              <div className="flex space-x-2 text-gray-700">
                 <input
                   type="number"
                   value={inputValue}
@@ -753,11 +753,11 @@ export default function LinkedListsSimulationPage() {
                 />
               </div>
               
-              <div className="space-y-2">
+              <div className="space-y-2 text-gray-700">
                 <button
                   onClick={insertAtBeginning}
                   disabled={isAnimating}
-                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
                 >
                   Insert at Beginning (O(1))
                 </button>
@@ -765,12 +765,12 @@ export default function LinkedListsSimulationPage() {
                 <button
                   onClick={insertAtEnd}
                   disabled={isAnimating}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
                 >
                   Insert at End (O(n))
                 </button>
                 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <input
                     type="number"
                     value={insertPosition}
@@ -781,7 +781,7 @@ export default function LinkedListsSimulationPage() {
                   <button
                     onClick={insertAtPosition}
                     disabled={isAnimating}
-                    className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                    className="flex-1 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
                   >
                     Insert at Position (O(n))
                   </button>
@@ -791,13 +791,13 @@ export default function LinkedListsSimulationPage() {
           </div>
 
           {/* Search Operations */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+            <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
               <Search className="h-6 w-6 text-blue-600 mr-2" />
               Search Operations
             </h3>
-            <div className="space-y-4">
-              <div className="flex space-x-2">
+            <div className="space-y-4 text-gray-700">
+              <div className="flex space-x-2 text-gray-700">
                 <input
                   type="number"
                   value={searchValue}
@@ -808,11 +808,11 @@ export default function LinkedListsSimulationPage() {
                 <button
                   onClick={searchElement}
                   disabled={isAnimating}
-                  className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center"
+                  className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center text-gray-100"
                 >
                   {isAnimating ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 text-gray-700"></div>
                       Searching...
                     </>
                   ) : (
@@ -832,24 +832,24 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
             <Play className="h-6 w-6 text-blue-600 mr-2" />
             List Operations
           </h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 text-gray-700">
             <button
               onClick={generateRandomList}
               disabled={isAnimating}
-              className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+              className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
             >
               Generate Random List
             </button>
             <button
               onClick={clearList}
               disabled={isAnimating}
-              className="bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+              className="bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
             >
               Clear List
             </button>
@@ -861,24 +861,24 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4">🎨 Animation Legend</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-blue-600 rounded border"></div>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">🎨 Animation Legend</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-blue-600 rounded border text-gray-700"></div>
               <span>Normal Node</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-yellow-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-yellow-500 rounded border text-gray-700"></div>
               <span>Currently Traversing</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-green-500 rounded border text-gray-700"></div>
               <span>Found/Highlighted</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-purple-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-purple-500 rounded border text-gray-700"></div>
               <span>New Node</span>
             </div>
           </div>
@@ -889,10 +889,10 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4">💡 Learning Notes</h3>
-          <div className="grid md:grid-cols-2 gap-6 text-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">💡 Learning Notes</h3>
+          <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
             <div>
               <h4 className="font-semibold mb-2 text-blue-600">Key Observations:</h4>
               <ul className="space-y-1 text-gray-700">
@@ -916,15 +916,15 @@ export default function LinkedListsSimulationPage() {
               </ul>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-gray-700">
             <h4 className="font-semibold mb-2 text-yellow-800">💭 Practice Exercises:</h4>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-yellow-700">
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-gray-700">
                 <li>• Insert nodes at different positions and observe pointer updates</li>
                 <li>• Compare search time with different list sizes</li>
                 <li>• Watch how deletion affects the remaining connections</li>
               </ul>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-gray-700">
                 <li>• Notice the step-by-step traversal process</li>
                 <li>• Try searching for non-existent values</li>
                 <li>• Observe how the head pointer changes with operations</li>
@@ -938,12 +938,12 @@ export default function LinkedListsSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex justify-between items-center mt-8"
+          className="flex justify-between items-center mt-8 text-gray-700"
         >
           <Link href="/data-structures/linked-lists/theory" className="flex items-center text-blue-600 hover:text-blue-700">
             ← Linked Lists Theory
           </Link>
-          <Link href="/data-structures/stacks" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+          <Link href="/data-structures/stacks" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-gray-100">
             Next: Stacks →
           </Link>
         </motion.div>

@@ -22,8 +22,8 @@ export function CompletionBadge({ topicId, className = '' }: CompletionBadgeProp
       className={`inline-flex items-center justify-center ${className}`}
     >
       {isCompleted ? (
-        <div className="bg-green-500 text-white rounded-full p-2 shadow-lg border-2 border-white">
-          <CheckCircle className="h-5 w-5 fill-current" />
+        <div className="bg-green-500 text-white rounded-full p-2 shadow-lg border-2 border-white text-gray-700">
+          <CheckCircle className="h-5 w-5 fill-current text-gray-700" />
         </div>
       ) : (
         <div className="bg-white/90 text-gray-500 rounded-full p-2 shadow-md border-2 border-gray-200">

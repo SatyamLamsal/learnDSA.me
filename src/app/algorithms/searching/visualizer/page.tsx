@@ -43,13 +43,13 @@ export default function SearchingVisualizerPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/algorithms/searching" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Searching Algorithms</Link>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <Link href="/algorithms/searching" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Searching Algorithms</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-4">Searching Visualizer</h1>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-6">
-          <div className="flex flex-wrap gap-3 items-end">
+        <div className="bg-white rounded-lg shadow p-6 mb-6 text-gray-700">
+          <div className="flex flex-wrap gap-3 items-end text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Target</label>
               <input type="number" value={target} onChange={e=>setTarget(parseInt(e.target.value)||0)} className="w-28 px-2 py-1 border rounded" />
@@ -61,17 +61,17 @@ export default function SearchingVisualizerPage(){
                 <option value="binary">Binary (requires sorted)</option>
               </select>
             </div>
-            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50"><Play className="h-4 w-4 mr-2"/>Run</button>
-            <div className="ml-auto flex gap-2">
-              <button onClick={randomize} className="px-3 py-2 border rounded inline-flex items-center"><Settings2 className="h-4 w-4 mr-2"/>Randomize</button>
-              <button onClick={shuffle} className="px-3 py-2 border rounded">Shuffle</button>
-              <button onClick={sortAsc} className="px-3 py-2 border rounded">Sort</button>
+            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <div className="ml-auto flex gap-2 text-gray-700">
+              <button onClick={randomize} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><Settings2 className="h-4 w-4 mr-2 text-gray-700"/>Randomize</button>
+              <button onClick={shuffle} className="px-3 py-2 border rounded text-gray-800">Shuffle</button>
+              <button onClick={sortAsc} className="px-3 py-2 border rounded text-gray-800">Sort</button>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="flex flex-wrap gap-1 justify-center mb-2">
+        <div className="bg-white rounded-lg shadow p-6 text-gray-700">
+          <div className="flex flex-wrap gap-1 justify-center mb-2 text-gray-700">
             {arr.map((v,i)=>{
               const inRange = range && i>=range[0] && i<=range[1];
               const isMid = i===idx && mode==='binary';
@@ -85,7 +85,7 @@ export default function SearchingVisualizerPage(){
             })}
           </div>
           <div className="flex flex-wrap gap-1 justify-center text-[10px] text-gray-500">
-            {arr.map((_,i)=>(<div key={i} className="w-10 text-center">[{i}]</div>))}
+            {arr.map((_,i)=>(<div key={i} className="w-10 text-center text-gray-700">[{i}]</div>))}
           </div>
         </div>
       </div>

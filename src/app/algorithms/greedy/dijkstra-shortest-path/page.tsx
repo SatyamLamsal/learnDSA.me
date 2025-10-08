@@ -84,13 +84,13 @@ end procedure`;
   }, [n]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50">
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/algorithms/greedy" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Greedy</Link>
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <Link href="/algorithms/greedy" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Greedy</Link>
   <h1 className="text-4xl font-bold text-slate-800 mb-2">Dijkstra&apos;s Shortest Path</h1>
         <p className="text-lg text-slate-600 mb-6">Find shortest paths from a source in graphs with non-negative edge weights. Greedy picks the closest unvisited node; optimality follows from triangle inequality and non-negative edges.</p>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-3">Algorithm Steps</h2>
           <ol className="list-decimal pl-6 space-y-2 text-slate-700">
             <li>Initialize distances to ∞ except source = 0.</li>
@@ -101,8 +101,8 @@ end procedure`;
         </div>
 
         {/* Interactive */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
-          <div className="flex flex-wrap items-end gap-3 mb-4">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
+          <div className="flex flex-wrap items-end gap-3 mb-4 text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input className="w-24 px-2 py-2 border rounded" type="number" value={speed} onChange={e=>setSpeed(Math.max(100, parseInt(e.target.value)||0))}/>
@@ -111,12 +111,12 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Nodes</label>
               <input className="w-24 px-2 py-2 border rounded" type="number" value={n} onChange={e=>{ const val = Math.max(3, Math.min(8, parseInt(e.target.value)||3)); setN(val); const g = makeGraph(val); setGraph(g); setDist(Array.from({length:val}, (_,i)=> i===0?0:Infinity)); setVisited(new Set()); setFrontier([0]); }}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50"><Play className="h-4 w-4 mr-2"/>Run</button>
-            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center"><RotateCcw className="h-4 w-4 mr-2"/>Reset (New Graph)</button>
-            <button onClick={randomize} className="px-3 py-2 border rounded">Randomize Graph</button>
+            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset (New Graph)</button>
+            <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize Graph</button>
           </div>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto text-gray-700">
             <svg width={layout.width} height={layout.height} className="bg-gray-50 rounded">
               {edges.map((e, idx)=>{
                 const a = layout.coords[e.u]; const b = layout.coords[e.v];
@@ -125,7 +125,7 @@ end procedure`;
                 return (
                   <g key={idx}>
                     <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={active? '#14b8a6' : '#cbd5e1'} strokeWidth={active? 3 : 2}/>
-                    <text x={(a.x+b.x)/2} y={(a.y+b.y)/2} className="fill-slate-600 text-xs">{e.w}</text>
+                    <text x={(a.x+b.x)/2} y={(a.y+b.y)/2} className="fill-slate-600 text-xs text-gray-600">{e.w}</text>
                   </g>
                 );
               })}
@@ -134,8 +134,8 @@ end procedure`;
                 return (
                   <g key={n}>
                     <circle cx={c.x} cy={c.y} r={22} fill={isVis? '#14b8a6' : 'white'} stroke="#14b8a6" strokeWidth={2}/>
-                    <text x={c.x} y={c.y-10} textAnchor="middle" className="fill-slate-700 text-xs">{`v${n}`}</text>
-                    <text x={c.x} y={c.y+8} textAnchor="middle" className="fill-slate-800 font-mono text-sm">{Number.isFinite(dist[n])? dist[n] : '∞'}</text>
+                    <text x={c.x} y={c.y-10} textAnchor="middle" className="fill-slate-700 text-xs text-gray-600">{`v${n}`}</text>
+                    <text x={c.x} y={c.y+8} textAnchor="middle" className="fill-slate-800 font-mono text-sm text-gray-600">{Number.isFinite(dist[n])? dist[n] : '∞'}</text>
                   </g>
                 );
               })}
@@ -143,19 +143,19 @@ end procedure`;
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Pseudocode</h2>
           <PseudocodeBlock code={pseudocode} autoPlay loop intervalMs={850}/>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-6 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Practice Problems</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li><a className="text-teal-700 hover:underline" href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/" target="_blank">Dijkstra (GeeksforGeeks)</a></li>
             <li><a className="text-teal-700 hover:underline" href="https://cp-algorithms.com/graph/dijkstra.html" target="_blank">CP-Algorithms: Dijkstra</a></li>
           </ul>
         </div>
-        <div className="bg-white rounded-lg shadow p-6 mt-8">
+        <div className="bg-white rounded-lg shadow p-6 mt-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Use Cases</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li>GPS navigation and routing on road networks.</li>
@@ -168,22 +168,22 @@ end procedure`;
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/greedy/prim-mst"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Prim&apos;s MST
           </Link>
           
           <Link
             href="/algorithms/greedy/gas-station"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
           >
             Next: Gas Station
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

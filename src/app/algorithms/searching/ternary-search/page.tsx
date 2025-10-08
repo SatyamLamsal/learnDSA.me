@@ -117,9 +117,9 @@ const TernarySearchVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
       {/* Controls */}
-      <div className="flex flex-wrap gap-3 items-end mb-6">
+      <div className="flex flex-wrap gap-3 items-end mb-6 text-gray-700">
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1">Target</label>
           <input
@@ -133,21 +133,21 @@ const TernarySearchVisualization = () => {
         <button
           onClick={ternarySearch}
           disabled={isSearching}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded font-medium disabled:opacity-50"
+          className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-white text-white text-white text-white"
         >
           {isSearching ? 'Searching...' : 'Start Search'}
         </button>
-        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium">Reset</button>
-        <button onClick={generateArray} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium">New Array</button>
-        <div className="ml-auto text-sm">
+        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800">Reset</button>
+        <button onClick={generateArray} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium text-white text-white text-white text-white">New Array</button>
+        <div className="ml-auto text-sm text-gray-600">
           <div className="font-semibold text-slate-700">Comparisons</div>
           <div className="text-xl font-bold text-orange-600">{comparisons}</div>
         </div>
       </div>
 
       {/* Array */}
-      <div className="space-y-2">
-        <div className="flex justify-center items-center gap-1 flex-wrap">
+      <div className="space-y-2 text-gray-700">
+        <div className="flex justify-center items-center gap-1 flex-wrap text-gray-700">
           {array.map((val, idx) => {
             const inRange = left !== -1 && right !== -1 && idx >= left && idx <= right;
             const isM1 = idx === mid1;
@@ -189,28 +189,28 @@ const TernarySearchVisualization = () => {
         </div>
         <div className="flex justify-center items-center gap-1 flex-wrap text-[10px] text-gray-500">
           {array.map((_, idx) => (
-            <div key={idx} className="w-11 text-center">[{idx}]</div>
+            <div key={idx} className="w-11 text-center text-gray-700">[{idx}]</div>
           ))}
         </div>
       </div>
 
       {/* Legend */}
-      <div className="flex flex-wrap gap-4 mt-4 text-xs">
-        <div className="flex items-center"><span className="w-3 h-3 bg-blue-500 rounded mr-2"></span>mid1</div>
-        <div className="flex items-center"><span className="w-3 h-3 bg-purple-500 rounded mr-2"></span>mid2</div>
-        <div className="flex items-center"><span className="w-3 h-3 bg-gray-300 rounded mr-2"></span>Range</div>
-        <div className="flex items-center"><span className="w-3 h-3 bg-emerald-500 rounded mr-2"></span>Found</div>
+      <div className="flex flex-wrap gap-4 mt-4 text-xs text-gray-600">
+        <div className="flex items-center text-gray-700"><span className="w-3 h-3 bg-blue-500 rounded mr-2 text-gray-600"></span>mid1</div>
+        <div className="flex items-center text-gray-700"><span className="w-3 h-3 bg-purple-500 rounded mr-2 text-gray-600"></span>mid2</div>
+        <div className="flex items-center text-gray-700"><span className="w-3 h-3 bg-gray-300 rounded mr-2 text-gray-600"></span>Range</div>
+        <div className="flex items-center text-gray-700"><span className="w-3 h-3 bg-emerald-500 rounded mr-2 text-gray-600"></span>Found</div>
       </div>
 
       {/* Steps */}
       {steps.length > 0 && (
-        <div className="mt-6 bg-gray-50 p-4 rounded">
+        <div className="mt-6 bg-gray-50 p-4 rounded text-gray-700">
           <h4 className="font-semibold text-slate-800 mb-2">Steps</h4>
-          <div className="space-y-2 max-h-44 overflow-auto text-sm">
+          <div className="space-y-2 max-h-44 overflow-auto text-sm text-gray-600">
             {steps.map((s, i) => (
               <div key={i} className="text-gray-700">
-                <span className="font-medium">Iter {i + 1}:</span>
-                <span className="ml-2">[l={s.l}, r={s.r}] m1={s.m1} (={s.a1}), m2={s.m2} (={s.a2})</span>
+                <span className="font-medium text-gray-600">Iter {i + 1}:</span>
+                <span className="ml-2 text-gray-600">[l={s.l}, r={s.r}] m1={s.m1} (={s.a1}), m2={s.m2} (={s.a2})</span>
                 <span className="ml-2 text-gray-600">→ {s.action}</span>
               </div>
             ))}
@@ -219,7 +219,7 @@ const TernarySearchVisualization = () => {
       )}
 
       {/* Result */}
-      <div className="mt-4 text-center">
+      <div className="mt-4 text-center text-gray-700">
         {foundIndex !== -1 && (
           <div className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded">
             ✅ Found target {target} at index {foundIndex} in {comparisons} comparisons
@@ -319,9 +319,9 @@ console.log(ternarySearch([1,2,4,4,7,9,12,15,17,18,21,24,27,30,32,35,40,42,45,50
   const code = { python, java, cpp, javascript: js } as const;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
       <h3 className="text-xl font-semibold text-slate-800 mb-4">Implementation</h3>
-      <div className="flex border-b border-gray-200 mb-4">
+      <div className="flex border-b border-gray-200 mb-4 text-gray-700">
         {(['python','java','cpp','javascript'] as const).map((k) => (
           <button
             key={k}
@@ -333,7 +333,7 @@ console.log(ternarySearch([1,2,4,4,7,9,12,15,17,18,21,24,27,30,32,35,40,42,45,50
         ))}
       </div>
       <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <pre className="text-sm">
+        <pre className="text-sm text-gray-600">
           <code>{code[tab]}</code>
         </pre>
       </div>
@@ -344,12 +344,12 @@ console.log(ternarySearch([1,2,4,4,7,9,12,15,17,18,21,24,27,30,32,35,40,42,45,50
 
 export default function TernarySearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 text-gray-700">
           <Link href="/algorithms/searching" className="inline-flex items-center text-pink-600 hover:text-pink-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching Algorithms
           </Link>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
@@ -361,26 +361,26 @@ export default function TernarySearchPage() {
         </motion.div>
 
         {/* Stats */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="grid md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Clock className="h-12 w-12 text-pink-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-pink-600">O(log n)</div>
             <p className="text-xs text-slate-600 mt-1">Base change doesn&apos;t affect Big-O</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Cpu className="h-12 w-12 text-rose-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Space Complexity</h3>
             <div className="text-2xl font-bold text-rose-600">O(1)</div>
             <p className="text-xs text-slate-600 mt-1">Iterative approach</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Eye className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Comparisons/Iter</h3>
             <div className="text-2xl font-bold text-purple-600">2</div>
             <p className="text-xs text-slate-600 mt-1">Versus 1 for binary search</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <AlertTriangle className="h-12 w-12 text-amber-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Practical Note</h3>
             <div className="text-sm font-semibold text-amber-700">Often slower than binary search</div>
@@ -388,14 +388,14 @@ export default function TernarySearchPage() {
         </motion.div>
 
         {/* Visualization */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mb-12 text-gray-700">
           <TernarySearchVisualization />
         </motion.div>
 
         {/* How it works */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="bg-white rounded-lg shadow-lg p-6 mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700">
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center"><BookOpen className="h-6 w-6 mr-2 text-pink-600" />How Ternary Search Works</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-3">Steps</h3>
               <ol className="space-y-2 text-slate-700">
@@ -418,19 +418,19 @@ export default function TernarySearchPage() {
         </motion.div>
 
         {/* Code */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="mb-12 text-gray-700">
           <CodeExample />
         </motion.div>
 
         {/* Navigation */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex justify-between items-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex justify-between items-center text-gray-700">
           <Link href="/algorithms/searching/exponential-search" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Exponential Search
           </Link>
-          <Link href="/algorithms/searching" className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors">
+          <Link href="/algorithms/searching" className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-gray-100">
             Back to Searching Index
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

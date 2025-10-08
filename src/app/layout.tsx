@@ -105,7 +105,7 @@ export default function RootLayout({
           <ThemeProvider>
             <ClientLayout>
               <Navigation />
-              <main className="min-h-screen">
+              <main className="min-h-screen text-gray-700">
                 {children}
               </main>
               <Footer />

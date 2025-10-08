@@ -54,34 +54,34 @@ export default function SCCSimulationPage(){
   function randomizeGraph(){ nodeCounter=0; const count=5+Math.floor(Math.random()*2); const newNodes:Node[]=[]; for(let i=0;i<count;i++) newNodes.push({id:nextNodeId(), x:140+i*(480/(count-1)), y: 140 + (i%2? -70:70)}); const newEdges:Edge[]=[]; for(let tries=0; tries<count*3; tries++){ const a=newNodes[Math.floor(Math.random()*count)].id; const b=newNodes[Math.floor(Math.random()*count)].id; if(a===b) continue; if(newEdges.some(e=> e.from===a && e.to===b)) continue; if(Math.random()<0.5) continue; newEdges.push({id:'e'+(newEdges.length+1), from:a,to:b}); } setNodes(newNodes); setEdges(newEdges); setResetKey(k=> k+1); setPlaying(false); setIndex(0); setFrames([]); }
   function reset(){ randomizeGraph(); }
 
-  return <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-pink-50 to-rose-50">
-  <div className="container mx-auto px-4 py-12 max-w-screen-2xl">
-      <Link href="/algorithms/graph/strongly-connected-components/theory" className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Theory</Link>
+  return <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-pink-50 to-rose-50 text-gray-700">
+  <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
+      <Link href="/algorithms/graph/strongly-connected-components/theory" className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Theory</Link>
       <h1 className="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Network className="h-7 w-7 text-fuchsia-600"/> SCC Simulation (Kosaraju)</h1>
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-6">
-          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6">
+      <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
+        <div className="lg:col-span-2 space-y-6 text-gray-700">
+          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-lg font-semibold text-slate-800 mb-4">Directed Graph & Controls</h2>
-            <div className="flex flex-wrap gap-3 mb-4 text-sm">
-              <button onClick={addNode} className="px-4 py-2 rounded-lg bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 inline-flex items-center gap-1"><Plus className="h-4 w-4"/>Add Node</button>
-              <button onClick={reset} className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 inline-flex items-center gap-1"><RotateCcw className="h-4 w-4"/>Reset</button>
-              <button onClick={randomizeGraph} className="px-4 py-2 rounded-lg bg-rose-600 text-white font-semibold hover:bg-rose-700 inline-flex items-center gap-1"><Shuffle className="h-4 w-4"/>Randomize</button>
-              <button onClick={()=> setPlaying(p=> !p)} className="px-4 py-2 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 inline-flex items-center gap-1">{playing? <Pause className="h-4 w-4"/>:<Play className="h-4 w-4"/>}{playing? 'Pause':'Play'}</button>
-              <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-40"><StepBack className="h-4 w-4"/></button>
-              <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-40"><StepForward className="h-4 w-4"/></button>
-              <div className="flex items-center gap-2"><span className="text-xs text-slate-500">Speed</span><input type="range" min={0.5} max={2} step={0.5} value={speed} onChange={e=> setSpeed(Number(e.target.value))} /></div>
+            <div className="flex flex-wrap gap-3 mb-4 text-sm text-gray-600">
+              <button onClick={addNode} className="px-4 py-2 rounded-lg bg-fuchsia-600 text-white font-semibold hover:bg-fuchsia-700 inline-flex items-center gap-1 text-gray-100"><Plus className="h-4 w-4 text-gray-700"/>Add Node</button>
+              <button onClick={reset} className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300 inline-flex items-center gap-1"><RotateCcw className="h-4 w-4 text-gray-700"/>Reset</button>
+              <button onClick={randomizeGraph} className="px-4 py-2 rounded-lg bg-rose-600 text-white font-semibold hover:bg-rose-700 inline-flex items-center gap-1 text-gray-100"><Shuffle className="h-4 w-4 text-gray-700"/>Randomize</button>
+              <button onClick={()=> setPlaying(p=> !p)} className="px-4 py-2 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 inline-flex items-center gap-1">{playing? <Pause className="h-4 w-4 text-gray-700"/>:<Play className="h-4 w-4 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
+              <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-40"><StepBack className="h-4 w-4 text-gray-700"/></button>
+              <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-40"><StepForward className="h-4 w-4 text-gray-700"/></button>
+              <div className="flex items-center gap-2 text-gray-700"><span className="text-xs text-slate-500">Speed</span><input type="range" min={0.5} max={2} step={0.5} value={speed} onChange={e=> setSpeed(Number(e.target.value))} /></div>
               <div className="text-xs font-mono bg-slate-900 text-fuchsia-200 px-3 py-2 rounded-lg">Step {index+1}/{frames.length||1}</div>
             </div>
             <p className="text-[11px] text-slate-500 mb-3">Click two nodes successively to cycle edge states: none → a→b → b→a → none. Drag nodes. Colors: Blue=current DFS vertex, Yellow=active recursion stack, Green=finished order (first pass) or assigned component (second pass, tinted). Edge highlight during exploration. Stages: First DFS, Transpose, Second DFS.</p>
             <GraphCanvas key={resetKey} nodes={nodes} setNodes={setNodes} edges={edges} setEdges={setEdges} toggleEdge={toggleEdge} current={current} />
           </motion.div>
-          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6">
+          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-lg font-semibold text-slate-800 mb-3">State</h2>
             <StatePanel frame={current} />
           </motion.div>
         </div>
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="space-y-6">
-          <div className="bg-white rounded-2xl shadow-sm p-6 border border-fuchsia-200">
+        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="space-y-6 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-sm p-6 border border-fuchsia-200 text-gray-700">
             <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Info className="h-5 w-5 text-fuchsia-600"/> Explanation</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4 min-h-[90px]">{current?.description}</p>
             <Legend />
@@ -102,47 +102,47 @@ function GraphCanvas({nodes,setNodes,edges,setEdges,toggleEdge,current}:{nodes:N
   function handleMouseUp(){ dragRef.current=null; }
   function handleDoubleClick(e:React.MouseEvent){ if(dragRef.current) return; const rect=(e.currentTarget as HTMLElement).getBoundingClientRect(); const x=e.clientX-rect.left; const y=e.clientY-rect.top; const id=nextNodeId(); setNodes(ns=> [...ns,{id,x,y}]); }
   const exploring = current?.exploringEdge;
-  return <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onDoubleClick={handleDoubleClick} className="relative w-full h-[420px] bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 overflow-hidden select-none">
+  return <div onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseLeave={handleMouseUp} onDoubleClick={handleDoubleClick} className="relative w-full h-[420px] bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl border border-slate-200 overflow-hidden select-none text-gray-700">
     <svg className="absolute inset-0 w-full h-full">
       {edges.map(e=> { const a=nodes.find(n=> n.id===e.from)!; const b=nodes.find(n=> n.id===e.to)!; const isExploring = exploring && exploring.from===e.from && exploring.to===e.to; const stroke = isExploring? '#6366f1':'#94a3b8'; const markerId='arrow'; return <g key={e.id}><defs><marker id={markerId} viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill={stroke}/></marker></defs><line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={stroke} strokeWidth={ isExploring?5:3 } markerEnd={`url(#${markerId})`} strokeOpacity={0.85} /></g>; })}
     </svg>
-    {nodes.map(n=> { const inOrder = current?.order.includes(n.id); const inStack = current?.stack.includes(n.id); const comp = current?.componentMap[n.id]; const isCurrent = current?.current===n.id; let color='bg-white text-slate-800 border-slate-300'; if(inStack) color='bg-yellow-400 text-slate-800 border-yellow-500'; if(inOrder) color='bg-green-600 text-white border-green-700'; if(comp) color=`bg-fuchsia-500 text-white border-fuchsia-600`; if(isCurrent) color='bg-blue-600 text-white border-blue-700'; return <button key={n.id} onMouseDown={(e)=> handleMouseDown(e,n.id)} onClick={()=> handleNodeClick(n.id)} style={{left:n.x-30, top:n.y-30}} className={`absolute h-16 w-16 rounded-full border-2 font-semibold flex flex-col items-center justify-center shadow ${color} transition-colors cursor-move active:scale-95 text-[10px]`}><div>{n.id}</div>{comp && <div className="font-mono text-[9px]">C{comp}</div>}{first===n.id && <span className="absolute -bottom-5 text-[10px] text-fuchsia-600 font-mono">selecting</span>}</button>; })}
-    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-fuchsia-600 text-white rounded">First: {first}</div>}
+    {nodes.map(n=> { const inOrder = current?.order.includes(n.id); const inStack = current?.stack.includes(n.id); const comp = current?.componentMap[n.id]; const isCurrent = current?.current===n.id; let color='bg-white text-slate-800 border-slate-300'; if(inStack) color='bg-yellow-400 text-slate-800 border-yellow-500'; if(inOrder) color='bg-green-600 text-white border-green-700'; if(comp) color=`bg-fuchsia-500 text-white border-fuchsia-600`; if(isCurrent) color='bg-blue-600 text-white border-blue-700'; return <button key={n.id} onMouseDown={(e)=> handleMouseDown(e,n.id)} onClick={()=> handleNodeClick(n.id)} style={{left:n.x-30, top:n.y-30}} className={`absolute h-16 w-16 rounded-full border-2 font-semibold flex flex-col items-center justify-center shadow ${color} transition-colors cursor-move active:scale-95 text-[10px]`}><div>{n.id}</div>{comp && <div className="font-mono text-[9px] text-gray-700">C{comp}</div>}{first===n.id && <span className="absolute -bottom-5 text-[10px] text-fuchsia-600 font-mono">selecting</span>}</button>; })}
+    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-fuchsia-600 text-white rounded text-gray-700">First: {first}</div>}
   </div>;
 }
 
 function StatePanel({frame}:{frame?:Frame}){
   if(!frame) return <div className="text-sm text-slate-500">Press Play to simulate.</div>;
-  return <div className="space-y-4 text-xs">
-    <div className="grid md:grid-cols-4 gap-4">
-      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stage</div><div className="font-mono">{frame.stage}</div></div>
-      <div className="p-3 rounded-xl bg-green-50 border border-green-200"><div className="font-semibold text-green-700 text-[11px] uppercase tracking-wide mb-1">Order Size</div><div className="font-mono">{frame.order.length}</div></div>
-      <div className="p-3 rounded-xl bg-yellow-50 border border-yellow-200"><div className="font-semibold text-yellow-700 text-[11px] uppercase tracking-wide mb-1">Stack Depth</div><div className="font-mono">{frame.stack.length}</div></div>
-      <div className="p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-200"><div className="font-semibold text-fuchsia-700 text-[11px] uppercase tracking-wide mb-1">Components</div><div className="font-mono">{Object.values(frame.componentMap).reduce((m,v)=> Math.max(m,v),0)}</div></div>
+  return <div className="space-y-4 text-xs text-gray-600">
+    <div className="grid md:grid-cols-4 gap-4 text-gray-700">
+      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stage</div><div className="font-mono text-gray-700">{frame.stage}</div></div>
+      <div className="p-3 rounded-xl bg-green-50 border border-green-200 text-gray-700"><div className="font-semibold text-green-700 text-[11px] uppercase tracking-wide mb-1">Order Size</div><div className="font-mono text-gray-700">{frame.order.length}</div></div>
+      <div className="p-3 rounded-xl bg-yellow-50 border border-yellow-200 text-gray-700"><div className="font-semibold text-yellow-700 text-[11px] uppercase tracking-wide mb-1">Stack Depth</div><div className="font-mono text-gray-700">{frame.stack.length}</div></div>
+      <div className="p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-200 text-gray-700"><div className="font-semibold text-fuchsia-700 text-[11px] uppercase tracking-wide mb-1">Components</div><div className="font-mono text-gray-700">{Object.values(frame.componentMap).reduce((m,v)=> Math.max(m,v),0)}</div></div>
     </div>
-    <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 overflow-x-auto"><div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Order Stack (postorder)</div><div className="flex flex-wrap gap-1 font-mono">{frame.order.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-purple-300">{v}</span>)}</div></div>
-    {frame.stage==='second-dfs' && <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 overflow-x-auto"><div className="font-semibold text-rose-700 text-[11px] uppercase tracking-wide mb-1">Component Map</div><div className="flex flex-wrap gap-1 font-mono">{Object.entries(frame.componentMap).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-rose-300">{k}:C{v}</span>)}</div></div>}
-    {frame.exploringEdge && <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-200"><div className="font-semibold text-indigo-700 text-[11px] uppercase tracking-wide mb-1">Exploring</div><div className="font-mono text-[11px]">{frame.exploringEdge.from}→{frame.exploringEdge.to}</div></div>}
-    {frame.finishedComponent && <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200"><div className="font-semibold text-emerald-700 text-[11px] uppercase tracking-wide mb-1">Completed Component</div><div className="font-mono text-[11px]">C{frame.finishedComponent}</div></div>}
+    <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 overflow-x-auto text-gray-700"><div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Order Stack (postorder)</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.order.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-purple-300 text-gray-600">{v}</span>)}</div></div>
+    {frame.stage==='second-dfs' && <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 overflow-x-auto text-gray-700"><div className="font-semibold text-rose-700 text-[11px] uppercase tracking-wide mb-1">Component Map</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.componentMap).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-rose-300 text-gray-600">{k}:C{v}</span>)}</div></div>}
+    {frame.exploringEdge && <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-gray-700"><div className="font-semibold text-indigo-700 text-[11px] uppercase tracking-wide mb-1">Exploring</div><div className="font-mono text-[11px] text-gray-700">{frame.exploringEdge.from}→{frame.exploringEdge.to}</div></div>}
+    {frame.finishedComponent && <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-gray-700"><div className="font-semibold text-emerald-700 text-[11px] uppercase tracking-wide mb-1">Completed Component</div><div className="font-mono text-[11px] text-gray-700">C{frame.finishedComponent}</div></div>}
   </div>;
 }
 
 function Legend(){
-  return <div className="text-[11px] space-y-2">
-    <div className="flex items-center gap-2"><span className="h-4 w-4 rounded-full bg-blue-600 border-2 border-blue-700 inline-block"/> Current DFS node</div>
-    <div className="flex items-center gap-2"><span className="h-4 w-4 rounded-full bg-yellow-400 border-2 border-yellow-500 inline-block"/> Active recursion stack</div>
-    <div className="flex items-center gap-2"><span className="h-4 w-4 rounded-full bg-green-600 border-2 border-green-700 inline-block"/> Finished (first pass)</div>
-    <div className="flex items-center gap-2"><span className="h-4 w-4 rounded-full bg-fuchsia-500 border-2 border-fuchsia-600 inline-block"/> Assigned component</div>
-    <div className="flex items-center gap-2"><span className="h-4 w-6 rounded bg-indigo-500 inline-block"/> Exploring edge</div>
+  return <div className="text-[11px] space-y-2 text-gray-700">
+    <div className="flex items-center gap-2 text-gray-700"><span className="h-4 w-4 rounded-full bg-blue-600 border-2 border-blue-700 inline-block text-gray-600"/> Current DFS node</div>
+    <div className="flex items-center gap-2 text-gray-700"><span className="h-4 w-4 rounded-full bg-yellow-400 border-2 border-yellow-500 inline-block text-gray-600"/> Active recursion stack</div>
+    <div className="flex items-center gap-2 text-gray-700"><span className="h-4 w-4 rounded-full bg-green-600 border-2 border-green-700 inline-block text-gray-600"/> Finished (first pass)</div>
+    <div className="flex items-center gap-2 text-gray-700"><span className="h-4 w-4 rounded-full bg-fuchsia-500 border-2 border-fuchsia-600 inline-block text-gray-600"/> Assigned component</div>
+    <div className="flex items-center gap-2 text-gray-700"><span className="h-4 w-6 rounded bg-indigo-500 inline-block text-gray-600"/> Exploring edge</div>
   </div>;
 }
 
 function Navigation(){
-  return <div className="bg-white rounded-2xl shadow-sm p-6">
+  return <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
-    <div className="flex flex-wrap gap-3 justify-between items-center">
-      <Link href="/algorithms/graph/strongly-connected-components/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-fuchsia-600 text-white rounded-lg hover:bg-fuchsia-700">Graph Overview <ArrowRight className="h-5 w-5 ml-2"/></Link>
+    <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
+      <Link href="/algorithms/graph/strongly-connected-components/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-fuchsia-600 text-white rounded-lg hover:bg-fuchsia-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

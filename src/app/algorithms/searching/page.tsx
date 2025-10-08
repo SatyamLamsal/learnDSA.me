@@ -128,17 +128,17 @@ const comparisonData = [
 
 export default function SearchingAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Searching Algorithms</h1>
@@ -153,19 +153,19 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="grid md:grid-cols-3 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Eye className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Sequential Search</h3>
             <p className="text-slate-600">Examine elements one by one until target is found</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Zap className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Divide & Conquer</h3>
             <p className="text-slate-600">Reduce search space systematically for efficiency</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Brain className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Intelligent Search</h3>
             <p className="text-slate-600">Use data patterns and heuristics for optimal performance</p>
@@ -177,10 +177,10 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Choose Your Search Strategy</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {searchingAlgorithms.slice(0, 6).map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -188,27 +188,27 @@ export default function SearchingAlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center`}>
-                    <h3 className="text-xl font-bold text-white">{algorithm.name}</h3>
+                    <h3 className="text-xl font-bold text-white text-gray-800">{algorithm.name}</h3>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Average:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-gray-700">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-gray-700">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Best:</span>
                         <div className="bg-green-100 px-2 py-1 rounded mt-1 text-green-800">{algorithm.bestCase}</div>
@@ -219,7 +219,7 @@ export default function SearchingAlgorithmsPage() {
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -229,8 +229,8 @@ export default function SearchingAlgorithmsPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="mb-2">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-green-700">Pros:</span>
                         <ul className="text-xs text-slate-600 mt-1">
                           {algorithm.pros.slice(0, 2).map((pro, i) => (
@@ -238,7 +238,7 @@ export default function SearchingAlgorithmsPage() {
                           ))}
                         </ul>
                       </div>
-                      <div className="mb-2">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-red-700">Cons:</span>
                         <ul className="text-xs text-slate-600 mt-1">
                           {algorithm.cons.slice(0, 1).map((con, i) => (
@@ -267,10 +267,10 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">Advanced Search Techniques</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             {searchingAlgorithms.slice(6).map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -278,32 +278,32 @@ export default function SearchingAlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.01 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-12 flex items-center justify-center`}>
-                    <h3 className="text-lg font-bold text-white">{algorithm.name}</h3>
+                    <h3 className="text-lg font-bold text-white text-gray-800">{algorithm.name}</h3>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
-                      <div className="text-center">
+                    <div className="grid grid-cols-3 gap-2 mb-4 text-xs text-gray-600">
+                      <div className="text-center text-gray-700">
                         <div className="font-semibold text-slate-700 mb-1">Average</div>
                         <div className="bg-blue-100 px-2 py-1 rounded text-blue-800">{algorithm.timeComplexity}</div>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center text-gray-700">
                         <div className="font-semibold text-slate-700 mb-1">Best</div>
                         <div className="bg-green-100 px-2 py-1 rounded text-green-800">{algorithm.bestCase}</div>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center text-gray-700">
                         <div className="font-semibold text-slate-700 mb-1">Worst</div>
                         <div className="bg-red-100 px-2 py-1 rounded text-red-800">{algorithm.worstCase}</div>
                       </div>
                     </div>
 
                     <div className="text-xs text-slate-600">
-                      <span className="font-semibold">Best for:</span> {algorithm.useCases.join(', ')}
+                      <span className="font-semibold text-gray-800">Best for:</span> {algorithm.useCases.join(', ')}
                     </div>
                   </div>
                 </Link>
@@ -317,13 +317,13 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Time Complexity Comparison</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="border-b-2 border-gray-200">
+                <tr className="border-b-2 border-gray-200 text-gray-700">
                   <th className="text-left p-3 font-semibold text-slate-700">Case</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Linear</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Binary</th>
@@ -334,29 +334,29 @@ export default function SearchingAlgorithmsPage() {
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100 text-gray-700">
                     <td className="p-3 font-medium text-slate-800">{row.name}</td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.linear.includes('n') && !row.linear.includes('log') ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {row.linear}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-yellow-100 text-yellow-800">{row.binary}</span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-orange-100 text-orange-800">{row.jump}</span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.interpolation.includes('n') && !row.interpolation.includes('log') ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {row.interpolation}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-yellow-100 text-yellow-800">{row.exponential}</span>
                     </td>
                   </tr>
@@ -371,42 +371,42 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">When to Use Each Algorithm</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="border-l-4 border-red-500 pl-4">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-red-700 mb-2">Unsorted Data</h3>
                 <p className="text-sm text-slate-600">Use <strong>Linear Search</strong> - Only option for unsorted arrays</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-blue-700 mb-2">Sorted Arrays (General)</h3>
                 <p className="text-sm text-slate-600">Use <strong>Binary Search</strong> - Most efficient for sorted data</p>
               </div>
-              <div className="border-l-4 border-green-500 pl-4">
+              <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-green-700 mb-2">Large Sorted Arrays</h3>
                 <p className="text-sm text-slate-600">Use <strong>Jump Search</strong> - Good balance between simplicity and performance</p>
               </div>
-              <div className="border-l-4 border-purple-500 pl-4">
+              <div className="border-l-4 border-purple-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-purple-700 mb-2">Uniform Distribution</h3>
                 <p className="text-sm text-slate-600">Use <strong>Interpolation Search</strong> - Excellent for evenly distributed data</p>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="border-l-4 border-orange-500 pl-4">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-orange-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-orange-700 mb-2">Unknown Array Size</h3>
                 <p className="text-sm text-slate-600">Use <strong>Exponential Search</strong> - Great for infinite or very large arrays</p>
               </div>
-              <div className="border-l-4 border-teal-500 pl-4">
+              <div className="border-l-4 border-teal-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-teal-700 mb-2">Frequent Searches</h3>
                 <p className="text-sm text-slate-600">Use <strong>Hash Table</strong> - O(1) average lookup time</p>
               </div>
-              <div className="border-l-4 border-indigo-500 pl-4">
+              <div className="border-l-4 border-indigo-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-indigo-700 mb-2">No Division Operations</h3>
                 <p className="text-sm text-slate-600">Use <strong>Fibonacci Search</strong> - When division is expensive</p>
               </div>
-              <div className="border-l-4 border-pink-500 pl-4">
+              <div className="border-l-4 border-pink-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-pink-700 mb-2">Theoretical Optimization</h3>
                 <p className="text-sm text-slate-600">Use <strong>Ternary Search</strong> - For finding extrema in unimodal functions</p>
               </div>
@@ -419,19 +419,19 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Practice Your Search Skills</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Practice Your Search Skills</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Try our interactive search visualizer and master different algorithms
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/searching/visualizer" className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              <Search className="h-5 w-5 inline mr-2" />
+              <Search className="h-5 w-5 inline mr-2 text-gray-700" />
               Interactive Visualizer
             </Link>
             <Link href="/algorithms/searching/linear-search" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with Linear Search
             </Link>
           </div>
@@ -442,22 +442,22 @@ export default function SearchingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting
           </Link>
           
           <Link
             href="/algorithms/graph"
-            className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
           >
             Next: Graph Algorithms
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

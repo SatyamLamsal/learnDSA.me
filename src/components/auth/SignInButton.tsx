@@ -76,11 +76,11 @@ export function SignInButton({ className = '' }: { className?: string }) {
               alt="Profile"
               width={40}
               height={40}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover text-gray-700"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-              <User className="h-6 w-6 text-white" />
+            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-gray-700">
+              <User className="h-6 w-6 text-white text-gray-700" />
             </div>
           )}
         </button>
@@ -92,23 +92,23 @@ export function SignInButton({ className = '' }: { className?: string }) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
               transition={{ duration: 0.15 }}
-              className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-50"
+              className="absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-50 text-gray-700"
             >
               {/* User Info */}
-              <div className="px-4 pb-4 border-b border-gray-100">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200">
+              <div className="px-4 pb-4 border-b border-gray-100 text-gray-700">
+                <div className="flex items-center space-x-3 text-gray-700">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200 text-gray-700">
                     {session.user.image ? (
                       <Image
                         src={session.user.image}
                         alt="Profile"
                         width={48}
                         height={48}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover text-gray-700"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                        <User className="h-6 w-6 text-white" />
+                      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-gray-700">
+                        <User className="h-6 w-6 text-white text-gray-700" />
                       </div>
                     )}
                   </div>
@@ -120,18 +120,18 @@ export function SignInButton({ className = '' }: { className?: string }) {
               </div>
 
               {/* Progress Overview */}
-              <div className="px-4 py-4 border-b border-gray-100">
+              <div className="px-4 py-4 border-b border-gray-100 text-gray-700">
                 <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                   <Trophy className="h-4 w-4 text-yellow-500 mr-2" />
                   Learning Progress
                 </h3>
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
+                <div className="space-y-2 text-gray-700">
+                  <div className="flex justify-between items-center text-gray-700">
                     <span className="text-sm text-gray-600">Data Structures</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 bg-gray-200 rounded-full h-2">
+                    <div className="flex items-center space-x-2 text-gray-700">
+                      <div className="w-16 bg-gray-200 rounded-full h-2 text-gray-700">
                         <div 
-                          className="bg-red-500 h-2 rounded-full transition-all" 
+                          className="bg-red-500 h-2 rounded-full transition-all text-gray-700" 
                           style={{ width: `${dsPercentage}%` }}
                         />
                       </div>
@@ -140,12 +140,12 @@ export function SignInButton({ className = '' }: { className?: string }) {
                       </span>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center text-gray-700">
                     <span className="text-sm text-gray-600">Algorithms</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-16 bg-gray-200 rounded-full h-2">
+                    <div className="flex items-center space-x-2 text-gray-700">
+                      <div className="w-16 bg-gray-200 rounded-full h-2 text-gray-700">
                         <div 
-                          className="bg-blue-500 h-2 rounded-full transition-all" 
+                          className="bg-blue-500 h-2 rounded-full transition-all text-gray-700" 
                           style={{ width: `${algPercentage}%` }}
                         />
                       </div>
@@ -156,9 +156,9 @@ export function SignInButton({ className = '' }: { className?: string }) {
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 text-gray-700">
                   <div className="flex items-center text-sm text-gray-600">
-                    <BookmarkCheck className="h-4 w-4 mr-1" />
+                    <BookmarkCheck className="h-4 w-4 mr-1 text-gray-700" />
                     <span>{bookmarks.length} bookmarks</span>
                   </div>
                   <Link 
@@ -172,7 +172,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
               </div>
 
               {/* Sign Out Button */}
-              <div className="px-4 pt-2">
+              <div className="px-4 pt-2 text-gray-700">
                 <button
                   onClick={() => {
                     setIsDropdownOpen(false)
@@ -180,7 +180,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
                   }}
                   className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors flex items-center"
                 >
-                  <LogOut className="h-4 w-4 mr-3" />
+                  <LogOut className="h-4 w-4 mr-3 text-gray-700" />
                   Sign Out
                 </button>
               </div>
@@ -198,7 +198,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center border-2 border-gray-300 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
-        <User className="h-6 w-6 text-white" />
+        <User className="h-6 w-6 text-white text-gray-700" />
       </button>
 
       <AnimatePresence>
@@ -208,11 +208,11 @@ export function SignInButton({ className = '' }: { className?: string }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-50"
+            className="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-50 text-gray-700"
           >
-            <div className="px-4">
-              <div className="text-center mb-4">
-                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+            <div className="px-4 text-gray-700">
+              <div className="text-center mb-4 text-gray-700">
+                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-gray-700">
                   <Trophy className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Save Your Progress</h3>
@@ -220,14 +220,14 @@ export function SignInButton({ className = '' }: { className?: string }) {
                   Sign in to sync your learning progress and bookmarks across devices.
                 </p>
                 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4">
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4 text-gray-700">
                   <p className="text-xs text-yellow-800">
                     <strong>Note:</strong> Your current progress is saved locally and will be synced when you sign in.
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 <button
                   onClick={handleSignIn}
                   className="w-full bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center space-x-3"

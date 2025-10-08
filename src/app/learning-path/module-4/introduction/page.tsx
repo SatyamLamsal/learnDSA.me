@@ -36,9 +36,9 @@ export default function LinkedListsIntroductionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16 relative"
+        className="text-center mb-16 relative text-gray-700"
       >
-        <div className="absolute top-0 right-0 flex items-center space-x-4">
+        <div className="absolute top-0 right-0 flex items-center space-x-4 text-gray-700">
           <ProgressIndicator 
             topicId="linked-lists-introduction" 
             topicType="module"
@@ -53,12 +53,12 @@ export default function LinkedListsIntroductionPage() {
           />
         </div>
         <div className="inline-flex items-center bg-green-100 text-green-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
-          <LinkIcon className="w-5 h-5 mr-2" />
+          <LinkIcon className="w-5 h-5 mr-2 text-gray-700" />
           Module 4 · Introduction
         </div>
         <h1 className="text-5xl font-bold text-gray-900 mb-8">
           Introduction to
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 text-gray-600">
             Linked Lists
           </span>
         </h1>
@@ -67,8 +67,8 @@ export default function LinkedListsIntroductionPage() {
         </p>
       </motion.div>
 
-      <div id="overview" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
-        <div className="flex items-center justify-between mb-6">
+      <div id="overview" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
+        <div className="flex items-center justify-between mb-6 text-gray-700">
           <h2 className="text-3xl font-bold text-gray-900 flex items-center">
             <LinkIcon className="w-8 h-8 mr-3 text-green-600" />
             What is a Linked List?
@@ -78,8 +78,8 @@ export default function LinkedListsIntroductionPage() {
         <p className="text-lg leading-relaxed text-gray-700 mb-6">
           A linked list is a sequence of nodes where each node stores a piece of data and a reference to the next node (and optionally the previous one). Unlike arrays, elements are not stored in contiguous memory; this enables flexible insertion and removal without shifting elements.
         </p>
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="bg-red-50 p-6 rounded-xl border border-red-200">
+        <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
+          <div className="bg-red-50 p-6 rounded-xl border border-red-200 text-gray-700">
             <h3 className="text-xl font-semibold text-red-900 mb-4">Arrays (Static)</h3>
             <ul className="space-y-2 text-sm text-red-800">
               <li>• Fixed capacity</li>
@@ -88,7 +88,7 @@ export default function LinkedListsIntroductionPage() {
               <li>• Costly insert/delete in middle</li>
             </ul>
           </div>
-          <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+          <div className="bg-green-50 p-6 rounded-xl border border-green-200 text-gray-700">
             <h3 className="text-xl font-semibold text-green-900 mb-4">Linked Lists (Dynamic)</h3>
             <ul className="space-y-2 text-sm text-green-800">
               <li>• Dynamic growth</li>
@@ -100,18 +100,18 @@ export default function LinkedListsIntroductionPage() {
         </div>
       </div>
 
-      <div id="why" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="why" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <Database className="w-8 h-8 mr-3 text-blue-600" />
           Why Use Linked Lists?
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <div>
             <h3 className="text-lg font-semibold mb-3 text-green-900">Advantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start text-sm"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Dynamic size with no reallocation</li>
-              <li className="flex items-start text-sm"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Efficient insert/delete at head</li>
-              <li className="flex items-start text-sm"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Memory usage grows as needed</li>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-sm text-gray-600"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Dynamic size with no reallocation</li>
+              <li className="flex items-start text-sm text-gray-600"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Efficient insert/delete at head</li>
+              <li className="flex items-start text-sm text-gray-600"><CheckCircle className="w-5 h-5 text-green-500 mr-2" /> Memory usage grows as needed</li>
             </ul>
           </div>
           <div>
@@ -125,26 +125,26 @@ export default function LinkedListsIntroductionPage() {
         </div>
       </div>
 
-      <div id="objectives" className="bg-white rounded-2xl p-8 shadow-lg border mb-16">
+      <div id="objectives" className="bg-white rounded-2xl p-8 shadow-lg border mb-16 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <Target className="w-8 h-8 mr-3 text-purple-600" />
           Learning Objectives
         </h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 text-gray-700">
           {[ 'Structure & Nodes', 'Dynamic Memory', 'Head/Tail Operations', 'Traversal Basics', 'Use Cases', 'Trade-offs'].map((item, i) => (
-            <div key={i} className="bg-gradient-to-br from-green-50 to-teal-50 p-5 rounded-xl border border-green-200 text-sm font-medium">
+            <div key={i} className="bg-gradient-to-br from-green-50 to-teal-50 p-5 rounded-xl border border-green-200 text-sm font-medium text-gray-600">
               {item}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-8">
-        <Link href="/learning-path/module-4/pointers" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium flex items-center">
+      <div className="flex justify-between items-center mt-8 text-gray-700">
+        <Link href="/learning-path/module-4/pointers" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium flex items-center text-gray-600">
           Previous: Pointers & Memory
         </Link>
-        <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-green-600 text-white rounded-lg text-sm font-medium flex items-center hover:bg-green-700">
-          Next: Types <ArrowRight className="w-4 h-4 ml-2" />
+        <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-green-600 text-white rounded-lg text-sm font-medium flex items-center hover:bg-green-700 text-gray-300">
+          Next: Types <ArrowRight className="w-4 h-4 ml-2 text-gray-700" />
         </Link>
       </div>
     </ModuleLayout>

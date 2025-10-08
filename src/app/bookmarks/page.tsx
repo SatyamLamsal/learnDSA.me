@@ -12,10 +12,10 @@ export default function BookmarksPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-gray-700">
+        <div className="container mx-auto px-4 text-gray-700">
+          <div className="max-w-4xl mx-auto text-center text-gray-700">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4 text-gray-700"></div>
             <p className="text-gray-600">Loading your bookmarks...</p>
           </div>
         </div>
@@ -24,23 +24,23 @@ export default function BookmarksPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-gray-700">
+      <div className="container mx-auto px-4 text-gray-700">
+        <div className="max-w-4xl mx-auto text-gray-700">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-12 text-gray-700"
           >
             <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6 transition-colors">
-              <ArrowLeft className="h-5 w-5 mr-2" />
+              <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
               Back to Home
             </Link>
             
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-blue-100 rounded-full p-3">
+            <div className="flex items-center space-x-3 mb-4 text-gray-700">
+              <div className="bg-blue-100 rounded-full p-3 text-gray-700">
                 <BookmarkCheck className="h-8 w-8 text-blue-600" />
               </div>
               <div>
@@ -52,7 +52,7 @@ export default function BookmarksPage() {
             </div>
 
             {!session && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6 text-gray-700">
                 <p className="text-yellow-800 text-sm">
                   <strong>Note:</strong> You&apos;re viewing locally saved bookmarks. Sign in to sync across devices.
                 </p>
@@ -62,23 +62,23 @@ export default function BookmarksPage() {
 
           {/* Bookmarks Grid */}
           {bookmarks.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
               {bookmarks.map((bookmark, index) => (
                 <motion.div
                   key={bookmark.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 text-gray-700"
                 >
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
+                  <div className="p-6 text-gray-700">
+                    <div className="flex items-start justify-between mb-3 text-gray-700">
+                      <div className="flex-1 text-gray-700">
                         <h3 className="text-xl font-semibold text-slate-800 mb-2">
                           {bookmark.title}
                         </h3>
                         <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                          <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium capitalize">
+                          <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium capitalize text-gray-600">
                             {bookmark.category.replace('-', ' ')}
                           </span>
                           <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium capitalize">
@@ -89,9 +89,9 @@ export default function BookmarksPage() {
                       <BookmarkCheck className="h-5 w-5 text-blue-500" />
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between text-gray-700">
                       <div className="flex items-center text-xs text-gray-400">
-                        <Calendar className="h-3 w-3 mr-1" />
+                        <Calendar className="h-3 w-3 mr-1 text-gray-700" />
                         {new Date(bookmark.createdAt).toLocaleDateString()}
                       </div>
                       <Link 
@@ -99,7 +99,7 @@ export default function BookmarksPage() {
                         className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
                       >
                         Visit
-                        <ExternalLink className="h-3 w-3 ml-1" />
+                        <ExternalLink className="h-3 w-3 ml-1 text-gray-700" />
                       </Link>
                     </div>
                   </div>
@@ -111,9 +111,9 @@ export default function BookmarksPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center py-16"
+              className="text-center py-16 text-gray-700"
             >
-              <div className="bg-gray-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+              <div className="bg-gray-100 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 text-gray-700">
                 <BookmarkCheck className="h-12 w-12 text-gray-400" />
               </div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">No bookmarks yet</h2>
@@ -123,10 +123,10 @@ export default function BookmarksPage() {
               </p>
               <Link 
                 href="/"
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors text-gray-100"
               >
                 Explore Topics
-                <ExternalLink className="h-4 w-4 ml-2" />
+                <ExternalLink className="h-4 w-4 ml-2 text-gray-700" />
               </Link>
             </motion.div>
           )}

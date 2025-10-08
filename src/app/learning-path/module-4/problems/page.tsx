@@ -87,41 +87,41 @@ export default function LinkedListProblemsPage() {
         id="problems"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-12"
+        className="space-y-12 text-gray-700"
       >
-          <div className="bg-white rounded-2xl p-8 shadow-lg border">
-            <div className="flex items-center justify-between mb-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8 text-gray-700">
               <h2 className="text-3xl font-bold text-gray-900 flex items-center">
                 <Code className="w-8 h-8 mr-3 text-indigo-600" />
                 Classic Linked List Problems
               </h2>
               <SectionProgressIndicator moduleId="linked-lists" sectionId="problems-overview" />
             </div>
-            <div className="space-y-8">
+            <div className="space-y-8 text-gray-700">
               {commonProblems.map((problem, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="border-2 border-gray-200 rounded-xl p-6"
+                  className="border-2 border-gray-200 rounded-xl p-6 text-gray-700"
                 >
-                  <div className="grid lg:grid-cols-3 gap-6">
+                  <div className="grid lg:grid-cols-3 gap-6 text-gray-700">
                     <div>
                       <h3 className="text-2xl font-bold text-indigo-900 mb-3">{problem.problem}</h3>
                       <p className="text-gray-700 mb-4">{problem.description}</p>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-sm"><Clock className="w-4 h-4 text-green-600 mr-2" /><strong>Time:</strong>&nbsp;{problem.timeComplexity}</div>
-                        <div className="flex items-center text-sm"><Database className="w-4 h-4 text-blue-600 mr-2" /><strong>Space:</strong>&nbsp;{problem.spaceComplexity}</div>
-                        <div className="flex items-center text-sm"><Code className="w-4 h-4 text-purple-600 mr-2" /><strong>Algorithm:</strong>&nbsp;{problem.algorithm}</div>
+                      <div className="space-y-2 text-gray-700">
+                        <div className="flex items-center text-sm text-gray-600"><Clock className="w-4 h-4 text-green-600 mr-2" /><strong>Time:</strong>&nbsp;{problem.timeComplexity}</div>
+                        <div className="flex items-center text-sm text-gray-600"><Database className="w-4 h-4 text-blue-600 mr-2" /><strong>Space:</strong>&nbsp;{problem.spaceComplexity}</div>
+                        <div className="flex items-center text-sm text-gray-600"><Code className="w-4 h-4 text-purple-600 mr-2" /><strong>Algorithm:</strong>&nbsp;{problem.algorithm}</div>
                       </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Algorithm Steps:</h4>
-                      <ol className="space-y-2">
+                      <ol className="space-y-2 text-gray-700">
                         {problem.steps.map((step, stepIndex) => (
                           <li key={stepIndex} className="text-sm text-gray-600 flex items-start">
-                            <span className="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5 flex-shrink-0">
+                            <span className="w-5 h-5 bg-indigo-500 text-white rounded-full flex items-center justify-center text-xs mr-2 mt-0.5 flex-shrink-0 text-gray-600">
                               {stepIndex + 1}
                             </span>
                             {step}
@@ -131,7 +131,7 @@ export default function LinkedListProblemsPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Applications:</h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-2 text-gray-700">
                         {problem.applications.map((app, appIndex) => (
                           <li key={appIndex} className="text-sm text-gray-600 flex items-center">
                             <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -145,14 +145,14 @@ export default function LinkedListProblemsPage() {
               ))}
             </div>
           </div>
-          <div id="practice" className="bg-white rounded-2xl p-8 shadow-lg border">
+          <div id="practice" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <Play className="w-8 h-8 mr-3 text-green-600" />
               Practice Exercises
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
               {exercises.map((exercise, index) => (
-                <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200">
+                <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-gray-700">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{exercise.title}</h3>
                   <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium mb-3 ${
                     exercise.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
@@ -166,9 +166,9 @@ export default function LinkedListProblemsPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-between items-center mt-8">
-            <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">Previous: Operations</Link>
-            <Link href="/learning-path/module-5" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module</Link>
+          <div className="flex justify-between items-center mt-8 text-gray-700">
+            <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Operations</Link>
+            <Link href="/learning-path/module-5" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 text-gray-300">Next Module</Link>
           </div>
         </motion.div>
     </ModuleLayout>

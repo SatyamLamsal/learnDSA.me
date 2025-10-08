@@ -65,23 +65,23 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex text-gray-700">
       {/* Left Sidebar Navigation */}
       <motion.div 
         initial={{ x: -300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="w-80 bg-white/95 backdrop-blur-lg border-r border-gray-200 shadow-xl sticky top-0 h-screen overflow-y-auto"
+        className="w-80 bg-white/95 backdrop-blur-lg border-r border-gray-200 shadow-xl sticky top-0 h-screen overflow-y-auto text-gray-700"
       >
-        <div className="p-6">
+        <div className="p-6 text-gray-700">
           {/* Module Header */}
-          <div className="mb-8">
+          <div className="mb-8 text-gray-700">
             <Link href={backUrl} className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-4 text-sm">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeft className="w-4 h-4 mr-2 text-gray-700" />
               Back to Learning Path
             </Link>
             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-3">
-              <BookOpen className="w-4 h-4 mr-2" />
+              <BookOpen className="w-4 h-4 mr-2 text-gray-700" />
               {moduleTitle}
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Navigation</h2>
@@ -89,7 +89,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
           </div>
 
           {/* Navigation Pills */}
-          <div className="space-y-2 mb-8">
+          <div className="space-y-2 mb-8 text-gray-700">
             {sections.map((section, index) => (
               <motion.button
                 key={index}
@@ -105,17 +105,17 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <section.icon className="w-5 h-5 mr-3 flex-shrink-0" />
-                <span className="text-sm leading-tight">{section.name}</span>
+                <section.icon className="w-5 h-5 mr-3 flex-shrink-0 text-gray-700" />
+                <span className="text-sm leading-tight text-gray-600">{section.name}</span>
                 {activeSection === section.id && (
-                  <ChevronRight className="w-4 h-4 ml-auto" />
+                  <ChevronRight className="w-4 h-4 ml-auto text-gray-700" />
                 )}
               </motion.button>
             ))}
           </div>
 
           {/* Progress Indicator */}
-          <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+          <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-gray-700">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">Module Progress</h3>
             <ModuleProgressIndicator moduleId={moduleId} />
             <p className="text-xs text-gray-600 mt-2">
@@ -124,7 +124,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
           </div>
 
           {/* Bookmark Button */}
-          <div className="mb-6">
+          <div className="mb-6 text-gray-700">
             <ModuleBookmarkButton
               moduleId={moduleId}
               moduleUrl={`/learning-path/${moduleId}`}
@@ -132,18 +132,18 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
           </div>
 
           {/* Module Stats */}
-          <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100">
+          <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100 text-gray-700">
             <h3 className="text-sm font-semibold text-gray-900 mb-2">Module Stats</h3>
             <div className="space-y-1 text-xs text-gray-600">
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-700">
                 <span>Total Sections:</span>
-                <span className="font-medium">{totalSections || sections.length}</span>
+                <span className="font-medium text-gray-600">{totalSections || sections.length}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-700">
                 <span>Estimated Time:</span>
-                <span className="font-medium">{estimatedTime}</span>
+                <span className="font-medium text-gray-600">{estimatedTime}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-700">
                 <span>Difficulty:</span>
                 <span className={`font-medium ${getDifficultyColor(difficulty)}`}>
                   {difficulty}
@@ -155,8 +155,8 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-x-hidden">
-        <div className="container mx-auto px-4 py-12">
+      <div className="flex-1 overflow-x-hidden text-gray-700">
+        <div className="container mx-auto px-4 py-12 text-gray-700">
           {children}
         </div>
       </div>

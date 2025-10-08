@@ -217,22 +217,22 @@ export default function DataStructuresPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 text-gray-700">
+      <div className="container mx-auto px-4 py-8 text-gray-700">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 text-gray-700">
           <Link 
             href="/learning-path/module-1" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 mb-4"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4 mr-2 text-gray-700" />
             Back to Module 1
           </Link>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8"
+            className="text-center mb-8 text-gray-700"
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Why Do Data Structures Exist?
@@ -244,15 +244,15 @@ export default function DataStructuresPage() {
         </div>
 
         {/* Interactive Problem-Solution Explorer */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-indigo-600" />
             Real Problems, Real Solutions
           </h2>
           
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6 text-gray-700">
             {/* Problem Selector */}
-            <div className="space-y-3">
+            <div className="space-y-3 text-gray-700">
               <h3 className="font-semibold text-gray-900 mb-4">Choose a Problem:</h3>
               {problemSolutions.map((problem, index) => (
                 <motion.button
@@ -266,7 +266,7 @@ export default function DataStructuresPage() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 text-gray-700">
                     <problem.icon className={`w-6 h-6 ${
                       selectedProblem === index ? `text-${problem.color}-600` : 'text-gray-500'
                     }`} />
@@ -288,9 +288,9 @@ export default function DataStructuresPage() {
             </div>
 
             {/* Solutions Comparison */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 text-gray-700">
               <h3 className="font-semibold text-gray-900 mb-4">Solutions Comparison:</h3>
-              <div className="space-y-6">
+              <div className="space-y-6 text-gray-700">
                 {problemSolutions[selectedProblem].solutions.map((solution, index) => (
                   <motion.div
                     key={index}
@@ -299,7 +299,7 @@ export default function DataStructuresPage() {
                     transition={{ delay: index * 0.1 }}
                     className={`border-2 border-${problemSolutions[selectedProblem].color}-200 bg-${problemSolutions[selectedProblem].color}-50 p-6 rounded-xl`}
                   >
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start justify-between mb-4 text-gray-700">
                       <div>
                         <h4 className={`text-lg font-bold text-${problemSolutions[selectedProblem].color}-900`}>
                           {solution.name}
@@ -308,7 +308,7 @@ export default function DataStructuresPage() {
                           {solution.approach}
                         </p>
                       </div>
-                      <div className="text-right">
+                      <div className="text-right text-gray-700">
                         <div className={`font-mono font-bold text-${problemSolutions[selectedProblem].color}-800`}>
                           {solution.timeComplexity}
                         </div>
@@ -324,14 +324,14 @@ export default function DataStructuresPage() {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-4 text-gray-700">
                       <div>
                         <h5 className={`font-semibold text-${problemSolutions[selectedProblem].color}-900 mb-2`}>
                           ✅ Advantages:
                         </h5>
                         <ul className={`space-y-1 text-sm text-${problemSolutions[selectedProblem].color}-800`}>
                           {solution.pros.map((pro, idx) => (
-                            <li key={idx} className="flex items-start">
+                            <li key={idx} className="flex items-start text-gray-700">
                               <CheckCircle className="w-4 h-4 mr-1 mt-0.5 text-green-500" />
                               {pro}
                             </li>
@@ -344,7 +344,7 @@ export default function DataStructuresPage() {
                         </h5>
                         <ul className={`space-y-1 text-sm text-${problemSolutions[selectedProblem].color}-800`}>
                           {solution.cons.map((con, idx) => (
-                            <li key={idx} className="flex items-start">
+                            <li key={idx} className="flex items-start text-gray-700">
                               <span className="w-4 h-4 mr-1 mt-0.5 text-red-500">×</span>
                               {con}
                             </li>
@@ -364,13 +364,13 @@ export default function DataStructuresPage() {
         </div>
 
         {/* Data Structure Overview */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Database className="w-7 h-7 mr-3 text-green-600" />
             Data Structure Overview
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {dataStructureOverview.map((ds, index) => (
               <motion.div
                 key={index}
@@ -379,14 +379,14 @@ export default function DataStructuresPage() {
                 transition={{ delay: index * 0.1 }}
                 className={`bg-${ds.color}-50 p-6 rounded-xl border-2 border-${ds.color}-200 hover:shadow-lg transition-all`}
               >
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4 text-gray-700">
                   <div className={`w-12 h-12 bg-${ds.color}-500 text-white rounded-full flex items-center justify-center mr-4`}>
-                    <ds.icon className="w-6 h-6" />
+                    <ds.icon className="w-6 h-6 text-gray-700" />
                   </div>
                   <h3 className={`text-xl font-bold text-${ds.color}-900`}>{ds.name}</h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 text-gray-700">
                   <div>
                     <h4 className={`font-semibold text-${ds.color}-900 text-sm`}>Purpose:</h4>
                     <p className={`text-${ds.color}-800 text-sm`}>{ds.purpose}</p>
@@ -413,42 +413,42 @@ export default function DataStructuresPage() {
         </div>
 
         {/* The Big Picture */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <TrendingUp className="w-7 h-7 mr-3 text-blue-600" />
             The Big Picture: It&apos;s All About Trade-offs
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+          <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
+            <div className="space-y-6 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
                 <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
-                  <Clock className="w-6 h-6 mr-2" />
+                  <Clock className="w-6 h-6 mr-2 text-gray-700" />
                   Time Complexity Trade-offs
                 </h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-2 bg-white rounded border">
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex justify-between items-center p-2 bg-white rounded border text-gray-700">
                     <span className="text-blue-800">Array access:</span>
                     <code className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">O(1)</code>
                   </div>
-                  <div className="flex justify-between items-center p-2 bg-white rounded border">
+                  <div className="flex justify-between items-center p-2 bg-white rounded border text-gray-700">
                     <span className="text-blue-800">Binary search:</span>
                     <code className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">O(log n)</code>
                   </div>
-                  <div className="flex justify-between items-center p-2 bg-white rounded border">
+                  <div className="flex justify-between items-center p-2 bg-white rounded border text-gray-700">
                     <span className="text-blue-800">Linear search:</span>
                     <code className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">O(n)</code>
                   </div>
-                  <div className="flex justify-between items-center p-2 bg-white rounded border">
+                  <div className="flex justify-between items-center p-2 bg-white rounded border text-gray-700">
                     <span className="text-blue-800">Nested loops:</span>
                     <code className="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">O(n²)</code>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div className="bg-green-50 p-6 rounded-xl border border-green-200 text-gray-700">
                 <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center">
-                  <MemoryStick className="w-6 h-6 mr-2" />
+                  <MemoryStick className="w-6 h-6 mr-2 text-gray-700" />
                   Space Complexity Trade-offs
                 </h3>
                 <div className="space-y-2 text-green-800 text-sm">
@@ -460,26 +460,26 @@ export default function DataStructuresPage() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
+            <div className="space-y-6 text-gray-700">
+              <div className="bg-purple-50 p-6 rounded-xl border border-purple-200 text-gray-700">
                 <h3 className="text-xl font-semibold text-purple-900 mb-4 flex items-center">
-                  <Gauge className="w-6 h-6 mr-2" />
+                  <Gauge className="w-6 h-6 mr-2 text-gray-700" />
                   Performance Characteristics
                 </h3>
-                <div className="space-y-3 text-sm">
-                  <div className="bg-white p-3 rounded border">
+                <div className="space-y-3 text-sm text-gray-600">
+                  <div className="bg-white p-3 rounded border text-gray-700">
                     <strong className="text-purple-900">Cache Performance:</strong>
                     <div className="text-purple-700 mt-1">
                       Arrays {'>'} Trees {'>'} Hash Tables {'>'} Linked Lists
                     </div>
                   </div>
-                  <div className="bg-white p-3 rounded border">
+                  <div className="bg-white p-3 rounded border text-gray-700">
                     <strong className="text-purple-900">Insertion Speed:</strong>
                     <div className="text-purple-700 mt-1">
                       Hash Tables {'>'} Linked Lists {'>'} Trees {'>'} Arrays (middle)
                     </div>
                   </div>
-                  <div className="bg-white p-3 rounded border">
+                  <div className="bg-white p-3 rounded border text-gray-700">
                     <strong className="text-purple-900">Search Speed:</strong>
                     <div className="text-purple-700 mt-1">
                       Hash Tables {'>'} Sorted Arrays {'>'} Trees {'>'} Unsorted
@@ -488,7 +488,7 @@ export default function DataStructuresPage() {
                 </div>
               </div>
 
-              <div className="bg-orange-50 p-6 rounded-xl border border-orange-200">
+              <div className="bg-orange-50 p-6 rounded-xl border border-orange-200 text-gray-700">
                 <h3 className="text-xl font-semibold text-orange-900 mb-4">Key Insight</h3>
                 <p className="text-orange-800 leading-relaxed">
                   <strong>There&apos;s no &quot;perfect&quot; data structure.</strong> Each one optimizes for specific 
@@ -499,33 +499,33 @@ export default function DataStructuresPage() {
             </div>
           </div>
 
-          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200">
+          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 text-gray-700">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Questions to Ask When Choosing</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   What operations do you do most frequently?
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   Do you know the size in advance?
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   Is memory usage a concern?
                 </li>
               </ul>
               <ul className="space-y-2 text-gray-700">
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   Do you need to maintain order?
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   Are cache misses expensive?
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-indigo-600" />
                   Is implementation complexity important?
                 </li>

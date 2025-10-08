@@ -82,12 +82,12 @@ export default function FoundationsPage() {
       difficulty="Beginner"
       totalSections={5}
     >
-      <div className="space-y-8">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl">
-          <div className="flex items-center space-x-4 mb-4">
-            <Brain className="w-12 h-12" />
+      <div className="space-y-8 text-gray-700">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl text-gray-700">
+          <div className="flex items-center space-x-4 mb-4 text-gray-700">
+            <Brain className="w-12 h-12 text-gray-700" />
             <div>
-              <h1 className="text-4xl font-bold">Foundations of DSA</h1>
+              <h1 className="text-4xl font-bold text-slate-800">Foundations of DSA</h1>
               <p className="text-purple-100 text-lg">Build your algorithmic thinking foundation</p>
             </div>
           </div>
@@ -96,27 +96,27 @@ export default function FoundationsPage() {
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-lg border">
+        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <ArrowRight className="w-7 h-7 mr-3 text-blue-600" />
             Learning Path
           </h2>
-          <div className="grid gap-6">
+          <div className="grid gap-6 text-gray-700">
             {sectionDetails.map((section, index) => (
               <div
                 key={section.id}
-                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer"
+                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-gray-700"
                 onClick={() => window.location.href = section.href}
               >
-                <div className="flex items-center space-x-4 flex-1">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <div className="flex items-center space-x-4 flex-1 text-gray-700">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-gray-700">
                     <section.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 text-gray-700">
                     <h3 className="font-semibold text-gray-800 group-hover:text-blue-800">{section.title}</h3>
                     <p className="text-gray-600 text-sm">{section.description}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-right text-gray-700">
                     <div className="text-sm text-gray-500">{section.timeEstimate}</div>
                     <div className={`text-xs px-2 py-1 rounded mt-1 ${
                       section.difficulty === 'Beginner' 
@@ -134,8 +134,8 @@ export default function FoundationsPage() {
         </div>
         
         {/* Next Module Navigation */}
-        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
-          <h2 className="text-2xl font-bold mb-4">Ready for the Next Step?</h2>
+        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-gray-700">
+          <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready for the Next Step?</h2>
           <p className="text-blue-100 mb-6">
             Now that you understand the fundamentals, let&apos;s explore why data structures exist by diving into computer memory systems.
           </p>
@@ -144,7 +144,7 @@ export default function FoundationsPage() {
             className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
             Continue to Module 1: Memory & Efficiency
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-5 h-5 ml-2 text-gray-700" />
           </a>
         </div>
       </div>

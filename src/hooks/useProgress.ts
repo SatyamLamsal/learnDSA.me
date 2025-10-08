@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useSession } from 'next-auth/react'
 
 interface UserProgress {
@@ -49,7 +49,7 @@ export function useProgress() {
     }
   }
 
-  const fetchProgress = async () => {
+  const fetchProgress = useCallback(async () => {
     try {
       const response = await fetch('/api/progress')
       if (response.ok) {
@@ -71,9 +71,9 @@ export function useProgress() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
-  const updateProgress = async (
+  const updateProgress = useCallback(async (
     topicId: string,
     topicType: string,
     category: string,
@@ -91,8 +91,16 @@ export function useProgress() {
     }
 
     // Immediately update local state for better UX
-    const newProgress = [...progress.filter(p => p.topicId !== topicId), progressItem]
-    setProgress(newProgress)
+    setProgress(prevProgress => {
+      const newProgress = [...prevProgress.filter(p => p.topicId !== topicId), progressItem]
+      
+      if (!session?.user) {
+        // Save to local storage
+        saveLocalProgress(newProgress)
+      }
+      
+      return newProgress
+    })
 
     if (session?.user) {
       // Save to server
@@ -122,14 +130,11 @@ export function useProgress() {
         // Revert local changes if request failed
         await fetchProgress()
       }
-    } else {
-      // Save to local storage
-      saveLocalProgress(newProgress)
     }
-  }
+  }, [session?.user, fetchProgress])
 
   // NEW: Atomic module progress update
-  const updateModuleProgress = async (
+  const updateModuleProgress = useCallback(async (
     moduleId: string,
     completed: boolean = false,
     timeSpent: number = 0
@@ -150,7 +155,7 @@ export function useProgress() {
         )
       }
     }
-  }
+  }, [updateProgress])
 
   // NEW: Check if any section in module is completed
   const isModuleProgressed = (moduleId: string) => {

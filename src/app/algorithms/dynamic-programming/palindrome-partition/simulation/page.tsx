@@ -38,27 +38,27 @@ export default function PalindromePartitionSimulationPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8">
-          <Link href="/algorithms/dynamic-programming/palindrome-partition" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Overview</Link>
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
+          <Link href="/algorithms/dynamic-programming/palindrome-partition" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-2 flex items-center"><Scissors className="h-8 w-8 text-teal-600 mr-2"/>Palindrome Partition Simulation</h1>
           <p className="text-slate-600 max-w-3xl">Observe palindrome preprocessing and incremental cut computation.</p>
         </motion.div>
-        <div className="bg-white rounded-lg shadow p-6 mb-10">
-          <div className="flex flex-wrap gap-4 mb-4 items-end">
+        <div className="bg-white rounded-lg shadow p-6 mb-10 text-gray-700">
+          <div className="flex flex-wrap gap-4 mb-4 items-end text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">String</label>
               <input value={s} onChange={e=> setS(e.target.value.slice(0,20))} className="px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded disabled:opacity-50">{running? 'Running...' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running...' : 'Run'}</button>
           </div>
-          <div className="flex flex-wrap gap-2 text-xs mb-4">
+          <div className="flex flex-wrap gap-2 text-xs mb-4 text-gray-600">
             {steps.map(st=> <div key={st.i} className="px-2 py-1 rounded border bg-teal-50 text-teal-700">i={st.i} cuts={st.cuts}</div>)}
           </div>
           {result!==null && <div className="text-sm text-slate-700">Minimum Cuts: <span className="font-semibold text-teal-600">{result}</span></div>}
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-gray-700">
           <span />
           <Link href="/algorithms/dynamic-programming/palindrome-partition/theory" className="text-teal-600 hover:text-teal-700">Theory →</Link>
         </div>

@@ -5,28 +5,28 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, BookOpen, Play, Sigma, AlertTriangle, Repeat2 } from 'lucide-react';
 
 export default function BellmanFordOverviewPage(){
-  return <div className="min-h-screen bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50">
-  <div className="container mx-auto px-4 py-12 max-w-screen-2xl">
-      <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10">
-        <Link href="\algorithms\graph" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Graph Algorithms</Link>
+  return <div className="min-h-screen bg-gradient-to-br from-rose-50 via-amber-50 to-emerald-50 text-gray-700">
+  <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
+      <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
+        <Link href="\algorithms\graph" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Graph Algorithms</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-          <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-rose-600 text-white shadow">
-            <Sigma className="h-8 w-8"/>
+          <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-rose-600 text-white shadow text-gray-600">
+            <Sigma className="h-8 w-8 text-gray-700"/>
           </span>
           Bellman-Ford Algorithm
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Bellman-Ford computes single-source shortest paths in graphs that may contain negative edge weights. By performing |V|−1 full relaxation passes over all edges, it guarantees correctness and can detect negative weight cycles via a final pass that still improves a distance.</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
+      <div className="grid md:grid-cols-3 gap-6 mb-12 text-gray-700">
         <InfoCard title="Handles" value="Negative Weights" color="bg-rose-100 text-rose-700" description="Works with w < 0" />
         <InfoCard title="Passes" value="|V|-1" color="bg-amber-100 text-amber-700" description="Sequential relaxations" />
         <InfoCard title="Cycle Check" value="Final Pass" color="bg-emerald-100 text-emerald-700" description="Detects negatives" />
       </div>
 
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:0.1}} className="grid lg:grid-cols-3 gap-8 mb-16">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white rounded-2xl shadow-sm p-6">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:0.1}} className="grid lg:grid-cols-3 gap-8 mb-16 text-gray-700">
+        <div className="lg:col-span-2 space-y-6 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">When to Use Bellman-Ford</h2>
             <ul className="list-disc pl-5 text-sm text-slate-600 space-y-2">
               <li>Graphs with negative edge weights (no requirement of non-negative)</li>
@@ -36,48 +36,48 @@ export default function BellmanFordOverviewPage(){
               <li>Edge list processing where adjacency build is expensive</li>
             </ul>
           </div>
-          <div className="bg-white rounded-2xl shadow-sm p-6">
+          <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">Core Idea</h2>
             <p className="text-sm text-slate-600 leading-relaxed">Initialize dist[source]=0 and all others to ∞. Repeatedly relax every edge (u,v,w): if dist[u] + w &lt; dist[v], update dist[v]. After |V|−1 passes, all shortest paths (with at most |V|−1 edges) are found. A final pass that still improves some dist[v] reveals a negative weight cycle reachable from the source.</p>
           </div>
         </div>
-        <div className="space-y-6">
-          <div className="bg-white rounded-2xl shadow-sm p-6">
+        <div className="space-y-6 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">Algorithm Metrics</h2>
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
               <Metric label="Time" value="O(V·E)" />
               <Metric label="Space" value="O(V)" />
               <Metric label="Neg Weights" value="Yes" />
               <Metric label="Neg Cycles" value="Detects" />
             </div>
           </div>
-          <div className="bg-white rounded-2xl shadow-sm p-6">
+          <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">Actions</h2>
-            <div className="flex flex-col gap-3">
-              <Link href="/algorithms/graph/bellman-ford/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-rose-600 text-white font-semibold hover:bg-rose-700 transition-colors"><BookOpen className="h-5 w-5"/> Dive into Theory</Link>
-              <Link href="/algorithms/graph/bellman-ford/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors"><Play className="h-5 w-5"/> Try Simulation</Link>
+            <div className="flex flex-col gap-3 text-gray-700">
+              <Link href="/algorithms/graph/bellman-ford/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-rose-600 text-white font-semibold hover:bg-rose-700 transition-colors text-gray-100"><BookOpen className="h-5 w-5 text-gray-700"/> Dive into Theory</Link>
+              <Link href="/algorithms/graph/bellman-ford/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors text-gray-100"><Play className="h-5 w-5 text-gray-700"/> Try Simulation</Link>
             </div>
           </div>
         </div>
       </motion.div>
 
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="flex justify-between items-center">
-  <Link href="/algorithms/graph/dijkstra-shortest-path" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2"/>Back: Dijkstra Algorithm</Link>
-        <Link href="\algorithms\graph\floyd-warshall" className="inline-flex items-center px-6 py-3 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors">Next:floyd-warshall <ArrowRight className="h-5 w-5 ml-2"/></Link>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="flex justify-between items-center text-gray-700">
+  <Link href="/algorithms/graph/dijkstra-shortest-path" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back: Dijkstra Algorithm</Link>
+        <Link href="\algorithms\graph\floyd-warshall" className="inline-flex items-center px-6 py-3 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors text-gray-100">Next:floyd-warshall <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
       </motion.div>
     </div>
   </div>;
 }
 
 function InfoCard({title,value,color,description}:{title:string;value:string;color:string;description:string}){
-  return <div className="bg-white rounded-2xl shadow-sm p-6">
+  return <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">{title}</div>
     <div className={`text-lg font-bold mb-1 inline-flex items-center px-2 py-1 rounded-lg ${color}`}>{value}</div>
     <p className="text-xs text-slate-600">{description}</p>
   </div>;
 }
 function Metric({label,value}:{label:string;value:string}){
-  return <div className="bg-slate-50 rounded-xl p-3 border border-slate-200">
+  return <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 text-gray-700">
     <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{label}</div>
     <div className="font-mono text-sm mt-1 text-slate-800">{value}</div>
   </div>;

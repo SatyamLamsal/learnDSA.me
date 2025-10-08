@@ -37,7 +37,7 @@ export function ProgressIndicator({
   if (loading) {
     return (
       <div className={`flex items-center space-x-2 ${className}`}>
-        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 text-gray-700"></div>
       </div>
     )
   }
@@ -50,8 +50,8 @@ export function ProgressIndicator({
           animate={{ scale: 1 }}
           className="flex items-center text-green-600"
         >
-          <CheckCircle className="h-5 w-5 mr-1" />
-          <span className="text-sm font-medium">Completed</span>
+          <CheckCircle className="h-5 w-5 mr-1 text-gray-700" />
+          <span className="text-sm font-medium text-gray-600">Completed</span>
         </motion.div>
       ) : (
         <motion.button
@@ -65,14 +65,14 @@ export function ProgressIndicator({
               : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
           }`}
         >
-          <CheckCircle className="h-4 w-4 mr-1" />
+          <CheckCircle className="h-4 w-4 mr-1 text-gray-700" />
           {isUpdating ? 'Updating...' : 'Mark Complete'}
         </motion.button>
       )}
       
       {progress?.timeSpent && progress.timeSpent > 60 && (
         <div className="flex items-center text-gray-500 text-sm">
-          <Clock className="h-4 w-4 mr-1" />
+          <Clock className="h-4 w-4 mr-1 text-gray-700" />
           {Math.round(progress.timeSpent / 60)}min
         </div>
       )}
@@ -92,15 +92,15 @@ export function CategoryProgress({ category }: { category: string }) {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex items-center space-x-2 text-sm"
+      className="flex items-center space-x-2 text-sm text-gray-600"
     >
       <Trophy className="h-4 w-4 text-yellow-500" />
       <span className="text-gray-600">
         {completed}/{total} completed
       </span>
-      <div className="w-16 h-2 bg-gray-200 rounded-full">
+      <div className="w-16 h-2 bg-gray-200 rounded-full text-gray-700">
         <div 
-          className="h-2 bg-yellow-500 rounded-full transition-all duration-300"
+          className="h-2 bg-yellow-500 rounded-full transition-all duration-300 text-gray-700"
           style={{ width: `${total ? (completed / total) * 100 : 0}%` }}
         />
       </div>

@@ -317,17 +317,17 @@ const HashTableSimulation: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/data-structures/hash-tables" className="inline-flex items-center text-pink-600 hover:text-pink-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Hash Tables Overview
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Hash Table Simulation</h1>
@@ -337,17 +337,17 @@ const HashTableSimulation: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Configuration */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center mb-4">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center mb-4 text-gray-700">
                 <Settings className="h-5 w-5 text-pink-600 mr-2" />
                 <h3 className="text-lg font-semibold text-gray-900">Configuration</h3>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Table Size
@@ -395,20 +395,20 @@ const HashTableSimulation: React.FC = () => {
                   </select>
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={initializeTable}
-                    className="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg hover:bg-gray-700 flex items-center justify-center"
+                    className="flex-1 bg-gray-600 text-white px-3 py-2 rounded-lg hover:bg-gray-700 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    <RotateCcw className="h-4 w-4 mr-1" />
+                    <RotateCcw className="h-4 w-4 mr-1 text-gray-700" />
                     Reset
                   </button>
                   
                   <button
                     onClick={loadDemoData}
-                    className="flex-1 bg-pink-600 text-white px-3 py-2 rounded-lg hover:bg-pink-700 flex items-center justify-center"
+                    className="flex-1 bg-pink-600 text-white px-3 py-2 rounded-lg hover:bg-pink-700 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    <Zap className="h-4 w-4 mr-1" />
+                    <Zap className="h-4 w-4 mr-1 text-gray-700" />
                     Demo
                   </button>
                 </div>
@@ -416,15 +416,15 @@ const HashTableSimulation: React.FC = () => {
             </div>
 
             {/* Operations */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Operations</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Insert Key-Value Pair
                   </label>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-gray-700">
                     <input
                       type="text"
                       value={newKey}
@@ -442,9 +442,9 @@ const HashTableSimulation: React.FC = () => {
                     <button
                       onClick={insertEntry}
                       disabled={!newKey.trim() || !newValue.trim()}
-                      className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                      className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white text-white text-white text-white"
                     >
-                      <Plus className="h-4 w-4 mr-2" />
+                      <Plus className="h-4 w-4 mr-2 text-gray-700" />
                       Insert
                     </button>
                   </div>
@@ -454,7 +454,7 @@ const HashTableSimulation: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Search / Delete by Key
                   </label>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-gray-700">
                     <input
                       type="text"
                       value={searchKey}
@@ -462,22 +462,22 @@ const HashTableSimulation: React.FC = () => {
                       placeholder="Key to search/delete"
                       className="w-full p-2 border border-gray-300 rounded-lg"
                     />
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-2 text-gray-700">
                       <button
                         onClick={searchEntry}
                         disabled={!searchKey.trim()}
-                        className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                        className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white text-white text-white text-white"
                       >
-                        <Search className="h-4 w-4 mr-1" />
+                        <Search className="h-4 w-4 mr-1 text-gray-700" />
                         Search
                       </button>
                       
                       <button
                         onClick={deleteEntry}
                         disabled={!searchKey.trim()}
-                        className="flex-1 bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                        className="flex-1 bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white text-white text-white text-white"
                       >
-                        <Trash2 className="h-4 w-4 mr-1" />
+                        <Trash2 className="h-4 w-4 mr-1 text-gray-700" />
                         Delete
                       </button>
                     </div>
@@ -487,19 +487,19 @@ const HashTableSimulation: React.FC = () => {
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center mb-4">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center mb-4 text-gray-700">
                 <TrendingUp className="h-5 w-5 text-pink-600 mr-2" />
                 <h3 className="text-lg font-semibold text-gray-900">Statistics</h3>
               </div>
               
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex justify-between text-gray-700">
                   <span>Total Entries:</span>
-                  <span className="font-semibold">{stats.totalEntries}</span>
+                  <span className="font-semibold text-gray-800">{stats.totalEntries}</span>
                 </div>
                 
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Load Factor:</span>
                   <span className={`font-semibold ${
                     stats.loadFactor <= 0.75 ? 'text-green-600' : 
@@ -509,12 +509,12 @@ const HashTableSimulation: React.FC = () => {
                   </span>
                 </div>
                 
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Used Buckets:</span>
-                  <span className="font-semibold">{stats.usedBuckets}/{tableSize}</span>
+                  <span className="font-semibold text-gray-800">{stats.usedBuckets}/{tableSize}</span>
                 </div>
                 
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Collisions:</span>
                   <span className={`font-semibold ${stats.collisions > 0 ? 'text-red-600' : 'text-green-600'}`}>
                     {stats.collisions}
@@ -522,7 +522,7 @@ const HashTableSimulation: React.FC = () => {
                 </div>
                 
                 {collisionMethod === 'chaining' && (
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Max Chain:</span>
                     <span className={`font-semibold ${
                       stats.maxChainLength <= 2 ? 'text-green-600' : 
@@ -537,9 +537,9 @@ const HashTableSimulation: React.FC = () => {
 
             {/* Operation Steps */}
             {operationSteps.length > 0 && (
-              <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900">Operation Steps</h3>
-                <div className="space-y-2">
+                <div className="space-y-2 text-gray-700">
                   {operationSteps.map((step, index) => (
                     <motion.div
                       key={index}
@@ -561,10 +561,10 @@ const HashTableSimulation: React.FC = () => {
           </div>
 
           {/* Hash Table Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
                   <Hash className="h-6 w-6 text-pink-600 mr-2" />
                   <h3 className="text-lg font-semibold text-gray-900">Hash Table Visualization</h3>
                 </div>
@@ -576,7 +576,7 @@ const HashTableSimulation: React.FC = () => {
                 </div>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 {hashTable.map((bucket, index) => (
                   <motion.div
                     key={index}
@@ -599,9 +599,9 @@ const HashTableSimulation: React.FC = () => {
                     </div>
                     
                     {/* Bucket Contents */}
-                    <div className="flex-1 min-h-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 flex items-center px-4">
+                    <div className="flex-1 min-h-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 flex items-center px-4 text-gray-700">
                       {bucket.entries.length > 0 ? (
-                        <div className="flex items-center space-x-2 w-full">
+                        <div className="flex items-center space-x-2 w-full text-gray-700">
                           {bucket.entries.map((entry, entryIndex) => (
                             <React.Fragment key={entry.id}>
                               <motion.div
@@ -622,7 +622,7 @@ const HashTableSimulation: React.FC = () => {
                           ))}
                           
                           {collisionMethod === 'chaining' && bucket.entries.length > 1 && (
-                            <div className="flex items-center ml-2">
+                            <div className="flex items-center ml-2 text-gray-700">
                               <AlertTriangle className="h-4 w-4 text-yellow-500 mr-1" />
                               <span className="text-yellow-700 text-xs font-medium">
                                 Collision ({bucket.entries.length} items)
@@ -636,9 +636,9 @@ const HashTableSimulation: React.FC = () => {
                     </div>
                     
                     {/* Status Indicator */}
-                    <div className="ml-4">
+                    <div className="ml-4 text-gray-700">
                       {bucket.entries.length === 0 ? (
-                        <div className="w-6 h-6 rounded-full bg-gray-300"></div>
+                        <div className="w-6 h-6 rounded-full bg-gray-300 text-gray-700"></div>
                       ) : bucket.entries.length === 1 ? (
                         <CheckCircle className="w-6 h-6 text-green-500" />
                       ) : (
@@ -650,9 +650,9 @@ const HashTableSimulation: React.FC = () => {
               </div>
 
               {/* Hash Function Details */}
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-2">Hash Function Details:</h4>
-                <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
                   <div>
                     <strong>Current Function:</strong>
                     <div className="text-gray-600">
@@ -682,7 +682,7 @@ const HashTableSimulation: React.FC = () => {
               </div>
 
               {/* Instructions */}
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-blue-800 mb-2">Instructions:</h4>
                 <ul className="text-sm text-blue-700 space-y-1">
                   <li>• Insert key-value pairs to see how they are hashed and stored</li>
@@ -701,22 +701,22 @@ const HashTableSimulation: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/data-structures/hash-tables/theory"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Theory
           </Link>
           
           <Link
             href="/algorithms/sorting"
-            className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-gray-100"
           >
             Next: Sorting Algorithms
-            <ArrowLeft className="h-5 w-5 ml-2 rotate-180" />
+            <ArrowLeft className="h-5 w-5 ml-2 rotate-180 text-gray-700" />
           </Link>
         </motion.div>
       </div>

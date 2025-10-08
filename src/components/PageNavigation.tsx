@@ -92,12 +92,12 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   const topicColor = getTopicColor(currentTopic);
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
-      <div className="container mx-auto px-4">
+    <div className="bg-white border-b border-gray-200 sticky top-0 z-40 text-gray-700">
+      <div className="container mx-auto px-4 text-gray-700">
         {/* Breadcrumb */}
-        <div className="flex items-center py-3 text-sm">
+        <div className="flex items-center py-3 text-sm text-gray-600">
           <Link href="/" className="text-gray-500 hover:text-gray-700 flex items-center">
-            <Home className="h-4 w-4 mr-1" />
+            <Home className="h-4 w-4 mr-1 text-gray-700" />
             Home
           </Link>
           <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />
@@ -125,8 +125,8 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
 
         {/* Topic Navigation */}
         {currentSectionData && (
-          <div className="flex items-center justify-between py-3 border-t border-gray-100">
-            <div className="flex items-center space-x-6">
+          <div className="flex items-center justify-between py-3 border-t border-gray-100 text-gray-700">
+            <div className="flex items-center space-x-6 text-gray-700">
               <Link
                 href={currentSectionData.path}
                 className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -138,7 +138,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
                   backgroundColor: currentPage === 'overview' ? topicColor : undefined,
                 }}
               >
-                <BookOpen className="h-4 w-4 mr-2" />
+                <BookOpen className="h-4 w-4 mr-2 text-gray-700" />
                 Overview
               </Link>
 
@@ -155,33 +155,33 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
                     backgroundColor: pathname === item.path ? topicColor : undefined,
                   }}
                 >
-                  {item.type === 'theory' && <BookOpen className="h-4 w-4 mr-2" />}
-                  {item.type === 'simulation' && <Play className="h-4 w-4 mr-2" />}
-                  {item.type === 'pseudocode' && <Code className="h-4 w-4 mr-2" />}
+                  {item.type === 'theory' && <BookOpen className="h-4 w-4 mr-2 text-gray-700" />}
+                  {item.type === 'simulation' && <Play className="h-4 w-4 mr-2 text-gray-700" />}
+                  {item.type === 'pseudocode' && <Code className="h-4 w-4 mr-2 text-gray-700" />}
                   {item.name}
                 </Link>
               ))}
             </div>
 
             {/* Previous/Next Navigation */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 text-gray-700">
               {backPath && (
                 <Link
                   href={backPath}
                   className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
                 >
-                  <ChevronLeft className="h-4 w-4 mr-1" />
+                  <ChevronLeft className="h-4 w-4 mr-1 text-gray-700" />
                   {backLabel}
                 </Link>
               )}
               {nextPath && (
                 <Link
                   href={nextPath}
-                  className="flex items-center px-4 py-2 text-white rounded-lg transition-colors hover:opacity-90"
+                  className="flex items-center px-4 py-2 text-white rounded-lg transition-colors hover:opacity-90 text-gray-700"
                   style={{ backgroundColor: topicColor }}
                 >
                   {nextLabel}
-                  <ChevronRight className="h-4 w-4 ml-1" />
+                  <ChevronRight className="h-4 w-4 ml-1 text-gray-700" />
                 </Link>
               )}
             </div>

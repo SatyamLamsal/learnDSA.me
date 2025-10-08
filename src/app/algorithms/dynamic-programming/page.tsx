@@ -130,28 +130,28 @@ const dpPatterns = [
     name: 'Linear DP',
     description: 'Problems with 1D state space',
     examples: ['Fibonacci', 'House Robber', 'Climbing Stairs'],
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-8 w-8 text-gray-700" />,
     color: 'text-green-600'
   },
   {
     name: '2D DP',
     description: 'Problems with 2D state space',
     examples: ['Knapsack', 'LCS', 'Grid Path'],
-    icon: <Layers className="h-8 w-8" />,
+    icon: <Layers className="h-8 w-8 text-gray-700" />,
     color: 'text-blue-600'
   },
   {
     name: 'Interval DP',
     description: 'Problems on ranges or intervals',
     examples: ['Matrix Chain', 'Burst Balloons', 'Optimal BST'],
-    icon: <Puzzle className="h-8 w-8" />,
+    icon: <Puzzle className="h-8 w-8 text-gray-700" />,
     color: 'text-purple-600'
   },
   {
     name: 'Tree DP',
     description: 'DP on tree structures',
     examples: ['Tree Diameter', 'House Robber III', 'Binary Tree Cameras'],
-    icon: <Brain className="h-8 w-8" />,
+    icon: <Brain className="h-8 w-8 text-gray-700" />,
     color: 'text-orange-600'
   }
 ];
@@ -175,17 +175,17 @@ const dpTechniques = [
 
 export default function DynamicProgrammingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Dynamic Programming</h1>
@@ -200,12 +200,12 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Dynamic Programming Fundamentals</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="text-center text-gray-700">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
                 <Brain className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Optimal Substructure</h3>
@@ -213,8 +213,8 @@ export default function DynamicProgrammingPage() {
                 Optimal solution can be constructed from optimal solutions of subproblems
               </p>
             </div>
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center text-gray-700">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
                 <Layers className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Overlapping Subproblems</h3>
@@ -222,8 +222,8 @@ export default function DynamicProgrammingPage() {
                 Same subproblems are solved multiple times in naive recursive approach
               </p>
             </div>
-            <div className="text-center">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center text-gray-700">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
                 <Zap className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Memoization</h3>
@@ -239,17 +239,17 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Common DP Patterns</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-gray-700">
             {dpPatterns.map((pattern, index) => (
               <motion.div
                 key={pattern.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow"
+                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow text-gray-700"
               >
                 <div className={`${pattern.color} mb-4 flex justify-center`}>
                   {pattern.icon}
@@ -269,16 +269,16 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Memoization vs Tabulation</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             {dpTechniques.map((technique, _index) => (
-              <div key={technique.name} className="border rounded-lg p-6">
+              <div key={technique.name} className="border rounded-lg p-6 text-gray-700">
                 <h3 className="text-xl font-semibold text-slate-800 mb-3">{technique.name}</h3>
                 <p className="text-slate-600 mb-4">{technique.description}</p>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 text-gray-700">
                   <div>
                     <h4 className="font-semibold text-green-700 text-sm mb-1">Advantages:</h4>
                     <ul className="text-xs text-slate-600 space-y-1">
@@ -297,7 +297,7 @@ export default function DynamicProgrammingPage() {
                     </ul>
                   </div>
                   
-                  <div className="border-t pt-3">
+                  <div className="border-t pt-3 text-gray-700">
                     <h4 className="font-semibold text-blue-700 text-sm mb-1">Best For:</h4>
                     <p className="text-xs text-slate-600">{technique.bestFor}</p>
                   </div>
@@ -312,10 +312,10 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Classic DP Problems</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {dpAlgorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -323,30 +323,30 @@ export default function DynamicProgrammingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2">{algorithm.name}</h3>
-                    <span className="absolute top-2 right-2 bg-white bg-opacity-20 px-2 py-1 rounded text-xs text-white">
+                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
+                    <span className="absolute top-2 right-2 bg-white bg-opacity-20 px-2 py-1 rounded text-xs text-white text-gray-600">
                       {algorithm.pattern}
                     </span>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Time:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -356,15 +356,15 @@ export default function DynamicProgrammingPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="mb-2">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-blue-700">Approaches:</span>
                         <div className="text-xs text-slate-600 mt-1">
                           {algorithm.approach.join(' • ')}
                         </div>
                       </div>
                       
-                      <div className="mb-2">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-purple-700">Recurrence:</span>
                         <div className="text-xs text-slate-600 mt-1 font-mono bg-gray-50 p-2 rounded">
                           {algorithm.recurrence}
@@ -390,25 +390,25 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Space Optimization Techniques</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-blue-500 pl-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">Rolling Array</h3>
               <p className="text-sm text-slate-600 mb-2">
                 Use only current and previous rows instead of entire 2D table
               </p>
               <p className="text-xs text-slate-500">Example: 2D DP → O(2 × n) space</p>
             </div>
-            <div className="border-l-4 border-green-500 pl-4">
+            <div className="border-l-4 border-green-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-green-700 mb-2">State Compression</h3>
               <p className="text-sm text-slate-600 mb-2">
                 Use bit manipulation to represent states compactly
               </p>
               <p className="text-xs text-slate-500">Example: Subset problems with bitmask</p>
             </div>
-            <div className="border-l-4 border-purple-500 pl-4">
+            <div className="border-l-4 border-purple-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-purple-700 mb-2">Coordinate Compression</h3>
               <p className="text-sm text-slate-600 mb-2">
                 Map large coordinate space to smaller space
@@ -423,18 +423,18 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">DP Problem-Solving Steps</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-gray-700">
             {[
               { step: '1', title: 'Identify the Problem', desc: 'Look for optimal substructure and overlapping subproblems' },
               { step: '2', title: 'Define State', desc: 'What parameters uniquely identify a subproblem?' },
               { step: '3', title: 'Write Recurrence', desc: 'Express solution in terms of smaller subproblems' },
               { step: '4', title: 'Implement & Optimize', desc: 'Choose memoization or tabulation, optimize space' }
             ].map((item, _index) => (
-              <div key={item.step} className="text-center">
-                <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div key={item.step} className="text-center text-gray-700">
+                <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-700">
                   <span className="text-orange-600 font-bold">{item.step}</span>
                 </div>
                 <h3 className="font-semibold text-slate-800 mb-2">{item.title}</h3>
@@ -449,15 +449,15 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-gradient-to-r from-orange-600 to-red-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-orange-600 to-red-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Master Dynamic Programming</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Master Dynamic Programming</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Practice with interactive visualizations and step-by-step solutions
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/dynamic-programming/fibonacci" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with Fibonacci
             </Link>
           </div>
@@ -468,22 +468,22 @@ export default function DynamicProgrammingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/graph"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Graph Algorithms
           </Link>
           
           <Link
             href="/algorithms/greedy"
-            className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-gray-100"
           >
             Next: Greedy Algorithms
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

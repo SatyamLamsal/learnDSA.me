@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, Play, Clock, HardDrive, ArrowRight } from 'lucide-react';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { usePageTracking } from '@/hooks/usePageTracking';
 import { useEffect, useRef } from 'react';
 
 
@@ -19,8 +20,8 @@ const ArrayVisualization = () => {
   }, []);
   
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
-      <div className="flex justify-center items-center space-x-2 mb-4">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
+      <div className="flex justify-center items-center space-x-2 mb-4 text-gray-700">
         {arrayElements.map((element, index) => (
           <motion.div
             key={`element-${index}`}
@@ -31,7 +32,7 @@ const ArrayVisualization = () => {
               duration: 0.5,
               ease: "easeOut"
             }}
-            className="w-16 h-16 bg-red-500 text-white rounded-lg flex items-center justify-center font-bold border-2 border-red-600"
+            className="w-16 h-16 bg-red-500 text-white rounded-lg flex items-center justify-center font-bold border-2 border-red-600 text-gray-800"
           >
             {element}
           </motion.div>
@@ -39,7 +40,7 @@ const ArrayVisualization = () => {
       </div>
       <div className="flex justify-center items-center space-x-2 text-sm text-gray-600">
         {arrayElements.map((_, index) => (
-          <div key={`index-${index}`} className="w-16 text-center">
+          <div key={`index-${index}`} className="w-16 text-center text-gray-700">
             [{index}]
           </div>
         ))}
@@ -51,6 +52,13 @@ const ArrayVisualization = () => {
 export default function ArraysPage() {
   const isMounted = useRef(true);
 
+  // Track page visit and time spent
+  usePageTracking({
+    topicId: 'arrays-main',
+    topicType: 'theory',
+    category: 'data-structures'
+  });
+
   useEffect(() => {
     return () => {
       isMounted.current = false;
@@ -58,16 +66,16 @@ export default function ArraysPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 relative"
+          className="text-center mb-12 relative text-gray-700"
         >
-          <div className="absolute top-0 right-0 flex items-center space-x-4">
+          <div className="absolute top-0 right-0 flex items-center space-x-4 text-gray-700">
             <ProgressIndicator 
               topicId="arrays-main"
               topicType="theory"
@@ -97,7 +105,7 @@ export default function ArraysPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
+          className="mb-16 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-center mb-6 text-slate-700">
             Array Visualization
@@ -106,12 +114,12 @@ export default function ArraysPage() {
         </motion.div>
 
         {/* Key Features */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 text-gray-700">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white rounded-lg p-6 shadow-lg text-center"
+            className="bg-white rounded-lg p-6 shadow-lg text-center text-gray-700"
           >
             <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-slate-600">O(1) Access</h3>
@@ -122,7 +130,7 @@ export default function ArraysPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white rounded-lg p-6 shadow-lg text-center"
+            className="bg-white rounded-lg p-6 shadow-lg text-center text-gray-700"
           >
             <HardDrive className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-slate-600">Memory Efficient</h3>
@@ -133,7 +141,7 @@ export default function ArraysPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white rounded-lg p-6 shadow-lg text-center"
+            className="bg-white rounded-lg p-6 shadow-lg text-center text-gray-700"
           >
             <BookOpen className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-slate-600 ">Simple Structure</h3>
@@ -144,7 +152,7 @@ export default function ArraysPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-white rounded-lg p-6 shadow-lg text-center"
+            className="bg-white rounded-lg p-6 shadow-lg text-center text-gray-700"
           >
             <Play className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-slate-600">Cache Friendly</h3>
@@ -157,15 +165,15 @@ export default function ArraysPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-16"
+          className="bg-white rounded-lg shadow-lg p-8 mb-16 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-center text-slate-700">
             Time & Space Complexity
           </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-left border-collapse text-gray-700">
               <thead>
-                <tr className="bg-red-100">
+                <tr className="bg-red-100 text-gray-700">
                   <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Operation</th>
                   <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Best Case</th>
                   <th className="border border-red-300 px-4 py-3 font-semibold text-red-600">Average Case</th>
@@ -179,7 +187,7 @@ export default function ArraysPage() {
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 text-gray-700">
                   <td className="border border-red-300 px-4 py-3 text-blue-600">Search</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
@@ -191,7 +199,7 @@ export default function ArraysPage() {
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
                   <td className="border border-red-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                 </tr>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 text-gray-700">
                   <td className="border border-red-300 px-4 py-3 text-blue-600">Deletion</td>
                   <td className="border border-red-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   <td className="border border-red-300 px-4 py-3 text-yellow-600 font-mono">O(n)</td>
@@ -206,15 +214,15 @@ export default function ArraysPage() {
         </motion.div>
 
   {/* Navigation Cards */}
-  <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-3 gap-8 text-gray-700">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/arrays/theory" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
-              <div className="flex items-center justify-between mb-4">
+            <Link href="/data-structures/arrays/theory" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all text-gray-700">
+              <div className="flex items-center justify-between mb-4 text-gray-700">
                 <BookOpen className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
@@ -231,8 +239,8 @@ export default function ArraysPage() {
             transition={{ duration: 0.6, delay: 0.9 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/arrays/simulation" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
-              <div className="flex items-center justify-between mb-4">
+            <Link href="/data-structures/arrays/simulation" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all text-gray-700">
+              <div className="flex items-center justify-between mb-4 text-gray-700">
                 <Play className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
@@ -249,8 +257,8 @@ export default function ArraysPage() {
             transition={{ duration: 0.6, delay: 1.0 }}
             whileHover={{ scale: 1.02 }}
           >
-            <Link href="/data-structures/arrays/pseudocode" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
-              <div className="flex items-center justify-between mb-4">
+            <Link href="/data-structures/arrays/pseudocode" className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all text-gray-700">
+              <div className="flex items-center justify-between mb-4 text-gray-700">
                 <BookOpen className="h-8 w-8 text-red-600" />
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>

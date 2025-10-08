@@ -5,13 +5,13 @@ import { ArrowLeft, Mail, Github, Bug, Lightbulb, Heart } from 'lucide-react';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
+      <div className="bg-white shadow-sm text-gray-700">
+        <div className="max-w-6xl mx-auto px-4 py-4 text-gray-700">
+          <div className="flex items-center space-x-4 text-gray-700">
             <Link href="/" className="text-blue-600 hover:text-blue-800">
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
             </Link>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Contact Us</h1>
@@ -21,11 +21,11 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-12 text-gray-700">
         {/* Contact Options */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <div className="flex items-center mb-4">
+        <div className="grid md:grid-cols-2 gap-8 mb-12 text-gray-700">
+          <div className="bg-white rounded-xl shadow-sm p-6 text-gray-700">
+            <div className="flex items-center mb-4 text-gray-700">
               <Mail className="w-8 h-8 text-blue-500 mr-3" />
               <h2 className="text-xl font-semibold text-gray-800">Email Us</h2>
             </div>
@@ -40,8 +40,8 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <div className="flex items-center mb-4">
+          <div className="bg-white rounded-xl shadow-sm p-6 text-gray-700">
+            <div className="flex items-center mb-4 text-gray-700">
               <Github className="w-8 h-8 text-gray-700 mr-3" />
               <h2 className="text-xl font-semibold text-gray-800">GitHub</h2>
             </div>
@@ -60,33 +60,33 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Types */}
-        <div className="bg-white rounded-xl shadow-sm p-8 mb-8">
+        <div className="bg-white rounded-xl shadow-sm p-8 mb-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">What can we help you with?</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors text-gray-700">
               <Bug className="w-8 h-8 text-red-500 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Bug Reports</h3>
+              <h3 className="font-semibold mb-2 text-gray-800">Bug Reports</h3>
               <p className="text-sm text-gray-600">Found an issue? Let us know!</p>
             </div>
             
-            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors text-gray-700">
               <Lightbulb className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Feature Requests</h3>
+              <h3 className="font-semibold mb-2 text-gray-800">Feature Requests</h3>
               <p className="text-sm text-gray-600">Have an idea for improvement?</p>
             </div>
             
-            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors">
+            <div className="text-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 transition-colors text-gray-700">
               <Heart className="w-8 h-8 text-pink-500 mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">General Feedback</h3>
+              <h3 className="font-semibold mb-2 text-gray-800">General Feedback</h3>
               <p className="text-sm text-gray-600">Share your learning experience!</p>
             </div>
           </div>
         </div>
 
         {/* FAQ */}
-        <div className="bg-white rounded-xl shadow-sm p-8">
+        <div className="bg-white rounded-xl shadow-sm p-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="font-semibold text-gray-800 mb-2">Is LearnDSA.me really free?</h3>
               <p className="text-gray-600">

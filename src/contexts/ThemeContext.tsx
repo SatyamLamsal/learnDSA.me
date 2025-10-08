@@ -161,7 +161,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   if (!mounted) {
     return (
       <ThemeContext.Provider value={contextValue}>
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white text-gray-700">
           {children}
         </div>
       </ThemeContext.Provider>

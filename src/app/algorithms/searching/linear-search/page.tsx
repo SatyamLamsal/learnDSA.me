@@ -51,13 +51,13 @@ const LinearSearchVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
-      <div className="mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
+      <div className="mb-6 text-gray-700">
         <h3 className="text-xl font-semibold text-slate-800 mb-4">Interactive Linear Search</h3>
         
         {/* Controls */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap gap-4 mb-6 text-gray-700">
+          <div className="flex items-center gap-2 text-gray-700">
             <label className="text-sm font-medium text-slate-700">Target:</label>
             <input
               type="number"
@@ -70,26 +70,26 @@ const LinearSearchVisualization = () => {
           <button
             onClick={linearSearch}
             disabled={isSearching}
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             New Array
           </button>
         </div>
 
         {/* Array Visualization */}
-        <div className="flex justify-center items-center space-x-2 mb-4">
+        <div className="flex justify-center items-center space-x-2 mb-4 text-gray-700">
           {array.map((element, index) => (
             <motion.div
               key={index}
@@ -115,24 +115,24 @@ const LinearSearchVisualization = () => {
         {/* Array Indices */}
         <div className="flex justify-center items-center space-x-2 mb-6 text-sm text-gray-600">
           {array.map((_, index) => (
-            <div key={index} className="w-12 text-center">
+            <div key={index} className="w-12 text-center text-gray-700">
               [{index}]
             </div>
           ))}
         </div>
 
         {/* Status */}
-        <div className="text-center">
-          <div className="grid grid-cols-3 gap-4 mb-4 text-sm">
-            <div className="bg-blue-50 p-3 rounded">
+        <div className="text-center text-gray-700">
+          <div className="grid grid-cols-3 gap-4 mb-4 text-sm text-gray-600">
+            <div className="bg-blue-50 p-3 rounded text-gray-700">
               <span className="font-semibold text-blue-700">Current Index:</span>
               <div className="text-2xl font-bold text-blue-600">{currentIndex === -1 ? '-' : currentIndex}</div>
             </div>
-            <div className="bg-orange-50 p-3 rounded">
+            <div className="bg-orange-50 p-3 rounded text-gray-700">
               <span className="font-semibold text-orange-700">Comparisons:</span>
               <div className="text-2xl font-bold text-orange-600">{comparisons}</div>
             </div>
-            <div className="bg-gray-50 p-3 rounded">
+            <div className="bg-gray-50 p-3 rounded text-gray-700">
               <span className="font-semibold text-gray-700">Status:</span>
               <div className="text-lg font-bold text-gray-600">
                 {isSearching ? 'Searching...' : found ? 'Found!' : comparisons > 0 ? 'Not Found' : 'Ready'}
@@ -275,11 +275,11 @@ if (result !== -1) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
       <h3 className="text-xl font-semibold text-slate-800 mb-4">Implementation</h3>
       
       {/* Language Tabs */}
-      <div className="flex border-b border-gray-200 mb-4">
+      <div className="flex border-b border-gray-200 mb-4 text-gray-700">
         {(['python','java','cpp','javascript'] as TabKey[]).map((lang) => (
           <button
             key={lang}
@@ -297,7 +297,7 @@ if (result !== -1) {
       
       {/* Code Display */}
       <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <pre className="text-sm">
+        <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
       </div>
@@ -307,17 +307,17 @@ if (result !== -1) {
 
 export default function LinearSearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/searching" className="inline-flex items-center text-red-600 hover:text-red-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching Algorithms
           </Link>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
@@ -333,27 +333,27 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-red-600">O(n)</div>
             <p className="text-sm text-slate-600 mt-2">Linear time in worst case</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Cpu className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Space Complexity</h3>
             <div className="text-2xl font-bold text-green-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Constant extra space</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Zap className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Best Case</h3>
             <div className="text-2xl font-bold text-blue-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Element at first position</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Eye className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Stability</h3>
             <div className="text-2xl font-bold text-purple-600">N/A</div>
@@ -366,7 +366,7 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <LinearSearchVisualization />
         </motion.div>
@@ -376,33 +376,33 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center">
             <BookOpen className="h-6 w-6 mr-2 text-red-600" />
             How Linear Search Works
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Algorithm Steps:</h3>
-              <ol className="space-y-3">
-                <li className="flex items-start">
+              <ol className="space-y-3 text-gray-700">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-red-100 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                   <span className="text-slate-700">Start from the first element of the array</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-red-100 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
                   <span className="text-slate-700">Compare the current element with the target value</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-red-100 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
                   <span className="text-slate-700">If they match, return the current index</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-red-100 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
                   <span className="text-slate-700">If not, move to the next element</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-red-100 text-red-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</span>
                   <span className="text-slate-700">Repeat until element is found or array ends</span>
                 </li>
@@ -410,29 +410,29 @@ export default function LinearSearchPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Key Characteristics:</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Simple Implementation</div>
                     <div className="text-sm text-slate-600">Easy to understand and implement</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Works on Unsorted Data</div>
                     <div className="text-sm text-slate-600">No preprocessing required</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Sequential Access</div>
                     <div className="text-sm text-slate-600">Suitable for linked lists and arrays</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-orange-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Linear Time Complexity</div>
@@ -449,7 +449,7 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <CodeExample />
         </motion.div>
@@ -459,53 +459,53 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
+          className="grid md:grid-cols-2 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-green-700 mb-4">✅ Advantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Simple and easy to understand</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Works on unsorted data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">No additional memory required</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Suitable for small datasets</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Works with any data structure</span>
               </li>
             </ul>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-red-700 mb-4">❌ Disadvantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Slow for large datasets</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Inefficient for repeated searches</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Linear time complexity O(n)</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Not suitable for real-time applications</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Doesn&apos;t utilize data ordering</span>
               </li>
@@ -518,11 +518,11 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">When to Use Linear Search</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-green-500 pl-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="border-l-4 border-green-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-green-700 mb-2">✅ Good For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Small datasets (&lt; 100 elements)</li>
@@ -532,7 +532,7 @@ export default function LinearSearchPage() {
                 <li>• Simple implementations</li>
               </ul>
             </div>
-            <div className="border-l-4 border-red-500 pl-4">
+            <div className="border-l-4 border-red-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-red-700 mb-2">❌ Avoid For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Large datasets (&gt; 1000 elements)</li>
@@ -542,7 +542,7 @@ export default function LinearSearchPage() {
                 <li>• Real-time systems</li>
               </ul>
             </div>
-            <div className="border-l-4 border-blue-500 pl-4">
+            <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">💡 Alternatives:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Binary Search (sorted data)</li>
@@ -559,22 +559,22 @@ export default function LinearSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/searching"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching
           </Link>
           
           <Link
             href="/algorithms/searching/binary-search"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
           >
             Next: Binary Search
-            <Search className="h-5 w-5 ml-2" />
+            <Search className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

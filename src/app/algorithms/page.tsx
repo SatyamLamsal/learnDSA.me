@@ -90,22 +90,22 @@ const algorithms = [
 
 const features = [
   {
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-8 w-8 text-gray-700" />,
     title: 'Problem-Solving Focus',
     description: 'Learn algorithmic thinking and problem-solving strategies'
   },
   {
-    icon: <Clock className="h-8 w-8" />,
+    icon: <Clock className="h-8 w-8 text-gray-700" />,
     title: 'Complexity Analysis',
     description: 'Understand time and space complexity for efficient solutions'
   },
   {
-    icon: <Play className="h-8 w-8" />,
+    icon: <Play className="h-8 w-8 text-gray-700" />,
     title: 'Step-by-Step Visualization',
     description: 'Watch algorithms execute with detailed animations'
   },
   {
-    icon: <BookOpen className="h-8 w-8" />,
+    icon: <BookOpen className="h-8 w-8 text-gray-700" />,
     title: 'Real Applications',
     description: 'See how algorithms solve real-world problems'
   }
@@ -113,14 +113,14 @@ const features = [
 
 export default function AlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-gray-700">
+      <div className="container mx-auto px-4 py-20 text-gray-700">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-16 text-gray-700"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
             Master <span className="text-blue-600">Algorithms</span>
@@ -130,7 +130,7 @@ export default function AlgorithmsPage() {
             any algorithm access, and step-by-step visualizations.
           </p>
           <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-lg font-medium">
-            <Target className="w-5 h-5 mr-2" />
+            <Target className="w-5 h-5 mr-2 text-gray-700" />
             ⚡ Perfect for Self-Directed Learners
           </div>
         </motion.div>
@@ -140,7 +140,7 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 text-gray-700"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -148,7 +148,7 @@ export default function AlgorithmsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-lg text-center hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg p-6 shadow-lg text-center hover:shadow-xl transition-shadow text-gray-700"
             >
               <div className="text-blue-600 mb-4 flex justify-center">
                 {feature.icon}
@@ -164,22 +164,22 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-xl p-8 shadow-lg mb-16"
+          className="bg-white rounded-xl p-8 shadow-lg mb-16 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-6">Flexible Exploration</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center text-gray-700">
             <div>
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="text-4xl mb-4 text-gray-700">🎯</div>
               <h3 className="text-xl font-semibold text-slate-800 mb-2">Self-paced</h3>
               <p className="text-slate-600">Learn algorithms at your own speed with no time pressure</p>
             </div>
             <div>
-              <div className="text-4xl mb-4">🧮</div>
+              <div className="text-4xl mb-4 text-gray-700">🧮</div>
               <h3 className="text-xl font-semibold text-slate-800 mb-2">Any algorithm</h3>
               <p className="text-slate-600">Jump to any algorithm category that interests you</p>
             </div>
             <div>
-              <div className="text-4xl mb-4">⚡</div>
+              <div className="text-4xl mb-4 text-gray-700">⚡</div>
               <h3 className="text-xl font-semibold text-slate-800 mb-2">Instant access</h3>
               <p className="text-slate-600">Step-by-step explanations with live visualizations</p>
             </div>
@@ -191,11 +191,11 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-16"
+          className="mb-16 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">Available Algorithm Topics</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-700">
             {algorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -203,9 +203,9 @@ export default function AlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden relative"
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden relative text-gray-700"
               >
-                <div className="absolute top-3 right-3 z-20">
+                <div className="absolute top-3 right-3 z-20 text-gray-700">
                   <BookmarkButton 
                     topicId={algorithm.id}
                     topicType="overview"
@@ -217,10 +217,10 @@ export default function AlgorithmsPage() {
                 
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-20 flex items-center justify-center`}>
-                    <span className="text-3xl text-white">{algorithm.icon}</span>
+                    <span className="text-3xl text-white text-gray-600">{algorithm.icon}</span>
                   </div>
                   
-                  <div className="p-4">
+                  <div className="p-4 text-gray-700">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{algorithm.name}</h3>
                     <p className="text-gray-600 text-sm mb-3">{algorithm.description}</p>
                     <p className="text-gray-500 text-xs">{algorithm.difficulty}</p>
@@ -236,34 +236,34 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-16"
+          className="bg-white rounded-lg shadow-lg p-8 mb-16 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-center text-slate-800">What Each Topic Includes</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="p-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center text-gray-700">
+            <div className="p-4 text-gray-700">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <BookOpen className="w-6 h-6" />
+                <BookOpen className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold text-slate-800 mb-2">Algorithm Theory</h3>
               <p className="text-slate-600 text-sm">Step-by-step explanations and pseudocode</p>
             </div>
-            <div className="p-4">
+            <div className="p-4 text-gray-700">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Play className="w-6 h-6" />
+                <Play className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold text-slate-800 mb-2">Live Simulations</h3>
               <p className="text-slate-600 text-sm">Watch algorithms execute with animations</p>
             </div>
-            <div className="p-4">
+            <div className="p-4 text-gray-700">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Target className="w-6 h-6" />
+                <Target className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold text-slate-800 mb-2">Practice Problems</h3>
               <p className="text-slate-600 text-sm">Coding challenges for each algorithm</p>
             </div>
-            <div className="p-4">
+            <div className="p-4 text-gray-700">
               <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Clock className="w-6 h-6" />
+                <Clock className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold text-slate-800 mb-2">Complexity Analysis</h3>
               <p className="text-slate-600 text-sm">Time and space complexity breakdowns</p>
@@ -276,40 +276,40 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-16"
+          className="bg-white rounded-lg shadow-lg p-8 mb-16 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-center text-slate-700">
             Big O Complexity Chart
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-red-600 mb-4">Common Time Complexities</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+              <div className="space-y-2 text-gray-700">
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(1)</span>
                   <span className="text-green-700 font-semibold">Excellent</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(log n)</span>
                   <span className="text-green-700 font-semibold">Good</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded border border-yellow-300">
+                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded border border-yellow-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n)</span>
                   <span className="text-yellow-700 font-semibold">Fair</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-orange-50 rounded border border-orange-300">
+                <div className="flex justify-between items-center p-2 bg-orange-50 rounded border border-orange-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n log n)</span>
                   <span className="text-orange-700 font-semibold">Bad</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-red-50 rounded border border-red-300">
+                <div className="flex justify-between items-center p-2 bg-red-50 rounded border border-red-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n²)</span>
                   <span className="text-red-700 font-semibold">Horrible</span>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold  mb-4"style={{ color: Colors.accent }}>Algorithm Examples</h3>
-              <div className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold  mb-4 text-gray-800"style={{ color: Colors.accent }}>Algorithm Examples</h3>
+              <div className="space-y-2 text-sm text-gray-600">
                 <div className="p-2 border-l-4 border-green-500 text-green-500">
                   <strong>O(1):</strong> Array access, Hash table lookup
                 </div>
@@ -335,34 +335,34 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-lightblue-600 to-purple-600 rounded-lg p-8 text-white text-center"
+          className="bg-gradient-to-r from-lightblue-600 to-purple-600 rounded-lg p-8 text-white text-center text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4 text-blue">Recommended Learning Path</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-blue text-slate-800">Recommended Learning Path</h2>
+          <p className="text-xl mb-8 opacity-90 text-gray-700">
             Start with fundamental algorithms, then progress to advanced problem-solving techniques
           </p>
-          <div className="flex flex-wrap justify-center gap-4 items-center">
-            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+          <div className="flex flex-wrap justify-center gap-4 items-center text-gray-700">
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center text-gray-700">
               <div className="font-semibold text-sm text-blue-500 ">Sorting & Searching</div>
-              <div className="text-xs opacity-80 text-black">Master the basics</div>
+              <div className="text-xs opacity-80 text-black text-gray-600">Master the basics</div>
             </div>
-            <ArrowRight className="h-6 w-6 opacity-70" />
-            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+            <ArrowRight className="h-6 w-6 opacity-70 text-gray-700" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center text-gray-700">
               <div className="font-semibold text-sm text-blue-500">Divide & Conquer</div>
-              <div className="text-xs opacity-80 text-black">Break down problems</div>
+              <div className="text-xs opacity-80 text-black text-gray-600">Break down problems</div>
             </div>
-            <ArrowRight className="h-6 w-6 opacity-70" />
-            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+            <ArrowRight className="h-6 w-6 opacity-70 text-gray-700" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center text-gray-700">
               <div className="font-semibold text-sm text-blue-500">Graph Algorithms</div>
-              <div className="text-xs opacity-80 text-black">Network problems</div>
+              <div className="text-xs opacity-80 text-black text-gray-600">Network problems</div>
             </div>
-            <ArrowRight className="h-6 w-6 opacity-70" />
-            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center">
+            <ArrowRight className="h-6 w-6 opacity-70 text-gray-700" />
+            <div className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-center text-gray-700">
               <div className="font-semibold text-sm text-blue-500">Dynamic Programming</div>
-              <div className="text-xs opacity-80 text-black">Optimization mastery</div>
+              <div className="text-xs opacity-80 text-black text-gray-600">Optimization mastery</div>
             </div>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 text-gray-700">
             <Link href="/algorithms/sorting" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Start with Sorting →
             </Link>

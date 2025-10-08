@@ -90,36 +90,36 @@ export default function ClosestPairSimulation(){
   let stripLeft:number|undefined, stripRight:number|undefined;
   if(stripXs.length){ const minX=Math.min(...stripXs), maxX=Math.max(...stripXs); stripLeft=minX-8; stripRight=maxX+8; }
 
-  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50">
-  <div className="container mx-auto px-4 py-16 max-w-7xl">
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-12">
-        <Link href="/algorithms/divide-and-conquer/closest-pair" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
+  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 text-gray-700">
+  <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-12 text-gray-700">
+        <Link href="/algorithms/divide-and-conquer/closest-pair" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Overview</Link>
         <h1 className="text-5xl font-extrabold text-slate-800 mb-4"><span className="text-sky-600">Closest Pair</span> Simulation</h1>
         <p className="text-xl text-slate-600 max-w-4xl leading-relaxed">Visualize how recursive splitting + strip filtering reduces comparisons from O(n^2) to O(n log n). Follow each phase step-by-step.</p>
       </motion.div>
 
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-12 text-gray-700">
         <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center gap-3"><Target className="h-7 w-7 text-sky-600"/>Controls</h2>
-        <div className="flex flex-wrap gap-6 items-end">
+        <div className="flex flex-wrap gap-6 items-end text-gray-700">
           <div>
             <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">Points</label>
             <input type="range" min={6} max={28} value={n} onChange={e=> { const v=Number(e.target.value); setN(v); const pts=randPoints(v); setPoints(pts); setIndex(0); setPlaying(false); }} />
             <div className="text-sm text-slate-700 font-mono mt-1">{n}</div>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white hover:bg-sky-700 text-sm font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2"/>: <Play className="h-4 w-4 mr-2"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white hover:bg-sky-700 text-sm font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-4 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold disabled:opacity-40">Prev</button>
-          <div className="text-sm font-mono">{index+1}/{frames.length}</div>
+          <div className="text-sm font-mono text-gray-600">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-4 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold disabled:opacity-40">Next</button>
-          <button onClick={()=> { setPoints(randPoints(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-6 py-3 rounded-lg bg-cyan-600 text-white hover:bg-cyan-700 text-sm font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
-          <button onClick={()=> { setPoints(p=> [...p]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-6 py-3 rounded-lg bg-teal-600 text-white hover:bg-teal-700 text-sm font-semibold shadow"><Shuffle className="h-4 w-4 mr-2"/>Recompute</button>
+          <button onClick={()=> { setPoints(randPoints(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-6 py-3 rounded-lg bg-cyan-600 text-white hover:bg-cyan-700 text-sm font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+          <button onClick={()=> { setPoints(p=> [...p]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-6 py-3 rounded-lg bg-teal-600 text-white hover:bg-teal-700 text-sm font-semibold shadow"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Recompute</button>
         </div>
       </motion.div>
 
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.1}} className="grid lg:grid-cols-2 gap-12 mb-12">
-        <div className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.1}} className="grid lg:grid-cols-2 gap-12 mb-12 text-gray-700">
+        <div className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-gray-700">
           <h3 className="text-xl font-semibold text-slate-800 mb-4 w-full">Plane View</h3>
-          <div className="relative border rounded-xl bg-gradient-to-br from-white to-sky-50" style={{width:width, height:height}}>
-              {stripLeft!==undefined && stripRight!==undefined && f.stage!=='base' && f.stage!=='split' && <div className="absolute top-0 h-full bg-cyan-100/40 border-x border-cyan-300" style={{left:stripLeft, width:stripRight-stripLeft}}/>}
+          <div className="relative border rounded-xl bg-gradient-to-br from-white to-sky-50 text-gray-700" style={{width:width, height:height}}>
+              {stripLeft!==undefined && stripRight!==undefined && f.stage!=='base' && f.stage!=='split' && <div className="absolute top-0 h-full bg-cyan-100/40 border-x border-cyan-300 text-gray-700" style={{left:stripLeft, width:stripRight-stripLeft}}/>}
               {bestPair && <svg className="absolute inset-0 w-full h-full pointer-events-none"><line x1={scaleX(bestPair[0].x)} y1={scaleY(bestPair[0].y)} x2={scaleX(bestPair[1].x)} y2={scaleY(bestPair[1].y)} stroke="#0284c7" strokeWidth={2} strokeDasharray="4 4"/></svg>}
               {focus && <svg className="absolute inset-0 w-full h-full pointer-events-none"><line x1={scaleX(focus[0].x)} y1={scaleY(focus[0].y)} x2={scaleX(focus[1].x)} y2={scaleY(focus[1].y)} stroke="#f43f5e" strokeWidth={2} /></svg>}
               {points.map(p=>{
@@ -128,17 +128,17 @@ export default function ClosestPairSimulation(){
                 const isFocus = focus && (p.id===focus[0].id || p.id===focus[1].id);
                 return <div key={p.id} className={`absolute flex items-center justify-center rounded-full text-[10px] font-semibold transition-all duration-300 border ${isFocus? 'bg-rose-500 text-white border-rose-600 scale-110': isBest? 'bg-sky-600 text-white border-sky-700': inStrip? 'bg-cyan-200 text-cyan-800 border-cyan-300':'bg-gray-200 text-gray-600 border-gray-300'}`} style={{left:scaleX(p.x)-10, top:scaleY(p.y)-10, width:20, height:20}}>{p.id}</div>;
               })}
-              {f.stage!=='base' && <div className="absolute top-0 bottom-0 w-0.5 bg-sky-500 opacity-70" style={{left: ( (scaleX(f.midX)+0) )}}/>}
+              {f.stage!=='base' && <div className="absolute top-0 bottom-0 w-0.5 bg-sky-500 opacity-70 text-gray-700" style={{left: ( (scaleX(f.midX)+0) )}}/>}
             </div>
             <div className="mt-4 text-sm text-slate-600 font-mono bg-gray-50 rounded p-2 w-full">stage={f.stage} delta={f.delta===Infinity? '∞': f.delta.toFixed(2)}</div>
         </div>
-        <div className="space-y-8">
-          <div className="bg-white rounded-2xl shadow-xl p-6">
+        <div className="space-y-8 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-xl p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Step Detail</h3>
-            <div className="text-base bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[120px]">{explanation}</div>
+            <div className="text-base bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[120px] text-gray-700">{explanation}</div>
           </div>
-          <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2"><Minimize2 className="h-5 w-5"/>Pair Tracking</h3>
+          <div className="bg-white rounded-2xl shadow-xl p-6 text-gray-700">
+            <h3 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2"><Minimize2 className="h-5 w-5 text-gray-700"/>Pair Tracking</h3>
             <ul className="text-sm font-mono bg-slate-900 text-sky-100 rounded p-5 space-y-2">
               <li>Current best delta: {f.delta===Infinity? '∞': f.delta.toFixed(3)}</li>
               <li>Best pair: {bestPair? `${bestPair[0].id}-${bestPair[1].id}`:'-'}</li>
@@ -147,16 +147,16 @@ export default function ClosestPairSimulation(){
             </ul>
             <p className="text-xs text-slate-500 mt-3">Only next ~7 y-neighbors can improve delta.</p>
           </div>
-          <div className="bg-white rounded-2xl shadow-xl p-6">
+          <div className="bg-white rounded-2xl shadow-xl p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-slate-800 mb-4">Pseudocode Reference</h3>
             <PseudocodeBlock code={(algo?.pseudocode||[]).join('\n')} />
           </div>
         </div>
       </motion.div>
-      <div className="flex justify-between items-center mt-4">
-        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-6 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold"><ArrowLeft className="h-4 w-4 mr-2"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/closest-pair/theory" className="px-8 py-4 rounded-xl bg-sky-600 text-white hover:bg-sky-700 text-base font-semibold shadow">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white hover:bg-sky-700 text-sm font-semibold">{next.name}<ArrowRight className="h-4 w-4 ml-2"/></Link>: <span/>}
+      <div className="flex justify-between items-center mt-4 text-gray-700">
+        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-6 py-3 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/closest-pair/theory" className="px-8 py-4 rounded-xl bg-sky-600 text-white hover:bg-sky-700 text-base font-semibold shadow text-gray-100">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-6 py-3 rounded-lg bg-sky-600 text-white hover:bg-sky-700 text-sm font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

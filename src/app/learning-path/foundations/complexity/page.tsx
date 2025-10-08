@@ -131,9 +131,9 @@ export default function FoundationsComplexityPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16 relative"
+        className="text-center mb-16 relative text-gray-700"
       >
-        <div className="absolute top-0 right-0 flex items-center space-x-4">
+        <div className="absolute top-0 right-0 flex items-center space-x-4 text-gray-700">
           <ProgressIndicator 
             topicId="foundations-complexity" 
             topicType="foundations"
@@ -149,13 +149,13 @@ export default function FoundationsComplexityPage() {
         </div>
         
         <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
-          <BarChart3 className="w-5 h-5 mr-2" />
+          <BarChart3 className="w-5 h-5 mr-2 text-gray-700" />
           Chapter 4: Algorithm Complexity and Performance Analysis
         </div>
         
         <h1 className="text-6xl font-bold text-gray-900 mb-8">
           Complexity
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-gray-600">
             Analysis
           </span>
         </h1>
@@ -167,37 +167,37 @@ export default function FoundationsComplexityPage() {
       </motion.div>
 
       {/* Why Analyze Algorithms */}
-      <div id="why-analyze" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="why-analyze" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <BarChart3 className="w-8 h-8 mr-3 text-red-600" />
           Why Analyze Algorithms?
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="text-center p-6 bg-red-50 rounded-xl border border-red-200">
+        <div className="grid md:grid-cols-3 gap-6 mb-8 text-gray-700">
+          <div className="text-center p-6 bg-red-50 rounded-xl border border-red-200 text-gray-700">
             <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Computational Time</h3>
             <p className="text-gray-600">Predict CPU consumption and execution time</p>
           </div>
-          <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200">
+          <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200 text-gray-700">
             <Database className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Memory Space</h3>
             <p className="text-gray-600">Analyze RAM consumption and space requirements</p>
           </div>
-          <div className="text-center p-6 bg-green-50 rounded-xl border border-green-200">
+          <div className="text-center p-6 bg-green-50 rounded-xl border border-green-200 text-gray-700">
             <Network className="w-12 h-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Communication</h3>
             <p className="text-gray-600">Evaluate bandwidth consumption for data transfer</p>
           </div>
         </div>
 
-        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
           <h3 className="text-xl font-semibold text-blue-900 mb-3">Running Time Definition</h3>
           <p className="text-blue-800 mb-4">
             The running time of an algorithm is the total number of primitive operations executed 
             (machine independent steps). This is also known as algorithm complexity.
           </p>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 text-gray-700">
             <div>
               <h4 className="font-semibold text-blue-900">Time Factor:</h4>
               <p className="text-blue-700">Measured by counting key operations like comparisons</p>
@@ -211,13 +211,13 @@ export default function FoundationsComplexityPage() {
       </div>
 
       {/* Asymptotic Notations */}
-      <div id="notations" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="notations" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
           <Target className="w-8 h-8 mr-3 text-purple-600" />
           Asymptotic Notations
         </h2>
         
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
           {complexityNotations.map((notation, index) => {
             const IconComponent = notation.icon
             return (
@@ -228,24 +228,24 @@ export default function FoundationsComplexityPage() {
                 transition={{ delay: index * 0.2, duration: 0.6 }}
                 className={`p-6 rounded-xl border-2 ${notation.color}`}
               >
-                <div className="text-center mb-4">
-                  <IconComponent className="w-12 h-12 mx-auto mb-3" />
-                  <h3 className="text-2xl font-bold">{notation.notation}</h3>
-                  <code className="text-lg font-mono">{notation.symbol}</code>
+                <div className="text-center mb-4 text-gray-700">
+                  <IconComponent className="w-12 h-12 mx-auto mb-3 text-gray-700" />
+                  <h3 className="text-2xl font-bold text-gray-800">{notation.notation}</h3>
+                  <code className="text-lg font-mono text-gray-700">{notation.symbol}</code>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 text-gray-700">
                   <div>
-                    <h4 className="font-semibold">Description:</h4>
-                    <p className="text-sm">{notation.description}</p>
+                    <h4 className="font-semibold text-gray-800">Description:</h4>
+                    <p className="text-sm text-gray-600">{notation.description}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Meaning:</h4>
-                    <p className="text-sm">{notation.meaning}</p>
+                    <h4 className="font-semibold text-gray-800">Meaning:</h4>
+                    <p className="text-sm text-gray-600">{notation.meaning}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Mathematical:</h4>
-                    <code className="text-sm font-mono block bg-white p-2 rounded">
+                    <h4 className="font-semibold text-gray-800">Mathematical:</h4>
+                    <code className="text-sm font-mono block bg-white p-2 rounded text-gray-600">
                       {notation.mathematicalDef}
                     </code>
                   </div>
@@ -257,23 +257,23 @@ export default function FoundationsComplexityPage() {
       </div>
 
       {/* Growth Rates Visualization */}
-      <div id="growth-rates" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="growth-rates" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
           <TrendingUp className="w-8 h-8 mr-3 text-green-600" />
           Complexity Growth Rates & Interactive Analysis
         </h2>
         
         {/* Interactive Complexity Graph */}
-        <div className="mb-12 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border">
+        <div className="mb-12 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border text-gray-700">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Interactive Complexity Comparison
           </h3>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
             {/* Graph Visualization */}
-            <div className="bg-white rounded-lg p-6 border shadow-sm">
+            <div className="bg-white rounded-lg p-6 border shadow-sm text-gray-700">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Growth Rate Comparison</h4>
-              <div className="relative h-64 bg-gray-50 rounded-lg overflow-hidden">
+              <div className="relative h-64 bg-gray-50 rounded-lg overflow-hidden text-gray-700">
                 <svg className="w-full h-full" viewBox="0 0 400 250">
                   {/* Grid lines */}
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
@@ -340,35 +340,35 @@ export default function FoundationsComplexityPage() {
                   />
                   
                   {/* Labels */}
-                  <text x="20" y="25" className="fill-gray-700 text-xs font-medium">Time</text>
-                  <text x="360" y="235" className="fill-gray-700 text-xs font-medium">Input Size (n)</text>
+                  <text x="20" y="25" className="fill-gray-700 text-xs font-medium text-gray-600">Time</text>
+                  <text x="360" y="235" className="fill-gray-700 text-xs font-medium text-gray-600">Input Size (n)</text>
                 </svg>
                 
                 {/* Legend */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 text-xs">
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-green-500 mr-2"></div>
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 text-xs text-gray-600">
+                  <div className="space-y-1 text-gray-700">
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-green-500 mr-2 text-gray-700"></div>
                       <span>O(1)</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-blue-500 mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-blue-500 mr-2 text-gray-700"></div>
                       <span>O(log n)</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-yellow-500 mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-yellow-500 mr-2 text-gray-700"></div>
                       <span>O(n)</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-orange-500 mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-orange-500 mr-2 text-gray-700"></div>
                       <span>O(n log n)</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-red-500 mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-red-500 mr-2 text-gray-700"></div>
                       <span>O(n²)</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-0.5 bg-purple-500 mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-3 h-0.5 bg-purple-500 mr-2 text-gray-700"></div>
                       <span>O(2ⁿ)</span>
                     </div>
                   </div>
@@ -377,9 +377,9 @@ export default function FoundationsComplexityPage() {
             </div>
             
             {/* Interactive Operations Counter */}
-            <div className="bg-white rounded-lg p-6 border shadow-sm">
+            <div className="bg-white rounded-lg p-6 border shadow-sm text-gray-700">
               <h4 className="text-lg font-semibold text-gray-900 mb-4">Operations Calculator</h4>
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Input Size (n): {selectedComplexity + 1}
@@ -394,7 +394,7 @@ export default function FoundationsComplexityPage() {
                   />
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 text-gray-700">
                   {complexityGrowthRates.map((complexity, index) => {
                     const n = selectedComplexity + 1
                     let operations = 1
@@ -409,10 +409,10 @@ export default function FoundationsComplexityPage() {
                     }
                     
                     return (
-                      <div key={index} className="flex items-center justify-between p-3 rounded-lg border">
-                        <div className="flex items-center">
+                      <div key={index} className="flex items-center justify-between p-3 rounded-lg border text-gray-700">
+                        <div className="flex items-center text-gray-700">
                           <div className={`w-4 h-4 rounded-full ${complexity.color} mr-3`}></div>
-                          <span className="font-medium">{complexity.notation}</span>
+                          <span className="font-medium text-gray-600">{complexity.notation}</span>
                         </div>
                         <span className="text-lg font-bold text-gray-900">
                           {operations.toLocaleString()} ops
@@ -426,26 +426,26 @@ export default function FoundationsComplexityPage() {
           </div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
           {complexityGrowthRates.map((complexity, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-gray-700"
               onClick={() => setSelectedComplexity(index)}
             >
-              <div className="text-center mb-4">
+              <div className="text-center mb-4 text-gray-700">
                 <div className={`w-16 h-16 ${complexity.color} rounded-full mx-auto mb-3 flex items-center justify-center`}>
-                  <span className="text-white font-bold text-lg">{complexity.notation}</span>
+                  <span className="text-white font-bold text-lg text-gray-800">{complexity.notation}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">{complexity.name}</h3>
               </div>
               
               {/* Mini growth visualization */}
-              <div className="mb-4">
-                <div className="h-16 bg-gray-50 rounded-lg flex items-end justify-center p-2">
+              <div className="mb-4 text-gray-700">
+                <div className="h-16 bg-gray-50 rounded-lg flex items-end justify-center p-2 text-gray-700">
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => {
                     let height = 4
                     switch(complexity.notation) {
@@ -468,7 +468,7 @@ export default function FoundationsComplexityPage() {
                 </div>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 <p className="text-gray-600 text-sm">{complexity.description}</p>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Example:</h4>
@@ -485,21 +485,21 @@ export default function FoundationsComplexityPage() {
       </div>
 
       {/* Time-Space Tradeoff */}
-      <div id="tradeoffs" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="tradeoffs" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <Calculator className="w-8 h-8 mr-3 text-orange-600" />
           Time-Space Tradeoff
         </h2>
         
-        <div className="bg-orange-50 p-6 rounded-xl border border-orange-200">
+        <div className="bg-orange-50 p-6 rounded-xl border border-orange-200 text-gray-700">
           <p className="text-lg text-orange-900 leading-relaxed mb-4">
             A <strong>time-space tradeoff</strong> is a situation where memory use can be reduced at 
             the cost of slower program execution, and conversely, computation time can be reduced 
             at the cost of increased memory use.
           </p>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-4 rounded-lg">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div className="bg-white p-4 rounded-lg text-gray-700">
               <h4 className="font-semibold text-orange-900 mb-2">Key Considerations:</h4>
               <ul className="space-y-1 text-orange-800 text-sm">
                 <li>• Relative costs of CPU cycles vs RAM space</li>
@@ -509,7 +509,7 @@ export default function FoundationsComplexityPage() {
               </ul>
             </div>
             
-            <div className="bg-white p-4 rounded-lg">
+            <div className="bg-white p-4 rounded-lg text-gray-700">
               <h4 className="font-semibold text-orange-900 mb-2">Benefits:</h4>
               <ul className="space-y-1 text-orange-800 text-sm">
                 <li>• Programs can run much faster</li>
@@ -527,21 +527,21 @@ export default function FoundationsComplexityPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="flex justify-between items-center mt-12"
+        className="flex justify-between items-center mt-12 text-gray-700"
       >
         <Link
           href="/learning-path/foundations/algorithms"
-          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
+          <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
           Previous: Algorithm Paradigms
         </Link>
         <Link
           href="/learning-path/foundations/adt"
-          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
         >
           Next: Abstract Data Types
-          <ChevronRight className="w-6 h-6 ml-2" />
+          <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
         </Link>
       </motion.div>
     </ModuleLayout>

@@ -222,18 +222,18 @@ export default function LearningStyleQuiz() {
   const topStyle = getTopLearningStyle();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-gray-700">
+      <div className="container mx-auto px-4 py-20 text-gray-700">
         {!showResults ? (
           <>
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center mb-12"
+              className="text-center mb-12 text-gray-700"
             >
               <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-lg font-medium mb-6">
-                <Brain className="w-5 h-5 mr-2" />
+                <Brain className="w-5 h-5 mr-2 text-gray-700" />
                 Learning Style Assessment
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
@@ -249,9 +249,9 @@ export default function LearningStyleQuiz() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="max-w-2xl mx-auto mb-12"
+              className="max-w-2xl mx-auto mb-12 text-gray-700"
             >
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-4 text-gray-700">
                 <span className="text-sm font-medium text-slate-600">
                   Question {currentQuestion + 1} of {quizQuestions.length}
                 </span>
@@ -259,9 +259,9 @@ export default function LearningStyleQuiz() {
                   {Math.round(progress)}% Complete
                 </span>
               </div>
-              <div className="w-full bg-slate-200 rounded-full h-3">
+              <div className="w-full bg-slate-200 rounded-full h-3 text-gray-700">
                 <motion.div
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full text-gray-700"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5 }}
@@ -275,14 +275,14 @@ export default function LearningStyleQuiz() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="max-w-3xl mx-auto"
+              className="max-w-3xl mx-auto text-gray-700"
             >
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="bg-white rounded-2xl shadow-lg p-8 text-gray-700">
                 <h2 className="text-2xl font-bold text-slate-800 mb-8">
                   {currentQ.question}
                 </h2>
                 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 text-gray-700">
                   {currentQ.answers.map((answer, index) => (
                     <motion.button
                       key={answer.id}
@@ -296,14 +296,14 @@ export default function LearningStyleQuiz() {
                           : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                       }`}
                     >
-                      <div className="flex items-center">
+                      <div className="flex items-center text-gray-700">
                         <div className={`w-6 h-6 rounded-full border-2 mr-4 flex items-center justify-center ${
                           answers[currentQ.id] === answer.id
                             ? 'border-blue-500 bg-blue-500'
                             : 'border-slate-300'
                         }`}>
                           {answers[currentQ.id] === answer.id && (
-                            <CheckCircle className="w-4 h-4 text-white" />
+                            <CheckCircle className="w-4 h-4 text-white text-gray-700" />
                           )}
                         </div>
                         <span className="text-slate-700">{answer.text}</span>
@@ -313,7 +313,7 @@ export default function LearningStyleQuiz() {
                 </div>
 
                 {/* Navigation */}
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <button
                     onClick={prevQuestion}
                     disabled={currentQuestion === 0}
@@ -323,7 +323,7 @@ export default function LearningStyleQuiz() {
                         : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
                     }`}
                   >
-                    <ChevronLeft className="w-5 h-5 mr-2" />
+                    <ChevronLeft className="w-5 h-5 mr-2 text-gray-700" />
                     Previous
                   </button>
 
@@ -337,7 +337,7 @@ export default function LearningStyleQuiz() {
                     }`}
                   >
                     {currentQuestion === quizQuestions.length - 1 ? 'Get Results' : 'Next'}
-                    <ChevronRight className="w-5 h-5 ml-2" />
+                    <ChevronRight className="w-5 h-5 ml-2 text-gray-700" />
                   </button>
                 </div>
               </div>
@@ -348,16 +348,16 @@ export default function LearningStyleQuiz() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto text-gray-700"
           >
             {/* Results Header */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 text-gray-700">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="inline-flex items-center bg-green-100 text-green-800 px-6 py-3 rounded-full text-lg font-medium mb-6"
               >
-                <CheckCircle className="w-5 h-5 mr-2" />
+                <CheckCircle className="w-5 h-5 mr-2 text-gray-700" />
                 Assessment Complete!
               </motion.div>
               <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
@@ -374,28 +374,28 @@ export default function LearningStyleQuiz() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mb-12"
+                className="mb-12 text-gray-700"
               >
                 {(() => {
                   const IconComponent = learningStyles[topStyle].icon;
                   return (
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden text-gray-700">
                       <div className={`${learningStyles[topStyle].color} p-8 text-white text-center`}>
-                        <IconComponent className="w-16 h-16 mx-auto mb-4" />
-                        <h2 className="text-3xl font-bold mb-2">You&apos;re a {learningStyles[topStyle].name}!</h2>
-                        <p className="text-xl opacity-90">{learningStyles[topStyle].description}</p>
+                        <IconComponent className="w-16 h-16 mx-auto mb-4 text-gray-700" />
+                        <h2 className="text-3xl font-bold mb-2 text-slate-800">You&apos;re a {learningStyles[topStyle].name}!</h2>
+                        <p className="text-xl opacity-90 text-gray-700">{learningStyles[topStyle].description}</p>
                       </div>
                       
-                      <div className="p-8">
-                        <div className="grid md:grid-cols-2 gap-8">
+                      <div className="p-8 text-gray-700">
+                        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
                           <div>
                             <h3 className="text-xl font-bold text-slate-800 mb-4 flex items-center">
                               <Target className="w-5 h-5 mr-2 text-blue-600" />
                               Your Characteristics
                             </h3>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 text-gray-700">
                               {learningStyles[topStyle].characteristics.map((char, index) => (
-                                <li key={index} className="flex items-start">
+                                <li key={index} className="flex items-start text-gray-700">
                                   <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                                   <span className="text-slate-600">{char}</span>
                                 </li>
@@ -408,9 +408,9 @@ export default function LearningStyleQuiz() {
                               <Lightbulb className="w-5 h-5 mr-2 text-yellow-600" />
                               Recommendations for You
                             </h3>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 text-gray-700">
                               {learningStyles[topStyle].recommendations.map((rec, index) => (
-                                <li key={index} className="flex items-start">
+                                <li key={index} className="flex items-start text-gray-700">
                                   <Zap className="w-5 h-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
                                   <span className="text-slate-600">{rec}</span>
                                 </li>
@@ -430,22 +430,22 @@ export default function LearningStyleQuiz() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-12"
+              className="bg-white rounded-2xl shadow-lg p-8 mb-12 text-gray-700"
             >
               <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center">
                 <BarChart3 className="w-6 h-6 mr-3 text-blue-600" />
                 Your Score Breakdown
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-6 text-gray-700">
                 {Object.entries(scores).map(([style, score]) => {
                   const percentage = (score / Math.max(...Object.values(scores))) * 100;
                   const StyleIcon = learningStyles[style as keyof typeof learningStyles].icon;
                   
                   return (
                     <div key={style}>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center">
+                      <div className="flex items-center justify-between mb-2 text-gray-700">
+                        <div className="flex items-center text-gray-700">
                           <StyleIcon className="w-5 h-5 mr-2 text-slate-600" />
                           <span className="font-medium text-slate-800">
                             {learningStyles[style as keyof typeof learningStyles].name}
@@ -453,7 +453,7 @@ export default function LearningStyleQuiz() {
                         </div>
                         <span className="text-sm font-medium text-slate-600">{score} points</span>
                       </div>
-                      <div className="w-full bg-slate-200 rounded-full h-3">
+                      <div className="w-full bg-slate-200 rounded-full h-3 text-gray-700">
                         <motion.div
                           className={`h-3 rounded-full ${
                             style === 'visual' ? 'bg-blue-500' :
@@ -477,21 +477,21 @@ export default function LearningStyleQuiz() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center mb-8"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center mb-8 text-gray-700"
               >
-                <h3 className="text-2xl font-bold mb-4">Ready to Start Learning?</h3>
-                <p className="text-xl mb-6 opacity-90">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Ready to Start Learning?</h3>
+                <p className="text-xl mb-6 opacity-90 text-gray-700">
                   Based on your learning style, we recommend starting here:
                 </p>
                 <Link
                   href={learningStyles[topStyle].suggestedPath}
                   className="inline-flex items-center bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  {learningStyles[topStyle].suggestedPath === '/data-structures' && <Eye className="w-5 h-5 mr-2" />}
-                  {learningStyles[topStyle].suggestedPath === '/learning-path' && <BookOpen className="w-5 h-5 mr-2" />}
-                  {learningStyles[topStyle].suggestedPath === '/algorithms' && <Code className="w-5 h-5 mr-2" />}
+                  {learningStyles[topStyle].suggestedPath === '/data-structures' && <Eye className="w-5 h-5 mr-2 text-gray-700" />}
+                  {learningStyles[topStyle].suggestedPath === '/learning-path' && <BookOpen className="w-5 h-5 mr-2 text-gray-700" />}
+                  {learningStyles[topStyle].suggestedPath === '/algorithms' && <Code className="w-5 h-5 mr-2 text-gray-700" />}
                   Start Your Journey
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5 ml-2 text-gray-700" />
                 </Link>
               </motion.div>
             )}
@@ -501,21 +501,21 @@ export default function LearningStyleQuiz() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-wrap justify-center gap-4 text-gray-700"
             >
               <button
                 onClick={restartQuiz}
                 className="flex items-center px-6 py-3 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors"
               >
-                <Brain className="w-5 h-5 mr-2" />
+                <Brain className="w-5 h-5 mr-2 text-gray-700" />
                 Retake Quiz
               </button>
               
               <Link
                 href="/"
-                className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
               >
-                <ArrowRight className="w-5 h-5 mr-2" />
+                <ArrowRight className="w-5 h-5 mr-2 text-gray-700" />
                 Explore All Topics
               </Link>
             </motion.div>

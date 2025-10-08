@@ -53,24 +53,24 @@ export default function FFTSimulation(){
 
   const f=frames[index];
 
-  return <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 to-pink-50">
-  <div className="container mx-auto px-4 py-10 max-w-7xl">
-      <Link href="/algorithms/divide-and-conquer/fft" className="inline-flex items-center text-fuchsia-700 hover:text-fuchsia-800 mb-8"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-lg p-8">
+  return <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 to-pink-50 text-gray-700">
+  <div className="container mx-auto px-4 py-10 max-w-7xl text-gray-700">
+      <Link href="/algorithms/divide-and-conquer/fft" className="inline-flex items-center text-fuchsia-700 hover:text-fuchsia-800 mb-8"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Overview</Link>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-lg p-8 text-gray-700">
         <h1 className="text-3xl font-bold text-slate-800 mb-4">{algo?.name} Simulation</h1>
         <p className="text-slate-600 text-sm mb-6 leading-relaxed">Iterative radix-2 FFT on length 8 input: bit-reversal reordering then stage-wise butterfly operations combining pairs with twiddle factors.</p>
 
-        <div className="flex flex-wrap gap-4 mb-6 items-end">
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-sm font-semibold">{playing? <Pause className="h-4 w-4 mr-2"/>: <Play className="h-4 w-4 mr-2"/>}{playing? 'Pause':'Play'}</button>
+        <div className="flex flex-wrap gap-4 mb-6 items-end text-gray-700">
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-sm font-semibold">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Prev</button>
-          <div className="text-xs font-mono">{index+1}/{frames.length}</div>
+          <div className="text-xs font-mono text-gray-600">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Next</button>
-          <button onClick={()=> { setSignal(randSignal(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-pink-600 text-white hover:bg-pink-700 text-sm font-semibold"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
-          <button onClick={()=> { setSignal(s=> [...s]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold"><Shuffle className="h-4 w-4 mr-2"/>Rebuild</button>
+          <button onClick={()=> { setSignal(randSignal(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-pink-600 text-white hover:bg-pink-700 text-sm font-semibold"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+          <button onClick={()=> { setSignal(s=> [...s]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Rebuild</button>
         </div>
 
-        <div className="overflow-x-auto border rounded-lg p-4 bg-gradient-to-br from-white to-fuchsia-50 mb-6">
-          <div className="flex gap-3">
+        <div className="overflow-x-auto border rounded-lg p-4 bg-gradient-to-br from-white to-fuchsia-50 mb-6 text-gray-700">
+          <div className="flex gap-3 text-gray-700">
             {f.data.map((z,i)=> {
               const involved = (i===f.pair[0] || i===f.pair[1]);
               return <div key={i} className={`flex flex-col items-center min-w-[68px]`}>
@@ -82,9 +82,9 @@ export default function FFTSimulation(){
           <div className="mt-4 text-xs text-slate-600 font-mono">stage={f.stage} pair=({f.pair[0]},{f.pair[1]}) w={formatC(f.w)}</div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <div>
-            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Activity className="h-5 w-5"/> Butterfly Computation</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Activity className="h-5 w-5 text-gray-700"/> Butterfly Computation</h2>
             <ul className="text-xs font-mono bg-slate-900 text-fuchsia-100 rounded p-4 space-y-1">
               <li>a&apos; = a + w*b</li>
               <li>b&apos; = a - w*b</li>
@@ -94,8 +94,8 @@ export default function FFTSimulation(){
             <p className="text-[11px] text-slate-500 mt-2">Each stage doubles m, halving remaining recursion depth.</p>
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Sigma className="h-5 w-5"/> Step Detail</h2>
-            <div className="text-sm bg-gray-50 border border-gray-200 rounded p-4 leading-relaxed min-h-[110px]">{f.desc}</div>
+            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Sigma className="h-5 w-5 text-gray-700"/> Step Detail</h2>
+            <div className="text-sm bg-gray-50 border border-gray-200 rounded p-4 leading-relaxed min-h-[110px] text-gray-600">{f.desc}</div>
             <h2 className="text-lg font-semibold text-slate-800 mt-6 mb-2">Pseudocode Reference</h2>
             <PseudocodeBlock code={(algo?.pseudocode||[]).join('\n')} />
           </div>
@@ -104,10 +104,10 @@ export default function FFTSimulation(){
         <h2 className="text-lg font-semibold text-slate-800 mt-10 mb-3">Mechanism</h2>
         <p className="text-sm text-slate-600">Bit-reversal reorders input so that in-place butterflies can be applied contiguously. Each stage s performs n/2 butterflies over blocks of size 2^s with stride doubling every level.</p>
       </motion.div>
-      <div className="flex justify-between items-center mt-8">
-        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"><ArrowLeft className="h-4 w-4 mr-2"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/fft/theory" className="px-6 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700">{next.name}<ArrowRight className="h-4 w-4 ml-2"/></Link>: <span/>}
+      <div className="flex justify-between items-center mt-8 text-gray-700">
+        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/fft/theory" className="px-6 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-gray-100">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-gray-100">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

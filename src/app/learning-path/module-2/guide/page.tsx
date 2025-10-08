@@ -45,8 +45,8 @@ const ArrayGuideCard = ({
           : 'bg-white border-gray-200 hover:border-blue-300 hover:shadow-lg'
       }`}
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center space-x-3">
+      <div className="flex items-start justify-between mb-4 text-gray-700">
+        <div className="flex items-center space-x-3 text-gray-700">
           <div className={`p-2 rounded-lg ${
             completed ? 'bg-green-100' : 'bg-blue-100'
           }`}>
@@ -56,7 +56,7 @@ const ArrayGuideCard = ({
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-            <div className="flex items-center space-x-3 text-sm">
+            <div className="flex items-center space-x-3 text-sm text-gray-600">
               <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                 difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                 difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -65,7 +65,7 @@ const ArrayGuideCard = ({
                 {difficulty}
               </span>
               <div className="flex items-center text-gray-500">
-                <Clock className="w-4 h-4 mr-1" />
+                <Clock className="w-4 h-4 mr-1 text-gray-700" />
                 {timeEstimate}
               </div>
             </div>
@@ -78,7 +78,7 @@ const ArrayGuideCard = ({
       <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
       <div className="flex items-center text-blue-600 font-medium">
         <span>Start Learning</span>
-        <ChevronRight className="w-4 h-4 ml-1" />
+        <ChevronRight className="w-4 h-4 ml-1 text-gray-700" />
       </div>
     </motion.div>
   </Link>
@@ -117,14 +117,14 @@ const ArrayCheatSheet = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <BookOpen className="w-6 h-6 mr-2 text-purple-600" />
         Arrays Quick Reference
       </h3>
       
       {/* Tab Navigation */}
-      <div className="flex space-x-2 mb-4 border-b">
+      <div className="flex space-x-2 mb-4 border-b text-gray-700">
         {Object.keys(cheatSheetData).map((section) => (
           <button
             key={section}
@@ -141,10 +141,10 @@ const ArrayCheatSheet = () => {
       </div>
 
       {/* Content */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+      <div className="overflow-x-auto text-gray-700">
+        <table className="w-full text-sm text-gray-600">
           <thead>
-            <tr className="border-b border-gray-200">
+            <tr className="border-b border-gray-200 text-gray-700">
               {activeSection === 'operations' && (
                 <>
                   <th className="text-left py-2 font-medium text-gray-800">Operation</th>
@@ -177,14 +177,14 @@ const ArrayCheatSheet = () => {
               const complexityItem = item as { scenario: string; complexity: string; description: string };
               
               return (
-                <tr key={index} className="border-b border-gray-100">
+                <tr key={index} className="border-b border-gray-100 text-gray-700">
                   {activeSection === 'operations' && (
                     <>
                       <td className="py-2 font-medium text-gray-800">{operationItem.operation}</td>
-                      <td className="py-2">
-                        <code className="bg-gray-100 px-2 py-1 rounded text-xs">{operationItem.syntax}</code>
+                      <td className="py-2 text-gray-700">
+                        <code className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-600">{operationItem.syntax}</code>
                       </td>
-                      <td className="py-2">
+                      <td className="py-2 text-gray-700">
                         <code className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">{operationItem.complexity}</code>
                       </td>
                       <td className="py-2 text-gray-600">{operationItem.description}</td>
@@ -194,10 +194,10 @@ const ArrayCheatSheet = () => {
                     <>
                       <td className="py-2 font-medium text-gray-800">{patternItem.pattern}</td>
                       <td className="py-2 text-gray-600">{patternItem.use}</td>
-                      <td className="py-2">
+                      <td className="py-2 text-gray-700">
                         <code className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">{patternItem.time}</code>
                       </td>
-                      <td className="py-2">
+                      <td className="py-2 text-gray-700">
                         <code className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">{patternItem.space}</code>
                       </td>
                     </>
@@ -205,7 +205,7 @@ const ArrayCheatSheet = () => {
                   {activeSection === 'complexity' && (
                     <>
                       <td className="py-2 font-medium text-gray-800">{complexityItem.scenario}</td>
-                      <td className="py-2">
+                      <td className="py-2 text-gray-700">
                         <code className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">{complexityItem.complexity}</code>
                       </td>
                       <td className="py-2 text-gray-600">{complexityItem.description}</td>
@@ -271,17 +271,17 @@ export default function ArrayGuidePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center space-x-4 mb-6">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-8 text-gray-700">
+        <div className="max-w-6xl mx-auto text-gray-700">
+          <div className="flex items-center space-x-4 mb-6 text-gray-700">
             <Link href="/learning-path" className="text-white hover:text-blue-200">
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-6 h-6 text-gray-700" />
             </Link>
             <div>
               <div className="text-sm font-medium text-blue-200 mb-2">Module 2 • Data Structures</div>
-              <h1 className="text-5xl font-bold mb-4">Arrays Complete Guide</h1>
+              <h1 className="text-5xl font-bold mb-4 text-slate-800">Arrays Complete Guide</h1>
               <p className="text-xl text-blue-100 max-w-2xl">
                                   Let&apos;s explore the fundamental building block of computer science: From memory layout to advanced algorithms, 
                 become proficient in one of the most versatile data structures.
@@ -290,30 +290,30 @@ export default function ArrayGuidePage() {
           </div>
           
           {/* Module Stats */}
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="flex items-center space-x-3">
+          <div className="grid md:grid-cols-3 gap-6 mt-8 text-gray-700">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-gray-700">
+              <div className="flex items-center space-x-3 text-gray-700">
                 <Clock className="w-8 h-8 text-blue-200" />
                 <div>
-                  <div className="text-2xl font-bold">65-80 min</div>
+                  <div className="text-2xl font-bold text-gray-800">65-80 min</div>
                   <div className="text-blue-200 text-sm">Total Learning Time</div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="flex items-center space-x-3">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-gray-700">
+              <div className="flex items-center space-x-3 text-gray-700">
                 <Target className="w-8 h-8 text-green-200" />
                 <div>
-                  <div className="text-2xl font-bold">12+</div>
+                  <div className="text-2xl font-bold text-gray-800">12+</div>
                   <div className="text-blue-200 text-sm">Interactive Examples</div>
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="flex items-center space-x-3">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-gray-700">
+              <div className="flex items-center space-x-3 text-gray-700">
                 <Award className="w-8 h-8 text-yellow-200" />
                 <div>
-                  <div className="text-2xl font-bold">3</div>
+                  <div className="text-2xl font-bold text-gray-800">3</div>
                   <div className="text-blue-200 text-sm">Core Sections</div>
                 </div>
               </div>
@@ -323,14 +323,14 @@ export default function ArrayGuidePage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12 space-y-16">
+      <div className="max-w-6xl mx-auto px-4 py-12 space-y-16 text-gray-700">
         {/* Learning Path */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-8"
+          className="space-y-8 text-gray-700"
         >
-          <div className="text-center">
+          <div className="text-center text-gray-700">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Your Learning Journey</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Follow this structured path to build comprehensive understanding of arrays, 
@@ -338,7 +338,7 @@ export default function ArrayGuidePage() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6 text-gray-700">
             {learningPath.map((item, index) => (
               <ArrayGuideCard key={index} {...item} />
             ))}
@@ -350,17 +350,17 @@ export default function ArrayGuidePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Lightbulb className="w-8 h-8 mr-3 text-yellow-600" />
             Key Learning Outcomes
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
             {keyTakeaways.map((takeaway, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center text-gray-700">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
                   <takeaway.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{takeaway.title}</h3>
@@ -384,47 +384,47 @@ export default function ArrayGuidePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 text-gray-700"
         >
           {/* Prerequisites */}
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+          <div className="bg-blue-50 rounded-xl p-6 border border-blue-200 text-gray-700">
             <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
-              <CheckCircle className="w-6 h-6 mr-2" />
+              <CheckCircle className="w-6 h-6 mr-2 text-gray-700" />
               Prerequisites
             </h3>
             <ul className="space-y-2 text-blue-800">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 text-gray-600"></span>
                 Basic programming knowledge (variables, loops)
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 text-gray-600"></span>
                 Understanding of memory and pointers (helpful)
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 text-gray-600"></span>
                 Foundations module completion (recommended)
               </li>
             </ul>
           </div>
 
           {/* Next Steps */}
-          <div className="bg-green-50 rounded-xl p-6 border border-green-200">
+          <div className="bg-green-50 rounded-xl p-6 border border-green-200 text-gray-700">
             <h3 className="text-xl font-semibold text-green-900 mb-4 flex items-center">
-              <ChevronRight className="w-6 h-6 mr-2" />
+              <ChevronRight className="w-6 h-6 mr-2 text-gray-700" />
               What&apos;s Next
             </h3>
             <ul className="space-y-2 text-green-800">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-green-600 rounded-full mr-3 text-gray-600"></span>
                 Searching & Sorting Algorithms
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-green-600 rounded-full mr-3 text-gray-600"></span>
                 Linked Lists & Dynamic Structures
               </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+              <li className="flex items-center text-gray-700">
+                <span className="w-2 h-2 bg-green-600 rounded-full mr-3 text-gray-600"></span>
                 Stacks & Queues Applications
               </li>
             </ul>
@@ -436,28 +436,28 @@ export default function ArrayGuidePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12"
+          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Ready to Master Arrays?</h2>
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Ready to Master Arrays?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Start with memory fundamentals and work your way up to advanced algorithms. 
             Interactive examples and real code implementations included.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 text-gray-700">
             <Link
               href="/learning-path/module-2/memory"
               className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors flex items-center"
             >
               <span>Start Learning</span>
-              <ChevronRight className="w-5 h-5 ml-2" />
+              <ChevronRight className="w-5 h-5 ml-2 text-gray-700" />
             </Link>
             
             <Link
               href="/learning-path"
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors flex items-center"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-colors flex items-center text-gray-800"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
+              <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
               <span>Back to Modules</span>
             </Link>
           </div>

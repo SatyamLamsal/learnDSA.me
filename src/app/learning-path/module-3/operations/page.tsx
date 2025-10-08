@@ -92,15 +92,15 @@ const ArrayOperationsDemo = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <Play className="w-6 h-6 mr-2 text-blue-600" />
         Interactive Array Operations
       </h3>
       
       {/* Array Visualization */}
-      <div className="mb-6">
-        <div className="flex items-center space-x-2 mb-4 overflow-x-auto">
+      <div className="mb-6 text-gray-700">
+        <div className="flex items-center space-x-2 mb-4 overflow-x-auto text-gray-700">
           {array.map((value, index) => (
             <motion.div
               key={`${index}-${value}`}
@@ -109,9 +109,9 @@ const ArrayOperationsDemo = () => {
                 scale: animatingIndex === index ? 1.2 : 1,
                 backgroundColor: animatingIndex === index ? '#fef3c7' : '#f3f4f6'
               }}
-              className="relative min-w-[60px]"
+              className="relative min-w-[60px] text-gray-700"
             >
-              <div className="w-14 h-14 bg-gray-100 border-2 border-gray-300 rounded-lg flex items-center justify-center font-mono text-lg font-semibold">
+              <div className="w-14 h-14 bg-gray-100 border-2 border-gray-300 rounded-lg flex items-center justify-center font-mono text-lg font-semibold text-gray-800">
                 {value}
               </div>
               <div className="text-xs text-gray-500 text-center mt-1">[{index}]</div>
@@ -125,14 +125,14 @@ const ArrayOperationsDemo = () => {
       </div>
 
       {/* Controls */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-4 text-gray-700">
         {/* Insert */}
-        <div className="p-4 border border-green-200 rounded-lg bg-green-50">
+        <div className="p-4 border border-green-200 rounded-lg bg-green-50 text-gray-700">
           <h4 className="font-semibold text-green-800 mb-2 flex items-center">
-            <Plus className="w-4 h-4 mr-1" />
+            <Plus className="w-4 h-4 mr-1 text-gray-700" />
             Insert
           </h4>
-          <div className="space-y-2">
+          <div className="space-y-2 text-gray-700">
             <input
               type="number"
               value={inputValue}
@@ -149,7 +149,7 @@ const ArrayOperationsDemo = () => {
             />
             <button
               onClick={handleInsert}
-              className="w-full bg-green-600 text-white py-1 rounded text-sm hover:bg-green-700"
+              className="w-full bg-green-600 text-white py-1 rounded text-sm hover:bg-green-700 text-gray-300"
             >
               Insert
             </button>
@@ -157,12 +157,12 @@ const ArrayOperationsDemo = () => {
         </div>
 
         {/* Delete */}
-        <div className="p-4 border border-red-200 rounded-lg bg-red-50">
+        <div className="p-4 border border-red-200 rounded-lg bg-red-50 text-gray-700">
           <h4 className="font-semibold text-red-800 mb-2 flex items-center">
-            <Minus className="w-4 h-4 mr-1" />
+            <Minus className="w-4 h-4 mr-1 text-gray-700" />
             Delete
           </h4>
-          <div className="space-y-2">
+          <div className="space-y-2 text-gray-700">
             <input
               type="number"
               value={inputIndex}
@@ -172,7 +172,7 @@ const ArrayOperationsDemo = () => {
             />
             <button
               onClick={handleDelete}
-              className="w-full bg-red-600 text-white py-1 rounded text-sm hover:bg-red-700"
+              className="w-full bg-red-600 text-white py-1 rounded text-sm hover:bg-red-700 text-gray-300"
             >
               Delete
             </button>
@@ -180,12 +180,12 @@ const ArrayOperationsDemo = () => {
         </div>
 
         {/* Search */}
-        <div className="p-4 border border-blue-200 rounded-lg bg-blue-50">
+        <div className="p-4 border border-blue-200 rounded-lg bg-blue-50 text-gray-700">
           <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
-            <Search className="w-4 h-4 mr-1" />
+            <Search className="w-4 h-4 mr-1 text-gray-700" />
             Search
           </h4>
-          <div className="space-y-2">
+          <div className="space-y-2 text-gray-700">
             <input
               type="number"
               value={searchValue}
@@ -195,7 +195,7 @@ const ArrayOperationsDemo = () => {
             />
             <button
               onClick={handleSearch}
-              className="w-full bg-blue-600 text-white py-1 rounded text-sm hover:bg-blue-700"
+              className="w-full bg-blue-600 text-white py-1 rounded text-sm hover:bg-blue-700 text-gray-300"
             >
               Search
             </button>
@@ -248,22 +248,22 @@ const ComplexityComparison = () => {
   ];
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <Clock className="w-6 h-6 mr-2 text-yellow-600" />
         Time Complexity Analysis
       </h3>
       
-      <div className="space-y-3">
+      <div className="space-y-3 text-gray-700">
         {operations.map((op, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-center justify-between p-3 border border-gray-200 rounded-lg"
+            className="flex items-center justify-between p-3 border border-gray-200 rounded-lg text-gray-700"
           >
-            <div className="flex-1">
+            <div className="flex-1 text-gray-700">
               <div className="font-medium text-gray-800">{op.name}</div>
               <div className="text-sm text-gray-600">{op.description}</div>
             </div>
@@ -346,16 +346,16 @@ END
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center space-x-4 mb-4">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+        <div className="max-w-4xl mx-auto text-gray-700">
+          <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-6 h-6 text-gray-700" />
             </Link>
             <div>
-              <h1 className="text-4xl font-bold mb-2">Array Operations</h1>
+              <h1 className="text-4xl font-bold mb-2 text-slate-800">Array Operations</h1>
               <p className="text-blue-100">Master insertion, deletion, searching, and traversal with interactive examples</p>
             </div>
           </div>
@@ -363,7 +363,7 @@ END
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12 text-gray-700">
         {/* Interactive Demo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -377,7 +377,7 @@ END
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Code2 className="w-8 h-8 mr-3 text-blue-600" />
@@ -385,7 +385,7 @@ END
           </h2>
           
           {/* Tab Navigation */}
-          <div className="flex space-x-2 mb-6 border-b">
+          <div className="flex space-x-2 mb-6 border-b text-gray-700">
             {['insert', 'delete', 'search', 'traverse'].map((tab) => (
               <button
                 key={tab}
@@ -402,12 +402,12 @@ END
           </div>
 
           {/* Pseudocode Display */}
-          <div className="mb-6">
+          <div className="mb-6 text-gray-700">
             <PseudocodeBlock code={pseudocodeExamples[activeTab]} />
           </div>
 
           {/* C++ Implementation */}
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="bg-gray-50 p-6 rounded-lg text-gray-700">
             <h4 className="font-semibold text-gray-800 mb-3">C++ Implementation:</h4>
             <pre className="bg-gray-800 text-green-400 p-4 rounded text-sm overflow-x-auto">
               {activeTab === 'insert' && `// Insert operation in C++
@@ -465,32 +465,32 @@ void traverse(int arr[], int size) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <AlertTriangle className="w-8 h-8 mr-3 text-yellow-600" />
             Common Pitfalls & Best Practices
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-red-800 mb-4">❌ Common Mistakes</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Buffer Overflow:</strong> Inserting beyond array bounds
-                    <pre className="text-xs bg-red-100 p-2 mt-1 rounded">arr[1000] = value; // If array size is 100</pre>
+                    <pre className="text-xs bg-red-100 p-2 mt-1 rounded text-gray-600">arr[1000] = value; // If array size is 100</pre>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Off-by-One Errors:</strong> Incorrect loop bounds
-                    <pre className="text-xs bg-red-100 p-2 mt-1 rounded">for(i = 0; i &lt;= size; i++) // Should be i &lt; size</pre>
+                    <pre className="text-xs bg-red-100 p-2 mt-1 rounded text-gray-600">for(i = 0; i &lt;= size; i++) // Should be i &lt; size</pre>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Not Updating Size:</strong> Forgetting to modify array size after operations
@@ -501,22 +501,22 @@ void traverse(int arr[], int size) {
             
             <div>
               <h3 className="text-lg font-semibold text-green-800 mb-4">✅ Best Practices</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Bounds Checking:</strong> Always validate indices before access
-                    <pre className="text-xs bg-green-100 p-2 mt-1 rounded">if(index &gt;= 0 && index &lt; size) { /* safe */ }</pre>
+                    <pre className="text-xs bg-green-100 p-2 mt-1 rounded text-gray-600">if(index &gt;= 0 && index &lt; size) { /* safe */ }</pre>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Use const for read-only:</strong> Prevent accidental modifications
-                    <pre className="text-xs bg-green-100 p-2 mt-1 rounded">void print(const int arr[], int size)</pre>
+                    <pre className="text-xs bg-green-100 p-2 mt-1 rounded text-gray-600">void print(const int arr[], int size)</pre>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Consider std::vector:</strong> For dynamic sizing and safety
@@ -532,22 +532,22 @@ void traverse(int arr[], int size) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/learning-path/module-2/memory"
-            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
             Previous: Memory Layout
           </Link>
           
           <Link
             href="/learning-path/module-2/algorithms"
-            className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+            className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
           >
             Next: Array Algorithms
-            <ChevronRight className="w-6 h-6 ml-2" />
+            <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

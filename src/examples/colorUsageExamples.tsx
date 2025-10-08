@@ -25,12 +25,12 @@ const MyComponent = () => {
 // Example 2: Using with Tailwind (inline styles)
 const TailwindExample = () => {
   return (
-    <div className="p-4" style={{ backgroundColor: colors.surfaces.card }}>
+    <div className="p-4 text-gray-700" style={{ backgroundColor: colors.surfaces.card }}>
       <h2 style={{ color: colors.content.subtitle }}>
         Arrays Data Structure
       </h2>
       <div 
-        className="p-4 rounded" 
+        className="p-4 rounded text-gray-700" 
         style={{ backgroundColor: getDataStructureColor('arrays') }}
       >
         Array content
@@ -46,7 +46,7 @@ const { background, card } = colors.surfaces;
 const CleanExample = () => {
   return (
     <div style={{ backgroundColor: background }}>
-      <div className="p-6 rounded-lg" style={{ backgroundColor: card }}>
+      <div className="p-6 rounded-lg text-gray-700" style={{ backgroundColor: card }}>
         <h1 style={{ color: title }}>Clean Component</h1>
         <p style={{ color: body }}>Main content</p>
         <small style={{ color: muted }}>Muted text</small>
@@ -61,7 +61,7 @@ const DataStructureCard = ({ type }: { type: keyof typeof colors.dataStructures 
   
   return (
     <div 
-      className="p-4 rounded-lg text-white"
+      className="p-4 rounded-lg text-white text-gray-700"
       style={{ backgroundColor: bgColor }}
     >
       <h3>{type.charAt(0).toUpperCase() + type.slice(1)}</h3>

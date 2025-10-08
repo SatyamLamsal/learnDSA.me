@@ -50,9 +50,9 @@ export function BookmarkButton({
       } ${className}`}
     >
       {bookmarked ? (
-        <BookmarkCheck className="h-5 w-5" />
+        <BookmarkCheck className="h-5 w-5 text-gray-700" />
       ) : (
-        <Bookmark className="h-5 w-5" />
+        <Bookmark className="h-5 w-5 text-gray-700" />
       )}
     </motion.button>
   )

@@ -45,9 +45,9 @@ export function ModuleBookmarkButton({
       title={isBookmarked ? 'Remove from bookmarks' : 'Bookmark this module'}
     >
       {isBookmarked ? (
-        <BookmarkCheck className="h-5 w-5" />
+        <BookmarkCheck className="h-5 w-5 text-gray-700" />
       ) : (
-        <Bookmark className="h-5 w-5" />
+        <Bookmark className="h-5 w-5 text-gray-700" />
       )}
     </motion.button>
   )

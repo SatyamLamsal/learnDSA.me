@@ -45,7 +45,7 @@ export function SectionProgressIndicator({
   if (loading) {
     return (
       <div className={`flex items-center space-x-2 ${className}`}>
-        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 text-gray-700"></div>
       </div>
     )
   }
@@ -58,8 +58,8 @@ export function SectionProgressIndicator({
           animate={{ scale: 1 }}
           className="flex items-center text-green-600"
         >
-          <CheckCircle className="h-4 w-4 mr-1" />
-          <span className="text-xs font-medium">Completed</span>
+          <CheckCircle className="h-4 w-4 mr-1 text-gray-700" />
+          <span className="text-xs font-medium text-gray-600">Completed</span>
         </motion.div>
       ) : (
         <motion.button
@@ -73,7 +73,7 @@ export function SectionProgressIndicator({
               : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
           }`}
         >
-          <CheckCircle className="h-3 w-3 mr-1" />
+          <CheckCircle className="h-3 w-3 mr-1 text-gray-700" />
           {isUpdating ? 'Updating...' : 'Complete'}
         </motion.button>
       )}

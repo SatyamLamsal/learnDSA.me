@@ -5,13 +5,13 @@ import { ArrowLeft, Cookie, Shield, Settings } from 'lucide-react';
 
 export default function CookiesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
+      <div className="bg-white shadow-sm text-gray-700">
+        <div className="max-w-6xl mx-auto px-4 py-4 text-gray-700">
+          <div className="flex items-center space-x-4 text-gray-700">
             <Link href="/" className="text-blue-600 hover:text-blue-800">
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
             </Link>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">Cookie Policy</h1>
@@ -21,9 +21,9 @@ export default function CookiesPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-xl shadow-sm p-8">
-          <div className="flex items-center mb-6">
+      <div className="max-w-4xl mx-auto px-4 py-12 text-gray-700">
+        <div className="bg-white rounded-xl shadow-sm p-8 text-gray-700">
+          <div className="flex items-center mb-6 text-gray-700">
             <Cookie className="w-8 h-8 text-orange-500 mr-3" />
             <div>
               <h2 className="text-2xl font-bold text-gray-800">Cookie Policy</h2>
@@ -31,7 +31,7 @@ export default function CookiesPage() {
             </div>
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose max-w-none text-gray-700">
             <h3>What are cookies?</h3>
             <p>
               Cookies are small text files that are stored on your computer or mobile device 
@@ -46,9 +46,9 @@ export default function CookiesPage() {
               essential functionality:
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6 text-gray-700">
               <h4 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
-                <Shield className="w-5 h-5 mr-2" />
+                <Shield className="w-5 h-5 mr-2 text-gray-700" />
                 Essential Cookies
               </h4>
               <p className="text-blue-700">
@@ -58,9 +58,9 @@ export default function CookiesPage() {
               </p>
             </div>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6 text-gray-700">
               <h4 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
-                <Settings className="w-5 h-5 mr-2" />
+                <Settings className="w-5 h-5 mr-2 text-gray-700" />
                 Functional Cookies
               </h4>
               <p className="text-green-700">

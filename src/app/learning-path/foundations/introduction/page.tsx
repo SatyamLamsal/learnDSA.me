@@ -47,9 +47,9 @@ export default function FoundationsIntroductionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16 relative"
+        className="text-center mb-16 relative text-gray-700"
       >
-        <div className="absolute top-0 right-0 flex items-center space-x-4">
+        <div className="absolute top-0 right-0 flex items-center space-x-4 text-gray-700">
           <ProgressIndicator 
             topicId="foundations-introduction" 
             topicType="foundations"
@@ -65,13 +65,13 @@ export default function FoundationsIntroductionPage() {
         </div>
         
         <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
-          <BookOpen className="w-5 h-5 mr-2" />
+          <BookOpen className="w-5 h-5 mr-2 text-gray-700" />
           Chapter 1: Introduction to Data Structure and Algorithm
         </div>
         
         <h1 className="text-6xl font-bold text-gray-900 mb-8">
           Introduction &
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-gray-600">
             Core Concepts
           </span>
         </h1>
@@ -87,24 +87,24 @@ export default function FoundationsIntroductionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.8 }}
-        className="mb-12"
+        className="mb-12 text-gray-700"
       >
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8">
-          <h2 className="text-3xl font-bold mb-6 text-center">What You&apos;ll Master in This Module</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
-              <Target className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Problem Solving</h3>
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8 text-gray-700">
+          <h2 className="text-3xl font-bold mb-6 text-center text-slate-800">What You&apos;ll Master in This Module</h2>
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
+              <Target className="w-12 h-12 mx-auto mb-4 text-gray-700" />
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">Problem Solving</h3>
               <p className="text-blue-100">Learn systematic approaches to computational problems</p>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
-              <BookOpen className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Core Concepts</h3>
+            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
+              <BookOpen className="w-12 h-12 mx-auto mb-4 text-gray-700" />
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">Core Concepts</h3>
               <p className="text-blue-100">Understand fundamental building blocks of computer science</p>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm">
-              <Users className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Best Practices</h3>
+            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
+              <Users className="w-12 h-12 mx-auto mb-4 text-gray-700" />
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">Best Practices</h3>
               <p className="text-blue-100">Apply industry-standard approaches to software development</p>
             </div>
           </div>
@@ -112,8 +112,8 @@ export default function FoundationsIntroductionPage() {
       </motion.div>
 
       {/* Why Study DSA */}
-      <div id="why-study" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
-        <div className="flex items-center justify-between mb-6">
+      <div id="why-study" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
+        <div className="flex items-center justify-between mb-6 text-gray-700">
           <h2 className="text-3xl font-bold text-gray-900 flex items-center">
             <Target className="w-8 h-8 mr-3 text-blue-600" />
             Why Study Data Structures and Algorithms?
@@ -123,16 +123,16 @@ export default function FoundationsIntroductionPage() {
             sectionId="why-study"
           />
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-start space-x-3">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+          <div className="space-y-4 text-gray-700">
+            <div className="flex items-start space-x-3 text-gray-700">
               <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-900">Efficient Solutions</h4>
                 <p className="text-gray-600">Apply best practices for developing optimal solutions using programming</p>
               </div>
             </div>
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 text-gray-700">
               <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-900">Right Tool for Job</h4>
@@ -140,15 +140,15 @@ export default function FoundationsIntroductionPage() {
               </div>
             </div>
           </div>
-          <div className="space-y-4">
-            <div className="flex items-start space-x-3">
+          <div className="space-y-4 text-gray-700">
+            <div className="flex items-start space-x-3 text-gray-700">
               <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-900">System Architecture</h4>
                 <p className="text-gray-600">Design, develop and optimize applications using computer programming</p>
               </div>
             </div>
-            <div className="flex items-start space-x-3">
+            <div className="flex items-start space-x-3 text-gray-700">
               <CheckCircle className="w-6 h-6 text-green-500 mt-1" />
               <div>
                 <h4 className="font-semibold text-gray-900">Reliable Solutions</h4>
@@ -160,8 +160,8 @@ export default function FoundationsIntroductionPage() {
       </div>
 
       {/* Data vs Information */}
-      <div id="data-info" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
-        <div className="flex items-center justify-between mb-6">
+      <div id="data-info" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
+        <div className="flex items-center justify-between mb-6 text-gray-700">
           <h2 className="text-3xl font-bold text-gray-900 flex items-center">
             <Info className="w-8 h-8 mr-3 text-purple-600" />
             Understanding Data and Information
@@ -171,22 +171,22 @@ export default function FoundationsIntroductionPage() {
             sectionId="data-information"
           />
         </div>
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-1">
-            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
+        <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
+          <div className="lg:col-span-1 text-gray-700">
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
               <h3 className="text-xl font-semibold text-blue-900 mb-4">Input → Processing → Output</h3>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-16 h-8 bg-gray-300 rounded mr-3"></div>
+              <div className="space-y-3 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-16 h-8 bg-gray-300 rounded mr-3 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Raw Data</span>
                 </div>
                 <ArrowDown className="w-5 h-5 text-blue-600 mx-auto" />
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <Settings className="w-8 h-8 text-blue-600 mr-3" />
                   <span className="text-sm text-gray-600">Processing</span>
                 </div>
                 <ArrowDown className="w-5 h-5 text-blue-600 mx-auto" />
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <CheckCircle className="w-8 h-8 text-green-600 mr-3" />
                   <span className="text-sm text-gray-600">Information</span>
                 </div>
@@ -194,25 +194,25 @@ export default function FoundationsIntroductionPage() {
             </div>
           </div>
           
-          <div className="lg:col-span-2 space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+          <div className="lg:col-span-2 space-y-6 text-gray-700">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+              <div className="bg-green-50 p-6 rounded-xl border border-green-200 text-gray-700">
                 <h4 className="font-semibold text-green-900 mb-3">Data</h4>
                 <p className="text-green-700 mb-3">Raw facts and figures without context or meaning</p>
-                <div className="space-y-2">
-                  <code className="bg-white px-2 py-1 rounded text-sm block">42</code>
-                  <code className="bg-white px-2 py-1 rounded text-sm block">&quot;John Smith&quot;</code>
-                  <code className="bg-white px-2 py-1 rounded text-sm block">2024-10-06</code>
+                <div className="space-y-2 text-gray-700">
+                  <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">42</code>
+                  <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">&quot;John Smith&quot;</code>
+                  <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">2024-10-06</code>
                 </div>
               </div>
               
-              <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
+              <div className="bg-purple-50 p-6 rounded-xl border border-purple-200 text-gray-700">
                 <h4 className="font-semibold text-purple-900 mb-3">Information</h4>
                 <p className="text-purple-700 mb-3">Processed data that has meaning and context</p>
-                <div className="space-y-2">
-                  <div className="bg-white px-2 py-1 rounded text-sm">Age: 42 years</div>
-                  <div className="bg-white px-2 py-1 rounded text-sm">Customer: John Smith</div>
-                  <div className="bg-white px-2 py-1 rounded text-sm">Today&apos;s Date</div>
+                <div className="space-y-2 text-gray-700">
+                  <div className="bg-white px-2 py-1 rounded text-sm text-gray-600">Age: 42 years</div>
+                  <div className="bg-white px-2 py-1 rounded text-sm text-gray-600">Customer: John Smith</div>
+                  <div className="bg-white px-2 py-1 rounded text-sm text-gray-600">Today&apos;s Date</div>
                 </div>
               </div>
             </div>
@@ -221,8 +221,8 @@ export default function FoundationsIntroductionPage() {
       </div>
 
       {/* Atomic vs Composite Data */}
-      <div id="atomic-composite" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
-        <div className="flex items-center justify-between mb-6">
+      <div id="atomic-composite" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
+        <div className="flex items-center justify-between mb-6 text-gray-700">
           <h2 className="text-3xl font-bold text-gray-900 flex items-center">
             <BookOpen className="w-8 h-8 mr-3 text-indigo-600" />
             Types of Data: Atomic vs Composite
@@ -233,27 +233,27 @@ export default function FoundationsIntroductionPage() {
           />
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+          <div className="bg-green-50 p-6 rounded-xl border border-green-200 text-gray-700">
             <h4 className="font-semibold text-green-900 mb-3">Atomic Data</h4>
             <p className="text-green-700 mb-3">Single, indivisible value that cannot be broken down further</p>
-            <div className="space-y-2">
-              <code className="bg-white px-2 py-1 rounded text-sm block">integer: 123</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block">float: 45.67</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block">char: &apos;A&apos;</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block">boolean: true</code>
+            <div className="space-y-2 text-gray-700">
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">integer: 123</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">float: 45.67</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">char: &apos;A&apos;</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">boolean: true</code>
             </div>
           </div>
           
-          <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
+          <div className="bg-purple-50 p-6 rounded-xl border border-purple-200 text-gray-700">
             <h4 className="font-semibold text-purple-900 mb-3">Composite Data</h4>
             <p className="text-purple-700 mb-3">Can be broken into subfields or contains multiple values</p>
-            <div className="space-y-2">
-              <code className="bg-white px-2 py-1 rounded text-sm block">Student {`{`}</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block ml-4">roll_no: 123</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block ml-4">name: &quot;John&quot;</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block ml-4">faculty: &quot;CS&quot;</code>
-              <code className="bg-white px-2 py-1 rounded text-sm block">{`}`}</code>
+            <div className="space-y-2 text-gray-700">
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">Student {`{`}</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block ml-4 text-gray-600">roll_no: 123</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block ml-4 text-gray-600">name: &quot;John&quot;</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block ml-4 text-gray-600">faculty: &quot;CS&quot;</code>
+              <code className="bg-white px-2 py-1 rounded text-sm block text-gray-600">{`}`}</code>
             </div>
           </div>
         </div>
@@ -264,21 +264,21 @@ export default function FoundationsIntroductionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
-        className="flex justify-between items-center mt-12"
+        className="flex justify-between items-center mt-12 text-gray-700"
       >
         <Link
           href="/learning-path/foundations"
-          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
+          <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
           Back to Overview
         </Link>
         <Link
           href="/learning-path/foundations/data-structures"
-          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
         >
           Next: Data Structures Deep Dive
-          <ChevronRight className="w-6 h-6 ml-2" />
+          <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
         </Link>
       </motion.div>
     </ModuleLayout>

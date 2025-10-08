@@ -33,7 +33,7 @@ export function ModuleProgressIndicator({
   if (loading) {
     return (
       <div className={`flex items-center space-x-2 ${className}`}>
-        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600 text-gray-700"></div>
       </div>
     )
   }
@@ -49,8 +49,8 @@ export function ModuleProgressIndicator({
           animate={{ scale: 1 }}
           className="flex items-center text-green-600"
         >
-          <CheckCircle className="h-5 w-5 mr-1" />
-          <span className="text-sm font-medium">
+          <CheckCircle className="h-5 w-5 mr-1 text-gray-700" />
+          <span className="text-sm font-medium text-gray-600">
             {moduleProgress?.completed ? 'Completed' : 'In Progress'}
           </span>
         </motion.div>
@@ -66,14 +66,14 @@ export function ModuleProgressIndicator({
               : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
           }`}
         >
-          <CheckCircle className="h-4 w-4 mr-1" />
+          <CheckCircle className="h-4 w-4 mr-1 text-gray-700" />
           {isUpdating ? 'Updating...' : 'Complete Module'}
         </motion.button>
       )}
       
       {moduleProgress?.timeSpent && moduleProgress.timeSpent > 60 && (
         <div className="flex items-center text-gray-500 text-sm">
-          <Clock className="h-4 w-4 mr-1" />
+          <Clock className="h-4 w-4 mr-1 text-gray-700" />
           {Math.round(moduleProgress.timeSpent / 60)}min
         </div>
       )}

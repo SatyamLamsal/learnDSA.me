@@ -238,22 +238,22 @@ export default function MemoryHierarchyPage() {
   }, [memoryLevels.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+      <div className="container mx-auto px-4 py-8 text-gray-700">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 text-gray-700">
           <Link 
             href="/learning-path/module-1" 
             className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4"
           >
-            <ArrowLeft className="w-4 h-4 mr-2" />
+            <ArrowLeft className="w-4 h-4 mr-2 text-gray-700" />
             Back to Module 1
           </Link>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8"
+            className="text-center mb-8 text-gray-700"
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Computer Memory Hierarchy
@@ -265,15 +265,15 @@ export default function MemoryHierarchyPage() {
         </div>
 
         {/* Interactive Memory Pyramid */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Layers className="w-7 h-7 mr-3 text-indigo-600" />
             Interactive Memory Hierarchy
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
             {/* Pyramid Visualization */}
-            <div className="space-y-2">
+            <div className="space-y-2 text-gray-700">
               {memoryLevels.map((level, index) => {
                 const IconComponent = level.icon;
                 const isActive = activeLevel === index;
@@ -295,18 +295,18 @@ export default function MemoryHierarchyPage() {
                     }}
                     onClick={() => setActiveLevel(index)}
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <IconComponent className="w-6 h-6" />
+                    <div className="flex items-center justify-between text-gray-700">
+                      <div className="flex items-center space-x-3 text-gray-700">
+                        <IconComponent className="w-6 h-6 text-gray-700" />
                         <div>
-                          <h3 className="font-bold">{level.name}</h3>
+                          <h3 className="font-bold text-gray-800">{level.name}</h3>
                           <p className={`text-sm ${isActive ? 'text-white opacity-90' : `text-${level.color}-600`}`}>
                             {level.description}
                           </p>
                         </div>
                       </div>
-                      <div className="text-right text-sm">
-                        <div className="font-mono font-bold">{level.speed}</div>
+                      <div className="text-right text-sm text-gray-600">
+                        <div className="font-mono font-bold text-gray-800">{level.speed}</div>
                         <div className={`${isActive ? 'text-white opacity-75' : `text-${level.color}-600`}`}>
                           {level.size}
                         </div>
@@ -318,9 +318,9 @@ export default function MemoryHierarchyPage() {
             </div>
 
             {/* Detailed Information */}
-            <div className="space-y-6">
+            <div className="space-y-6 text-gray-700">
               <div className={`bg-${memoryLevels[activeLevel].color}-50 p-6 rounded-xl border border-${memoryLevels[activeLevel].color}-200`}>
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4 text-gray-700">
                   {React.createElement(memoryLevels[activeLevel].icon, {
                     className: `w-8 h-8 mr-3 text-${memoryLevels[activeLevel].color}-600`
                   })}
@@ -329,34 +329,34 @@ export default function MemoryHierarchyPage() {
                   </h3>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-4 mb-6 text-gray-700">
                   <div className={`text-${memoryLevels[activeLevel].color}-800`}>
-                    <div className="font-semibold">Access Speed</div>
-                    <div className="font-mono text-lg">{memoryLevels[activeLevel].speed}</div>
+                    <div className="font-semibold text-gray-800">Access Speed</div>
+                    <div className="font-mono text-lg text-gray-700">{memoryLevels[activeLevel].speed}</div>
                   </div>
                   <div className={`text-${memoryLevels[activeLevel].color}-800`}>
-                    <div className="font-semibold">Typical Size</div>
-                    <div className="font-mono text-lg">{memoryLevels[activeLevel].size}</div>
+                    <div className="font-semibold text-gray-800">Typical Size</div>
+                    <div className="font-mono text-lg text-gray-700">{memoryLevels[activeLevel].size}</div>
                   </div>
                   <div className={`text-${memoryLevels[activeLevel].color}-800`}>
-                    <div className="font-semibold">Cost per GB</div>
-                    <div className="text-lg">{memoryLevels[activeLevel].cost}</div>
+                    <div className="font-semibold text-gray-800">Cost per GB</div>
+                    <div className="text-lg text-gray-700">{memoryLevels[activeLevel].cost}</div>
                   </div>
                   <div className={`text-${memoryLevels[activeLevel].color}-800`}>
-                    <div className="font-semibold">Location</div>
-                    <div className="text-lg">{memoryLevels[activeLevel].location}</div>
+                    <div className="font-semibold text-gray-800">Location</div>
+                    <div className="text-lg text-gray-700">{memoryLevels[activeLevel].location}</div>
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 text-gray-700">
                   <div>
                     <h4 className={`font-semibold text-${memoryLevels[activeLevel].color}-900 mb-2`}>
                       Characteristics
                     </h4>
                     <ul className={`space-y-1 text-sm text-${memoryLevels[activeLevel].color}-800`}>
                       {memoryLevels[activeLevel].details.characteristics.map((char, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <ChevronRight className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" />
+                        <li key={idx} className="flex items-start text-gray-700">
+                          <ChevronRight className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0 text-gray-700" />
                           {char}
                         </li>
                       ))}
@@ -369,8 +369,8 @@ export default function MemoryHierarchyPage() {
                     </h4>
                     <ul className={`space-y-1 text-sm text-${memoryLevels[activeLevel].color}-800`}>
                       {memoryLevels[activeLevel].details.usage.map((usage, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <ChevronRight className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0" />
+                        <li key={idx} className="flex items-start text-gray-700">
+                          <ChevronRight className="w-4 h-4 mr-1 mt-0.5 flex-shrink-0 text-gray-700" />
                           {usage}
                         </li>
                       ))}
@@ -379,11 +379,11 @@ export default function MemoryHierarchyPage() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="bg-gray-50 p-4 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-gray-900 mb-2">Real Examples</h4>
                 <ul className="space-y-1 text-sm text-gray-700">
                   {memoryLevels[activeLevel].details.examples.map((example, idx) => (
-                    <li key={idx} className="font-mono">• {example}</li>
+                    <li key={idx} className="font-mono text-gray-700">• {example}</li>
                   ))}
                 </ul>
               </div>
@@ -392,18 +392,18 @@ export default function MemoryHierarchyPage() {
         </div>
 
         {/* Performance Comparison */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8 text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Gauge className="w-7 h-7 mr-3 text-green-600" />
             Speed Comparison
           </h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <p className="text-gray-600">
               If accessing a CPU register took 1 second, here&apos;s how long other memory accesses would take:
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-4 text-gray-700">
               {[
                 { name: "CPU Register", time: "1 second", multiplier: 1, color: "green" },
                 { name: "L1 Cache", time: "3 seconds", multiplier: 3, color: "yellow" },
@@ -413,9 +413,9 @@ export default function MemoryHierarchyPage() {
                 { name: "SSD Storage", time: "7 hours", multiplier: 25000, color: "blue" },
                 { name: "Hard Drive", time: "4+ months", multiplier: 10000000, color: "gray" }
               ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-4">
+                <div key={index} className="flex items-center space-x-4 text-gray-700">
                   <div className="w-32 font-semibold text-gray-900">{item.name}</div>
-                  <div className="flex-1 bg-gray-200 rounded-full h-4 overflow-hidden">
+                  <div className="flex-1 bg-gray-200 rounded-full h-4 overflow-hidden text-gray-700">
                     <motion.div
                       className={`h-full bg-${item.color}-500`}
                       initial={{ width: 0 }}
@@ -423,7 +423,7 @@ export default function MemoryHierarchyPage() {
                       transition={{ delay: index * 0.2, duration: 1 }}
                     />
                   </div>
-                  <div className="w-24 text-right font-mono text-sm font-semibold">
+                  <div className="w-24 text-right font-mono text-sm font-semibold text-gray-600">
                     {item.time}
                   </div>
                 </div>
@@ -433,58 +433,58 @@ export default function MemoryHierarchyPage() {
         </div>
 
         {/* Cache Behavior Simulation */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Activity className="w-7 h-7 mr-3 text-blue-600" />
             Cache Behavior Impact
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+            <div className="space-y-4 text-gray-700">
               <h3 className="text-xl font-semibold text-green-900">Sequential Access (Cache-Friendly)</h3>
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <div className="font-mono text-sm space-y-2">
+              <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-gray-700">
+                <div className="font-mono text-sm space-y-2 text-gray-600">
                   <div>for (i = 0; i {'<'} 1000000; i++) {'{'}</div>
-                  <div className="ml-4">array[i] = array[i] + 1;</div>
+                  <div className="ml-4 text-gray-700">array[i] = array[i] + 1;</div>
                   <div>{'}'}</div>
                 </div>
               </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex justify-between text-gray-700">
                   <span>Cache hits:</span>
                   <span className="font-mono text-green-600">~99%</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Performance:</span>
                   <span className="font-mono text-green-600">Excellent</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Why:</span>
                   <span className="text-green-700">Predictable access pattern</span>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-gray-700">
               <h3 className="text-xl font-semibold text-red-900">Random Access (Cache-Unfriendly)</h3>
-              <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                <div className="font-mono text-sm space-y-2">
+              <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-gray-700">
+                <div className="font-mono text-sm space-y-2 text-gray-600">
                   <div>for (i = 0; i {'<'} 1000000; i++) {'{'}</div>
-                  <div className="ml-4">idx = random() % size;</div>
-                  <div className="ml-4">array[idx] = array[idx] + 1;</div>
+                  <div className="ml-4 text-gray-700">idx = random() % size;</div>
+                  <div className="ml-4 text-gray-700">array[idx] = array[idx] + 1;</div>
                   <div>{'}'}</div>
                 </div>
               </div>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex justify-between text-gray-700">
                   <span>Cache hits:</span>
                   <span className="font-mono text-red-600">~10%</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Performance:</span>
                   <span className="font-mono text-red-600">Poor</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span>Why:</span>
                   <span className="text-red-700">Unpredictable access pattern</span>
                 </div>
@@ -492,22 +492,22 @@ export default function MemoryHierarchyPage() {
             </div>
           </div>
 
-          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-200">
+          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">Key Insights for Data Structures</h3>
             <ul className="space-y-2 text-blue-800">
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <Info className="w-5 h-5 mr-2 mt-0.5 text-blue-600" />
                 <span><strong>Arrays:</strong> Excellent cache performance due to contiguous memory layout</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <Info className="w-5 h-5 mr-2 mt-0.5 text-blue-600" />
                 <span><strong>Linked Lists:</strong> Poor cache performance due to scattered memory locations</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <Info className="w-5 h-5 mr-2 mt-0.5 text-blue-600" />
                 <span><strong>Hash Tables:</strong> Mixed performance depending on collision handling</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <Info className="w-5 h-5 mr-2 mt-0.5 text-blue-600" />
                 <span><strong>Trees:</strong> Moderate performance, better with locality-aware implementations</span>
               </li>

@@ -24,11 +24,11 @@ const pseudocode = `BFS(G, s):
     color[u] ← BLACK`;
 
 export default function BFSTheoryPage(){
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50">
-  <div className="container mx-auto px-4 py-12 max-w-screen-2xl">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 text-gray-700">
+  <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
       <Header />
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-8">
+      <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
+        <div className="lg:col-span-2 space-y-8 text-gray-700">
           <DefinitionCard />
           <StepsCard />
           <ComplexityCard />
@@ -45,11 +45,11 @@ export default function BFSTheoryPage(){
 }
 
 function Header(){
-  return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mb-10">
-    <Link href="/algorithms/graph/bfs" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to BFS Overview</Link>
+  return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mb-10 text-gray-700">
+    <Link href="/algorithms/graph/bfs" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to BFS Overview</Link>
     <h1 className="text-4xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-      <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-blue-600 text-white shadow">
-        <Network className="h-8 w-8"/>
+      <span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-blue-600 text-white shadow text-gray-600">
+        <Network className="h-8 w-8 text-gray-700"/>
       </span>
       BFS Theory
     </h1>
@@ -58,7 +58,7 @@ function Header(){
 }
 
 function Card({children,title,icon}:{children:React.ReactNode;title:string;icon?:React.ReactNode}){
-  return <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.5}} className="bg-white rounded-2xl shadow-sm p-6">
+  return <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.5}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <h2 className="text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2">{icon}{title}</h2>
     {children}
   </motion.div>;
@@ -85,18 +85,18 @@ function StepsCard(){
 
 function ComplexityCard(){
   return <Card title="Time & Space Complexity">
-    <div className="grid md:grid-cols-3 gap-4 text-sm">
-      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200">
+    <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700">
         <div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide">Time</div>
-        <div className="font-mono mt-1">O(V + E)</div>
+        <div className="font-mono mt-1 text-gray-700">O(V + E)</div>
       </div>
-      <div className="p-3 rounded-xl bg-purple-50 border border-purple-200">
+      <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 text-gray-700">
         <div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide">Space</div>
-        <div className="font-mono mt-1">O(V)</div>
+        <div className="font-mono mt-1 text-gray-700">O(V)</div>
       </div>
-      <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+      <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-gray-700">
         <div className="font-semibold text-emerald-700 text-[11px] uppercase tracking-wide">Shortest Paths</div>
-        <div className="font-mono mt-1">Yes (Unweighted)</div>
+        <div className="font-mono mt-1 text-gray-700">Yes (Unweighted)</div>
       </div>
     </div>
     <p className="text-xs text-slate-600 mt-4">Each vertex enqueued at most once; each edge considered at most twice (undirected) or once (directed).</p>
@@ -124,7 +124,7 @@ function ApplicationsCard(){
 
 function ProsConsCard(){
   return <Card title="Advantages & Disadvantages">
-    <div className="grid md:grid-cols-2 gap-6 text-sm">
+    <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
       <div>
         <h3 className="font-semibold text-emerald-700 mb-2">Advantages</h3>
         <ul className="list-disc pl-5 space-y-1 text-slate-600">
@@ -158,8 +158,8 @@ function ExampleProblemsCard(){
 }
 
 function SideSummary(){
-  return <div className="space-y-6">
-    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="bg-white rounded-2xl shadow-sm p-6">
+  return <div className="space-y-6 text-gray-700">
+    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
       <h2 className="text-lg font-semibold text-slate-800 mb-2">Key Properties</h2>
       <ul className="text-xs text-slate-600 space-y-1">
         <li>Layered exploration</li>
@@ -169,20 +169,20 @@ function SideSummary(){
         <li>Great for unweighted reachability</li>
       </ul>
     </motion.div>
-    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="bg-white rounded-2xl shadow-sm p-6">
+    <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
       <h2 className="text-lg font-semibold text-slate-800 mb-2">Next Steps</h2>
       <p className="text-xs text-slate-600 mb-3">Practice BFS interactively to see queue evolution, frontier layers, and path reconstruction.</p>
-      <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-semibold">Go to Simulation</Link>
+      <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-semibold text-gray-300">Go to Simulation</Link>
     </motion.div>
   </div>;
 }
 
 function Navigation(){
-  return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mt-14 flex justify-between items-center">
-    <Link href="/algorithms/graph" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2"/>Graph Overview</Link>
-    <div className="flex gap-4">
-      <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Simulation <ArrowRight className="h-5 w-5 ml-2"/></Link>
-      <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">Next: DFS <ArrowRight className="h-5 w-5 ml-2"/></Link>
+  return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mt-14 flex justify-between items-center text-gray-700">
+    <Link href="/algorithms/graph" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Graph Overview</Link>
+    <div className="flex gap-4 text-gray-700">
+      <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100">Simulation <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100">Next: DFS <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </motion.div>;
 }

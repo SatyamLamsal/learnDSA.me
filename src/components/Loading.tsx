@@ -26,12 +26,12 @@ export const LoadingSpinner: React.FC<{
 export const PageLoader: React.FC<{ message?: string }> = ({ 
   message = 'Loading...' 
 }) => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
-    <div className="text-center">
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center text-gray-700">
+    <div className="text-center text-gray-700">
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-        className="mb-4"
+        className="mb-4 text-gray-700"
       >
         <Code className="h-16 w-16 text-blue-600 mx-auto" />
       </motion.div>
@@ -47,7 +47,7 @@ export const PageLoader: React.FC<{ message?: string }> = ({
 export const SimulationLoader: React.FC<{ message?: string }> = ({ 
   message = 'Initializing simulation...' 
 }) => (
-  <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+  <div className="bg-white rounded-lg shadow-lg p-8 text-center text-gray-700">
     <motion.div
       animate={{ 
         scale: [1, 1.1, 1],
@@ -58,14 +58,14 @@ export const SimulationLoader: React.FC<{ message?: string }> = ({
         repeat: Infinity, 
         ease: "easeInOut" 
       }}
-      className="mb-4"
+      className="mb-4 text-gray-700"
     >
       <Play className="h-12 w-12 text-green-600 mx-auto" />
     </motion.div>
     <h3 className="text-xl font-semibold text-gray-800 mb-2">
       {message}
     </h3>
-    <div className="flex items-center justify-center space-x-1">
+    <div className="flex items-center justify-center space-x-1 text-gray-700">
       {[0, 1, 2].map((i) => (
         <motion.div
           key={i}
@@ -78,7 +78,7 @@ export const SimulationLoader: React.FC<{ message?: string }> = ({
             repeat: Infinity,
             delay: i * 0.2,
           }}
-          className="w-2 h-2 bg-green-600 rounded-full"
+          className="w-2 h-2 bg-green-600 rounded-full text-gray-700"
         />
       ))}
     </div>
@@ -107,12 +107,12 @@ export const ContentLoader: React.FC<{
   }[type];
 
   return (
-    <div className="flex items-center justify-center py-12">
-      <div className="text-center">
+    <div className="flex items-center justify-center py-12 text-gray-700">
+      <div className="text-center text-gray-700">
         <motion.div
           animate={{ y: [-5, 5, -5] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="mb-4"
+          className="mb-4 text-gray-700"
         >
           <Icon className="h-10 w-10 text-blue-600 mx-auto" />
         </motion.div>
@@ -150,37 +150,37 @@ export const SkeletonText: React.FC<{
 
 // Page Skeleton
 export const PageSkeleton: React.FC = () => (
-  <div className="min-h-screen bg-gray-50">
-    <div className="container mx-auto px-4 py-12">
+  <div className="min-h-screen bg-gray-50 text-gray-700">
+    <div className="container mx-auto px-4 py-12 text-gray-700">
       {/* Header Skeleton */}
-      <div className="mb-12">
-        <SkeletonBox className="h-12 w-1/2 mb-4" />
-        <SkeletonBox className="h-6 w-3/4 mb-2" />
-        <SkeletonBox className="h-6 w-1/2" />
+      <div className="mb-12 text-gray-700">
+        <SkeletonBox className="h-12 w-1/2 mb-4 text-gray-700" />
+        <SkeletonBox className="h-6 w-3/4 mb-2 text-gray-700" />
+        <SkeletonBox className="h-6 w-1/2 text-gray-700" />
       </div>
 
       {/* Content Grid Skeleton */}
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <SkeletonBox className="h-8 w-1/2 mb-6" />
-            <div className="space-y-4">
+      <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
+        <div className="lg:col-span-1 text-gray-700">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+            <SkeletonBox className="h-8 w-1/2 mb-6 text-gray-700" />
+            <div className="space-y-4 text-gray-700">
               {Array.from({ length: 4 }).map((_, i) => (
                 <div key={i}>
-                  <SkeletonBox className="h-10 w-full mb-2" />
+                  <SkeletonBox className="h-10 w-full mb-2 text-gray-700" />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <SkeletonBox className="h-8 w-1/3 mb-6" />
-            <SkeletonBox className="h-64 w-full mb-6" />
-            <div className="grid grid-cols-2 gap-4">
+        <div className="lg:col-span-2 text-gray-700">
+          <div className="bg-white rounded-lg shadow-lg p-8 text-gray-700">
+            <SkeletonBox className="h-8 w-1/3 mb-6 text-gray-700" />
+            <SkeletonBox className="h-64 w-full mb-6 text-gray-700" />
+            <div className="grid grid-cols-2 gap-4 text-gray-700">
               {Array.from({ length: 4 }).map((_, i) => (
-                <SkeletonBox key={i} className="h-16 w-full" />
+                <SkeletonBox key={i} className="h-16 w-full text-gray-700" />
               ))}
             </div>
           </div>
@@ -194,9 +194,9 @@ export const PageSkeleton: React.FC = () => (
 export const CardSkeleton: React.FC<{ count?: number }> = ({ count = 1 }) => (
   <>
     {Array.from({ length: count }).map((_, i) => (
-      <div key={i} className="bg-white rounded-lg shadow-lg p-6">
-        <SkeletonBox className="h-12 w-12 mb-4" />
-        <SkeletonBox className="h-6 w-2/3 mb-2" />
+      <div key={i} className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+        <SkeletonBox className="h-12 w-12 mb-4 text-gray-700" />
+        <SkeletonBox className="h-6 w-2/3 mb-2 text-gray-700" />
         <SkeletonText lines={3} />
       </div>
     ))}
@@ -205,13 +205,13 @@ export const CardSkeleton: React.FC<{ count?: number }> = ({ count = 1 }) => (
 
 // Navigation Skeleton
 export const NavigationSkeleton: React.FC = () => (
-  <div className="bg-white border-b border-gray-200">
-    <div className="container mx-auto px-4">
-      <div className="flex items-center justify-between py-4">
-        <SkeletonBox className="h-8 w-32" />
-        <div className="flex items-center space-x-6">
+  <div className="bg-white border-b border-gray-200 text-gray-700">
+    <div className="container mx-auto px-4 text-gray-700">
+      <div className="flex items-center justify-between py-4 text-gray-700">
+        <SkeletonBox className="h-8 w-32 text-gray-700" />
+        <div className="flex items-center space-x-6 text-gray-700">
           {Array.from({ length: 4 }).map((_, i) => (
-            <SkeletonBox key={i} className="h-8 w-20" />
+            <SkeletonBox key={i} className="h-8 w-20 text-gray-700" />
           ))}
         </div>
       </div>
@@ -221,25 +221,25 @@ export const NavigationSkeleton: React.FC = () => (
 
 // Algorithm Visualization Skeleton
 export const VisualizationSkeleton: React.FC = () => (
-  <div className="bg-white rounded-lg shadow-lg p-8">
-    <SkeletonBox className="h-8 w-1/3 mb-6 mx-auto" />
+  <div className="bg-white rounded-lg shadow-lg p-8 text-gray-700">
+    <SkeletonBox className="h-8 w-1/3 mb-6 mx-auto text-gray-700" />
     
     {/* Controls */}
-    <div className="flex justify-center space-x-4 mb-8">
+    <div className="flex justify-center space-x-4 mb-8 text-gray-700">
       {Array.from({ length: 3 }).map((_, i) => (
-        <SkeletonBox key={i} className="h-10 w-24" />
+        <SkeletonBox key={i} className="h-10 w-24 text-gray-700" />
       ))}
     </div>
 
     {/* Main Visualization Area */}
-    <SkeletonBox className="h-64 w-full mb-6" />
+    <SkeletonBox className="h-64 w-full mb-6 text-gray-700" />
 
     {/* Stats/Info */}
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-4 gap-4 text-gray-700">
       {Array.from({ length: 4 }).map((_, i) => (
-        <div key={i} className="text-center">
-          <SkeletonBox className="h-6 w-3/4 mx-auto mb-2" />
-          <SkeletonBox className="h-4 w-1/2 mx-auto" />
+        <div key={i} className="text-center text-gray-700">
+          <SkeletonBox className="h-6 w-3/4 mx-auto mb-2 text-gray-700" />
+          <SkeletonBox className="h-4 w-1/2 mx-auto text-gray-700" />
         </div>
       ))}
     </div>
@@ -279,7 +279,7 @@ export const LoadingButton: React.FC<{
         ${className}
       `}
     >
-      {loading && <LoadingSpinner size="sm" className="mr-2" />}
+      {loading && <LoadingSpinner size="sm" className="mr-2 text-gray-700" />}
       {children}
     </button>
   );

@@ -78,22 +78,22 @@ const algorithms = [
 
 const features = [
   {
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-8 w-8 text-gray-700" />,
     title: 'Problem-Solving Focus',
     description: 'Learn algorithmic thinking and problem-solving strategies'
   },
   {
-    icon: <Clock className="h-8 w-8" />,
+    icon: <Clock className="h-8 w-8 text-gray-700" />,
     title: 'Complexity Analysis',
     description: 'Understand time and space complexity for efficient solutions'
   },
   {
-    icon: <Play className="h-8 w-8" />,
+    icon: <Play className="h-8 w-8 text-gray-700" />,
     title: 'Step-by-Step Visualization',
     description: 'Watch algorithms execute with detailed animations'
   },
   {
-    icon: <BookOpen className="h-8 w-8" />,
+    icon: <BookOpen className="h-8 w-8 text-gray-700" />,
     title: 'Real Applications',
     description: 'See how algorithms solve real-world problems'
   }
@@ -101,14 +101,14 @@ const features = [
 
 export default function AlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-gray-700">
+      <div className="container mx-auto px-4 py-20 text-gray-700">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-16 text-gray-700"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
             Master <span className="text-blue-600">Algorithms</span>
@@ -124,7 +124,7 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 text-gray-700"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -132,7 +132,7 @@ export default function AlgorithmsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-lg text-center hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg p-6 shadow-lg text-center hover:shadow-xl transition-shadow text-gray-700"
             >
               <div className="text-blue-600 mb-4 flex justify-center">
                 {feature.icon}
@@ -148,11 +148,11 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-16"
+          className="mb-16 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">Explore Algorithm Categories</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-700">
             {algorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -160,9 +160,9 @@ export default function AlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative"
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative text-gray-700"
               >
-                <div className="absolute top-4 right-4 z-20">
+                <div className="absolute top-4 right-4 z-20 text-gray-700">
                   <BookmarkButton 
                     topicId={algorithm.id}
                     topicType="overview"
@@ -173,23 +173,23 @@ export default function AlgorithmsPage() {
                 </div>
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-24 flex items-center justify-center`}>
-                    <span className="text-4xl">{algorithm.icon}</span>
+                    <span className="text-4xl text-gray-600">{algorithm.icon}</span>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="p-6 text-gray-700">
+                    <div className="flex items-center justify-between mb-2 text-gray-700">
                       <h3 className="text-xl font-bold text-slate-800">{algorithm.name}</h3>
                       <ProgressIndicator 
                         topicId={algorithm.id}
                         topicType="overview" 
                         category={algorithm.category}
                         title={algorithm.name}
-                        className="w-6 h-6"
+                        className="w-6 h-6 text-gray-700"
                       />
                     </div>
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     <div className="flex justify-between items-center text-xs text-slate-500">
-                      <span className="bg-gray-100 px-2 py-1 rounded">{algorithm.complexity}</span>
-                      <span className="bg-gray-100 px-2 py-1 rounded">{algorithm.difficulty}</span>
+                      <span className="bg-gray-100 px-2 py-1 rounded text-gray-600">{algorithm.complexity}</span>
+                      <span className="bg-gray-100 px-2 py-1 rounded text-gray-600">{algorithm.difficulty}</span>
                     </div>
                   </div>
                 </Link>
@@ -203,40 +203,40 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-16"
+          className="bg-white rounded-lg shadow-lg p-8 mb-16 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-center text-slate-700">
             Big O Complexity Chart
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-red-600 mb-4">Common Time Complexities</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+              <div className="space-y-2 text-gray-700">
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(1)</span>
                   <span className="text-green-700 font-semibold">Excellent</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200">
+                <div className="flex justify-between items-center p-2 bg-green-50 rounded border border-green-200 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(log n)</span>
                   <span className="text-green-700 font-semibold">Good</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded border border-yellow-300">
+                <div className="flex justify-between items-center p-2 bg-yellow-50 rounded border border-yellow-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n)</span>
                   <span className="text-yellow-700 font-semibold">Fair</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-orange-50 rounded border border-orange-300">
+                <div className="flex justify-between items-center p-2 bg-orange-50 rounded border border-orange-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n log n)</span>
                   <span className="text-orange-700 font-semibold">Bad</span>
                 </div>
-                <div className="flex justify-between items-center p-2 bg-red-50 rounded border border-red-300">
+                <div className="flex justify-between items-center p-2 bg-red-50 rounded border border-red-300 text-gray-700">
                   <span className="font-mono font-semibold text-gray-800">O(n²)</span>
                   <span className="text-red-700 font-semibold">Horrible</span>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold  mb-4"style={{ color: Colors.accent }}>Algorithm Examples</h3>
-              <div className="space-y-2 text-sm">
+              <h3 className="text-lg font-semibold  mb-4 text-gray-800"style={{ color: Colors.accent }}>Algorithm Examples</h3>
+              <div className="space-y-2 text-sm text-gray-600">
                 <div className="p-2 border-l-4 border-green-500 text-green-500">
                   <strong>O(1):</strong> Array access, Hash table lookup
                 </div>
@@ -262,26 +262,26 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Recommended Learning Path</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Recommended Learning Path</h2>
+          <p className="text-xl mb-8 opacity-90 text-gray-700">
             Start with sorting and searching, then progress to more complex algorithms
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 text-gray-700">
             <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
               1. Sorting & Searching
             </span>
-            <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
+            <ArrowRight className="h-6 w-6 mt-2 opacity-70 text-gray-700" />
             <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-700">
               2. Graph Algorithms
             </span>
-            <ArrowRight className="h-6 w-6 mt-2 opacity-70" />
+            <ArrowRight className="h-6 w-6 mt-2 opacity-70 text-gray-700" />
             <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm text-yellow-600">
               3. Dynamic Programming
             </span>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 text-gray-700">
             <Link href="/algorithms/sorting" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Start Learning →
             </Link>

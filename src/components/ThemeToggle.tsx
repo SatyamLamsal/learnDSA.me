@@ -82,7 +82,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
             className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs rounded whitespace-nowrap"
           >
             {isDark ? 'Dark Mode' : 'Light Mode'}
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-gray-900 dark:border-b-gray-100"></div>
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-gray-900 dark:border-b-gray-100 text-gray-700"></div>
           </motion.div>
         )}
       </div>
@@ -122,15 +122,15 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         }}
       >
         {isDark ? (
-          <Sun size={iconSizes[size]} className="drop-shadow-sm" />
+          <Sun size={iconSizes[size]} className="drop-shadow-sm text-gray-700" />
         ) : (
-          <Moon size={iconSizes[size]} className="drop-shadow-sm" />
+          <Moon size={iconSizes[size]} className="drop-shadow-sm text-gray-700" />
         )}
       </motion.div>
       
       {/* Subtle glow effect */}
       <motion.div
-        className="absolute inset-0 rounded-lg bg-white opacity-0"
+        className="absolute inset-0 rounded-lg bg-white opacity-0 text-gray-700"
         animate={{ opacity: isDark ? 0.1 : 0 }}
         transition={{ duration: 0.3 }}
       />
@@ -169,7 +169,7 @@ export const ThemeSelector: React.FC<{ className?: string }> = ({ className = ''
           initial={{ opacity: 0, y: -10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -10, scale: 0.95 }}
-          className="absolute top-full mt-2 right-0 w-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50"
+          className="absolute top-full mt-2 right-0 w-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 text-gray-100"
         >
           {options.map(({ value, label, icon: Icon }) => (
             <button
@@ -192,7 +192,7 @@ export const ThemeSelector: React.FC<{ className?: string }> = ({ className = ''
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="w-2 h-2 bg-blue-500 rounded-full ml-auto"
+                  className="w-2 h-2 bg-blue-500 rounded-full ml-auto text-gray-700"
                 />
               )}
             </button>
@@ -202,7 +202,7 @@ export const ThemeSelector: React.FC<{ className?: string }> = ({ className = ''
       
       {isOpen && (
         <div
-          className="fixed inset-0 z-40"
+          className="fixed inset-0 z-40 text-gray-700"
           onClick={() => setIsOpen(false)}
         />
       )}

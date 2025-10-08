@@ -37,18 +37,18 @@ end procedure`,
   } as const;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 text-gray-700">
           <Link href="/data-structures/queues" className="inline-flex items-center text-yellow-600 hover:text-yellow-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Queues Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800">Queues Pseudocode</h1>
           <p className="text-lg text-slate-600 mt-2">Core queue operations and circular queue logic.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <PseudocodeBlock title="Enqueue" code={examples.enqueue} />
           </motion.div>
@@ -64,7 +64,7 @@ end procedure`,
         </div>
 
         <div className="mt-10 text-sm text-gray-600 flex items-center gap-2">
-          <BookOpen className="h-4 w-4" />
+          <BookOpen className="h-4 w-4 text-gray-700" />
           <span>See theory and interactive practice from the Queues page.</span>
         </div>
       </div>

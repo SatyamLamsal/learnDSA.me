@@ -487,17 +487,17 @@ const GraphSimulation: React.FC = () => {
   const currentMessage = algorithmSteps[currentStep - 1]?.message || '';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/data-structures/graphs" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Graphs Overview
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Graph Algorithm Simulation</h1>
@@ -506,13 +506,13 @@ const GraphSimulation: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Algorithm Selection */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Algorithm</h3>
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 {(['BFS', 'DFS', 'Dijkstra'] as const).map(algo => (
                   <button
                     key={algo}
@@ -526,10 +526,10 @@ const GraphSimulation: React.FC = () => {
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
-                    <div className="flex items-center justify-center">
-                      {algo === 'BFS' && <Shuffle className="h-4 w-4 mr-2" />}
-                      {algo === 'DFS' && <TreePine className="h-4 w-4 mr-2" />}
-                      {algo === 'Dijkstra' && <Target className="h-4 w-4 mr-2" />}
+                    <div className="flex items-center justify-center text-gray-700">
+                      {algo === 'BFS' && <Shuffle className="h-4 w-4 mr-2 text-gray-700" />}
+                      {algo === 'DFS' && <TreePine className="h-4 w-4 mr-2 text-gray-700" />}
+                      {algo === 'Dijkstra' && <Target className="h-4 w-4 mr-2 text-gray-700" />}
                       {algo}
                     </div>
                   </button>
@@ -539,10 +539,10 @@ const GraphSimulation: React.FC = () => {
 
             {/* Algorithm Controls */}
             {algorithm !== 'None' && (
-              <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
                 
-                <div className="space-y-4">
+                <div className="space-y-4 text-gray-700">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Start Node
@@ -590,13 +590,13 @@ const GraphSimulation: React.FC = () => {
                     />
                   </div>
 
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 text-gray-700">
                     <button
                       onClick={startAlgorithm}
                       disabled={isPlaying}
-                      className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center"
+                      className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                     >
-                      <Play className="h-4 w-4 mr-2" />
+                      <Play className="h-4 w-4 mr-2 text-gray-700" />
                       Start
                     </button>
                     
@@ -605,14 +605,14 @@ const GraphSimulation: React.FC = () => {
                       disabled={algorithmSteps.length === 0}
                       className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                     >
-                      {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                      {isPlaying ? <Pause className="h-4 w-4 text-gray-700" /> : <Play className="h-4 w-4 text-gray-700" />}
                     </button>
                     
                     <button
                       onClick={resetAlgorithmState}
-                      className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+                      className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 text-white text-white text-white text-white"
                     >
-                      <RotateCcw className="h-4 w-4" />
+                      <RotateCcw className="h-4 w-4 text-gray-700" />
                     </button>
                   </div>
                 </div>
@@ -620,19 +620,19 @@ const GraphSimulation: React.FC = () => {
             )}
 
             {/* Graph Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Graph Controls</h3>
               
-              <div className="space-y-4">
-                <div className="flex space-x-2">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={() => setGraph(prev => ({ ...prev, directed: !prev.directed }))}
                     className={`flex-1 p-2 rounded-lg border-2 transition-all ${
                       graph.directed ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200'
                     }`}
                   >
-                    <GitBranch className="h-4 w-4 mx-auto" />
-                    <span className="text-xs block mt-1">Directed</span>
+                    <GitBranch className="h-4 w-4 mx-auto text-gray-700" />
+                    <span className="text-xs block mt-1 text-gray-600">Directed</span>
                   </button>
                   
                   <button
@@ -641,12 +641,12 @@ const GraphSimulation: React.FC = () => {
                       graph.weighted ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200'
                     }`}
                   >
-                    <span className="font-bold text-sm">W</span>
-                    <span className="text-xs block">Weighted</span>
+                    <span className="font-bold text-sm text-gray-600">W</span>
+                    <span className="text-xs block text-gray-600">Weighted</span>
                   </button>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 text-gray-700">
                   <label className="block text-sm font-medium text-gray-700">Mode</label>
                   <select
                     value={mode}
@@ -701,13 +701,13 @@ const GraphSimulation: React.FC = () => {
 
             {/* Algorithm State */}
             {algorithm !== 'None' && (
-              <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
                 <h3 className="text-lg font-semibold mb-4 text-gray-900">Algorithm State</h3>
                 
                 {algorithm === 'BFS' && queue.length > 0 && (
-                  <div className="mb-4">
+                  <div className="mb-4 text-gray-700">
                     <h4 className="font-medium text-sm text-gray-700 mb-2">Queue:</h4>
-                    <div className="flex space-x-1">
+                    <div className="flex space-x-1 text-gray-700">
                       {queue.map((nodeId, index) => (
                         <span
                           key={index}
@@ -721,9 +721,9 @@ const GraphSimulation: React.FC = () => {
                 )}
 
                 {algorithm === 'DFS' && stack.length > 0 && (
-                  <div className="mb-4">
+                  <div className="mb-4 text-gray-700">
                     <h4 className="font-medium text-sm text-gray-700 mb-2">Stack:</h4>
-                    <div className="flex flex-wrap space-x-1">
+                    <div className="flex flex-wrap space-x-1 text-gray-700">
                       {stack.map((nodeId, index) => (
                         <span
                           key={index}
@@ -737,13 +737,13 @@ const GraphSimulation: React.FC = () => {
                 )}
 
                 {algorithm === 'Dijkstra' && distances.size > 0 && (
-                  <div className="mb-4">
+                  <div className="mb-4 text-gray-700">
                     <h4 className="font-medium text-sm text-gray-700 mb-2">Distances:</h4>
-                    <div className="space-y-1">
+                    <div className="space-y-1 text-gray-700">
                       {Array.from(distances.entries()).map(([nodeId, distance]) => (
-                        <div key={nodeId} className="flex justify-between text-sm">
+                        <div key={nodeId} className="flex justify-between text-sm text-gray-600">
                           <span>{nodeId}:</span>
-                          <span className="font-mono">
+                          <span className="font-mono text-gray-600">
                             {distance === Infinity ? '∞' : distance}
                           </span>
                         </div>
@@ -755,7 +755,7 @@ const GraphSimulation: React.FC = () => {
                 {visitedOrder.length > 0 && (
                   <div>
                     <h4 className="font-medium text-sm text-gray-700 mb-2">Visited Order:</h4>
-                    <div className="flex flex-wrap space-x-1">
+                    <div className="flex flex-wrap space-x-1 text-gray-700">
                       {visitedOrder.map((nodeId, index) => (
                         <span
                           key={index}
@@ -769,7 +769,7 @@ const GraphSimulation: React.FC = () => {
                 )}
 
                 {currentMessage && (
-                  <div className="mt-4 p-3 bg-indigo-50 rounded-lg">
+                  <div className="mt-4 p-3 bg-indigo-50 rounded-lg text-gray-700">
                     <p className="text-sm text-indigo-800">{currentMessage}</p>
                   </div>
                 )}
@@ -778,11 +778,11 @@ const GraphSimulation: React.FC = () => {
           </div>
 
           {/* Graph Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Graph Visualization</h3>
               
-              <div className="relative">
+              <div className="relative text-gray-700">
                 <svg
                   width="100%"
                   height="600"
@@ -850,7 +850,7 @@ const GraphSimulation: React.FC = () => {
                               fill={isHighlighted ? '#ef4444' : '#ef4444'}
                               fontSize="12"
                               fontWeight="bold"
-                              className="bg-white"
+                              className="bg-white text-gray-700"
                             >
                               {edge.weight}
                             </text>
@@ -921,26 +921,26 @@ const GraphSimulation: React.FC = () => {
                 </svg>
 
                 {/* Legend */}
-                <div className="absolute top-4 right-4 bg-white bg-opacity-90 p-3 rounded-lg text-sm">
-                  <h4 className="font-semibold mb-2">Legend</h4>
-                  <div className="space-y-1">
-                    <div className="flex items-center">
-                      <div className="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
+                <div className="absolute top-4 right-4 bg-white bg-opacity-90 p-3 rounded-lg text-sm text-gray-600">
+                  <h4 className="font-semibold mb-2 text-gray-800">Legend</h4>
+                  <div className="space-y-1 text-gray-700">
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full mr-2 text-gray-700"></div>
                       <span>Start Node</span>
                     </div>
                     {algorithm === 'Dijkstra' && (
-                      <div className="flex items-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
+                      <div className="flex items-center text-gray-700">
+                        <div className="w-4 h-4 bg-red-500 rounded-full mr-2 text-gray-700"></div>
                         <span>End Node</span>
                       </div>
                     )}
-                    <div className="flex items-center">
-                      <div className="w-4 h-4 bg-purple-500 rounded-full mr-2"></div>
+                    <div className="flex items-center text-gray-700">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full mr-2 text-gray-700"></div>
                       <span>Visited</span>
                     </div>
                     {algorithm === 'Dijkstra' && (
-                      <div className="flex items-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+                      <div className="flex items-center text-gray-700">
+                        <div className="w-4 h-4 bg-green-500 rounded-full mr-2 text-gray-700"></div>
                         <span>Shortest Path</span>
                       </div>
                     )}
@@ -949,7 +949,7 @@ const GraphSimulation: React.FC = () => {
               </div>
 
               {/* Instructions */}
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg text-gray-700">
                 <h4 className="font-semibold text-blue-800 mb-2">Instructions</h4>
                 <ul className="text-sm text-blue-700 space-y-1">
                   <li>• Select an algorithm and click &quot;Start&quot; to see the step-by-step execution</li>
@@ -969,22 +969,22 @@ const GraphSimulation: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/data-structures/graphs/theory"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Theory
           </Link>
           
           <Link
             href="/data-structures/hash-tables"
-            className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-gray-100"
           >
             Next: Hash Tables
-            <ArrowLeft className="h-5 w-5 ml-2 rotate-180" />
+            <ArrowLeft className="h-5 w-5 ml-2 rotate-180 text-gray-700" />
           </Link>
         </motion.div>
       </div>

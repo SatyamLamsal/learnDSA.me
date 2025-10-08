@@ -124,17 +124,17 @@ const comparisonData = [
 
 export default function SortingAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Sorting Algorithms</h1>
@@ -149,19 +149,19 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="grid md:grid-cols-3 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <BarChart3 className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Comparison-Based</h3>
             <p className="text-slate-600">Algorithms that sort by comparing elements with each other</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Shuffle className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Non-Comparison</h3>
             <p className="text-slate-600">Algorithms that sort without direct element comparisons</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Zap className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-800 mb-2">Hybrid Approaches</h3>
             <p className="text-slate-600">Algorithms that combine multiple sorting strategies</p>
@@ -173,10 +173,10 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Choose Your Sorting Algorithm</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {sortingAlgorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -184,27 +184,27 @@ export default function SortingAlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center`}>
-                    <h3 className="text-xl font-bold text-white">{algorithm.name}</h3>
+                    <h3 className="text-xl font-bold text-white text-gray-800">{algorithm.name}</h3>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Time:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-gray-700">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-gray-700">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -219,8 +219,8 @@ export default function SortingAlgorithmsPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="mb-2">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-green-700">Pros:</span>
                         <ul className="text-xs text-slate-600 mt-1">
                           {algorithm.pros.slice(0, 2).map((pro, i) => (
@@ -249,13 +249,13 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Time Complexity Comparison</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="border-b-2 border-gray-200">
+                <tr className="border-b-2 border-gray-200 text-gray-700">
                   <th className="text-left p-3 font-semibold text-slate-700">Case</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Bubble</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Selection</th>
@@ -267,9 +267,9 @@ export default function SortingAlgorithmsPage() {
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100 text-gray-700">
                     <td className="p-3 font-medium text-slate-800">{row.name}</td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.bubble.includes('n²') ? 'bg-red-100 text-red-800' : 
                         row.bubble.includes('log') ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
@@ -277,27 +277,27 @@ export default function SortingAlgorithmsPage() {
                         {row.bubble}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-red-100 text-red-800">{row.selection}</span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.insertion.includes('n²') ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {row.insertion}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-yellow-100 text-yellow-800">{row.merge}</span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.quick.includes('n²') ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
                       }`}>
                         {row.quick}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-yellow-100 text-yellow-800">{row.heap}</span>
                     </td>
                   </tr>
@@ -312,34 +312,34 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">When to Use Each Algorithm</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="border-l-4 border-green-500 pl-4">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-green-700 mb-2">Small Datasets (n &lt; 50)</h3>
                 <p className="text-sm text-slate-600">Use <strong>Insertion Sort</strong> - Simple, efficient for small arrays, adaptive</p>
               </div>
-              <div className="border-l-4 border-blue-500 pl-4">
+              <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-blue-700 mb-2">Large Datasets (General Purpose)</h3>
                 <p className="text-sm text-slate-600">Use <strong>Quick Sort</strong> or <strong>Merge Sort</strong> - Excellent average performance</p>
               </div>
-              <div className="border-l-4 border-purple-500 pl-4">
+              <div className="border-l-4 border-purple-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-purple-700 mb-2">Guaranteed O(n log n)</h3>
                 <p className="text-sm text-slate-600">Use <strong>Merge Sort</strong> or <strong>Heap Sort</strong> - No worst-case scenarios</p>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="border-l-4 border-orange-500 pl-4">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-orange-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-orange-700 mb-2">Integers in Range</h3>
                 <p className="text-sm text-slate-600">Use <strong>Counting Sort</strong> or <strong>Radix Sort</strong> - Linear time complexity</p>
               </div>
-              <div className="border-l-4 border-red-500 pl-4">
+              <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-red-700 mb-2">Stability Required</h3>
                 <p className="text-sm text-slate-600">Use <strong>Merge Sort</strong>, <strong>Insertion Sort</strong>, or counting-based sorts</p>
               </div>
-              <div className="border-l-4 border-gray-500 pl-4">
+              <div className="border-l-4 border-gray-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-gray-700 mb-2">Memory Constrained</h3>
                 <p className="text-sm text-slate-600">Use <strong>Quick Sort</strong> or <strong>Heap Sort</strong> - In-place sorting</p>
               </div>
@@ -352,19 +352,19 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Ready to Practice?</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Ready to Practice?</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Try our interactive sorting visualizer to see algorithms in action
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/sorting/visualizer" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              <Play className="h-5 w-5 inline mr-2" />
+              <Play className="h-5 w-5 inline mr-2 text-gray-700" />
               Interactive Visualizer
             </Link>
             <Link href="/algorithms/sorting/bubble-sort" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with Bubble Sort
             </Link>
           </div>
@@ -375,22 +375,22 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           
           <Link
             href="/algorithms/searching"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Searching Algorithms
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

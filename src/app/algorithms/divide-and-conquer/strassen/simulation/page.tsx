@@ -73,9 +73,9 @@ function buildFrames(A:number[][], B:number[][]):Frame[]{
 
 function MatView({M,label,highlight}:{M:number[][]; label:string; highlight?:boolean;}){
   return <div className={`inline-block mr-4 mb-4 rounded border ${highlight? 'border-indigo-500 bg-indigo-50':'border-gray-300 bg-white'} shadow-sm`}>
-    <div className="text-[10px] font-semibold px-2 py-1 bg-gray-100 rounded-t">{label}</div>
-    <table className="text-[11px] font-mono">
-      <tbody>{M.map((r,i)=><tr key={i}>{r.map((v,j)=><td key={j} className="px-2 py-1 border border-gray-200 text-center">{v}</td>)}</tr>)}</tbody>
+    <div className="text-[10px] font-semibold px-2 py-1 bg-gray-100 rounded-t text-gray-800">{label}</div>
+    <table className="text-[11px] font-mono text-gray-700">
+      <tbody>{M.map((r,i)=><tr key={i}>{r.map((v,j)=><td key={j} className="px-2 py-1 border border-gray-200 text-center text-gray-700">{v}</td>)}</tr>)}</tbody>
     </table>
   </div>;
 }
@@ -94,19 +94,19 @@ export default function StrassenSimulation(){
 
   const f=frames[index];
 
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-violet-50">
-    <div className="container mx-auto px-4 py-16 max-w-7xl">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-violet-50 text-gray-700">
+    <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-12">
-        <Link href="/algorithms/divide-and-conquer/strassen" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-12 text-gray-700">
+        <Link href="/algorithms/divide-and-conquer/strassen" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Overview</Link>
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-800 mb-5">Strassen Simulation</h1>
         <p className="text-xl text-slate-600 max-w-4xl leading-relaxed">Interactively observe computation of M1..M7 and how they recombine to form the result matrix.</p>
       </motion.div>
 
       {/* Controls */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-10">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.05}} className="bg-white rounded-2xl shadow-xl p-8 mb-10 text-gray-700">
         <h2 className="text-2xl font-bold text-slate-800 mb-5">Controls</h2>
-        <div className="flex flex-wrap gap-4 items-end">
+        <div className="flex flex-wrap gap-4 items-end text-gray-700">
           <div>
             <label className="text-xs font-semibold text-slate-600">Size</label>
             <select value={size} onChange={e=> { const v=Number(e.target.value); setSize(v); setA(randMatrix(v)); setB(randMatrix(v)); setIndex(0); setPlaying(false); }} className="text-sm border rounded px-2 py-2 ml-2 bg-white">
@@ -114,26 +114,26 @@ export default function StrassenSimulation(){
               <option value={4}>4x4</option>
             </select>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2"/>: <Play className="h-4 w-4 mr-2"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Prev</button>
-          <div className="text-xs font-mono bg-gray-100 px-3 py-2 rounded">{index+1}/{frames.length}</div>
+          <div className="text-xs font-mono bg-gray-100 px-3 py-2 rounded text-gray-600">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Next</button>
-          <button onClick={()=> { setA(randMatrix(size)); setB(randMatrix(size)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-violet-600 text-white hover:bg-violet-700 text-xs font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
-          <button onClick={()=> { setA(a=> [...a]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-purple-600 text-white hover:bg-purple-700 text-xs font-semibold shadow"><Shuffle className="h-4 w-4 mr-2"/>Rebuild</button>
+          <button onClick={()=> { setA(randMatrix(size)); setB(randMatrix(size)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-violet-600 text-white hover:bg-violet-700 text-xs font-semibold shadow"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+          <button onClick={()=> { setA(a=> [...a]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-purple-600 text-white hover:bg-purple-700 text-xs font-semibold shadow"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Rebuild</button>
         </div>
       </motion.div>
 
       {/* Visualization */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.1}} className="bg-white rounded-2xl shadow-xl p-8 mb-10">
-        <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Grid3x3 className="h-5 w-5"/> Matrices</h2>
-        <div className="flex flex-wrap mb-6">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.1}} className="bg-white rounded-2xl shadow-xl p-8 mb-10 text-gray-700">
+        <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Grid3x3 className="h-5 w-5 text-gray-700"/> Matrices</h2>
+        <div className="flex flex-wrap mb-6 text-gray-700">
           <MatView M={f.A} label="A" />
           <MatView M={f.B} label="B" />
           {f.C && <MatView M={f.C} label="C" highlight />}
         </div>
-        {f.M && <div className="mb-4">
+        {f.M && <div className="mb-4 text-gray-700">
           <h3 className="text-xs font-semibold uppercase mb-3 text-indigo-700">Intermediate Products</h3>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap text-gray-700">
             {Object.entries(f.M).map(([key,mat])=> <MatView key={key} M={mat} label={key} highlight={f.highlight===key} />)}
           </div>
         </div>}
@@ -141,28 +141,28 @@ export default function StrassenSimulation(){
       </motion.div>
 
       {/* Step Detail */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.15}} className="bg-white rounded-2xl shadow-xl p-8 mb-10">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Sigma className="h-5 w-5"/> Step Explanation</h2>
-        <div className="text-sm bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[120px]">{f.desc}</div>
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.15}} className="bg-white rounded-2xl shadow-xl p-8 mb-10 text-gray-700">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Sigma className="h-5 w-5 text-gray-700"/> Step Explanation</h2>
+        <div className="text-sm bg-gray-50 border border-gray-200 rounded p-5 leading-relaxed min-h-[120px] text-gray-600">{f.desc}</div>
       </motion.div>
 
       {/* Pseudocode */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.2}} className="bg-white rounded-2xl shadow-xl p-8 mb-10">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.2}} className="bg-white rounded-2xl shadow-xl p-8 mb-10 text-gray-700">
         <h2 className="text-2xl font-bold text-slate-800 mb-5">Pseudocode Reference</h2>
         <PseudocodeBlock code={(algo?.pseudocode||[]).join('\n')} />
       </motion.div>
 
       {/* Mechanism Notes */}
-      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.25}} className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+      <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.25}} className="bg-white rounded-2xl shadow-xl p-8 mb-12 text-gray-700">
         <h2 className="text-2xl font-bold text-slate-800 mb-4">Mechanism</h2>
         <p className="text-sm text-slate-700">Eight naive sub-matrix multiplications become seven via pre-combined sums/differences forming M1..M7; additional additions/subtractions are offset for large n. This visualization limits recursion depth for clarity (4x4 performs one split then 2x2 base).</p>
       </motion.div>
 
       {/* Navigation */}
-      <div className="flex justify-between items-center mt-4">
-        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/strassen/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-sm font-semibold">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-semibold">{next.name}<ArrowRight className="h-4 w-4 ml-2"/></Link>: <span/>}
+      <div className="flex justify-between items-center mt-4 text-gray-700">
+        {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/strassen/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-sm font-semibold text-gray-300">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

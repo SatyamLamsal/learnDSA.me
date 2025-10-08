@@ -39,9 +39,9 @@ const GraphTheoryPage: React.FC = () => {
     directed = false, 
     weighted = false 
   }) => (
-    <div className="bg-gray-50 rounded-lg p-6 border">
+    <div className="bg-gray-50 rounded-lg p-6 border text-gray-700">
       <h4 className="text-lg font-semibold text-center mb-4 text-gray-800">{title}</h4>
-      <div className="relative h-80 bg-white rounded border">
+      <div className="relative h-80 bg-white rounded border text-gray-700">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 320">
           {/* Define arrowhead marker for directed graphs */}
           <defs>
@@ -140,17 +140,17 @@ const GraphTheoryPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/data-structures/graphs" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Graphs Overview
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Graph Theory</h1>
@@ -160,20 +160,20 @@ const GraphTheoryPage: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-12 text-gray-700">
           {/* Basic Concepts */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <Network className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Fundamental Concepts</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">What is a Graph?</h3>
                 <div className="space-y-4 text-gray-700">
@@ -182,21 +182,21 @@ const GraphTheoryPage: React.FC = () => {
                     connected by edges. Unlike trees, graphs can have cycles and multiple paths between nodes.
                   </p>
                   
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
                     <h4 className="font-semibold text-blue-800 mb-2">Mathematical Definition:</h4>
-                    <p className="text-sm">
+                    <p className="text-sm text-gray-600">
                       A graph G = (V, E) where:
                     </p>
-                    <ul className="list-disc pl-4 text-sm mt-2 space-y-1">
+                    <ul className="list-disc pl-4 text-sm mt-2 space-y-1 text-gray-600">
                       <li><strong>V</strong> is a finite set of vertices</li>
                       <li><strong>E</strong> is a finite set of edges</li>
                       <li>Each edge connects two vertices</li>
                     </ul>
                   </div>
 
-                  <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="bg-green-50 p-4 rounded-lg text-gray-700">
                     <h4 className="font-semibold text-green-800 mb-2">Key Properties:</h4>
-                    <ul className="list-disc pl-4 text-sm space-y-1">
+                    <ul className="list-disc pl-4 text-sm space-y-1 text-gray-600">
                       <li>Can represent any binary relationship</li>
                       <li>May contain cycles</li>
                       <li>Multiple paths between nodes possible</li>
@@ -209,25 +209,25 @@ const GraphTheoryPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">Graph Terminology</h3>
                 <div className="space-y-3 text-gray-700">
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Vertex/Node:</strong> A fundamental unit representing an entity
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Edge:</strong> A connection between two vertices
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Adjacent:</strong> Two vertices connected by an edge
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Degree:</strong> Number of edges connected to a vertex
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Path:</strong> Sequence of vertices connected by edges
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Cycle:</strong> Path that starts and ends at the same vertex
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
                     <strong>Connected:</strong> Path exists between every pair of vertices
                   </div>
                 </div>
@@ -240,24 +240,24 @@ const GraphTheoryPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <GitBranch className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Types of Graphs</h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid md:grid-cols-3 gap-6 mb-8 text-gray-700">
               <GraphDiagram title="Undirected Graph" directed={false} weighted={false} />
               <GraphDiagram title="Directed Graph" directed={true} weighted={false} />
               <GraphDiagram title="Weighted Graph" directed={false} weighted={true} />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">By Direction</h3>
-                <div className="space-y-4">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
                     <h4 className="font-semibold text-blue-800 mb-2">Undirected Graph</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Edges have no direction. If vertex A is connected to B, then B is also connected to A.
@@ -267,7 +267,7 @@ const GraphTheoryPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 text-gray-700">
                     <h4 className="font-semibold text-purple-800 mb-2">Directed Graph (Digraph)</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Edges have direction. Connection from A to B doesn&apos;t imply B to A.
@@ -281,8 +281,8 @@ const GraphTheoryPage: React.FC = () => {
 
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">By Weight</h3>
-                <div className="space-y-4">
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-gray-700">
                     <h4 className="font-semibold text-green-800 mb-2">Unweighted Graph</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       All edges are equal. Only connection matters, not the &quot;cost&quot; of traversal.
@@ -292,7 +292,7 @@ const GraphTheoryPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-gray-700">
                     <h4 className="font-semibold text-yellow-800 mb-2">Weighted Graph</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Edges have weights representing cost, distance, time, or other metrics.
@@ -305,16 +305,16 @@ const GraphTheoryPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 grid md:grid-cols-3 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
+            <div className="mt-8 grid md:grid-cols-3 gap-4 text-gray-700">
+              <div className="bg-gray-50 p-4 rounded-lg text-center text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-2">Cyclic Graph</h4>
                 <p className="text-sm text-gray-600">Contains at least one cycle</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
+              <div className="bg-gray-50 p-4 rounded-lg text-center text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-2">Acyclic Graph</h4>
                 <p className="text-sm text-gray-600">No cycles present (DAG if directed)</p>
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg text-center">
+              <div className="bg-gray-50 p-4 rounded-lg text-center text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-2">Complete Graph</h4>
                 <p className="text-sm text-gray-600">Every vertex connected to every other</p>
               </div>
@@ -326,23 +326,23 @@ const GraphTheoryPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <Map className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Graph Representations</h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+            <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
                 <h3 className="text-lg font-semibold mb-3 text-blue-800">Adjacency Matrix</h3>
-                <div className="space-y-3 text-sm">
+                <div className="space-y-3 text-sm text-gray-600">
                   <p className="text-gray-700">
                     2D array where element [i][j] indicates if there&apos;s an edge between vertex i and j.
                   </p>
-                  <div className="bg-blue-100 p-3 rounded">
+                  <div className="bg-blue-100 p-3 rounded text-gray-700">
                     <h4 className="font-semibold text-blue-800 mb-1">Example Matrix:</h4>
-                    <div className="font-mono text-xs bg-white p-2 rounded border">
+                    <div className="font-mono text-xs bg-white p-2 rounded border text-gray-600">
                       <pre>{`    A B C D E
 A [ 0 1 1 0 0 ]
 B [ 1 0 1 1 0 ]
@@ -351,22 +351,22 @@ D [ 0 1 1 0 1 ]
 E [ 0 0 1 1 0 ]`}</pre>
                     </div>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-gray-700">
                     <p><strong>Pros:</strong> O(1) edge lookup, simple implementation</p>
                     <p><strong>Cons:</strong> O(V²) space, inefficient for sparse graphs</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+              <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-gray-700">
                 <h3 className="text-lg font-semibold mb-3 text-green-800">Adjacency List</h3>
-                <div className="space-y-3 text-sm">
+                <div className="space-y-3 text-sm text-gray-600">
                   <p className="text-gray-700">
                     Array of lists where each list contains neighbors of a vertex.
                   </p>
-                  <div className="bg-green-100 p-3 rounded">
+                  <div className="bg-green-100 p-3 rounded text-gray-700">
                     <h4 className="font-semibold text-green-800 mb-1">Example List:</h4>
-                    <div className="font-mono text-xs bg-white p-2 rounded border">
+                    <div className="font-mono text-xs bg-white p-2 rounded border text-gray-600">
                       <pre>{`A: [B, C]
 B: [A, C, D]
 C: [A, B, D, E]
@@ -374,22 +374,22 @@ D: [B, C, E]
 E: [C, D]`}</pre>
                     </div>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-gray-700">
                     <p><strong>Pros:</strong> O(V + E) space, efficient for sparse graphs</p>
                     <p><strong>Cons:</strong> O(V) edge lookup in worst case</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-purple-50 p-6 rounded-lg border border-purple-200">
+              <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 text-gray-700">
                 <h3 className="text-lg font-semibold mb-3 text-purple-800">Edge List</h3>
-                <div className="space-y-3 text-sm">
+                <div className="space-y-3 text-sm text-gray-600">
                   <p className="text-gray-700">
                     List of all edges, each represented as a pair (or triple for weighted graphs).
                   </p>
-                  <div className="bg-purple-100 p-3 rounded">
+                  <div className="bg-purple-100 p-3 rounded text-gray-700">
                     <h4 className="font-semibold text-purple-800 mb-1">Example List:</h4>
-                    <div className="font-mono text-xs bg-white p-2 rounded border">
+                    <div className="font-mono text-xs bg-white p-2 rounded border text-gray-600">
                       <pre>{`Edges:
 (A, B)
 (A, C)
@@ -400,7 +400,7 @@ E: [C, D]`}</pre>
 (D, E)`}</pre>
                     </div>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-gray-700">
                     <p><strong>Pros:</strong> O(E) space, simple for edge operations</p>
                     <p><strong>Cons:</strong> O(E) to find neighbors</p>
                   </div>
@@ -408,7 +408,7 @@ E: [C, D]`}</pre>
               </div>
             </div>
 
-            <div className="mt-6 bg-gray-50 p-4 rounded-lg">
+            <div className="mt-6 bg-gray-50 p-4 rounded-lg text-gray-700">
               <h4 className="font-semibold text-gray-800 mb-2">Implementation Example (JavaScript):</h4>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                 <pre>{`class Graph {
@@ -455,35 +455,35 @@ E: [C, D]`}</pre>
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <Search className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Graph Traversal Algorithms</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
                 <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center">
-                  <Shuffle className="h-5 w-5 mr-2" />
+                  <Shuffle className="h-5 w-5 mr-2 text-gray-700" />
                   Breadth-First Search (BFS)
                 </h3>
                 
-                <div className="space-y-4 text-sm">
+                <div className="space-y-4 text-sm text-gray-600">
                   <p className="text-gray-700">
                     Explores neighbors level by level, visiting all vertices at distance k before visiting vertices at distance k+1.
                   </p>
                   
-                  <div className="bg-blue-100 p-3 rounded">
+                  <div className="bg-blue-100 p-3 rounded text-gray-700">
                     <h4 className="font-semibold text-blue-800 mb-2">Algorithm Steps:</h4>
-                    <ol className="list-decimal pl-4 space-y-1 text-xs">
+                    <ol className="list-decimal pl-4 space-y-1 text-xs text-gray-600">
                       <li>Start from a source vertex</li>
                       <li>Add source to queue and mark as visited</li>
                       <li>While queue is not empty:</li>
-                      <li className="pl-4">• Dequeue a vertex</li>
-                      <li className="pl-4">• For each unvisited neighbor:</li>
-                      <li className="pl-8">- Mark as visited</li>
-                      <li className="pl-8">- Add to queue</li>
+                      <li className="pl-4 text-gray-700">• Dequeue a vertex</li>
+                      <li className="pl-4 text-gray-700">• For each unvisited neighbor:</li>
+                      <li className="pl-8 text-gray-700">- Mark as visited</li>
+                      <li className="pl-8 text-gray-700">- Add to queue</li>
                     </ol>
                   </div>
 
@@ -511,7 +511,7 @@ E: [C, D]`}</pre>
 }`}</pre>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-gray-700">
                     <p><strong>Time Complexity:</strong> O(V + E)</p>
                     <p><strong>Space Complexity:</strong> O(V)</p>
                     <p><strong>Use Cases:</strong> Shortest path (unweighted), level-order traversal</p>
@@ -519,24 +519,24 @@ E: [C, D]`}</pre>
                 </div>
               </div>
 
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+              <div className="bg-green-50 p-6 rounded-lg border border-green-200 text-gray-700">
                 <h3 className="text-xl font-semibold mb-4 text-green-800 flex items-center">
-                  <TreePine className="h-5 w-5 mr-2" />
+                  <TreePine className="h-5 w-5 mr-2 text-gray-700" />
                   Depth-First Search (DFS)
                 </h3>
                 
-                <div className="space-y-4 text-sm">
+                <div className="space-y-4 text-sm text-gray-600">
                   <p className="text-gray-700">
                     Explores as far as possible along each branch before backtracking. Goes deep before going wide.
                   </p>
                   
-                  <div className="bg-green-100 p-3 rounded">
+                  <div className="bg-green-100 p-3 rounded text-gray-700">
                     <h4 className="font-semibold text-green-800 mb-2">Algorithm Steps:</h4>
-                    <ol className="list-decimal pl-4 space-y-1 text-xs">
+                    <ol className="list-decimal pl-4 space-y-1 text-xs text-gray-600">
                       <li>Start from a source vertex</li>
                       <li>Mark current vertex as visited</li>
                       <li>For each unvisited neighbor:</li>
-                      <li className="pl-4">• Recursively call DFS</li>
+                      <li className="pl-4 text-gray-700">• Recursively call DFS</li>
                       <li>Backtrack when no unvisited neighbors</li>
                     </ol>
                   </div>
@@ -578,7 +578,7 @@ function DFSIterative(graph, start) {
 }`}</pre>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-1 text-gray-700">
                     <p><strong>Time Complexity:</strong> O(V + E)</p>
                     <p><strong>Space Complexity:</strong> O(V)</p>
                     <p><strong>Use Cases:</strong> Cycle detection, topological sorting, pathfinding</p>
@@ -593,50 +593,50 @@ function DFSIterative(graph, start) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <Route className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Advanced Graph Algorithms</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">Shortest Path Algorithms</h3>
-                <div className="space-y-4">
-                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-gray-700">
                     <h4 className="font-semibold text-yellow-800 mb-2 flex items-center">
-                      <Target className="h-4 w-4 mr-2" />
+                      <Target className="h-4 w-4 mr-2 text-gray-700" />
                       Dijkstra&apos;s Algorithm
                     </h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Finds shortest path from source to all vertices in weighted graphs with non-negative weights.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O((V + E) log V) with priority queue</p>
                       <p><strong>Space:</strong> O(V)</p>
                       <p><strong>Use:</strong> GPS navigation, network routing</p>
                     </div>
                   </div>
 
-                  <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                  <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-gray-700">
                     <h4 className="font-semibold text-red-800 mb-2">Bellman-Ford Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Handles negative weights and detects negative cycles. Slower but more versatile than Dijkstra&apos;s.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O(VE)</p>
                       <p><strong>Space:</strong> O(V)</p>
                       <p><strong>Use:</strong> Currency arbitrage, network optimization</p>
                     </div>
                   </div>
 
-                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 text-gray-700">
                     <h4 className="font-semibold text-purple-800 mb-2">Floyd-Warshall Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Finds shortest paths between all pairs of vertices. Uses dynamic programming approach.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O(V³)</p>
                       <p><strong>Space:</strong> O(V²)</p>
                       <p><strong>Use:</strong> All-pairs shortest path, transitive closure</p>
@@ -647,37 +647,37 @@ function DFSIterative(graph, start) {
 
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">Minimum Spanning Tree</h3>
-                <div className="space-y-4">
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                <div className="space-y-4 text-gray-700">
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-gray-700">
                     <h4 className="font-semibold text-green-800 mb-2">Kruskal&apos;s Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Finds MST by sorting edges and adding smallest edges that don&apos;t create cycles.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O(E log E)</p>
                       <p><strong>Space:</strong> O(V)</p>
                       <p><strong>Uses:</strong> Union-Find data structure</p>
                     </div>
                   </div>
 
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
                     <h4 className="font-semibold text-blue-800 mb-2">Prim&apos;s Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Builds MST by starting from a vertex and adding minimum weight edges to unvisited vertices.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O(E log V) with priority queue</p>
                       <p><strong>Space:</strong> O(V)</p>
                       <p><strong>Better for:</strong> Dense graphs</p>
                     </div>
                   </div>
 
-                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-gray-700">
                     <h4 className="font-semibold text-indigo-800 mb-2">Topological Sort</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Linear ordering of vertices in DAG such that for every directed edge (u,v), u comes before v.
                     </p>
-                    <div className="text-xs space-y-1">
+                    <div className="text-xs space-y-1 text-gray-600">
                       <p><strong>Time:</strong> O(V + E)</p>
                       <p><strong>Use:</strong> Task scheduling, dependency resolution</p>
                     </div>
@@ -692,17 +692,17 @@ function DFSIterative(graph, start) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 text-gray-700">
               <Users className="h-8 w-8 text-indigo-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Real-World Applications</h2>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-blue-800 mb-3 flex items-center">
-                  <Users className="h-5 w-5 mr-2" />
+                  <Users className="h-5 w-5 mr-2 text-gray-700" />
                   Social Networks
                 </h3>
                 <p className="text-sm text-gray-700 mb-3">
@@ -715,9 +715,9 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-green-100 to-green-200 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-green-100 to-green-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-green-800 mb-3 flex items-center">
-                  <Map className="h-5 w-5 mr-2" />
+                  <Map className="h-5 w-5 mr-2 text-gray-700" />
                   Navigation Systems
                 </h3>
                 <p className="text-sm text-gray-700 mb-3">
@@ -730,9 +730,9 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-purple-800 mb-3 flex items-center">
-                  <Network className="h-5 w-5 mr-2" />
+                  <Network className="h-5 w-5 mr-2 text-gray-700" />
                   Computer Networks
                 </h3>
                 <p className="text-sm text-gray-700 mb-3">
@@ -745,7 +745,7 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-yellow-800 mb-3">Web Crawling</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Search engines use graphs to model web page relationships and links.
@@ -757,7 +757,7 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-red-100 to-red-200 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-red-100 to-red-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-red-800 mb-3">Recommendation Systems</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Collaborative filtering, content recommendations, user behavior analysis.
@@ -769,7 +769,7 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-gray-700">
                 <h3 className="font-semibold text-indigo-800 mb-3">Game Development</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Pathfinding in games, AI decision trees, game state representation.
@@ -788,64 +788,64 @@ function DFSIterative(graph, start) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg p-8"
+            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg p-8 text-gray-700"
           >
-            <h2 className="text-3xl font-bold mb-6">Complexity Summary</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-800">Complexity Summary</h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 text-gray-700">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Graph Operations</h3>
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="font-semibold">Operation</div>
-                    <div className="font-semibold">Adj. List</div>
-                    <div className="font-semibold">Adj. Matrix</div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Graph Operations</h3>
+                <div className="bg-white bg-opacity-20 rounded-lg p-4 text-gray-700">
+                  <div className="grid grid-cols-3 gap-4 text-sm text-gray-600">
+                    <div className="font-semibold text-gray-800">Operation</div>
+                    <div className="font-semibold text-gray-800">Adj. List</div>
+                    <div className="font-semibold text-gray-800">Adj. Matrix</div>
                     
                     <div>Add Vertex</div>
-                    <div className="font-mono">O(1)</div>
-                    <div className="font-mono">O(V²)</div>
+                    <div className="font-mono text-gray-700">O(1)</div>
+                    <div className="font-mono text-gray-700">O(V²)</div>
                     
                     <div>Add Edge</div>
-                    <div className="font-mono">O(1)</div>
-                    <div className="font-mono">O(1)</div>
+                    <div className="font-mono text-gray-700">O(1)</div>
+                    <div className="font-mono text-gray-700">O(1)</div>
                     
                     <div>Check Edge</div>
-                    <div className="font-mono">O(V)</div>
-                    <div className="font-mono">O(1)</div>
+                    <div className="font-mono text-gray-700">O(V)</div>
+                    <div className="font-mono text-gray-700">O(1)</div>
                     
                     <div>Remove Vertex</div>
-                    <div className="font-mono">O(V + E)</div>
-                    <div className="font-mono">O(V²)</div>
+                    <div className="font-mono text-gray-700">O(V + E)</div>
+                    <div className="font-mono text-gray-700">O(V²)</div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Graph Algorithms</h3>
-                <div className="bg-white bg-opacity-20 rounded-lg p-4 space-y-3">
-                  <div className="flex justify-between">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Graph Algorithms</h3>
+                <div className="bg-white bg-opacity-20 rounded-lg p-4 space-y-3 text-gray-700">
+                  <div className="flex justify-between text-gray-700">
                     <span>BFS/DFS:</span>
-                    <span className="font-mono">O(V + E)</span>
+                    <span className="font-mono text-gray-600">O(V + E)</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Dijkstra&apos;s:</span>
-                    <span className="font-mono">O((V + E) log V)</span>
+                    <span className="font-mono text-gray-600">O((V + E) log V)</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Bellman-Ford:</span>
-                    <span className="font-mono">O(VE)</span>
+                    <span className="font-mono text-gray-600">O(VE)</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Floyd-Warshall:</span>
-                    <span className="font-mono">O(V³)</span>
+                    <span className="font-mono text-gray-600">O(V³)</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Kruskal&apos;s MST:</span>
-                    <span className="font-mono">O(E log E)</span>
+                    <span className="font-mono text-gray-600">O(E log E)</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Prim&apos;s MST:</span>
-                    <span className="font-mono">O(E log V)</span>
+                    <span className="font-mono text-gray-600">O(E log V)</span>
                   </div>
                 </div>
               </div>
@@ -857,22 +857,22 @@ function DFSIterative(graph, start) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex justify-between items-center"
+            className="flex justify-between items-center text-gray-700"
           >
             <Link
               href="/data-structures/graphs"
               className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
             >
-              <ArrowLeft className="h-5 w-5 mr-2" />
+              <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
               Back to Overview
             </Link>
             
             <Link
               href="/data-structures/graphs/simulation"
-              className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-gray-100"
             >
               Interactive Simulation
-              <SkipForward className="h-5 w-5 ml-2" />
+              <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
             </Link>
           </motion.div>
         </div>

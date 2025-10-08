@@ -24,12 +24,12 @@ const pseudocode = `PRIM(G=(V,E), w, start):
   return MST`;
 
 export default function PrimTheory(){
-  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
-  <div className="container max-w-screen-2xl mx-auto px-4 py-12">
-      <Link href="/algorithms/graph/prim" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Overview</Link>
+  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 text-gray-100">
+  <div className="container max-w-screen-2xl mx-auto px-4 py-12 text-gray-100">
+      <Link href="/algorithms/graph/prim" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-100"/>Overview</Link>
       <h1 className="text-3xl font-bold text-slate-800 mb-8 flex items-center gap-3"><TreePine className="h-8 w-8 text-emerald-600"/> Prim&apos;s Algorithm Theory</h1>
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-8">
+      <div className="grid lg:grid-cols-3 gap-8 text-gray-100">
+        <div className="lg:col-span-2 space-y-8 text-gray-100">
           <Section title="Problem" icon={<GitBranch className="h-6 w-6 text-emerald-600"/>}>
             <p className="text-sm text-slate-600 leading-relaxed">Given a connected, undirected, weighted graph G, construct a spanning tree of minimum total weight. If the graph is disconnected, Prim&apos;s run from one start vertex builds an MST for that component only (can repeat to get a minimum spanning forest).</p>
           </Section>
@@ -43,17 +43,17 @@ export default function PrimTheory(){
           </Section>
           <Section title="Data Structures" icon={<Layers className="h-6 w-6 text-emerald-600"/>}>
             <ul className="text-sm text-slate-600 space-y-2 leading-relaxed list-disc list-inside">
-              <li><span className="font-semibold">key[v]:</span> Weight of best edge connecting v to current tree (∞ if none).</li>
-              <li><span className="font-semibold">parent[v]:</span> Predecessor forming chosen MST edge.</li>
-              <li><span className="font-semibold">PQ:</span> Min-priority queue keyed by key[v] (supports decrease-key).</li>
-              <li><span className="font-semibold">inMST set:</span> Vertices already fixed (frontier boundary maintained implicitly by keys).</li>
+              <li><span className="font-semibold text-gray-100">key[v]:</span> Weight of best edge connecting v to current tree (∞ if none).</li>
+              <li><span className="font-semibold text-gray-100">parent[v]:</span> Predecessor forming chosen MST edge.</li>
+              <li><span className="font-semibold text-gray-100">PQ:</span> Min-priority queue keyed by key[v] (supports decrease-key).</li>
+              <li><span className="font-semibold text-gray-100">inMST set:</span> Vertices already fixed (frontier boundary maintained implicitly by keys).</li>
             </ul>
           </Section>
           <Section title="Pseudocode" icon={<Play className="h-6 w-6 text-emerald-600"/>}>
             <PseudocodeBlock code={pseudocode} />
           </Section>
           <Section title="Complexity" icon={<Cpu className="h-6 w-6 text-emerald-600"/>}>
-            <div className="grid md:grid-cols-3 gap-4 text-xs mb-4">
+            <div className="grid md:grid-cols-3 gap-4 text-xs mb-4 text-gray-300">
               <Metric color="emerald" label="Binary Heap" value="O(m log n)" />
               <Metric color="sky" label="Fib Heap" value="O(m + n log n)" />
               <Metric color="rose" label="Adj Matrix" value="O(n^2)" />
@@ -69,14 +69,14 @@ export default function PrimTheory(){
           </Section>
           <Section title="Edge Cases" icon={<AlertTriangle className="h-6 w-6 text-emerald-600"/>}>
             <ul className="text-sm text-slate-600 space-y-2 leading-relaxed list-disc list-inside">
-              <li><span className="font-semibold">Disconnected:</span> Need to restart from unvisited vertex to cover all components.</li>
-              <li><span className="font-semibold">Negative Weights:</span> Supported (no cycles added; minimal crossing edge logic unaffected).</li>
-              <li><span className="font-semibold">Parallel Edges:</span> Best one influences key updates naturally.</li>
-              <li><span className="font-semibold">Self-loops:</span> Ignored (never connect new vertex).</li>
+              <li><span className="font-semibold text-gray-100">Disconnected:</span> Need to restart from unvisited vertex to cover all components.</li>
+              <li><span className="font-semibold text-gray-100">Negative Weights:</span> Supported (no cycles added; minimal crossing edge logic unaffected).</li>
+              <li><span className="font-semibold text-gray-100">Parallel Edges:</span> Best one influences key updates naturally.</li>
+              <li><span className="font-semibold text-gray-100">Self-loops:</span> Ignored (never connect new vertex).</li>
             </ul>
           </Section>
         </div>
-        <div className="space-y-8">
+        <div className="space-y-8 text-gray-100">
           <SideSummary />
           <Navigation />
         </div>
@@ -86,7 +86,7 @@ export default function PrimTheory(){
 }
 
 function Section({title,icon,children}:{title:string;icon:React.ReactNode;children:React.ReactNode}){
-  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6">
+  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2">{icon}{title}</h2>
     {children}
   </motion.div>;
@@ -96,12 +96,12 @@ function Metric({color,label,value}:{color:string;label:string;value:string}){
   const map:Record<string,string>={emerald:'emerald',sky:'sky',rose:'rose'}; const c = map[color] || 'emerald';
   return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}>
     <div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div>
-    <div className="font-mono">{value}</div>
+    <div className="font-mono text-gray-100">{value}</div>
   </div>;
 }
 
 function SideSummary(){
-  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6">
+  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-4">Summary</h2>
     <ul className="text-sm text-slate-600 space-y-2">
       <li>Greedy cut expansion</li>
@@ -114,12 +114,12 @@ function SideSummary(){
 }
 
 function Navigation(){
-  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6">
+  return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-4">Explore</h2>
-    <div className="flex flex-col gap-3">
-      <Link href="/algorithms/graph/prim/simulation" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700">Simulation <ArrowRight className="h-5 w-5 ml-2"/></Link>
+    <div className="flex flex-col gap-3 text-gray-100">
+      <Link href="/algorithms/graph/prim/simulation" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 text-gray-100">Simulation <ArrowRight className="h-5 w-5 ml-2 text-gray-100"/></Link>
       <Link href="/algorithms/graph/prim" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-slate-700 font-semibold hover:bg-gray-300">Overview</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-900">All Graph Algorithms</Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-900 text-gray-100">All Graph Algorithms</Link>
     </div>
   </motion.div>;
 }

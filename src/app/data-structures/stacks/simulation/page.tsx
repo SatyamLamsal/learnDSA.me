@@ -136,41 +136,41 @@ export default function StacksSimulationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/data-structures/stacks" className="inline-flex items-center text-stacks hover:text-green-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Stacks Overview
           </Link>
-          <h1 className="text-4xl font-bold text-heading-primary mb-4">Interactive Stack Simulation</h1>
-          <p className="text-xl text-secondary max-w-4xl leading-relaxed">
+          <h1 className="text-4xl font-bold text-heading-primary mb-4 text-slate-800">Interactive Stack Simulation</h1>
+          <p className="text-xl text-secondary max-w-4xl leading-relaxed text-gray-700">
             Visualize stack operations in real-time. Practice push, pop, and peek operations to understand 
             the Last-In-First-Out (LIFO) principle.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
           {/* Controls Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 text-gray-700"
           >
-            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4">
-              <h2 className="text-2xl font-semibold text-heading-primary mb-6">Controls</h2>
+            <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4 text-gray-700">
+              <h2 className="text-2xl font-semibold text-heading-primary mb-6 text-slate-800">Controls</h2>
               
               {/* Manual Operations */}
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 text-gray-700">
                 <div>
-                  <label className="block text-sm font-medium text-secondary mb-2">
+                  <label className="block text-sm font-medium text-secondary mb-2 text-gray-600">
                     Element to Push
                   </label>
                   <input
@@ -184,53 +184,53 @@ export default function StacksSimulationPage() {
                   />
                 </div>
                 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2 text-gray-700">
                   <button
                     onClick={() => pushToStack()}
                     disabled={isAnimating || !inputValue.trim() || stack.length >= maxSize}
                     className="flex items-center justify-center px-4 py-2 bg-stacks text-white rounded-lg hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                   >
-                    <Plus className="h-4 w-4 mr-1" />
+                    <Plus className="h-4 w-4 mr-1 text-gray-700" />
                     Push
                   </button>
                   
                   <button
                     onClick={popFromStack}
                     disabled={isAnimating || stack.length === 0}
-                    className="flex items-center justify-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center justify-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white"
                   >
-                    <Minus className="h-4 w-4 mr-1" />
+                    <Minus className="h-4 w-4 mr-1 text-gray-700" />
                     Pop
                   </button>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2 text-gray-700">
                   <button
                     onClick={peekAtTop}
                     disabled={isAnimating || stack.length === 0}
-                    className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white"
                   >
-                    <Eye className="h-4 w-4 mr-1" />
+                    <Eye className="h-4 w-4 mr-1 text-gray-700" />
                     Peek
                   </button>
                   
                   <button
                     onClick={clearStack}
                     disabled={isAnimating}
-                    className="flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white"
                   >
-                    <RotateCcw className="h-4 w-4 mr-1" />
+                    <RotateCcw className="h-4 w-4 mr-1 text-gray-700" />
                     Clear
                   </button>
                 </div>
               </div>
 
               {/* Auto-play Controls */}
-              <div className="border-t pt-6">
-                <h3 className="text-lg font-semibold text-heading-secondary mb-4">Auto-play Demo</h3>
-                <div className="space-y-4">
+              <div className="border-t pt-6 text-gray-700">
+                <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-gray-800">Auto-play Demo</h3>
+                <div className="space-y-4 text-gray-700">
                   <div>
-                    <label className="block text-sm font-medium text-secondary mb-2">
+                    <label className="block text-sm font-medium text-secondary mb-2 text-gray-600">
                       Speed: {playbackSpeed}ms
                     </label>
                     <input
@@ -251,12 +251,12 @@ export default function StacksSimulationPage() {
                   >
                     {autoPlay ? (
                       <>
-                        <Pause className="h-4 w-4 mr-2" />
+                        <Pause className="h-4 w-4 mr-2 text-gray-700" />
                         Stop Demo
                       </>
                     ) : (
                       <>
-                        <Play className="h-4 w-4 mr-2" />
+                        <Play className="h-4 w-4 mr-2 text-gray-700" />
                         Start Demo
                       </>
                     )}
@@ -265,24 +265,24 @@ export default function StacksSimulationPage() {
               </div>
 
               {/* Stack Info */}
-              <div className="border-t pt-6">
-                <h3 className="text-lg font-semibold text-heading-secondary mb-4">Stack Info</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-secondary">Size:</span>
-                    <span className="font-medium">{stack.length}</span>
+              <div className="border-t pt-6 text-gray-700">
+                <h3 className="text-lg font-semibold text-heading-secondary mb-4 text-gray-800">Stack Info</h3>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex justify-between text-gray-700">
+                    <span className="text-secondary text-gray-600">Size:</span>
+                    <span className="font-medium text-gray-600">{stack.length}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary">Capacity:</span>
-                    <span className="font-medium">{maxSize}</span>
+                  <div className="flex justify-between text-gray-700">
+                    <span className="text-secondary text-gray-600">Capacity:</span>
+                    <span className="font-medium text-gray-600">{maxSize}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary">Is Empty:</span>
-                    <span className="font-medium">{stack.length === 0 ? 'Yes' : 'No'}</span>
+                  <div className="flex justify-between text-gray-700">
+                    <span className="text-secondary text-gray-600">Is Empty:</span>
+                    <span className="font-medium text-gray-600">{stack.length === 0 ? 'Yes' : 'No'}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-secondary">Is Full:</span>
-                    <span className="font-medium">{stack.length >= maxSize ? 'Yes' : 'No'}</span>
+                  <div className="flex justify-between text-gray-700">
+                    <span className="text-secondary text-gray-600">Is Full:</span>
+                    <span className="font-medium text-gray-600">{stack.length >= maxSize ? 'Yes' : 'No'}</span>
                   </div>
                 </div>
               </div>
@@ -294,10 +294,10 @@ export default function StacksSimulationPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 text-gray-700"
           >
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-semibold text-heading-primary mb-6 text-center">Stack Visualization</h2>
+            <div className="bg-white rounded-lg shadow-lg p-8 text-gray-700">
+              <h2 className="text-2xl font-semibold text-heading-primary mb-6 text-center text-slate-800">Stack Visualization</h2>
               
               {/* Current Operation Display */}
               {currentOperation && (
@@ -310,32 +310,32 @@ export default function StacksSimulationPage() {
                       : 'bg-green-50 border border-green-200 text-green-700'
                   }`}
                 >
-                  <div className="flex items-center">
+                  <div className="flex items-center text-gray-700">
                     {(currentOperation.includes('Overflow') || currentOperation.includes('Underflow') || currentOperation.includes('empty')) && (
-                      <AlertCircle className="h-5 w-5 mr-2" />
+                      <AlertCircle className="h-5 w-5 mr-2 text-gray-700" />
                     )}
-                    <span className="font-medium">{currentOperation}</span>
+                    <span className="font-medium text-gray-600">{currentOperation}</span>
                   </div>
                 </motion.div>
               )}
 
               {/* Stack Container */}
-              <div className="flex flex-col items-center">
-                <div className="text-sm text-secondary mb-2 font-medium">TOP</div>
+              <div className="flex flex-col items-center text-gray-700">
+                <div className="text-sm text-secondary mb-2 font-medium text-gray-600">TOP</div>
                 
-                <div className="relative bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-4 min-h-[400px] w-full max-w-md">
+                <div className="relative bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-4 min-h-[400px] w-full max-w-md text-gray-700">
                   <AnimatePresence>
                     {stack.length === 0 ? (
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute inset-0 flex items-center justify-center text-secondary"
+                        className="absolute inset-0 flex items-center justify-center text-secondary text-gray-700"
                       >
                         Stack is empty
                       </motion.div>
                     ) : (
-                      <div className="space-y-2">
+                      <div className="space-y-2 text-gray-700">
                         {stack.map((item, index) => (
                           <motion.div
                             key={item.id}
@@ -370,16 +370,16 @@ export default function StacksSimulationPage() {
                   </AnimatePresence>
                 </div>
                 
-                <div className="text-sm text-secondary mt-2 font-medium">BOTTOM</div>
+                <div className="text-sm text-secondary mt-2 font-medium text-gray-600">BOTTOM</div>
               </div>
 
               {/* Stack Capacity Indicator */}
-              <div className="mt-6">
-                <div className="flex justify-between text-sm text-secondary mb-2">
+              <div className="mt-6 text-gray-700">
+                <div className="flex justify-between text-sm text-secondary mb-2 text-gray-600">
                   <span>Capacity Usage</span>
                   <span>{stack.length}/{maxSize}</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-200 rounded-full h-2 text-gray-700">
                   <motion.div
                     className={`h-2 rounded-full transition-all duration-300 ${
                       stack.length >= maxSize ? 'bg-red-500' : 
@@ -393,16 +393,16 @@ export default function StacksSimulationPage() {
 
               {/* Operation History */}
               {operationHistory.length > 0 && (
-                <div className="mt-6">
-                  <h3 className="text-lg font-semibold text-heading-secondary mb-3">Operation History</h3>
-                  <div className="bg-gray-50 rounded-lg p-4 max-h-32 overflow-y-auto">
-                    <div className="space-y-1">
+                <div className="mt-6 text-gray-700">
+                  <h3 className="text-lg font-semibold text-heading-secondary mb-3 text-gray-800">Operation History</h3>
+                  <div className="bg-gray-50 rounded-lg p-4 max-h-32 overflow-y-auto text-gray-700">
+                    <div className="space-y-1 text-gray-700">
                       {operationHistory.slice(-5).map((operation, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          className="text-sm text-secondary"
+                          className="text-sm text-secondary text-gray-600"
                         >
                           {operationHistory.length - 4 + index}. {operation}
                         </motion.div>
@@ -420,25 +420,25 @@ export default function StacksSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 bg-white rounded-lg shadow-lg p-6"
+          className="mt-8 bg-white rounded-lg shadow-lg p-6 text-gray-700"
         >
-          <h2 className="text-2xl font-semibold text-heading-primary mb-4">Time & Space Complexity</h2>
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <h3 className="font-semibold text-stacks mb-2">Push</h3>
-              <p className="text-sm text-secondary">Time: O(1)<br/>Space: O(1)</p>
+          <h2 className="text-2xl font-semibold text-heading-primary mb-4 text-slate-800">Time & Space Complexity</h2>
+          <div className="grid md:grid-cols-4 gap-4 text-gray-700">
+            <div className="text-center p-4 bg-green-50 rounded-lg text-gray-700">
+              <h3 className="font-semibold text-stacks mb-2 text-gray-800">Push</h3>
+              <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
-            <div className="text-center p-4 bg-red-50 rounded-lg">
+            <div className="text-center p-4 bg-red-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-red-600 mb-2">Pop</h3>
-              <p className="text-sm text-secondary">Time: O(1)<br/>Space: O(1)</p>
+              <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
+            <div className="text-center p-4 bg-blue-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-blue-600 mb-2">Peek</h3>
-              <p className="text-sm text-secondary">Time: O(1)<br/>Space: O(1)</p>
+              <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
-            <div className="text-center p-4 bg-gray-50 rounded-lg">
+            <div className="text-center p-4 bg-gray-50 rounded-lg text-gray-700">
               <h3 className="font-semibold text-gray-600 mb-2">isEmpty</h3>
-              <p className="text-sm text-secondary">Time: O(1)<br/>Space: O(1)</p>
+              <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
           </div>
         </motion.div>
@@ -448,22 +448,22 @@ export default function StacksSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-8 flex justify-between items-center"
+          className="mt-8 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/data-structures/stacks/theory"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Theory
           </Link>
           
           <Link
             href="/data-structures/queues"
-            className="inline-flex items-center px-6 py-3 bg-stacks text-white rounded-lg hover:bg-green-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-stacks text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
           >
             Next: Queues
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

@@ -26,9 +26,9 @@ export function CompletionCardWrapper({
   return (
     <div className={`${className} border-2 ${completionClasses} transition-all duration-300 relative`}>
       {isCompleted && (
-        <div className="absolute top-4 left-4 z-10">
-          <div className="bg-green-500 text-white rounded-full p-1.5 shadow-md">
-            <CheckCircle className="h-4 w-4 fill-current" />
+        <div className="absolute top-4 left-4 z-10 text-gray-700">
+          <div className="bg-green-500 text-white rounded-full p-1.5 shadow-md text-gray-700">
+            <CheckCircle className="h-4 w-4 fill-current text-gray-700" />
           </div>
         </div>
       )}

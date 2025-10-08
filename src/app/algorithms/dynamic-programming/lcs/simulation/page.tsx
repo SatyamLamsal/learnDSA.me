@@ -41,16 +41,16 @@ export default function LCSSimulationPage(){
   const getCell = (i:number,j:number)=> table.find(c=> c.i===i && c.j===j);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8">
-          <Link href="/algorithms/dynamic-programming/lcs" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Overview</Link>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
+          <Link href="/algorithms/dynamic-programming/lcs" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-2">LCS Simulation</h1>
           <p className="text-slate-600 max-w-3xl">Animated filling of the dynamic programming table with directional provenance hints.</p>
         </motion.div>
-        <div className="bg-white rounded-lg shadow p-6 mb-10">
+        <div className="bg-white rounded-lg shadow p-6 mb-10 text-gray-700">
           <h3 className="text-lg font-semibold text-slate-800 mb-4 flex items-center"><Table className="h-5 w-5 mr-2 text-indigo-600"/>LCS Table</h3>
-          <div className="flex flex-wrap gap-4 mb-4 items-end">
+          <div className="flex flex-wrap gap-4 mb-4 items-end text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">String A</label>
               <input value={a} onChange={e=> setA(e.target.value.toUpperCase().slice(0,12))} className="px-2 py-1 border rounded" disabled={running}/>
@@ -59,22 +59,22 @@ export default function LCSSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">String B</label>
               <input value={b} onChange={e=> setB(e.target.value.toUpperCase().slice(0,12))} className="px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded disabled:opacity-50">{running? 'Running…' : 'Run DP'}</button>
+            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run DP'}</button>
           </div>
-          <div className="overflow-x-auto">
-            <div className="inline-block border rounded bg-gray-50 p-2">
-              <table className="text-xs border-collapse">
+          <div className="overflow-x-auto text-gray-700">
+            <div className="inline-block border rounded bg-gray-50 p-2 text-gray-700">
+              <table className="text-xs border-collapse text-gray-600">
                 <thead>
                   <tr>
-                    <th className="border px-2 py-1 bg-white"> </th>
-                    <th className="border px-2 py-1 bg-white"> </th>
-                    {b.split('').map((ch,j)=> <th key={j} className="border px-2 py-1 bg-white">{ch}</th>)}
+                    <th className="border px-2 py-1 bg-white text-gray-700"> </th>
+                    <th className="border px-2 py-1 bg-white text-gray-700"> </th>
+                    {b.split('').map((ch,j)=> <th key={j} className="border px-2 py-1 bg-white text-gray-700">{ch}</th>)}
                   </tr>
                 </thead>
                 <tbody>
                   {Array.from({length: a.length+1}, (_,i)=> (
                     <tr key={i}>
-                      <td className="border px-2 py-1 bg-white font-semibold">{i===0? '' : a[i-1]}</td>
+                      <td className="border px-2 py-1 bg-white font-semibold text-gray-800">{i===0? '' : a[i-1]}</td>
                       {Array.from({length: b.length+1}, (_,j)=>{
                         const cell = getCell(i,j); const val = cell? cell.val : 0;
                         const arrow = cell?.from==='diag'? '↖' : cell?.from==='up'? '↑' : cell?.from==='left'? '←' : '';

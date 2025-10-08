@@ -338,28 +338,28 @@ const QuickSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/sorting" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting Algorithms
           </Link>
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
+          <div className="flex items-start justify-between mb-4 text-gray-700">
+            <div className="flex-1 text-gray-700">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Quick Sort</h1>
               <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
                 A highly efficient divide-and-conquer algorithm that picks a pivot element and partitions 
                 the array around it. Generally performs better than other O(n log n) algorithms in practice.
               </p>
             </div>
-            <div className="flex items-center space-x-3 ml-6">
+            <div className="flex items-center space-x-3 ml-6 text-gray-700">
               <BookmarkButton 
                 topicId="quick-sort"
                 topicType="algorithm"
@@ -376,20 +376,20 @@ const QuickSortPage: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Pivot Strategy */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Pivot Strategy</h3>
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 {[
                   { value: 'first', label: 'First Element' },
                   { value: 'last', label: 'Last Element' },
                   { value: 'middle', label: 'Middle Element' },
                   { value: 'median', label: 'Median of Three' }
                 ].map(strategy => (
-                  <label key={strategy.value} className="flex items-center">
+                  <label key={strategy.value} className="flex items-center text-gray-700">
                     <input
                       type="radio"
                       name="pivotStrategy"
@@ -401,17 +401,17 @@ const QuickSortPage: React.FC = () => {
                       }}
                       className="mr-3"
                     />
-                    <span className="text-sm">{strategy.label}</span>
+                    <span className="text-sm text-gray-600">{strategy.label}</span>
                   </label>
                 ))}
               </div>
             </div>
 
             {/* Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Array Size
@@ -443,13 +443,13 @@ const QuickSortPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center"
+                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+                    {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
                   </button>
                   
@@ -458,57 +458,57 @@ const QuickSortPage: React.FC = () => {
                     disabled={isPlaying}
                     className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Statistics</h3>
               
-              <div className="space-y-3">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Recursion Depth:</span>
-                  <span className="font-semibold">{recursionDepth}</span>
+                  <span className="font-semibold text-gray-800">{recursionDepth}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Max Depth:</span>
-                  <span className="font-semibold">{maxRecursionDepth}</span>
+                  <span className="font-semibold text-gray-800">{maxRecursionDepth}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Comparisons:</span>
                   <span className="font-semibold text-blue-600">{comparisons}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Swaps:</span>
                   <span className="font-semibold text-red-600">{swaps}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Array Size:</span>
-                  <span className="font-semibold">{array.length}</span>
+                  <span className="font-semibold text-gray-800">{array.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Complexity Info */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Complexity</h3>
               
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm text-gray-600">
                 <div>
                   <span className="font-semibold text-gray-700">Time Complexity:</span>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex justify-between">
+                  <div className="mt-1 space-y-1 text-gray-700">
+                    <div className="flex justify-between text-gray-700">
                       <span>Best:</span>
                       <span className="font-mono text-green-600">O(n log n)</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-700">
                       <span>Average:</span>
                       <span className="font-mono text-yellow-600">O(n log n)</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-700">
                       <span>Worst:</span>
                       <span className="font-mono text-red-600">O(n²)</span>
                     </div>
@@ -517,7 +517,7 @@ const QuickSortPage: React.FC = () => {
                 
                 <div>
                   <span className="font-semibold text-gray-700">Space Complexity:</span>
-                  <div className="mt-1">
+                  <div className="mt-1 text-gray-700">
                     <span className="font-mono text-blue-600">O(log n)</span>
                     <span className="text-gray-500 text-xs block">Recursion stack</span>
                   </div>
@@ -525,16 +525,16 @@ const QuickSortPage: React.FC = () => {
 
                 <div>
                   <span className="font-semibold text-gray-700">Properties:</span>
-                  <div className="mt-1 text-xs space-y-1">
-                    <div className="flex items-center">
+                  <div className="mt-1 text-xs space-y-1 text-gray-600">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-red-500 mr-1" />
                       <span>Unstable</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>In-place</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-yellow-500 mr-1" />
                       <span>Not adaptive</span>
                     </div>
@@ -545,9 +545,9 @@ const QuickSortPage: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900">Array Visualization</h3>
                 <div className="text-sm text-gray-600">
                   Depth {recursionDepth} - {isPlaying ? 'Sorting...' : 'Ready'}
@@ -555,8 +555,8 @@ const QuickSortPage: React.FC = () => {
               </div>
               
               {/* Array Visualization */}
-              <div className="mb-8">
-                <div className="flex items-end justify-center space-x-2 h-64">
+              <div className="mb-8 text-gray-700">
+                <div className="flex items-end justify-center space-x-2 h-64 text-gray-700">
                   {array.map((element, index) => (
                     <motion.div
                       key={element.id}
@@ -586,11 +586,11 @@ const QuickSortPage: React.FC = () => {
                         height: `${(element.value / 100) * 200 + 20}px`,
                       }}
                     >
-                      <div className="text-white font-bold text-sm p-2">
+                      <div className="text-white font-bold text-sm p-2 text-gray-600">
                         {element.value}
                       </div>
                       {element.isPivot && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <Target className="h-4 w-4 text-purple-600" />
                         </div>
                       )}
@@ -599,7 +599,7 @@ const QuickSortPage: React.FC = () => {
                 </div>
                 
                 {/* Index labels */}
-                <div className="flex justify-center space-x-2 mt-2">
+                <div className="flex justify-center space-x-2 mt-2 text-gray-700">
                   {array.map((element, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
@@ -609,29 +609,29 @@ const QuickSortPage: React.FC = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-blue-300 border border-blue-400 rounded mr-2"></div>
+              <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-blue-300 border border-blue-400 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <Target className="h-4 w-4 text-purple-600 mr-1" />
                   <span className="text-sm text-gray-600">Pivot</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Comparing</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Sorted</span>
                 </div>
               </div>
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-                  <div className="flex items-center">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-gray-700">
+                  <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-blue-600 mr-2" />
                     <span className="text-blue-800 font-medium">
                       {sortingSteps[currentStep]?.message}
@@ -641,12 +641,12 @@ const QuickSortPage: React.FC = () => {
               )}
 
               {/* Algorithm Description */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-3">How Quick Sort Works:</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                   <div>
-                    <h5 className="font-semibold mb-2">Algorithm Steps:</h5>
-                    <ol className="list-decimal pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Algorithm Steps:</h5>
+                    <ol className="list-decimal pl-4 space-y-1 text-gray-700">
                       <li>Choose a pivot element</li>
                       <li>Partition array around pivot</li>
                       <li>Elements ≤ pivot go left</li>
@@ -655,8 +655,8 @@ const QuickSortPage: React.FC = () => {
                     </ol>
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-2">Pivot Strategies:</h5>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Pivot Strategies:</h5>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li><strong>First/Last:</strong> Simple but can be O(n²)</li>
                       <li><strong>Middle:</strong> Better for sorted arrays</li>
                       <li><strong>Median of 3:</strong> Reduces worst-case probability</li>
@@ -674,11 +674,11 @@ const QuickSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Implementation</h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Quick Sort Implementation</h3>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -714,7 +714,7 @@ function partition(arr, left, right) {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">Median-of-Three Pivot</h3>
                 <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -772,12 +772,12 @@ function partition(arr, left, right) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Performance Analysis</h2>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-green-800 mb-2">Best Case - O(n log n)</h3>
               <p className="text-sm text-gray-700">
                 Pivot always divides array into two equal halves. Tree depth is log n, 
@@ -785,7 +785,7 @@ function partition(arr, left, right) {
               </p>
             </div>
             
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-yellow-800 mb-2">Average Case - O(n log n)</h3>
               <p className="text-sm text-gray-700">
                 Random pivot selection gives good partitions on average. Expected depth 
@@ -793,7 +793,7 @@ function partition(arr, left, right) {
               </p>
             </div>
             
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-red-800 mb-2">Worst Case - O(n²)</h3>
               <p className="text-sm text-gray-700">
                 Pivot is always smallest or largest element (sorted arrays with first/last pivot). 
@@ -808,22 +808,22 @@ function partition(arr, left, right) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting/bubble-sort"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Bubble Sort
           </Link>
           
           <Link
             href="/algorithms/sorting/merge-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Merge Sort
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

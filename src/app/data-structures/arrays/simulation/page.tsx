@@ -405,17 +405,17 @@ export default function ArraysSimulationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <Link href="/data-structures/arrays" className="inline-flex items-center text-red-600 hover:text-red-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Arrays Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Interactive Array Simulation</h1>
@@ -445,13 +445,13 @@ export default function ArraysSimulationPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6"
+              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-gray-700"
             >
               <h3 className="text-lg font-semibold text-purple-800 mb-4 flex items-center">
-                <Play className="h-5 w-5 mr-2" />
+                <Play className="h-5 w-5 mr-2 text-gray-700" />
                 Algorithm Execution Steps
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-2 text-gray-700">
                 {animationSteps.map((step, index) => (
                   <motion.div
                     key={index}
@@ -496,11 +496,11 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          className="bg-white rounded-lg shadow-lg p-8 mb-8 text-gray-700"
         >
-          <h2 className="text-2xl font-semibold mb-6 text-center">Array Visualization</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center text-slate-800">Array Visualization</h2>
           
-          <div className="flex justify-center items-center space-x-2 mb-4 flex-wrap gap-2">
+          <div className="flex justify-center items-center space-x-2 mb-4 flex-wrap gap-2 text-gray-700">
             <AnimatePresence>
               {array.map((element, index) => (
                 <motion.div
@@ -535,34 +535,34 @@ export default function ArraysSimulationPage() {
                                    element.isShifting ? '#a78bfa' : '#ef4444'
                   }}
                 >
-                  <div className="text-lg">{element.value}</div>
+                  <div className="text-lg text-gray-700">{element.value}</div>
                   {!isAnimating && (
                     <button
                       onClick={() => deleteElement(index)}
                       className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center text-white text-xs transition-colors"
                     >
-                      <Trash2 className="h-3 w-3" />
+                      <Trash2 className="h-3 w-3 text-gray-700" />
                     </button>
                   )}
                   
                   {/* Animation state indicators */}
                   {element.isHighlighted && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-xs px-2 py-1 rounded text-gray-600">
                       Checking
                     </div>
                   )}
                   {element.isNew && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs px-2 py-1 rounded text-gray-600">
                       New
                     </div>
                   )}
                   {element.isShifting && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white text-xs px-2 py-1 rounded text-gray-600">
                       Shifting
                     </div>
                   )}
                   {element.isBeingDeleted && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-xs px-2 py-1 rounded text-gray-600">
                       Deleting
                     </div>
                   )}
@@ -581,7 +581,7 @@ export default function ArraysSimulationPage() {
           {array.length > 0 && (
             <div className="flex justify-center items-center space-x-2 text-sm text-gray-600 flex-wrap gap-2">
               {array.map((_, index) => (
-                <div key={index} className="w-16 text-center">
+                <div key={index} className="w-16 text-center text-gray-700">
                   [{index}]
                 </div>
               ))}
@@ -590,7 +590,7 @@ export default function ArraysSimulationPage() {
 
           {/* Search Result */}
           {searchResult !== null && (
-            <div className="text-center mt-4">
+            <div className="text-center mt-4 text-gray-700">
               {searchResult >= 0 ? (
                 <span className="text-green-600 font-semibold">
                   Found at index {searchResult}
@@ -609,16 +609,16 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 text-gray-700"
         >
           {/* Add Element */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+            <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
               <Plus className="h-6 w-6 text-red-600 mr-2" />
               Add Element
             </h3>
-            <div className="space-y-4">
-              <div className="flex space-x-2">
+            <div className="space-y-4 text-gray-700">
+              <div className="flex space-x-2 text-gray-700">
                 <input
                   type="number"
                   value={inputValue}
@@ -629,13 +629,13 @@ export default function ArraysSimulationPage() {
                 <button
                   onClick={addElement}
                   disabled={isAnimating}
-                  className="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                  className="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
                 >
                   Add to End
                 </button>
               </div>
               
-              <div className="flex space-x-2">
+              <div className="flex space-x-2 text-gray-700">
                 <input
                   type="number"
                   value={insertIndex}
@@ -646,7 +646,7 @@ export default function ArraysSimulationPage() {
                 <button
                   onClick={insertAt}
                   disabled={isAnimating}
-                  className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                  className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
                 >
                   Insert at Index
                 </button>
@@ -655,13 +655,13 @@ export default function ArraysSimulationPage() {
           </div>
 
           {/* Search Element */}
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+            <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
               <Search className="h-6 w-6 text-red-600 mr-2" />
               Search Element
             </h3>
-            <div className="space-y-4">
-              <div className="flex space-x-2">
+            <div className="space-y-4 text-gray-700">
+              <div className="flex space-x-2 text-gray-700">
                 <input
                   type="number"
                   value={searchValue}
@@ -672,11 +672,11 @@ export default function ArraysSimulationPage() {
                 <button
                   onClick={searchElement}
                   disabled={isAnimating}
-                  className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center"
+                  className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center text-gray-100"
                 >
                   {isAnimating ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2 text-gray-700"></div>
                       Searching...
                     </>
                   ) : (
@@ -696,31 +696,31 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4 flex items-center">
+          <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
             <Play className="h-6 w-6 text-red-600 mr-2" />
             Array Operations
           </h3>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 text-gray-700">
             <button
               onClick={generateRandomArray}
               disabled={isAnimating}
-              className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+              className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
             >
               Generate Random Array
             </button>
             <button
               onClick={clearArray}
               disabled={isAnimating}
-              className="bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+              className="bg-gray-600 hover:bg-gray-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
             >
               Clear Array
             </button>
             {isAnimating && (
               <button
                 onClick={stopAnimation}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
               >
                 Stop Animation
               </button>
@@ -733,24 +733,24 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4">🎨 Animation Legend</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-red-500 rounded border"></div>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">🎨 Animation Legend</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-red-500 rounded border text-gray-700"></div>
               <span>Normal Element</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-yellow-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-yellow-500 rounded border text-gray-700"></div>
               <span>Currently Checking</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-green-500 rounded border text-gray-700"></div>
               <span>New Element</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-purple-500 rounded border"></div>
+            <div className="flex items-center space-x-2 text-gray-700">
+              <div className="w-4 h-4 bg-purple-500 rounded border text-gray-700"></div>
               <span>Shifting Element</span>
             </div>
           </div>
@@ -761,10 +761,10 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="bg-white rounded-lg shadow-lg p-6 mt-8"
+          className="bg-white rounded-lg shadow-lg p-6 mt-8 text-gray-700"
         >
-          <h3 className="text-xl font-semibold mb-4">💡 Learning Notes</h3>
-          <div className="grid md:grid-cols-2 gap-6 text-sm">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">💡 Learning Notes</h3>
+          <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
             <div>
               <h4 className="font-semibold mb-2 text-red-600">What to Observe:</h4>
               <ul className="space-y-1 text-gray-700">
@@ -788,15 +788,15 @@ export default function ArraysSimulationPage() {
               </ul>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg text-gray-700">
             <h4 className="font-semibold mb-2 text-yellow-800">💭 Try These Exercises:</h4>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-yellow-700">
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-gray-700">
                 <li>• Watch insertion animation at different positions</li>
                 <li>• Observe how deletion affects remaining elements</li>
                 <li>• Compare search performance with array size</li>
               </ul>
-              <ul className="space-y-1">
+              <ul className="space-y-1 text-gray-700">
                 <li>• Insert multiple elements and see the pattern</li>
                 <li>• Search for elements that don&apos;t exist</li>
                 <li>• Notice the step-by-step algorithm execution</li>
@@ -810,12 +810,12 @@ export default function ArraysSimulationPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex justify-between items-center mt-8"
+          className="flex justify-between items-center mt-8 text-gray-700"
         >
           <Link href="/data-structures/arrays/theory" className="flex items-center text-red-600 hover:text-red-700">
             ← Array Theory
           </Link>
-          <Link href="/data-structures/linked-lists" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+          <Link href="/data-structures/linked-lists" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-gray-100">
             Next: Linked Lists →
           </Link>
         </motion.div>

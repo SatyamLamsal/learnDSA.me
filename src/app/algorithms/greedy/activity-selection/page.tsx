@@ -87,20 +87,20 @@ export default function ActivitySelectionPage() {
 end procedure`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50">
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/algorithms/greedy" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Greedy</Link>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <Link href="/algorithms/greedy" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Greedy</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-2">Activity Selection</h1>
         <p className="text-lg text-slate-600 mb-6">Pick the maximum number of non-overlapping activities by always choosing the earliest finishing compatible activity.</p>
 
         {/* Why Greedy Works */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-2xl font-semibold text-slate-800 mb-3">Why Greedy Works</h2>
           <p className="text-slate-600">Greedy Choice Property holds: picking the activity with the earliest finish time leaves the most room for the rest. Optimal Substructure: after choosing one activity, the remaining problem is the same on the filtered intervals.</p>
         </div>
 
         {/* Steps */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Algorithm Steps</h2>
           <ol className="list-decimal pl-6 space-y-2 text-slate-700">
             <li>Sort activities by increasing finish time.</li>
@@ -112,33 +112,33 @@ end procedure`;
         </div>
 
         {/* Interactive Animation */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
-          <div className="flex flex-wrap items-end gap-3 mb-4">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
+          <div className="flex flex-wrap items-end gap-3 mb-4 text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input type="number" value={speed} onChange={e=>setSpeed(Math.max(100, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded" />
             </div>
-            <button onClick={run} disabled={playing} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50"><Play className="h-4 w-4 mr-2"/>Run</button>
-            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
-            <button onClick={randomize} className="px-3 py-2 border rounded">Randomize</button>
-            <div className="ml-auto flex items-center gap-2 text-slate-600"><Timer className="h-4 w-4"/> Sorted by finish time</div>
+            <button onClick={run} disabled={playing} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+            <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize</button>
+            <div className="ml-auto flex items-center gap-2 text-slate-600"><Timer className="h-4 w-4 text-gray-700"/> Sorted by finish time</div>
           </div>
 
-          <div className="relative overflow-hidden">
-            <div className="h-48 w-full grid" style={{ gridTemplateRows: `repeat(${data.length}, minmax(0, 1fr))`, rowGap: '0.75rem' }}>
+          <div className="relative overflow-hidden text-gray-700">
+            <div className="h-48 w-full grid text-gray-700" style={{ gridTemplateRows: `repeat(${data.length}, minmax(0, 1fr))`, rowGap: '0.75rem' }}>
               {data.map((iv, idx)=>{
                 const left = iv.start * 20; const width = (iv.end-iv.start) * 20;
                 const isChosen = chosen.has(iv.id);
                 const isSkipped = skipped.has(iv.id);
                 return (
-                  <motion.div key={iv.id} initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{delay: idx*0.05}} className="relative flex items-center">
+                  <motion.div key={iv.id} initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{delay: idx*0.05}} className="relative flex items-center text-gray-700">
                     <div className="w-10 text-right pr-2 text-sm text-slate-600">{iv.id}</div>
-                    <div className="relative flex-1 h-6 bg-gray-100 rounded">
+                    <div className="relative flex-1 h-6 bg-gray-100 rounded text-gray-700">
                       <motion.div className={`absolute h-6 rounded ${isChosen? 'bg-green-500' : isSkipped? 'bg-red-300' : 'bg-yellow-400'}`} style={{ left, width }} />
                     </div>
-                    <div className="w-28 text-sm text-right pl-2">
-                      {isChosen && <span className="inline-flex items-center text-green-700"><CheckCircle2 className="h-4 w-4 mr-1"/>Chosen</span>}
-                      {isSkipped && <span className="inline-flex items-center text-red-700"><XCircle className="h-4 w-4 mr-1"/>Skipped</span>}
+                    <div className="w-28 text-sm text-right pl-2 text-gray-600">
+                      {isChosen && <span className="inline-flex items-center text-green-700"><CheckCircle2 className="h-4 w-4 mr-1 text-gray-700"/>Chosen</span>}
+                      {isSkipped && <span className="inline-flex items-center text-red-700"><XCircle className="h-4 w-4 mr-1 text-gray-700"/>Skipped</span>}
                     </div>
                   </motion.div>
                 );
@@ -156,13 +156,13 @@ end procedure`;
         </div>
 
         {/* Code Snippet */}
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Pseudocode</h2>
           <PseudocodeBlock code={pseudocode} autoPlay loop intervalMs={800} />
         </div>
 
         {/* Practice Problems */}
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-6 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Practice Problems</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li><a className="text-green-700 hover:underline" href="https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/" target="_blank">Activity Selection (GeeksforGeeks)</a></li>
@@ -170,7 +170,7 @@ end procedure`;
           </ul>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 mt-8">
+        <div className="bg-white rounded-lg shadow p-6 mt-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Use Cases</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li>Scheduling non-overlapping meetings/lectures in a single room.</li>
@@ -184,22 +184,22 @@ end procedure`;
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/greedy"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Greedy
           </Link>
           
           <Link
             href="/algorithms/greedy/fractional-knapsack"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
           >
             Next: Fractional Knapsack
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

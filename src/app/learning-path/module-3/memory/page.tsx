@@ -59,14 +59,14 @@ const MemoryLayoutVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <MemoryStick className="w-6 h-6 mr-2 text-blue-600" />
         Memory Layout Visualization
       </h3>
       
-      <div className="mb-4">
-        <div className="flex space-x-2">
+      <div className="mb-4 text-gray-700">
+        <div className="flex space-x-2 text-gray-700">
           <button
             onClick={() => setSelectedType('stack')}
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -86,25 +86,25 @@ const MemoryLayoutVisualization = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 text-gray-700">
         <div>
           <h4 className="font-semibold text-gray-800 mb-3">
             {selectedType === 'stack' ? 'Stack Layout (Static Array)' : 'Heap Layout (Dynamic Array)'}
           </h4>
-          <div className="space-y-1">
+          <div className="space-y-1 text-gray-700">
             {(selectedType === 'stack' ? stackMemory : heapMemory).map((item, index) => (
               <div
                 key={index}
                 className={`flex items-center justify-between p-2 rounded border-2 text-sm ${getTypeColor(item.type)}`}
               >
-                <span className="font-mono text-xs">{item.address}</span>
-                <span className="flex-1 mx-2">{item.data}</span>
+                <span className="font-mono text-xs text-gray-600">{item.address}</span>
+                <span className="flex-1 mx-2 text-gray-600">{item.data}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-lg">
+        <div className="bg-gray-50 p-4 rounded-lg text-gray-700">
           <h4 className="font-semibold text-gray-800 mb-3">
             {selectedType === 'stack' ? 'Stack Characteristics' : 'Heap Characteristics'}
           </h4>
@@ -181,15 +181,15 @@ const CachePerformanceDemo = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <Zap className="w-6 h-6 mr-2 text-yellow-600" />
         Cache Performance Demo
       </h3>
       
-      <div className="mb-4">
-        <div className="flex items-center space-x-4 mb-4">
-          <div className="flex space-x-2">
+      <div className="mb-4 text-gray-700">
+        <div className="flex items-center space-x-4 mb-4 text-gray-700">
+          <div className="flex space-x-2 text-gray-700">
             <button
               onClick={() => setAccessPattern('sequential')}
               className={`px-3 py-1 rounded text-sm ${
@@ -211,13 +211,13 @@ const CachePerformanceDemo = () => {
           <button
             onClick={simulateAccess}
             disabled={isRunning}
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 text-white text-white"
           >
             {isRunning ? 'Running...' : 'Simulate Access'}
           </button>
         </div>
         
-        <div className="grid grid-cols-4 gap-2 mb-4">
+        <div className="grid grid-cols-4 gap-2 mb-4 text-gray-700">
           {array.map((value, index) => {
             const cacheLineIndex = Math.floor(index / cacheLineSize);
             const isCurrentlyAccessed = currentIndex === index;
@@ -238,19 +238,19 @@ const CachePerformanceDemo = () => {
           })}
         </div>
         
-        <div className="flex justify-between text-sm">
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-green-200 border mr-2"></div>
+        <div className="flex justify-between text-sm text-gray-600">
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-green-200 border mr-2 text-gray-700"></div>
             <span>Cache Hits: {cacheHits}</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-red-200 border mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-red-200 border mr-2 text-gray-700"></div>
             <span>Cache Misses: {cacheMisses}</span>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-50 p-4 rounded-lg">
+      <div className="bg-gray-50 p-4 rounded-lg text-gray-700">
         <h4 className="font-semibold text-gray-800 mb-2">Cache Line Concept:</h4>
         <p className="text-sm text-gray-600">
           CPUs load data in chunks called cache lines (typically 64 bytes). Sequential array access 
@@ -263,16 +263,16 @@ const CachePerformanceDemo = () => {
 
 export default function ArrayMemoryPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center space-x-4 mb-4">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+        <div className="max-w-4xl mx-auto text-gray-700">
+          <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-6 h-6 text-gray-700" />
             </Link>
             <div>
-              <h1 className="text-4xl font-bold mb-2">Array Memory Layout</h1>
+              <h1 className="text-4xl font-bold mb-2 text-slate-800">Array Memory Layout</h1>
               <p className="text-blue-100">Understanding memory allocation, cache performance, and optimization strategies</p>
             </div>
           </div>
@@ -280,22 +280,22 @@ export default function ArrayMemoryPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12 text-gray-700">
         {/* Memory Allocation Overview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Cpu className="w-8 h-8 mr-3 text-blue-600" />
             Memory Allocation in C/C++
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8 text-gray-700">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Stack Allocation</h3>
-              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Stack Allocation</h3>
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4 text-gray-700">
                 <pre className="text-sm font-mono text-blue-800">
 {`// Static array - Stack allocated
 int arr[1000];           // 4KB on stack
@@ -306,15 +306,15 @@ char buffer[256];        // 256 bytes on stack
               </div>
               
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
                   Fast allocation (single instruction)
                 </li>
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
                   Automatic memory management
                 </li>
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-yellow-600" />
                   Limited size (~8MB typical)
                 </li>
@@ -322,8 +322,8 @@ char buffer[256];        // 256 bytes on stack
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Heap Allocation</h3>
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200 mb-4">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Heap Allocation</h3>
+              <div className="bg-green-50 p-4 rounded-lg border border-green-200 mb-4 text-gray-700">
                 <pre className="text-sm font-mono text-green-800">
 {`// Dynamic array - Heap allocated
 int* arr = new int[size];     // Runtime size
@@ -336,15 +336,15 @@ free(buffer);`}
               </div>
               
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
                   Large memory available
                 </li>
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
                   Runtime size determination
                 </li>
-                <li className="flex items-center">
+                <li className="flex items-center text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600" />
                   Manual memory management
                 </li>
@@ -354,7 +354,7 @@ free(buffer);`}
         </motion.div>
 
         {/* Interactive Visualizations */}
-        <div className="grid md:grid-cols-1 gap-8">
+        <div className="grid md:grid-cols-1 gap-8 text-gray-700">
           <MemoryLayoutVisualization />
           <CachePerformanceDemo />
         </div>
@@ -364,47 +364,47 @@ free(buffer);`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Clock className="w-8 h-8 mr-3 text-yellow-600" />
             Performance Comparison
           </h2>
           
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full border-collapse text-gray-700">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="border border-gray-300 px-4 py-3 text-left">Operation</th>
-                  <th className="border border-gray-300 px-4 py-3 text-center">Stack Array</th>
-                  <th className="border border-gray-300 px-4 py-3 text-center">Heap Array</th>
-                  <th className="border border-gray-300 px-4 py-3 text-center">Notes</th>
+                <tr className="bg-gray-50 text-gray-700">
+                  <th className="border border-gray-300 px-4 py-3 text-left text-gray-700">Operation</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center text-gray-700">Stack Array</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center text-gray-700">Heap Array</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center text-gray-700">Notes</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-3 font-medium">Allocation</td>
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">Allocation</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-green-600">~1 cycle</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-red-600">~100+ cycles</td>
-                  <td className="border border-gray-300 px-4 py-3 text-sm">Stack pointer increment vs heap search</td>
+                  <td className="border border-gray-300 px-4 py-3 text-sm text-gray-600">Stack pointer increment vs heap search</td>
                 </tr>
-                <tr className="bg-gray-50">
-                  <td className="border border-gray-300 px-4 py-3 font-medium">Access Speed</td>
+                <tr className="bg-gray-50 text-gray-700">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">Access Speed</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-green-600">Faster</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-yellow-600">Slightly slower</td>
-                  <td className="border border-gray-300 px-4 py-3 text-sm">Cache locality matters more</td>
+                  <td className="border border-gray-300 px-4 py-3 text-sm text-gray-600">Cache locality matters more</td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-3 font-medium">Memory Limit</td>
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">Memory Limit</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-red-600">~8MB</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-green-600">GB+ available</td>
-                  <td className="border border-gray-300 px-4 py-3 text-sm">OS and system dependent</td>
+                  <td className="border border-gray-300 px-4 py-3 text-sm text-gray-600">OS and system dependent</td>
                 </tr>
-                <tr className="bg-gray-50">
-                  <td className="border border-gray-300 px-4 py-3 font-medium">Fragmentation</td>
+                <tr className="bg-gray-50 text-gray-700">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">Fragmentation</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-green-600">None</td>
                   <td className="border border-gray-300 px-4 py-3 text-center text-red-600">Possible</td>
-                  <td className="border border-gray-300 px-4 py-3 text-sm">Heap can become fragmented</td>
+                  <td className="border border-gray-300 px-4 py-3 text-sm text-gray-600">Heap can become fragmented</td>
                 </tr>
               </tbody>
             </table>
@@ -416,29 +416,29 @@ free(buffer);`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Memory Optimization Best Practices</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-green-800 mb-4">✅ Do</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Use stack arrays for small, fixed sizes</strong>
                     <div className="text-gray-600">Better performance for arrays under 1KB</div>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Access arrays sequentially when possible</strong>
                     <div className="text-gray-600">Maximizes cache locality and performance</div>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <CheckCircle className="w-4 h-4 mr-2 text-green-600 mt-0.5" />
                   <div>
                     <strong>Align data structures properly</strong>
@@ -450,22 +450,22 @@ free(buffer);`}
             
             <div>
               <h3 className="text-lg font-semibold text-red-800 mb-4">❌ Don&apos;t</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start">
+              <ul className="space-y-3 text-sm text-gray-600">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Allocate large arrays on stack</strong>
                     <div className="text-gray-600">Risk of stack overflow for arrays &gt; 1MB</div>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Forget to free heap-allocated memory</strong>
                     <div className="text-gray-600">Causes memory leaks and system issues</div>
                   </div>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <AlertTriangle className="w-4 h-4 mr-2 text-red-600 mt-0.5" />
                   <div>
                     <strong>Use random access patterns unnecessarily</strong>
@@ -482,22 +482,22 @@ free(buffer);`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/learning-path/module-2/types"
-            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
             Previous: Array Types
           </Link>
           
           <Link
             href="/learning-path/module-2/operations"
-            className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+            className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
           >
             Next: Basic Operations
-            <ChevronRight className="w-6 h-6 ml-2" />
+            <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

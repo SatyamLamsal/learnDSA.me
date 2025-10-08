@@ -129,21 +129,21 @@ const greedyPrinciples = [
   {
     name: 'Greedy Choice Property',
     description: 'A globally optimal solution can be reached by making locally optimal choices',
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-8 w-8 text-gray-700" />,
     color: 'text-green-600',
     example: 'In activity selection, choosing earliest finish time is always optimal'
   },
   {
     name: 'Optimal Substructure',
     description: 'An optimal solution contains optimal solutions to subproblems',
-    icon: <TrendingUp className="h-8 w-8" />,
+    icon: <TrendingUp className="h-8 w-8 text-gray-700" />,
     color: 'text-blue-600',
     example: 'In MST, removing any edge gives optimal spanning tree for remaining vertices'
   },
   {
     name: 'No Backtracking',
     description: 'Once a choice is made, it is never reconsidered or undone',
-    icon: <Zap className="h-8 w-8" />,
+    icon: <Zap className="h-8 w-8 text-gray-700" />,
     color: 'text-purple-600',
     example: 'Dijkstra never updates distance to visited vertices'
   }
@@ -172,17 +172,17 @@ const proofTechniques = [
 
 export default function GreedyAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Greedy Algorithms</h1>
@@ -197,17 +197,17 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Greedy Algorithm Principles</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
             {greedyPrinciples.map((principle, index) => (
               <motion.div
                 key={principle.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow"
+                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow text-gray-700"
               >
                 <div className={`${principle.color} mb-4 flex justify-center`}>
                   {principle.icon}
@@ -227,11 +227,11 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Greedy vs Other Approaches</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="text-center text-gray-700">
               <Award className="h-12 w-12 text-green-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Greedy Algorithm</h3>
               <ul className="text-sm text-slate-600 space-y-1">
@@ -241,7 +241,7 @@ export default function GreedyAlgorithmsPage() {
                 <li>• Works for specific problems</li>
               </ul>
             </div>
-            <div className="text-center">
+            <div className="text-center text-gray-700">
               <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Dynamic Programming</h3>
               <ul className="text-sm text-slate-600 space-y-1">
@@ -251,7 +251,7 @@ export default function GreedyAlgorithmsPage() {
                 <li>• Guaranteed optimal solution</li>
               </ul>
             </div>
-            <div className="text-center">
+            <div className="text-center text-gray-700">
               <DollarSign className="h-12 w-12 text-purple-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Brute Force</h3>
               <ul className="text-sm text-slate-600 space-y-1">
@@ -269,10 +269,10 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Classic Greedy Algorithms</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {greedyAlgorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -280,34 +280,34 @@ export default function GreedyAlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2">{algorithm.name}</h3>
+                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="mb-4">
-                      <div className="bg-yellow-50 border border-yellow-200 rounded p-3">
+                    <div className="mb-4 text-gray-700">
+                      <div className="bg-yellow-50 border border-yellow-200 rounded p-3 text-gray-700">
                         <span className="text-xs font-semibold text-yellow-800">Strategy:</span>
                         <p className="text-xs text-yellow-700 mt-1">{algorithm.strategy}</p>
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Time:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -317,13 +317,13 @@ export default function GreedyAlgorithmsPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="mb-2">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-blue-700">Approach:</span>
                         <p className="text-xs text-slate-600 mt-1">{algorithm.approach}</p>
                       </div>
                       
-                      <div className="mb-2">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-purple-700">Proof Technique:</span>
                         <p className="text-xs text-slate-600 mt-1">{algorithm.proof}</p>
                       </div>
@@ -347,16 +347,16 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Proof Techniques for Greedy Algorithms</h2>
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             {proofTechniques.map((technique, index) => (
-              <div key={technique.name} className="border-l-4 border-green-500 pl-6">
+              <div key={technique.name} className="border-l-4 border-green-500 pl-6 text-gray-700">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">{technique.name}</h3>
                 <p className="text-slate-600 mb-3">{technique.description}</p>
                 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4 text-gray-700">
                   <div>
                     <h4 className="font-semibold text-slate-700 text-sm mb-2">Example Application:</h4>
                     <p className="text-sm text-slate-600 bg-gray-50 p-3 rounded">{technique.example}</p>
@@ -382,26 +382,26 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">When Does Greedy Work?</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-green-700 mb-4">✅ Greedy Works Well</h3>
-              <div className="space-y-4">
-                <div className="border-l-4 border-green-500 pl-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Scheduling Problems</h4>
                   <p className="text-sm text-slate-600">Activity selection, job scheduling with deadlines</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Graph Problems</h4>
                   <p className="text-sm text-slate-600">MST (Kruskal, Prim), shortest path (Dijkstra)</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Optimization with Ratios</h4>
                   <p className="text-sm text-slate-600">Fractional knapsack, Huffman coding</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Canonical Systems</h4>
                   <p className="text-sm text-slate-600">Coin change for standard currencies</p>
                 </div>
@@ -410,20 +410,20 @@ export default function GreedyAlgorithmsPage() {
             
             <div>
               <h3 className="text-lg font-semibold text-red-700 mb-4">❌ Greedy Fails</h3>
-              <div className="space-y-4">
-                <div className="border-l-4 border-red-500 pl-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">0/1 Knapsack</h4>
                   <p className="text-sm text-slate-600">Cannot take fractions - need DP instead</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Longest Path Problem</h4>
                   <p className="text-sm text-slate-600">Greedy choices don&apos;t lead to global optimum</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Non-canonical Coin Systems</h4>
                   <p className="text-sm text-slate-600">Example: coins [1, 3, 4] for amount 6</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Traveling Salesman</h4>
                   <p className="text-sm text-slate-600">Nearest neighbor heuristic not optimal</p>
                 </div>
@@ -437,15 +437,15 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gradient-to-r from-green-600 to-yellow-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-green-600 to-yellow-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Practice Greedy Algorithms</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Practice Greedy Algorithms</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Visualize greedy choices and see how local optimizations lead to global solutions
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/greedy/activity-selection" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with Activity Selection
             </Link>
           </div>
@@ -456,22 +456,22 @@ export default function GreedyAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/dynamic-programming"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Dynamic Programming
           </Link>
           
           <Link
             href="/algorithms/divide-and-conquer"
-            className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
           >
             Next: Divide & Conquer
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

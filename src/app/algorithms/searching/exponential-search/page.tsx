@@ -191,13 +191,13 @@ const ExponentialSearchVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
-      <div className="mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
+      <div className="mb-6 text-gray-700">
         <h3 className="text-xl font-semibold text-slate-800 mb-4">Interactive Exponential Search</h3>
         
         {/* Controls */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap gap-4 mb-6 text-gray-700">
+          <div className="flex items-center gap-2 text-gray-700">
             <label className="text-sm font-medium text-slate-700">Target:</label>
             <input
               type="number"
@@ -210,26 +210,26 @@ const ExponentialSearchVisualization = () => {
           <button
             onClick={exponentialSearch}
             disabled={isSearching}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50"
+            className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             New Array
           </button>
         </div>
 
         {/* Phase Indicator */}
-        <div className="mb-4 p-3 bg-gray-50 rounded">
+        <div className="mb-4 p-3 bg-gray-50 rounded text-gray-700">
           <div className="text-sm font-medium text-gray-700">
             Current Phase: 
             <span className={`ml-2 px-2 py-1 rounded text-white ${
@@ -249,9 +249,9 @@ const ExponentialSearchVisualization = () => {
         </div>
 
         {/* Array Visualization - Two rows for better display */}
-        <div className="space-y-2 mb-4">
+        <div className="space-y-2 mb-4 text-gray-700">
           {/* First row */}
-          <div className="flex justify-center items-center space-x-1">
+          <div className="flex justify-center items-center space-x-1 text-gray-700">
             {array.slice(0, 10).map((element, index) => (
               <motion.div
                 key={index}
@@ -286,7 +286,7 @@ const ExponentialSearchVisualization = () => {
           </div>
           
           {/* Second row */}
-          <div className="flex justify-center items-center space-x-1">
+          <div className="flex justify-center items-center space-x-1 text-gray-700">
             {array.slice(10).map((element, index) => {
               const actualIndex = index + 10;
               return (
@@ -326,16 +326,16 @@ const ExponentialSearchVisualization = () => {
 
         {/* Indices display */}
         <div className="space-y-1 mb-6 text-xs text-gray-600">
-          <div className="flex justify-center items-center space-x-1">
+          <div className="flex justify-center items-center space-x-1 text-gray-700">
             {array.slice(0, 10).map((_, index) => (
-              <div key={index} className="w-10 text-center">
+              <div key={index} className="w-10 text-center text-gray-700">
                 [{index}]
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center space-x-1">
+          <div className="flex justify-center items-center space-x-1 text-gray-700">
             {array.slice(10).map((_, index) => (
-              <div key={index} className="w-10 text-center">
+              <div key={index} className="w-10 text-center text-gray-700">
                 [{index + 10}]
               </div>
             ))}
@@ -343,46 +343,46 @@ const ExponentialSearchVisualization = () => {
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-4 mb-4 text-sm">
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-emerald-500 rounded mr-2"></div>
+        <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-600">
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-emerald-500 rounded mr-2 text-gray-700"></div>
             <span>Current Bound</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-yellow-500 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-yellow-500 rounded mr-2 text-gray-700"></div>
             <span>Previous Bounds</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-500 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-blue-500 rounded mr-2 text-gray-700"></div>
             <span>Binary Search Mid</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-gray-400 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-gray-400 rounded mr-2 text-gray-700"></div>
             <span>Binary Search Range</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-green-500 rounded mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-green-500 rounded mr-2 text-gray-700"></div>
             <span>Found</span>
           </div>
         </div>
 
         {/* Status */}
-        <div className="grid grid-cols-4 gap-4 mb-4 text-sm">
-          <div className="bg-emerald-50 p-3 rounded">
+        <div className="grid grid-cols-4 gap-4 mb-4 text-sm text-gray-600">
+          <div className="bg-emerald-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-emerald-700">Current Bound:</span>
             <div className="text-xl font-bold text-emerald-600">{currentBound === -1 ? '-' : currentBound}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded">
+          <div className="bg-blue-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-blue-700">Binary Range:</span>
             <div className="text-lg font-bold text-blue-600">
               {binaryLeft === -1 ? '-' : `[${binaryLeft}, ${binaryRight}]`}
             </div>
           </div>
-          <div className="bg-gray-50 p-3 rounded">
+          <div className="bg-gray-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-gray-700">Binary Mid:</span>
             <div className="text-xl font-bold text-gray-600">{binaryMid === -1 ? '-' : binaryMid}</div>
           </div>
-          <div className="bg-orange-50 p-3 rounded">
+          <div className="bg-orange-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-orange-700">Comparisons:</span>
             <div className="text-xl font-bold text-orange-600">{comparisons}</div>
           </div>
@@ -390,22 +390,22 @@ const ExponentialSearchVisualization = () => {
 
         {/* Search History */}
         {searchHistory.length > 0 && (
-          <div className="bg-gray-50 p-4 rounded mt-4">
+          <div className="bg-gray-50 p-4 rounded mt-4 text-gray-700">
             <h4 className="font-semibold text-gray-800 mb-2">Search Steps:</h4>
-            <div className="space-y-2 max-h-48 overflow-y-auto">
+            <div className="space-y-2 max-h-48 overflow-y-auto text-gray-700">
               {searchHistory.map((step, index) => (
-                <div key={index} className="text-sm">
-                  <span className="font-medium">Step {step.comparison}:</span>
+                <div key={index} className="text-sm text-gray-600">
+                  <span className="font-medium text-gray-600">Step {step.comparison}:</span>
                   <span className={`ml-2 px-2 py-1 rounded text-white text-xs ${
                     step.phase === 'exponential' ? 'bg-emerald-500' : 'bg-blue-500'
                   }`}>
                     {step.phase.toUpperCase()}
                   </span>
                   {step.bound !== undefined && (
-                    <span className="ml-2">Bound {step.bound}: {step.element}</span>
+                    <span className="ml-2 text-gray-600">Bound {step.bound}: {step.element}</span>
                   )}
                   {step.mid !== undefined && (
-                    <span className="ml-2">Left={step.left}, Mid={step.mid}, Right={step.right}: {step.element}</span>
+                    <span className="ml-2 text-gray-600">Left={step.left}, Mid={step.mid}, Right={step.right}: {step.element}</span>
                   )}
                   <span className="ml-2 text-gray-600">→ {step.action}</span>
                 </div>
@@ -415,7 +415,7 @@ const ExponentialSearchVisualization = () => {
         )}
         
         {/* Result */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 text-gray-700">
           {found && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
               ✅ Target {target} found at index {binaryMid} after {comparisons} comparisons!
@@ -804,11 +804,11 @@ function demonstrateScalability() {
   } as const;
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
       <h3 className="text-xl font-semibold text-slate-800 mb-4">Implementation</h3>
       
       {/* Language Tabs */}
-      <div className="flex border-b border-gray-200 mb-4">
+      <div className="flex border-b border-gray-200 mb-4 text-gray-700">
         {(Object.keys(codeExamples) as Array<keyof typeof codeExamples>).map((lang) => (
           <button
             key={lang}
@@ -826,7 +826,7 @@ function demonstrateScalability() {
       
       {/* Code Display */}
       <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <pre className="text-sm">
+        <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
       </div>
@@ -836,17 +836,17 @@ function demonstrateScalability() {
 
 export default function ExponentialSearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/searching" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching Algorithms
           </Link>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
@@ -862,27 +862,27 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Clock className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-emerald-600">O(log n)</div>
             <p className="text-sm text-slate-600 mt-2">Logarithmic time</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Cpu className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Space Complexity</h3>
             <div className="text-2xl font-bold text-green-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Constant extra space</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Bound Finding</h3>
             <div className="text-2xl font-bold text-blue-600">O(log i)</div>
             <p className="text-sm text-slate-600 mt-2">Where i is target position</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Eye className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Best For</h3>
             <div className="text-2xl font-bold text-purple-600">Unbounded</div>
@@ -895,7 +895,7 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <ExponentialSearchVisualization />
         </motion.div>
@@ -905,33 +905,33 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center">
             <BookOpen className="h-6 w-6 mr-2 text-emerald-600" />
             How Exponential Search Works
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Algorithm Steps:</h3>
-              <ol className="space-y-3">
-                <li className="flex items-start">
+              <ol className="space-y-3 text-gray-700">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                   <span className="text-slate-700">Check if element is at index 0</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
                   <span className="text-slate-700">Start with bound = 1</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
                   <span className="text-slate-700">While arr[bound] &lt; target, double the bound</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
                   <span className="text-slate-700">Found range: [bound/2, min(bound, n-1)]</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-emerald-100 text-emerald-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</span>
                   <span className="text-slate-700">Perform binary search in the identified range</span>
                 </li>
@@ -939,29 +939,29 @@ export default function ExponentialSearchPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Key Characteristics:</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Two-Phase Algorithm</div>
                     <div className="text-sm text-slate-600">Range finding + Binary search</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Exponential Growth</div>
                     <div className="text-sm text-slate-600">Bounds grow as 1, 2, 4, 8, 16, ...</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Optimal for Unknown Size</div>
                     <div className="text-sm text-slate-600">Excellent when array size is unknown</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-orange-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Better than Linear</div>
@@ -978,7 +978,7 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <CodeExample />
         </motion.div>
@@ -988,26 +988,26 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">When Exponential Search Shines</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-emerald-700 mb-4">🎯 Ideal Scenarios</h3>
-              <div className="space-y-4">
-                <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200 text-gray-700">
                   <h4 className="font-semibold text-emerald-800 mb-2">Unbounded Arrays</h4>
                   <p className="text-sm text-gray-700">
                     When you don&apos;t know the size of the array in advance. Exponential search can work with streams or dynamic data.
                   </p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
                   <h4 className="font-semibold text-blue-800 mb-2">Target Near Beginning</h4>
                   <p className="text-sm text-gray-700">
                     When the target element is likely to be found early in the array, exponential search quickly narrows down the range.
                   </p>
                 </div>
-                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200 text-gray-700">
                   <h4 className="font-semibold text-purple-800 mb-2">Memory-Constrained Systems</h4>
                   <p className="text-sm text-gray-700">
                     When you can&apos;t hold the entire array in memory and need to search as you read the data.
@@ -1017,20 +1017,20 @@ export default function ExponentialSearchPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">📊 Performance Analysis</h3>
-              <div className="space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-gray-50 p-4 rounded-lg text-gray-700">
                   <h4 className="font-semibold text-gray-800 mb-2">Time Complexity Breakdown</h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex justify-between text-gray-700">
                       <span>Range Finding:</span>
                       <span className="font-mono text-emerald-600">O(log i)</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-gray-700">
                       <span>Binary Search:</span>
                       <span className="font-mono text-blue-600">O(log i)</span>
                     </div>
-                    <div className="flex justify-between border-t pt-2">
-                      <span className="font-semibold">Total:</span>
+                    <div className="flex justify-between border-t pt-2 text-gray-700">
+                      <span className="font-semibold text-gray-800">Total:</span>
                       <span className="font-mono font-bold text-emerald-600">O(log i)</span>
                     </div>
                     <p className="text-xs text-gray-600 mt-2">
@@ -1038,7 +1038,7 @@ export default function ExponentialSearchPage() {
                     </p>
                   </div>
                 </div>
-                <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-gray-700">
                   <h4 className="font-semibold text-yellow-800 mb-2">🔍 Example</h4>
                   <p className="text-sm text-gray-700">
                     For an array of 1 million elements, if target is at position 1000:
@@ -1059,13 +1059,13 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">Algorithm Comparison</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 text-gray-700">
                   <th className="p-3 text-left font-semibold text-slate-800">Algorithm</th>
                   <th className="p-3 text-left font-semibold text-slate-800">Time Complexity</th>
                   <th className="p-3 text-left font-semibold text-slate-800">Space Complexity</th>
@@ -1073,7 +1073,7 @@ export default function ExponentialSearchPage() {
                   <th className="p-3 text-left font-semibold text-slate-800">Best Use Case</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-200 text-gray-700">
                 <tr>
                   <td className="p-3 font-medium text-red-600">Linear Search</td>
                   <td className="p-3 text-slate-700">O(n)</td>
@@ -1088,7 +1088,7 @@ export default function ExponentialSearchPage() {
                   <td className="p-3 text-slate-700">Required</td>
                   <td className="p-3 text-slate-700">Known size, random access</td>
                 </tr>
-                <tr className="bg-emerald-50">
+                <tr className="bg-emerald-50 text-gray-700">
                   <td className="p-3 font-medium text-emerald-600">Exponential Search</td>
                   <td className="p-3 text-slate-700">O(log i)</td>
                   <td className="p-3 text-slate-700">O(1)</td>
@@ -1112,53 +1112,53 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
+          className="grid md:grid-cols-2 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-green-700 mb-4">✅ Advantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Works without knowing array size</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Excellent for unbounded arrays</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Better than binary search when target is near beginning</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Constant space complexity</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Works with streaming data</span>
               </li>
             </ul>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-red-700 mb-4">❌ Disadvantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Requires sorted data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Slightly more complex than binary search</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">May be slower for targets near the end</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Two-phase algorithm adds complexity</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Not as widely known as binary search</span>
               </li>
@@ -1171,11 +1171,11 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">Real-World Applications</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-emerald-500 pl-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="border-l-4 border-emerald-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-emerald-700 mb-2">💾 System Applications</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Log file searching</li>
@@ -1185,7 +1185,7 @@ export default function ExponentialSearchPage() {
                 <li>• Cache management</li>
               </ul>
             </div>
-            <div className="border-l-4 border-blue-500 pl-4">
+            <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">🌐 Network & Data</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Streaming data analysis</li>
@@ -1195,7 +1195,7 @@ export default function ExponentialSearchPage() {
                 <li>• Sensor data processing</li>
               </ul>
             </div>
-            <div className="border-l-4 border-purple-500 pl-4">
+            <div className="border-l-4 border-purple-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-purple-700 mb-2">🔬 Scientific Computing</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Scientific simulations</li>
@@ -1213,22 +1213,22 @@ export default function ExponentialSearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/searching/interpolation-search"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Interpolation Search
           </Link>
           
           <Link
             href="/algorithms/searching/ternary-search"
-            className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-gray-100"
           >
             Next: Ternary Search
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

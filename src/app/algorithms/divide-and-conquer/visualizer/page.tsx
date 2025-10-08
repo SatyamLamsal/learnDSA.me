@@ -187,43 +187,43 @@ export default function DivideConquerVisualizerPage(){
 
   const phaseColor = current?.phase === 'divide' ? 'border-blue-400 ring-blue-300' : current?.phase === 'conquer' ? 'border-orange-400 ring-orange-300' : 'border-green-400 ring-green-300';
 
-  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-    <div className="container mx-auto px-4 py-10 max-w-7xl">
-      <Link href="/algorithms/divide-and-conquer" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back</Link>
-      <div className="grid lg:grid-cols-3 gap-6">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+    <div className="container mx-auto px-4 py-10 max-w-7xl text-gray-700">
+      <Link href="/algorithms/divide-and-conquer" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back</Link>
+      <div className="grid lg:grid-cols-3 gap-6 text-gray-700">
         {/* Left / Main Visualization Column spans 2 */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-6 text-gray-700">
           {/* Controls Card */}
-          <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6">
+          <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h1 className="text-3xl font-bold text-slate-800 mb-4 flex items-center gap-3"><Split className="h-8 w-8 text-blue-600"/>Divide & Conquer Visualizer</h1>
-            <div className="flex flex-wrap gap-4 items-end mb-4">
+            <div className="flex flex-wrap gap-4 items-end mb-4 text-gray-700">
               <div>
                 <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600">Array Input</label>
                 <input value={input} onChange={e=> setInput(e.target.value)} className="mt-1 w-64 text-sm px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono" placeholder="e.g. 5,3,8,1" />
               </div>
-              <button onClick={rebuildFromInput} className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold">Build</button>
-              <button onClick={()=> randomize()} className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold inline-flex items-center"><Shuffle className="h-4 w-4 mr-2"/>Random</button>
-              <div className="flex items-center gap-2">
-                <button onClick={()=> setPlaying(p=> !p)} className="px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm font-semibold inline-flex items-center">{playing? <Pause className="h-4 w-4 mr-2"/>: <Play className="h-4 w-4 mr-2"/>}{playing? 'Pause':'Play'}</button>
-                <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40 inline-flex items-center"><StepBack className="h-4 w-4"/></button>
-                <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40 inline-flex items-center"><StepForward className="h-4 w-4"/></button>
-                <button onClick={()=> { randomize(array.length); }} className="px-3 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm inline-flex items-center"><RotateCcw className="h-4 w-4"/></button>
+              <button onClick={rebuildFromInput} className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold text-gray-300">Build</button>
+              <button onClick={()=> randomize()} className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold inline-flex items-center"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Random</button>
+              <div className="flex items-center gap-2 text-gray-700">
+                <button onClick={()=> setPlaying(p=> !p)} className="px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm font-semibold inline-flex items-center">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
+                <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40 inline-flex items-center"><StepBack className="h-4 w-4 text-gray-700"/></button>
+                <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40 inline-flex items-center"><StepForward className="h-4 w-4 text-gray-700"/></button>
+                <button onClick={()=> { randomize(array.length); }} className="px-3 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm inline-flex items-center"><RotateCcw className="h-4 w-4 text-gray-700"/></button>
               </div>
-              <div className="flex flex-col">
-                <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600 flex items-center gap-1"><Timer className="h-3 w-3"/> Speed</label>
+              <div className="flex flex-col text-gray-700">
+                <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600 flex items-center gap-1"><Timer className="h-3 w-3 text-gray-700"/> Speed</label>
                 <input type="range" min={0.5} max={2} step={0.5} value={speed} onChange={e=> setSpeed(Number(e.target.value))} />
                 <div className="text-[10px] text-slate-500 text-center">{speed===0.5? 'Slow': speed===1? 'Normal':'Fast'}</div>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-gray-700">
                 <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600">Ordering</label>
-                <div className="flex bg-slate-100 rounded-lg overflow-hidden">
+                <div className="flex bg-slate-100 rounded-lg overflow-hidden text-gray-700">
                   <button onClick={()=> setOrdering('dfs')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='dfs'? 'bg-blue-600 text-white':'text-slate-600 hover:bg-slate-200'}`}>DFS</button>
                   <button onClick={()=> setOrdering('phase')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='phase'? 'bg-blue-600 text-white':'text-slate-600 hover:bg-slate-200'}`}>Phase</button>
                 </div>
               </div>
               <div className="text-xs font-mono bg-slate-900 text-blue-200 px-3 py-2 rounded-lg self-start">Step {index+1}/{frames.length}</div>
             </div>
-            <div className="flex flex-wrap gap-3 text-[11px]">
+            <div className="flex flex-wrap gap-3 text-[11px] text-gray-700">
               <PhaseBadge label="Divide" color="bg-blue-600" active={current?.phase==='divide'} />
               <PhaseBadge label="Conquer" color="bg-orange-500" active={current?.phase==='conquer'} />
               <PhaseBadge label="Merge" color="bg-green-600" active={current?.phase==='merge'} />
@@ -231,26 +231,26 @@ export default function DivideConquerVisualizerPage(){
           </motion.div>
 
           {/* Visualization Tree */}
-          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6">
+          <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-lg font-semibold text-slate-800 mb-4 flex items-center gap-2"><Layers className="h-5 w-5 text-blue-600"/> Recursive Decomposition</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto text-gray-700">
               {current && <Tree root={current.root} focusId={current.focusId} />}
             </div>
           </motion.div>
 
           {/* Final Array (if finished) */}
           <AnimatePresence>
-            {index===frames.length-1 && <motion.div initial={{opacity:0,y:15}} animate={{opacity:1,y:0}} exit={{opacity:0,y:10}} className="bg-white rounded-2xl shadow-sm p-6 border border-green-200">
+            {index===frames.length-1 && <motion.div initial={{opacity:0,y:15}} animate={{opacity:1,y:0}} exit={{opacity:0,y:10}} className="bg-white rounded-2xl shadow-sm p-6 border border-green-200 text-gray-700">
               <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Merge className="h-5 w-5 text-green-600"/> Sorted Result</h2>
-              <ArrayBar segment={current.root.segment} highlight className="ring-2 ring-green-300" />
+              <ArrayBar segment={current.root.segment} highlight className="ring-2 ring-green-300 text-gray-700" />
             </motion.div>}
           </AnimatePresence>
         </div>
 
         {/* Explanation & Details */}
-        <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="space-y-6">
+        <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="space-y-6 text-gray-700">
           <div className={`bg-white rounded-2xl shadow-sm p-6 border ${phaseColor} ring-1`}> 
-            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Info className="h-5 w-5"/> Explanation</h2>
+            <h2 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2"><Info className="h-5 w-5 text-gray-700"/> Explanation</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">{current?.description}</p>
             <DepthStats frame={current} />
           </div>
@@ -273,7 +273,7 @@ function ArrayBar({segment,highlight,className}:{segment:number[];highlight?:boo
 }
 
 function Tree({root, focusId}:{root:FrameNode; focusId:string}){
-  return <div className="w-full">
+  return <div className="w-full text-gray-700">
     <Node node={root} focusId={focusId} />
   </div>;
 }
@@ -283,14 +283,14 @@ function Node({node, focusId}:{node:FrameNode; focusId:string}){
   const phaseStyles = node.phase==='divide'? 'ring-blue-300 border-blue-300': node.phase==='conquer'? 'ring-orange-300 border-orange-300':'ring-green-300 border-green-300';
   const showMerged = node.phase==='merge' && node.merged;
   const content = showMerged? node.merged!: (node.segment.length===1? node.segment : node.segment);
-  return <div className="flex flex-col items-center">
+  return <div className="flex flex-col items-center text-gray-700">
     <motion.div layout initial={{opacity:0,scale:0.85}} animate={{opacity:1,scale:1}} transition={{duration:0.3}} className={`mb-3 px-3 py-2 rounded-xl bg-white border ${phaseStyles} ${isFocus? 'shadow-lg ring-2':'shadow-sm'} min-w-[70px]`}>
-      <div className="flex flex-wrap gap-1 justify-center">
-        {content.map((v,i)=><span key={i} className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200">{v}</span>)}
+      <div className="flex flex-wrap gap-1 justify-center text-gray-700">
+        {content.map((v,i)=><span key={i} className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-gray-600">{v}</span>)}
       </div>
       <div className="text-[9px] text-center mt-1 font-semibold uppercase tracking-wide text-slate-500">{node.phase}</div>
     </motion.div>
-    {(node.left || node.right) && <div className="flex gap-8">
+    {(node.left || node.right) && <div className="flex gap-8 text-gray-700">
       {node.left && <Node node={node.left} focusId={focusId} />}
       {node.right && <Node node={node.right} focusId={focusId} />}
     </div>}
@@ -300,31 +300,31 @@ function Node({node, focusId}:{node:FrameNode; focusId:string}){
 function DepthStats({frame}:{frame:Frame}){
   if(!frame) return null;
   const depth = frame.depth;
-  return <div className="grid grid-cols-2 gap-3 text-xs">
-    <div className="p-3 rounded-lg bg-blue-50 border border-blue-200">
+  return <div className="grid grid-cols-2 gap-3 text-xs text-gray-600">
+    <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-gray-700">
       <div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide">Phase</div>
-      <div className="font-mono mt-1">{frame.phase}</div>
+      <div className="font-mono mt-1 text-gray-700">{frame.phase}</div>
     </div>
-    <div className="p-3 rounded-lg bg-purple-50 border border-purple-200">
+    <div className="p-3 rounded-lg bg-purple-50 border border-purple-200 text-gray-700">
       <div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide">Depth</div>
-      <div className="font-mono mt-1">{depth}</div>
+      <div className="font-mono mt-1 text-gray-700">{depth}</div>
     </div>
   </div>;
 }
 
 function LegendCard(){
-  return <div className="bg-white rounded-2xl shadow-sm p-6">
+  return <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Legend</h2>
-    <div className="grid grid-cols-3 gap-3 text-[11px]">
-      <div className="p-2 rounded-lg bg-blue-50 border border-blue-200">
+    <div className="grid grid-cols-3 gap-3 text-[11px] text-gray-700">
+      <div className="p-2 rounded-lg bg-blue-50 border border-blue-200 text-gray-700">
         <div className="font-semibold text-blue-700 mb-1">Divide</div>
         <p className="text-slate-600">Splitting segment at midpoint.</p>
       </div>
-      <div className="p-2 rounded-lg bg-orange-50 border border-orange-200">
+      <div className="p-2 rounded-lg bg-orange-50 border border-orange-200 text-gray-700">
         <div className="font-semibold text-orange-700 mb-1">Conquer</div>
         <p className="text-slate-600">Solved subproblems; ready to merge.</p>
       </div>
-      <div className="p-2 rounded-lg bg-green-50 border border-green-200">
+      <div className="p-2 rounded-lg bg-green-50 border border-green-200 text-gray-700">
         <div className="font-semibold text-green-700 mb-1">Merge</div>
         <p className="text-slate-600">Combining sorted halves.</p>
       </div>
@@ -333,7 +333,7 @@ function LegendCard(){
 }
 
 function ConceptCard(){
-  return <div className="bg-white rounded-2xl shadow-sm p-6">
+  return <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Concept</h2>
     <p className="text-sm text-slate-600 leading-relaxed">This visualizer demonstrates the classic divide & conquer pattern by animating merge sort. The array breaks into single-element base cases (conquer), then merges upward rebuilding sorted segments. Each frame highlights: <span className="font-semibold text-blue-600">Divide</span>, <span className="font-semibold text-orange-600">Conquer</span>, or <span className="font-semibold text-green-600">Merge</span>. Experiment by entering custom arrays, adjusting speed, and stepping through frames to observe recursion structure and merge dynamics.</p>
   </div>;

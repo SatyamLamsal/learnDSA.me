@@ -41,13 +41,13 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 z-50 flex items-center justify-center text-gray-700">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm text-gray-100"
           onClick={handleContinueAsGuest} // Allow clicking backdrop to continue as guest
         />
         
@@ -57,21 +57,21 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden"
+          className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden text-gray-700"
         >
           {/* Close Button */}
           <button
             onClick={handleContinueAsGuest}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-800"
           >
             <X className="w-5 h-5 text-gray-500" />
           </button>
 
-          <div className="p-8 text-center">
+          <div className="p-8 text-center text-gray-700">
             {/* Logo/Brand */}
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <Code className="h-8 w-8 text-white" />
+            <div className="flex justify-center mb-6 text-gray-700">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-gray-700">
+                <Code className="h-8 w-8 text-white text-gray-700" />
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               Welcome to
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-gray-600">
                 LearnDSA.me
               </span>
             </h2>
@@ -90,9 +90,9 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
             </p>
 
             {/* Features */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center text-left">
-                <div className="bg-blue-100 p-2 rounded-full mr-4">
+            <div className="space-y-4 mb-8 text-gray-700">
+              <div className="flex items-center text-left text-gray-700">
+                <div className="bg-blue-100 p-2 rounded-full mr-4 text-gray-700">
                   <BookOpen className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
@@ -101,8 +101,8 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
                 </div>
               </div>
               
-              <div className="flex items-center text-left">
-                <div className="bg-purple-100 p-2 rounded-full mr-4">
+              <div className="flex items-center text-left text-gray-700">
+                <div className="bg-purple-100 p-2 rounded-full mr-4 text-gray-700">
                   <Zap className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
@@ -111,8 +111,8 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
                 </div>
               </div>
               
-              <div className="flex items-center text-left">
-                <div className="bg-green-100 p-2 rounded-full mr-4">
+              <div className="flex items-center text-left text-gray-700">
+                <div className="bg-green-100 p-2 rounded-full mr-4 text-gray-700">
                   <User className="w-5 h-5 text-green-600" />
                 </div>
                 <div>
@@ -128,7 +128,7 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
               disabled={isLoading}
               className="w-full bg-white border-2 border-gray-300 hover:border-blue-400 hover:shadow-lg text-gray-700 font-medium py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center mb-4 group disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <div className="flex items-center">
+              <div className="flex items-center text-gray-700">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 mr-3">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -137,14 +137,14 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
                 </svg>
                 {isLoading ? 'Signing in...' : 'Continue with Google'}
               </div>
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-gray-700" />
             </button>
 
             {/* OR Divider */}
-            <div className="flex items-center my-6">
-              <div className="flex-1 border-t border-gray-300"></div>
+            <div className="flex items-center my-6 text-gray-700">
+              <div className="flex-1 border-t border-gray-300 text-gray-700"></div>
               <span className="px-4 text-sm text-gray-500 bg-white">OR</span>
-              <div className="flex-1 border-t border-gray-300"></div>
+              <div className="flex-1 border-t border-gray-300 text-gray-700"></div>
             </div>
 
             {/* Continue as Guest */}

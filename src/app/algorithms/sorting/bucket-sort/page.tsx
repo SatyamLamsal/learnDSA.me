@@ -100,23 +100,23 @@ function BucketSortViz() {
   }, [phase, sortBucketIdx]);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+    <div className="bg-white rounded-xl shadow-lg p-6 text-gray-700">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 text-gray-700">
         <div className="text-slate-700 font-semibold">{phaseLabel}</div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 text-gray-700">
           <button onClick={reset} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 text-slate-700">
-            <RotateCw className="w-4 h-4" /> Reset
+            <RotateCw className="w-4 h-4 text-gray-700" /> Reset
           </button>
-          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-white disabled:opacity-50">
-            <StepForward className="w-4 h-4" /> Step
+          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-white disabled:opacity-50 text-gray-800">
+            <StepForward className="w-4 h-4 text-gray-700" /> Step
           </button>
         </div>
       </div>
 
       {/* Current array */}
-      <div className="mb-6">
+      <div className="mb-6 text-gray-700">
         <div className="text-sm font-medium text-slate-600 mb-2">Array</div>
-        <div className="grid grid-cols-6 md:grid-cols-12 gap-2">
+        <div className="grid grid-cols-6 md:grid-cols-12 gap-2 text-gray-700">
           {arr.map((v, idx) => (
             <motion.div
               key={idx}
@@ -130,13 +130,13 @@ function BucketSortViz() {
       </div>
 
       {/* Buckets */}
-      <div className="space-y-3">
+      <div className="space-y-3 text-gray-700">
         <div className="text-sm font-medium text-slate-600">Buckets [0,1) split into {B} ranges</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
           {buckets.map((bucket, bIdx) => (
             <div key={bIdx} className={`border rounded-lg p-3 ${phase === 'sort-buckets' && bIdx === sortBucketIdx ? 'border-blue-400' : 'border-slate-200'}`}>
               <div className="text-xs font-semibold text-slate-500 mb-2">Bucket {bIdx} (≈ [{(bIdx/B).toFixed(2)}, {((bIdx+1)/B).toFixed(2)}))</div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 text-gray-700">
                 {bucket.map((v, j) => (
                   <motion.div key={`${bIdx}-${j}`} layout className="px-2 py-1 rounded bg-emerald-100 text-emerald-800 text-sm font-semibold">
                     {v.toFixed(2)}
@@ -154,12 +154,12 @@ function BucketSortViz() {
 
 export default function BucketSortPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50">
-      <div className="container mx-auto px-4 py-10">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-gray-700">
+      <div className="container mx-auto px-4 py-10 text-gray-700">
         <Link href="/algorithms/sorting" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6">
-          <ArrowLeft className="h-5 w-5 mr-2" /> Back to Sorting
+          <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" /> Back to Sorting
         </Link>
-        <div className="flex items-center gap-3 mb-2">
+        <div className="flex items-center gap-3 mb-2 text-gray-700">
           <Cpu className="w-6 h-6 text-teal-600" />
           <h1 className="text-3xl font-bold text-slate-800">Bucket Sort</h1>
         </div>
@@ -167,8 +167,8 @@ export default function BucketSortPage() {
 
         <BucketSortViz />
 
-        <div className="grid md:grid-cols-2 gap-6 mt-8">
-          <div className="bg-white rounded-xl shadow p-6">
+        <div className="grid md:grid-cols-2 gap-6 mt-8 text-gray-700">
+          <div className="bg-white rounded-xl shadow p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">Complexity</h2>
             <ul className="list-disc list-inside text-slate-700">
               <li>Expected Time: O(n + k)</li>
@@ -177,7 +177,7 @@ export default function BucketSortPage() {
               <li>Stable: Yes (if in-bucket sort is stable)</li>
             </ul>
           </div>
-          <div className="bg-white rounded-xl shadow p-6">
+          <div className="bg-white rounded-xl shadow p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-3">Notes</h2>
             <ul className="list-disc list-inside text-slate-700">
               <li>Assumes near-uniform distribution in [0,1)</li>

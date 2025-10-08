@@ -53,18 +53,18 @@ end procedure`,
   } as const;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 text-gray-700">
           <Link href="/data-structures/arrays" className="inline-flex items-center text-red-600 hover:text-red-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Arrays Overview
           </Link>
           <h1 className="text-4xl font-bold text-slate-800">Arrays Pseudocode</h1>
           <p className="text-lg text-slate-600 mt-2">Common array operations and patterns in clear pseudocode.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <PseudocodeBlock title="Traversal" code={examples.traversal} autoPlay loop />
           </motion.div>
@@ -77,13 +77,13 @@ end procedure`,
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }}>
             <PseudocodeBlock title="Delete At Index" code={examples.deleteAt} autoPlay loop intervalMs={900} />
           </motion.div>
-          <motion.div className="md:col-span-2" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <motion.div className="md:col-span-2 text-gray-700" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <PseudocodeBlock title="Sliding Window: Max Sum of Size k" code={examples.maxSubarray} autoPlay loop intervalMs={1100} />
           </motion.div>
         </div>
 
         <div className="mt-10 text-sm text-gray-600 flex items-center gap-2">
-          <BookOpen className="h-4 w-4" />
+          <BookOpen className="h-4 w-4 text-gray-700" />
           <span>See theory and interactive practice from the Arrays page.</span>
         </div>
       </div>

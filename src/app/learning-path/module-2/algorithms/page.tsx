@@ -77,14 +77,14 @@ const TwoPointerDemo = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <ArrowLeftRight className="w-6 h-6 mr-2 text-blue-600" />
         Two Pointer Technique: Find Pair with Sum
       </h3>
       
       {/* Controls */}
-      <div className="mb-4 flex items-center space-x-4">
+      <div className="mb-4 flex items-center space-x-4 text-gray-700">
         <div>
           <label className="block text-sm font-medium text-gray-700">Target Sum:</label>
           <input
@@ -98,15 +98,15 @@ const TwoPointerDemo = () => {
         <button
           onClick={runTwoPointer}
           disabled={isRunning}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400"
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400 text-white text-white"
         >
           {isRunning ? 'Running...' : 'Find Pair'}
         </button>
       </div>
 
       {/* Array Visualization */}
-      <div className="mb-6">
-        <div className="flex items-center space-x-2 mb-2">
+      <div className="mb-6 text-gray-700">
+        <div className="flex items-center space-x-2 mb-2 text-gray-700">
           {array.map((value, index) => (
             <div
               key={index}
@@ -121,13 +121,13 @@ const TwoPointerDemo = () => {
           ))}
         </div>
         
-        <div className="flex items-center space-x-4 text-sm">
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-200 border border-blue-400 mr-2"></div>
+        <div className="flex items-center space-x-4 text-sm text-gray-600">
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-blue-200 border border-blue-400 mr-2 text-gray-700"></div>
             <span>Left Pointer: {leftPointer}</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-red-200 border border-red-400 mr-2"></div>
+          <div className="flex items-center text-gray-700">
+            <div className="w-4 h-4 bg-red-200 border border-red-400 mr-2 text-gray-700"></div>
             <span>Right Pointer: {rightPointer}</span>
           </div>
         </div>
@@ -135,9 +135,9 @@ const TwoPointerDemo = () => {
 
       {/* Steps */}
       {steps.length > 0 && (
-        <div className="bg-gray-50 p-4 rounded-lg max-h-40 overflow-y-auto">
+        <div className="bg-gray-50 p-4 rounded-lg max-h-40 overflow-y-auto text-gray-700">
           <h4 className="font-semibold text-gray-800 mb-2">Steps:</h4>
-          <div className="space-y-1">
+          <div className="space-y-1 text-gray-700">
             {steps.map((step, index) => (
               <div key={index} className="text-sm text-gray-700 font-mono">
                 {step}
@@ -217,14 +217,14 @@ const SlidingWindowDemo = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-xl p-6 shadow-lg border text-gray-700">
+      <h3 className="text-xl font-semibold mb-4 flex items-center text-gray-800">
         <TrendingUp className="w-6 h-6 mr-2 text-green-600" />
         Sliding Window: Maximum Sum Subarray
       </h3>
       
       {/* Controls */}
-      <div className="mb-4 flex items-center space-x-4">
+      <div className="mb-4 flex items-center space-x-4 text-gray-700">
         <div>
           <label className="block text-sm font-medium text-gray-700">Window Size:</label>
           <input
@@ -247,8 +247,8 @@ const SlidingWindowDemo = () => {
       </div>
 
       {/* Array Visualization */}
-      <div className="mb-6">
-        <div className="flex items-center space-x-2 mb-4">
+      <div className="mb-6 text-gray-700">
+        <div className="flex items-center space-x-2 mb-4 text-gray-700">
           {array.map((value, index) => {
             const isInCurrentWindow = index >= currentStart && index < currentStart + windowSize;
             const isInMaxWindow = maxWindow.length > 0 && 
@@ -279,9 +279,9 @@ const SlidingWindowDemo = () => {
 
       {/* Steps */}
       {steps.length > 0 && (
-        <div className="bg-gray-50 p-4 rounded-lg max-h-40 overflow-y-auto">
+        <div className="bg-gray-50 p-4 rounded-lg max-h-40 overflow-y-auto text-gray-700">
           <h4 className="font-semibold text-gray-800 mb-2">Steps:</h4>
-          <div className="space-y-1">
+          <div className="space-y-1 text-gray-700">
             {steps.map((step, index) => (
               <div key={index} className="text-sm text-gray-700 font-mono">
                 {step}
@@ -416,16 +416,16 @@ END`
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center space-x-4 mb-4">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+        <div className="max-w-4xl mx-auto text-gray-700">
+          <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-6 h-6 text-gray-700" />
             </Link>
             <div>
-              <h1 className="text-4xl font-bold mb-2">Array Algorithms</h1>
+              <h1 className="text-4xl font-bold mb-2 text-slate-800">Array Algorithms</h1>
               <p className="text-blue-100">Master essential array problem-solving patterns and techniques</p>
             </div>
           </div>
@@ -433,9 +433,9 @@ END`
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12 text-gray-700">
         {/* Interactive Demos */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <TwoPointerDemo />
           <SlidingWindowDemo />
         </div>
@@ -444,7 +444,7 @@ END`
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Brain className="w-8 h-8 mr-3 text-blue-600" />
@@ -452,7 +452,7 @@ END`
           </h2>
           
           {/* Tab Navigation */}
-          <div className="flex space-x-2 mb-6 border-b overflow-x-auto">
+          <div className="flex space-x-2 mb-6 border-b overflow-x-auto text-gray-700">
             {Object.keys(algorithmInfo).map((tab) => (
               <button
                 key={tab}
@@ -469,22 +469,22 @@ END`
           </div>
 
           {/* Algorithm Info */}
-          <div className="mb-6">
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="mb-6 text-gray-700">
+            <div className="grid md:grid-cols-2 gap-6 mb-6 text-gray-700">
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {algorithmInfo[activeTab].title}
                 </h3>
                 <p className="text-gray-600 mb-4">{algorithmInfo[activeTab].description}</p>
                 
-                <div className="space-y-2">
-                  <div className="flex items-center">
+                <div className="space-y-2 text-gray-700">
+                  <div className="flex items-center text-gray-700">
                     <span className="font-medium text-gray-700 w-32">Time Complexity:</span>
                     <code className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">
                       {algorithmInfo[activeTab].timeComplexity}
                     </code>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center text-gray-700">
                     <span className="font-medium text-gray-700 w-32">Space Complexity:</span>
                     <code className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
                       {algorithmInfo[activeTab].spaceComplexity}
@@ -495,7 +495,7 @@ END`
               
               <div>
                 <h4 className="font-semibold text-gray-800 mb-3">Common Use Cases:</h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-gray-700">
                   {algorithmInfo[activeTab].useCases.map((useCase, index) => (
                     <li key={index} className="flex items-center text-sm text-gray-600">
                       <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
@@ -507,13 +507,13 @@ END`
             </div>
 
             {/* Pseudocode */}
-            <div className="mb-6">
+            <div className="mb-6 text-gray-700">
               <h4 className="font-semibold text-gray-800 mb-3">Algorithm Pseudocode:</h4>
               <PseudocodeBlock code={pseudocodes[activeTab]} />
             </div>
 
             {/* C++ Implementation */}
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-gray-50 p-6 rounded-lg text-gray-700">
               <h4 className="font-semibold text-gray-800 mb-3">C++ Implementation:</h4>
               <pre className="bg-gray-800 text-green-400 p-4 rounded text-sm overflow-x-auto">
                 {activeTab === 'two-pointer' && `// Two Pointer Sum in C++
@@ -599,44 +599,44 @@ void reverse(vector<int>::iterator start,
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 shadow-lg border"
+          className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-8 h-8 mr-3 text-green-600" />
             Practice Problems
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div className="space-y-4 text-gray-700">
               <h3 className="text-lg font-semibold text-gray-800">Beginner Problems</h3>
-              <div className="space-y-3">
-                <div className="p-3 border border-green-200 rounded-lg bg-green-50">
+              <div className="space-y-3 text-gray-700">
+                <div className="p-3 border border-green-200 rounded-lg bg-green-50 text-gray-700">
                   <div className="font-medium text-green-800">Two Sum (Sorted Array)</div>
                   <div className="text-sm text-green-600">Find two numbers that add up to target</div>
                 </div>
-                <div className="p-3 border border-green-200 rounded-lg bg-green-50">
+                <div className="p-3 border border-green-200 rounded-lg bg-green-50 text-gray-700">
                   <div className="font-medium text-green-800">Maximum Sum Subarray (Size K)</div>
                   <div className="text-sm text-green-600">Find maximum sum of any subarray of size K</div>
                 </div>
-                <div className="p-3 border border-green-200 rounded-lg bg-green-50">
+                <div className="p-3 border border-green-200 rounded-lg bg-green-50 text-gray-700">
                   <div className="font-medium text-green-800">Range Sum Queries</div>
                   <div className="text-sm text-green-600">Answer multiple range sum queries efficiently</div>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-4 text-gray-700">
               <h3 className="text-lg font-semibold text-gray-800">Intermediate Problems</h3>
-              <div className="space-y-3">
-                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50">
+              <div className="space-y-3 text-gray-700">
+                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50 text-gray-700">
                   <div className="font-medium text-yellow-800">3Sum Problem</div>
                   <div className="text-sm text-yellow-600">Find all unique triplets that sum to zero</div>
                 </div>
-                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50">
+                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50 text-gray-700">
                   <div className="font-medium text-yellow-800">Longest Substring (No Repeats)</div>
                   <div className="text-sm text-yellow-600">Find longest substring with unique characters</div>
                 </div>
-                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50">
+                <div className="p-3 border border-yellow-200 rounded-lg bg-yellow-50 text-gray-700">
                   <div className="font-medium text-yellow-800">Subarray Sum Equals K</div>
                   <div className="text-sm text-yellow-600">Count subarrays with sum equal to K</div>
                 </div>
@@ -650,21 +650,21 @@ void reverse(vector<int>::iterator start,
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/learning-path/module-2/operations"
-            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
             Previous: Basic Operations
           </Link>
           
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl shadow-lg">
-              <div className="flex items-center">
-                <CheckCircle className="w-6 h-6 mr-2" />
-                <span className="font-semibold text-lg">Arrays Module Complete!</span>
+          <div className="text-center text-gray-700">
+            <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl shadow-lg text-gray-700">
+              <div className="flex items-center text-gray-700">
+                <CheckCircle className="w-6 h-6 mr-2 text-gray-700" />
+                <span className="font-semibold text-lg text-gray-800">Arrays Module Complete!</span>
               </div>
               <p className="text-green-100 text-sm mt-1">Ready for searching & sorting algorithms</p>
             </div>

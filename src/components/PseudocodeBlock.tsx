@@ -76,17 +76,17 @@ export default function PseudocodeBlock({ title, languageLabel = 'Pseudocode', c
   };
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden">
-      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-gray-50">
+    <div className="rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden text-gray-700">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-gray-50 text-gray-700">
         <div className="text-sm font-semibold text-gray-700">{title ?? 'Pseudocode'}</div>
-        <div className="flex items-center gap-2">
-          <div className="hidden sm:flex items-center gap-1 mr-2">
-            <button onClick={onPrev} className="p-1 rounded hover:bg-gray-100" aria-label="Previous line"><SkipBack className="h-4 w-4 text-gray-600" /></button>
-            <button onClick={onPlayPause} className="p-1 rounded hover:bg-gray-100" aria-label={playing ? 'Pause' : 'Play'}>
+        <div className="flex items-center gap-2 text-gray-700">
+          <div className="hidden sm:flex items-center gap-1 mr-2 text-gray-700">
+            <button onClick={onPrev} className="p-1 rounded hover:bg-gray-100 text-gray-800" aria-label="Previous line"><SkipBack className="h-4 w-4 text-gray-600" /></button>
+            <button onClick={onPlayPause} className="p-1 rounded hover:bg-gray-100 text-gray-800" aria-label={playing ? 'Pause' : 'Play'}>
               {playing ? <Pause className="h-4 w-4 text-gray-600" /> : <Play className="h-4 w-4 text-gray-600" />}
             </button>
-            <button onClick={onNext} className="p-1 rounded hover:bg-gray-100" aria-label="Next line"><SkipForward className="h-4 w-4 text-gray-600" /></button>
-            <button onClick={onReset} className="p-1 rounded hover:bg-gray-100" aria-label="Reset"><RotateCcw className="h-4 w-4 text-gray-600" /></button>
+            <button onClick={onNext} className="p-1 rounded hover:bg-gray-100 text-gray-800" aria-label="Next line"><SkipForward className="h-4 w-4 text-gray-600" /></button>
+            <button onClick={onReset} className="p-1 rounded hover:bg-gray-100 text-gray-800" aria-label="Reset"><RotateCcw className="h-4 w-4 text-gray-600" /></button>
             <select
               aria-label="Playback speed"
               className="ml-1 text-xs border border-gray-200 rounded px-1 py-0.5 text-gray-600 bg-white"
@@ -106,25 +106,25 @@ export default function PseudocodeBlock({ title, languageLabel = 'Pseudocode', c
             className="inline-flex items-center gap-1 text-xs text-gray-600 hover:text-gray-800 px-2 py-1 rounded hover:bg-gray-100"
             aria-label="Copy pseudocode"
           >
-            {copied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+            {copied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4 text-gray-700" />}
             {copied ? 'Copied' : 'Copy'}
           </button>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative text-gray-700">
         {/* Animated highlight bar */}
         <div
-          className="pointer-events-none absolute left-0 right-0 h-6 transition-all duration-300 ease-out"
+          className="pointer-events-none absolute left-0 right-0 h-6 transition-all duration-300 ease-out text-gray-700"
           style={{
             top: cursor > 0 ? `${(cursor - 1) * 24}px` : '-9999px',
             background:
               'linear-gradient(90deg, rgba(236,72,153,0.10) 0%, rgba(236,72,153,0.06) 30%, rgba(236,72,153,0.03) 100%)',
           }}
         />
-        <pre className="m-0 p-0 overflow-auto">
-          <code className="grid grid-cols-[auto_1fr] text-sm leading-6">
+        <pre className="m-0 p-0 overflow-auto text-gray-700">
+          <code className="grid grid-cols-[auto_1fr] text-sm leading-6 text-gray-600">
             {lines.map((ln, i) => (
-              <div key={i} className="contents">
+              <div key={i} className="contents text-gray-700">
                 <span className={`select-none text-right pr-3 pl-4 border-r border-gray-200 bg-gray-50 ${cursor === i + 1 ? 'text-pink-600 font-semibold' : 'text-gray-400'}`}>
                   {i + 1}
                 </span>

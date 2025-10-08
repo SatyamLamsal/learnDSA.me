@@ -171,21 +171,21 @@ const designPrinciples = [
   {
     name: 'Divide',
     description: 'Break the problem into smaller subproblems of the same type',
-    icon: <Split className="h-8 w-8" />,
+    icon: <Split className="h-8 w-8 text-gray-700" />,
     color: 'text-blue-600',
     tips: ['Divide into roughly equal parts', 'Ensure subproblems are independent', 'Base case should be simple']
   },
   {
     name: 'Conquer',
     description: 'Solve subproblems recursively (base case solves directly)',
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-8 w-8 text-gray-700" />,
     color: 'text-green-600',
     tips: ['Define clear base cases', 'Recursive calls on smaller inputs', 'Trust the recursion works']
   },
   {
     name: 'Combine',
     description: 'Merge solutions of subproblems to solve original problem',
-    icon: <GitBranch className="h-8 w-8" />,
+    icon: <GitBranch className="h-8 w-8 text-gray-700" />,
     color: 'text-purple-600',
     tips: ['Combine step should be efficient', 'May require additional data structures', 'Sometimes implicit (like quicksort)']
   }
@@ -193,17 +193,17 @@ const designPrinciples = [
 
 export default function DivideAndConquerPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Divide & Conquer Algorithms</h1>
@@ -218,24 +218,24 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">The Three-Step Process</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
             {designPrinciples.map((principle, index) => (
               <motion.div
                 key={principle.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow"
+                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow text-gray-700"
               >
                 <div className={`${principle.color} mb-4 flex justify-center`}>
                   {principle.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-slate-800 mb-3">{principle.name}</h3>
                 <p className="text-slate-600 mb-4">{principle.description}</p>
-                <div className="text-left">
+                <div className="text-left text-gray-700">
                   <h4 className="font-semibold text-slate-700 text-sm mb-2">Key Tips:</h4>
                   <ul className="text-xs text-slate-600 space-y-1">
                     {principle.tips.map((tip, i) => (
@@ -253,24 +253,24 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Shuffle className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Sorting & Searching</h3>
             <p className="text-slate-600 text-sm">Merge sort, Quick sort, Binary search</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Layers className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Mathematical</h3>
             <p className="text-slate-600 text-sm">Matrix multiplication, FFT, Karatsuba</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Target className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Geometric</h3>
             <p className="text-slate-600 text-sm">Closest pair, Convex hull, Voronoi diagram</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Zap className="h-12 w-12 text-orange-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Optimization</h3>
             <p className="text-slate-600 text-sm">Maximum subarray, Selection problems</p>
@@ -282,10 +282,10 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Classic Divide & Conquer Algorithms</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {divideConquerAlgorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -293,30 +293,30 @@ export default function DivideAndConquerPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2">{algorithm.name}</h3>
-                    {/* <span className="absolute top-2 right-2 bg-white bg-opacity-20 px-2 py-1 rounded text-xs text-white">
+                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
+                    {/* <span className="absolute top-2 right-2 bg-white bg-opacity-20 px-2 py-1 rounded text-xs text-white text-gray-600">
                       {algorithm.pattern}
                     </span> */}
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Time:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -326,8 +326,8 @@ export default function DivideAndConquerPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="space-y-2 text-xs">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="space-y-2 text-xs text-gray-600">
                         <div>
                           <span className="font-semibold text-blue-700">Divide:</span>
                           <p className="text-slate-600">{algorithm.divideStep}</p>
@@ -342,7 +342,7 @@ export default function DivideAndConquerPage() {
                         </div>
                       </div>
                       
-                      <div className="mt-3 pt-2 border-t">
+                      <div className="mt-3 pt-2 border-t text-gray-700">
                         <span className="text-xs font-semibold text-orange-700">Recurrence:</span>
                         <div className="text-xs text-slate-600 mt-1 font-mono bg-gray-50 p-2 rounded">
                           {algorithm.recurrence}
@@ -361,11 +361,11 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Master Theorem for Divide & Conquer Recurrences</h2>
           
-          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-gray-700">
             <h3 className="font-semibold text-blue-800 mb-2">General Form:</h3>
             <p className="font-mono text-blue-700 text-lg">T(n) = a·T(n/b) + f(n)</p>
             <p className="text-blue-600 text-sm mt-2">
@@ -373,11 +373,11 @@ export default function DivideAndConquerPage() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             {masterTheoremCases.map((caseData, _index) => (
-              <div key={caseData.case} className="border-l-4 border-blue-500 pl-6">
+              <div key={caseData.case} className="border-l-4 border-blue-500 pl-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-blue-700 mb-2">{caseData.case}</h3>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-4 text-gray-700">
                   <div>
                     <h4 className="font-semibold text-slate-700 text-sm mb-1">Condition:</h4>
                     <p className="text-sm font-mono bg-gray-50 p-2 rounded text-slate-600">{caseData.condition}</p>
@@ -401,26 +401,26 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Common Divide & Conquer Patterns</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">✅ When to Use Divide & Conquer</h3>
-              <div className="space-y-3">
-                <div className="border-l-4 border-green-500 pl-4">
+              <div className="space-y-3 text-gray-700">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Problem has Optimal Substructure</h4>
                   <p className="text-sm text-slate-600">Optimal solution contains optimal solutions to subproblems</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Subproblems are Independent</h4>
                   <p className="text-sm text-slate-600">No overlapping subproblems (unlike DP)</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Divide Step is Efficient</h4>
                   <p className="text-sm text-slate-600">Can split problem quickly into roughly equal parts</p>
                 </div>
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-green-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Combine Step is Feasible</h4>
                   <p className="text-sm text-slate-600">Can efficiently merge subproblem solutions</p>
                 </div>
@@ -429,20 +429,20 @@ export default function DivideAndConquerPage() {
             
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">⚠️ Common Pitfalls</h3>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-500 pl-4">
+              <div className="space-y-3 text-gray-700">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Unbalanced Partitions</h4>
                   <p className="text-sm text-slate-600">Poor pivot choice in quicksort → O(n²) worst case</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Expensive Combine Step</h4>
                   <p className="text-sm text-slate-600">If combining is too costly, D&C may not help</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Overlapping Subproblems</h4>
                   <p className="text-sm text-slate-600">Should use DP instead of D&C for efficiency</p>
                 </div>
-                <div className="border-l-4 border-red-500 pl-4">
+                <div className="border-l-4 border-red-500 pl-4 text-gray-700">
                   <h4 className="font-semibold text-slate-700">Stack Overflow</h4>
                   <p className="text-sm text-slate-600">Deep recursion may exceed stack limits</p>
                 </div>
@@ -456,13 +456,13 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Complexity Analysis Examples</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="border-b-2 border-gray-200">
+                <tr className="border-b-2 border-gray-200 text-gray-700">
                   <th className="text-left p-3 font-semibold text-slate-700">Algorithm</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Recurrence</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Master Theorem Case</th>
@@ -477,10 +477,10 @@ export default function DivideAndConquerPage() {
                   { name: 'Karatsuba', recurrence: 'T(n) = 3T(n/2) + O(n)', case: 'Case 1', complexity: 'O(n^1.585)' },
                   { name: 'Max Subarray', recurrence: 'T(n) = 2T(n/2) + O(n)', case: 'Case 2', complexity: 'O(n log n)' }
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100 text-gray-700">
                     <td className="p-3 font-medium text-slate-800">{row.name}</td>
-                    <td className="p-3 text-center font-mono text-xs">{row.recurrence}</td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center font-mono text-xs text-gray-600">{row.recurrence}</td>
+                    <td className="p-3 text-center text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs ${
                         row.case === 'Case 1' ? 'bg-blue-100 text-blue-800' :
                         row.case === 'Case 2' ? 'bg-green-100 text-green-800' :
@@ -489,7 +489,7 @@ export default function DivideAndConquerPage() {
                         {row.case}
                       </span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-gray-100 text-gray-800">{row.complexity}</span>
                     </td>
                   </tr>
@@ -504,19 +504,19 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Master Divide & Conquer</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Master Divide & Conquer</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Visualize recursive algorithms and understand how they break down problems
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/divide-and-conquer/visualizer" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              <Split className="h-5 w-5 inline mr-2" />
+              <Split className="h-5 w-5 inline mr-2 text-gray-700" />
               D&C Visualizer
             </Link>
             <Link href="/algorithms/divide-and-conquer/merge-sort" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with Merge Sort
             </Link>
           </div>
@@ -527,22 +527,22 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/greedy"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Greedy Algorithms
           </Link>
           
           <Link
             href="/algorithms"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Back to Algorithms Overview
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

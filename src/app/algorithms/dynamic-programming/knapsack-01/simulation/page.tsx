@@ -46,38 +46,38 @@ export default function KnapsackSimulationPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
-        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8">
-          <Link href="/algorithms/dynamic-programming/knapsack-01" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Overview</Link>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
+          <Link href="/algorithms/dynamic-programming/knapsack-01" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-2">Knapsack Simulation</h1>
           <p className="text-slate-600 max-w-3xl">Step through table filling and highlight when taking an item improves value versus skipping.</p>
         </motion.div>
-        <div className="bg-white rounded-lg shadow p-6 mb-10">
+        <div className="bg-white rounded-lg shadow p-6 mb-10 text-gray-700">
           <h3 className="text-lg font-semibold text-slate-800 mb-4">0/1 Knapsack Table</h3>
-          <div className="flex flex-wrap gap-4 mb-4 items-end">
+          <div className="flex flex-wrap gap-4 mb-4 items-end text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Capacity</label>
               <input type="number" value={capacity} onChange={e=> setCapacity(Math.min(40, Math.max(1, parseInt(e.target.value)||1)))} className="w-28 px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded disabled:opacity-50">{running? 'Running…' : 'Run DP'}</button>
+            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run DP'}</button>
           </div>
-          <div className="mb-4 text-sm">
-            <span className="font-semibold">Items:</span> {items.map(it=> <span key={it.id} className={`ml-2 px-2 py-1 rounded border ${bestSet.has(it.id)? 'bg-indigo-600 text-white border-indigo-600':'bg-gray-50'}`}>{it.id}(w{it.w},v{it.v})</span>)}
+          <div className="mb-4 text-sm text-gray-600">
+            <span className="font-semibold text-gray-800">Items:</span> {items.map(it=> <span key={it.id} className={`ml-2 px-2 py-1 rounded border ${bestSet.has(it.id)? 'bg-indigo-600 text-white border-indigo-600':'bg-gray-50'}`}>{it.id}(w{it.w},v{it.v})</span>)}
           </div>
-          <div className="overflow-x-auto">
-            <div className="inline-block border rounded bg-gray-50 p-2">
-              <table className="text-xs border-collapse">
+          <div className="overflow-x-auto text-gray-700">
+            <div className="inline-block border rounded bg-gray-50 p-2 text-gray-700">
+              <table className="text-xs border-collapse text-gray-600">
                 <thead>
                   <tr>
-                    <th className="border px-2 py-1 bg-white">i/w</th>
-                    {Array.from({length:capacity+1}, (_,w)=> <th key={w} className="border px-2 py-1 bg-white">{w}</th>)}
+                    <th className="border px-2 py-1 bg-white text-gray-700">i/w</th>
+                    {Array.from({length:capacity+1}, (_,w)=> <th key={w} className="border px-2 py-1 bg-white text-gray-700">{w}</th>)}
                   </tr>
                 </thead>
                 <tbody>
                   {Array.from({length: items.length+1}, (_,i)=> (
                     <tr key={i}>
-                      <td className="border px-2 py-1 bg-white font-semibold">{i}</td>
+                      <td className="border px-2 py-1 bg-white font-semibold text-gray-800">{i}</td>
                       {Array.from({length: capacity+1}, (_,w)=>{
                         const cell = table.find(c=> c.i===i && c.w===w);
                         const val = cell? cell.val : 0;

@@ -56,13 +56,13 @@ export default function FractionalKnapsackPage(){
 end procedure`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/algorithms/greedy" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2"/>Back to Greedy</Link>
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
+        <Link href="/algorithms/greedy" className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Greedy</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-2">Fractional Knapsack</h1>
         <p className="text-lg text-slate-600 mb-6">Maximize total value by taking items greedily by highest value-to-weight ratio. Greedy works here because fractions are allowed, making the ratio choice provably optimal.</p>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-3">Algorithm Steps</h2>
           <ol className="list-decimal pl-6 space-y-2 text-slate-700">
             <li>Compute ratio value/weight for each item.</li>
@@ -71,8 +71,8 @@ end procedure`;
           </ol>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
-          <div className="flex flex-wrap items-end gap-3 mb-4">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
+          <div className="flex flex-wrap items-end gap-3 mb-4 text-gray-700">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Capacity</label>
               <input type="number" value={capacity} onChange={e=>setCapacity(Math.max(1, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded"/>
@@ -81,53 +81,53 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input type="number" value={speed} onChange={e=>setSpeed(Math.max(100, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded"/>
             </div>
-            <button onClick={run} disabled={running} className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50"><Play className="h-4 w-4 mr-2"/>Run</button>
-            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center"><RotateCcw className="h-4 w-4 mr-2"/>Reset</button>
+            <button onClick={run} disabled={running} className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             <div>
-              <div className="space-y-3">
+              <div className="space-y-3 text-gray-700">
                 {items.map((it, idx)=>{
                   const frac = taking[it.id] ?? 0;
                   return (
-                    <motion.div key={it.id} initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{delay: idx*0.05}} className="p-3 border rounded">
+                    <motion.div key={it.id} initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{delay: idx*0.05}} className="p-3 border rounded text-gray-700">
                       <div className="flex justify-between text-sm text-slate-700">
-                        <span className="font-medium">Item {it.id}</span>
+                        <span className="font-medium text-gray-600">Item {it.id}</span>
                         <span>v={it.value}, w={it.weight}, r={it.ratio}</span>
                       </div>
-                      <div className="mt-2 h-3 bg-gray-100 rounded overflow-hidden">
-                        <motion.div className="h-3 bg-amber-500" initial={{width: '0%'}} animate={{width: `${frac*100}%`}}/>
+                      <div className="mt-2 h-3 bg-gray-100 rounded overflow-hidden text-gray-700">
+                        <motion.div className="h-3 bg-amber-500 text-gray-700" initial={{width: '0%'}} animate={{width: `${frac*100}%`}}/>
                       </div>
-                      <div className="text-xs text-slate-500 mt-1 inline-flex items-center"><Percent className="h-3 w-3 mr-1"/>Taken: {(frac*100).toFixed(0)}%</div>
+                      <div className="text-xs text-slate-500 mt-1 inline-flex items-center"><Percent className="h-3 w-3 mr-1 text-gray-700"/>Taken: {(frac*100).toFixed(0)}%</div>
                     </motion.div>
                   );
                 })}
               </div>
             </div>
-            <div className="p-4 border rounded">
+            <div className="p-4 border rounded text-gray-700">
               <div className="text-sm text-slate-600 mb-2">Capacity usage</div>
-              <div className="h-8 bg-gray-100 rounded overflow-hidden">
-                <motion.div className="h-8 bg-amber-500" initial={{width:'0%'}} animate={{width: `${Math.min(100, (Object.entries(taking).reduce((a,[id,f])=> a + f* (items.find(x=>x.id===id)?.weight||0), 0)/capacity)*100 || 0)}%`}} />
+              <div className="h-8 bg-gray-100 rounded overflow-hidden text-gray-700">
+                <motion.div className="h-8 bg-amber-500 text-gray-700" initial={{width:'0%'}} animate={{width: `${Math.min(100, (Object.entries(taking).reduce((a,[id,f])=> a + f* (items.find(x=>x.id===id)?.weight||0), 0)/capacity)*100 || 0)}%`}} />
               </div>
               <div className="text-xs text-slate-500 mt-1">Bars indicate fraction of each item added.</div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6 mb-8">
+        <div className="bg-white rounded-lg shadow p-6 mb-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Pseudocode</h2>
           <PseudocodeBlock code={pseudocode} autoPlay loop intervalMs={800}/>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-6 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Practice Problems</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li><a className="text-amber-700 hover:underline" href="https://www.geeksforgeeks.org/fractional-knapsack-problem/" target="_blank">Fractional Knapsack (GFG)</a></li>
             <li><a className="text-amber-700 hover:underline" href="https://cp-algorithms.com/greedy/fractional-knapsack.html" target="_blank">CP-Algorithms: Fractional Knapsack</a></li>
           </ul>
         </div>
-        <div className="bg-white rounded-lg shadow p-6 mt-8">
+        <div className="bg-white rounded-lg shadow p-6 mt-8 text-gray-700">
           <h2 className="text-xl font-semibold text-slate-800 mb-4">Use Cases</h2>
           <ul className="list-disc pl-6 space-y-2 text-slate-700">
             <li>Bandwidth allocation where partial usage is allowed.</li>
@@ -140,22 +140,22 @@ end procedure`;
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="\algorithms\greedy\activity-selection"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Activity Selection
           </Link>
           
           <Link
             href="/algorithms/greedy/huffman-coding"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
           >
             Next: Huffman Coding
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

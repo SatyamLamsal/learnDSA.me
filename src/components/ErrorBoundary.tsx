@@ -73,10 +73,10 @@ export class ErrorBoundary extends Component<Props, State> {
 
       // Default error UI
       return (
-        <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-4">
-          <div className="max-w-2xl w-full bg-white rounded-lg shadow-xl p-8 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="bg-red-100 p-4 rounded-full">
+        <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-4 text-gray-700">
+          <div className="max-w-2xl w-full bg-white rounded-lg shadow-xl p-8 text-center text-gray-700">
+            <div className="flex justify-center mb-6 text-gray-700">
+              <div className="bg-red-100 p-4 rounded-full text-gray-700">
                 <AlertTriangle className="h-12 w-12 text-red-600" />
               </div>
             </div>
@@ -90,42 +90,42 @@ export class ErrorBoundary extends Component<Props, State> {
               Don&apos;t worry, we&apos;re working to fix this issue.
             </p>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex justify-center space-x-4">
+            <div className="space-y-4 mb-8 text-gray-700">
+              <div className="flex justify-center space-x-4 text-gray-700">
                 <button
                   onClick={this.handleReset}
-                  className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-white text-white text-white text-white"
                 >
-                  <RefreshCw className="h-5 w-5 mr-2" />
+                  <RefreshCw className="h-5 w-5 mr-2 text-gray-700" />
                   Try Again
                 </button>
                 
                 <button
                   onClick={this.handleReload}
-                  className="flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                  className="flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-white text-white text-white text-white"
                 >
-                  <RefreshCw className="h-5 w-5 mr-2" />
+                  <RefreshCw className="h-5 w-5 mr-2 text-gray-700" />
                   Reload Page
                 </button>
               </div>
               
               <Link
                 href="/"
-                className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
               >
-                <Home className="h-5 w-5 mr-2" />
+                <Home className="h-5 w-5 mr-2 text-gray-700" />
                 Go to Homepage
               </Link>
             </div>
 
             {/* Error details for development */}
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="bg-gray-50 rounded-lg p-4 text-left">
+              <details className="bg-gray-50 rounded-lg p-4 text-left text-gray-700">
                 <summary className="cursor-pointer font-medium text-gray-700 mb-2 flex items-center">
-                  <Bug className="h-4 w-4 mr-2" />
+                  <Bug className="h-4 w-4 mr-2 text-gray-700" />
                   Error Details (Development Only)
                 </summary>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm text-gray-600">
                   <div>
                     <strong>Error:</strong>
                     <pre className="bg-red-50 p-2 rounded text-red-800 overflow-auto">
@@ -179,7 +179,7 @@ export function withErrorBoundary<P extends object>(
 export const SimulationErrorBoundary: React.FC<{ children: ReactNode }> = ({ children }) => (
   <ErrorBoundary
     fallback={
-      <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+      <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center text-gray-700">
         <AlertTriangle className="h-8 w-8 text-red-600 mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-red-800 mb-2">
           Simulation Error
@@ -203,7 +203,7 @@ export const SimulationErrorBoundary: React.FC<{ children: ReactNode }> = ({ chi
 export const VisualizationErrorBoundary: React.FC<{ children: ReactNode }> = ({ children }) => (
   <ErrorBoundary
     fallback={
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center text-gray-700">
         <AlertTriangle className="h-8 w-8 text-yellow-600 mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-yellow-800 mb-2">
           Visualization Error

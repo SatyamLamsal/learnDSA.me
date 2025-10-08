@@ -314,17 +314,17 @@ const SelectionSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/sorting" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Selection Sort</h1>
@@ -334,14 +334,14 @@ const SelectionSortPage: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Array Size
@@ -374,13 +374,13 @@ const SelectionSortPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 disabled:opacity-50 flex items-center justify-center"
+                    className="flex-1 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+                    {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
                   </button>
                   
@@ -389,49 +389,49 @@ const SelectionSortPage: React.FC = () => {
                     disabled={isPlaying}
                     className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Statistics</h3>
               
-              <div className="space-y-3">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Current Pass:</span>
-                  <span className="font-semibold">{currentPass}</span>
+                  <span className="font-semibold text-gray-800">{currentPass}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Total Passes:</span>
-                  <span className="font-semibold">{array.length - 1}</span>
+                  <span className="font-semibold text-gray-800">{array.length - 1}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Comparisons:</span>
                   <span className="font-semibold text-blue-600">{comparisons}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Swaps:</span>
                   <span className="font-semibold text-red-600">{swaps}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Array Size:</span>
-                  <span className="font-semibold">{array.length}</span>
+                  <span className="font-semibold text-gray-800">{array.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Complexity Info */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Complexity</h3>
               
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm text-gray-600">
                 <div>
                   <span className="font-semibold text-gray-700">Time Complexity:</span>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex justify-between">
+                  <div className="mt-1 space-y-1 text-gray-700">
+                    <div className="flex justify-between text-gray-700">
                       <span>All Cases:</span>
                       <span className="font-mono text-red-600">O(n²)</span>
                     </div>
@@ -440,7 +440,7 @@ const SelectionSortPage: React.FC = () => {
                 
                 <div>
                   <span className="font-semibold text-gray-700">Space Complexity:</span>
-                  <div className="mt-1">
+                  <div className="mt-1 text-gray-700">
                     <span className="font-mono text-green-600">O(1)</span>
                     <span className="text-gray-500 text-xs block">In-place sorting</span>
                   </div>
@@ -448,16 +448,16 @@ const SelectionSortPage: React.FC = () => {
 
                 <div>
                   <span className="font-semibold text-gray-700">Properties:</span>
-                  <div className="mt-1 text-xs space-y-1">
-                    <div className="flex items-center">
+                  <div className="mt-1 text-xs space-y-1 text-gray-600">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-red-500 mr-1" />
                       <span>Unstable</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>In-place</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-yellow-500 mr-1" />
                       <span>Not adaptive</span>
                     </div>
@@ -468,9 +468,9 @@ const SelectionSortPage: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900">Array Visualization</h3>
                 <div className="text-sm text-gray-600">
                   Pass {currentPass}/{array.length - 1} - {isPlaying ? 'Sorting...' : 'Ready'}
@@ -478,8 +478,8 @@ const SelectionSortPage: React.FC = () => {
               </div>
               
               {/* Array Visualization */}
-              <div className="mb-8">
-                <div className="flex items-end justify-center space-x-2 h-64">
+              <div className="mb-8 text-gray-700">
+                <div className="flex items-end justify-center space-x-2 h-64 text-gray-700">
                   {array.map((element, index) => (
                     <motion.div
                       key={element.id}
@@ -509,16 +509,16 @@ const SelectionSortPage: React.FC = () => {
                         height: `${(element.value / 100) * 200 + 20}px`,
                       }}
                     >
-                      <div className="text-white font-bold text-sm p-2">
+                      <div className="text-white font-bold text-sm p-2 text-gray-600">
                         {element.value}
                       </div>
                       {element.isMinimum && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <Search className="h-4 w-4 text-orange-600" />
                         </div>
                       )}
                       {element.isSelected && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <CheckCircle className="h-4 w-4 text-red-600" />
                         </div>
                       )}
@@ -527,7 +527,7 @@ const SelectionSortPage: React.FC = () => {
                 </div>
                 
                 {/* Index labels */}
-                <div className="flex justify-center space-x-2 mt-2">
+                <div className="flex justify-center space-x-2 mt-2 text-gray-700">
                   {array.map((_, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
@@ -537,33 +537,33 @@ const SelectionSortPage: React.FC = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-gray-300 border border-gray-400 rounded mr-2"></div>
+              <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-gray-300 border border-gray-400 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <Search className="h-4 w-4 text-orange-600 mr-1" />
                   <span className="text-sm text-gray-600">Current Minimum</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-yellow-400 border border-yellow-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Comparing</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <CheckCircle className="h-4 w-4 text-red-600 mr-1" />
                   <span className="text-sm text-gray-600">Selected Position</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Sorted</span>
                 </div>
               </div>
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
-                  <div className="flex items-center">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6 text-gray-700">
+                  <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-orange-600 mr-2" />
                     <span className="text-orange-800 font-medium">
                       {sortingSteps[currentStep]?.message}
@@ -573,12 +573,12 @@ const SelectionSortPage: React.FC = () => {
               )}
 
               {/* Algorithm Description */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-3">How Selection Sort Works:</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                   <div>
-                    <h5 className="font-semibold mb-2">Algorithm Steps:</h5>
-                    <ol className="list-decimal pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Algorithm Steps:</h5>
+                    <ol className="list-decimal pl-4 space-y-1 text-gray-700">
                       <li>Find minimum element in unsorted portion</li>
                       <li>Swap it with first unsorted element</li>
                       <li>Move boundary of sorted region</li>
@@ -586,8 +586,8 @@ const SelectionSortPage: React.FC = () => {
                     </ol>
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-2">Key Properties:</h5>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Key Properties:</h5>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li><strong>O(n²) comparisons:</strong> Always (n-1) + (n-2) + ... + 1</li>
                       <li><strong>O(n) swaps:</strong> At most one swap per pass</li>
                       <li><strong>Not adaptive:</strong> Same time regardless of input</li>
@@ -605,11 +605,11 @@ const SelectionSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Implementation</h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Selection Sort Implementation</h3>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -643,7 +643,7 @@ const SelectionSortPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">Optimized Version</h3>
                 <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -720,12 +720,12 @@ const SelectionSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Performance Analysis</h2>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-red-800 mb-2">Time Complexity - O(n²)</h3>
               <p className="text-sm text-gray-700 mb-3">
                 Always performs n(n-1)/2 comparisons regardless of input order. 
@@ -738,7 +738,7 @@ const SelectionSortPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-green-800 mb-2">Space Complexity - O(1)</h3>
               <p className="text-sm text-gray-700 mb-3">
                 In-place sorting algorithm using only a constant amount of 
@@ -751,7 +751,7 @@ const SelectionSortPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-gray-700">
               <h3 className="font-semibold text-orange-800 mb-2">When to Use</h3>
               <p className="text-sm text-gray-700 mb-3">
                 Best for small datasets or when memory is limited. 
@@ -765,40 +765,40 @@ const SelectionSortPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-gray-700">
             <h3 className="font-semibold text-blue-800 mb-3">Comparison with Other O(n²) Sorts</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto text-gray-700">
+              <table className="w-full text-sm text-gray-600">
                 <thead>
-                  <tr className="border-b border-blue-200">
-                    <th className="text-left p-2">Algorithm</th>
-                    <th className="text-left p-2">Comparisons</th>
-                    <th className="text-left p-2">Swaps</th>
-                    <th className="text-left p-2">Stable</th>
-                    <th className="text-left p-2">Adaptive</th>
+                  <tr className="border-b border-blue-200 text-gray-700">
+                    <th className="text-left p-2 text-gray-700">Algorithm</th>
+                    <th className="text-left p-2 text-gray-700">Comparisons</th>
+                    <th className="text-left p-2 text-gray-700">Swaps</th>
+                    <th className="text-left p-2 text-gray-700">Stable</th>
+                    <th className="text-left p-2 text-gray-700">Adaptive</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
-                  <tr className="border-b border-blue-100">
-                    <td className="p-2 font-medium">Selection Sort</td>
-                    <td className="p-2">O(n²)</td>
-                    <td className="p-2">O(n)</td>
-                    <td className="p-2">❌</td>
-                    <td className="p-2">❌</td>
+                  <tr className="border-b border-blue-100 text-gray-700">
+                    <td className="p-2 font-medium text-gray-700">Selection Sort</td>
+                    <td className="p-2 text-gray-700">O(n²)</td>
+                    <td className="p-2 text-gray-700">O(n)</td>
+                    <td className="p-2 text-gray-700">❌</td>
+                    <td className="p-2 text-gray-700">❌</td>
                   </tr>
-                  <tr className="border-b border-blue-100">
-                    <td className="p-2">Bubble Sort</td>
-                    <td className="p-2">O(n²)</td>
-                    <td className="p-2">O(n²)</td>
-                    <td className="p-2">✅</td>
-                    <td className="p-2">✅</td>
+                  <tr className="border-b border-blue-100 text-gray-700">
+                    <td className="p-2 text-gray-700">Bubble Sort</td>
+                    <td className="p-2 text-gray-700">O(n²)</td>
+                    <td className="p-2 text-gray-700">O(n²)</td>
+                    <td className="p-2 text-gray-700">✅</td>
+                    <td className="p-2 text-gray-700">✅</td>
                   </tr>
                   <tr>
-                    <td className="p-2">Insertion Sort</td>
-                    <td className="p-2">O(n²)</td>
-                    <td className="p-2">O(n²)</td>
-                    <td className="p-2">✅</td>
-                    <td className="p-2">✅</td>
+                    <td className="p-2 text-gray-700">Insertion Sort</td>
+                    <td className="p-2 text-gray-700">O(n²)</td>
+                    <td className="p-2 text-gray-700">O(n²)</td>
+                    <td className="p-2 text-gray-700">✅</td>
+                    <td className="p-2 text-gray-700">✅</td>
                   </tr>
                 </tbody>
               </table>
@@ -811,22 +811,22 @@ const SelectionSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting/merge-sort"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Merge Sort
           </Link>
           
           <Link
             href="/algorithms/sorting/insertion-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Insertion Sort
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

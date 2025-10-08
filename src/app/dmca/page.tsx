@@ -5,13 +5,13 @@ import { ArrowLeft, Shield, AlertTriangle, Mail, FileText } from 'lucide-react';
 
 export default function DMCAPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center space-x-4">
+      <div className="bg-white shadow-sm text-gray-700">
+        <div className="max-w-6xl mx-auto px-4 py-4 text-gray-700">
+          <div className="flex items-center space-x-4 text-gray-700">
             <Link href="/" className="text-blue-600 hover:text-blue-800">
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
             </Link>
             <div>
               <h1 className="text-2xl font-bold text-gray-800">DMCA Policy</h1>
@@ -21,9 +21,9 @@ export default function DMCAPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-xl shadow-sm p-8">
-          <div className="flex items-center mb-6">
+      <div className="max-w-4xl mx-auto px-4 py-12 text-gray-700">
+        <div className="bg-white rounded-xl shadow-sm p-8 text-gray-700">
+          <div className="flex items-center mb-6 text-gray-700">
             <Shield className="w-8 h-8 text-blue-500 mr-3" />
             <div>
               <h2 className="text-2xl font-bold text-gray-800">DMCA Notice & Policy</h2>
@@ -31,7 +31,7 @@ export default function DMCAPage() {
             </div>
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose max-w-none text-gray-700">
             <h3>Our Commitment to Copyright</h3>
             <p>
               LearnDSA.me respects the intellectual property rights of others and expects 
@@ -40,8 +40,8 @@ export default function DMCAPage() {
               infringement.
             </p>
 
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-6">
-              <div className="flex items-center mb-3">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-6 text-gray-700">
+              <div className="flex items-center mb-3 text-gray-700">
                 <AlertTriangle className="w-5 h-5 text-yellow-600 mr-2" />
                 <h4 className="text-lg font-semibold text-yellow-800">Important Notice</h4>
               </div>
@@ -66,8 +66,8 @@ export default function DMCAPage() {
               <li>A statement that the information in your notice is accurate and that you are authorized to act on behalf of the copyright owner</li>
             </ol>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6">
-              <div className="flex items-center mb-3">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6 text-gray-700">
+              <div className="flex items-center mb-3 text-gray-700">
                 <Mail className="w-5 h-5 text-blue-600 mr-2" />
                 <h4 className="text-lg font-semibold text-blue-800">DMCA Agent Contact</h4>
               </div>
@@ -76,7 +76,7 @@ export default function DMCAPage() {
               </p>
               <div className="text-blue-700">
                 <strong>Email:</strong>{' '}
-                <a href="mailto:dmca@learndsa.me" className="underline">
+                <a href="mailto:dmca@learndsa.me" className="underline text-blue-600">
                   dmca@learndsa.me
                 </a>
               </div>
@@ -121,8 +121,8 @@ export default function DMCAPage() {
               property and are protected by copyright law.
             </p>
 
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6">
-              <div className="flex items-center mb-3">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6 my-6 text-gray-700">
+              <div className="flex items-center mb-3 text-gray-700">
                 <FileText className="w-5 h-5 text-green-600 mr-2" />
                 <h4 className="text-lg font-semibold text-green-800">Open Source</h4>
               </div>

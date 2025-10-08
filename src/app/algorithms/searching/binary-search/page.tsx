@@ -93,13 +93,13 @@ const BinarySearchVisualization = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg">
-      <div className="mb-6">
+    <div className="bg-white rounded-lg p-6 shadow-lg text-gray-700">
+      <div className="mb-6 text-gray-700">
         <h3 className="text-xl font-semibold text-slate-800 mb-4">Interactive Binary Search</h3>
         
         {/* Controls */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap gap-4 mb-6 text-gray-700">
+          <div className="flex items-center gap-2 text-gray-700">
             <label className="text-sm font-medium text-slate-700">Target:</label>
             <input
               type="number"
@@ -112,26 +112,26 @@ const BinarySearchVisualization = () => {
           <button
             onClick={binarySearch}
             disabled={isSearching}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium"
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-gray-800"
           >
             New Array
           </button>
         </div>
 
         {/* Array Visualization */}
-        <div className="flex justify-center items-center space-x-2 mb-4">
+        <div className="flex justify-center items-center space-x-2 mb-4 text-gray-700">
           {array.map((element, index) => (
             <motion.div
               key={index}
@@ -159,16 +159,16 @@ const BinarySearchVisualization = () => {
         {/* Array Indices */}
         <div className="flex justify-center items-center space-x-2 mb-4 text-sm text-gray-600">
           {array.map((_, index) => (
-            <div key={index} className="w-12 text-center">
+            <div key={index} className="w-12 text-center text-gray-700">
               [{index}]
             </div>
           ))}
         </div>
 
         {/* Pointers */}
-        <div className="flex justify-center items-center space-x-2 mb-6 text-sm">
+        <div className="flex justify-center items-center space-x-2 mb-6 text-sm text-gray-600">
           {array.map((_, index) => (
-            <div key={index} className="w-12 text-center h-6">
+            <div key={index} className="w-12 text-center h-6 text-gray-700">
               {left === index && <span className="text-red-600 font-bold">L</span>}
               {mid === index && <span className="text-blue-600 font-bold">M</span>}
               {right === index && <span className="text-green-600 font-bold">R</span>}
@@ -177,20 +177,20 @@ const BinarySearchVisualization = () => {
         </div>
 
         {/* Status */}
-        <div className="grid grid-cols-4 gap-4 mb-4 text-sm">
-          <div className="bg-red-50 p-3 rounded">
+        <div className="grid grid-cols-4 gap-4 mb-4 text-sm text-gray-600">
+          <div className="bg-red-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-red-700">Left:</span>
             <div className="text-xl font-bold text-red-600">{left === -1 ? '-' : left}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded">
+          <div className="bg-blue-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-blue-700">Mid:</span>
             <div className="text-xl font-bold text-blue-600">{mid === -1 ? '-' : mid}</div>
           </div>
-          <div className="bg-green-50 p-3 rounded">
+          <div className="bg-green-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-green-700">Right:</span>
             <div className="text-xl font-bold text-green-600">{right === -1 ? '-' : right}</div>
           </div>
-          <div className="bg-orange-50 p-3 rounded">
+          <div className="bg-orange-50 p-3 rounded text-gray-700">
             <span className="font-semibold text-orange-700">Comparisons:</span>
             <div className="text-xl font-bold text-orange-600">{comparisons}</div>
           </div>
@@ -198,13 +198,13 @@ const BinarySearchVisualization = () => {
 
         {/* Search History */}
         {searchHistory.length > 0 && (
-          <div className="bg-gray-50 p-4 rounded mt-4">
+          <div className="bg-gray-50 p-4 rounded mt-4 text-gray-700">
             <h4 className="font-semibold text-gray-800 mb-2">Search Steps:</h4>
-            <div className="space-y-2 max-h-32 overflow-y-auto">
+            <div className="space-y-2 max-h-32 overflow-y-auto text-gray-700">
               {searchHistory.map((step, index) => (
-                <div key={index} className="text-sm">
-                  <span className="font-medium">Step {step.comparison}:</span>
-                  <span className="ml-2">Left={step.left}, Mid={step.mid}, Right={step.right}</span>
+                <div key={index} className="text-sm text-gray-600">
+                  <span className="font-medium text-gray-600">Step {step.comparison}:</span>
+                  <span className="ml-2 text-gray-600">Left={step.left}, Mid={step.mid}, Right={step.right}</span>
                   <span className="ml-2 text-blue-600">→ {step.action}</span>
                 </div>
               ))}
@@ -213,7 +213,7 @@ const BinarySearchVisualization = () => {
         )}
         
         {/* Result */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 text-gray-700">
           {found && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
               ✅ Target {target} found at index {mid} after {comparisons} comparisons!
@@ -459,11 +459,11 @@ if (result !== -1) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
       <h3 className="text-xl font-semibold text-slate-800 mb-4">Implementation</h3>
       
       {/* Language Tabs */}
-      <div className="flex border-b border-gray-200 mb-4">
+      <div className="flex border-b border-gray-200 mb-4 text-gray-700">
         {(['python','java','cpp','javascript'] as TabKey[]).map((lang) => (
           <button
             key={lang}
@@ -481,7 +481,7 @@ if (result !== -1) {
       
       {/* Code Display */}
       <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <pre className="text-sm">
+        <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
       </div>
@@ -491,17 +491,17 @@ if (result !== -1) {
 
 export default function BinarySearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/searching" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching Algorithms
           </Link>
           <h1 className="text-5xl font-bold text-slate-800 mb-4">
@@ -517,27 +517,27 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Time Complexity</h3>
             <div className="text-2xl font-bold text-blue-600">O(log n)</div>
             <p className="text-sm text-slate-600 mt-2">Logarithmic time</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Cpu className="h-12 w-12 text-green-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Space Complexity</h3>
             <div className="text-2xl font-bold text-green-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Constant extra space</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Zap className="h-12 w-12 text-purple-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Best Case</h3>
             <div className="text-2xl font-bold text-purple-600">O(1)</div>
             <p className="text-sm text-slate-600 mt-2">Element at middle</p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center text-gray-700">
             <Divide className="h-12 w-12 text-orange-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-2">Requirement</h3>
             <div className="text-2xl font-bold text-orange-600">Sorted</div>
@@ -550,7 +550,7 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <BinarySearchVisualization />
         </motion.div>
@@ -560,41 +560,41 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 flex items-center">
             <BookOpen className="h-6 w-6 mr-2 text-blue-600" />
             How Binary Search Works
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Algorithm Steps:</h3>
-              <ol className="space-y-3">
-                <li className="flex items-start">
+              <ol className="space-y-3 text-gray-700">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
                   <span className="text-slate-700">Set left pointer to 0 and right pointer to array length - 1</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
                   <span className="text-slate-700">Calculate middle index: mid = (left + right) / 2</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
                   <span className="text-slate-700">Compare middle element with target value</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
                   <span className="text-slate-700">If equal, return the index (found!)</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</span>
                   <span className="text-slate-700">If target is smaller, search left half (right = mid - 1)</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">6</span>
                   <span className="text-slate-700">If target is larger, search right half (left = mid + 1)</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start text-gray-700">
                   <span className="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">7</span>
                   <span className="text-slate-700">Repeat until found or left &gt; right</span>
                 </li>
@@ -602,29 +602,29 @@ export default function BinarySearchPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-800 mb-4">Key Characteristics:</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Divide and Conquer</div>
                     <div className="text-sm text-slate-600">Eliminates half of the search space each iteration</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Logarithmic Time</div>
                     <div className="text-sm text-slate-600">Extremely efficient for large datasets</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-orange-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Requires Sorted Data</div>
                     <div className="text-sm text-slate-600">Only works on pre-sorted arrays</div>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start text-gray-700">
                   <CheckCircle className="h-5 w-5 text-blue-600 mr-3 mt-0.5" />
                   <div>
                     <div className="font-medium text-slate-800">Two Implementations</div>
@@ -641,7 +641,7 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <CodeExample />
         </motion.div>
@@ -651,19 +651,19 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">Binary Search vs Linear Search</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-gray-50 text-gray-700">
                   <th className="p-3 text-left font-semibold text-slate-800">Aspect</th>
                   <th className="p-3 text-left font-semibold text-blue-600">Binary Search</th>
                   <th className="p-3 text-left font-semibold text-red-600">Linear Search</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-200 text-gray-700">
                 <tr>
                   <td className="p-3 font-medium text-slate-700">Time Complexity</td>
                   <td className="p-3 text-blue-600">O(log n)</td>
@@ -704,53 +704,53 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
+          className="grid md:grid-cols-2 gap-6 mb-12 text-gray-700"
         >
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-green-700 mb-4">✅ Advantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Extremely fast O(log n) time complexity</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Excellent for large datasets</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Constant space complexity O(1)</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Well-suited for repeated searches</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-green-600 mr-2">•</span>
                 <span className="text-slate-700">Predictable performance</span>
               </li>
             </ul>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
             <h3 className="text-xl font-semibold text-red-700 mb-4">❌ Disadvantages</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Requires sorted data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Sorting overhead for unsorted data</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Not suitable for linked lists</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">More complex than linear search</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-start text-gray-700">
                 <span className="text-red-600 mr-2">•</span>
                 <span className="text-slate-700">Overkill for very small datasets</span>
               </li>
@@ -763,11 +763,11 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6">When to Use Binary Search</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-green-500 pl-4">
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="border-l-4 border-green-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-green-700 mb-2">✅ Perfect For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Large sorted datasets (&gt; 1000 elements)</li>
@@ -777,7 +777,7 @@ export default function BinarySearchPage() {
                 <li>• Dictionary applications</li>
               </ul>
             </div>
-            <div className="border-l-4 border-red-500 pl-4">
+            <div className="border-l-4 border-red-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-red-700 mb-2">❌ Avoid For:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Unsorted data</li>
@@ -787,7 +787,7 @@ export default function BinarySearchPage() {
                 <li>• One-time searches</li>
               </ul>
             </div>
-            <div className="border-l-4 border-blue-500 pl-4">
+            <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
               <h3 className="font-semibold text-blue-700 mb-2">💡 Real Examples:</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>• Finding words in dictionary</li>
@@ -805,22 +805,22 @@ export default function BinarySearchPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/searching/linear-search"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Linear Search
           </Link>
           
           <Link
             href="/algorithms/searching/jump-search"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Jump Search
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

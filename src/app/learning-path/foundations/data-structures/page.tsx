@@ -82,9 +82,9 @@ export default function FoundationsDataStructuresPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16 relative"
+        className="text-center mb-16 relative text-gray-700"
       >
-        <div className="absolute top-0 right-0 flex items-center space-x-4">
+        <div className="absolute top-0 right-0 flex items-center space-x-4 text-gray-700">
           <ProgressIndicator 
             topicId="foundations-data-structures" 
             topicType="foundations"
@@ -100,13 +100,13 @@ export default function FoundationsDataStructuresPage() {
         </div>
         
         <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
-          <Database className="w-5 h-5 mr-2" />
+          <Database className="w-5 h-5 mr-2 text-gray-700" />
           Chapter 2: Data Structure Classifications and Operations
         </div>
         
         <h1 className="text-6xl font-bold text-gray-900 mb-8">
           Data Structures
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 text-gray-600">
             Deep Dive
           </span>
         </h1>
@@ -118,12 +118,12 @@ export default function FoundationsDataStructuresPage() {
       </motion.div>
 
       {/* Data Structure Definition */}
-      <div id="definition" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="definition" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <Database className="w-8 h-8 mr-3 text-blue-600" />
           What is a Data Structure?
         </h2>
-        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8">
+        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8 text-gray-700">
           <p className="text-lg text-blue-900 leading-relaxed">
             A <strong>data structure</strong> is a particular way of storing and organizing data in a computer 
             so that it can be used efficiently. It represents the logical relationship existing between 
@@ -132,32 +132,32 @@ export default function FoundationsDataStructuresPage() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-gray-700">
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Functions:</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-center text-gray-700">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span>Depicts logical representation of data in memory</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center text-gray-700">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span>Represents relationships between data elements</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center text-gray-700">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span>Enables efficient manipulation of stored data</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center text-gray-700">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                 <span>Allows programs to process data efficiently</span>
               </li>
             </ul>
           </div>
           
-          <div className="bg-gray-50 p-6 rounded-xl">
+          <div className="bg-gray-50 p-6 rounded-xl text-gray-700">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Example: Student Data Storage</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 text-gray-700">
               <p className="text-gray-700"><strong>Data Structures:</strong> Arrays, Linked Lists</p>
               <p className="text-gray-700"><strong>Key Issues:</strong></p>
               <ul className="ml-4 space-y-1 text-gray-600">
@@ -171,22 +171,22 @@ export default function FoundationsDataStructuresPage() {
       </div>
 
       {/* Data Structure Classification */}
-      <div id="classification" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="classification" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
           <GitBranch className="w-8 h-8 mr-3 text-purple-600" />
           Types of Data Structures
         </h2>
         
-        <div className="space-y-8">
+        <div className="space-y-8 text-gray-700">
           {dataStructureClassification.map((category, index) => (
-            <div key={index} className="border-l-4 border-blue-500 pl-6">
+            <div key={index} className="border-l-4 border-blue-500 pl-6 text-gray-700">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">{category.category}</h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-6 text-gray-700">
                 {category.types.map((type, typeIndex) => (
-                  <div key={typeIndex} className="bg-gray-50 p-6 rounded-xl">
+                  <div key={typeIndex} className="bg-gray-50 p-6 rounded-xl text-gray-700">
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">{type.name}</h4>
                     <p className="text-gray-600 mb-3">{type.desc}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 text-gray-700">
                       {type.examples.map((example, exampleIndex) => (
                         <span 
                           key={exampleIndex}
@@ -205,13 +205,13 @@ export default function FoundationsDataStructuresPage() {
       </div>
 
       {/* Data Structure Operations */}
-      <div id="operations" className="bg-white rounded-2xl p-8 shadow-lg border mb-12">
+      <div id="operations" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
           <Settings className="w-8 h-8 mr-3 text-green-600" />
           Common Operations on Data Structures
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
           {[
             { name: 'Creating', desc: 'Make/Create new data structure', icon: Play },
             { name: 'Inserting', desc: 'Adding new record to structure', icon: ArrowDown },
@@ -223,8 +223,8 @@ export default function FoundationsDataStructuresPage() {
           ].map((operation, index) => {
             const IconComponent = operation.icon
             return (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border">
-                <div className="flex items-center mb-3">
+              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border text-gray-700">
+                <div className="flex items-center mb-3 text-gray-700">
                   <IconComponent className="w-6 h-6 text-blue-600 mr-3" />
                   <h3 className="text-lg font-semibold text-gray-900">{operation.name}</h3>
                 </div>
@@ -240,21 +240,21 @@ export default function FoundationsDataStructuresPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.8 }}
-        className="flex justify-between items-center mt-12"
+        className="flex justify-between items-center mt-12 text-gray-700"
       >
         <Link
           href="/learning-path/foundations/introduction"
-          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
+          <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
           Previous: Introduction
         </Link>
         <Link
           href="/learning-path/foundations/algorithms"
-          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
+          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
         >
           Next: Algorithm Design Paradigms
-          <ChevronRight className="w-6 h-6 ml-2" />
+          <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
         </Link>
       </motion.div>
     </ModuleLayout>

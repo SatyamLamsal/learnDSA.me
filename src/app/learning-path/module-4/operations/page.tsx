@@ -221,15 +221,15 @@ export default function LinkedListOperationsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-16"
+        className="text-center mb-16 text-gray-700"
       >
         <div className="inline-flex items-center bg-orange-100 text-orange-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
-          <Settings className="w-5 h-5 mr-2" />
+          <Settings className="w-5 h-5 mr-2 text-gray-700" />
           Module 4 · Linked List Operations
         </div>
         <h1 className="text-5xl font-bold text-gray-900 mb-8">
           Master Core
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 text-gray-600">
             Operations
           </span>
         </h1>
@@ -243,10 +243,10 @@ export default function LinkedListOperationsPage() {
         id="operations"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-12"
+        className="space-y-12 text-gray-700"
       >
-          <div className="bg-white rounded-2xl p-8 shadow-lg border">
-            <div className="flex items-center justify-between mb-8">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8 text-gray-700">
               <h2 className="text-3xl font-bold text-gray-900 flex items-center">
                 <Settings className="w-8 h-8 mr-3 text-orange-600" />
                 Core Operations Overview
@@ -254,7 +254,7 @@ export default function LinkedListOperationsPage() {
               <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-overview" />
             </div>
             
-            <div className="mb-8 bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200">
+            <div className="mb-8 bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200 text-gray-700">
               <h3 className="text-lg font-semibold text-orange-900 mb-3">🎯 Essential Operations</h3>
               <p className="text-orange-800 text-sm leading-relaxed">
                 Every linked list must support these fundamental operations. Understanding their implementation 
@@ -262,7 +262,7 @@ export default function LinkedListOperationsPage() {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
               {linkedListOperations.map((op, index) => (
                 <motion.div
                   key={index}
@@ -276,7 +276,7 @@ export default function LinkedListOperationsPage() {
                   }`}
                   onClick={() => setSelectedOperation(index)}
                 >
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4 text-gray-700">
                     <h3 className="text-xl font-bold text-orange-900">{op.operation}</h3>
                     <div className="text-xs bg-orange-200 text-orange-800 px-3 py-1 rounded-full font-mono">
                       {op.complexity.time}
@@ -284,21 +284,21 @@ export default function LinkedListOperationsPage() {
                   </div>
                   <p className="text-gray-700 mb-4">{op.description}</p>
                   
-                  <div className="mb-4">
+                  <div className="mb-4 text-gray-700">
                     <h4 className="font-semibold text-orange-800 mb-2">Detailed Steps:</h4>
                     <ol className="list-decimal list-inside text-sm text-gray-600 space-y-1">
                       {op.detailedSteps.map((step, stepIndex) => (
-                        <li key={stepIndex} className="leading-relaxed">{step}</li>
+                        <li key={stepIndex} className="leading-relaxed text-gray-700">{step}</li>
                       ))}
                     </ol>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="bg-green-100 p-2 rounded border border-green-300 text-center">
+                  <div className="grid grid-cols-2 gap-3 text-xs text-gray-600">
+                    <div className="bg-green-100 p-2 rounded border border-green-300 text-center text-gray-700">
                       <div className="font-semibold text-green-800">Time</div>
                       <div className="text-green-700 font-mono">{op.complexity.time}</div>
                     </div>
-                    <div className="bg-blue-100 p-2 rounded border border-blue-300 text-center">
+                    <div className="bg-blue-100 p-2 rounded border border-blue-300 text-center text-gray-700">
                       <div className="font-semibold text-blue-800">Space</div>
                       <div className="text-blue-700 font-mono">{op.complexity.space}</div>
                     </div>
@@ -308,8 +308,8 @@ export default function LinkedListOperationsPage() {
             </div>
           </div>
 
-          <div id="animations" className="bg-white rounded-2xl p-8 shadow-lg border">
-            <div className="flex items-center justify-between mb-8">
+          <div id="animations" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8 text-gray-700">
               <h2 className="text-3xl font-bold text-gray-900 flex items-center">
                 <Eye className="w-8 h-8 mr-3 text-purple-600" />
                 Interactive Animations
@@ -317,9 +317,9 @@ export default function LinkedListOperationsPage() {
               <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-animations" />
             </div>
             
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex space-x-2">
+            <div className="mb-6 text-gray-700">
+              <div className="flex items-center justify-between mb-4 text-gray-700">
+                <div className="flex space-x-2 text-gray-700">
                   {(Object.keys(operationAnimations) as (keyof OperationAnimations)[]).map((animType) => (
                     <button
                       key={animType}
@@ -337,25 +337,25 @@ export default function LinkedListOperationsPage() {
                     </button>
                   ))}
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 text-gray-700">
                   <button
                     onClick={togglePlayPause}
-                    className="flex items-center px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    className="flex items-center px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-white text-white"
                   >
-                    {isPlaying ? <Pause className="w-4 h-4 mr-1" /> : <Play className="w-4 h-4 mr-1" />}
+                    {isPlaying ? <Pause className="w-4 h-4 mr-1 text-gray-700" /> : <Play className="w-4 h-4 mr-1 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Play'}
                   </button>
                   <button
                     onClick={resetAnimation}
-                    className="flex items-center px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                    className="flex items-center px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-white text-white"
                   >
-                    <RotateCcw className="w-4 h-4 mr-1" />
+                    <RotateCcw className="w-4 h-4 mr-1 text-gray-700" />
                     Reset
                   </button>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 mb-6">
+              <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-purple-900 mb-2">
                   {operationAnimations[currentAnimation].title}
                 </h3>
@@ -368,8 +368,8 @@ export default function LinkedListOperationsPage() {
               </div>
               
               {/* Animation Visualization */}
-              <div className="bg-white p-8 rounded-xl border-2 border-purple-200 min-h-[200px]">
-                <div className="flex items-center justify-center space-x-8">
+              <div className="bg-white p-8 rounded-xl border-2 border-purple-200 min-h-[200px] text-gray-700">
+                <div className="flex items-center justify-center space-x-8 text-gray-700">
                   <div className="text-sm font-semibold text-purple-700">HEAD</div>
                   
                   {/* Render existing nodes */}
@@ -400,7 +400,7 @@ export default function LinkedListOperationsPage() {
                             <div className="text-lg font-bold text-gray-800">{node.data}</div>
                             <div className="text-xs text-gray-600">Node</div>
                             {node.isHead && animationStep >= 1 && currentAnimation === 'deletion' && (
-                              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs">
+                              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs text-gray-600">
                                 ×
                               </div>
                             )}
@@ -427,7 +427,7 @@ export default function LinkedListOperationsPage() {
                         <div className="text-lg font-bold text-gray-800">10</div>
                         <div className="text-xs text-gray-600">New</div>
                         {animationStep >= 3 && (
-                          <div className="absolute -top-2 -left-2 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs">
+                          <div className="absolute -top-2 -left-2 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs text-gray-600">
                             H
                           </div>
                         )}
@@ -438,8 +438,8 @@ export default function LinkedListOperationsPage() {
                   <div className="text-sm font-semibold text-purple-700">NULL</div>
                 </div>
                 
-                <div className="mt-6 text-center">
-                  <div className="inline-flex items-center space-x-4 bg-purple-100 px-4 py-2 rounded-lg">
+                <div className="mt-6 text-center text-gray-700">
+                  <div className="inline-flex items-center space-x-4 bg-purple-100 px-4 py-2 rounded-lg text-gray-700">
                     {operationAnimations[currentAnimation].steps.map((step: AnimationStep, idx: number) => (
                       <div
                         key={idx}
@@ -454,8 +454,8 @@ export default function LinkedListOperationsPage() {
             </div>
           </div>
 
-          <div id="implementation" className="bg-white rounded-2xl p-8 shadow-lg border">
-            <div className="flex items-center justify-between mb-8">
+          <div id="implementation" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8 text-gray-700">
               <h2 className="text-3xl font-bold text-gray-900 flex items-center">
                 <Code className="w-8 h-8 mr-3 text-indigo-600" />
                 Code Implementation
@@ -463,7 +463,7 @@ export default function LinkedListOperationsPage() {
               <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-code" />
             </div>
             
-            <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200">
+            <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200 text-gray-700">
               <h3 className="text-lg font-semibold text-indigo-900 mb-3">💻 Implementation Details</h3>
               <p className="text-indigo-800 text-sm leading-relaxed">
                 Here are clean, production-ready implementations of each operation. Study the pointer manipulations 
@@ -471,18 +471,18 @@ export default function LinkedListOperationsPage() {
               </p>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-6 text-gray-700">
               {linkedListOperations.map((op, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-200"
+                  className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-200 text-gray-700"
                 >
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4 text-gray-700">
                     <h3 className="text-xl font-bold text-indigo-900">{op.operation} Implementation</h3>
-                    <div className="flex space-x-2 text-xs">
+                    <div className="flex space-x-2 text-xs text-gray-600">
                       <span className="bg-green-200 text-green-800 px-2 py-1 rounded-full font-mono">
                         Time: {op.complexity.time}
                       </span>
@@ -492,7 +492,7 @@ export default function LinkedListOperationsPage() {
                     </div>
                   </div>
                   
-                  <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                  <div className="bg-gray-900 rounded-lg p-4 mb-4 text-gray-100">
                     <pre className="text-green-400 text-sm font-mono whitespace-pre-wrap overflow-x-auto">
                       {op.code}
                     </pre>
@@ -505,15 +505,15 @@ export default function LinkedListOperationsPage() {
               ))}
             </div>
           </div>
-          <div id="complexity" className="bg-white rounded-2xl p-8 shadow-lg border">
+          <div id="complexity" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <BarChart3 className="w-8 h-8 mr-3 text-blue-600" />
               Time Complexity Analysis
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+            <div className="overflow-x-auto text-gray-700">
+              <table className="w-full text-left border-collapse text-gray-700">
                 <thead>
-                  <tr className="bg-blue-100">
+                  <tr className="bg-blue-100 text-gray-700">
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Operation</th>
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Singly</th>
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Doubly</th>
@@ -527,7 +527,7 @@ export default function LinkedListOperationsPage() {
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-gray-50 text-gray-700">
                     <td className="border border-blue-300 px-4 py-3 text-blue-600 font-medium">Search</td>
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
@@ -539,7 +539,7 @@ export default function LinkedListOperationsPage() {
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-gray-50 text-gray-700">
                     <td className="border border-blue-300 px-4 py-3 text-blue-600 font-medium">Insert (end)</td>
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)*</td>
@@ -551,7 +551,7 @@ export default function LinkedListOperationsPage() {
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)</td>
                   </tr>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-gray-50 text-gray-700">
                     <td className="border border-blue-300 px-4 py-3 text-blue-600 font-medium">Delete (end)</td>
                     <td className="border border-blue-300 px-4 py-3 text-red-600 font-mono">O(n)</td>
                     <td className="border border-blue-300 px-4 py-3 text-green-600 font-mono">O(1)*</td>
@@ -562,9 +562,9 @@ export default function LinkedListOperationsPage() {
             </div>
             <p className="mt-4 text-sm text-gray-600"><strong>*</strong> Assumes a maintained tail pointer.</p>
           </div>
-          <div className="flex justify-between items-center mt-8">
-            <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">Previous: Types</Link>
-            <Link href="/learning-path/module-4/problems" className="px-6 py-3 bg-orange-600 text-white rounded-lg text-sm font-medium hover:bg-orange-700">Next: Problems <ArrowRight className="w-4 h-4 ml-2" /></Link>
+          <div className="flex justify-between items-center mt-8 text-gray-700">
+            <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Types</Link>
+            <Link href="/learning-path/module-4/problems" className="px-6 py-3 bg-orange-600 text-white rounded-lg text-sm font-medium hover:bg-orange-700 text-gray-300">Next: Problems <ArrowRight className="w-4 h-4 ml-2 text-gray-700" /></Link>
           </div>
         </motion.div>
     </ModuleLayout>

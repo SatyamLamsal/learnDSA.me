@@ -375,28 +375,28 @@ const MergeSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms/sorting" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Sorting Algorithms
           </Link>
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
+          <div className="flex items-start justify-between mb-4 text-gray-700">
+            <div className="flex-1 text-gray-700">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">Merge Sort</h1>
               <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
                 A stable, divide-and-conquer algorithm that consistently delivers O(n log n) performance. 
                 It divides the array into halves, sorts them recursively, and merges the sorted halves.
               </p>
             </div>
-            <div className="flex items-center space-x-3 ml-6">
+            <div className="flex items-center space-x-3 ml-6 text-gray-700">
               <BookmarkButton 
                 topicId="merge-sort"
                 topicType="algorithm"
@@ -413,14 +413,14 @@ const MergeSortPage: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8 text-gray-700">
           {/* Controls Panel */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 text-gray-700">
             {/* Controls */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Controls</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 text-gray-700">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Array Size
@@ -452,13 +452,13 @@ const MergeSortPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-gray-700">
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 flex items-center justify-center"
+                    className="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
                   >
-                    {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+                    {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
                   </button>
                   
@@ -467,49 +467,49 @@ const MergeSortPage: React.FC = () => {
                     disabled={isPlaying}
                     className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 disabled:opacity-50"
                   >
-                    <RotateCcw className="h-4 w-4" />
+                    <RotateCcw className="h-4 w-4 text-gray-700" />
                   </button>
                 </div>
               </div>
             </div>
 
             {/* Statistics */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Statistics</h3>
               
-              <div className="space-y-3">
-                <div className="flex justify-between">
+              <div className="space-y-3 text-gray-700">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Recursion Depth:</span>
-                  <span className="font-semibold">{recursionDepth}</span>
+                  <span className="font-semibold text-gray-800">{recursionDepth}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Max Depth:</span>
-                  <span className="font-semibold">{maxRecursionDepth}</span>
+                  <span className="font-semibold text-gray-800">{maxRecursionDepth}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Comparisons:</span>
                   <span className="font-semibold text-blue-600">{comparisons}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Merges:</span>
                   <span className="font-semibold text-green-600">{merges}</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between text-gray-700">
                   <span className="text-gray-600">Array Size:</span>
-                  <span className="font-semibold">{array.length}</span>
+                  <span className="font-semibold text-gray-800">{array.length}</span>
                 </div>
               </div>
             </div>
 
             {/* Complexity Info */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">Complexity</h3>
               
-              <div className="space-y-3 text-sm">
+              <div className="space-y-3 text-sm text-gray-600">
                 <div>
                   <span className="font-semibold text-gray-700">Time Complexity:</span>
-                  <div className="mt-1 space-y-1">
-                    <div className="flex justify-between">
+                  <div className="mt-1 space-y-1 text-gray-700">
+                    <div className="flex justify-between text-gray-700">
                       <span>All Cases:</span>
                       <span className="font-mono text-green-600">O(n log n)</span>
                     </div>
@@ -518,7 +518,7 @@ const MergeSortPage: React.FC = () => {
                 
                 <div>
                   <span className="font-semibold text-gray-700">Space Complexity:</span>
-                  <div className="mt-1">
+                  <div className="mt-1 text-gray-700">
                     <span className="font-mono text-orange-600">O(n)</span>
                     <span className="text-gray-500 text-xs block">Additional arrays</span>
                   </div>
@@ -526,16 +526,16 @@ const MergeSortPage: React.FC = () => {
 
                 <div>
                   <span className="font-semibold text-gray-700">Properties:</span>
-                  <div className="mt-1 text-xs space-y-1">
-                    <div className="flex items-center">
+                  <div className="mt-1 text-xs space-y-1 text-gray-600">
+                    <div className="flex items-center text-gray-700">
                       <CheckCircle className="h-3 w-3 text-green-500 mr-1" />
                       <span>Stable</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-red-500 mr-1" />
                       <span>Not in-place</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-gray-700">
                       <AlertTriangle className="h-3 w-3 text-yellow-500 mr-1" />
                       <span>Not adaptive</span>
                     </div>
@@ -546,9 +546,9 @@ const MergeSortPage: React.FC = () => {
           </div>
 
           {/* Visualization */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+          <div className="lg:col-span-3 text-gray-700">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-700">
+              <div className="flex items-center justify-between mb-6 text-gray-700">
                 <h3 className="text-lg font-semibold text-gray-900">Array Visualization</h3>
                 <div className="text-sm text-gray-600">
                   Depth {recursionDepth} - {isPlaying ? 'Sorting...' : 'Ready'}
@@ -556,8 +556,8 @@ const MergeSortPage: React.FC = () => {
               </div>
               
               {/* Array Visualization */}
-              <div className="mb-8">
-                <div className="flex items-end justify-center space-x-2 h-64">
+              <div className="mb-8 text-gray-700">
+                <div className="flex items-end justify-center space-x-2 h-64 text-gray-700">
                   {array.map((element, index) => (
                     <motion.div
                       key={element.id}
@@ -589,11 +589,11 @@ const MergeSortPage: React.FC = () => {
                         height: `${(element.value / 100) * 200 + 20}px`,
                       }}
                     >
-                      <div className="text-white font-bold text-sm p-2">
+                      <div className="text-white font-bold text-sm p-2 text-gray-600">
                         {element.value}
                       </div>
                       {element.isMerging && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-gray-700">
                           <ArrowUpDown className="h-4 w-4 text-yellow-600" />
                         </div>
                       )}
@@ -602,7 +602,7 @@ const MergeSortPage: React.FC = () => {
                 </div>
                 
                 {/* Index labels */}
-                <div className="flex justify-center space-x-2 mt-2">
+                <div className="flex justify-center space-x-2 mt-2 text-gray-700">
                   {array.map((_, index) => (
                     <div key={index} className="min-w-12 text-center text-sm text-gray-500">
                       {index}
@@ -612,33 +612,33 @@ const MergeSortPage: React.FC = () => {
               </div>
 
               {/* Legend */}
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-gray-300 border border-gray-400 rounded mr-2"></div>
+              <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-gray-300 border border-gray-400 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-blue-400 border border-blue-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-blue-400 border border-blue-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Left Half</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-purple-400 border border-purple-500 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-purple-400 border border-purple-500 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Right Half</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-gray-700">
                   <ArrowUpDown className="h-4 w-4 text-yellow-600 mr-1" />
                   <span className="text-sm text-gray-600">Merging</span>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2"></div>
+                <div className="flex items-center text-gray-700">
+                  <div className="w-4 h-4 bg-green-500 border border-green-600 rounded mr-2 text-gray-700"></div>
                   <span className="text-sm text-gray-600">Sorted</span>
                 </div>
               </div>
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                  <div className="flex items-center">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 text-gray-700">
+                  <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-green-600 mr-2" />
                     <span className="text-green-800 font-medium">
                       {sortingSteps[currentStep]?.message}
@@ -650,13 +650,13 @@ const MergeSortPage: React.FC = () => {
               {/* Sub-arrays Visualization */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && 
                (sortingSteps[currentStep]?.leftArray || sortingSteps[currentStep]?.rightArray) && (
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="grid md:grid-cols-2 gap-6 mb-6 text-gray-700">
                   {sortingSteps[currentStep]?.leftArray && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
                       <h4 className="font-semibold text-blue-800 mb-2">Left Array</h4>
-                      <div className="flex space-x-1">
+                      <div className="flex space-x-1 text-gray-700">
                         {sortingSteps[currentStep].leftArray!.map((el, i) => (
-                          <div key={i} className="bg-blue-400 text-white px-2 py-1 rounded text-sm">
+                          <div key={i} className="bg-blue-400 text-white px-2 py-1 rounded text-sm text-gray-600">
                             {el.value}
                           </div>
                         ))}
@@ -665,11 +665,11 @@ const MergeSortPage: React.FC = () => {
                   )}
 
                   {sortingSteps[currentStep]?.rightArray && (
-                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-gray-700">
                       <h4 className="font-semibold text-purple-800 mb-2">Right Array</h4>
-                      <div className="flex space-x-1">
+                      <div className="flex space-x-1 text-gray-700">
                         {sortingSteps[currentStep].rightArray!.map((el, i) => (
-                          <div key={i} className="bg-purple-400 text-white px-2 py-1 rounded text-sm">
+                          <div key={i} className="bg-purple-400 text-white px-2 py-1 rounded text-sm text-gray-600">
                             {el.value}
                           </div>
                         ))}
@@ -678,11 +678,11 @@ const MergeSortPage: React.FC = () => {
                   )}
 
                   {sortingSteps[currentStep]?.mergedArray && (
-                    <div className="md:col-span-2 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <div className="md:col-span-2 bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-gray-700">
                       <h4 className="font-semibold text-yellow-800 mb-2">Merged Result</h4>
-                      <div className="flex space-x-1">
+                      <div className="flex space-x-1 text-gray-700">
                         {sortingSteps[currentStep].mergedArray!.map((el, i) => (
-                          <div key={i} className="bg-yellow-400 text-white px-2 py-1 rounded text-sm">
+                          <div key={i} className="bg-yellow-400 text-white px-2 py-1 rounded text-sm text-gray-600">
                             {el.value}
                           </div>
                         ))}
@@ -693,12 +693,12 @@ const MergeSortPage: React.FC = () => {
               )}
 
               {/* Algorithm Description */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-gray-50 rounded-lg p-6 text-gray-700">
                 <h4 className="font-semibold text-gray-800 mb-3">How Merge Sort Works:</h4>
                 <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                   <div>
-                    <h5 className="font-semibold mb-2">Divide Phase:</h5>
-                    <ol className="list-decimal pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Divide Phase:</h5>
+                    <ol className="list-decimal pl-4 space-y-1 text-gray-700">
                       <li>Split array in half recursively</li>
                       <li>Continue until single elements</li>
                       <li>Create a binary tree of divisions</li>
@@ -706,8 +706,8 @@ const MergeSortPage: React.FC = () => {
                     </ol>
                   </div>
                   <div>
-                    <h5 className="font-semibold mb-2">Conquer Phase:</h5>
-                    <ul className="list-disc pl-4 space-y-1">
+                    <h5 className="font-semibold mb-2 text-gray-800">Conquer Phase:</h5>
+                    <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li>Merge pairs of sorted sub-arrays</li>
                       <li>Compare front elements of each array</li>
                       <li>Add smaller element to result</li>
@@ -725,11 +725,11 @@ const MergeSortPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Implementation</h2>
           
-          <div className="space-y-6">
+          <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Merge Sort Implementation</h3>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -774,7 +774,7 @@ function merge(left, right) {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">In-Place Merge Sort</h3>
                 <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
@@ -846,15 +846,15 @@ function mergeInPlace(arr, left, mid, right) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 bg-white rounded-lg shadow-lg p-8"
+          className="mt-12 bg-white rounded-lg shadow-lg p-8 text-gray-700"
         >
           <h2 className="text-2xl font-semibold mb-6 text-gray-900">Performance Analysis</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Time Complexity</h3>
-              <div className="space-y-4">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-green-800 mb-2">Consistent O(n log n)</h4>
                   <p className="text-sm text-gray-700">
                     Always divides array into log n levels, with n work per level. 
@@ -862,7 +862,7 @@ function mergeInPlace(arr, left, mid, right) {
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-blue-800 mb-2">Why O(n log n)?</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li>Tree depth: log₂(n) levels</li>
@@ -875,8 +875,8 @@ function mergeInPlace(arr, left, mid, right) {
 
             <div>
               <h3 className="text-lg font-semibold mb-4 text-gray-800">Space Complexity</h3>
-              <div className="space-y-4">
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+              <div className="space-y-4 text-gray-700">
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-orange-800 mb-2">O(n) Additional Space</h4>
                   <p className="text-sm text-gray-700">
                     Requires temporary arrays for merging. Not an in-place algorithm, 
@@ -884,7 +884,7 @@ function mergeInPlace(arr, left, mid, right) {
                   </p>
                 </div>
                 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-gray-700">
                   <h4 className="font-semibold text-purple-800 mb-2">Memory Usage</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li>O(n) for temporary arrays</li>
@@ -902,22 +902,22 @@ function mergeInPlace(arr, left, mid, right) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 flex justify-between items-center"
+          className="mt-12 flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/sorting/quick-sort"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Previous: Quick Sort
           </Link>
           
           <Link
             href="/algorithms/sorting/heap-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
           >
             Next: Heap Sort
-            <SkipForward className="h-5 w-5 ml-2" />
+            <SkipForward className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>

@@ -51,53 +51,53 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8 text-gray-700">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-gray-700">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
-                  <Code className="h-5 w-5 text-white" />
+              <div className="flex items-center mb-4 text-gray-700">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
+                  <Code className="h-5 w-5 text-white text-gray-700" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Learn DSA</h3>
+                <h3 className="text-xl font-bold text-white text-gray-800">Learn DSA</h3>
               </div>
               <p className="text-gray-400 mb-4 max-w-sm">
                 Master Data Structures and Algorithms with interactive theory, 
                 visualizations, and hands-on simulations. Build your coding skills 
                 with comprehensive learning resources.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 text-gray-700">
                 <a
                   href="https://github.com/SatyamLamsal/learnDSA.me"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-blue-300"
                   aria-label="GitHub Repository"
                 >
-                  <Github className="h-5 w-5" />
+                  <Github className="h-5 w-5 text-gray-700" />
                 </a>
                 <a
                   href="https://twitter.com/learndsa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-blue-300"
                   aria-label="Twitter"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <Twitter className="h-5 w-5 text-gray-700" />
                 </a>
                 <a
                   href="mailto:contact@learndsa.me"
-                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-blue-300"
                   aria-label="Email Contact"
                 >
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5 text-gray-700" />
                 </a>
               </div>
             </motion.div>
@@ -111,8 +111,8 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="text-white font-semibold mb-4 flex items-center">
-                <BookOpen className="h-4 w-4 mr-2" />
+              <h4 className="text-white font-semibold mb-4 flex items-center text-gray-800">
+                <BookOpen className="h-4 w-4 mr-2 text-gray-700" />
                 Quick Links
               </h4>
               <ul className="space-y-2 text-gray-400">
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors"
+                      className="hover:text-white transition-colors text-gray-700"
                     >
                       {link.name}
                     </Link>
@@ -138,16 +138,16 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-white font-semibold mb-4 flex items-center">
-                <Users className="h-4 w-4 mr-2" />
+              <h4 className="text-white font-semibold mb-4 flex items-center text-gray-800">
+                <Users className="h-4 w-4 mr-2 text-gray-700" />
                 Data Structures
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-gray-700">
                 {dataStructures.map((structure) => (
                   <li key={structure.name}>
                     <Link
                       href={structure.href}
-                      className="hover:text-white transition-colors text-sm"
+                      className="hover:text-white transition-colors text-sm text-gray-600"
                     >
                       {structure.name}
                     </Link>
@@ -165,16 +165,16 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-white font-semibold mb-4 flex items-center">
-                <Zap className="h-4 w-4 mr-2" />
+              <h4 className="text-white font-semibold mb-4 flex items-center text-gray-800">
+                <Zap className="h-4 w-4 mr-2 text-gray-700" />
                 Algorithms
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-gray-700">
                 {algorithms.map((algorithm) => (
                   <li key={algorithm.name}>
                     <Link
                       href={algorithm.href}
-                      className="hover:text-white transition-colors text-sm"
+                      className="hover:text-white transition-colors text-sm text-gray-600"
                     >
                       {algorithm.name}
                     </Link>
@@ -191,26 +191,26 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-lg p-6 mb-8 border border-blue-800/30"
+          className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-lg p-6 mb-8 border border-blue-800/30 text-gray-100"
         >
-          <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div className="grid md:grid-cols-3 gap-6 text-center text-gray-700">
             <div>
               <BookOpen className="h-8 w-8 text-blue-400 mx-auto mb-2" />
-              <h5 className="text-white font-semibold mb-1">Interactive Theory</h5>
+              <h5 className="text-white font-semibold mb-1 text-gray-800">Interactive Theory</h5>
               <p className="text-gray-400 text-sm">
                 Comprehensive explanations with examples
               </p>
             </div>
             <div>
               <Code className="h-8 w-8 text-purple-400 mx-auto mb-2" />
-              <h5 className="text-white font-semibold mb-1">Visual Learning</h5>
+              <h5 className="text-white font-semibold mb-1 text-gray-800">Visual Learning</h5>
               <p className="text-gray-400 text-sm">
                 Dynamic visualizations and animations
               </p>
             </div>
             <div>
               <Zap className="h-8 w-8 text-green-400 mx-auto mb-2" />
-              <h5 className="text-white font-semibold mb-1">Hands-on Practice</h5>
+              <h5 className="text-white font-semibold mb-1 text-gray-800">Hands-on Practice</h5>
               <p className="text-gray-400 text-sm">
                 Interactive simulations and exercises
               </p>
@@ -224,9 +224,9 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="pt-8 border-t border-gray-800"
+          className="pt-8 border-t border-gray-800 text-gray-700"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-gray-700">
             {/* Copyright */}
             <div className="flex items-center text-sm text-gray-400">
               <span>© {currentYear} Learn DSA. All rights reserved.</span>
@@ -235,7 +235,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
+            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm text-gray-600">
               {legalLinks.map((link) => (
                 <Link
                   key={link.name}

@@ -130,45 +130,45 @@ const algorithmTypes = [
     name: 'Graph Traversal',
     description: 'Systematically visit all vertices and edges',
     algorithms: ['BFS', 'DFS'],
-    icon: <GitBranch className="h-8 w-8" />,
+    icon: <GitBranch className="h-8 w-8 text-gray-700" />,
     color: 'text-blue-600'
   },
   {
     name: 'Shortest Path',
     description: 'Find optimal paths between vertices',
     algorithms: ['Dijkstra', 'Bellman-Ford', 'Floyd-Warshall'],
-    icon: <Route className="h-8 w-8" />,
+    icon: <Route className="h-8 w-8 text-gray-700" />,
     color: 'text-green-600'
   },
   {
     name: 'Minimum Spanning Tree',
     description: 'Connect all vertices with minimum total weight',
     algorithms: ['Kruskal', 'Prim'],
-    icon: <Network className="h-8 w-8" />,
+    icon: <Network className="h-8 w-8 text-gray-700" />,
     color: 'text-purple-600'
   },
   {
     name: 'Graph Properties',
     description: 'Analyze structural properties of graphs',
     algorithms: ['Topological Sort', 'SCC', 'Cycle Detection'],
-    icon: <MapPin className="h-8 w-8" />,
+    icon: <MapPin className="h-8 w-8 text-gray-700" />,
     color: 'text-orange-600'
   }
 ];
 
 export default function GraphAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+      <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="mb-8 text-gray-700"
         >
           <Link href="/algorithms" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-6">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Algorithms
           </Link>
           <h1 className="text-4xl font-bold text-slate-800 mb-4">Graph Algorithms</h1>
@@ -183,7 +183,7 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 text-gray-700"
         >
           {algorithmTypes.map((type, index) => (
             <motion.div
@@ -191,7 +191,7 @@ export default function GraphAlgorithmsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow text-gray-700"
             >
               <div className={`${type.color} mb-4 flex justify-center`}>
                 {type.icon}
@@ -210,10 +210,10 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="mb-12 text-gray-700"
         >
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">Essential Graph Algorithms</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
             {graphAlgorithms.map((algorithm, index) => (
               <motion.div
                 key={algorithm.path}
@@ -221,27 +221,27 @@ export default function GraphAlgorithmsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-gray-700"
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2">{algorithm.name}</h3>
+                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                       <div>
                         <span className="font-semibold text-slate-700">Time:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.timeComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.timeComplexity}</div>
                       </div>
                       <div>
                         <span className="font-semibold text-slate-700">Space:</span>
-                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs">{algorithm.spaceComplexity}</div>
+                        <div className="bg-gray-100 px-2 py-1 rounded mt-1 text-xs text-gray-600">{algorithm.spaceComplexity}</div>
                       </div>
                     </div>
 
-                    <div className="mb-4">
+                    <div className="mb-4 text-gray-700">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${
                         algorithm.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
                         algorithm.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
@@ -251,8 +251,8 @@ export default function GraphAlgorithmsPage() {
                       </span>
                     </div>
 
-                    <div className="border-t pt-3">
-                      <div className="mb-2">
+                    <div className="border-t pt-3 text-gray-700">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-green-700">Pros:</span>
                         <ul className="text-xs text-slate-600 mt-1">
                           {algorithm.pros.slice(0, 2).map((pro, i) => (
@@ -260,7 +260,7 @@ export default function GraphAlgorithmsPage() {
                           ))}
                         </ul>
                       </div>
-                      <div className="mb-2">
+                      <div className="mb-2 text-gray-700">
                         <span className="text-xs font-semibold text-red-700">Cons:</span>
                         <ul className="text-xs text-slate-600 mt-1">
                           {algorithm.cons.slice(0, 1).map((con, i) => (
@@ -289,26 +289,26 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Graph Representations</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="border-l-4 border-blue-500 pl-6">
+          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
+            <div className="border-l-4 border-blue-500 pl-6 text-gray-700">
               <h3 className="text-xl font-semibold text-blue-700 mb-3">Adjacency Matrix</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm text-gray-600">
                 <p className="text-slate-600">2D array where matrix[i][j] = 1 if edge exists between vertex i and j</p>
-                <div className="bg-blue-50 p-4 rounded">
+                <div className="bg-blue-50 p-4 rounded text-gray-700">
                   <p><strong>Time Complexity:</strong> O(1) edge lookup, O(V²) space</p>
                   <p><strong>Best for:</strong> Dense graphs, frequent edge queries</p>
                   <p><strong>Cons:</strong> High space usage, inefficient for sparse graphs</p>
                 </div>
               </div>
             </div>
-            <div className="border-l-4 border-green-500 pl-6">
+            <div className="border-l-4 border-green-500 pl-6 text-gray-700">
               <h3 className="text-xl font-semibold text-green-700 mb-3">Adjacency List</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-2 text-sm text-gray-600">
                 <p className="text-slate-600">Array of lists where list[i] contains all neighbors of vertex i</p>
-                <div className="bg-green-50 p-4 rounded">
+                <div className="bg-green-50 p-4 rounded text-gray-700">
                   <p><strong>Time Complexity:</strong> O(degree) edge lookup, O(V + E) space</p>
                   <p><strong>Best for:</strong> Sparse graphs, memory efficiency</p>
                   <p><strong>Cons:</strong> Slower edge existence check</p>
@@ -323,34 +323,34 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">When to Use Each Algorithm</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="border-l-4 border-blue-500 pl-4">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-blue-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-blue-700 mb-2">Graph Exploration</h3>
                 <p className="text-sm text-slate-600">Use <strong>BFS</strong> for shortest path in unweighted graphs, <strong>DFS</strong> for cycle detection and topological sorting</p>
               </div>
-              <div className="border-l-4 border-purple-500 pl-4">
+              <div className="border-l-4 border-purple-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-purple-700 mb-2">Single-Source Shortest Path</h3>
                 <p className="text-sm text-slate-600">Use <strong>Dijkstra</strong> for non-negative weights, <strong>Bellman-Ford</strong> when negative edges exist</p>
               </div>
-              <div className="border-l-4 border-orange-500 pl-4">
+              <div className="border-l-4 border-orange-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-orange-700 mb-2">All-Pairs Shortest Path</h3>
                 <p className="text-sm text-slate-600">Use <strong>Floyd-Warshall</strong> for small dense graphs, run Dijkstra from each vertex for sparse graphs</p>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="border-l-4 border-indigo-500 pl-4">
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-indigo-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-indigo-700 mb-2">Minimum Spanning Tree</h3>
                 <p className="text-sm text-slate-600">Use <strong>Kruskal</strong> for sparse graphs, <strong>Prim</strong> for dense graphs or when starting vertex matters</p>
               </div>
-              <div className="border-l-4 border-teal-500 pl-4">
+              <div className="border-l-4 border-teal-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-teal-700 mb-2">Task Scheduling</h3>
                 <p className="text-sm text-slate-600">Use <strong>Topological Sort</strong> for dependency resolution and ordering problems</p>
               </div>
-              <div className="border-l-4 border-cyan-500 pl-4">
+              <div className="border-l-4 border-cyan-500 pl-4 text-gray-700">
                 <h3 className="font-semibold text-cyan-700 mb-2">Network Analysis</h3>
                 <p className="text-sm text-slate-600">Use <strong>SCC algorithms</strong> to identify clusters and strongly connected components</p>
               </div>
@@ -363,13 +363,13 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-white rounded-lg shadow-lg p-6 mb-12"
+          className="bg-white rounded-lg shadow-lg p-6 mb-12 text-gray-700"
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Time Complexity Summary</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto text-gray-700">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="border-b-2 border-gray-200">
+                <tr className="border-b-2 border-gray-200 text-gray-700">
                   <th className="text-left p-3 font-semibold text-slate-700">Algorithm</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Time Complexity</th>
                   <th className="text-center p-3 font-semibold text-slate-700">Space Complexity</th>
@@ -385,12 +385,12 @@ export default function GraphAlgorithmsPage() {
                   { name: 'Kruskal', time: 'O(E log E)', space: 'O(V)', type: 'Undirected weighted' },
                   { name: 'Prim', time: 'O(E log V)', space: 'O(V)', type: 'Undirected weighted' }
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100 text-gray-700">
                     <td className="p-3 font-medium text-slate-800">{row.name}</td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-blue-100 text-blue-800">{row.time}</span>
                     </td>
-                    <td className="p-3 text-center">
+                    <td className="p-3 text-center text-gray-700">
                       <span className="px-2 py-1 rounded text-xs bg-green-100 text-green-800">{row.space}</span>
                     </td>
                     <td className="p-3 text-center text-xs text-slate-600">{row.type}</td>
@@ -406,15 +406,15 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-white text-center mb-12"
+          className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
         >
-          <h2 className="text-3xl font-bold mb-4">Explore Graph Algorithms</h2>
-          <p className="text-xl mb-6 opacity-90">
+          <h2 className="text-3xl font-bold mb-4 text-slate-800">Explore Graph Algorithms</h2>
+          <p className="text-xl mb-6 opacity-90 text-gray-700">
             Visualize networks and see algorithms work on real graph structures
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center text-gray-700">
             <Link href="/algorithms/graph/bfs" className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
-              <BookOpen className="h-5 w-5 inline mr-2" />
+              <BookOpen className="h-5 w-5 inline mr-2 text-gray-700" />
               Start with BFS
             </Link>
           </div>
@@ -425,22 +425,22 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex justify-between items-center"
+          className="flex justify-between items-center text-gray-700"
         >
           <Link
             href="/algorithms/searching"
             className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
           >
-            <ArrowLeft className="h-5 w-5 mr-2" />
+            <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Searching
           </Link>
           
           <Link
             href="/algorithms/dynamic-programming"
-            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-gray-100"
           >
             Next: Dynamic Programming
-            <ArrowRight className="h-5 w-5 ml-2" />
+            <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />
           </Link>
         </motion.div>
       </div>
