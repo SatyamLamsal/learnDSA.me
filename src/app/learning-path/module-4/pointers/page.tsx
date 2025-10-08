@@ -39,7 +39,7 @@ const pointerConcepts = [
 ];
 
 export default function LinkedListPointersPage() {
-  const [activeSection, setActiveSection] = useState('fundamentals');
+  // Scroll spy will highlight sections; internal state only for interactive demo control
   const [currentDemo, setCurrentDemo] = useState(0);
 
   const sections = [
@@ -55,13 +55,12 @@ export default function LinkedListPointersPage() {
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Pointers & memory model"
       sections={sections}
-      activeSection={activeSection}
-      onSectionChange={(id)=>{ setActiveSection(id); const el=document.getElementById(id); if(el){ el.scrollIntoView({behavior:'smooth'});} }}
+      enableScrollSpy
       backUrl="/learning-path/module-4"
       estimatedTime="15 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={sections.findIndex(s => s.id === activeSection)}
+      currentSectionIndex={0}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

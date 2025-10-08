@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 
 interface ModuleLayoutProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ interface ModuleLayoutProps {
   difficulty?: 'Beginner' | 'Intermediate' | 'Advanced';
   totalSections?: number;
   currentSectionIndex?: number;
+  enableScrollSpy?: boolean;
 }
 
 export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
@@ -39,20 +41,21 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
   difficulty = 'Beginner',
   totalSections,
   currentSectionIndex = 0,
+  enableScrollSpy = false,
 }) => {
+  // Derive active section if scroll spy is enabled and caller did not explicitly control it
+  const sectionIds = useMemo(() => sections.map(s => s.id), [sections]);
+  const spiedActive = enableScrollSpy && !activeSection ? useScrollSpy(sectionIds) : null;
+  const resolvedActive = activeSection || spiedActive || sections[0]?.id;
   const scrollToSection = (sectionId: string) => {
-    if (onSectionChange) {
-      onSectionChange(sectionId);
+    if (onSectionChange) onSectionChange(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // fallback scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    // Scroll to top of the page first
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Small delay to ensure smooth transition
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 300);
   };
 
   const getDifficultyColor = (difficulty: string) => {
@@ -98,7 +101,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 onClick={() => scrollToSection(section.id)}
                 className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center group ${
-                  activeSection === section.id
+                  resolvedActive === section.id
                     ? 'bg-blue-600 text-white shadow-lg scale-105'
                     : 'bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-700 hover:scale-102'
                 }`}
@@ -107,7 +110,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
               >
                 <section.icon className="w-5 h-5 mr-3 flex-shrink-0 text-gray-700" />
                 <span className="text-sm leading-tight text-gray-600">{section.name}</span>
-                {activeSection === section.id && (
+                {resolvedActive === section.id && (
                   <ChevronRight className="w-4 h-4 ml-auto text-gray-700" />
                 )}
               </motion.button>
@@ -119,7 +122,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
             <h3 className="text-sm font-semibold text-gray-900 mb-3">Module Progress</h3>
             <ModuleProgressIndicator moduleId={moduleId} />
             <p className="text-xs text-gray-600 mt-2">
-              Section {currentSectionIndex + 1} of {totalSections || sections.length}
+              Section { (sections.findIndex(s => s.id === resolvedActive) + 1) } of {totalSections || sections.length}
             </p>
           </div>
 

@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, BarChart3, ArrowRight, Play, Pause, RotateCcw, Eye, Code, Zap } from 'lucide-react';
+import { ImplementationGallery } from '@/components/interactive/ImplementationGallery';
+import { QuizCard } from '@/components/interactive/QuizCard';
 import { useState, useEffect } from 'react';
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -168,7 +170,6 @@ const linkedListOperations = [
 ];
 
 export default function LinkedListOperationsPage() {
-  const [activeSection, setActiveSection] = useState('operations');
   const [currentAnimation, setCurrentAnimation] = useState<keyof OperationAnimations>('insertion');
   const [animationStep, setAnimationStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -178,6 +179,7 @@ export default function LinkedListOperationsPage() {
     { id: 'operations', name: 'Core Operations', icon: Settings },
     { id: 'animations', name: 'Visual Animations', icon: Eye },
     { id: 'implementation', name: 'Code Examples', icon: Code },
+    { id: 'gallery', name: 'Impl Gallery', icon: Code },
     { id: 'complexity', name: 'Complexity Analysis', icon: BarChart3 },
   ];
 
@@ -209,13 +211,12 @@ export default function LinkedListOperationsPage() {
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Core operations and performance"
       sections={sections}
-      activeSection={activeSection}
-      onSectionChange={(id)=>{ setActiveSection(id); const el=document.getElementById(id); if(el){ el.scrollIntoView({behavior:'smooth'});} }}
+      enableScrollSpy
       backUrl="/learning-path/module-4"
       estimatedTime="16 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={sections.findIndex(s => s.id === activeSection)}
+      currentSectionIndex={0}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -505,6 +506,30 @@ export default function LinkedListOperationsPage() {
               ))}
             </div>
           </div>
+          <div id="gallery" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                <Code className="w-8 h-8 mr-3 text-indigo-600" />
+                Multi-Language Implementation Gallery
+              </h2>
+              <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-impl-gallery" />
+            </div>
+            <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200">
+              <h3 className="text-lg font-semibold text-indigo-900 mb-3">🌐 Cross-Language Perspective</h3>
+              <p className="text-indigo-800 text-sm leading-relaxed">
+                Compare how core linked list structures and operations look across TypeScript, C, and Python. Note differences in
+                memory management, syntax verbosity, and pointer handling. Switching languages reinforces the underlying concepts
+                independent of syntax.
+              </p>
+            </div>
+            <ImplementationGallery />
+            <div className="mt-6 text-sm text-indigo-700">
+              <strong>Reflection Tips:</strong> Identify what code changes between languages and what remains conceptually identical.
+              This helps you separate algorithmic thinking from language-specific boilerplate.
+            </div>
+          </div>
+
+
           <div id="complexity" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <BarChart3 className="w-8 h-8 mr-3 text-blue-600" />
@@ -561,6 +586,81 @@ export default function LinkedListOperationsPage() {
               </table>
             </div>
             <p className="mt-4 text-sm text-gray-600"><strong>*</strong> Assumes a maintained tail pointer.</p>
+          </div>
+          <div id="performance" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                <Zap className="w-8 h-8 mr-3 text-yellow-500" />
+                Performance & Memory Notes
+              </h2>
+              <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-performance" />
+            </div>
+            <div className="grid lg:grid-cols-3 gap-6 mb-8">
+              <div className="p-5 border rounded-xl bg-gradient-to-br from-yellow-50 to-amber-50">
+                <h3 className="font-semibold text-sm text-amber-800 mb-2">Cache Locality</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">Arrays leverage spatial locality; CPUs prefetch sequential memory. Linked lists scatter nodes causing more cache misses → real-world slowdowns despite similar Big-O.</p>
+              </div>
+              <div className="p-5 border rounded-xl bg-gradient-to-br from-rose-50 to-pink-50">
+                <h3 className="font-semibold text-sm text-pink-800 mb-2">Memory Overhead</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">Each node stores at least one pointer. Rough overhead approx: pointer_size / (data_size + pointer_size). For small data (e.g. int32), pointer overhead can exceed 50%.</p>
+              </div>
+              <div className="p-5 border rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50">
+                <h3 className="font-semibold text-sm text-indigo-800 mb-2">Allocation Cost</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">Frequent per-node allocations stress allocator & fragment memory. Pools or slab allocators mitigate but add complexity.</p>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="p-5 border rounded-xl bg-gradient-to-br from-green-50 to-emerald-50">
+                <h3 className="font-semibold text-sm text-emerald-800 mb-2">When Lists Win</h3>
+                <ul className="text-[11px] text-green-800 space-y-1 list-disc list-inside">
+                  <li>Unpredictable growth with frequent head ops</li>
+                  <li>Iterator stability under insert/delete</li>
+                  <li>Concatenation via tail.next = other_head</li>
+                </ul>
+              </div>
+              <div className="p-5 border rounded-xl bg-gradient-to-br from-red-50 to-orange-50">
+                <h3 className="font-semibold text-sm text-orange-800 mb-2">When Arrays Win</h3>
+                <ul className="text-[11px] text-orange-800 space-y-1 list-disc list-inside">
+                  <li>Heavy traversal/search usage</li>
+                  <li>Frequent indexing needs</li>
+                  <li>Cache-sensitive inner loops</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-gray-50 border rounded-xl p-5 text-[11px] text-gray-600 leading-relaxed">
+              <strong className="text-gray-800">Rule of Thumb:</strong> Start with a dynamic array (vector). Migrate to a list only when profiling reveals head/tail insertion or stable iterator requirements dominate and memory overhead is acceptable.
+            </div>
+          </div>
+           {/* Operations Quiz */}
+          <div id="operations-quiz" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                <Code className="w-8 h-8 mr-3 text-orange-600" /> Operations Knowledge Check
+              </h2>
+              <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-quiz" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <QuizCard
+                question="Why is deleting a node in the middle of a singly list O(n)?"
+                difficulty="medium"
+                options={[
+                  { id: 'A', label: 'You must traverse to find the previous node', correct: true, explanation: 'Need predecessor to relink next pointer; without back pointers you traverse from head.' },
+                  { id: 'B', label: 'All nodes must be shifted in memory' },
+                  { id: 'C', label: 'Garbage collector traversal cost' },
+                  { id: 'D', label: 'Pointer arithmetic is O(n)' }
+                ]}
+              />
+              <QuizCard
+                question="Which operation is inherently O(n) even with a tail pointer?"
+                difficulty="hard"
+                options={[
+                  { id: 'A', label: 'Insert at head' },
+                  { id: 'B', label: 'Insert at tail' },
+                  { id: 'C', label: 'Search by value', correct: true, explanation: 'Must inspect nodes sequentially until match or NULL.' },
+                  { id: 'D', label: 'Delete head' }
+                ]}
+              />
+            </div>
           </div>
           <div className="flex justify-between items-center mt-8 text-gray-700">
             <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Types</Link>

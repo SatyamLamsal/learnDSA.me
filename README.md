@@ -148,3 +148,20 @@ This project is licensed under the MIT License.
 ## Support
 
 If you encounter any issues or have questions, please create an issue on GitHub.
+
+---
+
+### (Internal Notes) Upcoming Advanced Linked List Enhancements
+Tracking potential deep-dive sections to add:
+- Sentinel / dummy head & tail nodes for simpler edge handling
+- Maintaining tail pointer & O(1) size caching (trade-offs & invariants)
+- Memory layout & fragmentation: allocator impact, pooling strategies
+- Iterator invalidation rules vs arrays/vectors
+- Real-world usage examples: LRU cache, undo stack, adjacency lists, free lists
+- Common pitfalls: losing head reference, accidental self-cycles, double free (manual memory)
+- Alternatives comparison: dynamic array, gap buffer, rope, deque, skip list
+- Concurrency patterns: hazard pointers, RCU, lock-free vs coarse lock
+- Performance tuning: prefetching hints, node batching, unrolled lists
+- Debugging techniques: slow/fast verification, visualization logs
+
+These will live in a forthcoming `advanced` page under Module 4.

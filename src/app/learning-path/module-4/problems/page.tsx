@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Clock, Database, CheckCircle, Play } from 'lucide-react';
+import { Code, Clock, Database, CheckCircle, Play, Shuffle } from 'lucide-react';
 import { useState } from 'react';
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -62,10 +62,10 @@ const exercises = [
 ];
 
 export default function LinkedListProblemsPage() {
-  const [activeSection, setActiveSection] = useState('problems');
 
   const sections = [
     { id: 'problems', name: 'Classic Problems', icon: Code },
+    { id: 'patterns', name: 'Patterns', icon: Shuffle },
     { id: 'practice', name: 'Practice', icon: Play },
   ];
 
@@ -75,13 +75,12 @@ export default function LinkedListProblemsPage() {
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Problem solving & practice"
       sections={sections}
-      activeSection={activeSection}
-      onSectionChange={(id)=>{ setActiveSection(id); const el=document.getElementById(id); if(el){ el.scrollIntoView({behavior:'smooth'});} }}
+      enableScrollSpy
       backUrl="/learning-path/module-4"
       estimatedTime="18 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={sections.findIndex(s => s.id === activeSection)}
+      currentSectionIndex={0}
     >
       <motion.div
         id="problems"
@@ -145,6 +144,81 @@ export default function LinkedListProblemsPage() {
               ))}
             </div>
           </div>
+          {/* Patterns Catalog */}
+          <div id="patterns" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+                <Shuffle className="w-8 h-8 mr-3 text-purple-600" /> Algorithmic Patterns Catalog
+              </h2>
+              <SectionProgressIndicator moduleId="linked-lists" sectionId="problems-patterns" />
+            </div>
+            <p className="text-sm text-gray-600 mb-8 max-w-4xl">
+              Many linked list problems reduce to a handful of reusable pointer movement patterns. Master these and most
+              interview questions become mechanical applications rather than puzzles.
+            </p>
+            <div className="grid lg:grid-cols-2 gap-6">
+              {[
+                {
+                  name: 'Two-Pointer (Runner)',
+                  idea: 'Maintain slow and fast pointers advancing at different speeds',
+                  solves: ['Cycle detection','Middle element','Kth from end','Palindrome check (half split)'],
+                  complexity: 'O(n) time, O(1) space',
+                  snippet: 'slow = head; fast = head; while(fast && fast.next){ slow = slow.next; fast = fast.next.next; }'
+                },
+                {
+                  name: 'In-Place Reversal',
+                  idea: 'Iteratively reverse next pointers to flip list direction',
+                  solves: ['Reverse list','Reverse sublist','Palindrome check (second half)'],
+                  complexity: 'O(n) time, O(1) space',
+                  snippet: 'prev=null; cur=head; while(cur){ nxt=cur.next; cur.next=prev; prev=cur; cur=nxt; }'
+                },
+                {
+                  name: 'Merge Technique',
+                  idea: 'Select smaller head from two sorted lists repeatedly',
+                  solves: ['Merge sorted lists','Merge K via heap','External merge sort phase'],
+                  complexity: 'O(m+n) time',
+                  snippet: 'while(a && b){ if(a.val<b.val){ tail.next=a; a=a.next; } else { tail.next=b; b=b.next;} tail=tail.next; }'
+                },
+                {
+                  name: 'Cycle Entry (Floyd)',
+                  idea: 'After meet, reset one pointer to head and move both 1 step to find entry',
+                  solves: ['Cycle entry node'],
+                  complexity: 'O(n) time',
+                  snippet: 'while(fast&&fast.next){ slow=slow.next; fast=fast.next.next; if(slow===fast){ slow=head; while(slow!==fast){ slow=slow.next; fast=fast.next;} break; }}'
+                },
+                {
+                  name: 'Splitting / Partitioning',
+                  idea: 'Divide list into two based on condition, then recombine',
+                  solves: ['Partition list around value','Stable separation tasks'],
+                  complexity: 'O(n) time',
+                  snippet: 'before/after lists; iterate nodes; append to bucket; join'                
+                },
+                {
+                  name: 'Fast/Slow with Reconnect',
+                  idea: 'Use middle discovery then modify second half then reconnect',
+                  solves: ['Reorder list','Rearrange alternating nodes'],
+                  complexity: 'O(n) time',
+                  snippet: 'mid via slow/fast; reverse second; weave first & reversed'                
+                }
+              ].map((pat,i)=>(
+                <div key={i} className="border rounded-xl p-5 bg-gradient-to-br from-purple-50 to-fuchsia-50 flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold text-purple-900">{pat.name}</h3>
+                    <span className="text-[10px] px-2 py-1 rounded-full bg-white/70 border text-purple-600 font-mono">{pat.complexity}</span>
+                  </div>
+                  <p className="text-xs text-gray-600 mb-3 leading-relaxed">{pat.idea}</p>
+                  <div className="mb-3">
+                    <div className="text-[10px] font-semibold text-purple-700 mb-1">Common Uses</div>
+                    <ul className="flex flex-wrap gap-1 text-[10px] text-purple-800">
+                      {pat.solves.map((s,si)=>(<li key={si} className="px-2 py-1 bg-white/70 rounded border border-purple-200">{s}</li>))}
+                    </ul>
+                  </div>
+                  <pre className="text-[10px] bg-gray-900 text-green-300 p-3 rounded mt-auto overflow-x-auto">{pat.snippet}</pre>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div id="practice" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <Play className="w-8 h-8 mr-3 text-green-600" />
@@ -166,9 +240,10 @@ export default function LinkedListProblemsPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-between items-center mt-8 text-gray-700">
+          <div className="flex justify-between items-center mt-8 text-gray-700 flex-wrap gap-4">
             <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Operations</Link>
-            <Link href="/learning-path/module-5" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 text-gray-300">Next Module</Link>
+            <Link href="/learning-path/module-4/advanced" className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-medium hover:bg-purple-700">Advanced Topics</Link>
+            <Link href="/learning-path/module-5" className="ml-auto px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module</Link>
           </div>
         </motion.div>
     </ModuleLayout>

@@ -82,7 +82,7 @@ export default function Module4Overview() {
       totalSections={sections.length}
     >
       <div className="space-y-12 text-gray-700">
-        <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-2xl text-white">
+  <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-8 rounded-2xl">
           <div className="flex items-center space-x-4 mb-6 text-gray-700">
             <LinkIcon className="w-12 h-12 text-gray-700" />
             <div>
@@ -96,9 +96,9 @@ export default function Module4Overview() {
                 Linked lists are fundamental dynamic data structures where elements (nodes) are connected through pointers. 
                 Unlike arrays, they don&apos;t require contiguous memory and can grow/shrink during runtime.
               </p>
-              <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg text-gray-700">
-                <h3 className="font-semibold text-green-100 mb-2">🎯 What You&apos;ll Master:</h3>
-                <ul className="text-green-50 text-sm space-y-1">
+        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+          <h3 className="font-semibold text-emerald-100 mb-2">🎯 What You&apos;ll Master:</h3>
+          <ul className="text-emerald-50 text-sm space-y-1">
                   <li>• Pointer fundamentals & memory management</li>
                   <li>• Dynamic node creation & linking</li>
                   <li>• Singly, doubly, and circular variations</li>
@@ -107,25 +107,20 @@ export default function Module4Overview() {
                 </ul>
               </div>
             </div>
-            <div className="bg-green-500 bg-opacity-20 p-6 rounded-lg text-gray-700">
-              <h3 className="font-semibold text-green-100 mb-4">🚀 Real-World Applications</h3>
-              <div className="grid grid-cols-2 gap-3 text-sm text-gray-600">
-                <div className="bg-white bg-opacity-20 p-3 rounded text-gray-700">
-                  <div className="font-medium text-green-100">Browser History</div>
-                  <div className="text-green-200 text-xs">Back/Forward navigation</div>
-                </div>
-                <div className="bg-white bg-opacity-20 p-3 rounded text-gray-700">
-                  <div className="font-medium text-green-100">Music Playlists</div>
-                  <div className="text-green-200 text-xs">Next/Previous songs</div>
-                </div>
-                <div className="bg-white bg-opacity-20 p-3 rounded text-gray-700">
-                  <div className="font-medium text-green-100">Undo/Redo</div>
-                  <div className="text-green-200 text-xs">Command history</div>
-                </div>
-                <div className="bg-white bg-opacity-20 p-3 rounded text-gray-700">
-                  <div className="font-medium text-green-100">Memory Pools</div>
-                  <div className="text-green-200 text-xs">Dynamic allocation</div>
-                </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="font-semibold text-emerald-100 mb-4 flex items-center">🚀 Real-World Applications</h3>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                {[
+                  {title:'Browser History',desc:'Back/Forward navigation'},
+                  {title:'Music Playlists',desc:'Next/Previous songs'},
+                  {title:'Undo/Redo',desc:'Command history'},
+                  {title:'Memory Pools',desc:'Dynamic allocation'}
+                ].map((app,i)=>(
+                  <div key={i} className="group relative p-3 rounded-md bg-white/15 hover:bg-white/25 transition border border-white/10">
+                    <div className="font-medium text-emerald-50 group-hover:text-white text-sm">{app.title}</div>
+                    <div className="text-[11px] text-emerald-200 group-hover:text-emerald-100">{app.desc}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Layers, Eye, CheckCircle, Info, ArrowRight, BarChart3, Brain } from 'lucide-react';
+import { LinkedListDecisionFlowchart } from '@/components/interactive/LinkedListDecisionFlowchart';
 import { useState } from 'react';
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import Link from 'next/link';
+import { QuizCard } from '@/components/interactive/QuizCard';
 
 const linkedListTypes = [
   {
@@ -38,13 +40,14 @@ const linkedListTypes = [
 ];
 
 export default function LinkedListTypesPage() {
-  const [activeSection, setActiveSection] = useState('types');
+  // Scroll spy will handle active section highlight; keep minimal state only if needed later
 
   const sections = [
     { id: 'types', name: 'Types', icon: Layers },
     { id: 'visual', name: 'Visual', icon: Eye },
     { id: 'comparison', name: 'Comparison', icon: BarChart3 },
     { id: 'decision', name: 'Decision Guide', icon: Brain },
+    { id: 'flowchart', name: 'Flowchart', icon: Brain },
   ];
 
   return (
@@ -53,13 +56,12 @@ export default function LinkedListTypesPage() {
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Different list variants"
       sections={sections}
-      activeSection={activeSection}
-      onSectionChange={(id)=>{ setActiveSection(id); const el=document.getElementById(id); if(el){ el.scrollIntoView({behavior:'smooth'});} }}
+      enableScrollSpy
       backUrl="/learning-path/module-4"
       estimatedTime="18 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={sections.findIndex(s => s.id === activeSection)}
+      currentSectionIndex={0}
     >
       <motion.div
         id="types"
@@ -329,9 +331,154 @@ export default function LinkedListTypesPage() {
           <p className="mt-6 text-xs text-gray-600">Circular + doubly can be combined for a doubly circular list in some advanced scenarios.</p>
         </div>
 
-        <div className="flex justify-between items-center mt-8 text-gray-700">
+        {/* Flowchart Section */}
+        <div id="flowchart" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 flex items-center">
+              <Brain className="w-8 h-8 mr-3 text-indigo-600" />
+              Selection Flowchart
+            </h2>
+            <SectionProgressIndicator moduleId="linked-lists" sectionId="types-decision-flowchart" />
+          </div>
+          <p className="text-sm text-gray-600 mb-6 max-w-3xl">
+            Use this quick visual to decide whether a basic array suffices or a linked list variant (or advanced form)
+            is justified. Always begin with the simplest structure that meets performance requirements—upgrade only after
+            profiling reveals a clear bottleneck.
+          </p>
+          <LinkedListDecisionFlowchart />
+          <div className="mt-6 grid md:grid-cols-3 gap-4 text-[11px] text-gray-600">
+            <div className="p-3 bg-gradient-to-br from-green-50 to-emerald-50 border rounded">Prefer arrays for dense data, predictable size growth, and frequent indexing.</div>
+            <div className="p-3 bg-gradient-to-br from-blue-50 to-cyan-50 border rounded">Pick singly lists when modifications cluster at the head and memory footprint matters.</div>
+            <div className="p-3 bg-gradient-to-br from-purple-50 to-pink-50 border rounded">Explore advanced variants only after measuring real-world performance gaps.</div>
+          </div>
+        </div>
+
+        {/* Advanced Variants */}
+        <div id="advanced-variants" className="bg-white rounded-2xl p-8 shadow-lg border text-gray-700">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-3xl font-bold text-gray-900">Advanced Variants & Specialized Lists</h2>
+            <SectionProgressIndicator moduleId="linked-lists" sectionId="types-advanced-variants" />
+          </div>
+          <p className="text-sm text-gray-600 mb-8 max-w-3xl">Beyond the classic three, engineers and researchers adapt linked list concepts to improve cache locality, enhance search efficiency, or reduce overhead in special domains.</p>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* Skip List */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-blue-50 to-cyan-50">
+              <h3 className="font-semibold text-blue-800 mb-2">Skip List</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Multiple forward pointer “express lanes” layered on a sorted singly list enabling <span className="font-mono">O(log n)</span> expected search/insertion.</p>
+              <ul className="text-[11px] text-blue-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Probabilistic balancing</li>
+                <li>Alternative to balanced trees</li>
+                <li>Great for concurrent access</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Search ≈ log n</div>
+            </div>
+            {/* Unrolled List */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-indigo-50 to-purple-50">
+              <h3 className="font-semibold text-indigo-800 mb-2">Unrolled Linked List</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Each node stores an array (block) of elements to improve cache locality and reduce pointer overhead.</p>
+              <ul className="text-[11px] text-indigo-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Better cache utilization</li>
+                <li>Fewer allocations</li>
+                <li>Good for large text buffers</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Block size tuned empirically</div>
+            </div>
+            {/* XOR List */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-amber-50 to-yellow-50">
+              <h3 className="font-semibold text-amber-800 mb-2">XOR Linked List</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Stores XOR(prev, next) to cut pointer memory in half. Traversal requires previous address at each step.</p>
+              <ul className="text-[11px] text-amber-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Space optimization trick</li>
+                <li>Hard to debug</li>
+                <li>Unsafe in GC languages</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Mostly educational</div>
+            </div>
+            {/* Intrusive List */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-green-50 to-emerald-50">
+              <h3 className="font-semibold text-emerald-800 mb-2">Intrusive List</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Nodes embed linkage fields inside host objects—no wrapper node allocation.</p>
+              <ul className="text-[11px] text-emerald-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Zero extra allocations</li>
+                <li>Used in kernels (Linux)</li>
+                <li>Manual lifecycle management</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Perf-critical systems</div>
+            </div>
+            {/* Rope */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-rose-50 to-pink-50">
+              <h3 className="font-semibold text-rose-800 mb-2">Rope (Hybrid)</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Tree/list hybrid for huge strings or text editors; concatenation & splits in logarithmic time.</p>
+              <ul className="text-[11px] text-rose-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Balanced node blocks</li>
+                <li>Ideal for large edits</li>
+                <li>Non-linear traversal cost</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Used in editors</div>
+            </div>
+            {/* Lock-Free */}
+            <div className="border rounded-xl p-5 bg-gradient-to-br from-slate-50 to-gray-100">
+              <h3 className="font-semibold text-gray-800 mb-2">Lock-Free List</h3>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">Uses atomic compare-and-swap primitives to avoid coarse locks in concurrent environments.</p>
+              <ul className="text-[11px] text-gray-700 space-y-1 mb-3 list-disc list-inside">
+                <li>Scales under contention</li>
+                <li>Complex ABA pitfalls</li>
+                <li>Requires memory reclamation scheme</li>
+              </ul>
+              <div className="text-[10px] font-mono bg-white/70 px-2 py-1 rounded inline-block">Advanced concurrency</div>
+            </div>
+          </div>
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="p-5 rounded-xl bg-gray-50 border">
+              <h4 className="font-semibold text-gray-800 mb-2">Why Not Always These?</h4>
+              <ul className="text-[11px] text-gray-600 space-y-1 list-disc list-inside">
+                <li>Extra complexity rarely justified</li>
+                <li>Harder maintenance & onboarding cost</li>
+                <li>Modern hardware favors contiguous arrays</li>
+              </ul>
+            </div>
+            <div className="p-5 rounded-xl bg-indigo-50 border border-indigo-200">
+              <h4 className="font-semibold text-indigo-800 mb-2">When to Explore</h4>
+              <ul className="text-[11px] text-indigo-700 space-y-1 list-disc list-inside">
+                <li>Performance profiling reveals pointer overhead</li>
+                <li>Frequent middle insertions & large datasets</li>
+                <li>Special memory constraints (embedded / kernel)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Types Quiz */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg border mt-12 text-gray-700" id="types-quiz">
+          <h2 className="text-2xl font-bold mb-6 flex items-center text-gray-900">
+            <Brain className="w-6 h-6 mr-2 text-indigo-600" /> Quick Type Differentiation Quiz
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <QuizCard
+              question="When is a doubly linked list worth the extra memory?"
+              difficulty="medium"
+              options={[
+                { id: 'A', label: 'When you only insert at the head' },
+                { id: 'B', label: 'When backward traversal and frequent deletions of internal nodes are needed', correct: true, explanation: 'Doubly lists enable O(1) deletion given a node and efficient backward navigation.' },
+                { id: 'C', label: 'When you never remove nodes' },
+                { id: 'D', label: 'To reduce pointer memory' }
+              ]}
+            />
+            <QuizCard
+              question="Primary practical risk with circular lists?"
+              difficulty="easy"
+              options={[
+                { id: 'A', label: 'They cannot be iterated' },
+                { id: 'B', label: 'Infinite loops if termination is mishandled', correct: true, explanation: 'You must explicitly stop after full cycle; missing termination condition causes endless traversal.' },
+                { id: 'C', label: 'They require doubly links' },
+                { id: 'D', label: 'Memory cannot be freed' }
+              ]}
+            />
+          </div>
+           <div className="flex justify-between items-center mt-8 text-gray-700">
           <Link href="/learning-path/module-4/introduction" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Introduction</Link>
           <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 text-gray-300">Next: Operations <ArrowRight className="w-4 h-4 ml-2 text-gray-700" /></Link>
+        </div>
         </div>
       </motion.div>
     </ModuleLayout>

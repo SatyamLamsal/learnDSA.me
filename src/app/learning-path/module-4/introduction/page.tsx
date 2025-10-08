@@ -7,25 +7,25 @@ import { SectionProgressIndicator } from '@/components/progress/SectionProgressI
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { QuizCard } from '@/components/interactive/QuizCard';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 
 export default function LinkedListsIntroductionPage() {
-  const [activeSection, setActiveSection] = useState('overview');
-
   const sections = [
     { id: 'overview', name: 'Overview', icon: LinkIcon },
     { id: 'why', name: 'Why Linked Lists?', icon: Database },
     { id: 'objectives', name: 'Learning Objectives', icon: Target },
   ];
+  const activeSection = useScrollSpy(sections.map(s=>s.id), { rootMargin: '-40% 0px -40% 0px' });
 
   return (
     <ModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Dynamic nodes, flexible memory"
-      sections={sections}
-      activeSection={activeSection}
-      onSectionChange={setActiveSection}
+  sections={sections}
+  enableScrollSpy
       backUrl="/learning-path/module-4"
       estimatedTime="12 minutes"
       difficulty="Intermediate"
@@ -66,6 +66,21 @@ export default function LinkedListsIntroductionPage() {
           Linked lists unlock dynamic memory usage. They allow constant-time insertions and deletions at the head and flexible growth—critical for implementing stacks, queues, and more advanced structures.
         </p>
       </motion.div>
+
+      {/* Mini In-Page TOC */}
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-6 mb-10 text-sm">
+        <div className="font-semibold text-green-900 mb-3">On this page</div>
+        <ul className="space-y-2">
+          {sections.map(s => (
+            <li key={s.id}>
+              <a href={`#${s.id}`} className={`flex items-center gap-2 group transition-colors ${activeSection===s.id ? 'text-green-700 font-medium' : 'text-gray-600 hover:text-green-700'}`}>
+                <span className={`w-2 h-2 rounded-full ${activeSection===s.id ? 'bg-green-600' : 'bg-green-300 group-hover:bg-green-500'}`} />
+                {s.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div id="overview" className="bg-white rounded-2xl p-8 shadow-lg border mb-12 text-gray-700">
         <div className="flex items-center justify-between mb-6 text-gray-700">
@@ -136,6 +151,35 @@ export default function LinkedListsIntroductionPage() {
               {item}
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Introduction Quiz */}
+      <div className="bg-white rounded-2xl p-8 shadow-lg border mb-16 text-gray-700" id="intro-quiz">
+        <h2 className="text-2xl font-bold mb-6 flex items-center text-gray-900">
+          <CheckCircle className="w-6 h-6 mr-2 text-green-600" /> Quick Knowledge Check
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <QuizCard
+            question="What makes linked lists better than arrays for frequent head insertions?"
+            difficulty="easy"
+            options={[
+              { id: 'A', label: 'They allow O(1) head insertion without shifting', correct: true, explanation: 'Array head insertions require shifting elements (O(n)); linked list head insertion adjusts one pointer.' },
+              { id: 'B', label: 'They use less memory overall' },
+              { id: 'C', label: 'They support random access in O(1)' },
+              { id: 'D', label: 'They automatically stay sorted' }
+            ]}
+          />
+          <QuizCard
+            question="Primary trade-off of using a linked list instead of a dynamic array?"
+            difficulty="medium"
+            options={[
+              { id: 'A', label: 'No ability to grow' },
+              { id: 'B', label: 'Extra per-node pointer overhead', correct: true, explanation: 'Each node stores at least one pointer which increases memory and reduces cache friendliness.' },
+              { id: 'C', label: 'Cannot delete elements' },
+              { id: 'D', label: 'Insertion at head is O(n)' }
+            ]}
+          />
         </div>
       </div>
 
