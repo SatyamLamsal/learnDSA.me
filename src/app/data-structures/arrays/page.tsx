@@ -32,7 +32,7 @@ const ArrayVisualization = () => {
               duration: 0.5,
               ease: "easeOut"
             }}
-            className="w-16 h-16 bg-red-500 text-white rounded-lg flex items-center justify-center font-bold border-2 border-red-600 text-gray-800"
+            className="w-16 h-16 bg-red-500 text-black rounded-lg flex items-center justify-center font-bold border-2 border-red-600 text-gray-800"
           >
             {element}
           </motion.div>

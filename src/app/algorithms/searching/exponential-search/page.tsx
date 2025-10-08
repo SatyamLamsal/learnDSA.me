@@ -210,19 +210,19 @@ const ExponentialSearchVisualization = () => {
           <button
             onClick={exponentialSearch}
             disabled={isSearching}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
+            className="bg-emerald-500 hover:bg-emerald-600 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-blue-500 hover:bg-blue-600 text-black px-4 py-2 rounded font-medium text-black"
           >
             New Array
           </button>
@@ -232,7 +232,7 @@ const ExponentialSearchVisualization = () => {
         <div className="mb-4 p-3 bg-gray-50 rounded text-gray-700">
           <div className="text-sm font-medium text-gray-700">
             Current Phase: 
-            <span className={`ml-2 px-2 py-1 rounded text-white ${
+            <span className={`ml-2 px-2 py-1 rounded text-black ${
               phase === 'exponential' ? 'bg-emerald-500' :
               phase === 'binary' ? 'bg-blue-500' :
               phase === 'found' ? 'bg-green-500' :
@@ -353,7 +353,7 @@ const ExponentialSearchVisualization = () => {
             <span>Previous Bounds</span>
           </div>
           <div className="flex items-center text-gray-700">
-            <div className="w-4 h-4 bg-blue-500 rounded mr-2 text-gray-700"></div>
+            <div className="w-4 h-4 bg-blue-500 rounded mr-2 text-black"></div>
             <span>Binary Search Mid</span>
           </div>
           <div className="flex items-center text-gray-700">
@@ -372,7 +372,7 @@ const ExponentialSearchVisualization = () => {
             <span className="font-semibold text-emerald-700">Current Bound:</span>
             <div className="text-xl font-bold text-emerald-600">{currentBound === -1 ? '-' : currentBound}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded text-gray-700">
+          <div className="bg-blue-50 p-3 rounded text-white">
             <span className="font-semibold text-blue-700">Binary Range:</span>
             <div className="text-lg font-bold text-blue-600">
               {binaryLeft === -1 ? '-' : `[${binaryLeft}, ${binaryRight}]`}
@@ -825,7 +825,7 @@ function demonstrateScalability() {
       </div>
       
       {/* Code Display */}
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
@@ -836,7 +836,7 @@ function demonstrateScalability() {
 
 export default function ExponentialSearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -1001,7 +1001,7 @@ export default function ExponentialSearchPage() {
                     When you don&apos;t know the size of the array in advance. Exponential search can work with streams or dynamic data.
                   </p>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                   <h4 className="font-semibold text-blue-800 mb-2">Target Near Beginning</h4>
                   <p className="text-sm text-gray-700">
                     When the target element is likely to be found early in the array, exponential search quickly narrows down the range.

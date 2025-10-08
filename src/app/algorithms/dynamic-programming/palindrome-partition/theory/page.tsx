@@ -5,7 +5,7 @@ import { ArrowLeft, BookOpen, Scissors } from 'lucide-react';
 
 export default function PalindromePartitionTheoryPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
           <Link href="/algorithms/dynamic-programming/palindrome-partition" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>

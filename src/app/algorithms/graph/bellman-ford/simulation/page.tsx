@@ -158,7 +158,7 @@ function StatePanel({frame,totalPasses}:{frame?:Frame; totalPasses:number}){
       <div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Distances</div>
       <div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.distances).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-purple-300 text-gray-600">{k}:{v===Infinity?'∞':v}</span>)}</div>
     </div>
-    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700">
+    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-white">
       <div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Parents</div>
       <div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.parents).filter(([k,v])=> v).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{k}←{v}</span>)}</div>
     </div>
@@ -183,7 +183,7 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
       <Link href="/algorithms/graph/bellman-ford/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-rose-600 text-white rounded-lg hover:bg-rose-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-rose-600 text-black rounded-lg hover:bg-rose-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

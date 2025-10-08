@@ -98,7 +98,7 @@ export default function Module3Page() {
       <div className="space-y-8 text-gray-700">
         
         {/* Previous Module Reference */}
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 p-6 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 p-6 rounded-2xl text-white">
           <h2 className="text-lg font-semibold text-indigo-900 mb-3">Building on Array Fundamentals</h2>
           <p className="text-indigo-700 mb-4">
             In Module 2, we learned array basics and fundamental operations. 
@@ -112,7 +112,7 @@ export default function Module3Page() {
           </a>
         </div>
         
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Database className="w-12 h-12 text-gray-700" />
             <div>
@@ -191,11 +191,11 @@ export default function Module3Page() {
             {sectionDetails.map((section, index) => (
               <div
                 key={section.id}
-                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-gray-700"
+                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-white"
                 onClick={() => window.location.href = section.href}
               >
                 <div className="flex items-center space-x-4 flex-1 text-gray-700">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-gray-700">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-white">
                     <section.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="flex-1 text-gray-700">
@@ -229,7 +229,7 @@ export default function Module3Page() {
               <Grid3X3 className="w-8 h-8 text-green-100" />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-gray-700">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
             <div className="flex items-center justify-between text-gray-700">
               <div>
                 <div className="text-3xl font-bold text-gray-800">90</div>

@@ -157,19 +157,19 @@ const JumpSearchVisualization = () => {
           <button
             onClick={jumpSearch}
             disabled={isSearching}
-            className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
+            className="bg-purple-500 hover:bg-purple-600 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             New Array
           </button>
@@ -179,7 +179,7 @@ const JumpSearchVisualization = () => {
         <div className="mb-4 p-3 bg-gray-50 rounded text-gray-700">
           <div className="text-sm font-medium text-gray-700">
             Current Phase: 
-            <span className={`ml-2 px-2 py-1 rounded text-white ${
+            <span className={`ml-2 px-2 py-1 rounded text-black ${
               phase === 'jumping' ? 'bg-purple-500' :
               phase === 'linear' ? 'bg-blue-500' :
               phase === 'found' ? 'bg-green-500' :
@@ -246,7 +246,7 @@ const JumpSearchVisualization = () => {
             <span>Linear Search Block</span>
           </div>
           <div className="flex items-center text-gray-700">
-            <div className="w-4 h-4 bg-blue-500 rounded mr-2 text-gray-700"></div>
+            <div className="w-4 h-4 bg-blue-500 rounded mr-2 text-black"></div>
             <span>Current Position</span>
           </div>
           <div className="flex items-center text-gray-700">
@@ -261,7 +261,7 @@ const JumpSearchVisualization = () => {
             <span className="font-semibold text-purple-700">Jump Size:</span>
             <div className="text-2xl font-bold text-purple-600">{optimalJumpSize}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded text-gray-700">
+          <div className="bg-blue-50 p-3 rounded text-white">
             <span className="font-semibold text-blue-700">Current Index:</span>
             <div className="text-2xl font-bold text-blue-600">{currentIndex === -1 ? (jumpIndex === -1 ? '-' : jumpIndex) : currentIndex}</div>
           </div>
@@ -279,7 +279,7 @@ const JumpSearchVisualization = () => {
               {searchHistory.map((step, index) => (
                 <div key={index} className="text-sm text-gray-600">
                   <span className="font-medium text-gray-600">Step {step.comparison}:</span>
-                  <span className={`ml-2 px-2 py-1 rounded text-white text-xs ${
+                  <span className={`ml-2 px-2 py-1 rounded text-black text-xs ${
                     step.phase === 'jumping' ? 'bg-purple-500' : 'bg-blue-500'
                   }`}>
                     {step.phase.toUpperCase()}
@@ -581,7 +581,7 @@ console.log(\`Optimal jump size for array of length \${sortedArray.length}: \${o
       </div>
       
       {/* Code Display */}
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>

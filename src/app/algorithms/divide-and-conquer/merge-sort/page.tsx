@@ -17,7 +17,7 @@ function StatCard({icon:Icon,title,value,subtitle,color}:{icon:React.ComponentTy
 }
 
 export default function MergeSortOverview(){
-  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-50 text-white">
     <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-16 text-gray-700">
@@ -91,7 +91,7 @@ export default function MergeSortOverview(){
 
       {/* Actions */}
   <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.25}} className="flex flex-wrap gap-5 mb-12 text-gray-700">
-        <Link href="/algorithms/divide-and-conquer/merge-sort/theory" className="inline-flex items-center px-8 py-4 bg-sky-600 text-white rounded-xl hover:bg-sky-700 text-base font-semibold shadow-md text-gray-100">View Theory</Link>
+        <Link href="/algorithms/divide-and-conquer/merge-sort/theory" className="inline-flex items-center px-8 py-4 bg-sky-600 text-black rounded-xl hover:bg-sky-700 text-base font-semibold shadow-md text-gray-800">View Theory</Link>
         <Link href="/algorithms/divide-and-conquer/merge-sort/simulation" className="inline-flex items-center px-8 py-4 bg-slate-200 text-slate-700 rounded-xl hover:bg-slate-300 text-base font-semibold shadow-md">Run Simulation</Link>
       </motion.div>
 

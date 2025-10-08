@@ -5,7 +5,7 @@ import { ArrowLeft, BookOpen, Activity } from 'lucide-react';
 
 export default function MaxSubarrayTheoryPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-sky-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-sky-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
           <Link href="/algorithms/dynamic-programming/max-subarray" className="inline-flex items-center text-cyan-600 hover:text-cyan-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>

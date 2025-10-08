@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Clock, Cpu, Zap, Layers, Play, BookOpen } from '
 
 export default function FibonacciOverviewPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="text-center mb-12 text-gray-700">

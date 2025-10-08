@@ -271,9 +271,9 @@ export default function ArrayGuidePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-8 text-gray-700">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-8 text-white">
         <div className="max-w-6xl mx-auto text-gray-700">
           <div className="flex items-center space-x-4 mb-6 text-gray-700">
             <Link href="/learning-path" className="text-white hover:text-blue-200">
@@ -360,7 +360,7 @@ export default function ArrayGuidePage() {
           <div className="grid md:grid-cols-3 gap-6 text-gray-700">
             {keyTakeaways.map((takeaway, index) => (
               <div key={index} className="text-center text-gray-700">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                   <takeaway.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{takeaway.title}</h3>
@@ -387,7 +387,7 @@ export default function ArrayGuidePage() {
           className="grid md:grid-cols-2 gap-8 text-gray-700"
         >
           {/* Prerequisites */}
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-200 text-gray-700">
+          <div className="bg-blue-50 rounded-xl p-6 border border-blue-200 text-white">
             <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
               <CheckCircle className="w-6 h-6 mr-2 text-gray-700" />
               Prerequisites
@@ -436,7 +436,7 @@ export default function ArrayGuidePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12 text-gray-700"
+          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-12 text-white"
         >
           <h2 className="text-3xl font-bold mb-4 text-slate-800">Ready to Master Arrays?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">

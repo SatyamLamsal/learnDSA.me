@@ -88,7 +88,7 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Nodes</label>
               <input type="number" value={n} onChange={e=>{ const val = Math.max(3, Math.min(8, parseInt(e.target.value)||3)); setN(val); setEdges(makeGraph(val)); setChosen([]); setInTree(new Set([0])); }} className="w-24 px-2 py-2 border rounded"/>
             </div>
-            <button onClick={run} disabled={running} className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={running} className="bg-pink-600 hover:bg-pink-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset (New Graph)</button>
             <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize Graph</button>
           </div>
@@ -157,7 +157,7 @@ end procedure`;
           
           <Link
             href="/algorithms/greedy/dijkstra-shortest-path"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-black rounded-lg hover:bg-red-700 transition-colors text-gray-800"
           >
             Next: Dijkstra Shortest Path
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

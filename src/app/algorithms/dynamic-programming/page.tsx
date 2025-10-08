@@ -214,7 +214,7 @@ export default function DynamicProgrammingPage() {
               </p>
             </div>
             <div className="text-center text-gray-700">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-700">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                 <Layers className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-800 mb-2">Overlapping Subproblems</h3>

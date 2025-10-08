@@ -32,7 +32,7 @@ export default function Module7Page() {
       totalSections={4}
     >
       <div className="space-y-8 text-gray-700">
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Hash className="w-12 h-12 text-gray-700" />
             <div>
@@ -96,7 +96,7 @@ export default function Module7Page() {
               <Grid3X3 className="w-8 h-8 text-green-100" />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-gray-700">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
             <div className="flex items-center justify-between text-gray-700">
               <div>
                 <div className="text-3xl font-bold text-gray-800">150</div>

@@ -115,14 +115,14 @@ function StatePanel({frame}:{frame?:Frame}){
   if(!frame) return <div className="text-sm text-slate-500">Press Play to simulate.</div>;
   return <div className="space-y-4 text-xs text-gray-600">
     <div className="grid md:grid-cols-4 gap-4 text-gray-700">
-      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stage</div><div className="font-mono text-gray-700">{frame.stage}</div></div>
+      <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-white"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stage</div><div className="font-mono text-gray-700">{frame.stage}</div></div>
       <div className="p-3 rounded-xl bg-green-50 border border-green-200 text-gray-700"><div className="font-semibold text-green-700 text-[11px] uppercase tracking-wide mb-1">Order Size</div><div className="font-mono text-gray-700">{frame.order.length}</div></div>
       <div className="p-3 rounded-xl bg-yellow-50 border border-yellow-200 text-gray-700"><div className="font-semibold text-yellow-700 text-[11px] uppercase tracking-wide mb-1">Stack Depth</div><div className="font-mono text-gray-700">{frame.stack.length}</div></div>
       <div className="p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-200 text-gray-700"><div className="font-semibold text-fuchsia-700 text-[11px] uppercase tracking-wide mb-1">Components</div><div className="font-mono text-gray-700">{Object.values(frame.componentMap).reduce((m,v)=> Math.max(m,v),0)}</div></div>
     </div>
     <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 overflow-x-auto text-gray-700"><div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Order Stack (postorder)</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.order.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-purple-300 text-gray-600">{v}</span>)}</div></div>
     {frame.stage==='second-dfs' && <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 overflow-x-auto text-gray-700"><div className="font-semibold text-rose-700 text-[11px] uppercase tracking-wide mb-1">Component Map</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.componentMap).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-rose-300 text-gray-600">{k}:C{v}</span>)}</div></div>}
-    {frame.exploringEdge && <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-gray-700"><div className="font-semibold text-indigo-700 text-[11px] uppercase tracking-wide mb-1">Exploring</div><div className="font-mono text-[11px] text-gray-700">{frame.exploringEdge.from}→{frame.exploringEdge.to}</div></div>}
+    {frame.exploringEdge && <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-200 text-white"><div className="font-semibold text-indigo-700 text-[11px] uppercase tracking-wide mb-1">Exploring</div><div className="font-mono text-[11px] text-gray-700">{frame.exploringEdge.from}→{frame.exploringEdge.to}</div></div>}
     {frame.finishedComponent && <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-gray-700"><div className="font-semibold text-emerald-700 text-[11px] uppercase tracking-wide mb-1">Completed Component</div><div className="font-mono text-[11px] text-gray-700">C{frame.finishedComponent}</div></div>}
   </div>;
 }
@@ -142,7 +142,7 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
       <Link href="/algorithms/graph/strongly-connected-components/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-fuchsia-600 text-white rounded-lg hover:bg-fuchsia-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-fuchsia-600 text-black rounded-lg hover:bg-fuchsia-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

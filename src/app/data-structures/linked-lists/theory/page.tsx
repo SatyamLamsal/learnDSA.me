@@ -25,7 +25,7 @@ export default function LinkedListsTheoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -38,7 +38,7 @@ export default function LinkedListsTheoryPage() {
             <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
             Back to Linked Lists Overview
           </Link>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6 text-slate-800">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6 text-white">
             Linked Lists: Complete Theory Guide
           </h1>
           <p className="text-xl text-slate-600 max-w-4xl leading-relaxed">
@@ -83,7 +83,7 @@ export default function LinkedListsTheoryPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-6 mb-8 text-white text-gray-700"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-6 mb-8 text-white text-white"
         >
           <h2 className="text-2xl font-semibold mb-4 flex items-center text-slate-800">
             <PlayCircle className="h-6 w-6 mr-2 text-gray-700" />
@@ -141,7 +141,7 @@ export default function LinkedListsTheoryPage() {
                     )}
                   </div>
                 ))}
-                <div className="text-white/70 ml-2 text-gray-700">→ NULL</div>
+                <div className="text-black/70 ml-2 text-gray-700">→ NULL</div>
               </div>
             )}
             
@@ -244,14 +244,14 @@ export default function LinkedListsTheoryPage() {
                   <div className="space-y-4 text-gray-700">
                     <div className="flex items-center space-x-4 text-gray-700">
                       <div className="text-sm text-gray-600">Variable:</div>
-                      <div className="bg-blue-200 px-3 py-2 rounded font-mono text-gray-700">x = 42</div>
+                      <div className="bg-blue-200 px-3 py-2 rounded font-mono text-black">x = 42</div>
                       <div className="text-sm text-gray-600">@Address: 1000</div>
                     </div>
                     <div className="flex items-center space-x-4 text-gray-700">
                       <div className="text-sm text-gray-600">Pointer:</div>
                       <div className="bg-red-200 px-3 py-2 rounded font-mono text-gray-700">ptr = 1000</div>
                       <ArrowRight className="h-4 w-4 text-gray-700" />
-                      <div className="bg-blue-200 px-3 py-2 rounded font-mono text-gray-700">42</div>
+                      <div className="bg-blue-200 px-3 py-2 rounded font-mono text-black">42</div>
                     </div>
                   </div>
                 </div>
@@ -329,14 +329,14 @@ export default function LinkedListsTheoryPage() {
           className="bg-white rounded-lg shadow-lg p-8 mb-8 text-gray-700"
         >
           <h2 className="text-3xl font-bold mb-6 flex items-center text-slate-800">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
-              <BookOpen className="h-5 w-5 text-white text-gray-700" />
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3 text-black">
+              <BookOpen className="h-5 w-5 text-black text-gray-700" />
             </div>
             Introduction to Linked Lists
           </h2>
 
           <div className="space-y-8 text-gray-700">
-            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 text-gray-700">
+            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600 text-white">
               <h3 className="text-2xl font-semibold mb-4 text-blue-800">What is a Linked List?</h3>
               <p className="text-gray-700 mb-6 text-lg leading-relaxed">
                 A <strong>linked list</strong> is a dynamic linear data structure where elements (called <em>nodes</em>) are stored in sequence, 
@@ -352,7 +352,7 @@ export default function LinkedListsTheoryPage() {
                   <p className="text-gray-700 mb-3">
                     Stores the actual information - could be integers, strings, objects, or any data type.
                   </p>
-                  <div className="bg-blue-100 p-3 rounded text-gray-700">
+                  <div className="bg-blue-100 p-3 rounded text-white">
                     <div className="text-center font-mono text-blue-800">42</div>
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export default function LinkedListsTheoryPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 rounded-lg text-white text-gray-700">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 rounded-lg text-white text-white">
                 <h4 className="font-semibold mb-3 text-white flex items-center text-gray-800">
                   <Eye className="h-5 w-5 mr-2 text-gray-700" />
                   Complete Node Structure Visualization
@@ -394,7 +394,7 @@ export default function LinkedListsTheoryPage() {
                   <ArrowRight className="h-8 w-8 text-white text-gray-700" />
                   <div className="text-center text-gray-700">
                     <div className="bg-gray-400 px-4 py-3 rounded-lg font-bold text-gray-900 mb-2">NULL</div>
-                    <div className="text-sm text-gray-100">End of List</div>
+                    <div className="text-sm text-gray-800">End of List</div>
                   </div>
                 </div>
               </div>
@@ -520,14 +520,14 @@ export default function LinkedListsTheoryPage() {
         >
           <h2 className="text-3xl font-bold mb-6 flex items-center text-slate-800">
             <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
-              <Layers className="h-5 w-5 text-white text-gray-700" />
+              <Layers className="h-5 w-5 text-black text-gray-700" />
             </div>
             Types of Linked Lists: Detailed Exploration
           </h2>
 
           <div className="space-y-12 text-gray-700">
             {/* Singly Linked List - Comprehensive */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg border border-blue-200 text-gray-700">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg border border-blue-200 text-white">
               <h3 className="text-2xl font-semibold mb-6 text-blue-800 flex items-center">
                 <ArrowRight className="h-6 w-6 mr-3 text-gray-700" />
                 1. Singly Linked List (Unidirectional)
@@ -538,19 +538,19 @@ export default function LinkedListsTheoryPage() {
                   <h4 className="font-semibold mb-3 text-blue-700">Structure & Properties</h4>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start text-gray-700">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-gray-700"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-white"></div>
                       <span>Each node contains <strong>data</strong> and <strong>next pointer</strong></span>
                     </li>
                     <li className="flex items-start text-gray-700">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-gray-700"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-black"></div>
                       <span>Traversal is <strong>unidirectional</strong> (head to tail only)</span>
                     </li>
                     <li className="flex items-start text-gray-700">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-gray-700"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-black"></div>
                       <span>Last node&apos;s next pointer is <strong>NULL</strong></span>
                     </li>
                     <li className="flex items-start text-gray-700">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-gray-700"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 text-black"></div>
                       <span>Most <strong>memory efficient</strong> variant</span>
                     </li>
                   </ul>
@@ -576,17 +576,17 @@ export default function LinkedListsTheoryPage() {
                 </h4>
                 <div className="flex items-center space-x-3 justify-center text-gray-700">
                   <div className="text-center text-gray-700">
-                    <div className="bg-blue-300 px-4 py-3 rounded-lg border-2 border-blue-500 text-gray-700">
+                    <div className="bg-blue-300 px-4 py-3 rounded-lg border-2 border-blue-500 text-white">
                       <div className="font-bold text-blue-900">HEAD</div>
                       <div className="text-sm text-blue-700">First Node</div>
                     </div>
                   </div>
                   <ArrowRight className="h-6 w-6 text-blue-600" />
-                  <div className="bg-blue-200 px-4 py-2 rounded border text-gray-700">Data: A</div>
+                  <div className="bg-blue-200 px-4 py-2 rounded border text-black">Data: A</div>
                   <ArrowRight className="h-4 w-4 text-gray-700" />
-                  <div className="bg-blue-200 px-4 py-2 rounded border text-gray-700">Data: B</div>
+                  <div className="bg-blue-200 px-4 py-2 rounded border text-black">Data: B</div>
                   <ArrowRight className="h-4 w-4 text-gray-700" />
-                  <div className="bg-blue-200 px-4 py-2 rounded border text-gray-700">Data: C</div>
+                  <div className="bg-blue-200 px-4 py-2 rounded border text-black">Data: C</div>
                   <ArrowRight className="h-4 w-4 text-gray-700" />
                   <div className="bg-gray-300 px-3 py-2 rounded border text-gray-700">NULL</div>
                 </div>
@@ -611,7 +611,7 @@ export default function LinkedListsTheoryPage() {
                     <li>• Search: <strong>O(n)</strong></li>
                   </ul>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                   <h5 className="font-semibold text-blue-800 mb-2">💾 Space Complexity</h5>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Per node: <strong>data + 1 pointer</strong></li>
@@ -809,7 +809,7 @@ if (current->next == head) {
               </div>
 
               <div className="grid md:grid-cols-3 gap-4 text-gray-700">
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                   <h5 className="font-semibold text-blue-800 mb-2">🎯 Ideal Applications</h5>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Round-robin scheduling</li>
@@ -851,7 +851,7 @@ if (current->next == head) {
         >
           <h2 className="text-3xl font-bold mb-6 flex items-center text-slate-800">
             <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
-              <Zap className="h-5 w-5 text-white text-gray-700" />
+              <Zap className="h-5 w-5 text-black text-gray-700" />
             </div>
             Comprehensive Operations & Algorithms
           </h2>
@@ -880,7 +880,7 @@ if (current->next == head) {
                             <li>4. Increment size counter</li>
                           </ol>
                         </div>
-                        <div className="bg-green-600 text-white p-3 rounded text-center font-bold text-gray-800">
+                        <div className="bg-green-600 text-black p-3 rounded text-center font-bold text-gray-800">
                           Time: O(1) | Space: O(1)
                         </div>
                       </div>
@@ -902,7 +902,7 @@ if (current->next == head) {
                 </div>
 
                 {/* Insert at End */}
-                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200 text-white">
                   <div className="grid md:grid-cols-2 gap-6 text-gray-700">
                     <div>
                       <h4 className="font-semibold mb-3 text-blue-800">Insert at End (Tail)</h4>
@@ -917,7 +917,7 @@ if (current->next == head) {
                             <li>5. Increment size counter</li>
                           </ol>
                         </div>
-                        <div className="bg-blue-600 text-white p-3 rounded text-center font-bold text-gray-800">
+                        <div className="bg-blue-600 text-black p-3 rounded text-center font-bold text-black">
                           Time: O(n) | Space: O(1)
                         </div>
                       </div>
@@ -961,7 +961,7 @@ if (current->next == head) {
                             <li>5. Increment size counter</li>
                           </ol>
                         </div>
-                        <div className="bg-purple-600 text-white p-3 rounded text-center font-bold text-gray-800">
+                        <div className="bg-purple-600 text-black p-3 rounded text-center font-bold text-gray-800">
                           Time: O(n) | Space: O(1)
                         </div>
                       </div>
@@ -1018,7 +1018,7 @@ if (current->next == head) {
                             <li>5. Decrement size counter</li>
                           </ol>
                         </div>
-                        <div className="bg-red-600 text-white p-3 rounded text-center font-bold text-gray-800">
+                        <div className="bg-red-600 text-black p-3 rounded text-center font-bold text-gray-800">
                           Time: O(1) | Space: O(1)
                         </div>
                       </div>
@@ -1058,7 +1058,7 @@ if (current->next == head) {
                             <li>5. Delete target node</li>
                           </ol>
                         </div>
-                        <div className="bg-orange-600 text-white p-3 rounded text-center font-bold text-gray-800">
+                        <div className="bg-orange-600 text-black p-3 rounded text-center font-bold text-gray-800">
                           Time: O(n) | Space: O(1)
                         </div>
                       </div>
@@ -1105,7 +1105,7 @@ if (current->next == head) {
               </h3>
               
               <div className="grid md:grid-cols-2 gap-6 text-gray-700">
-                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200 text-gray-700">
+                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200 text-white">
                   <h4 className="font-semibold mb-4 text-indigo-800">Forward Traversal</h4>
                   <div className="bg-gray-900 p-4 rounded-lg mb-4 text-gray-100">
                     <pre className="text-green-400 text-sm">
@@ -1119,12 +1119,12 @@ if (current->next == head) {
 }`}
                     </pre>
                   </div>
-                  <div className="bg-indigo-600 text-white p-2 rounded text-center text-sm font-bold text-gray-600">
+                  <div className="bg-indigo-600 text-black p-2 rounded text-center text-sm font-bold text-gray-600">
                     Time: O(n) | Space: O(1)
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-lg border border-cyan-200 text-gray-700">
+                <div className="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-lg border border-cyan-200 text-white">
                   <h4 className="font-semibold mb-4 text-cyan-800">Search Operation</h4>
                   <div className="bg-gray-900 p-4 rounded-lg mb-4 text-gray-100">
                     <pre className="text-green-400 text-sm">
@@ -1143,7 +1143,7 @@ if (current->next == head) {
 }`}
                     </pre>
                   </div>
-                  <div className="bg-cyan-600 text-white p-2 rounded text-center text-sm font-bold text-gray-600">
+                  <div className="bg-cyan-600 text-black p-2 rounded text-center text-sm font-bold text-gray-600">
                     Time: O(n) | Space: O(1)
                   </div>
                 </div>
@@ -1151,7 +1151,7 @@ if (current->next == head) {
             </div>
 
             {/* Interactive Mini Demo */}
-            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-lg text-white text-gray-700">
+            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-lg text-black text-black">
               <h3 className="text-2xl font-semibold mb-4 flex items-center text-gray-800">
                 <PlayCircle className="h-6 w-6 mr-3 text-gray-700" />
                 Interactive Operation Demo
@@ -1180,7 +1180,7 @@ if (current->next == head) {
                 </button>
               </div>
               <div className="bg-white/10 rounded-lg p-4 min-h-16 flex items-center justify-center text-gray-700">
-                <div className="text-center text-white/80 text-gray-700">
+                <div className="text-center text-black/80 text-gray-700">
                   Click any operation above to see it in action!
                 </div>
               </div>
@@ -1192,7 +1192,7 @@ if (current->next == head) {
               <div className="overflow-x-auto text-gray-700">
                 <table className="w-full border-collapse border border-gray-300 rounded-lg shadow-lg text-gray-700">
                   <thead>
-                    <tr className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-gray-700">
+                    <tr className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-white">
                       <th className="border border-gray-300 px-4 py-3 text-left font-bold text-gray-800">Operation</th>
                       <th className="border border-gray-300 px-4 py-3 text-center font-bold text-gray-800">Singly LL</th>
                       <th className="border border-gray-300 px-4 py-3 text-center font-bold text-gray-800">Doubly LL</th>
@@ -1215,7 +1215,7 @@ if (current->next == head) {
                       <td className="border border-gray-300 px-4 py-3 text-center text-yellow-600 font-bold">O(n)</td>
                       <td className="border border-gray-300 px-4 py-3 text-center text-green-600 font-bold">O(1)**</td>
                     </tr>
-                    <tr className="bg-blue-50 text-gray-700">
+                    <tr className="bg-blue-50 text-white">
                       <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">Insert at Position</td>
                       <td className="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">O(n)</td>
                       <td className="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">O(n)</td>
@@ -1278,7 +1278,7 @@ if (current->next == head) {
           className="bg-white rounded-lg shadow-lg p-8 mb-8 text-gray-700"
         >
           <h2 className="text-3xl font-bold mb-6 flex items-center text-slate-800">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3 text-white">
               <Code className="h-5 w-5 text-white text-gray-700" />
             </div>
             Implementation & Code Examples
@@ -1605,7 +1605,7 @@ class DoublyListNode:
         >
           <h3 className="text-2xl font-semibold mb-6 text-blue-800">Real-World Applications</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
               <h4 className="font-semibold text-blue-800 mb-2">Web Browsers</h4>
               <p className="text-sm text-gray-700">
                 Browser history navigation using doubly linked lists for forward/back functionality.
@@ -1635,7 +1635,7 @@ class DoublyListNode:
                 Friend suggestions and social graphs using linked list structures.
               </p>
             </div>
-            <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-gray-700">
+            <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-white">
               <h4 className="font-semibold text-indigo-800 mb-2">Memory Management</h4>
               <p className="text-sm text-gray-700">
                 Dynamic memory allocation systems use linked lists to track free memory blocks.
@@ -1656,7 +1656,7 @@ class DoublyListNode:
             Real-World Applications & Use Cases
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200 text-gray-700">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200 text-white">
               <h4 className="font-semibold text-blue-800 mb-3 flex items-center">
                 <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" />
                 Browser Navigation
@@ -1721,7 +1721,7 @@ class DoublyListNode:
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200 text-gray-700">
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg border border-indigo-200 text-white">
               <h4 className="font-semibold text-indigo-800 mb-3 flex items-center">
                 <Layers className="h-5 w-5 mr-2 text-gray-700" />
                 Memory Management
@@ -1741,7 +1741,7 @@ class DoublyListNode:
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.65 }}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-8 mb-8 text-white text-gray-700"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-8 mb-8 text-white text-white"
         >
           <h3 className="text-2xl font-semibold mb-6 flex items-center text-gray-800">
             <BookOpen className="h-6 w-6 mr-3 text-gray-700" />

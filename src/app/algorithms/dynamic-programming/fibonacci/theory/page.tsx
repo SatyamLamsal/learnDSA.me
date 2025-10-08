@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function FibonacciTheoryPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
           <Link href="/algorithms/dynamic-programming/fibonacci" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Fibonacci</Link>
@@ -81,7 +81,7 @@ export default function FibonacciTheoryPage(){
               <li>Tabulation linearizes evaluation order explicitly.</li>
               <li>Space optimization observes only two previous states matter.</li>
             </ul>
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-4 rounded text-gray-700">
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-4 rounded text-white">
               <p className="text-sm text-slate-700"><strong>Pattern Recognition:</strong> The optimization path (Recursion → Memo → Table → Roll) appears in many DP problems (Fibonacci, Climbing Stairs, Tribonacci variations, etc.).</p>
             </div>
           </article>

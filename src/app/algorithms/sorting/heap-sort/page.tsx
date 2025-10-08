@@ -442,7 +442,7 @@ const HeapSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -524,7 +524,7 @@ const HeapSortPage: React.FC = () => {
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
+                    className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white text-white"
                   >
                     {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
@@ -765,7 +765,7 @@ const HeapSortPage: React.FC = () => {
 
               {/* Heap Property Indicator */}
               {heapSize > 0 && (
-                <div className="mb-6 bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-gray-700">
+                <div className="mb-6 bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-white">
                   <div className="flex items-center justify-between text-gray-700">
                     <span className="text-indigo-800 font-medium">Active Heap Size: {heapSize}</span>
                     <span className="text-indigo-600 text-sm">
@@ -779,7 +779,7 @@ const HeapSortPage: React.FC = () => {
               {/* Legend */}
               <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
                 <div className="flex items-center text-gray-700">
-                  <div className="w-4 h-4 bg-indigo-400 border border-indigo-500 rounded mr-2 text-gray-700"></div>
+                  <div className="w-4 h-4 bg-indigo-400 border border-indigo-500 rounded mr-2 text-black"></div>
                   <span className="text-sm text-gray-600">In Heap</span>
                 </div>
                 <div className="flex items-center text-gray-700">
@@ -802,7 +802,7 @@ const HeapSortPage: React.FC = () => {
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6 text-gray-700">
+                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6 text-white">
                   <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-indigo-600 mr-2" />
                     <span className="text-indigo-800 font-medium">
@@ -1003,7 +1003,7 @@ function minHeapify(arr, n, i) {
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-white">
                   <h4 className="font-semibold text-blue-800 mb-2">Phase Breakdown</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li><strong>Build Heap:</strong> O(n) - surprisingly linear!</li>
@@ -1056,7 +1056,7 @@ function minHeapify(arr, n, i) {
           
           <Link
             href="/algorithms/sorting/counting-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-gray-800"
           >
             Next: Counting Sort
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

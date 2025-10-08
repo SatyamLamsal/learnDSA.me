@@ -38,7 +38,7 @@ const StackVisualization = () => {
 
 export default function StacksPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div

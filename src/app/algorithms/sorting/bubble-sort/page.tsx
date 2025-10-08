@@ -589,7 +589,7 @@ const BubbleSortPage: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Basic Bubble Sort</h3>
-              <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+              <div className="bg-gray-900 text-gray-800 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                 <pre>{`function bubbleSort(arr) {
   const n = arr.length;
   

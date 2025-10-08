@@ -5,7 +5,7 @@ import { ArrowLeft, Users, Target, Award, Heart, Mail, Github } from 'lucide-rea
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-white">
       {/* Header */}
       <div className="bg-white shadow-sm text-gray-700">
         <div className="max-w-6xl mx-auto px-4 py-4 text-gray-700">
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-blue-50 rounded-lg p-6 text-gray-700">
+            <div className="bg-blue-50 rounded-lg p-6 text-black">
               <h3 className="font-semibold text-gray-800 mb-3">Open Source</h3>
               <p className="text-gray-700 text-sm">
                 LearnDSA.me is open source! Contribute to our mission by improving 

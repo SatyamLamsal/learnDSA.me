@@ -179,7 +179,7 @@ export default function FoundationsComplexityPage() {
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Computational Time</h3>
             <p className="text-gray-600">Predict CPU consumption and execution time</p>
           </div>
-          <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200 text-gray-700">
+          <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200 text-white">
             <Database className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Memory Space</h3>
             <p className="text-gray-600">Analyze RAM consumption and space requirements</p>
@@ -191,7 +191,7 @@ export default function FoundationsComplexityPage() {
           </div>
         </div>
 
-        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
           <h3 className="text-xl font-semibold text-blue-900 mb-3">Running Time Definition</h3>
           <p className="text-blue-800 mb-4">
             The running time of an algorithm is the total number of primitive operations executed 
@@ -264,7 +264,7 @@ export default function FoundationsComplexityPage() {
         </h2>
         
         {/* Interactive Complexity Graph */}
-        <div className="mb-12 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border text-gray-700">
+        <div className="mb-12 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border text-white">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Interactive Complexity Comparison
           </h3>
@@ -352,7 +352,7 @@ export default function FoundationsComplexityPage() {
                       <span>O(1)</span>
                     </div>
                     <div className="flex items-center text-gray-700">
-                      <div className="w-3 h-0.5 bg-blue-500 mr-2 text-gray-700"></div>
+                      <div className="w-3 h-0.5 bg-blue-500 mr-2 text-white"></div>
                       <span>O(log n)</span>
                     </div>
                     <div className="flex items-center text-gray-700">

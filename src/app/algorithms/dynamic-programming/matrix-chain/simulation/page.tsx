@@ -52,7 +52,7 @@ export default function MatrixChainSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Dimensions (p0,p1,...,pn)</label>
               <input value={dimsInput} onChange={e=> setDimsInput(e.target.value)} className="px-2 py-1 border rounded w-full" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running...' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-pink-600 hover:bg-pink-700 text-black px-4 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black">{running? 'Running...' : 'Run'}</button>
           </div>
           <div className="space-y-2 text-xs max-h-[340px] overflow-y-auto pr-2 text-gray-600">
             {steps.map((s,i)=> <div key={i} className="px-2 py-1 rounded border bg-pink-50 text-pink-700">[{s.l},{s.r}] k={s.k} cost={s.cost}</div>)}

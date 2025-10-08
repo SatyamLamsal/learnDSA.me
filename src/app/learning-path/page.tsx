@@ -193,7 +193,7 @@ export default function LearningPathPage() {
   const completedModules = learningPath.modules.filter(m => m.completed).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-white">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white text-gray-100">
         <div className="max-w-6xl mx-auto px-4 py-16 text-gray-700">
@@ -323,7 +323,7 @@ export default function LearningPathPage() {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2 text-gray-700">
             <div 
-              className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-300 text-gray-700"
+              className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-300 text-black"
               style={{ width: `${(completedModules / learningPath.modules.length) * 100}%` }}
             ></div>
           </div>

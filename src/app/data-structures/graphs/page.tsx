@@ -54,7 +54,7 @@ const GraphVisualization = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className="absolute w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold border-2 border-indigo-600 text-gray-800"
+            className="absolute w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold border-2 border-indigo-600 text-white"
             style={{ left: node.x - 24, top: node.y - 24 }}
           >
             {node.id}
@@ -70,7 +70,7 @@ const GraphVisualization = () => {
 
 export default function GraphsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -277,7 +277,7 @@ export default function GraphsPage() {
           <div className="overflow-x-auto text-gray-700">
             <table className="w-full text-left border-collapse text-gray-700">
               <thead>
-                <tr className="bg-indigo-100 text-gray-700">
+                <tr className="bg-indigo-100 text-white">
                   <th className="border border-indigo-300 px-4 py-3 font-semibold text-gray-800">Operation</th>
                   <th className="border border-indigo-300 px-4 py-3 font-semibold text-gray-800">Adjacency Matrix</th>
                   <th className="border border-indigo-300 px-4 py-3 font-semibold text-gray-800">Adjacency List</th>

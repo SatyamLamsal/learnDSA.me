@@ -70,7 +70,7 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
           <div className="p-8 text-center text-gray-700">
             {/* Logo/Brand */}
             <div className="flex justify-center mb-6 text-gray-700">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-gray-700">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white">
                 <Code className="h-8 w-8 text-white text-gray-700" />
               </div>
             </div>
@@ -92,7 +92,7 @@ export function WelcomeModal({ onClose }: WelcomeModalProps) {
             {/* Features */}
             <div className="space-y-4 mb-8 text-gray-700">
               <div className="flex items-center text-left text-gray-700">
-                <div className="bg-blue-100 p-2 rounded-full mr-4 text-gray-700">
+                <div className="bg-blue-100 p-2 rounded-full mr-4 text-white">
                   <BookOpen className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>

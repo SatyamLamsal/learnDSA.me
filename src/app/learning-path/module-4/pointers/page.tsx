@@ -98,7 +98,7 @@ export default function LinkedListPointersPage() {
               </h2>
               <SectionProgressIndicator moduleId="linked-lists" sectionId="pointers-overview" />
             </div>
-            <div className="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 text-gray-700">
+            <div className="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 text-white">
               <h3 className="text-lg font-semibold text-purple-900 mb-3">🎯 Why Start with Pointers?</h3>
               <p className="text-purple-800 text-sm leading-relaxed">
                 Linked lists are built entirely on pointer relationships. Without understanding how pointers work, 
@@ -112,7 +112,7 @@ export default function LinkedListPointersPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 text-gray-700"
+                  className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 text-white"
                 >
                   <h3 className="text-xl font-bold text-purple-900 mb-3">{concept.concept}</h3>
                   <p className="text-gray-700 mb-4">{concept.description}</p>
@@ -123,7 +123,7 @@ export default function LinkedListPointersPage() {
                     <h4 className="font-semibold text-purple-900 mb-1">Visual Concept:</h4>
                     <p className="text-purple-800 text-sm">{concept.visual}</p>
                   </div>
-                  <div className="bg-indigo-100 p-3 rounded-lg text-gray-700">
+                  <div className="bg-indigo-100 p-3 rounded-lg text-white">
                     <h4 className="font-semibold text-indigo-900 mb-1">Why Important:</h4>
                     <p className="text-indigo-800 text-sm">{concept.importance}</p>
                   </div>
@@ -136,7 +136,7 @@ export default function LinkedListPointersPage() {
               <Database className="w-8 h-8 mr-3 text-teal-600" />
               Memory Layout Deep Dive
             </h2>
-            <div className="mb-8 bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border border-teal-200 text-gray-700">
+            <div className="mb-8 bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border border-teal-200 text-white">
               <h3 className="text-lg font-semibold text-teal-900 mb-3">🧠 Memory Mental Model</h3>
               <p className="text-teal-800 text-sm leading-relaxed">
                 Think of computer memory like a huge apartment building. Each apartment has a unique address (like 0x1000), 
@@ -145,7 +145,7 @@ export default function LinkedListPointersPage() {
             </div>
             
             <div className="grid lg:grid-cols-3 gap-8 mb-8 text-gray-700">
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
                 <h3 className="text-xl font-semibold text-blue-900 mb-4">📍 Variable & Address</h3>
                 <div className="space-y-3 text-gray-700">
                   <div className="bg-white p-3 rounded border-2 border-blue-300 text-gray-700">
@@ -190,7 +190,7 @@ export default function LinkedListPointersPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
-              <div className="bg-teal-50 p-6 rounded-xl border border-teal-200 text-gray-700">
+              <div className="bg-teal-50 p-6 rounded-xl border border-teal-200 text-white">
                 <h3 className="text-xl font-semibold text-teal-900 mb-4">Arrays: Contiguous Memory</h3>
                 <div className="grid grid-cols-4 gap-1 mb-4 text-gray-700">
                   {[
@@ -241,7 +241,7 @@ export default function LinkedListPointersPage() {
               <Eye className="w-8 h-8 mr-3 text-indigo-600" />
               Interactive Pointer Demo
             </h2>
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 mb-6 text-gray-700">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 mb-6 text-white">
               <div className="flex items-center justify-between mb-4 text-gray-700">
                 <h3 className="text-lg font-semibold text-indigo-900">Step-by-Step Pointer Operations</h3>
                 <div className="flex space-x-2 text-gray-700">
@@ -292,7 +292,7 @@ printf("Value at ptr: %d", *ptr);
                   <h4 className="font-semibold mb-3 text-gray-800">Memory Visualization</h4>
                   <div className="space-y-3 text-gray-700">
                     {currentDemo >= 0 && (
-                      <div className="bg-blue-200 p-3 rounded border-2 border-blue-400 text-gray-700">
+                      <div className="bg-blue-200 p-3 rounded border-2 border-blue-400 text-white">
                         <div className="text-xs text-blue-600">Address: 0x1000</div>
                         <div className="font-mono font-bold text-gray-800">x = 42</div>
                       </div>
@@ -332,7 +332,7 @@ printf("Value at ptr: %d", *ptr);
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-200 text-gray-700">
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-200 text-white">
                 <h3 className="text-xl font-semibold text-green-900 mb-4">🚀 Next: Apply to Linked Lists</h3>
                 <p className="text-green-800 text-sm mb-4">
                   Now you understand the foundation! In linked lists, each node will be a dynamically allocated 

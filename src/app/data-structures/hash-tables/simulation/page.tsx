@@ -466,7 +466,7 @@ const HashTableSimulation: React.FC = () => {
                       <button
                         onClick={searchEntry}
                         disabled={!searchKey.trim()}
-                        className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white text-white text-white text-white"
+                        className="flex-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white text-white text-white text-white text-white"
                       >
                         <Search className="h-4 w-4 mr-1 text-gray-700" />
                         Search
@@ -588,7 +588,7 @@ const HashTableSimulation: React.FC = () => {
                     }`}
                   >
                     {/* Bucket Index */}
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-white mr-4 ${
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-black mr-4 ${
                       highlightedBucket === index 
                         ? 'bg-pink-600' 
                         : bucket.entries.length > 0 
@@ -682,7 +682,7 @@ const HashTableSimulation: React.FC = () => {
               </div>
 
               {/* Instructions */}
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg text-gray-700">
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg text-white">
                 <h4 className="font-semibold text-blue-800 mb-2">Instructions:</h4>
                 <ul className="text-sm text-blue-700 space-y-1">
                   <li>• Insert key-value pairs to see how they are hashed and stored</li>
@@ -713,7 +713,7 @@ const HashTableSimulation: React.FC = () => {
           
           <Link
             href="/algorithms/sorting"
-            className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-pink-600 text-black rounded-lg hover:bg-pink-700 transition-colors text-gray-800"
           >
             Next: Sorting Algorithms
             <ArrowLeft className="h-5 w-5 ml-2 rotate-180 text-gray-700" />

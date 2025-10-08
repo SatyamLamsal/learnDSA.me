@@ -124,7 +124,7 @@ const comparisonData = [
 
 export default function SortingAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -188,7 +188,7 @@ export default function SortingAlgorithmsPage() {
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center`}>
-                    <h3 className="text-xl font-bold text-white text-gray-800">{algorithm.name}</h3>
+                    <h3 className="text-xl font-bold text-black text-gray-800">{algorithm.name}</h3>
                   </div>
                   <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
@@ -352,7 +352,7 @@ export default function SortingAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-white"
         >
           <h2 className="text-3xl font-bold mb-4 text-slate-800">Ready to Practice?</h2>
           <p className="text-xl mb-6 opacity-90 text-gray-700">

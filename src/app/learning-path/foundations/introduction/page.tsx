@@ -89,7 +89,7 @@ export default function FoundationsIntroductionPage() {
         transition={{ delay: 0.1, duration: 0.8 }}
         className="mb-12 text-gray-700"
       >
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8 text-gray-700">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8 text-white">
           <h2 className="text-3xl font-bold mb-6 text-center text-slate-800">What You&apos;ll Master in This Module</h2>
           <div className="grid md:grid-cols-3 gap-6 text-gray-700">
             <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
@@ -173,7 +173,7 @@ export default function FoundationsIntroductionPage() {
         </div>
         <div className="grid lg:grid-cols-3 gap-8 text-gray-700">
           <div className="lg:col-span-1 text-gray-700">
-            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
               <h3 className="text-xl font-semibold text-blue-900 mb-4">Input → Processing → Output</h3>
               <div className="space-y-3 text-gray-700">
                 <div className="flex items-center text-gray-700">

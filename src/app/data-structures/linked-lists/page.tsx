@@ -22,7 +22,7 @@ const LinkedListVisualization = () => {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.2 }}
-              className="bg-blue-500 text-white rounded-lg p-4 shadow-lg text-gray-700"
+              className="bg-blue-500 text-black rounded-lg p-4 shadow-lg text-black"
             >
               <div className="text-center text-gray-700">
                 <div className="font-bold text-lg text-gray-800">{node.data}</div>
@@ -61,7 +61,7 @@ const LinkedListVisualization = () => {
 
 export default function LinkedListsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -153,7 +153,7 @@ export default function LinkedListsPage() {
           <div className="overflow-x-auto text-gray-700">
             <table className="w-full text-left border-collapse text-gray-700">
               <thead>
-                <tr className="bg-blue-100 text-gray-700">
+                <tr className="bg-blue-100 text-white">
                   <th className="border border-blue-300 px-4 py-3 font-semibold text-gray-800">Operation</th>
                   <th className="border border-blue-300 px-4 py-3 font-semibold text-gray-800">Best Case</th>
                   <th className="border border-blue-300 px-4 py-3 font-semibold text-gray-800">Average Case</th>

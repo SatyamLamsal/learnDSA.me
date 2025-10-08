@@ -90,7 +90,7 @@ function RadixSortViz() {
           <button onClick={reset} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 text-slate-700">
             <RotateCw className="w-4 h-4 text-gray-700" /> Reset
           </button>
-          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-white disabled:opacity-50 text-gray-800">
+          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-black disabled:opacity-50 text-black">
             <StepForward className="w-4 h-4 text-gray-700" /> Step
           </button>
         </div>

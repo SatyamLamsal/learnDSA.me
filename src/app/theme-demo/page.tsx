@@ -95,7 +95,7 @@ const ThemeDemoPage: React.FC = () => {
         >
           <div className="flex items-center justify-between mb-6 text-gray-700">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-black mb-2">
                 Current Theme: {mode === 'light' ? 'Light' : 'Dark'} Mode
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
@@ -377,7 +377,7 @@ const ThemeDemoPage: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-2 text-gray-800">3. Use Tailwind Dark Mode Classes</h4>
               <div className="bg-blue-100 dark:bg-blue-900/40 p-4 rounded-lg font-mono text-sm text-gray-300">
-                <div>className=&quot;bg-white dark:bg-gray-800 text-gray-900 dark:text-white&quot;</div>
+                <div>className=&quot;bg-white dark:bg-gray-800 text-gray-900 dark:text-black&quot;</div>
               </div>
             </div>
           </div>

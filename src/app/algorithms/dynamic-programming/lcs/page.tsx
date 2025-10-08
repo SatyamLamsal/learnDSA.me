@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Clock, Cpu, Zap, BookOpen, Table } from 'lucide-
 
 export default function LCSOverviewPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 text-white">
       <div className="container mx-auto px-4 py-14 text-gray-700">
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
           <Link href="/algorithms/dynamic-programming/knapsack-01" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Prev: 0/1 Knapsack</Link>
@@ -22,7 +22,7 @@ export default function LCSOverviewPage(){
         </motion.div>
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.1}} className="grid md:grid-cols-2 gap-8 mb-16 text-gray-700">
           <Link href="/algorithms/dynamic-programming/lcs/simulation" className="group bg-white rounded-xl shadow hover:shadow-lg transition p-6 border border-transparent hover:border-indigo-200 relative overflow-hidden text-gray-700">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 opacity-0 group-hover:opacity-70 transition text-gray-700"/>
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 opacity-0 group-hover:opacity-70 transition text-white"/>
             <div className="relative z-10 text-gray-700">
               <h3 className="text-xl font-semibold flex items-center mb-2 text-slate-800"><Table className="h-5 w-5 mr-2 text-indigo-600"/>Interactive Simulation</h3>
               <p className="text-sm text-slate-600">Fill the DP table step‑by‑step and reconstruct the subsequence.</p>
@@ -30,7 +30,7 @@ export default function LCSOverviewPage(){
             </div>
           </Link>
           <Link href="/algorithms/dynamic-programming/lcs/theory" className="group bg-white rounded-xl shadow hover:shadow-lg transition p-6 border border-transparent hover:border-indigo-200 relative overflow-hidden text-gray-700">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 opacity-0 group-hover:opacity-70 transition text-gray-700"/>
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-100 opacity-0 group-hover:opacity-70 transition text-white"/>
             <div className="relative z-10 text-gray-700">
               <h3 className="text-xl font-semibold flex items-center mb-2 text-slate-800"><BookOpen className="h-5 w-5 mr-2 text-indigo-600"/>Theory & Recurrence</h3>
               <p className="text-sm text-slate-600">Understand recurrence, complexity, reconstruction strategy, and variants.</p>
@@ -40,7 +40,7 @@ export default function LCSOverviewPage(){
         </motion.div>
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.15}} className="flex justify-between items-center text-gray-700">
           <Link href="/algorithms/dynamic-programming/knapsack-01" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Prev: 0/1 Knapsack</Link>
-          <Link href="/algorithms/dynamic-programming/coin-change" className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-gray-100">Next: Coin Change <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+          <Link href="/algorithms/dynamic-programming/coin-change" className="inline-flex items-center px-6 py-3 bg-indigo-600 text-black rounded-lg hover:bg-indigo-700 transition-colors text-gray-800">Next: Coin Change <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
         </motion.div>
       </div>
     </div>

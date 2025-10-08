@@ -637,7 +637,7 @@ const InsertionSortPage: React.FC = () => {
           <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Insertion Sort Implementation</h3>
-              <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+              <div className="bg-gray-900 text-gray-800 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                 <pre>{`function insertionSort(arr) {
   // Start with second element (index 1)
   for (let i = 1; i < arr.length; i++) {
@@ -779,7 +779,7 @@ const InsertionSortPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-gray-700">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 text-white">
             <h3 className="font-semibold text-blue-800 mb-3">When to Use Insertion Sort</h3>
             <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
               <div>

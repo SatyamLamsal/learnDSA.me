@@ -601,7 +601,7 @@ export default function LinkedListsSimulationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -641,7 +641,7 @@ export default function LinkedListsSimulationPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-gray-700"
+              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-white"
             >
               <h3 className="text-lg font-semibold text-purple-800 mb-4 flex items-center">
                 <Play className="h-5 w-5 mr-2 text-gray-700" />
@@ -866,7 +866,7 @@ export default function LinkedListsSimulationPage() {
           <h3 className="text-xl font-semibold mb-4 text-gray-800">🎨 Animation Legend</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
             <div className="flex items-center space-x-2 text-gray-700">
-              <div className="w-4 h-4 bg-blue-600 rounded border text-gray-700"></div>
+              <div className="w-4 h-4 bg-blue-600 rounded border text-white"></div>
               <span>Normal Node</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-700">
@@ -943,7 +943,7 @@ export default function LinkedListsSimulationPage() {
           <Link href="/data-structures/linked-lists/theory" className="flex items-center text-blue-600 hover:text-blue-700">
             ← Linked Lists Theory
           </Link>
-          <Link href="/data-structures/stacks" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-gray-100">
+          <Link href="/data-structures/stacks" className="bg-blue-600 hover:bg-blue-700 text-black px-6 py-3 rounded-lg font-semibold transition-colors text-gray-800">
             Next: Stacks →
           </Link>
         </motion.div>

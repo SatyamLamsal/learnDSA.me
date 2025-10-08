@@ -177,7 +177,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
               {nextPath && (
                 <Link
                   href={nextPath}
-                  className="flex items-center px-4 py-2 text-white rounded-lg transition-colors hover:opacity-90 text-gray-700"
+                  className="flex items-center px-4 py-2 text-black rounded-lg transition-colors hover:opacity-90 text-gray-700"
                   style={{ backgroundColor: topicColor }}
                 >
                   {nextLabel}

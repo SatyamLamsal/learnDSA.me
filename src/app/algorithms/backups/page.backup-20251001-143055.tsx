@@ -262,7 +262,7 @@ export default function AlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center text-gray-700"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center text-white"
         >
           <h2 className="text-3xl font-bold mb-4 text-slate-800">Recommended Learning Path</h2>
           <p className="text-xl mb-8 opacity-90 text-gray-700">

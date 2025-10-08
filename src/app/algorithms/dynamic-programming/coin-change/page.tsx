@@ -42,7 +42,7 @@ export default function CoinChangeOverviewPage(){
 
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.15}} className="flex justify-between items-center text-gray-700">
           <Link href="/algorithms/dynamic-programming/lcs" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Prev: LCS</Link>
-          <Link href="/algorithms/dynamic-programming/lis" className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-gray-100">Next: LIS <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+          <Link href="/algorithms/dynamic-programming/lis" className="inline-flex items-center px-6 py-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition-colors text-gray-800">Next: LIS <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
         </motion.div>
       </div>
     </div>

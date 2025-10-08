@@ -32,7 +32,7 @@ export default function TopoSortOverview(){
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16 text-gray-700">
         <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back: Prim&apos;s</Link>
-  <Link href="/algorithms/graph/strongly-connected-components" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100">Next: SCC <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+  <Link href="/algorithms/graph/strongly-connected-components" className="inline-flex items-center px-6 py-3 bg-green-600 text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800">Next: SCC <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
       </motion.div>
     </div>
   </div>;

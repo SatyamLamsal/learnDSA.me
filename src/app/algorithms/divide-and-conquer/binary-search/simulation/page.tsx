@@ -64,7 +64,7 @@ export default function BinarySearchSimulation(){
             <input type="range" min={5} max={32} value={size} onChange={e=> {const v=Number(e.target.value); setSize(v); const d=generateData(v); setDataset(d); setIdx(0); setPlaying(false);}} />
             <div className="text-xs text-slate-500 text-center mt-1">{size}</div>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2 rounded bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-semibold shadow-sm">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2 rounded bg-emerald-600 text-black hover:bg-emerald-700 text-sm font-semibold shadow-sm">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIdx(i=> Math.max(0,i-1))} disabled={idx===0} className="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Prev</button>
           <div className="text-xs font-mono text-gray-600">{idx+1}/{steps.length}</div>
           <button onClick={()=> setIdx(i=> Math.min(steps.length-1,i+1))} disabled={idx===steps.length-1} className="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Next</button>
@@ -118,8 +118,8 @@ export default function BinarySearchSimulation(){
         {/* Navigation */}
         <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.25,duration:0.5}} className="flex justify-between items-center text-gray-700">
           {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-          <Link href="/algorithms/divide-and-conquer/binary-search/theory" className="px-6 py-2 rounded bg-emerald-600 text-white hover:bg-emerald-700 text-gray-100">View Theory</Link>
-          {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-emerald-600 text-white hover:bg-emerald-700 text-gray-100">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+          <Link href="/algorithms/divide-and-conquer/binary-search/theory" className="px-6 py-2 rounded bg-emerald-600 text-black hover:bg-emerald-700 text-gray-800">View Theory</Link>
+          {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-emerald-600 text-black hover:bg-emerald-700 text-gray-800">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
         </motion.div>
       </div>
     </div>

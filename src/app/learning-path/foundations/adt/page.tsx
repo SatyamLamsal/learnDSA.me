@@ -108,7 +108,7 @@ export default function FoundationsADTPage() {
           Abstract Data Types (ADT)
         </h2>
         
-        <div className="bg-indigo-50 p-6 rounded-xl border border-indigo-200 mb-8 text-gray-700">
+        <div className="bg-indigo-50 p-6 rounded-xl border border-indigo-200 mb-8 text-white">
           <p className="text-lg text-indigo-900 leading-relaxed mb-4">
             An <strong>Abstract Data Type (ADT)</strong> is composed of a collection of data and 
             a set of operations on that data. It emphasizes what operations can be performed 
@@ -215,7 +215,7 @@ index_type == integer`}
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Operator Definitions:</h3>
             
             <div className="space-y-6 text-gray-700">
-              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                 <h4 className="font-semibold text-blue-900 mb-2">Extract Operation (A[i]):</h4>
                 <code className="text-sm text-blue-800 block mb-2">
                   abstract &lt;element_type&gt; Extract (A, i)

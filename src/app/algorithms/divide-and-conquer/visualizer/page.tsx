@@ -187,7 +187,7 @@ export default function DivideConquerVisualizerPage(){
 
   const phaseColor = current?.phase === 'divide' ? 'border-blue-400 ring-blue-300' : current?.phase === 'conquer' ? 'border-orange-400 ring-orange-300' : 'border-green-400 ring-green-300';
 
-  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-white">
     <div className="container mx-auto px-4 py-10 max-w-7xl text-gray-700">
       <Link href="/algorithms/divide-and-conquer" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back</Link>
       <div className="grid lg:grid-cols-3 gap-6 text-gray-700">
@@ -201,8 +201,8 @@ export default function DivideConquerVisualizerPage(){
                 <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600">Array Input</label>
                 <input value={input} onChange={e=> setInput(e.target.value)} className="mt-1 w-64 text-sm px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono" placeholder="e.g. 5,3,8,1" />
               </div>
-              <button onClick={rebuildFromInput} className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold text-gray-300">Build</button>
-              <button onClick={()=> randomize()} className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold inline-flex items-center"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Random</button>
+              <button onClick={rebuildFromInput} className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-black text-sm font-semibold text-gray-300">Build</button>
+              <button onClick={()=> randomize()} className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-black text-sm font-semibold inline-flex items-center"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Random</button>
               <div className="flex items-center gap-2 text-gray-700">
                 <button onClick={()=> setPlaying(p=> !p)} className="px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm font-semibold inline-flex items-center">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
                 <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40 inline-flex items-center"><StepBack className="h-4 w-4 text-gray-700"/></button>
@@ -217,8 +217,8 @@ export default function DivideConquerVisualizerPage(){
               <div className="flex flex-col text-gray-700">
                 <label className="text-[11px] font-semibold uppercase tracking-wide text-slate-600">Ordering</label>
                 <div className="flex bg-slate-100 rounded-lg overflow-hidden text-gray-700">
-                  <button onClick={()=> setOrdering('dfs')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='dfs'? 'bg-blue-600 text-white':'text-slate-600 hover:bg-slate-200'}`}>DFS</button>
-                  <button onClick={()=> setOrdering('phase')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='phase'? 'bg-blue-600 text-white':'text-slate-600 hover:bg-slate-200'}`}>Phase</button>
+                  <button onClick={()=> setOrdering('dfs')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='dfs'? 'bg-blue-600 text-black':'text-slate-600 hover:bg-slate-200'}`}>DFS</button>
+                  <button onClick={()=> setOrdering('phase')} className={`px-3 py-1 text-[11px] font-semibold ${ordering==='phase'? 'bg-blue-600 text-black':'text-slate-600 hover:bg-slate-200'}`}>Phase</button>
                 </div>
               </div>
               <div className="text-xs font-mono bg-slate-900 text-blue-200 px-3 py-2 rounded-lg self-start">Step {index+1}/{frames.length}</div>
@@ -263,7 +263,7 @@ export default function DivideConquerVisualizerPage(){
 }
 
 function PhaseBadge({label,color,active}:{label:string;color:string;active:boolean}){
-  return <div className={`px-3 py-1 rounded-full text-white font-semibold ${color} ${active? 'opacity-100':'opacity-40'}`}>{label}</div>;
+  return <div className={`px-3 py-1 rounded-full text-black font-semibold ${color} ${active? 'opacity-100':'opacity-40'}`}>{label}</div>;
 }
 
 function ArrayBar({segment,highlight,className}:{segment:number[];highlight?:boolean;className?:string}){
@@ -301,7 +301,7 @@ function DepthStats({frame}:{frame:Frame}){
   if(!frame) return null;
   const depth = frame.depth;
   return <div className="grid grid-cols-2 gap-3 text-xs text-gray-600">
-    <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-gray-700">
+    <div className="p-3 rounded-lg bg-blue-50 border border-blue-200 text-white">
       <div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide">Phase</div>
       <div className="font-mono mt-1 text-gray-700">{frame.phase}</div>
     </div>
@@ -316,7 +316,7 @@ function LegendCard(){
   return <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Legend</h2>
     <div className="grid grid-cols-3 gap-3 text-[11px] text-gray-700">
-      <div className="p-2 rounded-lg bg-blue-50 border border-blue-200 text-gray-700">
+      <div className="p-2 rounded-lg bg-blue-50 border border-blue-200 text-white">
         <div className="font-semibold text-blue-700 mb-1">Divide</div>
         <p className="text-slate-600">Splitting segment at midpoint.</p>
       </div>

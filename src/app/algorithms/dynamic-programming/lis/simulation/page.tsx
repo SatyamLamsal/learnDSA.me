@@ -48,7 +48,7 @@ export default function LISSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Array</label>
               <input value={arrInput} onChange={e=> setArrInput(e.target.value)} className="px-2 py-1 border rounded w-full" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-red-600 hover:bg-red-700 text-black px-5 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black">{running? 'Running…' : 'Run'}</button>
           </div>
           <div className="space-y-3 text-gray-700">
             {steps.map(s=> (

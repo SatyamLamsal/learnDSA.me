@@ -79,7 +79,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
               className="w-full h-full object-cover text-gray-700"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-gray-700">
+            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white">
               <User className="h-6 w-6 text-white text-gray-700" />
             </div>
           )}
@@ -107,7 +107,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
                         className="w-full h-full object-cover text-gray-700"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-gray-700">
+                      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white">
                         <User className="h-6 w-6 text-white text-gray-700" />
                       </div>
                     )}
@@ -145,7 +145,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
                     <div className="flex items-center space-x-2 text-gray-700">
                       <div className="w-16 bg-gray-200 rounded-full h-2 text-gray-700">
                         <div 
-                          className="bg-blue-500 h-2 rounded-full transition-all text-gray-700" 
+                          className="bg-blue-500 h-2 rounded-full transition-all text-white" 
                           style={{ width: `${algPercentage}%` }}
                         />
                       </div>
@@ -212,7 +212,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
           >
             <div className="px-4 text-gray-700">
               <div className="text-center mb-4 text-gray-700">
-                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-gray-700">
+                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-white">
                   <Trophy className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Save Your Progress</h3>

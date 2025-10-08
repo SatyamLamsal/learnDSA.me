@@ -98,7 +98,7 @@ export default function LinkedListTypesPage() {
               <SectionProgressIndicator moduleId="linked-lists" sectionId="types-overview" />
             </div>
             
-            <div className="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 text-gray-700">
+            <div className="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 text-white">
               <h3 className="text-lg font-semibold text-indigo-900 mb-3">🎯 Understanding the Evolution</h3>
               <p className="text-indigo-800 text-sm leading-relaxed">
                 Linked lists evolved to solve different problems. Singly linked lists handle basic dynamic storage, 
@@ -200,13 +200,13 @@ export default function LinkedListTypesPage() {
           <p className="text-sm text-gray-600 mb-6">Visualizing layout helps internalize pointer direction and structural differences.</p>
           <div className="grid gap-12 text-gray-700">
             {/* Singly */}
-            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
               <h3 className="text-xl font-semibold text-blue-900 mb-6">Singly Linked List</h3>
               <div className="flex items-center justify-center space-x-4 mb-4 text-gray-700">
                 <div className="text-sm text-blue-700">HEAD</div>
                 {['Node1','Node2','Node3'].map((node,idx)=>(
                   <div key={idx} className="flex items-center text-gray-700">
-                    <div className="bg-blue-500 text-white p-4 rounded-lg shadow-md border-2 border-blue-600 text-gray-700">
+                    <div className="bg-blue-500 text-white p-4 rounded-lg shadow-md border-2 border-blue-600 text-white">
                       <div className="text-sm font-semibold text-gray-600">{node}</div>
                       <div className="text-xs text-gray-600">Data | Next</div>
                     </div>
@@ -301,7 +301,7 @@ export default function LinkedListTypesPage() {
             <SectionProgressIndicator moduleId="linked-lists" sectionId="types-decision" />
           </div>
           <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600">
-            <div className="p-5 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 text-gray-700">
+            <div className="p-5 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 text-white">
               <h3 className="font-semibold mb-2 text-gray-800">Choose Singly When</h3>
               <ul className="space-y-1 list-disc list-inside text-gray-700">
                 <li>Memory footprint must be minimal</li>

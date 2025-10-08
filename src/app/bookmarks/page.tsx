@@ -12,7 +12,7 @@ export default function BookmarksPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-gray-700">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-black">
         <div className="container mx-auto px-4 text-gray-700">
           <div className="max-w-4xl mx-auto text-center text-gray-700">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4 text-gray-700"></div>
@@ -24,7 +24,7 @@ export default function BookmarksPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 text-white">
       <div className="container mx-auto px-4 text-gray-700">
         <div className="max-w-4xl mx-auto text-gray-700">
           {/* Header */}
@@ -40,7 +40,7 @@ export default function BookmarksPage() {
             </Link>
             
             <div className="flex items-center space-x-3 mb-4 text-gray-700">
-              <div className="bg-blue-100 rounded-full p-3 text-gray-700">
+              <div className="bg-blue-100 rounded-full p-3 text-white">
                 <BookmarkCheck className="h-8 w-8 text-blue-600" />
               </div>
               <div>
@@ -123,7 +123,7 @@ export default function BookmarksPage() {
               </p>
               <Link 
                 href="/"
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors text-gray-100"
+                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-black px-6 py-3 rounded-lg font-medium transition-colors text-gray-800"
               >
                 Explore Topics
                 <ExternalLink className="h-4 w-4 ml-2 text-gray-700" />

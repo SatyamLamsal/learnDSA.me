@@ -72,7 +72,7 @@ const TreeTheoryPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -177,7 +177,7 @@ const TreeTheoryPage: React.FC = () => {
                     typically called left and right child.
                   </p>
                   
-                  <div className="bg-blue-50 p-4 rounded-lg text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg text-white">
                     <h4 className="font-semibold mb-2 text-gray-800">Types of Binary Trees:</h4>
                     <ul className="list-disc pl-4 space-y-1 text-gray-700">
                       <li><strong>Full Binary Tree:</strong> Every node has 0 or 2 children</li>
@@ -315,7 +315,7 @@ class BinaryTree {
               </div>
 
               <div className="space-y-6 text-gray-700">
-                <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
                   <h3 className="text-lg font-semibold mb-3 text-blue-800">Breadth-First Traversal</h3>
                   
                   <div>
@@ -506,13 +506,13 @@ class BinaryTree {
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
                 <h3 className="text-lg font-semibold mb-3 text-blue-800">Red-Black Trees</h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <p className="text-gray-700">
                     Self-balancing BST with colored nodes that satisfy specific color properties.
                   </p>
-                  <div className="bg-blue-100 p-3 rounded text-gray-700">
+                  <div className="bg-blue-100 p-3 rounded text-white">
                     <h4 className="font-semibold text-blue-800 mb-1">Properties:</h4>
                     <ul className="list-disc pl-4 text-xs space-y-1 text-gray-600">
                       <li>Every node is red or black</li>
@@ -566,7 +566,7 @@ class BinaryTree {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-blue-800 mb-3">Database Indexing</h3>
                 <p className="text-sm text-gray-700">
                   B-trees and B+ trees enable efficient searching, insertion, and deletion in database systems.
@@ -594,7 +594,7 @@ class BinaryTree {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-indigo-800 mb-3">Game Trees</h3>
                 <p className="text-sm text-gray-700">
                   AI algorithms like minimax use game trees to evaluate possible moves in strategy games.
@@ -608,7 +608,7 @@ class BinaryTree {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg shadow-lg p-8 text-gray-700"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg shadow-lg p-8 text-white"
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-800">Complexity Summary</h2>
             
@@ -680,7 +680,7 @@ class BinaryTree {
             
             <Link
               href="/data-structures/trees/simulation"
-              className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-gray-100"
+              className="inline-flex items-center px-6 py-3 bg-purple-600 text-black rounded-lg hover:bg-purple-700 transition-colors text-gray-800"
             >
               Interactive Simulation
               <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

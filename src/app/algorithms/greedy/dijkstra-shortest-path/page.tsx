@@ -84,7 +84,7 @@ end procedure`;
   }, [n]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <Link href="/algorithms/greedy" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Greedy</Link>
   <h1 className="text-4xl font-bold text-slate-800 mb-2">Dijkstra&apos;s Shortest Path</h1>
@@ -111,7 +111,7 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Nodes</label>
               <input className="w-24 px-2 py-2 border rounded" type="number" value={n} onChange={e=>{ const val = Math.max(3, Math.min(8, parseInt(e.target.value)||3)); setN(val); const g = makeGraph(val); setGraph(g); setDist(Array.from({length:val}, (_,i)=> i===0?0:Infinity)); setVisited(new Set()); setFrontier([0]); }}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset (New Graph)</button>
             <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize Graph</button>
           </div>
@@ -180,7 +180,7 @@ end procedure`;
           
           <Link
             href="/algorithms/greedy/gas-station"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-black rounded-lg hover:bg-red-700 transition-colors text-gray-800"
           >
             Next: Gas Station
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

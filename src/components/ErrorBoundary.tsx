@@ -94,7 +94,7 @@ export class ErrorBoundary extends Component<Props, State> {
               <div className="flex justify-center space-x-4 text-gray-700">
                 <button
                   onClick={this.handleReset}
-                  className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-white text-white text-white text-white"
+                  className="flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-black text-black text-black text-black text-black"
                 >
                   <RefreshCw className="h-5 w-5 mr-2 text-gray-700" />
                   Try Again
@@ -102,7 +102,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 
                 <button
                   onClick={this.handleReload}
-                  className="flex items-center px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-white text-white text-white text-white"
+                  className="flex items-center px-6 py-3 bg-gray-600 text-black rounded-lg hover:bg-gray-700 transition-colors text-black text-black text-black text-black"
                 >
                   <RefreshCw className="h-5 w-5 mr-2 text-gray-700" />
                   Reload Page
@@ -111,7 +111,7 @@ export class ErrorBoundary extends Component<Props, State> {
               
               <Link
                 href="/"
-                className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
+                className="inline-flex items-center px-6 py-3 bg-green-600 text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800"
               >
                 <Home className="h-5 w-5 mr-2 text-gray-700" />
                 Go to Homepage

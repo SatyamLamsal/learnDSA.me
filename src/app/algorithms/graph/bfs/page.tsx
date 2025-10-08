@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Play, Network, Shuffle } from 'lucide-
 
 export default function BFSOverviewPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 text-white">
   <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
         <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.7}} className="mb-10 text-gray-700">
           <Link href="\algorithms\graph" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Graph Algorithms</Link>
@@ -57,10 +57,10 @@ export default function BFSOverviewPage(){
             <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
               <h2 className="text-xl font-semibold text-slate-800 mb-4">Actions</h2>
               <div className="flex flex-col gap-3 text-gray-700">
-                <Link href="/algorithms/graph/bfs/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors text-gray-100">
+                <Link href="/algorithms/graph/bfs/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-black font-semibold hover:bg-blue-700 transition-colors text-gray-800">
                   <BookOpen className="h-5 w-5 text-gray-700"/> Dive into Theory
                 </Link>
-                <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors text-gray-100">
+                <Link href="/algorithms/graph/bfs/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-600 text-black font-semibold hover:bg-green-700 transition-colors text-gray-800">
                   <Play className="h-5 w-5 text-gray-700"/> Try Simulation
                 </Link>
               </div>
@@ -70,7 +70,7 @@ export default function BFSOverviewPage(){
 
         <motion.div
   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} className="flex justify-end items-center text-gray-700">
-  <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100">
+  <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-gray-800">
     Next: DFS <ArrowRight className="h-5 w-5 ml-2 text-gray-700" /></Link>
 </motion.div>
 

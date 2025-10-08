@@ -85,7 +85,7 @@ export default function MaxSubarraySimulation(){
             <input type="range" min={6} max={18} value={size} onChange={e=> {const v=Number(e.target.value); setSize(v); const a=generateArray(v); setArray(a); setIndex(0); setPlaying(false);}} />
             <div className="text-[10px] text-slate-500 mt-1">{size}</div>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-4 py-2 rounded bg-amber-600 text-white hover:bg-amber-700 text-xs font-semibold">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-4 py-2 rounded bg-amber-600 text-black hover:bg-amber-700 text-xs font-semibold">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs disabled:opacity-40">Prev</button>
           <div className="text-[10px] font-mono text-gray-700">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs disabled:opacity-40">Next</button>

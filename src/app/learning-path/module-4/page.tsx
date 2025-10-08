@@ -82,7 +82,7 @@ export default function Module4Overview() {
       totalSections={sections.length}
     >
       <div className="space-y-12 text-gray-700">
-        <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-6 text-gray-700">
             <LinkIcon className="w-12 h-12 text-gray-700" />
             <div>
@@ -172,7 +172,7 @@ export default function Module4Overview() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-200 text-gray-700">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-200 text-white">
               <h3 className="text-2xl font-bold text-green-900 mb-4 flex items-center">
                 🔗 Linked Lists
                 <span className="ml-3 text-sm bg-green-200 text-green-800 px-3 py-1 rounded-full">Dynamic</span>
@@ -217,7 +217,7 @@ export default function Module4Overview() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 text-white">
             <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">🎯 When to Choose What?</h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
               <div className="bg-white p-4 rounded-lg border border-blue-300 text-gray-700">
@@ -284,7 +284,7 @@ export default function Module4Overview() {
           </div>
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-teal-600 to-green-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="mt-12 bg-gradient-to-r from-teal-600 to-green-600 text-white p-8 rounded-2xl text-white">
           <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready to Begin?</h2>
           <p className="text-teal-100 mb-6 max-w-3xl">
             Start with pointers & memory fundamentals, then understand linked lists structure, explore types, learn operations, and practice problems.

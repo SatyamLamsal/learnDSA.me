@@ -55,14 +55,14 @@ export default function MedianOfMediansOverview(){
 
       {/* Actions */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55, delay:0.2}} className="flex flex-wrap gap-6 mb-16 text-gray-700">
-        <Link href="/algorithms/divide-and-conquer/median-of-medians/theory" className="px-7 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold shadow text-gray-300">View Theory</Link>
-        <Link href="/algorithms/divide-and-conquer/median-of-medians/simulation" className="px-7 py-3.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold shadow text-gray-300">Run Simulation</Link>
+        <Link href="/algorithms/divide-and-conquer/median-of-medians/theory" className="px-7 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-black text-sm font-semibold shadow text-gray-300">View Theory</Link>
+        <Link href="/algorithms/divide-and-conquer/median-of-medians/simulation" className="px-7 py-3.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-black text-sm font-semibold shadow text-gray-300">Run Simulation</Link>
       </motion.div>
 
       {/* Navigation */}
       <div className="flex justify-between items-center text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-black hover:bg-rose-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

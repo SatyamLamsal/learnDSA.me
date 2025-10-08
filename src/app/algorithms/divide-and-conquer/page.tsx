@@ -193,7 +193,7 @@ const designPrinciples = [
 
 export default function DivideAndConquerPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -365,7 +365,7 @@ export default function DivideAndConquerPage() {
         >
           <h2 className="text-2xl font-semibold text-slate-800 mb-6 text-center">Master Theorem for Divide & Conquer Recurrences</h2>
           
-          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-gray-700">
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-white">
             <h3 className="font-semibold text-blue-800 mb-2">General Form:</h3>
             <p className="font-mono text-blue-700 text-lg">T(n) = a·T(n/b) + f(n)</p>
             <p className="text-blue-600 text-sm mt-2">
@@ -504,7 +504,7 @@ export default function DivideAndConquerPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 text-white text-center mb-12 text-white"
         >
           <h2 className="text-3xl font-bold mb-4 text-slate-800">Master Divide & Conquer</h2>
           <p className="text-xl mb-6 opacity-90 text-gray-700">

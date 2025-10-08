@@ -230,7 +230,7 @@ export default function StacksTheoryPage() {
               </div>
               
               {/* Linked List Implementation */}
-              <div className="bg-blue-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg text-white">
                 <h3 className="text-xl font-semibold text-heading-secondary mb-4 text-gray-800">Linked List Implementation</h3>
                 <div className="bg-white p-4 rounded-lg mb-4 text-gray-700">
                   <pre className="text-sm overflow-x-auto text-gray-600">
@@ -304,7 +304,7 @@ class LinkedStack {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg text-black">
                 <h3 className="text-lg font-semibold text-heading-secondary mb-3 text-gray-800">Expression Evaluation</h3>
                 <p className="text-secondary text-sm mb-3 text-gray-600">
                   Convert infix expressions to postfix and evaluate mathematical expressions using stacks.
@@ -344,7 +344,7 @@ class LinkedStack {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-lg text-black">
                 <h3 className="text-lg font-semibold text-heading-secondary mb-3 text-gray-800">Memory Management</h3>
                 <p className="text-secondary text-sm mb-3 text-gray-600">
                   Operating systems use stacks for memory allocation and managing program execution contexts.
@@ -374,7 +374,7 @@ class LinkedStack {
           
           <Link
             href="/data-structures/stacks/simulation"
-            className="inline-flex items-center px-6 py-3 bg-stacks text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-stacks text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800"
           >
             Try Interactive Simulation
             <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />

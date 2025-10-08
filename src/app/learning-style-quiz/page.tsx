@@ -261,7 +261,7 @@ export default function LearningStyleQuiz() {
               </div>
               <div className="w-full bg-slate-200 rounded-full h-3 text-gray-700">
                 <motion.div
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full text-gray-700"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full text-black"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5 }}
@@ -380,7 +380,7 @@ export default function LearningStyleQuiz() {
                   const IconComponent = learningStyles[topStyle].icon;
                   return (
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden text-gray-700">
-                      <div className={`${learningStyles[topStyle].color} p-8 text-white text-center`}>
+                      <div className={`${learningStyles[topStyle].color} p-8 text-black text-center`}>
                         <IconComponent className="w-16 h-16 mx-auto mb-4 text-gray-700" />
                         <h2 className="text-3xl font-bold mb-2 text-slate-800">You&apos;re a {learningStyles[topStyle].name}!</h2>
                         <p className="text-xl opacity-90 text-gray-700">{learningStyles[topStyle].description}</p>
@@ -477,7 +477,7 @@ export default function LearningStyleQuiz() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center mb-8 text-gray-700"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center mb-8 text-white"
               >
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">Ready to Start Learning?</h3>
                 <p className="text-xl mb-6 opacity-90 text-gray-700">

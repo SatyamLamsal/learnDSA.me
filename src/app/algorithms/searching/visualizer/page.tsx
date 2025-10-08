@@ -43,7 +43,7 @@ export default function SearchingVisualizerPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <Link href="/algorithms/searching" className="inline-flex items-center text-green-600 hover:text-green-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Searching Algorithms</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-4">Searching Visualizer</h1>
@@ -61,7 +61,7 @@ export default function SearchingVisualizerPage(){
                 <option value="binary">Binary (requires sorted)</option>
               </select>
             </div>
-            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <div className="ml-auto flex gap-2 text-gray-700">
               <button onClick={randomize} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><Settings2 className="h-4 w-4 mr-2 text-gray-700"/>Randomize</button>
               <button onClick={shuffle} className="px-3 py-2 border rounded text-gray-800">Shuffle</button>
@@ -80,7 +80,7 @@ export default function SearchingVisualizerPage(){
                 <motion.div key={i} initial={{scale:1}} animate={{
                   scale: isMid?1.12:isCurr?1.08:inRange?1.03:1,
                   backgroundColor: isMid? '#3b82f6' : isCurr? '#22c55e' : inRange? '#f3f4f6' : '#fff'
-                }} className={`w-10 h-10 border-2 rounded flex items-center justify-center text-xs font-bold ${isMid? 'text-white border-blue-700' : isCurr? 'text-white border-emerald-700' : 'text-gray-700 border-gray-200'}`}>{v}</motion.div>
+                }} className={`w-10 h-10 border-2 rounded flex items-center justify-center text-xs font-bold ${isMid? 'text-black border-blue-700' : isCurr? 'text-black border-emerald-700' : 'text-gray-700 border-gray-200'}`}>{v}</motion.div>
               );
             })}
           </div>

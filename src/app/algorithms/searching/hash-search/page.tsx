@@ -64,7 +64,7 @@ export default function HashSearchPage(){
   const onRemove = () => setLastOp({ type: 'remove', idx: remove(key) });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8}} className="mb-8 text-gray-700">
           <Link href="/algorithms/searching" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Searching Algorithms</Link>
@@ -79,9 +79,9 @@ export default function HashSearchPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Key</label>
               <input value={key} onChange={e=>setKey(e.target.value)} className="px-3 py-2 border rounded w-56" placeholder="Enter a string key" />
             </div>
-            <button onClick={onInsert} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-white text-white text-white text-white">Insert</button>
-            <button onClick={onSearch} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-white text-white text-white text-white">Search</button>
-            <button onClick={onRemove} className="bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded text-white text-white text-white text-white">Remove</button>
+            <button onClick={onInsert} className="bg-emerald-600 hover:bg-emerald-700 text-black px-4 py-2 rounded text-black text-black text-black text-black">Insert</button>
+            <button onClick={onSearch} className="bg-blue-600 hover:bg-blue-700 text-black px-4 py-2 rounded text-black text-black text-black text-black text-black">Search</button>
+            <button onClick={onRemove} className="bg-rose-600 hover:bg-rose-700 text-black px-4 py-2 rounded text-black text-black text-black text-black">Remove</button>
             <div className="ml-auto text-right text-gray-700">
               <div className="text-sm text-slate-600">Load Factor</div>
               <div className="text-2xl font-bold text-emerald-700">{loadFactor.toFixed(2)}</div>
@@ -118,7 +118,7 @@ export default function HashSearchPage(){
 
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8, delay:0.2}} className="flex justify-between items-center mt-10 text-gray-700">
           <Link href="/algorithms/searching/fibonacci-search" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Previous: Fibonacci Search</Link>
-          <Link href="/algorithms/searching" className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors text-gray-100">Back to Searching Index<ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+          <Link href="/algorithms/searching" className="inline-flex items-center px-6 py-3 bg-teal-600 text-black rounded-lg hover:bg-teal-700 transition-colors text-gray-800">Back to Searching Index<ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
         </motion.div>
       </div>
     </div>

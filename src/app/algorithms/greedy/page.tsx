@@ -284,7 +284,7 @@ export default function GreedyAlgorithmsPage() {
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
+                    <h3 className="text-lg font-bold text-black text-center px-2 text-gray-800">{algorithm.name}</h3>
                   </div>
                   <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>

@@ -211,7 +211,7 @@ const CachePerformanceDemo = () => {
           <button
             onClick={simulateAccess}
             disabled={isRunning}
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 text-white text-white"
+            className="px-4 py-2 bg-blue-600 text-black rounded hover:bg-blue-700 disabled:bg-gray-400 text-black text-black text-black"
           >
             {isRunning ? 'Running...' : 'Simulate Access'}
           </button>
@@ -263,9 +263,9 @@ const CachePerformanceDemo = () => {
 
 export default function ArrayMemoryPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-white">
         <div className="max-w-4xl mx-auto text-gray-700">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
@@ -295,7 +295,7 @@ export default function ArrayMemoryPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-8 text-gray-700">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-gray-800">Stack Allocation</h3>
-              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4 text-gray-700">
+              <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4 text-white">
                 <pre className="text-sm font-mono text-blue-800">
 {`// Static array - Stack allocated
 int arr[1000];           // 4KB on stack

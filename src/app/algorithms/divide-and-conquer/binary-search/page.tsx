@@ -77,7 +77,7 @@ export default function BinarySearchOverview() {
 
         {/* Actions */}
         <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:0.3,duration:0.5}} className="bg-white rounded-2xl shadow-sm p-6 flex flex-wrap gap-4 text-gray-700">
-          <Link href="/algorithms/divide-and-conquer/binary-search/theory" className="inline-flex items-center px-6 py-2 rounded bg-emerald-600 text-white hover:bg-emerald-700 text-sm font-semibold text-gray-300"><BookOpen className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
+          <Link href="/algorithms/divide-and-conquer/binary-search/theory" className="inline-flex items-center px-6 py-2 rounded bg-emerald-600 text-black hover:bg-emerald-700 text-sm font-semibold text-gray-300"><BookOpen className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
           <Link href="/algorithms/divide-and-conquer/binary-search/simulation" className="inline-flex items-center px-6 py-2 rounded bg-slate-200 text-slate-700 hover:bg-slate-300 text-sm font-semibold"><Play className="h-5 w-5 mr-2 text-gray-700"/>Simulation</Link>
         </motion.div>
 

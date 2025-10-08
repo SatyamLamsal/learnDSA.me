@@ -99,7 +99,7 @@ const HashTableTheoryPage: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="flex items-center text-gray-700"
             >
-              <div className="w-12 h-12 bg-pink-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-gray-800">
+              <div className="w-12 h-12 bg-pink-500 text-black rounded-lg flex items-center justify-center font-bold mr-4 text-gray-800">
                 {index}
               </div>
               <div className="flex-1 min-h-12 bg-white rounded-lg border-2 border-dashed border-gray-300 flex items-center px-4 text-gray-700">
@@ -212,7 +212,7 @@ const HashTableTheoryPage: React.FC = () => {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 text-gray-700">
-                        <div className="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold text-xs text-gray-600">
+                        <div className="w-8 h-8 bg-pink-500 text-black rounded-full flex items-center justify-center font-bold text-xs text-gray-600">
                           2
                         </div>
                         <div>
@@ -220,7 +220,7 @@ const HashTableTheoryPage: React.FC = () => {
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 text-gray-700">
-                        <div className="w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold text-xs text-gray-600">
+                        <div className="w-8 h-8 bg-pink-500 text-black rounded-full flex items-center justify-center font-bold text-xs text-gray-600">
                           3
                         </div>
                         <div>
@@ -259,7 +259,7 @@ const HashTableTheoryPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-pink-700">Properties of Good Hash Functions</h3>
                 <div className="space-y-4 text-gray-700">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Deterministic</h4>
                     <p className="text-sm text-gray-700">
                       Same key always produces same hash value
@@ -391,7 +391,7 @@ const HashTableTheoryPage: React.FC = () => {
                 
                 <div className="grid md:grid-cols-2 gap-6 text-gray-700">
                   {/* Chaining */}
-                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
                     <h4 className="text-lg font-semibold text-blue-800 mb-4 flex items-center">
                       <Layers className="h-5 w-5 mr-2 text-gray-700" />
                       Separate Chaining
@@ -402,7 +402,7 @@ const HashTableTheoryPage: React.FC = () => {
                         Store multiple elements at the same index using linked lists or arrays.
                       </p>
                       
-                      <div className="bg-blue-100 p-3 rounded text-gray-700">
+                      <div className="bg-blue-100 p-3 rounded text-white">
                         <h5 className="font-semibold text-blue-800 mb-1">Advantages:</h5>
                         <ul className="list-disc pl-4 text-xs space-y-1 text-gray-600">
                           <li>Simple implementation</li>
@@ -412,7 +412,7 @@ const HashTableTheoryPage: React.FC = () => {
                         </ul>
                       </div>
                       
-                      <div className="bg-blue-200 p-3 rounded text-gray-700">
+                      <div className="bg-blue-200 p-3 rounded text-white">
                         <h5 className="font-semibold text-blue-800 mb-1">Disadvantages:</h5>
                         <ul className="list-disc pl-4 text-xs space-y-1 text-gray-600">
                           <li>Extra memory for pointers</li>
@@ -500,19 +500,19 @@ const HashTableTheoryPage: React.FC = () => {
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex justify-between items-center text-gray-700">
                         <span>α ≤ 0.5</span>
-                        <span className="bg-green-500 text-white px-2 py-1 rounded text-xs text-gray-600">Excellent</span>
+                        <span className="bg-green-500 text-black px-2 py-1 rounded text-xs text-gray-600">Excellent</span>
                       </div>
                       <div className="flex justify-between items-center text-gray-700">
                         <span>0.5 &lt; α ≤ 0.75</span>
-                        <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs text-gray-600">Good</span>
+                        <span className="bg-blue-500 text-black px-2 py-1 rounded text-xs text-gray-600">Good</span>
                       </div>
                       <div className="flex justify-between items-center text-gray-700">
                         <span>0.75 &lt; α ≤ 1.0</span>
-                        <span className="bg-yellow-500 text-white px-2 py-1 rounded text-xs text-gray-600">Acceptable</span>
+                        <span className="bg-yellow-500 text-black px-2 py-1 rounded text-xs text-gray-600">Acceptable</span>
                       </div>
                       <div className="flex justify-between items-center text-gray-700">
                         <span>α &gt; 1.0</span>
-                        <span className="bg-red-500 text-white px-2 py-1 rounded text-xs text-gray-600">Poor</span>
+                        <span className="bg-red-500 text-black px-2 py-1 rounded text-xs text-gray-600">Poor</span>
                       </div>
                     </div>
                   </div>
@@ -522,7 +522,7 @@ const HashTableTheoryPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-pink-700">Dynamic Resizing</h3>
                 <div className="space-y-4 text-gray-700">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">When to Resize:</h4>
                     <ul className="list-disc pl-4 text-sm space-y-1 text-gray-600">
                       <li><strong>Expand:</strong> When α &gt; 0.75</li>
@@ -619,7 +619,7 @@ const HashTableTheoryPage: React.FC = () => {
                 <h3 className="text-xl font-semibold mb-4 text-pink-700">Space Complexity</h3>
                 
                 <div className="space-y-4 text-gray-700">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Memory Usage:</h4>
                     <ul className="list-disc pl-4 text-sm space-y-1 text-gray-600">
                       <li><strong>Data storage:</strong> O(n) for n key-value pairs</li>
@@ -773,7 +773,7 @@ const HashTableTheoryPage: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                   <h4 className="font-semibold text-blue-800 mb-3">Optimizations:</h4>
                   <ul className="list-disc pl-4 text-sm space-y-1 text-gray-600">
                     <li><strong>Better Hash:</strong> Use multiplication or universal hashing</li>
@@ -799,7 +799,7 @@ const HashTableTheoryPage: React.FC = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-blue-800 mb-3">Database Indexing</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Hash indexes provide fast record lookup by primary key.
@@ -859,7 +859,7 @@ const HashTableTheoryPage: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-indigo-800 mb-3">Compilers</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Symbol tables and optimization techniques.

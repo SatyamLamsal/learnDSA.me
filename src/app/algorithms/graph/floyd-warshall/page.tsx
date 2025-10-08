@@ -24,14 +24,14 @@ export default function FloydWarshallOverview(){
           <ComplexityCard/>
           <ComparisonCard/>
         </div>
-        <div className="space-y-8 text-gray-100">
+        <div className="space-y-8 text-gray-800">
           <QuickFactsCard/>
           <NavigationCard/>
         </div>
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16 text-gray-100">
-        <Link href="\algorithms\graph\bellman-ford" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-100"/>Back: bellman-ford </Link>
-        <Link href="\algorithms\graph\kruskal" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100">Next:Kruskal <ArrowRight className="h-5 w-5 ml-2 text-gray-100"/></Link>
+        <Link href="\algorithms\graph\bellman-ford" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-800"/>Back: bellman-ford </Link>
+        <Link href="\algorithms\graph\kruskal" className="inline-flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-gray-800">Next:Kruskal <ArrowRight className="h-5 w-5 ml-2 text-gray-800"/></Link>
       </motion.div>
     </div>
   </div>;

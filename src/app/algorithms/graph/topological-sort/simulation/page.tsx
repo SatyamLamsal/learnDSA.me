@@ -146,7 +146,7 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
       <Link href="/algorithms/graph/topological-sort/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-amber-600 text-black rounded-lg hover:bg-amber-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

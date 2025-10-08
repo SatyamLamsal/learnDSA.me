@@ -338,7 +338,7 @@ const QuickSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -447,7 +447,7 @@ const QuickSortPage: React.FC = () => {
                   <button
                     onClick={isPlaying ? stopSorting : startSorting}
                     disabled={array.length === 0}
-                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
+                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white text-white"
                   >
                     {isPlaying ? <Pause className="h-4 w-4 mr-2 text-gray-700" /> : <Play className="h-4 w-4 mr-2 text-gray-700" />}
                     {isPlaying ? 'Pause' : 'Start'}
@@ -611,7 +611,7 @@ const QuickSortPage: React.FC = () => {
               {/* Legend */}
               <div className="flex flex-wrap justify-center gap-4 mb-6 text-gray-700">
                 <div className="flex items-center text-gray-700">
-                  <div className="w-4 h-4 bg-blue-300 border border-blue-400 rounded mr-2 text-gray-700"></div>
+                  <div className="w-4 h-4 bg-blue-300 border border-blue-400 rounded mr-2 text-white"></div>
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
                 <div className="flex items-center text-gray-700">
@@ -630,7 +630,7 @@ const QuickSortPage: React.FC = () => {
 
               {/* Current Step Message */}
               {sortingSteps.length > 0 && currentStep < sortingSteps.length && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-gray-700">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-white">
                   <div className="flex items-center text-gray-700">
                     <BarChart3 className="h-5 w-5 text-blue-600 mr-2" />
                     <span className="text-blue-800 font-medium">
@@ -820,7 +820,7 @@ function partition(arr, left, right) {
           
           <Link
             href="/algorithms/sorting/merge-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-gray-800"
           >
             Next: Merge Sort
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

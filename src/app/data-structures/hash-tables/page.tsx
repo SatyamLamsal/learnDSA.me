@@ -36,7 +36,7 @@ const HashTableVisualization = () => {
             transition={{ delay: index * 0.1 }}
             className="flex items-center text-gray-700"
           >
-            <div className="w-12 h-12 bg-pink-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-gray-800">
+            <div className="w-12 h-12 bg-pink-500 text-black rounded-lg flex items-center justify-center font-bold mr-4 text-gray-800">
               {bucket.index}
             </div>
             <div className="flex-1 min-h-12 bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center px-4 text-gray-700">

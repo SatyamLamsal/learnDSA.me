@@ -78,7 +78,7 @@ export default function QuickSortOverview(){
 
         {/* Actions */}
         <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:0.3,duration:0.5}} className="bg-white rounded-2xl shadow-sm p-6 flex flex-wrap gap-4 text-gray-700">
-          <Link href="/algorithms/divide-and-conquer/quick-sort/theory" className="px-6 py-2 rounded bg-amber-600 text-white hover:bg-amber-700 text-sm font-semibold text-gray-300">View Theory</Link>
+          <Link href="/algorithms/divide-and-conquer/quick-sort/theory" className="px-6 py-2 rounded bg-amber-600 text-black hover:bg-amber-700 text-sm font-semibold text-gray-300">View Theory</Link>
           <Link href="/algorithms/divide-and-conquer/quick-sort/simulation" className="px-6 py-2 rounded bg-slate-200 text-slate-700 hover:bg-slate-300 text-sm font-semibold">Run Simulation</Link>
         </motion.div>
 

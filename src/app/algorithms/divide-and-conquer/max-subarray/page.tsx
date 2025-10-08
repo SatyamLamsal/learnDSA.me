@@ -75,7 +75,7 @@ function StatCard({label,value}:{label:string;value:string}){
 
 function Insight({icon,title,children,color}:{icon:React.ReactNode; title:string; children:React.ReactNode; color:string;}){
   return <div className="bg-white rounded-2xl border border-amber-100 p-5 flex flex-col shadow-sm text-gray-700">
-    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white mb-3 ${color}`}>{icon}</div>
+    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-black mb-3 ${color}`}>{icon}</div>
     <h3 className="font-semibold text-slate-800 mb-1 text-sm">{title}</h3>
     <p className="text-xs text-slate-600 leading-relaxed">{children}</p>
   </div>;

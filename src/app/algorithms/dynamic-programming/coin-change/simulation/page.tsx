@@ -54,7 +54,7 @@ export default function CoinChangeSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Amount</label>
               <input type="number" value={amount} onChange={e=> setAmount(Math.min(300, Math.max(1, parseInt(e.target.value)||1)))} className="px-2 py-1 border rounded w-24" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-orange-600 hover:bg-orange-700 text-black px-5 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black">{running? 'Running…' : 'Run'}</button>
           </div>
           <div className="flex flex-wrap gap-2 text-[11px] mb-4 text-gray-700">
             {steps.map(s=> <div key={s.amount} className={`px-2 py-1 rounded border ${s.val===-1? 'bg-white text-slate-400':'bg-orange-100 text-orange-700'}`}>{s.amount}:{s.val}</div>)}

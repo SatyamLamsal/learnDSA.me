@@ -112,19 +112,19 @@ const BinarySearchVisualization = () => {
           <button
             onClick={binarySearch}
             disabled={isSearching}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
+            className="bg-blue-500 hover:bg-blue-600 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-black"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             New Array
           </button>
@@ -182,7 +182,7 @@ const BinarySearchVisualization = () => {
             <span className="font-semibold text-red-700">Left:</span>
             <div className="text-xl font-bold text-red-600">{left === -1 ? '-' : left}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded text-gray-700">
+          <div className="bg-blue-50 p-3 rounded text-white">
             <span className="font-semibold text-blue-700">Mid:</span>
             <div className="text-xl font-bold text-blue-600">{mid === -1 ? '-' : mid}</div>
           </div>
@@ -480,7 +480,7 @@ if (result !== -1) {
       </div>
       
       {/* Code Display */}
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>
@@ -491,7 +491,7 @@ if (result !== -1) {
 
 export default function BinarySearchPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div

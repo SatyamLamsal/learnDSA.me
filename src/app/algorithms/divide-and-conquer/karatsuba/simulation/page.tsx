@@ -70,7 +70,7 @@ export default function KaratsubaSimulation(){
             <input type="range" min={4} max={12} value={digits} onChange={e=> {const v=Number(e.target.value); setDigits(v); setNums({x:randomBig(v), y:randomBig(v)}); setIndex(0); setPlaying(false);}} />
             <div className="text-xs text-slate-500 mt-1">{digits}</div>
           </div>
-          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-lime-600 text-white hover:bg-lime-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
+          <button onClick={()=> setPlaying(p=> !p)} className="inline-flex items-center px-5 py-2.5 rounded-lg bg-lime-600 text-black hover:bg-lime-700 text-xs font-semibold shadow">{playing? <Pause className="h-4 w-4 mr-2 text-gray-700"/>: <Play className="h-4 w-4 mr-2 text-gray-700"/>}{playing? 'Pause':'Play'}</button>
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Prev</button>
             <div className="text-[11px] font-mono tracking-tight text-gray-700">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-4 py-2.5 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold disabled:opacity-40">Next</button>
@@ -112,8 +112,8 @@ export default function KaratsubaSimulation(){
       {/* Navigation */}
       <div className="flex justify-between items-center mt-4 text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/karatsuba/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-lime-600 text-white hover:bg-lime-700 text-sm font-semibold text-gray-300">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-lime-600 text-white hover:bg-lime-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/karatsuba/theory" className="inline-flex items-center px-6 py-3 rounded-md bg-lime-600 text-black hover:bg-lime-700 text-sm font-semibold text-gray-300">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-lime-600 text-black hover:bg-lime-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

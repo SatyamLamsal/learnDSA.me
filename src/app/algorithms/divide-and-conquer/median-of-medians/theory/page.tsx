@@ -64,8 +64,8 @@ export default function MedianOfMediansTheory(){
       {/* Navigation */}
       <div className="flex justify-between items-center mt-4 text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/median-of-medians/simulation" className="inline-flex items-center px-6 py-3 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold text-gray-300">Simulation</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-white hover:bg-rose-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/median-of-medians/simulation" className="inline-flex items-center px-6 py-3 rounded-md bg-rose-600 text-black hover:bg-rose-700 text-sm font-semibold text-gray-300">Simulation</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-rose-600 text-black hover:bg-rose-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

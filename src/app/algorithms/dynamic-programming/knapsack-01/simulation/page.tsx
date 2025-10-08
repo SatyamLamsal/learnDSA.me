@@ -46,7 +46,7 @@ export default function KnapsackSimulationPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
           <Link href="/algorithms/dynamic-programming/knapsack-01" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
@@ -60,10 +60,10 @@ export default function KnapsackSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Capacity</label>
               <input type="number" value={capacity} onChange={e=> setCapacity(Math.min(40, Math.max(1, parseInt(e.target.value)||1)))} className="w-28 px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run DP'}</button>
+            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-black px-5 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black text-black">{running? 'Running…' : 'Run DP'}</button>
           </div>
           <div className="mb-4 text-sm text-gray-600">
-            <span className="font-semibold text-gray-800">Items:</span> {items.map(it=> <span key={it.id} className={`ml-2 px-2 py-1 rounded border ${bestSet.has(it.id)? 'bg-indigo-600 text-white border-indigo-600':'bg-gray-50'}`}>{it.id}(w{it.w},v{it.v})</span>)}
+            <span className="font-semibold text-gray-800">Items:</span> {items.map(it=> <span key={it.id} className={`ml-2 px-2 py-1 rounded border ${bestSet.has(it.id)? 'bg-indigo-600 text-black border-indigo-600':'bg-gray-50'}`}>{it.id}(w{it.w},v{it.v})</span>)}
           </div>
           <div className="overflow-x-auto text-gray-700">
             <div className="inline-block border rounded bg-gray-50 p-2 text-gray-700">

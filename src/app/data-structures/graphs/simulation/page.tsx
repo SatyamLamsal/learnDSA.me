@@ -487,7 +487,7 @@ const GraphSimulation: React.FC = () => {
   const currentMessage = algorithmSteps[currentStep - 1]?.message || '';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -594,7 +594,7 @@ const GraphSimulation: React.FC = () => {
                     <button
                       onClick={startAlgorithm}
                       disabled={isPlaying}
-                      className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white"
+                      className="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center text-white text-white text-white text-white text-white"
                     >
                       <Play className="h-4 w-4 mr-2 text-gray-700" />
                       Start
@@ -769,7 +769,7 @@ const GraphSimulation: React.FC = () => {
                 )}
 
                 {currentMessage && (
-                  <div className="mt-4 p-3 bg-indigo-50 rounded-lg text-gray-700">
+                  <div className="mt-4 p-3 bg-indigo-50 rounded-lg text-white">
                     <p className="text-sm text-indigo-800">{currentMessage}</p>
                   </div>
                 )}
@@ -949,7 +949,7 @@ const GraphSimulation: React.FC = () => {
               </div>
 
               {/* Instructions */}
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg text-gray-700">
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg text-white">
                 <h4 className="font-semibold text-blue-800 mb-2">Instructions</h4>
                 <ul className="text-sm text-blue-700 space-y-1">
                   <li>• Select an algorithm and click &quot;Start&quot; to see the step-by-step execution</li>
@@ -981,7 +981,7 @@ const GraphSimulation: React.FC = () => {
           
           <Link
             href="/data-structures/hash-tables"
-            className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-indigo-600 text-black rounded-lg hover:bg-indigo-700 transition-colors text-gray-800"
           >
             Next: Hash Tables
             <ArrowLeft className="h-5 w-5 ml-2 rotate-180 text-gray-700" />

@@ -40,7 +40,7 @@ export default function FibonacciSimulationPage(){
   const spaceSteps = steps.filter(s=> s.method==='space');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
           <Link href="/algorithms/dynamic-programming/fibonacci" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Fibonacci</Link>
@@ -61,7 +61,7 @@ export default function FibonacciSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">n (0-60)</label>
               <input type="number" value={n} onChange={e=> setN(Math.min(60, Math.max(0, parseInt(e.target.value)||0)))} className="w-28 px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running…' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-blue-600 hover:bg-blue-700 text-black px-5 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black text-black">{running? 'Running…' : 'Run'}</button>
           </div>
           <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             <div>

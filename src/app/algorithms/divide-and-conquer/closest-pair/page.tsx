@@ -8,7 +8,7 @@ const _algo = getAlgorithm('closest-pair');
 const { prev, next } = getPrevNext('closest-pair');
 
 export default function ClosestPairOverview(){
-  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 text-white">
     <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
   <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-12 text-gray-700">
@@ -69,14 +69,14 @@ export default function ClosestPairOverview(){
 
       {/* Actions */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6, delay:0.2}} className="flex flex-wrap gap-5 mb-10 text-gray-700">
-        <Link href="/algorithms/divide-and-conquer/closest-pair/theory" className="inline-flex items-center px-7 py-3.5 bg-sky-600 text-white rounded-lg hover:bg-sky-700 text-sm font-semibold shadow text-gray-300">Deep Theory</Link>
-        <Link href="/algorithms/divide-and-conquer/closest-pair/simulation" className="inline-flex items-center px-7 py-3.5 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 text-sm font-semibold shadow text-gray-300">Interactive Simulation</Link>
+        <Link href="/algorithms/divide-and-conquer/closest-pair/theory" className="inline-flex items-center px-7 py-3.5 bg-sky-600 text-black rounded-lg hover:bg-sky-700 text-sm font-semibold shadow text-gray-300">Deep Theory</Link>
+        <Link href="/algorithms/divide-and-conquer/closest-pair/simulation" className="inline-flex items-center px-7 py-3.5 bg-cyan-600 text-black rounded-lg hover:bg-cyan-700 text-sm font-semibold shadow text-gray-300">Interactive Simulation</Link>
       </motion.div>
 
       {/* Navigation */}
       <div className="flex justify-between items-center mt-4 text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-sky-600 text-white hover:bg-sky-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-sky-600 text-black hover:bg-sky-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;
@@ -84,7 +84,7 @@ export default function ClosestPairOverview(){
 
 function Feature({icon,title,children,color}:{icon:React.ReactNode; title:string; children:React.ReactNode; color:string;}){
   return <div className="bg-white/70 backdrop-blur border border-sky-200 rounded-xl p-4 flex flex-col shadow-sm text-gray-700">
-    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-white mb-3 ${color}`}>{icon}</div>
+    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-black mb-3 ${color}`}>{icon}</div>
     <h3 className="font-semibold text-slate-800 mb-1 text-sm">{title}</h3>
     <p className="text-xs text-slate-600 leading-relaxed">{children}</p>
   </div>;

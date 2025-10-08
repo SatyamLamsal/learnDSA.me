@@ -52,7 +52,7 @@ export default function BellmanFordTheoryPage(){
 function Header(){
   return <motion.div initial={{opacity:0,y:25}} animate={{opacity:1,y:0}} className="mb-10 text-gray-700">
     <Link href="/algorithms/graph/bellman-ford" className="inline-flex items-center text-rose-600 hover:text-rose-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Bellman-Ford Overview</Link>
-    <h1 className="text-4xl font-bold text-slate-800 mb-4 flex items-center gap-3"><span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-rose-600 text-white shadow text-gray-600"><Sigma className="h-8 w-8 text-gray-700"/></span>Bellman-Ford Theory</h1>
+    <h1 className="text-4xl font-bold text-slate-800 mb-4 flex items-center gap-3"><span className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-rose-600 text-black shadow text-gray-600"><Sigma className="h-8 w-8 text-gray-700"/></span>Bellman-Ford Theory</h1>
     <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">Bellman-Ford generalizes Dijkstra by working with negative edge weights and detecting negative weight cycles through repeated global relaxation passes over all edges.</p>
   </motion.div>;
 }

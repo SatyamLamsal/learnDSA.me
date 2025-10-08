@@ -192,7 +192,7 @@ export const ThemeSelector: React.FC<{ className?: string }> = ({ className = ''
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="w-2 h-2 bg-blue-500 rounded-full ml-auto text-gray-700"
+                  className="w-2 h-2 bg-blue-500 rounded-full ml-auto text-white"
                 />
               )}
             </button>

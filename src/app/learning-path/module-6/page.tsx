@@ -96,7 +96,7 @@ export default function Module6Page() {
               <Grid3X3 className="w-8 h-8 text-green-100" />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-gray-700">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
             <div className="flex items-center justify-between text-gray-700">
               <div>
                 <div className="text-3xl font-bold text-gray-800">150</div>

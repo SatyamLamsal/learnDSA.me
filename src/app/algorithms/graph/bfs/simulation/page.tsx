@@ -101,7 +101,7 @@ export default function BFSSimulationPage(){
     });
   }
 
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50 text-white">
   <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
       <Link href="/algorithms/graph/bfs" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to BFS</Link>
       <h1 className="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3"><Network className="h-7 w-7 text-blue-600"/> BFS Simulation</h1>
@@ -186,14 +186,14 @@ function GraphCanvas({nodes,setNodes,edges,toggleEdge,current}:{nodes:Node[];set
       const color = isFront? 'bg-blue-600 text-white border-blue-700': isProcessed? 'bg-green-600 text-white border-green-700': isDiscovered? 'bg-yellow-400 text-slate-800 border-yellow-500':'bg-white text-slate-800 border-slate-300';
       return <button key={n.id} onMouseDown={(e)=> handleMouseDown(e,n.id)} onClick={()=> handleNodeClick(n.id)} style={{left:n.x-28, top:n.y-28}} className={`absolute h-14 w-14 rounded-full border-2 font-semibold flex items-center justify-center shadow ${color} transition-colors cursor-move active:scale-95`}>{n.id}{first===n.id && <span className="absolute -bottom-5 text-[10px] text-blue-600 font-mono">selecting</span>}</button>;
     })}
-    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-blue-600 text-white rounded text-gray-700">First: {first}</div>}
+    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-blue-600 text-white rounded text-white">First: {first}</div>}
   </div>;
 }
 
 function StatePanel({frame}:{frame?:Frame}){
   if(!frame) return <div className="text-sm text-slate-500">Build frames by pressing Play.</div>;
   return <div className="grid md:grid-cols-3 gap-4 text-xs text-gray-600">
-    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700">
+    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-white">
       <div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Queue</div>
       <div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.queue.map(q=> <span key={q} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{q}</span>)}</div>
     </div>
@@ -226,8 +226,8 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
       <Link href="/algorithms/graph/bfs/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-gray-100">Next: DFS <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph/dfs" className="inline-flex items-center px-5 py-2 bg-green-600 text-black rounded-lg hover:bg-green-700 text-gray-800">Next: DFS <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-blue-600 text-black rounded-lg hover:bg-blue-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

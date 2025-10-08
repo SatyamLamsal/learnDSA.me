@@ -298,7 +298,7 @@ export default function LinkedListOperationsPage() {
                       <div className="font-semibold text-green-800">Time</div>
                       <div className="text-green-700 font-mono">{op.complexity.time}</div>
                     </div>
-                    <div className="bg-blue-100 p-2 rounded border border-blue-300 text-center text-gray-700">
+                    <div className="bg-blue-100 p-2 rounded border border-blue-300 text-center text-white">
                       <div className="font-semibold text-blue-800">Space</div>
                       <div className="text-blue-700 font-mono">{op.complexity.space}</div>
                     </div>
@@ -355,7 +355,7 @@ export default function LinkedListOperationsPage() {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 mb-6 text-gray-700">
+              <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border border-purple-200 mb-6 text-white">
                 <h3 className="text-lg font-semibold text-purple-900 mb-2">
                   {operationAnimations[currentAnimation].title}
                 </h3>
@@ -463,7 +463,7 @@ export default function LinkedListOperationsPage() {
               <SectionProgressIndicator moduleId="linked-lists" sectionId="operations-code" />
             </div>
             
-            <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200 text-gray-700">
+            <div className="mb-6 bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200 text-white">
               <h3 className="text-lg font-semibold text-indigo-900 mb-3">💻 Implementation Details</h3>
               <p className="text-indigo-800 text-sm leading-relaxed">
                 Here are clean, production-ready implementations of each operation. Study the pointer manipulations 
@@ -478,7 +478,7 @@ export default function LinkedListOperationsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-200 text-gray-700"
+                  className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 border border-indigo-200 text-white"
                 >
                   <div className="flex items-center justify-between mb-4 text-gray-700">
                     <h3 className="text-xl font-bold text-indigo-900">{op.operation} Implementation</h3>
@@ -513,7 +513,7 @@ export default function LinkedListOperationsPage() {
             <div className="overflow-x-auto text-gray-700">
               <table className="w-full text-left border-collapse text-gray-700">
                 <thead>
-                  <tr className="bg-blue-100 text-gray-700">
+                  <tr className="bg-blue-100 text-white">
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Operation</th>
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Singly</th>
                     <th className="border border-blue-300 px-4 py-3 font-semibold text-blue-600">Doubly</th>

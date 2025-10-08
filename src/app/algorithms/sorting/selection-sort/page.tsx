@@ -612,7 +612,7 @@ const SelectionSortPage: React.FC = () => {
           <div className="space-y-6 text-gray-700">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Selection Sort Implementation</h3>
-              <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+              <div className="bg-gray-900 text-gray-800 p-4 rounded-lg font-mono text-sm overflow-x-auto">
                 <pre>{`function selectionSort(arr) {
   const n = arr.length;
   
@@ -765,7 +765,7 @@ const SelectionSortPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-gray-700">
+          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-white">
             <h3 className="font-semibold text-blue-800 mb-3">Comparison with Other O(n²) Sorts</h3>
             <div className="overflow-x-auto text-gray-700">
               <table className="w-full text-sm text-gray-600">

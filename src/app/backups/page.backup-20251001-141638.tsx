@@ -215,11 +215,11 @@ export default function Home() {
   const recentActivity = getRecentActivity();
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-black">
       {/* Hero Section */}
       <section className="relative container mx-auto px-4 py-16 md:py-20 pb-8 text-gray-700">
         <div className="absolute inset-0 -z-10 text-gray-700">
-          <div className="absolute top-20 left-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob text-gray-700"></div>
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob text-black"></div>
           <div className="absolute top-40 right-1/4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 text-gray-700"></div>
           <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 text-gray-700"></div>
         </div>
@@ -238,7 +238,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" style={{ color: '#ffffff' }}>
             Master{" "}
             <motion.span 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-gray-700"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-black"
               animate={{ backgroundPosition: ['0%', '100%'] }}
               transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
             >
@@ -294,7 +294,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-gradient-to-br from-white/90 to-blue-50/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/50 text-gray-700"
+            className="bg-gradient-to-br from-white/90 to-blue-50/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/50 text-white"
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 text-gray-700">
@@ -314,7 +314,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
               {/* Continue Learning Card */}
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 text-white relative overflow-hidden text-gray-700">
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-6 text-white relative overflow-hidden text-white">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-10 translate-x-10 text-gray-700"></div>
                 <div className="relative z-10 text-gray-700">
                   <div className="flex items-center mb-4 text-gray-700" style={{ color: '#ffffff' }}>
@@ -370,7 +370,7 @@ export default function Home() {
               </div>
 
               {/* Quick Stats & Actions */}
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-gray-700">
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 text-white">
                 <div className="flex items-center mb-4 text-gray-700" style={{ color: '#ffffff' }}>
                   <Activity className="w-6 h-6 mr-3 text-emerald-600" />
                   <h3 className="text-lg font-semibold text-slate-800">Quick Actions</h3>
@@ -426,9 +426,9 @@ export default function Home() {
       {/* Learning Paths Section - New Design */}
       <section className="relative pt-8 pb-20 overflow-hidden text-gray-700">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-gray-700"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-white"></div>
         <div className="absolute inset-0 text-gray-700">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full filter blur-3xl text-gray-700"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full filter blur-3xl text-white"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200/30 to-orange-200/30 rounded-full filter blur-3xl text-gray-700"></div>
         </div>
 
@@ -440,11 +440,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16 text-gray-700"
           >
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm border border-blue-200/50 rounded-full mb-6 text-gray-700">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm border border-blue-200/50 rounded-full mb-6 text-white">
               <Target className="w-5 h-5 text-blue-600 mr-2" />
               <span className="text-blue-700 font-medium">Choose Your Learning Journey</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6 text-white text-white text-white text-white" style={{ fontFamily: 'Georgia, serif', color: '#374151', backgroundColor: '#8b5cf6' }}>
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6 text-white text-white text-white text-white text-white" style={{ fontFamily: 'Georgia, serif', color: '#374151', backgroundColor: '#8b5cf6' }}>
               Two Paths to Mastery
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -474,7 +474,7 @@ export default function Home() {
 
                   {/* Header */}
                   <div className="flex items-center mb-8 mt-4 text-gray-700">
-                    <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl mr-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-gray-700">
+                    <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl mr-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
                       <Map className="w-10 h-10 text-white text-gray-700" />
                     </div>
                     <div>
@@ -484,7 +484,7 @@ export default function Home() {
                   </div>
 
                   {/* Progress Visualization */}
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8 text-gray-700">
+                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8 text-white">
                     <div className="flex items-center justify-between mb-4 text-gray-700" style={{ color: '#ffffff' }}>
                       <span className="text-sm font-semibold text-slate-700">Learning Progress</span>
                       <span className="text-sm text-blue-600">Module 1 → 10</span>
@@ -559,7 +559,7 @@ export default function Home() {
 
                   {/* Header */}
                   <div className="flex items-center mb-8 mt-4 text-gray-700">
-                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-4 rounded-2xl mr-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-gray-700">
+                    <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-4 rounded-2xl mr-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
                       <Compass className="w-10 h-10 text-white text-gray-700" />
                     </div>
                     <div>
@@ -569,7 +569,7 @@ export default function Home() {
                   </div>
 
                   {/* Topic Grid Visualization */}
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 mb-8 text-gray-700">
+                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 mb-8 text-white">
                     <div className="mb-4 text-gray-700" style={{ color: '#ffffff' }}>
                       <span className="text-sm font-semibold text-slate-700">Available Topics</span>
                     </div>
@@ -594,7 +594,7 @@ export default function Home() {
                       'Build custom learning sequences'
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center text-gray-700">
-                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-gray-700">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0 text-white">
                           <CheckCircle className="w-4 h-4 text-white text-gray-700" />
                         </div>
                         <span className="text-slate-700">{feature}</span>
@@ -727,7 +727,7 @@ export default function Home() {
       </section>
 
       {/* Algorithm Categories */}
-      <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 text-gray-700">
+      <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 text-white">
         <div className="container mx-auto px-4 text-gray-700">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -814,7 +814,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50 text-white">
         <div className="container mx-auto px-4 text-gray-700">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -868,7 +868,7 @@ export default function Home() {
       </section>
 
       {/* Enhanced Stats Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 py-16 relative overflow-hidden text-gray-700">
+      <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 py-16 relative overflow-hidden text-white">
         <div className="absolute inset-0 bg-black/10 text-gray-100"></div>
         <div className="container mx-auto px-4 relative z-10 text-gray-700">
           <motion.div
@@ -997,8 +997,8 @@ export default function Home() {
           className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-3xl p-12 text-center text-white overflow-hidden text-gray-100"
         >
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 text-gray-700"></div>
-          <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse text-gray-700"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 text-white"></div>
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse text-white"></div>
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse animation-delay-2000 text-gray-700"></div>
 
           <div className="relative z-10 text-gray-700">
@@ -1035,7 +1035,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto text-gray-700">
                 <Link 
                   href="/learning-path" 
-                  className="flex-1 bg-white text-slate-900 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="flex-1 bg-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-white"
                 >
                   <Map className="w-5 h-5 mr-2 text-gray-700" />
                   Learning Path

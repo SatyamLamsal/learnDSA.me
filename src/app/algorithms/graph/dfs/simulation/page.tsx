@@ -141,7 +141,7 @@ function GraphCanvas({nodes,setNodes,edges,setEdges,current}:{nodes:Node[];setNo
       {edges.map(e=> { const a=nodes.find(n=> n.id===e.from)!; const b=nodes.find(n=> n.id===e.to)!; return <line key={e.id} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#94a3b8" strokeWidth={3} strokeOpacity={0.6} />; })}
     </svg>
     {nodes.map(n=> { const isActive = current?.active===n.id; const isDiscovered = current?.discovered.includes(n.id); const isFinished = current?.finished.includes(n.id); const color = isActive? 'bg-blue-600 text-white border-blue-700': isFinished? 'bg-green-600 text-white border-green-700': isDiscovered? 'bg-yellow-400 text-slate-800 border-yellow-500':'bg-white text-slate-800 border-slate-300'; const t = current?.times[n.id]; return <button key={n.id} onMouseDown={(e)=> handleMouseDown(e,n.id)} onClick={()=> handleNodeClick(n.id)} style={{left:n.x-28, top:n.y-28}} className={`absolute h-14 w-14 rounded-full border-2 font-semibold flex flex-col items-center justify-center shadow ${color} transition-colors cursor-move active:scale-95 text-[10px]`}><div>{n.id}</div><div className="font-mono text-gray-700">{t?.d??''}/{t?.f??''}</div>{first===n.id && <span className="absolute -bottom-5 text-[10px] text-green-600 font-mono">selecting</span>}</button>; })}
-    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-green-600 text-white rounded text-gray-700">First: {first}</div>}
+    {first && <div className="absolute top-2 left-2 text-[10px] px-2 py-1 bg-green-600 text-black rounded text-gray-700">First: {first}</div>}
   </div>;
 }
 
@@ -150,7 +150,7 @@ function StatePanel({frame}:{frame?:Frame}){
   return <div className="grid md:grid-cols-3 gap-4 text-xs text-gray-600">
     <div className="p-3 rounded-xl bg-yellow-50 border border-yellow-300 text-gray-700"><div className="font-semibold text-yellow-700 text-[11px] uppercase tracking-wide mb-1">Discovered</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.discovered.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-yellow-400 text-gray-600">{v}</span>)}</div></div>
     <div className="p-3 rounded-xl bg-green-50 border border-green-200 text-gray-700"><div className="font-semibold text-green-700 text-[11px] uppercase tracking-wide mb-1">Finished</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.finished.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-green-300 text-gray-600">{v}</span>)}</div></div>
-    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-gray-700"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stack</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.stack.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{v}</span>)}</div></div>
+    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-white"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Stack</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.stack.map(v=> <span key={v} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{v}</span>)}</div></div>
     <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 md:col-span-3 text-gray-700"><div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Times (d/f)</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.times).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-purple-300 text-gray-600">{k}:{v.d??''}/{v.f??''}</span>)}</div></div>
   </div>;
 }
@@ -169,7 +169,7 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex justify-between items-center flex-wrap gap-3 text-gray-700">
       <Link href="/algorithms/graph/dfs/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-green-600 text-black rounded-lg hover:bg-green-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

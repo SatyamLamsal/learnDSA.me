@@ -232,7 +232,7 @@ function maxSubarraySum(arr, k) {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-3 text-blue-600">Address Calculation Formula</h3>
-              <div className="bg-blue-50 p-4 rounded-lg text-gray-700">
+              <div className="bg-blue-50 p-4 rounded-lg text-white">
                 <p className="font-mono text-center text-lg text-red-800">
                   Address = Base_Address + (Index × Element_Size)
                 </p>
@@ -308,7 +308,7 @@ function maxSubarraySum(arr, k) {
                   <span className="font-semibold text-yellow-600">Linear Search</span>
                   <span className="font-mono text-yellow-600">O(n)</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-blue-50 rounded text-gray-700">
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded text-white">
                   <span className="font-semibold text-blue-600">Binary Search</span>
                   <span className="font-mono text-blue-600">O(log n)</span>
                 </div>

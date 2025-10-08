@@ -9,7 +9,7 @@ const algo = getAlgorithm('merge-sort');
 const { prev, next } = getPrevNext('merge-sort');
 
 export default function MergeSortTheory(){
-  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-50 text-white">
   <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-14 text-gray-700">

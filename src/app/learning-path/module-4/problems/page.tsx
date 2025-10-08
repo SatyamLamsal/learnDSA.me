@@ -152,7 +152,7 @@ export default function LinkedListProblemsPage() {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
               {exercises.map((exercise, index) => (
-                <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-gray-700">
+                <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 text-white">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{exercise.title}</h3>
                   <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium mb-3 ${
                     exercise.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :

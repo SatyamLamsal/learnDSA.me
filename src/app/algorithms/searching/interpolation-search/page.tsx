@@ -158,25 +158,25 @@ const InterpolationSearchVisualization = () => {
           <button
             onClick={interpolationSearch}
             disabled={isSearching}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
+            className="bg-orange-500 hover:bg-orange-600 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateUniformArray}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded font-medium text-sm text-gray-600"
+            className="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded font-medium text-sm text-gray-600"
           >
             Uniform Array
           </button>
           <button
             onClick={generateNonUniformArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-sm text-gray-600"
+            className="bg-blue-500 hover:bg-blue-600 text-black px-4 py-2 rounded font-medium text-sm text-gray-600"
           >
             Non-Uniform Array
           </button>
@@ -272,7 +272,7 @@ const InterpolationSearchVisualization = () => {
             <span className="font-semibold text-green-700">Right:</span>
             <div className="text-xl font-bold text-green-600">{right === -1 ? '-' : right}</div>
           </div>
-          <div className="bg-blue-50 p-3 rounded text-gray-700">
+          <div className="bg-blue-50 p-3 rounded text-white">
             <span className="font-semibold text-blue-700">Comparisons:</span>
             <div className="text-xl font-bold text-blue-600">{comparisons}</div>
           </div>
@@ -606,7 +606,7 @@ console.log("Non-uniform data result:", interpolationSearch(nonUniformData, 50))
       </div>
       
       {/* Code Display */}
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>

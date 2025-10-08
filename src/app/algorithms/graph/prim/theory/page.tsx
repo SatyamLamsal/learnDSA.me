@@ -96,7 +96,7 @@ function Metric({color,label,value}:{color:string;label:string;value:string}){
   const map:Record<string,string>={emerald:'emerald',sky:'sky',rose:'rose'}; const c = map[color] || 'emerald';
   return <div className={`p-3 rounded-xl bg-${c}-50 border border-${c}-100`}>
     <div className={`font-semibold text-${c}-700 text-[11px] uppercase tracking-wide mb-1`}>{label}</div>
-    <div className="font-mono text-gray-100">{value}</div>
+    <div className="font-mono text-gray-800">{value}</div>
   </div>;
 }
 
@@ -116,10 +116,10 @@ function SideSummary(){
 function Navigation(){
   return <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.55}} className="bg-white rounded-2xl shadow-sm border border-emerald-100 p-6 text-gray-700">
     <h2 className="text-lg font-semibold text-slate-800 mb-4">Explore</h2>
-    <div className="flex flex-col gap-3 text-gray-100">
-      <Link href="/algorithms/graph/prim/simulation" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 text-gray-100">Simulation <ArrowRight className="h-5 w-5 ml-2 text-gray-100"/></Link>
+    <div className="flex flex-col gap-3 text-gray-800">
+      <Link href="/algorithms/graph/prim/simulation" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-emerald-600 text-black font-semibold hover:bg-emerald-700 text-gray-800">Simulation <ArrowRight className="h-5 w-5 ml-2 text-gray-800"/></Link>
       <Link href="/algorithms/graph/prim" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-gray-200 text-slate-700 font-semibold hover:bg-gray-300">Overview</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-slate-800 text-white font-semibold hover:bg-slate-900 text-gray-100">All Graph Algorithms</Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-slate-800 text-black font-semibold hover:bg-slate-900 text-gray-800">All Graph Algorithms</Link>
     </div>
   </motion.div>;
 }

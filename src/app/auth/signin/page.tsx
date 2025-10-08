@@ -66,7 +66,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-4 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-4 text-white">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function SignInPage() {
       >
         {/* Header */}
         <div className="text-center mb-8 text-gray-700">
-          <div className="bg-blue-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-gray-700">
+          <div className="bg-blue-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-white">
             <Trophy className="h-10 w-10 text-blue-600" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome to Learn DSA</h1>

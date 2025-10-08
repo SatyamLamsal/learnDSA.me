@@ -65,7 +65,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex text-white">
       {/* Left Sidebar Navigation */}
       <motion.div 
         initial={{ x: -300, opacity: 0 }}
@@ -115,7 +115,7 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
           </div>
 
           {/* Progress Indicator */}
-          <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-gray-700">
+          <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-black">
             <h3 className="text-sm font-semibold text-gray-900 mb-3">Module Progress</h3>
             <ModuleProgressIndicator moduleId={moduleId} />
             <p className="text-xs text-gray-600 mt-2">

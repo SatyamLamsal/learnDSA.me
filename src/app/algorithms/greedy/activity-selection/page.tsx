@@ -118,7 +118,7 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input type="number" value={speed} onChange={e=>setSpeed(Math.max(100, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded" />
             </div>
-            <button onClick={run} disabled={playing} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={playing} className="bg-green-600 hover:bg-green-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
             <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize</button>
             <div className="ml-auto flex items-center gap-2 text-slate-600"><Timer className="h-4 w-4 text-gray-700"/> Sorted by finish time</div>
@@ -196,7 +196,7 @@ end procedure`;
           
           <Link
             href="/algorithms/greedy/fractional-knapsack"
-            className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-red-600 text-black rounded-lg hover:bg-red-700 transition-colors text-gray-800"
           >
             Next: Fractional Knapsack
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

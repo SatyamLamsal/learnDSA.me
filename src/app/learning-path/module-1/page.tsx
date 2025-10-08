@@ -67,7 +67,7 @@ export default function Module1Page() {
     >
       <div className="space-y-8 text-gray-700">
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <MemoryStick className="w-12 h-12 text-gray-700" />
             <div>
@@ -205,7 +205,7 @@ export default function Module1Page() {
               </div>
 
               {/* RAM */}
-              <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl text-gray-700">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 rounded-xl text-white">
                 <div className="flex items-center justify-between text-gray-700">
                   <div className="flex items-center space-x-3 text-gray-700">
                     <MemoryStick className="w-6 h-6 text-gray-700" />
@@ -285,7 +285,7 @@ export default function Module1Page() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
                 <h4 className="font-semibold text-blue-900 mb-3 flex items-center">
                   <Info className="w-5 h-5 mr-2 text-gray-700" />
                   Real-World Impact
@@ -433,12 +433,12 @@ export default function Module1Page() {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 p-4 rounded-xl border border-blue-200 text-gray-700">
+                <div className="bg-blue-50 p-4 rounded-xl border border-blue-200 text-white">
                   <h4 className="font-semibold text-blue-900 mb-2">Hash Table</h4>
                   <div className="text-sm text-blue-800 space-y-1">
                     <p><strong>1,000 items:</strong> Usually 1 check</p>
                     <p><strong>1,000,000 items:</strong> Usually 1 check</p>
-                    <p className="font-mono bg-blue-100 px-2 py-1 rounded inline-block text-gray-700">O(1) - Constant time</p>
+                    <p className="font-mono bg-blue-100 px-2 py-1 rounded inline-block text-white">O(1) - Constant time</p>
                   </div>
                 </div>
               </div>
@@ -494,7 +494,7 @@ export default function Module1Page() {
               <Grid3X3 className="w-8 h-8 text-green-100" />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-gray-700">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
             <div className="flex items-center justify-between text-gray-700">
               <div>
                 <div className="text-3xl font-bold text-gray-800">90</div>
@@ -515,7 +515,7 @@ export default function Module1Page() {
         </div>
 
         {/* Key Takeaways */}
-        <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-200 text-gray-700">
+        <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-200 text-white">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Takeaways</h2>
           <div className="grid md:grid-cols-2 gap-6 text-gray-700">
             <div className="space-y-3 text-gray-700">
@@ -556,7 +556,7 @@ export default function Module1Page() {
         </div>
         
         {/* Next Module Navigation */}
-        <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl text-white">
           <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready to Explore Data Structures?</h2>
           <p className="text-indigo-100 mb-6">
             Now that you understand why data structures exist and how memory works, let&apos;s start building them! 

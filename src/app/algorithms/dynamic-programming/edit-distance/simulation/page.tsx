@@ -37,7 +37,7 @@ export default function EditDistanceSimulationPage(){
   const getCell = (i:number,j:number)=> table.find(c=> c.i===i && c.j===j);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
           <Link href="/algorithms/dynamic-programming/edit-distance" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
@@ -54,7 +54,7 @@ export default function EditDistanceSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">String B</label>
               <input value={b} onChange={e=> setB(e.target.value.slice(0,12))} className="px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running...' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white text-white">{running? 'Running...' : 'Run'}</button>
           </div>
           <div className="overflow-x-auto text-gray-700">
             <div className="inline-block border rounded bg-gray-50 p-2 text-gray-700">

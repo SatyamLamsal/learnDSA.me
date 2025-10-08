@@ -421,7 +421,7 @@ export default function DataStructuresPage() {
           
           <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
             <div className="space-y-6 text-gray-700">
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 text-white">
                 <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
                   <Clock className="w-6 h-6 mr-2 text-gray-700" />
                   Time Complexity Trade-offs
@@ -499,7 +499,7 @@ export default function DataStructuresPage() {
             </div>
           </div>
 
-          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 text-gray-700">
+          <div className="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 text-white">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Questions to Ask When Choosing</h3>
             <div className="grid md:grid-cols-2 gap-6 text-gray-700">
               <ul className="space-y-2 text-gray-700">

@@ -53,8 +53,8 @@ export default function DFSOverviewPage(){
           <div className="bg-white rounded-2xl shadow-sm p-6 text-gray-700">
             <h2 className="text-xl font-semibold text-slate-800 mb-4">Actions</h2>
             <div className="flex flex-col gap-3 text-gray-700">
-              <Link href="/algorithms/graph/dfs/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors text-gray-100"><BookOpen className="h-5 w-5 text-gray-700"/> Dive into Theory</Link>
-              <Link href="/algorithms/graph/dfs/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors text-gray-100"><Play className="h-5 w-5 text-gray-700"/> Try Simulation</Link>
+              <Link href="/algorithms/graph/dfs/theory" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-green-600 text-black font-semibold hover:bg-green-700 transition-colors text-gray-800"><BookOpen className="h-5 w-5 text-gray-700"/> Dive into Theory</Link>
+              <Link href="/algorithms/graph/dfs/simulation" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-black font-semibold hover:bg-blue-700 transition-colors text-gray-800"><Play className="h-5 w-5 text-gray-700"/> Try Simulation</Link>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function DFSOverviewPage(){
 
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} className="flex justify-between items-center text-gray-700">
         <Link href="\algorithms\graph\bfs" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back: BFS</Link>
-  <Link href="/algorithms/graph/dijkstra-shortest-path" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100">Next: Dijkstra Algorithm <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+  <Link href="/algorithms/graph/dijkstra-shortest-path" className="inline-flex items-center px-6 py-3 bg-green-600 text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800">Next: Dijkstra Algorithm <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
       </motion.div>
     </div>
   </div>;

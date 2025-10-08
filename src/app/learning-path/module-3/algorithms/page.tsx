@@ -98,7 +98,7 @@ const TwoPointerDemo = () => {
         <button
           onClick={runTwoPointer}
           disabled={isRunning}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400 text-white text-white"
+          className="bg-blue-600 text-black px-4 py-2 rounded hover:bg-blue-700 disabled:bg-gray-400 text-black text-black text-black"
         >
           {isRunning ? 'Running...' : 'Find Pair'}
         </button>
@@ -123,7 +123,7 @@ const TwoPointerDemo = () => {
         
         <div className="flex items-center space-x-4 text-sm text-gray-600">
           <div className="flex items-center text-gray-700">
-            <div className="w-4 h-4 bg-blue-200 border border-blue-400 mr-2 text-gray-700"></div>
+            <div className="w-4 h-4 bg-blue-200 border border-blue-400 mr-2 text-black"></div>
             <span>Left Pointer: {leftPointer}</span>
           </div>
           <div className="flex items-center text-gray-700">
@@ -240,7 +240,7 @@ const SlidingWindowDemo = () => {
         <button
           onClick={runSlidingWindow}
           disabled={isRunning || windowSize > array.length}
-          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 disabled:bg-gray-400"
+          className="bg-green-600 text-black px-4 py-2 rounded hover:bg-green-700 disabled:bg-gray-400"
         >
           {isRunning ? 'Running...' : 'Find Max Sum'}
         </button>
@@ -416,9 +416,9 @@ END`
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-white">
         <div className="max-w-4xl mx-auto text-gray-700">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
@@ -661,7 +661,7 @@ void reverse(vector<int>::iterator start,
           </Link>
           
           <div className="text-center text-gray-700">
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl shadow-lg text-gray-700">
+            <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-black px-8 py-4 rounded-xl shadow-lg text-gray-700">
               <div className="flex items-center text-gray-700">
                 <CheckCircle className="w-6 h-6 mr-2 text-gray-700" />
                 <span className="font-semibold text-lg text-gray-800">Arrays Module Complete!</span>

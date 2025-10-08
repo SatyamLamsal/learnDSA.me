@@ -208,7 +208,7 @@ export default function StacksSimulationPage() {
                   <button
                     onClick={peekAtTop}
                     disabled={isAnimating || stack.length === 0}
-                    className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white"
+                    className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors text-white text-white text-white text-white text-white"
                   >
                     <Eye className="h-4 w-4 mr-1 text-gray-700" />
                     Peek
@@ -432,7 +432,7 @@ export default function StacksSimulationPage() {
               <h3 className="font-semibold text-red-600 mb-2">Pop</h3>
               <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
-            <div className="text-center p-4 bg-blue-50 rounded-lg text-gray-700">
+            <div className="text-center p-4 bg-blue-50 rounded-lg text-white">
               <h3 className="font-semibold text-blue-600 mb-2">Peek</h3>
               <p className="text-sm text-secondary text-gray-600">Time: O(1)<br/>Space: O(1)</p>
             </div>
@@ -460,7 +460,7 @@ export default function StacksSimulationPage() {
           
           <Link
             href="/data-structures/queues"
-            className="inline-flex items-center px-6 py-3 bg-stacks text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-stacks text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800"
           >
             Next: Queues
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

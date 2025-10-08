@@ -60,7 +60,7 @@ export default function SortingVisualizerPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <Link href="/algorithms/sorting" className="inline-flex items-center text-violet-600 hover:text-violet-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Sorting</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-4">Sorting Visualizer</h1>
@@ -79,7 +79,7 @@ export default function SortingVisualizerPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input type="number" value={speed} onChange={e=>setSpeed(Math.max(0, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded" />
             </div>
-            <button onClick={run} disabled={running} className="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={running} className="bg-violet-600 hover:bg-violet-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <div className="ml-auto flex gap-2 text-gray-700">
               <button onClick={randomize} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><Settings2 className="h-4 w-4 mr-2 text-gray-700"/>Randomize</button>
               <button onClick={shuffle} className="px-3 py-2 border rounded text-gray-800">Shuffle</button>

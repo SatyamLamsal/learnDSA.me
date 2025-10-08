@@ -9,7 +9,7 @@ const algo = getAlgorithm('strassen');
 const { prev, next } = getPrevNext('strassen');
 
 export default function StrassenTheory(){
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-violet-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-violet-50 text-white">
     <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       {/* Hero */}
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.55}} className="mb-14 text-gray-700">
@@ -30,7 +30,7 @@ export default function StrassenTheory(){
         <p className="text-base text-slate-700 mb-4">Partition A and B into 4 submatrices each (quadrants):</p>
         <div className="text-xs font-mono bg-slate-900 text-indigo-200 rounded px-4 py-3 mb-6">A = [A11 A12; A21 A22]\nB = [B11 B12; B21 B22]</div>
         <p className="text-base text-slate-700 mb-4">Classical approach requires 8 sub-matrix multiplies (Aij * Bij combos). Strassen derives 7 products M1..M7 using sums/differences which still span all necessary combinations.</p>
-        <div className="text-[11px] font-mono bg-indigo-50 border border-indigo-200 rounded p-4 space-y-1 mb-6 text-gray-700">
+        <div className="text-[11px] font-mono bg-indigo-50 border border-indigo-200 rounded p-4 space-y-1 mb-6 text-black">
           <div>M1 = (A11 + A22)(B11 + B22)</div>
           <div>M2 = (A21 + A22) B11</div>
           <div>M3 = A11 (B12 - B22)</div>
@@ -86,8 +86,8 @@ export default function StrassenTheory(){
       {/* Navigation */}
       <div className="flex justify-between items-center mt-4 text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs font-semibold"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/strassen/simulation" className="inline-flex items-center px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-sm font-semibold text-gray-300">Simulation</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/strassen/simulation" className="inline-flex items-center px-6 py-3 rounded-md bg-indigo-600 text-black hover:bg-indigo-700 text-sm font-semibold text-gray-300">Simulation</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/theory`} className="inline-flex items-center px-5 py-2.5 rounded-md bg-indigo-600 text-black hover:bg-indigo-700 text-xs font-semibold text-gray-300">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

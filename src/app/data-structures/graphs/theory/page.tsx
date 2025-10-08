@@ -140,7 +140,7 @@ const GraphTheoryPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -182,7 +182,7 @@ const GraphTheoryPage: React.FC = () => {
                     connected by edges. Unlike trees, graphs can have cycles and multiple paths between nodes.
                   </p>
                   
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Mathematical Definition:</h4>
                     <p className="text-sm text-gray-600">
                       A graph G = (V, E) where:
@@ -209,25 +209,25 @@ const GraphTheoryPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">Graph Terminology</h3>
                 <div className="space-y-3 text-gray-700">
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-white">
                     <strong>Vertex/Node:</strong> A fundamental unit representing an entity
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Edge:</strong> A connection between two vertices
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Adjacent:</strong> Two vertices connected by an edge
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Degree:</strong> Number of edges connected to a vertex
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Path:</strong> Sequence of vertices connected by edges
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Cycle:</strong> Path that starts and ends at the same vertex
                   </div>
-                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-gray-700">
+                  <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500 text-black">
                     <strong>Connected:</strong> Path exists between every pair of vertices
                   </div>
                 </div>
@@ -257,7 +257,7 @@ const GraphTheoryPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-indigo-700">By Direction</h3>
                 <div className="space-y-4 text-gray-700">
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Undirected Graph</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Edges have no direction. If vertex A is connected to B, then B is also connected to A.
@@ -334,13 +334,13 @@ const GraphTheoryPage: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 text-gray-700">
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
                 <h3 className="text-lg font-semibold mb-3 text-blue-800">Adjacency Matrix</h3>
                 <div className="space-y-3 text-sm text-gray-600">
                   <p className="text-gray-700">
                     2D array where element [i][j] indicates if there&apos;s an edge between vertex i and j.
                   </p>
-                  <div className="bg-blue-100 p-3 rounded text-gray-700">
+                  <div className="bg-blue-100 p-3 rounded text-white">
                     <h4 className="font-semibold text-blue-800 mb-1">Example Matrix:</h4>
                     <div className="font-mono text-xs bg-white p-2 rounded border text-gray-600">
                       <pre>{`    A B C D E
@@ -463,7 +463,7 @@ E: [C, D]`}</pre>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 text-gray-700">
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
                 <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center">
                   <Shuffle className="h-5 w-5 mr-2 text-gray-700" />
                   Breadth-First Search (BFS)
@@ -474,7 +474,7 @@ E: [C, D]`}</pre>
                     Explores neighbors level by level, visiting all vertices at distance k before visiting vertices at distance k+1.
                   </p>
                   
-                  <div className="bg-blue-100 p-3 rounded text-gray-700">
+                  <div className="bg-blue-100 p-3 rounded text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Algorithm Steps:</h4>
                     <ol className="list-decimal pl-4 space-y-1 text-xs text-gray-600">
                       <li>Start from a source vertex</li>
@@ -660,7 +660,7 @@ function DFSIterative(graph, start) {
                     </div>
                   </div>
 
-                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-gray-700">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 text-white">
                     <h4 className="font-semibold text-blue-800 mb-2">Prim&apos;s Algorithm</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Builds MST by starting from a vertex and adding minimum weight edges to unvisited vertices.
@@ -672,7 +672,7 @@ function DFSIterative(graph, start) {
                     </div>
                   </div>
 
-                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-gray-700">
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 text-white">
                     <h4 className="font-semibold text-indigo-800 mb-2">Topological Sort</h4>
                     <p className="text-sm text-gray-700 mb-2">
                       Linear ordering of vertices in DAG such that for every directed edge (u,v), u comes before v.
@@ -700,7 +700,7 @@ function DFSIterative(graph, start) {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-blue-800 mb-3 flex items-center">
                   <Users className="h-5 w-5 mr-2 text-gray-700" />
                   Social Networks
@@ -769,7 +769,7 @@ function DFSIterative(graph, start) {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 p-6 rounded-lg text-white">
                 <h3 className="font-semibold text-indigo-800 mb-3">Game Development</h3>
                 <p className="text-sm text-gray-700 mb-3">
                   Pathfinding in games, AI decision trees, game state representation.
@@ -788,7 +788,7 @@ function DFSIterative(graph, start) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg p-8 text-gray-700"
+            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-lg p-8 text-white"
           >
             <h2 className="text-3xl font-bold mb-6 text-slate-800">Complexity Summary</h2>
             

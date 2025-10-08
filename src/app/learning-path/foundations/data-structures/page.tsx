@@ -123,7 +123,7 @@ export default function FoundationsDataStructuresPage() {
           <Database className="w-8 h-8 mr-3 text-blue-600" />
           What is a Data Structure?
         </h2>
-        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8 text-gray-700">
+        <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mb-8 text-white">
           <p className="text-lg text-blue-900 leading-relaxed">
             A <strong>data structure</strong> is a particular way of storing and organizing data in a computer 
             so that it can be used efficiently. It represents the logical relationship existing between 
@@ -223,7 +223,7 @@ export default function FoundationsDataStructuresPage() {
           ].map((operation, index) => {
             const IconComponent = operation.icon
             return (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border text-gray-700">
+              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border text-white">
                 <div className="flex items-center mb-3 text-gray-700">
                   <IconComponent className="w-6 h-6 text-blue-600 mr-3" />
                   <h3 className="text-lg font-semibold text-gray-900">{operation.name}</h3>

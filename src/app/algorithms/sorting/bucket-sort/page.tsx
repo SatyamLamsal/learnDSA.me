@@ -107,7 +107,7 @@ function BucketSortViz() {
           <button onClick={reset} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 text-slate-700">
             <RotateCw className="w-4 h-4 text-gray-700" /> Reset
           </button>
-          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-white disabled:opacity-50 text-gray-800">
+          <button onClick={nextStep} disabled={phase === 'done'} className="inline-flex items-center gap-2 px-3 py-2 rounded bg-blue-600 text-black disabled:opacity-50 text-black">
             <StepForward className="w-4 h-4 text-gray-700" /> Step
           </button>
         </div>
@@ -154,7 +154,7 @@ function BucketSortViz() {
 
 export default function BucketSortPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 text-white">
       <div className="container mx-auto px-4 py-10 text-gray-700">
         <Link href="/algorithms/sorting" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6">
           <ArrowLeft className="h-5 w-5 mr-2 text-gray-700" /> Back to Sorting

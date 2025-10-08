@@ -5,7 +5,7 @@ import { ArrowLeft, Shield, AlertTriangle, Mail, FileText } from 'lucide-react';
 
 export default function DMCAPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-white">
       {/* Header */}
       <div className="bg-white shadow-sm text-gray-700">
         <div className="max-w-6xl mx-auto px-4 py-4 text-gray-700">
@@ -66,7 +66,7 @@ export default function DMCAPage() {
               <li>A statement that the information in your notice is accurate and that you are authorized to act on behalf of the copyright owner</li>
             </ol>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6 text-gray-700">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6 text-white">
               <div className="flex items-center mb-3 text-gray-700">
                 <Mail className="w-5 h-5 text-blue-600 mr-2" />
                 <h4 className="text-lg font-semibold text-blue-800">DMCA Agent Contact</h4>

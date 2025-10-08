@@ -71,14 +71,14 @@ const FibonacciSearchViz = () => {
           <label className="block text-sm font-medium text-slate-700 mb-1">Target</label>
           <input type="number" value={target} onChange={e=>setTarget(parseInt(e.target.value)||0)} className="w-24 px-2 py-1 border rounded" />
         </div>
-        <button onClick={fibonacciSearch} disabled={searching} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{searching ? 'Searching...' : 'Start Search'}</button>
-        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded text-gray-800">Reset</button>
+        <button onClick={fibonacciSearch} disabled={searching} className="bg-indigo-600 hover:bg-indigo-700 text-black px-4 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black text-black">{searching ? 'Searching...' : 'Start Search'}</button>
+        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded text-gray-800">Reset</button>
       </div>
 
       <div className="flex flex-wrap justify-center gap-1 mb-2 text-gray-700">
         {array.map((v, index) => (
           <div key={index} className={`w-10 h-10 border-2 rounded flex items-center justify-center text-xs font-bold ${
-            index === found ? 'bg-green-500 text-white border-green-700' : index === idx ? 'bg-indigo-500 text-white border-indigo-700' : 'border-gray-200 text-gray-700'
+            index === found ? 'bg-green-500 text-black border-green-700' : index === idx ? 'bg-indigo-500 text-black border-indigo-700' : 'border-gray-200 text-gray-700'
           }`}>
             {v}
           </div>
@@ -110,7 +110,7 @@ const FibonacciSearchViz = () => {
 
 export default function FibonacciSearchPage(){
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8}} className="mb-8 text-gray-700">
           <Link href="/algorithms/searching" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Searching Algorithms</Link>
@@ -129,7 +129,7 @@ export default function FibonacciSearchPage(){
 
         <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8, delay:0.2}} className="flex justify-between items-center mt-10 text-gray-700">
           <Link href="/algorithms/searching/ternary-search" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Previous: Ternary Search</Link>
-          <Link href="/algorithms/searching/hash-search" className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-gray-100">Next: Hash Table Search<ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+          <Link href="/algorithms/searching/hash-search" className="inline-flex items-center px-6 py-3 bg-indigo-600 text-black rounded-lg hover:bg-indigo-700 transition-colors text-gray-800">Next: Hash Table Search<ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
         </motion.div>
       </div>
     </div>

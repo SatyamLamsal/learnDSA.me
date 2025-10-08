@@ -74,7 +74,7 @@ export default function PrimSimulationPage(){
   function randomizeGraph(){ nodeCounter=0; const count=5+Math.floor(Math.random()*2); const newNodes:Node[]=[]; for(let i=0;i<count;i++) newNodes.push({id:nextNodeId(), x:120 + i*(480/(count-1)), y: 140 + (i%2? -70:70)}); const newEdges:Edge[]=[]; for(let i=0;i<count-1;i++) newEdges.push({id:'e'+(newEdges.length+1), from:newNodes[i].id, to:newNodes[i+1].id, w:1+Math.floor(Math.random()*9)}); for(let tries=0; tries<count*2; tries++){ const a=newNodes[Math.floor(Math.random()*count)].id; const b=newNodes[Math.floor(Math.random()*count)].id; if(a===b) continue; if(newEdges.some(e=> (e.from===a && e.to===b)||(e.from===b && e.to===a))) continue; if(Math.random()<0.5) continue; newEdges.push({id:'e'+(newEdges.length+1), from:a,to:b,w:1+Math.floor(Math.random()*9)}); } setNodes(newNodes); setEdges(newEdges); setStart(newNodes[0].id); setResetKey(k=> k+1); setPlaying(false); setIndex(0); setFrames([]); }
   function reset(){ randomizeGraph(); }
 
-  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 text-white">
   <div className="container mx-auto px-4 py-12 max-w-screen-2xl text-gray-700">
       <Link href="/algorithms/graph/prim/theory" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Theory</Link>
       <h1 className="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3"><TreePine className="h-7 w-7 text-emerald-600"/> Prim Simulation</h1>
@@ -144,7 +144,7 @@ function StatePanel({frame}:{frame?:Frame}){
       <div className="p-3 rounded-xl bg-yellow-50 border border-yellow-200 text-gray-700"><div className="font-semibold text-yellow-700 text-[11px] uppercase tracking-wide mb-1">Frontier (PQ)</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{frame.queue.map(q=> <span key={q.id} className="px-2 py-1 rounded bg-white border border-yellow-400 text-gray-600">{q.id}:{q.key===Infinity?'∞':q.key}</span>)}</div></div>
       <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-gray-700"><div className="font-semibold text-emerald-700 text-[11px] uppercase tracking-wide mb-1">Chosen Edges</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Array.from(frame.chosenEdges).map(id=> <span key={id} className="px-2 py-1 rounded bg-white border border-emerald-300 text-gray-600">{id}</span>)}</div></div>
     </div>
-    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 overflow-x-auto text-gray-700"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Parents</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.parents).filter(([k])=> frame.parents[k]!==null).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{k}←{v}</span>)}</div></div>
+    <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 overflow-x-auto text-white"><div className="font-semibold text-blue-700 text-[11px] uppercase tracking-wide mb-1">Parents</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.parents).filter(([k])=> frame.parents[k]!==null).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-blue-300 text-gray-600">{k}←{v}</span>)}</div></div>
     <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 overflow-x-auto text-gray-700"><div className="font-semibold text-purple-700 text-[11px] uppercase tracking-wide mb-1">Keys</div><div className="flex flex-wrap gap-1 font-mono text-gray-700">{Object.entries(frame.keys).map(([k,v])=> <span key={k} className="px-2 py-1 rounded bg-white border border-purple-300 text-gray-600">{k}:{v===Infinity?'∞':v}</span>)}</div></div>
     {frame.considering && <div className={`p-3 rounded-xl ${frame.considering.improved? 'bg-emerald-50 border border-emerald-200':'bg-slate-50 border border-slate-200'}`}>
       <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wide mb-1">Edge Check</div>
@@ -168,7 +168,7 @@ function Navigation(){
     <h2 className="text-lg font-semibold text-slate-800 mb-3">Continue Learning</h2>
     <div className="flex flex-wrap gap-3 justify-between items-center text-gray-700">
       <Link href="/algorithms/graph/prim/theory" className="inline-flex items-center px-5 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
-      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-gray-100">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+      <Link href="/algorithms/graph" className="inline-flex items-center px-5 py-2 bg-emerald-600 text-black rounded-lg hover:bg-emerald-700 text-gray-800">Graph Overview <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
     </div>
   </div>;
 }

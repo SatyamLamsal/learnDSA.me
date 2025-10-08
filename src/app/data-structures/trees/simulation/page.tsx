@@ -470,7 +470,7 @@ const TreesSimulationPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -653,7 +653,7 @@ const TreesSimulationPage: React.FC = () => {
                         setDemoIndex(0);
                       }
                     }}
-                    className="w-full flex items-center justify-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                    className="w-full flex items-center justify-center px-4 py-2 bg-indigo-600 text-black rounded-lg hover:bg-indigo-700 transition-colors"
                   >
                     {autoPlay ? (
                       <>
@@ -791,7 +791,7 @@ const TreesSimulationPage: React.FC = () => {
                 Worst: <span className="font-mono text-red-600">O(n)</span>
               </p>
             </div>
-            <div className="text-center p-4 bg-blue-50 rounded-lg text-gray-700">
+            <div className="text-center p-4 bg-blue-50 rounded-lg text-white">
               <h3 className="font-semibold text-blue-700 mb-2">Traversal</h3>
               <p className="text-sm text-gray-600">
                 All cases: <span className="font-mono text-blue-600">O(n)</span><br/>
@@ -818,7 +818,7 @@ const TreesSimulationPage: React.FC = () => {
           
           <Link
             href="/data-structures/graphs"
-            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-purple-600 text-black rounded-lg hover:bg-purple-700 transition-colors text-gray-800"
           >
             Next: Graphs
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

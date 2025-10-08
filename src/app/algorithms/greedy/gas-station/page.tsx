@@ -53,7 +53,7 @@ export default function GasStationPage(){
 end procedure`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-emerald-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-emerald-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <Link href="/algorithms/greedy" className="inline-flex items-center text-emerald-600 hover:text-emerald-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Greedy</Link>
         <h1 className="text-4xl font-bold text-slate-800 mb-2">Gas Station Problem</h1>
@@ -74,7 +74,7 @@ end procedure`;
               <label className="block text-sm font-medium text-slate-700 mb-1">Speed (ms)</label>
               <input type="number" value={speed} onChange={e=>setSpeed(Math.max(100, parseInt(e.target.value)||0))} className="w-24 px-2 py-2 border rounded"/>
             </div>
-            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-white text-white text-white text-white"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
+            <button onClick={run} disabled={running} className="bg-emerald-600 hover:bg-emerald-700 text-black px-4 py-2 rounded inline-flex items-center disabled:opacity-50 text-black text-black text-black text-black"><Play className="h-4 w-4 mr-2 text-gray-700"/>Run</button>
             <button onClick={reset} className="px-3 py-2 border rounded inline-flex items-center text-gray-800"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
             <button onClick={randomize} className="px-3 py-2 border rounded text-gray-800">Randomize</button>
           </div>

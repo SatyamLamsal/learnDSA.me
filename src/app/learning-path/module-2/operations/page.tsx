@@ -180,7 +180,7 @@ const ArrayOperationsDemo = () => {
         </div>
 
         {/* Search */}
-        <div className="p-4 border border-blue-200 rounded-lg bg-blue-50 text-gray-700">
+        <div className="p-4 border border-blue-200 rounded-lg bg-blue-50 text-white">
           <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
             <Search className="w-4 h-4 mr-1 text-gray-700" />
             Search
@@ -346,9 +346,9 @@ END
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-gray-700">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-white">
         <div className="max-w-4xl mx-auto text-gray-700">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">

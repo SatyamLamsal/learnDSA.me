@@ -24,7 +24,7 @@ const QueueVisualization = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="w-16 h-16 bg-yellow-500 text-white rounded-lg flex items-center justify-center font-bold border-2 border-yellow-600 shadow-md text-gray-800"
+              className="w-16 h-16 bg-yellow-500 text-black rounded-lg flex items-center justify-center font-bold border-2 border-yellow-600 shadow-md text-gray-800"
             >
               {element}
             </motion.div>

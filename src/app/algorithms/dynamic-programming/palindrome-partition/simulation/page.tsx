@@ -38,7 +38,7 @@ export default function PalindromePartitionSimulationPage(){
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-emerald-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-8 text-gray-700">
           <Link href="/algorithms/dynamic-programming/palindrome-partition" className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Overview</Link>
@@ -51,7 +51,7 @@ export default function PalindromePartitionSimulationPage(){
               <label className="block text-sm font-medium text-slate-700 mb-1">String</label>
               <input value={s} onChange={e=> setS(e.target.value.slice(0,20))} className="px-2 py-1 border rounded" disabled={running}/>
             </div>
-            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded disabled:opacity-50 text-white text-white text-white text-white">{running? 'Running...' : 'Run'}</button>
+            <button onClick={run} disabled={running} className="bg-teal-600 hover:bg-teal-700 text-black px-4 py-2 rounded disabled:opacity-50 text-black text-black text-black text-black text-black">{running? 'Running...' : 'Run'}</button>
           </div>
           <div className="flex flex-wrap gap-2 text-xs mb-4 text-gray-600">
             {steps.map(st=> <div key={st.i} className="px-2 py-1 rounded border bg-teal-50 text-teal-700">i={st.i} cuts={st.cuts}</div>)}

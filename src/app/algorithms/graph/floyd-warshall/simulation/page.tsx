@@ -49,7 +49,7 @@ export default function FloydWarshallSimulation(){
   function randomize(){ setMatrix(initialRandom(n)); }
   function reset(){ setMatrix(m=> m.map(r=> r.map(v=> v))); }
 
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-sky-50 to-rose-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-sky-50 to-rose-50 text-white">
   <div className="container max-w-screen-2xl mx-auto px-4 py-12 text-gray-700">
       <Link href="/algorithms/graph/floyd-warshall/theory" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Theory</Link>
       <h1 className="text-3xl font-bold text-slate-800 mb-8 flex items-center gap-3"><Grid3x3 className="h-8 w-8 text-indigo-600"/> Floyd–Warshall Simulation</h1>

@@ -1,0 +1,27 @@
+/* Add this to globals.css - High specificity rules for blue backgrounds */
+
+/* Override for elements with blue gradient backgrounds */
+[class*="bg-gradient"][class*="blue"] *,
+[class*="from-blue"] *,
+[class*="to-blue"] *,
+[class*="via-blue"] * {
+  color: #ffffff !important;
+}
+
+/* Override for backdrop blur with blue tints */
+[class*="backdrop-blur"] *,
+[class*="bg-white/"] * {
+  color: #1f2937 !important; /* darker for better contrast */
+}
+
+/* Specific overrides for blue gradient containers */
+.bg-gradient-to-br.from-blue-500.to-purple-600 *,
+.bg-gradient-to-r.from-blue-500.to-purple-600 *,
+.bg-gradient-to-r.from-blue-600.via-purple-600.to-pink-600 * {
+  color: #ffffff !important;
+}
+
+/* Override for complex gradient backgrounds */
+.bg-gradient-to-br.from-slate-900.via-blue-900.to-purple-900 * {
+  color: #ffffff !important;
+}

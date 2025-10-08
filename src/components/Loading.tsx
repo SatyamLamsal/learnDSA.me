@@ -26,7 +26,7 @@ export const LoadingSpinner: React.FC<{
 export const PageLoader: React.FC<{ message?: string }> = ({ 
   message = 'Loading...' 
 }) => (
-  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center text-gray-700">
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center text-white">
     <div className="text-center text-gray-700">
       <motion.div
         animate={{ rotate: 360 }}

@@ -65,7 +65,7 @@ export default function FFTSimulation(){
           <button onClick={()=> setIndex(i=> Math.max(0,i-1))} disabled={index===0} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Prev</button>
           <div className="text-xs font-mono text-gray-600">{index+1}/{frames.length}</div>
           <button onClick={()=> setIndex(i=> Math.min(frames.length-1,i+1))} disabled={index===frames.length-1} className="px-3 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm disabled:opacity-40">Next</button>
-          <button onClick={()=> { setSignal(randSignal(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-pink-600 text-white hover:bg-pink-700 text-sm font-semibold"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
+          <button onClick={()=> { setSignal(randSignal(n)); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-pink-600 text-black hover:bg-pink-700 text-sm font-semibold"><RotateCcw className="h-4 w-4 mr-2 text-gray-700"/>Reset</button>
           <button onClick={()=> { setSignal(s=> [...s]); setIndex(0); setPlaying(false); }} className="inline-flex items-center px-4 py-2 rounded bg-rose-600 text-white hover:bg-rose-700 text-sm font-semibold"><Shuffle className="h-4 w-4 mr-2 text-gray-700"/>Rebuild</button>
         </div>
 
@@ -74,7 +74,7 @@ export default function FFTSimulation(){
             {f.data.map((z,i)=> {
               const involved = (i===f.pair[0] || i===f.pair[1]);
               return <div key={i} className={`flex flex-col items-center min-w-[68px]`}>
-                <div className={`px-2 py-2 rounded-md text-[11px] font-mono border text-center transition-all duration-300 ${involved? 'bg-fuchsia-600 text-white border-fuchsia-700 scale-105':'bg-gray-100 text-gray-700 border-gray-300'}`}>{formatC(z)}</div>
+                <div className={`px-2 py-2 rounded-md text-[11px] font-mono border text-center transition-all duration-300 ${involved? 'bg-fuchsia-600 text-black border-fuchsia-700 scale-105':'bg-gray-100 text-gray-700 border-gray-300'}`}>{formatC(z)}</div>
                 <div className="h-4 text-[10px] font-mono text-fuchsia-600 mt-1">{involved? 'pair':''}</div>
               </div>;
             })}
@@ -106,8 +106,8 @@ export default function FFTSimulation(){
       </motion.div>
       <div className="flex justify-between items-center mt-8 text-gray-700">
         {prev? <Link href={`/algorithms/divide-and-conquer/${prev.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300"><ArrowLeft className="h-4 w-4 mr-2 text-gray-700"/>{prev.name}</Link>: <span/>}
-        <Link href="/algorithms/divide-and-conquer/fft/theory" className="px-6 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-gray-100">View Theory</Link>
-        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-white hover:bg-fuchsia-700 text-gray-100">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
+        <Link href="/algorithms/divide-and-conquer/fft/theory" className="px-6 py-2 rounded bg-fuchsia-600 text-black hover:bg-fuchsia-700 text-gray-800">View Theory</Link>
+        {next? <Link href={`/algorithms/divide-and-conquer/${next.slug}/simulation`} className="inline-flex items-center px-4 py-2 rounded bg-fuchsia-600 text-black hover:bg-fuchsia-700 text-gray-800">{next.name}<ArrowRight className="h-4 w-4 ml-2 text-gray-700"/></Link>: <span/>}
       </div>
     </div>
   </div>;

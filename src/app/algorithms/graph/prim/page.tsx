@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, TreePine, Layers, Zap, GitBranch, Cpu, Compass } from 'lucide-react';
 
 export default function PrimOverview(){
-  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 text-white">
   <div className="container max-w-screen-2xl mx-auto px-4 py-12 text-gray-700">
       <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
         <Link href="\algorithms\graph" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Graph Algorithms</Link>
@@ -31,7 +31,7 @@ export default function PrimOverview(){
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16 text-gray-700">
         <Link href="\algorithms\graph\kruskal" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back: Kruskal</Link>
-        <Link href="\algorithms\graph\topological-sort" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100">Next:topological-sort <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+        <Link href="\algorithms\graph\topological-sort" className="inline-flex items-center px-6 py-3 bg-green-600 text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800">Next:topological-sort <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
       </motion.div>
     </div>
   </div>;

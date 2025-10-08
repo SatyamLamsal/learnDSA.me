@@ -445,7 +445,7 @@ export default function ArraysSimulationPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-gray-700"
+              className="bg-gradient-to-r from-purple-100 to-blue-100 border border-purple-300 rounded-lg p-6 mb-6 text-white"
             >
               <h3 className="text-lg font-semibold text-purple-800 mb-4 flex items-center">
                 <Play className="h-5 w-5 mr-2 text-gray-700" />
@@ -646,7 +646,7 @@ export default function ArraysSimulationPage() {
                 <button
                   onClick={insertAt}
                   disabled={isAnimating}
-                  className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-gray-100"
+                  className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-black px-4 py-2 rounded-lg font-semibold transition-colors text-gray-800"
                 >
                   Insert at Index
                 </button>
@@ -815,7 +815,7 @@ export default function ArraysSimulationPage() {
           <Link href="/data-structures/arrays/theory" className="flex items-center text-red-600 hover:text-red-700">
             ← Array Theory
           </Link>
-          <Link href="/data-structures/linked-lists" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-gray-100">
+          <Link href="/data-structures/linked-lists" className="bg-red-600 hover:bg-red-700 text-black px-6 py-3 rounded-lg font-semibold transition-colors text-gray-800">
             Next: Linked Lists →
           </Link>
         </motion.div>

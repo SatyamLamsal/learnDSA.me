@@ -158,7 +158,7 @@ const algorithmTypes = [
 
 export default function GraphAlgorithmsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -225,7 +225,7 @@ export default function GraphAlgorithmsPage() {
               >
                 <Link href={algorithm.path}>
                   <div className={`${algorithm.color} h-16 flex items-center justify-center relative`}>
-                    <h3 className="text-lg font-bold text-white text-center px-2 text-gray-800">{algorithm.name}</h3>
+                    <h3 className="text-lg font-bold text-black text-center px-2 text-gray-800">{algorithm.name}</h3>
                   </div>
                   <div className="p-6 text-gray-700">
                     <p className="text-slate-600 text-sm mb-4">{algorithm.description}</p>
@@ -297,7 +297,7 @@ export default function GraphAlgorithmsPage() {
               <h3 className="text-xl font-semibold text-blue-700 mb-3">Adjacency Matrix</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <p className="text-slate-600">2D array where matrix[i][j] = 1 if edge exists between vertex i and j</p>
-                <div className="bg-blue-50 p-4 rounded text-gray-700">
+                <div className="bg-blue-50 p-4 rounded text-white">
                   <p><strong>Time Complexity:</strong> O(1) edge lookup, O(V²) space</p>
                   <p><strong>Best for:</strong> Dense graphs, frequent edge queries</p>
                   <p><strong>Cons:</strong> High space usage, inefficient for sparse graphs</p>
@@ -406,7 +406,7 @@ export default function GraphAlgorithmsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-white text-center mb-12 text-gray-700"
+          className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-white text-center mb-12 text-white"
         >
           <h2 className="text-3xl font-bold mb-4 text-slate-800">Explore Graph Algorithms</h2>
           <p className="text-xl mb-6 opacity-90 text-gray-700">

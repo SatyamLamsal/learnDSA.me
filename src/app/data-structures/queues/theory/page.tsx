@@ -126,7 +126,7 @@ export default function QueuesTheoryPage() {
             
             <div className="grid md:grid-cols-2 gap-8 text-gray-700">
               {/* Linear Queue */}
-              <div className="bg-blue-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg text-black">
                 <h3 className="text-xl font-semibold text-heading-secondary mb-4 text-gray-800">Linear Queue</h3>
                 <p className="text-secondary mb-4 text-gray-700">
                   Basic queue implementation where elements are stored in a linear fashion.
@@ -332,7 +332,7 @@ export default function QueuesTheoryPage() {
               </div>
               
               {/* Linked List Implementation */}
-              <div className="bg-blue-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-blue-50 p-6 rounded-lg text-white">
                 <h3 className="text-xl font-semibold text-heading-secondary mb-4 text-gray-800">Linked List Implementation</h3>
                 <div className="bg-white p-4 rounded-lg mb-4 overflow-x-auto text-gray-700">
                   <pre className="text-sm text-gray-600">
@@ -487,7 +487,7 @@ class LinkedQueue {
             <h2 className="text-3xl font-bold text-heading-primary mb-6 text-slate-800">Real-World Applications</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg text-black">
                 <h3 className="text-lg font-semibold text-heading-secondary mb-3 text-gray-800">CPU Scheduling</h3>
                 <p className="text-secondary text-sm mb-3 text-gray-600">
                   Operating systems use queues to manage process scheduling and resource allocation.
@@ -537,7 +537,7 @@ class LinkedQueue {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-lg text-gray-700">
+              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-lg text-black">
                 <h3 className="text-lg font-semibold text-heading-secondary mb-3 text-gray-800">Web Server Request Handling</h3>
                 <p className="text-secondary text-sm mb-3 text-gray-600">
                   Web servers use queues to handle incoming HTTP requests in order.
@@ -567,7 +567,7 @@ class LinkedQueue {
           
           <Link
             href="/data-structures/queues/simulation"
-            className="inline-flex items-center px-6 py-3 bg-queues text-white rounded-lg hover:bg-orange-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-queues text-black rounded-lg hover:bg-orange-700 transition-colors text-gray-800"
           >
             Try Interactive Simulation
             <ArrowRight className="h-5 w-5 ml-2 text-gray-700" />

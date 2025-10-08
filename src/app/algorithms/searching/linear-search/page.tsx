@@ -70,19 +70,19 @@ const LinearSearchVisualization = () => {
           <button
             onClick={linearSearch}
             disabled={isSearching}
-            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
+            className="bg-red-500 hover:bg-red-600 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-gray-800"
           >
             {isSearching ? 'Searching...' : 'Start Search'}
           </button>
           <button
             onClick={resetSearch}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800"
           >
             Reset
           </button>
           <button
             onClick={generateNewArray}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-medium text-gray-800"
+            className="bg-blue-500 hover:bg-blue-600 text-black px-4 py-2 rounded font-medium text-black"
           >
             New Array
           </button>
@@ -102,8 +102,8 @@ const LinearSearchVisualization = () => {
                   '#e5e7eb'
               }}
               className={`w-12 h-12 flex items-center justify-center font-bold rounded border-2 ${
-                found && currentIndex === index ? 'border-green-600 text-white' :
-                currentIndex === index ? 'border-yellow-600 text-white' :
+                found && currentIndex === index ? 'border-green-600 text-black' :
+                currentIndex === index ? 'border-yellow-600 text-black' :
                 'border-gray-400 text-gray-700'
               }`}
             >
@@ -124,7 +124,7 @@ const LinearSearchVisualization = () => {
         {/* Status */}
         <div className="text-center text-gray-700">
           <div className="grid grid-cols-3 gap-4 mb-4 text-sm text-gray-600">
-            <div className="bg-blue-50 p-3 rounded text-gray-700">
+            <div className="bg-blue-50 p-3 rounded text-white">
               <span className="font-semibold text-blue-700">Current Index:</span>
               <div className="text-2xl font-bold text-blue-600">{currentIndex === -1 ? '-' : currentIndex}</div>
             </div>
@@ -296,7 +296,7 @@ if (result !== -1) {
       </div>
       
       {/* Code Display */}
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{codeExamples[activeTab]}</code>
         </pre>

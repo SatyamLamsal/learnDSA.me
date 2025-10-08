@@ -375,7 +375,7 @@ const MergeSortPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         {/* Header */}
         <motion.div
@@ -618,7 +618,7 @@ const MergeSortPage: React.FC = () => {
                   <span className="text-sm text-gray-600">Unsorted</span>
                 </div>
                 <div className="flex items-center text-gray-700">
-                  <div className="w-4 h-4 bg-blue-400 border border-blue-500 rounded mr-2 text-gray-700"></div>
+                  <div className="w-4 h-4 bg-blue-400 border border-blue-500 rounded mr-2 text-black"></div>
                   <span className="text-sm text-gray-600">Left Half</span>
                 </div>
                 <div className="flex items-center text-gray-700">
@@ -652,7 +652,7 @@ const MergeSortPage: React.FC = () => {
                (sortingSteps[currentStep]?.leftArray || sortingSteps[currentStep]?.rightArray) && (
                 <div className="grid md:grid-cols-2 gap-6 mb-6 text-gray-700">
                   {sortingSteps[currentStep]?.leftArray && (
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-white">
                       <h4 className="font-semibold text-blue-800 mb-2">Left Array</h4>
                       <div className="flex space-x-1 text-gray-700">
                         {sortingSteps[currentStep].leftArray!.map((el, i) => (
@@ -862,7 +862,7 @@ function mergeInPlace(arr, left, mid, right) {
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-gray-700">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-white">
                   <h4 className="font-semibold text-blue-800 mb-2">Why O(n log n)?</h4>
                   <ul className="text-sm text-gray-700 list-disc pl-4 space-y-1">
                     <li>Tree depth: log₂(n) levels</li>
@@ -914,7 +914,7 @@ function mergeInPlace(arr, left, mid, right) {
           
           <Link
             href="/algorithms/sorting/heap-sort"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-gray-100"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition-colors text-gray-800"
           >
             Next: Heap Sort
             <SkipForward className="h-5 w-5 ml-2 text-gray-700" />

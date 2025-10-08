@@ -238,7 +238,7 @@ export default function MemoryHierarchyPage() {
   }, [memoryLevels.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
       <div className="container mx-auto px-4 py-8 text-gray-700">
         {/* Header */}
         <div className="mb-8 text-gray-700">
@@ -492,7 +492,7 @@ export default function MemoryHierarchyPage() {
             </div>
           </div>
 
-          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-200 text-gray-700">
+          <div className="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-200 text-white">
             <h3 className="text-lg font-semibold text-blue-900 mb-3">Key Insights for Data Structures</h3>
             <ul className="space-y-2 text-blue-800">
               <li className="flex items-start text-gray-700">

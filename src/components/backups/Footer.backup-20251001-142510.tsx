@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center mb-4 text-gray-700">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 text-gray-700">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3 text-white">
                   <Code className="h-5 w-5 text-white text-gray-700" />
                 </div>
                 <h3 className="text-xl font-bold text-white text-gray-800">Learn DSA</h3>

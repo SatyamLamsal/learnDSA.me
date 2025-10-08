@@ -40,7 +40,7 @@ end procedure`,
   } as const;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-gray-700">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 text-white">
       <div className="container mx-auto px-4 py-12 text-gray-700">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 text-gray-700">
           <Link href="/data-structures/trees" className="inline-flex items-center text-purple-600 hover:text-purple-700 mb-6">

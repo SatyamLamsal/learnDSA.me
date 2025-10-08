@@ -9,7 +9,7 @@ const algo = getAlgorithm('closest-pair');
 const { prev, next } = getPrevNext('closest-pair');
 
 export default function ClosestPairTheory(){
-  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-sky-50 to-cyan-50 text-white">
   <div className="container mx-auto px-4 py-16 max-w-7xl text-gray-700">
       <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-12 text-gray-700">
         <Link href="/algorithms/divide-and-conquer/closest-pair" className="inline-flex items-center text-sky-600 hover:text-sky-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Overview</Link>

@@ -133,12 +133,12 @@ const TernarySearchVisualization = () => {
         <button
           onClick={ternarySearch}
           disabled={isSearching}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded font-medium disabled:opacity-50 text-white text-white text-white text-white"
+          className="bg-emerald-600 hover:bg-emerald-700 text-black px-4 py-2 rounded font-medium disabled:opacity-50 text-black text-black text-black text-black"
         >
           {isSearching ? 'Searching...' : 'Start Search'}
         </button>
-        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded font-medium text-gray-800">Reset</button>
-        <button onClick={generateArray} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium text-white text-white text-white text-white">New Array</button>
+        <button onClick={reset} className="bg-gray-500 hover:bg-gray-600 text-black px-4 py-2 rounded font-medium text-gray-800">Reset</button>
+        <button onClick={generateArray} className="bg-blue-600 hover:bg-blue-700 text-black px-4 py-2 rounded font-medium text-black text-black text-black text-black text-black">New Array</button>
         <div className="ml-auto text-sm text-gray-600">
           <div className="font-semibold text-slate-700">Comparisons</div>
           <div className="text-xl font-bold text-orange-600">{comparisons}</div>
@@ -332,7 +332,7 @@ console.log(ternarySearch([1,2,4,4,7,9,12,15,17,18,21,24,27,30,32,35,40,42,45,50
           </button>
         ))}
       </div>
-      <div className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto">
+      <div className="bg-gray-900 text-gray-800 p-4 rounded-lg overflow-x-auto">
         <pre className="text-sm text-gray-600">
           <code>{code[tab]}</code>
         </pre>

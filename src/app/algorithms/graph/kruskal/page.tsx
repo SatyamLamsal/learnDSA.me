@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Scissors, Layers, Shuffle, GitBranch, Zap, Play, BookOpen } from 'lucide-react';
 
 export default function KruskalOverview(){
-  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50 text-gray-700">
+  return <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-50 text-white">
   <div className="container max-w-screen-2xl mx-auto px-4 py-12 text-gray-700">
       <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:0.6}} className="mb-10 text-gray-700">
         <Link href="\algorithms\graph" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-6"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back to Graph Algorithms</Link>
@@ -31,7 +31,7 @@ export default function KruskalOverview(){
       </div>
       <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:0.4}} className="flex justify-between items-center mt-16 text-gray-700">
         <Link href="\algorithms\graph\floyd-warshall" className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"><ArrowLeft className="h-5 w-5 mr-2 text-gray-700"/>Back: floyd-warshall</Link>
-        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-gray-100">Next:prim&apos;s <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
+        <Link href="\algorithms\graph\prim" className="inline-flex items-center px-6 py-3 bg-green-600 text-black rounded-lg hover:bg-green-700 transition-colors text-gray-800">Next:prim&apos;s <ArrowRight className="h-5 w-5 ml-2 text-gray-700"/></Link>
       </motion.div>
     </div>
   </div>;
@@ -94,9 +94,9 @@ function ComparisonCard(){
       <table className="text-xs w-full border border-slate-200 text-gray-600">
         <thead className="bg-slate-100 text-slate-700"><tr><th className="p-2 text-left font-semibold text-gray-800">Algorithm</th><th className="p-2 text-left font-semibold text-gray-800">Best For</th><th className="p-2 text-left font-semibold text-gray-800">Approach</th><th className="p-2 text-left font-semibold text-gray-800">Time</th></tr></thead>
         <tbody className="divide-y divide-slate-200 text-gray-700">
-          <tr className="hover:bg-indigo-50/40 text-gray-700"><td className="p-2 font-mono text-gray-700">Prim (Heap)</td><td className="p-2 text-gray-700">Dense graphs</td><td className="p-2 text-gray-700">Grow tree</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
-          <tr className="hover:bg-indigo-50/40 text-gray-700"><td className="p-2 font-mono font-semibold text-indigo-700">Kruskal</td><td className="p-2 text-gray-700">Sparse / Edge-sorted reuse</td><td className="p-2 text-gray-700">Merge forests</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
-          <tr className="hover:bg-indigo-50/40 text-gray-700"><td className="p-2 font-mono text-gray-700">Borůvka</td><td className="p-2 text-gray-700">Parallelizable</td><td className="p-2 text-gray-700">Component merges</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
+          <tr className="hover:bg-indigo-50/40 text-white"><td className="p-2 font-mono text-gray-700">Prim (Heap)</td><td className="p-2 text-gray-700">Dense graphs</td><td className="p-2 text-gray-700">Grow tree</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
+          <tr className="hover:bg-indigo-50/40 text-white"><td className="p-2 font-mono font-semibold text-indigo-700">Kruskal</td><td className="p-2 text-gray-700">Sparse / Edge-sorted reuse</td><td className="p-2 text-gray-700">Merge forests</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
+          <tr className="hover:bg-indigo-50/40 text-white"><td className="p-2 font-mono text-gray-700">Borůvka</td><td className="p-2 text-gray-700">Parallelizable</td><td className="p-2 text-gray-700">Component merges</td><td className="p-2 text-gray-700">O(m log n)</td></tr>
         </tbody>
       </table>
     </div>

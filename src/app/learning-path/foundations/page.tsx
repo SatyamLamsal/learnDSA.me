@@ -83,7 +83,7 @@ export default function FoundationsPage() {
       totalSections={5}
     >
       <div className="space-y-8 text-gray-700">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
             <Brain className="w-12 h-12 text-gray-700" />
             <div>
@@ -105,11 +105,11 @@ export default function FoundationsPage() {
             {sectionDetails.map((section, index) => (
               <div
                 key={section.id}
-                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-gray-700"
+                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-white"
                 onClick={() => window.location.href = section.href}
               >
                 <div className="flex items-center space-x-4 flex-1 text-gray-700">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-gray-700">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-white">
                     <section.icon className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="flex-1 text-gray-700">
@@ -134,7 +134,7 @@ export default function FoundationsPage() {
         </div>
         
         {/* Next Module Navigation */}
-        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-gray-700">
+        <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
           <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready for the Next Step?</h2>
           <p className="text-blue-100 mb-6">
             Now that you understand the fundamentals, let&apos;s explore why data structures exist by diving into computer memory systems.
