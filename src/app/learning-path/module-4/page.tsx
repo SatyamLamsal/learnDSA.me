@@ -16,14 +16,23 @@ import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 
 export default function Module4Overview() {
   const sections = [
+    { id: 'pointers', name: 'Pointers & Memory', icon: Target },
     { id: 'introduction', name: 'Introduction', icon: BookOpen },
     { id: 'types', name: 'Types of Linked Lists', icon: Layers },
     { id: 'operations', name: 'Core Operations', icon: Settings },
-    { id: 'pointers', name: 'Pointers & Memory', icon: Target },
     { id: 'problems', name: 'Problems & Practice', icon: Code }
   ];
 
   const sectionDetails = [
+    {
+      id: 'pointers',
+      title: 'Pointers & Memory',
+      description: 'Memory model, addresses & pointer fundamentals',
+      icon: Target,
+      href: '/learning-path/module-4/pointers',
+      difficulty: 'Intermediate' as const,
+      timeEstimate: '15 min'
+    },
     {
       id: 'introduction',
       title: 'Introduction',
@@ -52,15 +61,6 @@ export default function Module4Overview() {
       timeEstimate: '16 min'
     },
     {
-      id: 'pointers',
-      title: 'Pointers & Memory',
-      description: 'Memory model and pointer manipulation',
-      icon: Target,
-      href: '/learning-path/module-4/pointers',
-      difficulty: 'Intermediate' as const,
-      timeEstimate: '15 min'
-    },
-    {
       id: 'problems',
       title: 'Problems & Practice',
       description: 'Classic problems & practice set',
@@ -83,16 +83,172 @@ export default function Module4Overview() {
     >
       <div className="space-y-12">
         <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-8 rounded-2xl">
-          <div className="flex items-center space-x-4 mb-4">
+          <div className="flex items-center space-x-4 mb-6">
             <LinkIcon className="w-12 h-12" />
             <div>
               <h1 className="text-4xl font-bold">Module 4: Linked Lists</h1>
               <p className="text-green-100 text-lg">Master dynamic node-based structures</p>
             </div>
           </div>
-          <p className="text-green-50 max-w-3xl">
-            Learn how linked lists enable flexible memory usage, efficient inserts, and form the basis for higher-level data structures and algorithms.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <p className="text-green-50 mb-4 leading-relaxed">
+                Linked lists are fundamental dynamic data structures where elements (nodes) are connected through pointers. 
+                Unlike arrays, they don&apos;t require contiguous memory and can grow/shrink during runtime.
+              </p>
+              <div className="bg-green-500 bg-opacity-30 p-4 rounded-lg">
+                <h3 className="font-semibold text-green-100 mb-2">🎯 What You&apos;ll Master:</h3>
+                <ul className="text-green-50 text-sm space-y-1">
+                  <li>• Pointer fundamentals & memory management</li>
+                  <li>• Dynamic node creation & linking</li>
+                  <li>• Singly, doubly, and circular variations</li>
+                  <li>• Efficient insertion/deletion operations</li>
+                  <li>• Classic algorithms like cycle detection</li>
+                </ul>
+              </div>
+            </div>
+            <div className="bg-green-500 bg-opacity-20 p-6 rounded-lg">
+              <h3 className="font-semibold text-green-100 mb-4">🚀 Real-World Applications</h3>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="bg-white bg-opacity-20 p-3 rounded">
+                  <div className="font-medium text-green-100">Browser History</div>
+                  <div className="text-green-200 text-xs">Back/Forward navigation</div>
+                </div>
+                <div className="bg-white bg-opacity-20 p-3 rounded">
+                  <div className="font-medium text-green-100">Music Playlists</div>
+                  <div className="text-green-200 text-xs">Next/Previous songs</div>
+                </div>
+                <div className="bg-white bg-opacity-20 p-3 rounded">
+                  <div className="font-medium text-green-100">Undo/Redo</div>
+                  <div className="text-green-200 text-xs">Command history</div>
+                </div>
+                <div className="bg-white bg-opacity-20 p-3 rounded">
+                  <div className="font-medium text-green-100">Memory Pools</div>
+                  <div className="text-green-200 text-xs">Dynamic allocation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-8 rounded-2xl shadow-lg border mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">📊 Linked Lists vs Arrays: The Complete Picture</h2>
+          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+            <div className="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border border-red-200">
+              <h3 className="text-2xl font-bold text-red-900 mb-4 flex items-center">
+                📋 Arrays
+                <span className="ml-3 text-sm bg-red-200 text-red-800 px-3 py-1 rounded-full">Static</span>
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg border border-red-200">
+                  <h4 className="font-semibold text-red-800 mb-2">Memory Layout</h4>
+                  <div className="flex space-x-1 mb-2">
+                    {[10, 20, 30, 40].map((val, i) => (
+                      <div key={i} className="bg-red-500 text-white p-2 rounded text-sm font-mono text-center min-w-[40px]">
+                        {val}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-red-700">Contiguous memory addresses</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="bg-green-100 p-3 rounded border border-green-300">
+                    <div className="font-semibold text-green-800">✅ Advantages</div>
+                    <ul className="text-green-700 text-xs mt-1 space-y-1">
+                      <li>• O(1) random access</li>
+                      <li>• Cache-friendly</li>
+                      <li>• Memory efficient</li>
+                    </ul>
+                  </div>
+                  <div className="bg-red-100 p-3 rounded border border-red-300">
+                    <div className="font-semibold text-red-800">❌ Limitations</div>
+                    <ul className="text-red-700 text-xs mt-1 space-y-1">
+                      <li>• Fixed size</li>
+                      <li>• Expensive insertions</li>
+                      <li>• Memory waste</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-200">
+              <h3 className="text-2xl font-bold text-green-900 mb-4 flex items-center">
+                🔗 Linked Lists
+                <span className="ml-3 text-sm bg-green-200 text-green-800 px-3 py-1 rounded-full">Dynamic</span>
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-lg border border-green-200">
+                  <h4 className="font-semibold text-green-800 mb-2">Memory Layout</h4>
+                  <div className="space-y-2 mb-2">
+                    {[
+                      { data: 10, addr: '1000', next: '→2048' },
+                      { data: 20, addr: '2048', next: '→3012' },
+                      { data: 30, addr: '3012', next: '→NULL' }
+                    ].map((node, i) => (
+                      <div key={i} className="flex items-center justify-between bg-green-500 text-white p-2 rounded text-xs font-mono">
+                        <span>@{node.addr}</span>
+                        <span className="font-bold">{node.data}</span>
+                        <span>{node.next}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-green-700">Scattered memory locations</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="bg-green-100 p-3 rounded border border-green-300">
+                    <div className="font-semibold text-green-800">✅ Advantages</div>
+                    <ul className="text-green-700 text-xs mt-1 space-y-1">
+                      <li>• Dynamic sizing</li>
+                      <li>• O(1) head operations</li>
+                      <li>• Memory efficient</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-100 p-3 rounded border border-orange-300">
+                    <div className="font-semibold text-orange-800">⚠️ Trade-offs</div>
+                    <ul className="text-orange-700 text-xs mt-1 space-y-1">
+                      <li>• O(n) random access</li>
+                      <li>• Extra pointer memory</li>
+                      <li>• Poor cache locality</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200">
+            <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">🎯 When to Choose What?</h3>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-white p-4 rounded-lg border border-blue-300">
+                <h4 className="font-semibold text-blue-800 mb-2">Choose Arrays When:</h4>
+                <ul className="text-blue-700 space-y-1">
+                  <li>• Need fast element access</li>
+                  <li>• Size is mostly fixed</li>
+                  <li>• Mathematical operations</li>
+                  <li>• Cache performance matters</li>
+                </ul>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-green-300">
+                <h4 className="font-semibold text-green-800 mb-2">Choose Linked Lists When:</h4>
+                <ul className="text-green-700 space-y-1">
+                  <li>• Frequent insertions/deletions</li>
+                  <li>• Unknown or varying size</li>
+                  <li>• Implementing other structures</li>
+                  <li>• Memory usage optimization</li>
+                </ul>
+              </div>
+              <div className="bg-white p-4 rounded-lg border border-purple-300">
+                <h4 className="font-semibold text-purple-800 mb-2">Consider Hybrids:</h4>
+                <ul className="text-purple-700 space-y-1">
+                  <li>• Deque (double-ended queue)</li>
+                  <li>• Dynamic arrays (vectors)</li>
+                  <li>• B+ trees for databases</li>
+                  <li>• Hash tables with chaining</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
@@ -131,13 +287,13 @@ export default function Module4Overview() {
         <div className="mt-12 bg-gradient-to-r from-teal-600 to-green-600 text-white p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-4">Ready to Begin?</h2>
           <p className="text-teal-100 mb-6 max-w-3xl">
-            Start with the introduction to understand core structure, then move through types, operations, memory, and practice problems.
+            Start with pointers & memory fundamentals, then understand linked lists structure, explore types, learn operations, and practice problems.
           </p>
           <a 
-            href="/learning-path/module-4/introduction"
+            href="/learning-path/module-4/pointers"
             className="inline-flex items-center bg-white text-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-50 transition-colors"
           >
-            Begin: Introduction
+            Begin: Pointers & Memory
             <ArrowRight className="w-5 h-5 ml-2" />
           </a>
         </div>

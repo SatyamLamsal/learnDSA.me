@@ -140,8 +140,8 @@ export default function LinkedListsIntroductionPage() {
       </div>
 
       <div className="flex justify-between items-center mt-8">
-        <Link href="/learning-path/module-4" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium flex items-center">
-          Overview
+        <Link href="/learning-path/module-4/pointers" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium flex items-center">
+          Previous: Pointers & Memory
         </Link>
         <Link href="/learning-path/module-4/types" className="px-6 py-3 bg-green-600 text-white rounded-lg text-sm font-medium flex items-center hover:bg-green-700">
           Next: Types <ArrowRight className="w-4 h-4 ml-2" />

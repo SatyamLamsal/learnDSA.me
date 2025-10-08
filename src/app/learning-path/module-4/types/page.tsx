@@ -67,63 +67,122 @@ export default function LinkedListTypesPage() {
         animate={{ opacity: 1, y: 0 }}
         className="space-y-12"
       >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center bg-indigo-100 text-indigo-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
+              <Layers className="w-5 h-5 mr-2" />
+              Module 4 · Types of Linked Lists
+            </div>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">
+              Explore Different
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                Linked List Types
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Each type of linked list serves specific purposes. Master the differences between singly, doubly, 
+              and circular variants to choose the right tool for your data structure needs.
+            </p>
+          </motion.div>
+
           <div className="bg-white rounded-2xl p-8 shadow-lg border">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-bold text-gray-900 flex items-center">
                 <Layers className="w-8 h-8 mr-3 text-indigo-600" />
-                Types of Linked Lists
+                Comprehensive Type Guide
               </h2>
               <SectionProgressIndicator moduleId="linked-lists" sectionId="types-overview" />
             </div>
+            
+            <div className="mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200">
+              <h3 className="text-lg font-semibold text-indigo-900 mb-3">🎯 Understanding the Evolution</h3>
+              <p className="text-indigo-800 text-sm leading-relaxed">
+                Linked lists evolved to solve different problems. Singly linked lists handle basic dynamic storage, 
+                doubly linked lists enable bidirectional traversal, and circular lists create endless loops for 
+                scheduling and continuous processing tasks.
+              </p>
+            </div>
+            
             <div className="grid gap-8">
               {linkedListTypes.map((type, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className={`border-2 rounded-xl p-6 ${type.color}`}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  className={`border-2 rounded-xl p-8 ${type.color} hover:shadow-lg transition-all duration-300`}
                 >
-                  <div className="grid lg:grid-cols-3 gap-6">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">{type.name}</h3>
-                      <p className="mb-4 leading-relaxed">{type.description}</p>
-                      <div className="mb-4">
-                        <h4 className="font-semibold mb-2">Structure:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {type.structure.map((part, partIndex) => (
-                            <span key={partIndex} className="px-3 py-1 bg-white rounded-full text-sm font-medium">
-                              {part}
-                            </span>
-                          ))}
+                  <div className="grid lg:grid-cols-4 gap-6">
+                    <div className="lg:col-span-2">
+                      <div className="flex items-center mb-4">
+                        <h3 className="text-2xl font-bold mr-3">{type.name}</h3>
+                        <span className="text-sm bg-white bg-opacity-70 px-3 py-1 rounded-full font-medium">
+                          Type #{index + 1}
+                        </span>
+                      </div>
+                      <p className="mb-6 leading-relaxed text-base">{type.description}</p>
+                      
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-lg">📋 Node Structure:</h4>
+                        <div className="bg-white bg-opacity-50 p-4 rounded-lg">
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {type.structure.map((part, partIndex) => (
+                              <span key={partIndex} className="px-4 py-2 bg-white rounded-lg text-sm font-mono shadow-sm border">
+                                {part}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="text-xs opacity-75">Each node contains these components</div>
                         </div>
                       </div>
-                      <div className="mb-4">
-                        <h4 className="font-semibold mb-2">Use Case:</h4>
-                        <p className="text-sm">{type.useCase}</p>
+                      
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-lg">🎯 Primary Use Cases:</h4>
+                        <div className="bg-white bg-opacity-50 p-4 rounded-lg">
+                          <p className="text-sm leading-relaxed">{type.useCase}</p>
+                        </div>
                       </div>
                     </div>
+                    
                     <div>
-                      <h4 className="font-semibold mb-3 text-green-800">Advantages:</h4>
-                      <ul className="space-y-2">
+                      <h4 className="font-semibold mb-4 text-green-800 text-lg flex items-center">
+                        ✅ Advantages
+                      </h4>
+                      <ul className="space-y-3">
                         {type.advantages.map((adv, advIndex) => (
-                          <li key={advIndex} className="flex items-center text-sm">
-                            <CheckCircle className="w-4 h-4 mr-2 text-green-600" />
-                            {adv}
+                          <li key={advIndex} className="flex items-start text-sm">
+                            <CheckCircle className="w-4 h-4 mr-3 text-green-600 mt-0.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{adv}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
+                    
                     <div>
-                      <h4 className="font-semibold mb-3 text-red-800">Disadvantages:</h4>
-                      <ul className="space-y-2">
+                      <h4 className="font-semibold mb-4 text-red-800 text-lg flex items-center">
+                        ⚠️ Trade-offs
+                      </h4>
+                      <ul className="space-y-3">
                         {type.disadvantages.map((dis, disIndex) => (
-                          <li key={disIndex} className="flex items-center text-sm">
-                            <Info className="w-4 h-4 mr-2 text-red-600" />
-                            {dis}
+                          <li key={disIndex} className="flex items-start text-sm">
+                            <Info className="w-4 h-4 mr-3 text-red-600 mt-0.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{dis}</span>
                           </li>
                         ))}
                       </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t border-white border-opacity-30">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-semibold">Memory Overhead:</span>
+                      <span className="px-3 py-1 bg-white bg-opacity-70 rounded-full font-mono">
+                        {index === 0 ? '1 pointer/node' : index === 1 ? '2 pointers/node' : '1 pointer/node + loop'}
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -272,7 +331,7 @@ export default function LinkedListTypesPage() {
 
         <div className="flex justify-between items-center mt-8">
           <Link href="/learning-path/module-4/introduction" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">Previous: Introduction</Link>
-          <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next: Operations</Link>
+          <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next: Operations <ArrowRight className="w-4 h-4 ml-2" /></Link>
         </div>
       </motion.div>
     </ModuleLayout>

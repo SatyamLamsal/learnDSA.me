@@ -167,7 +167,7 @@ export default function LinkedListProblemsPage() {
             </div>
           </div>
           <div className="flex justify-between items-center mt-8">
-            <Link href="/learning-path/module-4/pointers" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">Previous: Pointers</Link>
+            <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium">Previous: Operations</Link>
             <Link href="/learning-path/module-5" className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module</Link>
           </div>
         </motion.div>
