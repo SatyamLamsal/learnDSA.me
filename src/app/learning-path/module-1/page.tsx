@@ -69,9 +69,9 @@ export default function Module1Page() {
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <MemoryStick className="w-12 h-12 text-gray-700" />
+            <MemoryStick className="w-12 h-12 text-white" />
             <div>
-              <h1 className="text-4xl font-bold text-slate-800">Memory Systems & Efficiency</h1>
+              <h1 className="text-4xl font-bold text-white">Memory Systems & Efficiency</h1>
               <p className="text-indigo-100 text-lg">The foundation of data structure design</p>
             </div>
           </div>
@@ -140,14 +140,14 @@ export default function Module1Page() {
               <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-4 rounded-xl text-gray-700">
                 <div className="flex items-center justify-between text-gray-700">
                   <div className="flex items-center space-x-3 text-gray-700">
-                    <Cpu className="w-6 h-6 text-gray-700" />
+                    <Cpu className="w-6 h-6 text-white" />
                     <div>
-                      <h3 className="font-bold text-gray-800">CPU Registers</h3>
+                      <h3 className="font-bold text-white">CPU Registers</h3>
                       <p className="text-red-100 text-sm">Inside the processor</p>
                     </div>
                   </div>
                   <div className="text-right text-sm text-gray-600">
-                    <div className="font-mono text-gray-700">~1 cycle</div>
+                    <div className="font-mono text-white">~1 cycle</div>
                     <div className="text-red-100">64-1024 bytes</div>
                   </div>
                 </div>
@@ -438,7 +438,7 @@ export default function Module1Page() {
                   <div className="text-sm text-blue-800 space-y-1">
                     <p><strong>1,000 items:</strong> Usually 1 check</p>
                     <p><strong>1,000,000 items:</strong> Usually 1 check</p>
-                    <p className="font-mono bg-blue-100 px-2 py-1 rounded inline-block text-white">O(1) - Constant time</p>
+                    <p className="font-mono bg-blue-100 px-2 py-1 rounded inline-block text-blue">O(1) - Constant time</p>
                   </div>
                 </div>
               </div>
@@ -488,7 +488,7 @@ export default function Module1Page() {
           <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-xl text-gray-700">
             <div className="flex items-center justify-between text-gray-700">
               <div>
-                <div className="text-3xl font-bold text-gray-800">4</div>
+                <div className="text-3xl font-bold text-white">4</div>
                 <div className="text-green-100">Sections</div>
               </div>
               <Grid3X3 className="w-8 h-8 text-green-100" />
@@ -497,7 +497,7 @@ export default function Module1Page() {
           <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
             <div className="flex items-center justify-between text-gray-700">
               <div>
-                <div className="text-3xl font-bold text-gray-800">90</div>
+                <div className="text-3xl font-bold text-white">90</div>
                 <div className="text-blue-100">Minutes</div>
               </div>
               <Clock className="w-8 h-8 text-blue-100" />
@@ -506,7 +506,7 @@ export default function Module1Page() {
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl text-gray-700">
             <div className="flex items-center justify-between text-gray-700">
               <div>
-                <div className="text-xl font-bold text-gray-800">Beginner</div>
+                <div className="text-xl font-bold text-white">Beginner</div>
                 <div className="text-purple-100">Level</div>
               </div>
               <Award className="w-8 h-8 text-purple-100" />
@@ -557,7 +557,7 @@ export default function Module1Page() {
         
         {/* Next Module Navigation */}
         <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl text-white">
-          <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready to Explore Data Structures?</h2>
+          <h2 className="text-2xl font-bold mb-4 text-white">Ready to Explore Data Structures?</h2>
           <p className="text-indigo-100 mb-6">
             Now that you understand why data structures exist and how memory works, let&apos;s start building them! 
             We&apos;ll begin with Arrays - the foundation of most data structures.
