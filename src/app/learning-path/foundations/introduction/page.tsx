@@ -90,21 +90,21 @@ export default function FoundationsIntroductionPage() {
         className="mb-12 text-gray-700"
       >
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8 text-white">
-          <h2 className="text-3xl font-bold mb-6 text-center text-slate-800">What You&apos;ll Master in This Module</h2>
-          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+          <h2 className="text-3xl font-bold mb-6 text-center text-white">What You&apos;ll Master in This Module</h2>
+          <div className="grid md:grid-cols-3 gap-6 text-white">
             <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <Target className="w-12 h-12 mx-auto mb-4 text-gray-700" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Problem Solving</h3>
+              <Target className="w-12 h-12 mx-auto mb-4 text-white" />
+              <h3 className="text-lg font-semibold mb-2 text-white">Problem Solving</h3>
               <p className="text-blue-100">Learn systematic approaches to computational problems</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <BookOpen className="w-12 h-12 mx-auto mb-4 text-gray-700" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Core Concepts</h3>
+              <BookOpen className="w-12 h-12 mx-auto mb-4 text-white" />
+              <h3 className="text-lg font-semibold mb-2 text-white">Core Concepts</h3>
               <p className="text-blue-100">Understand fundamental building blocks of computer science</p>
             </div>
             <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <Users className="w-12 h-12 mx-auto mb-4 text-gray-700" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Best Practices</h3>
+              <Users className="w-12 h-12 mx-auto mb-4 text-white" />
+              <h3 className="text-lg font-semibold mb-2 text-white">Best Practices</h3>
               <p className="text-blue-100">Apply industry-standard approaches to software development</p>
             </div>
           </div>

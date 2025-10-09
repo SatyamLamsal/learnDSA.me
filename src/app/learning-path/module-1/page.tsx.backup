@@ -1,18 +1,11 @@
-﻿'use client';
+'use client';
 
 import { ModuleLayout } from '@/components/layouts/ModuleLayout';
 import { 
-  Cpu,
-  HardDrive,
   MemoryStick,
-  Zap,
-  Clock,
   Target,
   CheckCircle,
-  Award,
-  Grid3X3,
   ChevronRight,
-  Info,
   Layers,
   TrendingUp,
   Database,
@@ -65,14 +58,13 @@ export default function Module1Page() {
       difficulty="Beginner"
       totalSections={4}
     >
-      <div className="space-y-8 text-gray-700">
-        {/* Hero Section */}
-        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-2xl text-white">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <MemoryStick className="w-12 h-12 text-gray-700" />
+      <div className="space-y-8">
+        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-2xl">
+          <div className="flex items-center space-x-4 mb-4">
+            <MemoryStick className="w-12 h-12" />
             <div>
-              <h1 className="text-4xl font-bold text-slate-800">Memory Systems & Efficiency</h1>
-              <p className="text-indigo-100 text-lg">The foundation of data structure design</p>
+              <h1 className="text-4xl font-bold">Module 1: Memory & Efficiency</h1>
+              <p className="text-indigo-100 text-lg">Understand why data structures matter through memory systems</p>
             </div>
           </div>
           <p className="text-indigo-50">
@@ -80,22 +72,21 @@ export default function Module1Page() {
           </p>
         </div>
 
-        {/* Learning Objectives */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
+        <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You&apos;ll Understand
+            What You&apos;ll Master
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-800">Memory Hierarchy</h3>
                   <p className="text-gray-600 text-sm">CPU cache, RAM, SSD, HDD - how they work together</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 text-gray-700">
+              <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-800">Performance Impact</h3>
@@ -103,15 +94,15 @@ export default function Module1Page() {
                 </div>
               </div>
             </div>
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-800">Data Structure Purpose</h3>
                   <p className="text-gray-600 text-sm">Why arrays, lists, trees, and hash tables exist</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 text-gray-700">
+              <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-800">Efficiency Principles</h3>
@@ -121,15 +112,68 @@ export default function Module1Page() {
             </div>
           </div>
         </div>
-
-        {/* Memory Hierarchy Visualization */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-            <Layers className="w-7 h-7 mr-3 text-blue-600" />
-            Computer Memory Hierarchy
-          </h2>
-          
-          <div className="grid lg:grid-cols-2 gap-8 text-gray-700">
+        
+        {/* Next Module Navigation */}
+        <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold mb-4">Ready to Explore Data Structures?</h2>
+          <p className="text-indigo-100 mb-6">
+            Now that you understand why data structures exist and how memory works, let&apos;s start building them! 
+            We&apos;ll begin with Arrays - the foundation of most data structures.
+          </p>
+          <a 
+            href="/learning-path/module-2"
+            className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+          >
+            Continue to Module 2: Arrays & Fundamentals
+            <ChevronRight className="w-5 h-5 ml-2" />
+          </a>
+        </div>
+      </div>
+    </ModuleLayout>
+  );
+}
+                  <p className="text-gray-600 text-sm">Why some operations are 1000x faster than others</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Data Structure Purpose</h3>
+                  <p className="text-gray-600 text-sm">Why arrays, lists, trees, and hash tables exist</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800">Efficiency Principles</h3>
+                  <p className="text-gray-600 text-sm">Time vs space tradeoffs and optimization strategies</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Next Module Navigation */}
+        <div className="mt-12 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold mb-4">Ready to Explore Data Structures?</h2>
+          <p className="text-indigo-100 mb-6">
+            Now that you understand why data structures exist and how memory works, let&apos;s start building them! 
+            We&apos;ll begin with Arrays - the foundation of most data structures.
+          </p>
+          <a 
+            href="/learning-path/module-2"
+            className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+          >
+            Continue to Module 2: Arrays & Fundamentals
+            <ChevronRight className="w-5 h-5 ml-2" />
+          </a>
+        </div>
+      </div>
+    </ModuleLayout>
+  );
+}
             {/* Visual Hierarchy */}
             <div className="space-y-4 text-gray-700">
               <div className="text-center mb-6 text-gray-700">
@@ -563,10 +607,10 @@ export default function Module1Page() {
             We&apos;ll begin with Arrays - the foundation of most data structures.
           </p>
           <a 
-            href="/learning-path/module-3"
+            href="/learning-path/module-2"
             className="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
           >
-            Continue to Module 3: Arrays & Basic Operations
+            Continue to Module 2: Arrays & Fundamentals
             <ChevronRight className="w-5 h-5 ml-2 text-gray-700" />
           </a>
         </div>

@@ -15,6 +15,7 @@ interface ModuleLayoutProps {
     id: string;
     name: string;
     icon: React.ComponentType<any>;
+    href?: string; // Add href for navigation to different pages
   }>;
   activeSection?: string;
   onSectionChange?: (sectionId: string) => void;
@@ -92,29 +93,59 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
           </div>
 
           {/* Navigation Pills */}
-          <div className="space-y-2 mb-8 text-gray-700">
-            {sections.map((section, index) => (
-              <motion.button
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                onClick={() => scrollToSection(section.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center group ${
-                  resolvedActive === section.id
-                    ? 'bg-blue-600 text-white shadow-lg scale-105'
-                    : 'bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-700 hover:scale-102'
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <section.icon className="w-5 h-5 mr-3 flex-shrink-0 text-gray-700" />
-                <span className="text-sm leading-tight text-gray-600">{section.name}</span>
-                {resolvedActive === section.id && (
-                  <ChevronRight className="w-4 h-4 ml-auto text-gray-700" />
-                )}
-              </motion.button>
-            ))}
+          <div className="space-y-2 mb-8">
+            {sections.map((section, index) => {
+              const isActive = resolvedActive === section.id;
+              const buttonClasses = `w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center group ${
+                isActive
+                  ? 'bg-blue-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-700 hover:scale-102'
+              }`;
+
+              const ButtonContent = () => (
+                <>
+                  <section.icon className={`w-5 h-5 mr-3 flex-shrink-0 ${isActive ? 'text-white' : 'text-gray-600'}`} />
+                  <span className={`text-sm leading-tight ${isActive ? 'text-white' : 'text-gray-700'}`}>{section.name}</span>
+                  {isActive && (
+                    <ChevronRight className="w-4 h-4 ml-auto text-white" />
+                  )}
+                </>
+              );
+
+              // If section has href, render as Link, otherwise as button with scroll behavior
+              if (section.href) {
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                  >
+                    <Link 
+                      href={section.href}
+                      className={buttonClasses}
+                    >
+                      <ButtonContent />
+                    </Link>
+                  </motion.div>
+                );
+              }
+
+              return (
+                <motion.button
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  onClick={() => scrollToSection(section.id)}
+                  className={buttonClasses}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <ButtonContent />
+                </motion.button>
+              );
+            })}
           </div>
 
           {/* Progress Indicator */}

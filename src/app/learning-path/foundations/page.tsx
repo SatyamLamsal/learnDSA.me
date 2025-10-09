@@ -85,9 +85,9 @@ export default function FoundationsPage() {
       <div className="space-y-8 text-gray-700">
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl text-white">
           <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <Brain className="w-12 h-12 text-gray-700" />
+            <Brain className="w-12 h-12 text-white" />
             <div>
-              <h1 className="text-4xl font-bold text-slate-800">Foundations of DSA</h1>
+              <h1 className="text-4xl font-bold text-white">Foundations of DSA</h1>
               <p className="text-purple-100 text-lg">Build your algorithmic thinking foundation</p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function FoundationsPage() {
         
         {/* Next Module Navigation */}
         <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
-          <h2 className="text-2xl font-bold mb-4 text-slate-800">Ready for the Next Step?</h2>
+          <h2 className="text-2xl font-bold mb-4 text-white">Ready for the Next Step?</h2>
           <p className="text-blue-100 mb-6">
             Now that you understand the fundamentals, let&apos;s explore why data structures exist by diving into computer memory systems.
           </p>
