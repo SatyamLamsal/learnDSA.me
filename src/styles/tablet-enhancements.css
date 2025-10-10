@@ -1,0 +1,134 @@
+/* Tablet Navigation Enhancements for LearnDSA.me */
+/* Following patterns from Khan Academy, Coursera, and GitHub */
+
+/* Tablet-specific responsive improvements */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Ensure touch targets are at least 44px (Apple HIG recommendation) */
+  .tablet-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve spacing for tablet fingers */
+  .tablet-nav-spacing {
+    padding: 12px 16px;
+  }
+  
+  /* Optimize font sizes for tablet readability */
+  .tablet-text-optimize {
+    font-size: 16px; /* Minimum for iOS Safari zoom prevention */
+    line-height: 1.5;
+  }
+  
+  /* Improve dropdown positioning for tablets */
+  .tablet-dropdown {
+    transform: translateX(-50%);
+    left: 50%;
+  }
+  
+  /* Tablet-friendly hover states (for devices with hover capability) */ 
+  @media (hover: hover) {
+    .tablet-hover:hover {
+      background-color: rgba(148, 163, 184, 0.1);
+      transition: background-color 0.2s ease;
+    }
+  }
+  
+  /* Improve scrolling performance on tablets */
+  .tablet-scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar for tablet users */
+@media (min-width: 768px) {
+  .tablet-custom-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .tablet-custom-scroll::-webkit-scrollbar-track {
+    background: rgba(148, 163, 184, 0.1);
+    border-radius: 4px;
+  }
+  
+  .tablet-custom-scroll::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.4);
+    border-radius: 4px;
+  }
+  
+  .tablet-custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.6);
+  }
+}
+
+/* Focus improvements for keyboard navigation on tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-focus:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  
+  .tablet-focus:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+  }
+}
+
+/* Tablet-specific animations */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-slide-in {
+    animation: tabletSlideIn 0.3s ease-out;
+  }
+  
+  @keyframes tabletSlideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Utility classes for tablet-responsive design */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-hidden { display: none !important; }
+  .tablet-block { display: block !important; }
+  .tablet-flex { display: flex !important; }
+  .tablet-grid { display: grid !important; }
+  
+  .tablet-w-full { width: 100% !important; }
+  .tablet-w-auto { width: auto !important; }
+  
+  .tablet-p-2 { padding: 0.5rem !important; }
+  .tablet-p-4 { padding: 1rem !important; }
+  .tablet-p-6 { padding: 1.5rem !important; }
+  
+  .tablet-m-2 { margin: 0.5rem !important; }
+  .tablet-m-4 { margin: 1rem !important; }
+  
+  .tablet-text-sm { font-size: 0.875rem !important; }
+  .tablet-text-base { font-size: 1rem !important; }
+  .tablet-text-lg { font-size: 1.125rem !important; }
+}
+
+/* Performance optimizations for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-optimize {
+    /* Improve rendering performance */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    
+    /* Optimize font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Improve touch responsiveness */
+    touch-action: manipulation;
+  }
+}

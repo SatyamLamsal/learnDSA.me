@@ -23,7 +23,9 @@ import {
   Network,
   Database,
   MemoryStick,
-  Code2
+  Code2,
+  Menu,
+  X
 } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
@@ -100,6 +102,19 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
 }) => {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
   const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set());
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(true);
+
+  // Handle screen size changes
+  React.useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
   
   // Create course structure with current module marked - memoized to prevent re-creation
   const defaultCourseModules = useMemo((): CourseModule[] => [
@@ -266,13 +281,43 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
   const progressPercentage = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex relative">
+      {/* Tablet/Mobile Sidebar Toggle Button */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="fixed top-4 left-4 z-50 lg:hidden bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-2 shadow-lg hover:bg-white transition-colors"
+      >
+        {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+
+      {/* Mobile/Tablet Overlay */}
+      <AnimatePresence>
+        {isSidebarOpen && !isLargeScreen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsSidebarOpen(false)}
+            className="fixed inset-0 bg-black/50 z-40"
+          />
+        )}
+      </AnimatePresence>
+
       {/* Enhanced Left Sidebar Navigation */}
       <motion.div 
-        initial={{ x: -300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="w-96 bg-white/98 backdrop-blur-lg border-r border-gray-200 shadow-xl sticky top-0 h-screen overflow-y-auto"
+        initial={{ x: isLargeScreen ? -300 : -400, opacity: 0 }}
+        animate={{ 
+          x: isLargeScreen ? 0 : (isSidebarOpen ? 0 : -400), 
+          opacity: 1
+        }}
+        transition={{ duration: isLargeScreen ? 0.8 : 0.3 }}
+        className={`
+          bg-white/98 backdrop-blur-lg border-r border-gray-200 shadow-xl h-screen overflow-y-auto z-50
+          lg:w-96 lg:sticky lg:top-0
+          md:w-80 md:fixed md:top-0 md:left-0
+          sm:w-72 sm:fixed sm:top-0 sm:left-0
+          ${isLargeScreen ? 'relative' : 'fixed'}
+        `}
       >
         <div className="p-6">
           {/* Module Header */}
@@ -661,8 +706,8 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-x-hidden">
-        <div className="container mx-auto px-4 py-12">
+      <div className="flex-1 overflow-x-hidden lg:ml-0 md:ml-0 sm:ml-0">
+        <div className="container mx-auto px-4 py-12 lg:py-12 md:py-16 sm:py-16">
           {children}
         </div>
       </div>

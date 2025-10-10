@@ -68,7 +68,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
       <div className={`relative ${className}`} ref={dropdownRef}>
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className={`${className.includes('w-') ? className : 'w-10 h-10'} rounded-full overflow-hidden border-2 border-gray-200 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
         >
           {session.user.image ? (
             <Image
@@ -196,7 +196,7 @@ export function SignInButton({ className = '' }: { className?: string }) {
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        className="w-10 h-10 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center border-2 border-gray-300 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className={`${className.includes('w-') ? className : 'w-10 h-10'} rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center border-2 border-gray-300 hover:border-blue-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
       >
         <User className="h-6 w-6 text-white text-gray-700" />
       </button>
