@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link as LinkIcon, Database, Play, Target, Code, CheckCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { useState, useEffect } from 'react';
@@ -20,7 +20,7 @@ export default function LinkedListsIntroductionPage() {
   const activeSection = useScrollSpy(sections.map(s=>s.id), { rootMargin: '-40% 0px -40% 0px' });
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Dynamic nodes, flexible memory"
@@ -30,7 +30,8 @@ export default function LinkedListsIntroductionPage() {
       estimatedTime="12 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={sections.findIndex(s => s.id === activeSection)}
+      currentPath="/learning-path/module-4/introduction"
+      showFullCourseStructure={true}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -191,6 +192,6 @@ export default function LinkedListsIntroductionPage() {
           Next: Types <ArrowRight className="w-4 h-4 ml-2 text-gray-700" />
         </Link>
       </div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

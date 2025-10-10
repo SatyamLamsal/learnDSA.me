@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Layers, Eye, CheckCircle, Info, ArrowRight, BarChart3, Brain } from 'lucide-react';
 import { LinkedListDecisionFlowchart } from '@/components/interactive/LinkedListDecisionFlowchart';
 import { useState } from 'react';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import Link from 'next/link';
 import { QuizCard } from '@/components/interactive/QuizCard';
@@ -51,7 +51,7 @@ export default function LinkedListTypesPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Different list variants"
@@ -61,7 +61,8 @@ export default function LinkedListTypesPage() {
       estimatedTime="18 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={0}
+      currentPath="/learning-path/module-4/types"
+      showFullCourseStructure={true}
     >
       <motion.div
         id="types"
@@ -481,6 +482,6 @@ export default function LinkedListTypesPage() {
         </div>
         </div>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

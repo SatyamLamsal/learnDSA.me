@@ -1,5 +1,5 @@
 "use client";
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { motion } from 'framer-motion';
 import { Cpu, Shield, AlertTriangle, Share2, Wrench, ListChecks, ArrowRight, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ const sections = [
 
 export default function LinkedListAdvancedPage(){
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Advanced internals & engineering trade-offs"
@@ -26,7 +26,8 @@ export default function LinkedListAdvancedPage(){
       estimatedTime="20 minutes"
       difficulty="Advanced"
       totalSections={sections.length}
-      currentSectionIndex={0}
+      currentPath="/learning-path/module-4/advanced"
+      showFullCourseStructure={true}
     >
       <motion.div
         initial={{ opacity:0, y:20 }}
@@ -245,6 +246,6 @@ class List {
         <Link href="/learning-path/module-4/problems" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Problems</Link>
         <Link href="/learning-path/module-4" className="px-6 py-3 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-black">Back to Module Overview <ArrowRight className="w-4 h-4 ml-2" /></Link>
       </div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

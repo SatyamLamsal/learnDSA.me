@@ -5,7 +5,7 @@ import { Settings, BarChart3, ArrowRight, Play, Pause, RotateCcw, Eye, Code, Zap
 import { ImplementationGallery } from '@/components/interactive/ImplementationGallery';
 import { QuizCard } from '@/components/interactive/QuizCard';
 import { useState, useEffect } from 'react';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import Link from 'next/link';
 
@@ -206,7 +206,7 @@ export default function LinkedListOperationsPage() {
   };
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Core operations and performance"
@@ -216,7 +216,8 @@ export default function LinkedListOperationsPage() {
       estimatedTime="16 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={0}
+      currentPath="/learning-path/module-4/operations"
+      showFullCourseStructure={true}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -667,6 +668,6 @@ export default function LinkedListOperationsPage() {
             <Link href="/learning-path/module-4/problems" className="px-6 py-3 bg-orange-600 text-white rounded-lg text-sm font-medium hover:bg-orange-700 text-gray-300">Next: Problems <ArrowRight className="w-4 h-4 ml-2 text-gray-700" /></Link>
           </div>
         </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

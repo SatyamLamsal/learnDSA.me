@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Code, Clock, Database, CheckCircle, Play, Shuffle } from 'lucide-react';
 import { useState } from 'react';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import Link from 'next/link';
 
@@ -70,7 +70,7 @@ export default function LinkedListProblemsPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Problem solving & practice"
@@ -80,7 +80,8 @@ export default function LinkedListProblemsPage() {
       estimatedTime="18 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={0}
+      currentPath="/learning-path/module-4/problems"
+      showFullCourseStructure={true}
     >
       <motion.div
         id="problems"
@@ -246,6 +247,6 @@ export default function LinkedListProblemsPage() {
             <Link href="/learning-path/module-5" className="ml-auto px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module</Link>
           </div>
         </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

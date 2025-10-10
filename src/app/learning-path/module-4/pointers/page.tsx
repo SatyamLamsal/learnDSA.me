@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Target, Database, ArrowRight, Code, Eye, Zap } from 'lucide-react';
 import { useState } from 'react';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import Link from 'next/link';
 
@@ -50,7 +50,7 @@ export default function LinkedListPointersPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-4"
       moduleTitle="Module 4: Linked Lists"
       moduleDescription="Pointers & memory model"
@@ -60,7 +60,8 @@ export default function LinkedListPointersPage() {
       estimatedTime="15 minutes"
       difficulty="Intermediate"
       totalSections={sections.length}
-      currentSectionIndex={0}
+      currentPath="/learning-path/module-4/pointers"
+      showFullCourseStructure={true}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -353,6 +354,6 @@ printf("Value at ptr: %d", *ptr);
             <Link href="/learning-path/module-4/introduction" className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-medium hover:bg-purple-700 text-gray-300">Next: Introduction <ArrowRight className="w-4 h-4 ml-2 text-gray-700" /></Link>
           </div>
         </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

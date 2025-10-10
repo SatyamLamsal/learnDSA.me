@@ -164,6 +164,20 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       icon: Network,
       href: '/learning-path/module-3',
       isCurrentModule: moduleId === 'module-3'
+    },
+    {
+      id: 'module-4',
+      name: 'Linked Lists',
+      icon: Network,
+      href: '/learning-path/module-4',
+      isCurrentModule: moduleId === 'module-4',
+      sections: [
+        { id: 'pointers', name: 'Pointers & Memory', icon: MemoryStick, href: '/learning-path/module-4/pointers', description: 'Pointer fundamentals & memory', duration: '15 min' },
+        { id: 'introduction', name: 'Introduction', icon: BookOpen, href: '/learning-path/module-4/introduction', description: 'What and why linked lists', duration: '12 min' },
+        { id: 'types', name: 'Types of Linked Lists', icon: Layers, href: '/learning-path/module-4/types', description: 'Singly, doubly, circular', duration: '14 min' },
+        { id: 'operations', name: 'Core Operations', icon: Code2, href: '/learning-path/module-4/operations', description: 'Insert, delete, traverse', duration: '16 min' },
+        { id: 'problems', name: 'Problems & Practice', icon: Brain, href: '/learning-path/module-4/problems', description: 'Classic problems & practice', duration: '18 min' },
+      ]
     }
   ], [moduleId]);
 
