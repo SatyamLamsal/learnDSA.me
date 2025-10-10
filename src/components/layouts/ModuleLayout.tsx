@@ -41,13 +41,13 @@ export const ModuleLayout: React.FC<ModuleLayoutProps> = ({
   estimatedTime = '45 minutes',
   difficulty = 'Beginner',
   totalSections,
-  currentSectionIndex = 0,
+  currentSectionIndex: _currentSectionIndex = 0,
   enableScrollSpy = false,
 }) => {
   // Derive active section if scroll spy is enabled and caller did not explicitly control it
   const sectionIds = useMemo(() => sections.map(s => s.id), [sections]);
-  const spiedActive = enableScrollSpy && !activeSection ? useScrollSpy(sectionIds) : null;
-  const resolvedActive = activeSection || spiedActive || sections[0]?.id;
+  const spiedActive = useScrollSpy(enableScrollSpy && !activeSection ? sectionIds : []);
+  const resolvedActive = activeSection || (enableScrollSpy && !activeSection ? spiedActive : null) || sections[0]?.id;
   const scrollToSection = (sectionId: string) => {
     if (onSectionChange) onSectionChange(sectionId);
     const element = document.getElementById(sectionId);

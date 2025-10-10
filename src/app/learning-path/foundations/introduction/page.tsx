@@ -14,7 +14,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -29,10 +29,10 @@ export default function FoundationsIntroductionPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="foundations"
-      moduleTitle="Foundations"
-      moduleDescription="Jump to any section"
+      moduleTitle="Foundations of DSA"
+      moduleDescription="Build your algorithmic thinking foundation"
       sections={sections}
       activeSection={activeSection}
       onSectionChange={setActiveSection}
@@ -40,7 +40,8 @@ export default function FoundationsIntroductionPage() {
       estimatedTime="10-12 minutes"
       difficulty="Beginner"
       totalSections={5}
-      currentSectionIndex={0}
+      currentPath="/learning-path/foundations/introduction"
+      showFullCourseStructure={true}
     >
       {/* Header Section */}
       <motion.div
@@ -264,23 +265,23 @@ export default function FoundationsIntroductionPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
-        className="flex justify-between items-center mt-12 text-gray-700"
+        className="flex justify-between items-center mt-16 pt-8 border-t border-gray-200"
       >
         <Link
           href="/learning-path/foundations"
           className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-gray-700"
         >
-          <ArrowLeft className="w-5 h-5 mr-2 text-gray-700" />
+          <ArrowLeft className="w-5 h-5 mr-2" />
           Back to Overview
         </Link>
         <Link
           href="/learning-path/foundations/data-structures"
-          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold text-gray-100"
+          className="flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold"
         >
-          Next: Data Structures Deep Dive
-          <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
+          Next: Data Structures
+          <ChevronRight className="w-6 h-6 ml-2" />
         </Link>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

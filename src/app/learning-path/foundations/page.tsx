@@ -1,27 +1,68 @@
 'use client';
 
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { StandardModulePage } from '@/components/layouts/StandardModulePage';
+import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   BookOpen,
   Database,
   Code,
   BarChart3,
   Brain,
-  Clock,
-  Target,
-  CheckCircle,
-  Award,
-  Grid3X3,
   ArrowRight
 } from 'lucide-react';
 
 export default function FoundationsPage() {
-  const sections = [
-    { id: 'introduction', name: 'Introduction', icon: BookOpen },
-    { id: 'data-structures', name: 'Data Structures', icon: Database },
-    { id: 'algorithms', name: 'Algorithms', icon: Code },
-    { id: 'complexity', name: 'Complexity Analysis', icon: BarChart3 },
-    { id: 'adt', name: 'Abstract Data Types', icon: Brain }
+  const sections: EnhancedSection[] = [
+    { 
+      id: 'introduction', 
+      name: 'Introduction to DSA', 
+      icon: BookOpen,
+      href: '/learning-path/foundations/introduction',
+      description: 'Why are data structures and algorithms important?',
+      duration: '10 min',
+      difficulty: 'Beginner',
+      type: 'lesson'
+    },
+    { 
+      id: 'data-structures', 
+      name: 'Data Structures', 
+      icon: Database,
+      href: '/learning-path/foundations/data-structures',
+      description: 'How data is organized and stored in computer memory',
+      duration: '15 min',
+      difficulty: 'Beginner',
+      type: 'lesson'
+    },
+    { 
+      id: 'algorithms', 
+      name: 'Algorithms', 
+      icon: Code,
+      href: '/learning-path/foundations/algorithms',
+      description: 'Step-by-step procedures for solving problems',
+      duration: '20 min',
+      difficulty: 'Beginner',
+      type: 'lesson'
+    },
+    { 
+      id: 'complexity', 
+      name: 'Complexity Analysis', 
+      icon: BarChart3,
+      href: '/learning-path/foundations/complexity',
+      description: 'Time and space complexity, Big O notation',
+      duration: '25 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    { 
+      id: 'adt', 
+      name: 'Abstract Data Types', 
+      icon: Brain,
+      href: '/learning-path/foundations/adt',
+      description: 'Mathematical models for data types',
+      duration: '20 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    }
   ];
 
   const sectionDetails = [
@@ -73,28 +114,19 @@ export default function FoundationsPage() {
   ];
 
   return (
-    <ModuleLayout
+    <StandardModulePage
       moduleId="foundations"
       moduleTitle="Foundations of DSA"
-      moduleDescription="Build a strong foundation in data structures and algorithms"
+      moduleDescription="Build your algorithmic thinking foundation"
+      moduleIcon={Brain}
       sections={sections}
       estimatedTime="90 minutes"
       difficulty="Beginner"
-      totalSections={5}
+      nextModuleUrl="/learning-path/module-1"
+      nextModuleTitle="Memory & Efficiency"
     >
       <div className="space-y-8 text-gray-700">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-2xl text-white">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <Brain className="w-12 h-12 text-white" />
-            <div>
-              <h1 className="text-4xl font-bold text-white">Foundations of DSA</h1>
-              <p className="text-purple-100 text-lg">Build your algorithmic thinking foundation</p>
-            </div>
-          </div>
-          <p className="text-purple-50">
-            Master the fundamental concepts that underpin all computer science and programming.
-          </p>
-        </div>
+       
 
         <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -148,6 +180,6 @@ export default function FoundationsPage() {
           </a>
         </div>
       </div>
-    </ModuleLayout>
+    </StandardModulePage>
   );
 }

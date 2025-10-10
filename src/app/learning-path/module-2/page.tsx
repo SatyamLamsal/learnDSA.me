@@ -1,6 +1,7 @@
 'use client';
 
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { StandardModulePage } from '@/components/layouts/StandardModulePage';
+import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   Database,
   MemoryStick,
@@ -16,26 +17,46 @@ import {
 } from 'lucide-react';
 
 export default function Module2Page() {
-  const sections = [
+  const sections: EnhancedSection[] = [
     {
       id: 'guide',
       name: 'Comprehensive Guide',
-      icon: BookOpen
+      icon: BookOpen,
+      href: '/learning-path/module-2/guide',
+      description: 'Complete introduction to arrays and their fundamentals',
+      duration: '15 min',
+      difficulty: 'Beginner',
+      type: 'lesson'
     },
     {
       id: 'memory',
       name: 'Memory Layout',
-      icon: MemoryStick
+      icon: MemoryStick,
+      href: '/learning-path/module-2/memory',
+      description: 'How arrays are stored in memory',
+      duration: '20 min',
+      difficulty: 'Beginner',
+      type: 'lesson'
     },
     {
       id: 'operations',
       name: 'Basic Operations',
-      icon: Code2
+      icon: Code2,
+      href: '/learning-path/module-2/operations',
+      description: 'Insertion, deletion, and access operations',
+      duration: '25 min',
+      difficulty: 'Intermediate',
+      type: 'practice'
     },
     {
       id: 'algorithms',
       name: 'Array Algorithms',
-      icon: Brain
+      icon: Brain,
+      href: '/learning-path/module-2/algorithms',
+      description: 'Common algorithms for array manipulation',
+      duration: '30 min',
+      difficulty: 'Intermediate',
+      type: 'practice'
     }
   ];
 
@@ -86,14 +107,18 @@ export default function Module2Page() {
   };
 
   return (
-    <ModuleLayout
+    <StandardModulePage
       moduleId="module-2"
-      moduleTitle="Module 2: Arrays Deep Dive"
-      moduleDescription="Advanced array concepts and optimization techniques"
+      moduleTitle="Module 2: Arrays & Analysis"
+      moduleDescription="Master the foundation of all data structures"
+      moduleIcon={Grid3X3}
       sections={sections}
       estimatedTime="90 minutes"
-      difficulty="Beginner"
-      totalSections={4}
+      difficulty="Intermediate"
+      prevModuleUrl="/learning-path/module-1"
+      prevModuleTitle="Memory & Efficiency"
+      nextModuleUrl="/learning-path/module-3"
+      nextModuleTitle="Advanced Structures"
     >
       <div className="space-y-8 text-gray-700">
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
@@ -233,6 +258,6 @@ export default function Module2Page() {
           </div>
         </div>
       </div>
-    </ModuleLayout>
+    </StandardModulePage>
   );
 }

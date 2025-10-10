@@ -1,41 +1,63 @@
 ﻿'use client';
 
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { StandardModulePage } from '@/components/layouts/StandardModulePage';
+import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   Database,
   MemoryStick,
   Code2,
   Brain,
   BookOpen,
-  Clock,
+  Network,
+  Grid3X3,
   Target,
   CheckCircle,
   ArrowRight,
-  Grid3X3,
+  Clock,
   Award
 } from 'lucide-react';
 
 export default function Module3Page() {
-  const sections = [
+  const sections: EnhancedSection[] = [
     {
       id: 'guide',
-      name: 'Comprehensive Guide',
-      icon: BookOpen
+      name: 'Advanced Guide',
+      icon: BookOpen,
+      href: '/learning-path/module-3/guide',
+      description: 'Advanced data structures and techniques',
+      duration: '25 min',
+      difficulty: 'Advanced',
+      type: 'lesson'
     },
     {
       id: 'memory',
-      name: 'Memory Layout',
-      icon: MemoryStick
+      name: 'Memory Optimization',
+      icon: MemoryStick,
+      href: '/learning-path/module-3/memory',
+      description: 'Advanced memory management techniques',
+      duration: '30 min',
+      difficulty: 'Advanced',
+      type: 'lesson'
     },
     {
       id: 'operations',
-      name: 'Basic Operations',
-      icon: Code2
+      name: 'Complex Operations',
+      icon: Code2,
+      href: '/learning-path/module-3/operations',
+      description: 'Advanced algorithmic operations',
+      duration: '35 min',
+      difficulty: 'Advanced',
+      type: 'practice'
     },
     {
       id: 'algorithms',
-      name: 'Array Algorithms',
-      icon: Brain
+      name: 'Advanced Algorithms',
+      icon: Brain,
+      href: '/learning-path/module-3/algorithms',
+      description: 'Complex algorithms and optimizations',
+      duration: '40 min',
+      difficulty: 'Advanced',
+      type: 'practice'
     }
   ];
 
@@ -86,14 +108,16 @@ export default function Module3Page() {
   };
 
   return (
-    <ModuleLayout
+    <StandardModulePage
       moduleId="module-3"
-      moduleTitle="Module 3: Advanced Arrays & Patterns"
-      moduleDescription="Advanced array concepts, optimization techniques, and algorithmic patterns"
+      moduleTitle="Module 3: Advanced Structures"
+      moduleDescription="Master advanced data structures and optimization techniques"
+      moduleIcon={Network}
       sections={sections}
       estimatedTime="120 minutes"
-      difficulty="Intermediate"
-      totalSections={4}
+      difficulty="Advanced"
+      prevModuleUrl="/learning-path/module-2"
+      prevModuleTitle="Arrays & Analysis"
     >
       <div className="space-y-8 text-gray-700">
         
@@ -249,6 +273,6 @@ export default function Module3Page() {
           </div>
         </div>
       </div>
-    </ModuleLayout>
+    </StandardModulePage>
   );
 }

@@ -1,6 +1,7 @@
 ﻿'use client';
 
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { StandardModulePage } from '@/components/layouts/StandardModulePage';
+import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   Cpu,
   HardDrive,
@@ -16,18 +17,51 @@ import {
   Layers,
   TrendingUp,
   Database,
-  Gauge
+  Gauge,
+  FileText,
+  Code,
+  PlayCircle,
+  Brain
 } from 'lucide-react';
 
 export default function Module1Page() {
-  const sections = [
+  const sections: EnhancedSection[] = [
     { 
       id: 'memory-hierarchy', 
       name: 'Memory Hierarchy', 
       icon: Layers,
       href: '/learning-path/module-1/memory-hierarchy',
       description: 'Explore CPU cache, RAM, SSD, and HDD speed differences',
-      duration: '25 min'
+      duration: '25 min',
+      type: 'lesson' as const,
+      difficulty: 'Beginner' as const,
+      isCompleted: false,
+      subsections: [
+        {
+          id: 'memory-theory',
+          name: 'Memory Systems Theory',
+          href: '/learning-path/module-1/memory-hierarchy/theory',
+          duration: '12 min',
+          type: 'theory' as const,
+          isCompleted: false
+        },
+        {
+          id: 'memory-simulation',
+          name: 'Interactive Memory Demo',
+          href: '/learning-path/module-1/memory-hierarchy/simulation',
+          duration: '8 min',
+          type: 'simulation' as const,
+          isCompleted: false
+        },
+        {
+          id: 'memory-practice',
+          name: 'Memory Analysis Exercise',
+          href: '/learning-path/module-1/memory-hierarchy/practice',
+          duration: '5 min',
+          type: 'practice' as const,
+          isCompleted: false
+        }
+      ]
     },
     { 
       id: 'performance', 
@@ -35,7 +69,28 @@ export default function Module1Page() {
       icon: Gauge,
       href: '/learning-path/module-1/performance', 
       description: 'See how memory access patterns affect performance',
-      duration: '20 min'
+      duration: '20 min',
+      type: 'lesson' as const,
+      difficulty: 'Beginner' as const,
+      isCompleted: false,
+      subsections: [
+        {
+          id: 'performance-theory',
+          name: 'Access Pattern Theory',
+          href: '/learning-path/module-1/performance/theory',
+          duration: '10 min',
+          type: 'theory' as const,
+          isCompleted: false
+        },
+        {
+          id: 'performance-simulation',
+          name: 'Performance Benchmarks',
+          href: '/learning-path/module-1/performance/simulation',
+          duration: '10 min',
+          type: 'simulation' as const,
+          isCompleted: false
+        }
+      ]
     },
     { 
       id: 'data-structures', 
@@ -43,7 +98,28 @@ export default function Module1Page() {
       icon: Database,
       href: '/learning-path/module-1/data-structures',
       description: 'Understand the purpose behind different data structures', 
-      duration: '25 min'
+      duration: '25 min',
+      type: 'lesson' as const,
+      difficulty: 'Intermediate' as const,
+      isCompleted: false,
+      subsections: [
+        {
+          id: 'ds-introduction',
+          name: 'Data Structure Fundamentals',
+          href: '/learning-path/module-1/data-structures/introduction',
+          duration: '15 min',
+          type: 'theory' as const,
+          isCompleted: false
+        },
+        {
+          id: 'ds-comparison',
+          name: 'Structure Comparison Tool',
+          href: '/learning-path/module-1/data-structures/comparison',
+          duration: '10 min',
+          type: 'simulation' as const,
+          isCompleted: false
+        }
+      ]
     },
     { 
       id: 'efficiency', 
@@ -51,19 +127,44 @@ export default function Module1Page() {
       icon: TrendingUp,
       href: '/learning-path/module-1/efficiency',
       description: 'Learn time vs space tradeoffs and optimization strategies',
-      duration: '20 min'
+      duration: '20 min',
+      type: 'lesson' as const,
+      difficulty: 'Intermediate' as const,
+      isCompleted: false,
+      subsections: [
+        {
+          id: 'efficiency-theory',
+          name: 'Big O Notation Basics',
+          href: '/learning-path/module-1/efficiency/theory',
+          duration: '12 min',
+          type: 'theory' as const,
+          isCompleted: false
+        },
+        {
+          id: 'efficiency-practice',
+          name: 'Complexity Analysis Practice',
+          href: '/learning-path/module-1/efficiency/practice',
+          duration: '8 min',
+          type: 'practice' as const,
+          isCompleted: false
+        }
+      ]
     }
   ];
 
   return (
-    <ModuleLayout
+    <StandardModulePage
       moduleId="module-1"
       moduleTitle="Module 1: Memory & Efficiency"
       moduleDescription="Understand why data structures matter through memory systems"
+      moduleIcon={Zap}
       sections={sections}
       estimatedTime="90 minutes"
       difficulty="Beginner"
-      totalSections={4}
+      prevModuleUrl="/learning-path/foundations"
+      prevModuleTitle="Foundations of DSA"
+      nextModuleUrl="/learning-path/module-2"
+      nextModuleTitle="Arrays & Analysis"
     >
       <div className="space-y-8 text-gray-700">
         {/* Hero Section */}
@@ -571,6 +672,6 @@ export default function Module1Page() {
           </a>
         </div>
       </div>
-    </ModuleLayout>
+    </StandardModulePage>
   );
 }

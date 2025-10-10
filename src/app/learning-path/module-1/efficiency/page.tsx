@@ -173,8 +173,8 @@ export default function EfficiencyPrinciplesPage() {
               <p><strong>Tradeoff:</strong> Save work that might not be needed</p>
               <p><strong>Example:</strong> Generators, lazy loading</p>
               <div className="mt-3 p-2 bg-green-100 rounded text-xs font-mono">
-                // Only compute when accessed<br/>
-                getValue() {`{ return compute() }`}
+                {`// Only compute when accessed
+getValue() { return compute() }`}
               </div>
             </div>
           </div>
