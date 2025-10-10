@@ -72,7 +72,7 @@ const learningPath: LearningPath = {
     },
     {
       id: "arrays",
-      title: "Module 2: Arrays & Fundamentals",
+      title: "Module 2: Arrays & More Memory Stuffs",
       description: "Master arrays with comprehensive understanding of memory layout, operations, and algorithms.",
       duration: "1-2 weeks", 
       lessons: 15,
