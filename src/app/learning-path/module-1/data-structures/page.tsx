@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { 
   ArrowLeft,
   Database,
@@ -19,7 +22,9 @@ import {
   CheckCircle,
   TrendingUp,
   Activity,
-  Target
+  Target,
+  ChevronRight,
+  Layers
 } from 'lucide-react';
 
 export default function DataStructuresPage() {
@@ -217,8 +222,25 @@ export default function DataStructuresPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 text-gray-700">
-      <div className="container mx-auto px-4 py-8 text-gray-700">
+    <EnhancedModuleLayout
+      moduleId="module-1"
+      moduleTitle="Module 1: Memory & Efficiency"
+      moduleDescription="Understand why data structures matter through memory systems"
+      sections={[
+        { id: 'memory-hierarchy', name: 'Memory Hierarchy', icon: Layers, href: '/learning-path/module-1/memory-hierarchy' },
+        { id: 'performance', name: 'Performance Impact', icon: Gauge, href: '/learning-path/module-1/performance' },
+        { id: 'data-structures', name: 'Data Structures Overview', icon: Database, href: '/learning-path/module-1/data-structures' },
+        { id: 'efficiency', name: 'Efficiency Principles', icon: Target, href: '/learning-path/module-1/efficiency' }
+      ]}
+      activeSection="data-structures"
+      backUrl="/learning-path/module-1"
+      estimatedTime="30 minutes"
+      difficulty="Beginner"
+      totalSections={4}
+      currentPath="/learning-path/module-1/data-structures"
+      showFullCourseStructure={true}
+      enableScrollSpy={true}
+    >
         {/* Header */}
         <div className="mb-8 text-gray-700">
           <Link 
@@ -533,7 +555,29 @@ export default function DataStructuresPage() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
+        {/* Navigation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="flex justify-between items-center mt-12"
+        >
+          <Link
+            href="/learning-path/module-1/memory-hierarchy"
+            className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Previous: Memory Hierarchy
+          </Link>
+          <Link
+            href="/learning-path/module-1/performance"
+            className="flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+          >
+            Next: Performance Impact
+            <ChevronRight className="w-5 h-5 ml-2" />
+          </Link>
+        </motion.div>
+    </EnhancedModuleLayout>
   );
 }

@@ -14,7 +14,7 @@ import {
   Target
 } from 'lucide-react';
 import Link from 'next/link';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
@@ -28,17 +28,19 @@ export default function PerformanceImpactPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="module-1"
       moduleTitle="Module 1: Memory & Efficiency"
-      moduleDescription="Jump to any section"
+      moduleDescription="Understand why data structures matter through memory systems"
       sections={sections}
       activeSection={activeSection}
       onSectionChange={setActiveSection}
       backUrl="/learning-path/module-1"
       estimatedTime="20 minutes"
       difficulty="Beginner"
-      totalSections={3}
+      totalSections={4}
+      currentPath="/learning-path/module-1/performance"
+      showFullCourseStructure={true}
       enableScrollSpy={true}
     >
       {/* Header Section */}
@@ -268,20 +270,20 @@ export default function PerformanceImpactPage() {
         className="flex justify-between items-center mt-12"
       >
         <Link
-          href="/learning-path/module-1/memory-hierarchy"
+          href="/learning-path/module-1/data-structures"
           className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
-          Previous: Memory Hierarchy
+          Previous: Data Structures Overview
         </Link>
         <Link
-          href="/learning-path/module-1/data-structures"
+          href="/learning-path/module-1/efficiency"
           className="flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
         >
-          Next: Why Data Structures?
+          Next: Efficiency Principles
           <ChevronRight className="w-5 h-5 ml-2" />
         </Link>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

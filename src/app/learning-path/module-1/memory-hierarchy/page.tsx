@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
+import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { 
   ArrowLeft,
   Cpu,
@@ -20,6 +23,7 @@ import {
 
 export default function MemoryHierarchyPage() {
   const [activeLevel, setActiveLevel] = useState(0);
+  const [isAutoCycling, setIsAutoCycling] = useState(true);
 
   const memoryLevels = [
     {
@@ -231,38 +235,70 @@ export default function MemoryHierarchyPage() {
   ];
 
   useEffect(() => {
+    if (!isAutoCycling) return;
+    
     const interval = setInterval(() => {
       setActiveLevel((prev) => (prev + 1) % memoryLevels.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [memoryLevels.length]);
+  }, [memoryLevels.length, isAutoCycling]);
+
+  const sections = [
+    { id: 'hierarchy', name: 'Memory Levels', icon: Layers },
+    { id: 'tradeoffs', name: 'Speed vs Capacity', icon: Gauge },
+    { id: 'impact', name: 'Performance Impact', icon: Zap },
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
-      <div className="container mx-auto px-4 py-8 text-gray-700">
+    <EnhancedModuleLayout
+      moduleId="module-1"
+      moduleTitle="Module 1: Memory & Efficiency"
+      moduleDescription="Understand why data structures matter through memory systems"
+      sections={sections}
+      estimatedTime="25 minutes"
+      difficulty="Beginner"
+      totalSections={4}
+      currentPath="/learning-path/module-1/memory-hierarchy"
+      showFullCourseStructure={true}
+    >
+      <div className="space-y-8 text-gray-700">
         {/* Header */}
-        <div className="mb-8 text-gray-700">
-          <Link 
-            href="/learning-path/module-1" 
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 text-gray-700" />
-            Back to Module 1
-          </Link>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12 relative"
+        >
+          <div className="absolute top-0 right-0 flex items-center space-x-4">
+            <ProgressIndicator 
+              topicId="module-1-memory-hierarchy" 
+              topicType="module"
+              category="learning-path"
+            />
+            <BookmarkButton 
+              topicId="module-1-memory-hierarchy"
+              topicType="module"
+              title="Memory Hierarchy"
+              category="learning-path"
+              url="/learning-path/module-1/memory-hierarchy"
+            />
+          </div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8 text-gray-700"
-          >
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Computer Memory Hierarchy
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Understanding the speed-capacity tradeoff that shapes how we design data structures
-            </p>
-          </motion.div>
-        </div>
+          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <Layers className="w-5 h-5 mr-2" />
+            Memory Hierarchy & Performance
+          </div>
+          
+          <h1 className="text-6xl font-bold text-gray-900 mb-8">
+            Computer Memory
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Hierarchy
+            </span>
+          </h1>
+          
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Understanding the speed-capacity tradeoff that shapes how we design data structures and optimize algorithm performance.
+          </p>
+        </motion.div>
 
         {/* Interactive Memory Pyramid */}
         <div className="bg-white rounded-2xl p-8 shadow-lg border mb-8 text-gray-700">
@@ -293,7 +329,10 @@ export default function MemoryHierarchyPage() {
                       marginLeft: `${index * 12}px`,
                       marginRight: `${index * 12}px`
                     }}
-                    onClick={() => setActiveLevel(index)}
+                    onClick={() => {
+                      setActiveLevel(index);
+                      setIsAutoCycling(false);
+                    }}
                   >
                     <div className="flex items-center justify-between text-gray-700">
                       <div className="flex items-center space-x-3 text-gray-700">
@@ -515,6 +554,29 @@ export default function MemoryHierarchyPage() {
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Navigation */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="flex justify-between items-center mt-12"
+      >
+        <Link
+          href="/learning-path/module-1"
+          className="flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5 mr-2" />
+          Back to Module 1
+        </Link>
+        <Link
+          href="/learning-path/module-1/data-structures"
+          className="flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+        >
+          Next: Data Structures Overview
+          <ChevronRight className="w-5 h-5 ml-2" />
+        </Link>
+      </motion.div>
+    </EnhancedModuleLayout>
   );
 }

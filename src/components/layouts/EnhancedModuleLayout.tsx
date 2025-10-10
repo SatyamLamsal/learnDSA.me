@@ -20,7 +20,8 @@ import {
   Layers,
   Target,
   Grid3X3,
-  Network
+  Network,
+  Database
 } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
@@ -121,9 +122,10 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       href: '/learning-path/module-1',
       isCurrentModule: moduleId === 'module-1',
       sections: [
-        { id: 'memory-hierarchy', name: 'Memory Hierarchy', icon: Layers, href: '/learning-path/module-1/memory-hierarchy', description: 'Cache levels and access patterns', duration: '15 min' },
-        { id: 'performance', name: 'Performance Impact', icon: Clock, href: '/learning-path/module-1/performance', description: 'Why data structures matter', duration: '12 min' },
-        { id: 'efficiency', name: 'Efficiency Principles', icon: Target, href: '/learning-path/module-1/efficiency', description: 'Optimal solutions', duration: '18 min' },
+        { id: 'memory-hierarchy', name: 'Memory Hierarchy', icon: Layers, href: '/learning-path/module-1/memory-hierarchy', description: 'Cache levels and access patterns', duration: '25 min' },
+        { id: 'data-structures', name: 'Data Structures Overview', icon: Database, href: '/learning-path/module-1/data-structures', description: 'Why different structures exist', duration: '30 min' },
+        { id: 'performance', name: 'Performance Impact', icon: Clock, href: '/learning-path/module-1/performance', description: 'How structures affect speed', duration: '20 min' },
+        { id: 'efficiency', name: 'Efficiency Principles', icon: Target, href: '/learning-path/module-1/efficiency', description: 'Optimization fundamentals', duration: '18 min' },
       ]
     },
     {
