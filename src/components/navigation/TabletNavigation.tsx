@@ -359,13 +359,13 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-slate-800 border-t border-slate-700 shadow-xl z-50"
+            className="md:hidden fixed left-0 right-0 top-[72px] bg-slate-800 border-t border-slate-700 shadow-xl z-50 min-h-[200px]"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside menu
           >
-            <div className="p-4 space-y-3">
+            <div className="p-4 space-y-3 w-full">
               <Link 
                 href="/" 
-                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
+                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 w-full"
                 onClick={closeMobileMenu}
               >
                 <Home size={20} />
@@ -374,7 +374,7 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
               
               <Link 
                 href="/learning-path" 
-                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
+                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 w-full"
                 onClick={closeMobileMenu}
               >
                 <Map size={20} />
@@ -469,7 +469,7 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
               
               <Link 
                 href="/bookmarks" 
-                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
+                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 w-full"
                 onClick={closeMobileMenu}
               >
                 <Bookmark size={20} />

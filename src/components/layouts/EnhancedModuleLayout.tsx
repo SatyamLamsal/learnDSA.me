@@ -285,7 +285,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       {/* Tablet/Mobile Sidebar Toggle Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-2 shadow-lg hover:bg-white transition-colors"
+        className="fixed top-20 left-4 z-50 lg:hidden bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-2 shadow-lg hover:bg-white transition-colors"
       >
         {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
