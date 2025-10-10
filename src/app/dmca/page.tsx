@@ -32,13 +32,31 @@ export default function DMCAPage() {
           </div>
 
           <div className="prose max-w-none text-gray-700">
+            <div className="border-b pb-6 mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed">
+                <strong>Effective Date:</strong> October 10, 2025<br />
+                <strong>Last Updated:</strong> October 10, 2025
+              </p>
+              <p className="text-gray-600 mt-4">
+                LearnDSA.me is operated by a group of computer engineering students committed 
+                to providing quality educational content while respecting intellectual property rights.
+              </p>
+            </div>
+
             <h3>Our Commitment to Copyright</h3>
-            <p>
+            <p className="mb-4">
               LearnDSA.me respects the intellectual property rights of others and expects 
               our users to do the same. We comply with the Digital Millennium Copyright 
               Act (DMCA) and will respond promptly to clear notices of alleged copyright 
               infringement.
             </p>
+            <div className="bg-blue-50 p-4 rounded-lg border mb-6">
+              <p className="text-blue-700">
+                <strong>Educational Mission:</strong> As students ourselves, we understand the importance 
+                of both respecting copyright and promoting educational access. We strive to balance 
+                these interests through fair use and proper attribution practices.
+              </p>
+            </div>
 
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-6 text-gray-700">
               <div className="flex items-center mb-3 text-gray-700">
@@ -71,14 +89,14 @@ export default function DMCAPage() {
                 <Mail className="w-5 h-5 text-blue-600 mr-2" />
                 <h4 className="text-lg font-semibold text-blue-800">DMCA Agent Contact</h4>
               </div>
-              <p className="text-blue-700 mb-2">
+              <p className="text-blue-700 mb-4">
                 Send your DMCA notice to our designated agent:
               </p>
-              <div className="text-blue-700">
-                <strong>Email:</strong>{' '}
-                <a href="mailto:dmca@learndsa.me" className="underline text-blue-600">
-                  dmca@learndsa.me
-                </a>
+              <div className="text-blue-700 space-y-2">
+                <div><strong>Email:</strong> <a href="mailto:lamsalsatyam@gmail.com" className="underline text-blue-600">lamsalsatyam@gmail.com</a></div>
+                <div><strong>Subject Line:</strong> "DMCA Takedown Notice - LearnDSA.me"</div>
+                <div><strong>Physical Address:</strong> Pepsi Planning, Kathmandu 44600, Nepal</div>
+                <div><strong>Response Time:</strong> We aim to respond within 48 hours</div>
               </div>
             </div>
 
@@ -132,19 +150,35 @@ export default function DMCAPage() {
               </p>
             </div>
 
-            <h3>Contact Information</h3>
-            <p>
-              For questions about this DMCA policy or copyright concerns:
+            <h3>Our Content Creation Process</h3>
+            <p className="mb-4">
+              As computer engineering students, we follow strict guidelines for content creation:
             </p>
-            <ul>
-              <li><strong>General inquiries:</strong> hello@learndsa.me</li>
-              <li><strong>DMCA notices:</strong> dmca@learndsa.me</li>
+            <ul className="list-disc ml-6 text-gray-700 space-y-2 mb-6">
+              <li><strong>Original Development:</strong> All interactive visualizations and educational tools are developed by our team</li>
+              <li><strong>Academic Sources:</strong> Algorithm explanations are based on standard computer science textbooks and academic papers</li>
+              <li><strong>Fair Use Assessment:</strong> Any third-party content is evaluated for educational fair use compliance</li>
+              <li><strong>Attribution Practice:</strong> We provide proper citations and references where applicable</li>
+              <li><strong>Peer Review:</strong> Content is reviewed by our student team for accuracy and originality</li>
             </ul>
 
-            <p>
+            <h3>Contact Information</h3>
+            <p className="mb-4">
+              For questions about this DMCA policy or copyright concerns:
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg border space-y-2">
+              <div><strong>DMCA Agent:</strong> <a href="mailto:lamsalsatyam@gmail.com" className="text-blue-600 hover:underline">lamsalsatyam@gmail.com</a></div>
+              <div><strong>General Inquiries:</strong> <a href="mailto:lamsalsatyam@gmail.com" className="text-blue-600 hover:underline">lamsalsatyam@gmail.com</a></div>
+              <div><strong>Legal Matters:</strong> <a href="mailto:lamsalsatyam@gmail.com" className="text-blue-600 hover:underline">lamsalsatyam@gmail.com</a></div>
+              <div><strong>Physical Address:</strong> Pepsi Planning, Kathmandu 44600, Nepal</div>
+              <div><strong>Business Hours:</strong> We respond within 48 hours for DMCA notices</div>
+            </div>
+
+            <p className="mt-6 text-gray-600">
               <strong>Note:</strong> This policy applies only to claims of copyright 
               infringement. For other legal matters, please contact us through our 
-              general contact information.
+              general contact information. As a student-operated educational platform, 
+              we appreciate your patience and understanding in our response times.
             </p>
           </div>
         </div>

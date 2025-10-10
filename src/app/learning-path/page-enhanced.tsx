@@ -158,7 +158,7 @@ export default function LearningPathPage() {
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200 p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                 <Award className="w-6 h-6 mr-2 text-green-600" />
-                What You'll Achieve
+                What You&apos;ll Achieve
               </h3>
               <div className="space-y-3 text-sm text-gray-700">
                 <div className="flex items-center">

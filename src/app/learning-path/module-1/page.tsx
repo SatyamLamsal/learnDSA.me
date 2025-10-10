@@ -105,7 +105,7 @@ export default function Module1Page() {
 
       {/* Key Concepts Overview */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">What You&apos;ll Learn</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
