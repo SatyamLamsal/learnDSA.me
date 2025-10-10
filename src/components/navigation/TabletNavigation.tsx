@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { 
   Home, 
   Map, 
@@ -26,6 +27,39 @@ interface TabletNavigationProps {
 export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className }) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [pathname]);
+
+  // Close mobile menu when clicking outside or pressing Escape
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isMobileMenuOpen]);
 
   // Based on research from Khan Academy, Coursera, and GitHub
   const dataStructures = [
@@ -52,6 +86,11 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
   };
 
   const closeDropdowns = () => {
+    setActiveDropdown(null);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
     setActiveDropdown(null);
   };
 
@@ -297,21 +336,37 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
         <SignInButton className="w-8 h-8" />
       </div>
 
+      {/* Mobile Menu Backdrop */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-0 bg-black/50 z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
             className="md:hidden absolute top-full left-0 right-0 bg-slate-800 border-t border-slate-700 shadow-xl z-50"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside menu
           >
             <div className="p-4 space-y-3">
               <Link 
                 href="/" 
                 className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 <Home size={20} />
                 <span>Home</span>
@@ -320,34 +375,102 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
               <Link 
                 href="/learning-path" 
                 className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 <Map size={20} />
                 <span>Learning Path</span>
               </Link>
               
-              <Link 
-                href="/data-structures" 
-                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Database size={20} />
-                <span>Data Structures</span>
-              </Link>
+              {/* Data Structures with expandable submenu */}
+              <div className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <Link 
+                    href="/data-structures" 
+                    className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 flex-1"
+                    onClick={closeMobileMenu}
+                  >
+                    <Database size={20} />
+                    <span>Data Structures</span>
+                  </Link>
+                  <button
+                    onClick={() => toggleDropdown('mobile-ds')}
+                    className="p-2 text-gray-100 hover:text-blue-400 transition-colors"
+                  >
+                    <ChevronDown size={16} className={`transition-transform ${activeDropdown === 'mobile-ds' ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+                
+                <AnimatePresence>
+                  {activeDropdown === 'mobile-ds' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pl-6 space-y-1"
+                    >
+                      {dataStructures.map((ds) => (
+                        <Link
+                          key={ds.path}
+                          href={ds.path}
+                          className="block text-gray-300 hover:text-blue-400 transition-colors p-2 rounded text-sm"
+                          onClick={closeMobileMenu}
+                        >
+                          {ds.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               
-              <Link 
-                href="/algorithms" 
-                className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Code size={20} />
-                <span>Algorithms</span>
-              </Link>
+              {/* Algorithms with expandable submenu */}
+              <div className="space-y-1">
+                <div className="flex items-center justify-between">
+                  <Link 
+                    href="/algorithms" 
+                    className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 flex-1"
+                    onClick={closeMobileMenu}
+                  >
+                    <Code size={20} />
+                    <span>Algorithms</span>
+                  </Link>
+                  <button
+                    onClick={() => toggleDropdown('mobile-alg')}
+                    className="p-2 text-gray-100 hover:text-blue-400 transition-colors"
+                  >
+                    <ChevronDown size={16} className={`transition-transform ${activeDropdown === 'mobile-alg' ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
+                
+                <AnimatePresence>
+                  {activeDropdown === 'mobile-alg' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pl-6 space-y-1"
+                    >
+                      {algorithms.map((alg) => (
+                        <Link
+                          key={alg.path}
+                          href={alg.path}
+                          className="block text-gray-300 hover:text-blue-400 transition-colors p-2 rounded text-sm"
+                          onClick={closeMobileMenu}
+                        >
+                          {alg.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               
               <Link 
                 href="/bookmarks" 
                 className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 <Bookmark size={20} />
                 <span>Bookmarks</span>
