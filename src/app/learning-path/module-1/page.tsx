@@ -67,7 +67,7 @@ export default function Module1Page() {
       prevModuleUrl="/learning-path/foundations"
       prevModuleTitle="Foundations of DSA"
       nextModuleUrl="/learning-path/module-2"
-      nextModuleTitle="Arrays & Analysis"
+      nextModuleTitle="Arrays & Memory Fundamentals"
     >
       {/* Module Overview */}
       <div className="bg-white p-8 rounded-2xl shadow-lg border">

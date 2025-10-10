@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   ArrowLeft, 
   ChevronRight, 
@@ -16,7 +17,10 @@ import {
   AlertTriangle,
   Clock,
   Code2,
-  Zap
+  Zap,
+  BookOpen,
+  MemoryStick,
+  Brain
 } from 'lucide-react';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
@@ -346,24 +350,25 @@ END
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-white">
-        <div className="max-w-4xl mx-auto text-gray-700">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <Link href="/learning-path/module-2" className="text-white hover:text-blue-200">
-              <ArrowLeft className="w-6 h-6 text-gray-700" />
-            </Link>
-            <div>
-              <h1 className="text-4xl font-bold mb-2 text-slate-800">Array Operations</h1>
-              <p className="text-blue-100">Master insertion, deletion, searching, and traversal with interactive examples</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12 text-gray-700">
+    <EnhancedModuleLayout
+      moduleId="module-2"
+      moduleTitle="Module 2: Arrays & Memory Fundamentals"
+      moduleDescription="Master array structures and memory optimization techniques"
+      sections={[
+        { id: 'fundamentals', name: 'Array Fundamentals', icon: BookOpen, href: '/learning-path/module-2/fundamentals' },
+        { id: 'memory', name: 'Memory Layout', icon: MemoryStick, href: '/learning-path/module-2/memory' },
+        { id: 'operations', name: 'Basic Operations', icon: Code2, href: '/learning-path/module-2/operations' },
+        { id: 'algorithms', name: 'Array Algorithms', icon: Brain, href: '/learning-path/module-2/algorithms' }
+      ]}
+      activeSection="operations"
+      backUrl="/learning-path/module-2"
+      estimatedTime="25 minutes"
+      difficulty="Intermediate"
+      totalSections={4}
+      currentPath="/learning-path/module-2/operations"
+      showFullCourseStructure={true}
+      enableScrollSpy={true}
+    >
         {/* Interactive Demo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -550,7 +555,6 @@ void traverse(int arr[], int size) {
             <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
           </Link>
         </motion.div>
-      </div>
-    </div>
+    </EnhancedModuleLayout>
   );
 }

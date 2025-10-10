@@ -117,7 +117,7 @@ export default function Module3Page() {
       estimatedTime="120 minutes"
       difficulty="Advanced"
       prevModuleUrl="/learning-path/module-2"
-      prevModuleTitle="Arrays & Analysis"
+      prevModuleTitle="Arrays & Memory Fundamentals"
     >
       <div className="space-y-8 text-gray-700">
         

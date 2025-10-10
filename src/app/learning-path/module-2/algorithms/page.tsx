@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { 
   ArrowLeft, 
   ChevronRight, 
@@ -16,7 +17,10 @@ import {
   Play,
   Pause,
   SkipForward,
-  RefreshCw
+  RefreshCw,
+  BookOpen,
+  MemoryStick,
+  Code2
 } from 'lucide-react';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
@@ -416,7 +420,25 @@ END`
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-white">
+    <EnhancedModuleLayout
+      moduleId="module-2"
+      moduleTitle="Module 2: Arrays & Memory Fundamentals"
+      moduleDescription="Master array structures and memory optimization techniques"
+      sections={[
+        { id: 'fundamentals', name: 'Array Fundamentals', icon: BookOpen, href: '/learning-path/module-2/fundamentals' },
+        { id: 'memory', name: 'Memory Layout', icon: MemoryStick, href: '/learning-path/module-2/memory' },
+        { id: 'operations', name: 'Basic Operations', icon: Code2, href: '/learning-path/module-2/operations' },
+        { id: 'algorithms', name: 'Array Algorithms', icon: Brain, href: '/learning-path/module-2/algorithms' }
+      ]}
+      activeSection="algorithms"
+      backUrl="/learning-path/module-2"
+      estimatedTime="30 minutes"
+      difficulty="Intermediate"
+      totalSections={4}
+      currentPath="/learning-path/module-2/algorithms"
+      showFullCourseStructure={true}
+      enableScrollSpy={true}
+    >
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12 px-8 text-white">
         <div className="max-w-4xl mx-auto text-gray-700">
@@ -644,6 +666,7 @@ void reverse(vector<int>::iterator start,
             </div>
           </div>
         </motion.div>
+      </div>
 
         {/* Navigation */}
         <motion.div
@@ -670,7 +693,6 @@ void reverse(vector<int>::iterator start,
             </div>
           </div>
         </motion.div>
-      </div>
-    </div>
+    </EnhancedModuleLayout>
   );
 }

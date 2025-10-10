@@ -19,12 +19,12 @@ import {
 export default function Module2Page() {
   const sections: EnhancedSection[] = [
     {
-      id: 'guide',
-      name: 'Comprehensive Guide',
+      id: 'fundamentals',
+      name: 'Array Fundamentals',
       icon: BookOpen,
-      href: '/learning-path/module-2/guide',
-      description: 'Complete introduction to arrays and their fundamentals',
-      duration: '15 min',
+      href: '/learning-path/module-2/fundamentals',
+      description: 'Theory, definitions, types, and core concepts of arrays',
+      duration: '20 min',
       difficulty: 'Beginner',
       type: 'lesson'
     },
@@ -62,13 +62,13 @@ export default function Module2Page() {
 
   const sectionDetails = [
     {
-      id: 'guide',
-      title: 'Comprehensive Guide',
-      description: 'Complete introduction to arrays and their fundamentals',
+      id: 'fundamentals',
+      title: 'Array Fundamentals',
+      description: 'Theory, definitions, types, and core concepts of arrays',
       icon: BookOpen,
-      href: '/learning-path/module-2/guide',
+      href: '/learning-path/module-2/fundamentals',
       difficulty: 'Beginner' as const,
-      timeEstimate: '15 min'
+      timeEstimate: '20 min'
     },
     {
       id: 'memory',
@@ -109,8 +109,8 @@ export default function Module2Page() {
   return (
     <StandardModulePage
       moduleId="module-2"
-      moduleTitle="Module 2: Arrays & Analysis"
-      moduleDescription="Master the foundation of all data structures"
+      moduleTitle="Module 2: Arrays & Memory Fundamentals"
+      moduleDescription="Master array structures and memory optimization techniques"
       moduleIcon={Grid3X3}
       sections={sections}
       estimatedTime="90 minutes"
@@ -121,22 +121,7 @@ export default function Module2Page() {
       nextModuleTitle="Advanced Structures"
     >
       <div className="space-y-8 text-gray-700">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <Database className="w-12 h-12 text-gray-700" />
-            <div>
-              <h1 className="text-4xl font-bold text-slate-800">Module 2: Arrays</h1>
-              <p className="text-blue-100 text-lg">Master the foundation of all data structures</p>
-            </div>
-          </div>
-          <p className="text-blue-50">
-            Arrays are the cornerstone of computer science and programming. In this comprehensive module, 
-            you&apos;ll master everything from basic array operations to advanced algorithmic patterns like 
-            two-pointer technique and sliding window.
-          </p>
-        </div>
-
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
+         <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <Target className="w-7 h-7 mr-3 text-green-600" />
             What You&apos;ll Master
@@ -228,35 +213,7 @@ export default function Module2Page() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 text-gray-700">
-          <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">{moduleStats.totalSections}</div>
-                <div className="text-green-100">Sections</div>
-              </div>
-              <Grid3X3 className="w-8 h-8 text-green-100" />
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">90</div>
-                <div className="text-blue-100">Minutes</div>
-              </div>
-              <Clock className="w-8 h-8 text-blue-100" />
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-2xl font-bold text-gray-800">Beginner</div>
-                <div className="text-purple-100">Level</div>
-              </div>
-              <Award className="w-8 h-8 text-purple-100" />
-            </div>
-          </div>
-        </div>
+   
       </div>
     </StandardModulePage>
   );

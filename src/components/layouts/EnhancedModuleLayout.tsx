@@ -21,7 +21,9 @@ import {
   Target,
   Grid3X3,
   Network,
-  Database
+  Database,
+  MemoryStick,
+  Code2
 } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
@@ -130,10 +132,16 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
     },
     {
       id: 'module-2',
-      name: 'Arrays & Analysis',
+      name: 'Arrays & Memory Fundamentals',
       icon: Grid3X3,
       href: '/learning-path/module-2',
-      isCurrentModule: moduleId === 'module-2'
+      isCurrentModule: moduleId === 'module-2',
+      sections: [
+        { id: 'fundamentals', name: 'Array Fundamentals', icon: BookOpen, href: '/learning-path/module-2/fundamentals', description: 'Theory, types, and definitions', duration: '20 min' },
+        { id: 'memory', name: 'Memory Layout', icon: MemoryStick, href: '/learning-path/module-2/memory', description: 'How arrays are stored in memory', duration: '20 min' },
+        { id: 'operations', name: 'Basic Operations', icon: Code2, href: '/learning-path/module-2/operations', description: 'Array insertion, deletion, access', duration: '25 min' },
+        { id: 'algorithms', name: 'Array Algorithms', icon: Brain, href: '/learning-path/module-2/algorithms', description: 'Advanced array techniques', duration: '30 min' },
+      ]
     },
     {
       id: 'module-3',
