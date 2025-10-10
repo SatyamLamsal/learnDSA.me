@@ -16,7 +16,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -82,10 +82,10 @@ export default function FoundationsAlgorithmsPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="foundations"
-      moduleTitle="Foundations"
-      moduleDescription="Jump to any section"
+      moduleTitle="Foundations of DSA"
+      moduleDescription="Build your algorithmic thinking foundation"
       sections={sections}
       activeSection={activeSection}
       onSectionChange={setActiveSection}
@@ -93,7 +93,8 @@ export default function FoundationsAlgorithmsPage() {
       estimatedTime="20-25 minutes"
       difficulty="Intermediate"
       totalSections={5}
-      currentSectionIndex={2}
+      currentPath="/learning-path/foundations/algorithms"
+      showFullCourseStructure={true}
     >
       {/* Header Section */}
       <motion.div
@@ -281,6 +282,6 @@ export default function FoundationsAlgorithmsPage() {
           <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
         </Link>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

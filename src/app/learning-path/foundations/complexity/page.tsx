@@ -15,7 +15,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -113,18 +113,19 @@ export default function FoundationsComplexityPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="foundations"
-      moduleTitle="Foundations"
-      moduleDescription="Jump to any section"
+      moduleTitle="Foundations of DSA"
+      moduleDescription="Build your algorithmic thinking foundation"
       sections={sections}
       activeSection={activeSection}
       onSectionChange={setActiveSection}
       backUrl="/learning-path/foundations"
       estimatedTime="25-30 minutes"
       difficulty="Intermediate"
+      currentPath="/learning-path/foundations/complexity"
+      showFullCourseStructure={true}
       totalSections={5}
-      currentSectionIndex={3}
     >
       {/* Header Section */}
       <motion.div
@@ -544,6 +545,6 @@ export default function FoundationsComplexityPage() {
           <ChevronRight className="w-6 h-6 ml-2 text-gray-700" />
         </Link>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

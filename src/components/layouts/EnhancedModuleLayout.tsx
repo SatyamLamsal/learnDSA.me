@@ -98,8 +98,8 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
   const [expandedModules, setExpandedModules] = useState<Set<string>>(new Set());
   
-  // Default course structure if not provided
-  const defaultCourseModules: CourseModule[] = [
+  // Create course structure with current module marked - memoized to prevent re-creation
+  const defaultCourseModules = useMemo((): CourseModule[] => [
     {
       id: 'foundations',
       name: 'Foundations of DSA',
@@ -140,36 +140,37 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       href: '/learning-path/module-3',
       isCurrentModule: moduleId === 'module-3'
     }
-  ];
+  ], [moduleId]);
 
   // Memoize course modules to prevent infinite re-renders
   const finalCourseModules = useMemo(() => {
     return courseModules.length > 0 ? courseModules : defaultCourseModules;
   }, [courseModules, moduleId]);
   
-  // Initialize expanded sections based on current path
+  // Initialize expanded sections based on current path - Only run once or when currentPath changes
   React.useEffect(() => {
-    if (currentPath) {
-      const expandedSecs = new Set<string>();
-      const expandedMods = new Set<string>();
-      
-      sections.forEach(section => {
-        if (section.subsections?.some(sub => currentPath.includes(sub.href))) {
-          expandedSecs.add(section.id);
-        }
-      });
-      
-      // Auto-expand current module and related modules
-      finalCourseModules.forEach(module => {
-        if (module.isCurrentModule || currentPath.includes(module.href)) {
-          expandedMods.add(module.id);
-        }
-      });
-      
-      setExpandedSections(expandedSecs);
-      setExpandedModules(expandedMods);
-    }
-  }, [currentPath, sections, finalCourseModules]);
+    if (!currentPath) return;
+    
+    const expandedSecs = new Set<string>();
+    const expandedMods = new Set<string>();
+    
+    // Check sections for subsections
+    sections.forEach(section => {
+      if (section.subsections?.some(sub => currentPath.includes(sub.href))) {
+        expandedSecs.add(section.id);
+      }
+    });
+    
+    // Auto-expand current module and related modules
+    defaultCourseModules.forEach(module => {
+      if (moduleId === module.id || currentPath.includes(module.href)) {
+        expandedMods.add(module.id);
+      }
+    });
+    
+    setExpandedSections(expandedSecs);
+    setExpandedModules(expandedMods);
+  }, [currentPath, moduleId]); // Remove sections and finalCourseModules from dependencies
 
   // Derive active section if scroll spy is enabled
   const sectionIds = useMemo(() => sections.map(s => s.id), [sections]);

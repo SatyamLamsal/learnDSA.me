@@ -12,7 +12,7 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { EnhancedModuleLayout } from '@/components/layouts/EnhancedModuleLayout';
 import { ProgressIndicator } from '@/components/progress/ProgressIndicator';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 import { SectionProgressIndicator } from '@/components/progress/SectionProgressIndicator';
@@ -48,18 +48,19 @@ export default function FoundationsADTPage() {
   ];
 
   return (
-    <ModuleLayout
+    <EnhancedModuleLayout
       moduleId="foundations"
-      moduleTitle="Foundations"
-      moduleDescription="Jump to any section"
+      moduleTitle="Foundations of DSA"
+      moduleDescription="Build your algorithmic thinking foundation"
       sections={sections}
       activeSection={activeSection}
       onSectionChange={setActiveSection}
       backUrl="/learning-path/foundations"
       estimatedTime="15-18 minutes"
       difficulty="Intermediate"
+      currentPath="/learning-path/foundations/adt"
+      showFullCourseStructure={true}
       totalSections={5}
-      currentSectionIndex={4}
     >
       {/* Header Section */}
       <motion.div
@@ -272,6 +273,6 @@ index_type == integer`}
           </div>
         </div>
       </motion.div>
-    </ModuleLayout>
+    </EnhancedModuleLayout>
   );
 }

@@ -83,30 +83,36 @@ export default function FoundationsIntroductionPage() {
         </p>
       </motion.div>
 
-      {/* What You&apos;ll Master - Only in Introduction */}
+      {/* Learning Objectives - Simple and Clean */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.8 }}
-        className="mb-12 text-gray-700"
+        className="mb-12"
       >
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 text-white mb-8 text-white">
-          <h2 className="text-3xl font-bold mb-6 text-center text-white">What You&apos;ll Master in This Module</h2>
-          <div className="grid md:grid-cols-3 gap-6 text-white">
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <Target className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-lg font-semibold mb-2 text-white">Problem Solving</h3>
-              <p className="text-blue-100">Learn systematic approaches to computational problems</p>
+        <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Learning Objectives</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="flex items-start space-x-3">
+              <Target className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <h3 className="text-sm font-medium text-gray-900">Problem Solving</h3>
+                <p className="text-sm text-gray-600">Systematic approaches to computational problems</p>
+              </div>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <BookOpen className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-lg font-semibold mb-2 text-white">Core Concepts</h3>
-              <p className="text-blue-100">Understand fundamental building blocks of computer science</p>
+            <div className="flex items-start space-x-3">
+              <BookOpen className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <h3 className="text-sm font-medium text-gray-900">Core Concepts</h3>
+                <p className="text-sm text-gray-600">Fundamental building blocks of computer science</p>
+              </div>
             </div>
-            <div className="text-center p-6 bg-white/10 rounded-xl backdrop-blur-sm text-gray-700">
-              <Users className="w-12 h-12 mx-auto mb-4 text-white" />
-              <h3 className="text-lg font-semibold mb-2 text-white">Best Practices</h3>
-              <p className="text-blue-100">Apply industry-standard approaches to software development</p>
+            <div className="flex items-start space-x-3">
+              <Users className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+              <div>
+                <h3 className="text-sm font-medium text-gray-900">Best Practices</h3>
+                <p className="text-sm text-gray-600">Industry-standard development approaches</p>
+              </div>
             </div>
           </div>
         </div>
