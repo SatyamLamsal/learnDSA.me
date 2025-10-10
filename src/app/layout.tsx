@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://learndsa.me' : 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://learndsa.app' : 'http://localhost:3000'),
   title: "Learn DSA - Master Data Structures & Algorithms with Interactive Learning",
   description: "Master Data Structures and Algorithms with comprehensive theory, dynamic visualizations, and hands-on simulations. Free interactive learning platform for students and professionals.",
   keywords: "data structures, algorithms, DSA, programming, computer science, coding, visualizations, simulations, learning, tutorial, interactive",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Learn DSA - Master Data Structures & Algorithms",
     description: "Interactive platform to master DSA with theory, visualizations, and simulations",
-    url: "https://learndsa.me",
+    url: "https://learndsa.app",
     siteName: "Learn DSA",
     images: [
       {
@@ -97,6 +97,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Script+MT+Bold&display=swap" rel="stylesheet" />
+        
+        {/* Canonical URL - will be dynamically updated per page */}
+        <link rel="canonical" href={process.env.NODE_ENV === 'production' ? 'https://learndsa.app' : 'http://localhost:3000'} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
