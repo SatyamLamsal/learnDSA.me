@@ -83,49 +83,6 @@ export default function Module4Overview() {
     >
       {/* Overview content retained from previous implementation */}
       <div className="space-y-12 text-gray-700">
-        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-8 rounded-2xl">
-          <div className="flex items-center space-x-4 mb-6">
-            <LinkIcon className="w-12 h-12" />
-            <div>
-              <h1 className="text-4xl font-bold">Module 4: Linked Lists</h1>
-              <p className="text-emerald-100 text-lg">Master dynamic node-based structures</p>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <p className="text-emerald-50 mb-4 leading-relaxed">
-                Linked lists are fundamental dynamic data structures where elements (nodes) are connected through pointers.
-                Unlike arrays, they don't require contiguous memory and can grow/shrink during runtime.
-              </p>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <h3 className="font-semibold text-emerald-100 mb-2">What you'll master</h3>
-                <ul className="text-emerald-50 text-sm space-y-1">
-                  <li>• Pointer fundamentals & memory management</li>
-                  <li>• Dynamic node creation & linking</li>
-                  <li>• Singly, doubly, and circular variations</li>
-                  <li>• Efficient insertion/deletion operations</li>
-                  <li>• Classic algorithms like cycle detection</li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="font-semibold text-emerald-100 mb-4 flex items-center">Real-World Applications</h3>
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                {[
-                  {title:'Browser History',desc:'Back/Forward navigation'},
-                  {title:'Music Playlists',desc:'Next/Previous songs'},
-                  {title:'Undo/Redo',desc:'Command history'},
-                  {title:'Memory Pools',desc:'Dynamic allocation'}
-                ].map((app,i)=>(
-                  <div key={i} className="group relative p-3 rounded-md bg-white/15 hover:bg-white/25 transition border border-white/10">
-                    <div className="font-medium text-emerald-50 group-hover:text-white text-sm">{app.title}</div>
-                    <div className="text-[11px] text-emerald-200 group-hover:text-emerald-100">{app.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Quick links list */}
         <div className="bg-white p-8 rounded-2xl shadow-lg border">
