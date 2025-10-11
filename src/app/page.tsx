@@ -325,8 +325,14 @@ export default function Home() {
                     Pick up where you left off
                   </p>
                   <Link 
-                    href="/learning-path"
+                    href={session ? "/learning-path" : "/auth/signin?callbackUrl=/learning-path"}
                     className="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/30 transition-all duration-300 text-gray-600"
+                    onClick={(e) => {
+                      if (!session) {
+                        e.preventDefault();
+                        window.location.href = '/auth/signin?callbackUrl=/learning-path';
+                      }
+                    }}
                   >
                     Resume Path
                     <ChevronRight className="w-4 h-4 ml-1 text-gray-700" />
@@ -1016,8 +1022,14 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto text-gray-700">
                 <Link 
-                  href="/learning-path" 
+                  href={session ? "/learning-path" : "/auth/signin?callbackUrl=/learning-path"}
                   className="flex-1 bg-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 inline-flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-black"
+                  onClick={(e) => {
+                    if (!session) {
+                      e.preventDefault();
+                      window.location.href = '/auth/signin?callbackUrl=/learning-path';
+                    }
+                  }}
                 >
                   <Map className="w-5 h-5 mr-2 text-black" />
                   Learning Path

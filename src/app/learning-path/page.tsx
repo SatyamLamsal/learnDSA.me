@@ -72,25 +72,25 @@ const learningPath: LearningPath = {
     },
     {
       id: "arrays",
-      title: "Module 2: Arrays & More Memory Stuffs",
-      description: "Master arrays with comprehensive understanding of memory layout, operations, and algorithms.",
+      title: "Module 2: Arrays & Memory Fundamentals",
+      description: "Master basic array concepts, memory layout, and fundamental operations - the foundation of data structures.",
       duration: "1-2 weeks", 
-      lessons: 15,
+      lessons: 12,
       difficulty: "Beginner",
       completed: false,
       prerequisites: ["memory-efficiency"],
-      topics: ["Array Guide", "Memory Layout", "Basic Operations", "Array Algorithms", "Two Pointer Technique", "Sliding Window"]
+      topics: ["Array Basics", "Memory Layout", "Basic Operations", "Simple Array Algorithms", "Array Traversal", "Basic Indexing"]
     },
     {
-      id: "searching-sorting",
-      title: "Module 3: Advanced Arrays & Patterns",
-      description: "Build upon array fundamentals with advanced techniques and common algorithm patterns.",
-      duration: "2 weeks",
-      lessons: 18,
-      difficulty: "Intermediate",
+      id: "stacks-queues",
+      title: "Module 3: Stacks & Queues",
+      description: "Master LIFO and FIFO data structures with practical applications and advanced implementations.",
+      duration: "1-2 weeks",
+      lessons: 16,
+      difficulty: "Intermediate", 
       completed: false,
       prerequisites: ["arrays"],
-      topics: ["Advanced Array Guide", "Memory Patterns", "Complex Operations", "Advanced Algorithms", "Pattern Recognition", "Optimization Techniques"]
+      topics: ["Stacks (LIFO)", "Queues (FIFO)", "Stack Applications", "Queue Applications", "Priority Queues", "Expression Evaluation", "Stack-based Algorithms", "Queue Implementations"]
     },
     {
       id: "linked-lists",
@@ -100,74 +100,74 @@ const learningPath: LearningPath = {
       lessons: 14,
       difficulty: "Intermediate",
       completed: false,
-      prerequisites: ["searching-sorting"],
+      prerequisites: ["stacks-queues"],
       topics: ["Pointers & Memory", "Introduction to Linked Lists", "Types of Linked Lists", "Core Operations", "Problems & Practice"]
     },
     {
-      id: "stacks-queues",
-      title: "Module 5: Stacks & Queues",
-      description: "Master LIFO and FIFO data structures with practical applications and advanced implementations.",
-      duration: "1-2 weeks",
-      lessons: 16,
-      difficulty: "Intermediate", 
+      id: "trees",
+      title: "Module 5: Trees & Hierarchical Structures",
+      description: "Master hierarchical data structures from binary trees to advanced tree algorithms with interactive visualizations.",
+      duration: "2-3 weeks",
+      lessons: 24,
+      difficulty: "Intermediate",
       completed: false,
       prerequisites: ["linked-lists"],
-      topics: ["Stacks (LIFO)", "Queues (FIFO)", "Applications", "Advanced Topics", "Priority Queues", "Expression Evaluation"]
+      topics: ["Tree Fundamentals", "Binary Trees", "Binary Search Trees", "Tree Traversals", "Heap Operations", "Tree Applications", "Balanced Trees", "Tree Problems"]
     },
     {
-      id: "trees",
-      title: "Module 6: Trees & Hierarchical Structures",
-      description: "Explore hierarchical data structures, tree algorithms, and binary tree operations.",
+      id: "graphs",
+      title: "Module 6: Graph Theory & Algorithms",
+      description: "Explore graph structures and algorithms - the foundation of networks, social systems, and pathfinding.",
+      duration: "2-3 weeks",
+      lessons: 26,
+      difficulty: "Advanced",
+      completed: false,
+      prerequisites: ["trees"],
+      topics: ["Graph Representations", "Graph Traversal (DFS/BFS)", "Shortest Path Algorithms", "Minimum Spanning Trees", "Topological Sorting", "Strongly Connected Components", "Graph Applications", "Advanced Graph Algorithms"]
+    },
+    {
+      id: "hash-tables",
+      title: "Module 7: Hash Tables & Hashing",
+      description: "Master hash tables, hash functions, collision resolution, and efficient key-value storage systems.",
+      duration: "2 weeks",
+      lessons: 18,
+      difficulty: "Advanced", 
+      completed: false,
+      prerequisites: ["graphs"],
+      topics: ["Hash Functions", "Collision Resolution", "Hash Table Implementation", "Load Factor & Rehashing", "Applications", "Consistent Hashing", "Hash Maps vs Hash Sets", "Real-world Use Cases"]
+    },
+    {
+      id: "dynamic-programming",
+      title: "Module 8: Dynamic Programming",
+      description: "Master optimization techniques through memoization and tabulation to solve complex recursive problems efficiently.",
       duration: "2-3 weeks",
       lessons: 22,
       difficulty: "Advanced",
       completed: false,
-      prerequisites: ["stacks-queues"],
-      topics: ["Tree Basics", "Binary Trees", "Tree Traversal", "Applications", "BST Operations", "Advanced Tree Algorithms"]
+      prerequisites: ["hash-tables"],
+      topics: ["DP Fundamentals", "Memoization vs Tabulation", "1D DP Problems", "2D DP Problems", "Knapsack Variants", "Longest Common Subsequence", "Matrix Chain Multiplication", "DP on Trees", "Advanced DP Patterns"]
     },
     {
-      id: "hash-tables",
-      title: "Module 7: Hash Tables & Advanced Structures",
-      description: "Master hash tables, collision resolution, and explore advanced data structures.",
-      duration: "2-3 weeks",
-      lessons: 16,
-      difficulty: "Advanced",
-      completed: false,
-      prerequisites: ["trees"],
-      topics: ["Hash Tables", "Collision Resolution", "Applications", "Advanced Topics", "Hash Maps", "Consistent Hashing"]
-    },
-    {
-      id: "graphs",
-      title: "Graphs & Graph Algorithms",
-      description: "Master graph algorithms - the backbone of modern networking, AI, and optimization problems. From Dijkstra&apos;s to advanced flow algorithms.",
-      duration: "2-3 weeks",
-      lessons: 25,
-      difficulty: "Advanced",
-      completed: false,
-      prerequisites: ["trees"],
-      topics: ["Graph Representations", "DFS/BFS", "Shortest Paths", "MST", "Topological Sort", "Strongly Connected Components"]
-    },
-    {
-      id: "dynamic-programming",
-      title: "Dynamic Programming",
-      description: "Learn optimization techniques and solve complex recursive problems.",
-      duration: "2-3 weeks",
+      id: "sorting-searching",
+      title: "Module 9: Sorting & Searching Algorithms",
+      description: "Master fundamental algorithms for organizing and finding data with complexity analysis and optimizations.",
+      duration: "2 weeks",
       lessons: 20,
-      difficulty: "Advanced",
-      completed: false,
-      prerequisites: ["graphs"],
-      topics: ["Memoization", "Tabulation", "Knapsack Problems", "LCS/LIS", "Matrix Chain", "DP on Trees"]
-    },
-    {
-      id: "advanced-topics",
-      title: "Advanced Algorithms & Techniques",
-      description: "Explore advanced algorithmic techniques and competitive programming concepts.",
-      duration: "2-3 weeks",
-      lessons: 18,
-      difficulty: "Advanced",
+      difficulty: "Intermediate",
       completed: false,
       prerequisites: ["dynamic-programming"],
-      topics: ["Greedy Algorithms", "Divide & Conquer", "Backtracking", "Bit Manipulation", "String Algorithms", "Advanced Data Structures"]
+      topics: ["Comparison-based Sorts", "Non-comparison Sorts", "Sorting Analysis", "Binary Search Variants", "Search Optimizations", "External Sorting", "Sorting Applications", "Search Algorithms"]
+    },
+    {
+      id: "advanced-algorithms",
+      title: "Module 10: Advanced Algorithmic Techniques",
+      description: "Explore advanced problem-solving paradigms including greedy algorithms, divide & conquer, and backtracking.",
+      duration: "2-3 weeks",
+      lessons: 24,
+      difficulty: "Advanced",
+      completed: false,
+      prerequisites: ["sorting-searching"],
+      topics: ["Greedy Algorithm Design", "Divide & Conquer Mastery", "Backtracking Strategies", "Branch & Bound", "String Algorithms", "Geometric Algorithms", "Network Flow", "Advanced Problem Solving"]
     }
   ]
 };
@@ -418,14 +418,14 @@ export default function LearningPathPage() {
                             'foundations': '/learning-path/foundations',
                             'memory-efficiency': '/learning-path/module-1',
                             'arrays': '/learning-path/module-2',
-                            'searching-sorting': '/learning-path/module-3', 
+                            'stacks-queues': '/learning-path/module-3',
                             'linked-lists': '/learning-path/module-4',
-                            'stacks-queues': '/learning-path/module-5',
-                            'trees': '/learning-path/module-6',
+                            'trees': '/learning-path/module-5',
+                            'graphs': '/learning-path/module-6',
                             'hash-tables': '/learning-path/module-7',
-                            'graphs': '/data-structures/graphs',
-                            'dynamic-programming': '/algorithms/dynamic-programming',
-                            'advanced-topics': '/algorithms/greedy'
+                            'dynamic-programming': '/learning-path/module-8',
+                            'sorting-searching': '/learning-path/module-9',
+                            'advanced-algorithms': '/learning-path/module-10'
                           };
                           window.location.href = moduleRoutes[module.id] || '/data-structures/arrays';
                         }}

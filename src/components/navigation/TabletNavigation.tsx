@@ -19,6 +19,7 @@ import {
   Bookmark
 } from 'lucide-react';
 import { SignInButton } from '@/components/auth/SignInButton';
+import { useSession } from 'next-auth/react';
 
 interface TabletNavigationProps {
   className?: string;
@@ -29,6 +30,7 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const { data: session, status } = useSession();
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -94,6 +96,14 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
     setActiveDropdown(null);
   };
 
+  const handleLearningPathClick = (e: React.MouseEvent) => {
+    if (status !== 'authenticated') {
+      e.preventDefault();
+      window.location.href = '/auth/signin?callbackUrl=/learning-path';
+    }
+    closeDropdowns();
+  };
+
   return (
     <>
       {/* Desktop Navigation (1024px+) */}
@@ -110,7 +120,7 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
         <Link 
           href="/learning-path" 
           className="flex items-center space-x-2 text-gray-100 hover:text-blue-400 transition-colors"
-          onClick={closeDropdowns}
+          onClick={handleLearningPathClick}
         >
           <Map size={18} />
           <span>Learning Path</span>
@@ -208,6 +218,7 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
             href="/learning-path" 
             className="p-2 text-gray-100 hover:text-blue-400 hover:bg-slate-600/50 rounded-md transition-colors relative group"
             title="Learning Path"
+            onClick={handleLearningPathClick}
           >
             <Map size={18} />
             <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
@@ -375,7 +386,13 @@ export const TabletNavigation: React.FC<TabletNavigationProps> = ({ className })
               <Link 
                 href="/learning-path" 
                 className="flex items-center space-x-3 text-gray-100 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-slate-700 w-full"
-                onClick={closeMobileMenu}
+                onClick={(e) => {
+                  if (status !== 'authenticated') {
+                    e.preventDefault();
+                    window.location.href = '/auth/signin?callbackUrl=/learning-path';
+                  }
+                  closeMobileMenu();
+                }}
               >
                 <Map size={20} />
                 <span>Learning Path</span>

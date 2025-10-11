@@ -1,121 +1,160 @@
 'use client';
 
-import { ModuleLayout } from '@/components/layouts/ModuleLayout';
+import { StandardModulePage } from '@/components/layouts/StandardModulePage';
+import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
-  TreePine,
   Network,
-  Search,
-  RotateCcw,
-  Clock,
+  MapPin,
+  Route,
+  GitBranch,
+  ArrowRight,
+  BookOpen,
+  Code,
   Target,
-  CheckCircle,
-  Award,
-  Grid3X3
+  Zap
 } from 'lucide-react';
 
 export default function Module6Page() {
-  const sections = [
-    { id: 'basics', name: 'Tree Basics', icon: TreePine },
-    { id: 'binary-trees', name: 'Binary Trees', icon: Network },
-    { id: 'traversal', name: 'Tree Traversal', icon: Search },
-    { id: 'applications', name: 'Applications', icon: RotateCcw }
+  const sections: EnhancedSection[] = [
+    {
+      id: 'fundamentals',
+      name: 'Graph Fundamentals',
+      icon: Network,
+      href: '/learning-path/module-6/fundamentals',
+      description: 'Graph terminology, representations, and basic concepts',
+      duration: '45 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    {
+      id: 'traversal',
+      name: 'Graph Traversal',
+      icon: MapPin,
+      href: '/learning-path/module-6/traversal',
+      description: 'DFS, BFS, and graph exploration algorithms',
+      duration: '60 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    {
+      id: 'shortest-paths',
+      name: 'Shortest Paths',
+      icon: Route,
+      href: '/learning-path/module-6/shortest-paths',
+      description: 'Dijkstra\'s, Bellman-Ford, and pathfinding',
+      duration: '75 min',
+      difficulty: 'Advanced',
+      type: 'lesson'
+    },
+    {
+      id: 'applications',
+      name: 'Graph Applications',
+      icon: GitBranch,
+      href: '/learning-path/module-6/applications',
+      description: 'Real-world graph problems and solutions',
+      duration: '90 min',
+      difficulty: 'Advanced',
+      type: 'practice'
+    }
   ];
 
   return (
-    <ModuleLayout
+    <StandardModulePage
       moduleId="module-6"
-      moduleTitle="Module 6: Trees"
-      moduleDescription="Master hierarchical data structures and tree algorithms"
+      moduleTitle="Module 6: Graph Theory & Algorithms"
+      moduleDescription="Master graph structures and algorithms - the foundation of networks"
+      moduleIcon={Network}
       sections={sections}
-      estimatedTime="150 minutes"
+      estimatedTime="4.5 hours"
       difficulty="Advanced"
-      totalSections={4}
+      prevModuleUrl="/learning-path/module-5"
+      prevModuleTitle="Trees & Hierarchical Structures"
+      nextModuleUrl="/learning-path/module-7"
+      nextModuleTitle="Hash Tables & Hashing"
     >
-      <div className="space-y-8 text-gray-700">
-        <div className="bg-gradient-to-r from-emerald-600 to-green-600 text-white p-8 rounded-2xl text-gray-700">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <TreePine className="w-12 h-12 text-gray-700" />
-            <div>
-              <h1 className="text-4xl font-bold text-slate-800">Trees</h1>
-              <p className="text-emerald-100 text-lg">Master hierarchical data structures</p>
-            </div>
-          </div>
-          <p className="text-emerald-50">
-            Explore powerful hierarchical data structures used in databases, file systems, and more.
-          </p>
-        </div>
-
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
+      {/* Course Overview Content */}
+      <div className="space-y-8">
+        <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-            <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You&apos;ll Master
+            <ArrowRight className="w-7 h-7 mr-3 text-indigo-600" />
+            Graph Topics
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Tree Fundamentals</h3>
-                  <p className="text-gray-600 text-sm">Nodes, edges, roots, leaves, and tree properties</p>
+          <div className="grid gap-6">
+            {sections.map((section, index) => (
+              <div
+                key={section.id}
+                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-indigo-50 transition-all group cursor-pointer"
+                onClick={() => section.href && (window.location.href = section.href)}
+              >
+                <div className="flex items-center space-x-4 flex-1">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
+                    <section.icon className="w-6 h-6 text-indigo-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-gray-800 group-hover:text-indigo-800">{section.name}</h3>
+                    <p className="text-gray-600 text-sm">{section.description}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500">{section.duration}</div>
+                    <div className={`text-xs px-2 py-1 rounded mt-1 ${
+                      section.difficulty === 'Intermediate' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : section.difficulty === 'Advanced'
+                        ? 'bg-red-100 text-red-800'
+                        : 'bg-green-100 text-green-800'
+                    }`}>
+                      {section.difficulty}
+                    </div>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
                 </div>
               </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Binary Trees</h3>
-                  <p className="text-gray-600 text-sm">Binary search trees, AVL trees, and balancing</p>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Tree Traversal</h3>
-                  <p className="text-gray-600 text-sm">In-order, pre-order, post-order, and level-order</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Advanced Topics</h3>
-                  <p className="text-gray-600 text-sm">Heaps, tries, and tree-based algorithms</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 text-gray-700">
-          <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">4</div>
-                <div className="text-green-100">Sections</div>
+        {/* Graph Overview */}
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg border border-indigo-100">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <Network className="w-7 h-7 mr-3 text-indigo-600" />
+            What You'll Learn
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <BookOpen className="w-6 h-6 text-indigo-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Graph Theory</h3>
+                  <p className="text-gray-700 text-sm">Master vertices, edges, and graph representations.</p>
+                </div>
               </div>
-              <Grid3X3 className="w-8 h-8 text-green-100" />
+              <div className="flex items-start space-x-3">
+                <Code className="w-6 h-6 text-indigo-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Algorithms</h3>
+                  <p className="text-gray-700 text-sm">Implement DFS, BFS, and shortest path algorithms.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">150</div>
-                <div className="text-blue-100">Minutes</div>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Target className="w-6 h-6 text-indigo-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Problem Solving</h3>
+                  <p className="text-gray-700 text-sm">Solve complex graph problems and optimize solutions.</p>
+                </div>
               </div>
-              <Clock className="w-8 h-8 text-blue-100" />
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-xl font-bold text-gray-800">Advanced</div>
-                <div className="text-purple-100">Level</div>
+              <div className="flex items-start space-x-3">
+                <Zap className="w-6 h-6 text-indigo-600 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Applications</h3>
+                  <p className="text-gray-700 text-sm">Apply graphs to networks, social media, and navigation.</p>
+                </div>
               </div>
-              <Award className="w-8 h-8 text-purple-100" />
             </div>
           </div>
         </div>
       </div>
-    </ModuleLayout>
+    </StandardModulePage>
   );
 }

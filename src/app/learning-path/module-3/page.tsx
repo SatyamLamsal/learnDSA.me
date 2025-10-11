@@ -3,235 +3,145 @@
 import { StandardModulePage } from '@/components/layouts/StandardModulePage';
 import { EnhancedSection } from '@/components/layouts/EnhancedModuleLayout';
 import { 
-  Database,
-  MemoryStick,
-  Code2,
-  Brain,
-  BookOpen,
-  Network,
-  Grid3X3,
+  Package,
+  ArrowUp,
+  ArrowDown,
   Target,
-  CheckCircle,
-  ArrowRight,
-  Clock,
-  Award
+  RotateCcw,
+  Settings,
+  Code,
+  Brain,
+  ArrowRight
 } from 'lucide-react';
 
 export default function Module3Page() {
   const sections: EnhancedSection[] = [
     {
-      id: 'guide',
-      name: 'Advanced Guide',
-      icon: BookOpen,
-      href: '/learning-path/module-3/guide',
-      description: 'Advanced data structures and techniques',
+      id: 'stack-fundamentals',
+      name: 'Stack Fundamentals',
+      icon: Package,
+      href: '/learning-path/module-3/stack-fundamentals',
+      description: 'Learn LIFO principle and stack concepts',
+      duration: '20 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    {
+      id: 'stack-operations',
+      name: 'Stack Operations',
+      icon: ArrowUp,
+      href: '/learning-path/module-3/stack-operations',
+      description: 'Master push, pop, peek, and helper operations',
       duration: '25 min',
-      difficulty: 'Advanced',
+      difficulty: 'Intermediate',
       type: 'lesson'
     },
     {
-      id: 'memory',
-      name: 'Memory Optimization',
-      icon: MemoryStick,
-      href: '/learning-path/module-3/memory',
-      description: 'Advanced memory management techniques',
+      id: 'stack-applications',
+      name: 'Stack Applications',
+      icon: Brain,
+      href: '/learning-path/module-3/stack-applications',
+      description: 'Function calls, expression evaluation, and more',
       duration: '30 min',
-      difficulty: 'Advanced',
+      difficulty: 'Intermediate',
+      type: 'practice'
+    },
+    {
+      id: 'queue-fundamentals',
+      name: 'Queue Fundamentals',
+      icon: RotateCcw,
+      href: '/learning-path/module-3/queue-fundamentals',
+      description: 'Learn FIFO principle and queue concepts',
+      duration: '20 min',
+      difficulty: 'Intermediate',
       type: 'lesson'
     },
     {
-      id: 'operations',
-      name: 'Complex Operations',
-      icon: Code2,
-      href: '/learning-path/module-3/operations',
-      description: 'Advanced algorithmic operations',
-      duration: '35 min',
-      difficulty: 'Advanced',
+      id: 'queue-types',
+      name: 'Queue Types',
+      icon: Settings,
+      href: '/learning-path/module-3/queue-types',
+      description: 'Circular, priority, and deque implementations',
+      duration: '25 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    {
+      id: 'queue-applications',
+      name: 'Queue Applications',
+      icon: Target,
+      href: '/learning-path/module-3/queue-applications',
+      description: 'BFS, task scheduling, and buffer management',
+      duration: '30 min',
+      difficulty: 'Intermediate',
       type: 'practice'
     },
     {
-      id: 'algorithms',
-      name: 'Advanced Algorithms',
+      id: 'comparison',
+      name: 'Stacks vs Queues',
+      icon: Code,
+      href: '/learning-path/module-3/comparison',
+      description: 'Compare characteristics and use cases',
+      duration: '15 min',
+      difficulty: 'Intermediate',
+      type: 'lesson'
+    },
+    {
+      id: 'practice-problems',
+      name: 'Practice Problems',
       icon: Brain,
-      href: '/learning-path/module-3/algorithms',
-      description: 'Complex algorithms and optimizations',
-      duration: '40 min',
+      href: '/learning-path/module-3/practice-problems',
+      description: 'Solve real-world stack and queue problems',
+      duration: '45 min',
       difficulty: 'Advanced',
       type: 'practice'
     }
   ];
-
-  const sectionDetails = [
-    {
-      id: 'guide',
-      title: 'Comprehensive Guide',
-      description: 'Complete introduction to arrays and their fundamentals',
-      icon: BookOpen,
-      href: '/learning-path/module-3/guide',
-      difficulty: 'Beginner' as const,
-      timeEstimate: '15 min'
-    },
-    {
-      id: 'memory',
-      title: 'Memory Layout',
-      description: 'Understanding how arrays are stored in memory and cache optimization',
-      icon: MemoryStick,
-      href: '/learning-path/module-2/memory',
-      difficulty: 'Intermediate' as const,
-      timeEstimate: '20 min'
-    },
-    {
-      id: 'operations',
-      title: 'Basic Operations',
-      description: 'Essential array operations: insertion, deletion, searching, and traversal',
-      icon: Code2,
-      href: '/learning-path/module-3/operations',
-      difficulty: 'Beginner' as const,
-      timeEstimate: '25 min'
-    },
-    {
-      id: 'algorithms',
-      title: 'Array Algorithms',
-      description: 'Advanced algorithms: two-pointer, sliding window, and prefix sum techniques',
-      icon: Brain,
-      href: '/learning-path/module-3/algorithms',
-      difficulty: 'Intermediate' as const,
-      timeEstimate: '30 min'
-    }
-  ];
-
-  const moduleStats = {
-    totalSections: sections.length,
-    estimatedTime: '90 minutes',
-    difficulty: 'Beginner to Intermediate',
-    prerequisites: ['Foundations of DSA']
-  };
 
   return (
     <StandardModulePage
       moduleId="module-3"
-      moduleTitle="Module 3: Advanced Structures"
-      moduleDescription="Master advanced data structures and optimization techniques"
-      moduleIcon={Network}
+      moduleTitle="Module 3: Stacks & Queues"
+      moduleDescription="Master LIFO and FIFO data structures with practical applications and advanced implementations."
+      moduleIcon={Package}
       sections={sections}
-      estimatedTime="120 minutes"
-      difficulty="Advanced"
+      estimatedTime="3.5 hours"
+      difficulty="Intermediate"
       prevModuleUrl="/learning-path/module-2"
       prevModuleTitle="Arrays & Memory Fundamentals"
+      nextModuleUrl="/learning-path/module-4"
+      nextModuleTitle="Linked Lists & Pointers"
     >
-      <div className="space-y-8 text-gray-700">
-        
-        {/* Previous Module Reference */}
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 p-6 rounded-2xl text-white">
-          <h2 className="text-lg font-semibold text-indigo-900 mb-3">Building on Array Fundamentals</h2>
-          <p className="text-indigo-700 mb-4">
-            In Module 2, we learned array basics and fundamental operations. 
-            Now we&apos;ll explore advanced patterns, optimization techniques, and complex algorithms.
-          </p>
-          <a 
-            href="/learning-path/module-2"
-            className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
-          >
-            ← Review Module 2: Array Fundamentals
-          </a>
-        </div>
-        
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-white">
-          <div className="flex items-center space-x-4 mb-4 text-gray-700">
-            <Database className="w-12 h-12 text-gray-700" />
-            <div>
-              <h1 className="text-4xl font-bold text-slate-800">Module 3: Advanced Arrays</h1>
-              <p className="text-blue-100 text-lg">Advanced patterns and optimization techniques</p>
-            </div>
-          </div>
-          <p className="text-blue-50">
-            Building upon your array foundations, this advanced module explores sophisticated patterns 
-            and optimization techniques. Master two-pointer, sliding window, and other algorithmic 
-            patterns essential for complex problem-solving.
-          </p>
-        </div>
-
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-            <Target className="w-7 h-7 mr-3 text-green-600" />
-            What You&apos;ll Master
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gray-700">
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Array Fundamentals</h3>
-                  <p className="text-gray-600 text-sm">Static vs dynamic arrays, memory layout, and performance characteristics</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Memory Optimization</h3>
-                  <p className="text-gray-600 text-sm">Cache performance, memory layout, and efficient access patterns</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">C/C++ Implementation</h3>
-                  <p className="text-gray-600 text-sm">Low-level array operations and memory management techniques</p>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Advanced Algorithms</h3>
-                  <p className="text-gray-600 text-sm">Two-pointer, sliding window, and prefix sum techniques</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Problem Solving</h3>
-                  <p className="text-gray-600 text-sm">Common patterns and solutions for array-based problems</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 text-gray-700">
-                <CheckCircle className="w-5 h-5 text-green-600 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-800">Interactive Visualizations</h3>
-                  <p className="text-gray-600 text-sm">See algorithms in action with step-by-step demonstrations</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white p-8 rounded-2xl shadow-lg border text-gray-700">
+      {/* Course Overview Content */}
+      <div className="space-y-8">
+        <div className="bg-white p-8 rounded-2xl shadow-lg border">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <ArrowRight className="w-7 h-7 mr-3 text-blue-600" />
-            Learning Path
+            Stacks & Queues Topics
           </h2>
-          <div className="grid gap-6 text-gray-700">
-            {sectionDetails.map((section, index) => (
+          <div className="grid gap-6">
+            {sections.map((section, index) => (
               <div
                 key={section.id}
-                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer text-white"
-                onClick={() => window.location.href = section.href}
+                className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-all group cursor-pointer"
+                onClick={() => section.href && (window.location.href = section.href)}
               >
-                <div className="flex items-center space-x-4 flex-1 text-gray-700">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors text-white">
+                <div className="flex items-center space-x-4 flex-1">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                     <section.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <div className="flex-1 text-gray-700">
-                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-800">{section.title}</h3>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-800">{section.name}</h3>
                     <p className="text-gray-600 text-sm">{section.description}</p>
                   </div>
-                  <div className="text-right text-gray-700">
-                    <div className="text-sm text-gray-500">{section.timeEstimate}</div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500">{section.duration}</div>
                     <div className={`text-xs px-2 py-1 rounded mt-1 ${
-                      section.difficulty === 'Beginner' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-yellow-100 text-yellow-800'
+                      section.difficulty === 'Intermediate' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : section.difficulty === 'Advanced'
+                        ? 'bg-red-100 text-red-800'
+                        : 'bg-green-100 text-green-800'
                     }`}>
                       {section.difficulty}
                     </div>
@@ -240,36 +150,6 @@ export default function Module3Page() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 text-gray-700">
-          <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">{moduleStats.totalSections}</div>
-                <div className="text-green-100">Sections</div>
-              </div>
-              <Grid3X3 className="w-8 h-8 text-green-100" />
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-xl text-white">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-3xl font-bold text-gray-800">90</div>
-                <div className="text-blue-100">Minutes</div>
-              </div>
-              <Clock className="w-8 h-8 text-blue-100" />
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl text-gray-700">
-            <div className="flex items-center justify-between text-gray-700">
-              <div>
-                <div className="text-2xl font-bold text-gray-800">Beginner</div>
-                <div className="text-purple-100">Level</div>
-              </div>
-              <Award className="w-8 h-8 text-purple-100" />
-            </div>
           </div>
         </div>
       </div>

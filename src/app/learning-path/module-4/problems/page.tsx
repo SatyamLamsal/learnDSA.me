@@ -244,7 +244,7 @@ export default function LinkedListProblemsPage() {
           <div className="flex justify-between items-center mt-8 text-gray-700 flex-wrap gap-4">
             <Link href="/learning-path/module-4/operations" className="px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-600">Previous: Operations</Link>
             <Link href="/learning-path/module-4/advanced" className="px-6 py-3 bg-purple-600 text-white rounded-lg text-sm font-medium hover:bg-purple-700">Advanced Topics</Link>
-            <Link href="/learning-path/module-5" className="ml-auto px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module</Link>
+            <Link href="/learning-path/module-5" className="ml-auto px-6 py-3 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700">Next Module: Trees</Link>
           </div>
         </motion.div>
     </EnhancedModuleLayout>

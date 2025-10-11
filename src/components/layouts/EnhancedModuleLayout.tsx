@@ -25,7 +25,17 @@ import {
   MemoryStick,
   Code2,
   Menu,
-  X
+  X,
+  RotateCcw,
+  Settings,
+  TreePine,
+  Search,
+  MapPin,
+  Route,
+  GitBranch,
+  Hash,
+  Key,
+  Lock
 } from 'lucide-react';
 import { ModuleProgressIndicator } from '@/components/progress/ModuleProgressIndicator';
 import { ModuleBookmarkButton } from '@/components/bookmarks/ModuleBookmarkButton';
@@ -160,10 +170,20 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
     },
     {
       id: 'module-3',
-      name: 'Advanced Structures',
+      name: 'Stacks & Queues',
       icon: Network,
       href: '/learning-path/module-3',
-      isCurrentModule: moduleId === 'module-3'
+      isCurrentModule: moduleId === 'module-3',
+      sections: [
+        { id: 'stack-fundamentals', name: 'Stack Fundamentals', icon: BookOpen, href: '/learning-path/module-3/stack-fundamentals', description: 'LIFO principle and concepts', duration: '20 min' },
+        { id: 'stack-operations', name: 'Stack Operations', icon: Code2, href: '/learning-path/module-3/stack-operations', description: 'Push, pop, peek operations', duration: '25 min' },
+        { id: 'stack-applications', name: 'Stack Applications', icon: Brain, href: '/learning-path/module-3/stack-applications', description: 'Function calls and more', duration: '30 min' },
+        { id: 'queue-fundamentals', name: 'Queue Fundamentals', icon: RotateCcw, href: '/learning-path/module-3/queue-fundamentals', description: 'FIFO principle and concepts', duration: '20 min' },
+        { id: 'queue-types', name: 'Queue Types', icon: Settings, href: '/learning-path/module-3/queue-types', description: 'Circular, priority, deque', duration: '25 min' },
+        { id: 'queue-applications', name: 'Queue Applications', icon: Target, href: '/learning-path/module-3/queue-applications', description: 'BFS, scheduling, buffers', duration: '30 min' },
+        { id: 'comparison', name: 'Stacks vs Queues', icon: CheckCircle, href: '/learning-path/module-3/comparison', description: 'Compare and contrast', duration: '15 min' },
+        { id: 'practice-problems', name: 'Practice Problems', icon: Brain, href: '/learning-path/module-3/practice-problems', description: 'Real-world problems', duration: '45 min' },
+      ]
     },
     {
       id: 'module-4',
@@ -177,6 +197,45 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
         { id: 'types', name: 'Types of Linked Lists', icon: Layers, href: '/learning-path/module-4/types', description: 'Singly, doubly, circular', duration: '14 min' },
         { id: 'operations', name: 'Core Operations', icon: Code2, href: '/learning-path/module-4/operations', description: 'Insert, delete, traverse', duration: '16 min' },
         { id: 'problems', name: 'Problems & Practice', icon: Brain, href: '/learning-path/module-4/problems', description: 'Classic problems & practice', duration: '18 min' },
+      ]
+    },
+    {
+      id: 'module-5',
+      name: 'Trees & Hierarchical Structures',
+      icon: TreePine,
+      href: '/learning-path/module-5',
+      isCurrentModule: moduleId === 'module-5',
+      sections: [
+        { id: 'basics', name: 'Tree Basics', icon: TreePine, href: '/learning-path/module-5/basics', description: 'Fundamental tree concepts', duration: '30 min' },
+        { id: 'binary-trees', name: 'Binary Trees', icon: Network, href: '/learning-path/module-5/binary-trees', description: 'Binary tree structures', duration: '45 min' },
+        { id: 'traversal', name: 'Tree Traversal', icon: Search, href: '/learning-path/module-5/traversal', description: 'In-order, pre-order, post-order', duration: '40 min' },
+        { id: 'problems', name: 'Tree Problems', icon: RotateCcw, href: '/learning-path/module-5/problems', description: 'Tree algorithms and problems', duration: '60 min' },
+      ]
+    },
+    {
+      id: 'module-6',
+      name: 'Graph Theory & Algorithms',
+      icon: Network,
+      href: '/learning-path/module-6',
+      isCurrentModule: moduleId === 'module-6',
+      sections: [
+        { id: 'fundamentals', name: 'Graph Fundamentals', icon: Network, href: '/learning-path/module-6/fundamentals', description: 'Graph terminology and representations', duration: '45 min' },
+        { id: 'traversal', name: 'Graph Traversal', icon: MapPin, href: '/learning-path/module-6/traversal', description: 'DFS, BFS exploration algorithms', duration: '60 min' },
+        { id: 'shortest-paths', name: 'Shortest Paths', icon: Route, href: '/learning-path/module-6/shortest-paths', description: 'Dijkstra\'s, Bellman-Ford pathfinding', duration: '75 min' },
+        { id: 'applications', name: 'Graph Applications', icon: GitBranch, href: '/learning-path/module-6/applications', description: 'Real-world graph problems', duration: '90 min' },
+      ]
+    },
+    {
+      id: 'module-7',
+      name: 'Hash Tables & Hashing',
+      icon: Hash,
+      href: '/learning-path/module-7',
+      isCurrentModule: moduleId === 'module-7',
+      sections: [
+        { id: 'fundamentals', name: 'Hash Table Basics', icon: Hash, href: '/learning-path/module-7/fundamentals', description: 'Key-value pairs and operations', duration: '40 min' },
+        { id: 'hash-functions', name: 'Hash Functions', icon: Key, href: '/learning-path/module-7/hash-functions', description: 'Uniform distribution and design', duration: '45 min' },
+        { id: 'collision-resolution', name: 'Collision Resolution', icon: Lock, href: '/learning-path/module-7/collision-resolution', description: 'Chaining and open addressing', duration: '50 min' },
+        { id: 'applications', name: 'Hash Table Applications', icon: Zap, href: '/learning-path/module-7/applications', description: 'Databases, caches, systems', duration: '45 min' },
       ]
     }
   ], [moduleId]);
