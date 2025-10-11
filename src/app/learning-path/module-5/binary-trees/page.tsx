@@ -92,12 +92,12 @@ export default function BinaryTreesPage() {
 
   return (
     <EnhancedModuleLayout
-      moduleId="module-6"
-      moduleTitle="Module 6: Trees"
+      moduleId="module-5"
+      moduleTitle="Module 5: Trees"
       moduleDescription="Binary trees and search operations"
       sections={sections}
       enableScrollSpy
-      backUrl="/learning-path/module-6"
+      backUrl="/learning-path/module-5"
       estimatedTime="22 minutes"
       difficulty="Advanced"
       totalSections={sections.length}

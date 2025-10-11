@@ -87,12 +87,12 @@ export default function TreeProblemsPage() {
 
   return (
     <EnhancedModuleLayout
-      moduleId="module-6"
-      moduleTitle="Module 6: Trees"
+      moduleId="module-5"
+      moduleTitle="Module 5: Trees"
       moduleDescription="Problem solving & practice"
       sections={sections}
       enableScrollSpy
-      backUrl="/learning-path/module-6"
+      backUrl="/learning-path/module-5"
       estimatedTime="25 minutes"
       difficulty="Advanced"
       totalSections={sections.length}

@@ -133,7 +133,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Foundations of DSA',
       icon: Brain,
       href: '/learning-path/foundations',
-      isCurrentModule: moduleId === 'foundations',
+      isCurrentModule: moduleId === 'foundations' || Boolean(currentPath && currentPath.includes('/foundations')),
       sections: [
         { id: 'introduction', name: 'Introduction to DSA', icon: BookOpen, href: '/learning-path/foundations/introduction', description: 'Why Study DSA?', duration: '10 min' },
         { id: 'data-structures', name: 'Data Structures', icon: FileText, href: '/learning-path/foundations/data-structures', description: 'Data vs Information', duration: '15 min' },
@@ -147,7 +147,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Memory & Efficiency',
       icon: Zap,
       href: '/learning-path/module-1',
-      isCurrentModule: moduleId === 'module-1',
+      isCurrentModule: moduleId === 'module-1' || Boolean(currentPath && currentPath.includes('/module-1')),
       sections: [
         { id: 'memory-hierarchy', name: 'Memory Hierarchy', icon: Layers, href: '/learning-path/module-1/memory-hierarchy', description: 'Cache levels and access patterns', duration: '25 min' },
         { id: 'data-structures', name: 'Data Structures Overview', icon: Database, href: '/learning-path/module-1/data-structures', description: 'Why different structures exist', duration: '30 min' },
@@ -160,7 +160,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Arrays & Memory Fundamentals',
       icon: Grid3X3,
       href: '/learning-path/module-2',
-      isCurrentModule: moduleId === 'module-2',
+      isCurrentModule: moduleId === 'module-2' || Boolean(currentPath && currentPath.includes('/module-2')),
       sections: [
         { id: 'fundamentals', name: 'Array Fundamentals', icon: BookOpen, href: '/learning-path/module-2/fundamentals', description: 'Theory, types, and definitions', duration: '20 min' },
         { id: 'memory', name: 'Memory Layout', icon: MemoryStick, href: '/learning-path/module-2/memory', description: 'How arrays are stored in memory', duration: '20 min' },
@@ -173,7 +173,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Stacks & Queues',
       icon: Network,
       href: '/learning-path/module-3',
-      isCurrentModule: moduleId === 'module-3',
+      isCurrentModule: moduleId === 'module-3' || Boolean(currentPath && currentPath.includes('/module-3')),
       sections: [
         { id: 'stack-fundamentals', name: 'Stack Fundamentals', icon: BookOpen, href: '/learning-path/module-3/stack-fundamentals', description: 'LIFO principle and concepts', duration: '20 min' },
         { id: 'stack-operations', name: 'Stack Operations', icon: Code2, href: '/learning-path/module-3/stack-operations', description: 'Push, pop, peek operations', duration: '25 min' },
@@ -190,7 +190,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Linked Lists',
       icon: Network,
       href: '/learning-path/module-4',
-      isCurrentModule: moduleId === 'module-4',
+      isCurrentModule: moduleId === 'module-4' || Boolean(currentPath && currentPath.includes('/module-4')),
       sections: [
         { id: 'pointers', name: 'Pointers & Memory', icon: MemoryStick, href: '/learning-path/module-4/pointers', description: 'Pointer fundamentals & memory', duration: '15 min' },
         { id: 'introduction', name: 'Introduction', icon: BookOpen, href: '/learning-path/module-4/introduction', description: 'What and why linked lists', duration: '12 min' },
@@ -204,7 +204,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Trees & Hierarchical Structures',
       icon: TreePine,
       href: '/learning-path/module-5',
-      isCurrentModule: moduleId === 'module-5',
+      isCurrentModule: moduleId === 'module-5' || Boolean(currentPath && currentPath.includes('/module-5')),
       sections: [
         { id: 'basics', name: 'Tree Basics', icon: TreePine, href: '/learning-path/module-5/basics', description: 'Fundamental tree concepts', duration: '30 min' },
         { id: 'binary-trees', name: 'Binary Trees', icon: Network, href: '/learning-path/module-5/binary-trees', description: 'Binary tree structures', duration: '45 min' },
@@ -217,7 +217,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Graph Theory & Algorithms',
       icon: Network,
       href: '/learning-path/module-6',
-      isCurrentModule: moduleId === 'module-6',
+      isCurrentModule: moduleId === 'module-6' || Boolean(currentPath && currentPath.includes('/module-6')),
       sections: [
         { id: 'fundamentals', name: 'Graph Fundamentals', icon: Network, href: '/learning-path/module-6/fundamentals', description: 'Graph terminology and representations', duration: '45 min' },
         { id: 'traversal', name: 'Graph Traversal', icon: MapPin, href: '/learning-path/module-6/traversal', description: 'DFS, BFS exploration algorithms', duration: '60 min' },
@@ -230,7 +230,7 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
       name: 'Hash Tables & Hashing',
       icon: Hash,
       href: '/learning-path/module-7',
-      isCurrentModule: moduleId === 'module-7',
+      isCurrentModule: moduleId === 'module-7' || Boolean(currentPath && currentPath.includes('/module-7')),
       sections: [
         { id: 'fundamentals', name: 'Hash Table Basics', icon: Hash, href: '/learning-path/module-7/fundamentals', description: 'Key-value pairs and operations', duration: '40 min' },
         { id: 'hash-functions', name: 'Hash Functions', icon: Key, href: '/learning-path/module-7/hash-functions', description: 'Uniform distribution and design', duration: '45 min' },
@@ -238,12 +238,12 @@ export const EnhancedModuleLayout: React.FC<EnhancedModuleLayoutProps> = ({
         { id: 'applications', name: 'Hash Table Applications', icon: Zap, href: '/learning-path/module-7/applications', description: 'Databases, caches, systems', duration: '45 min' },
       ]
     }
-  ], [moduleId]);
+  ], [moduleId, currentPath]);
 
   // Memoize course modules to prevent infinite re-renders
   const finalCourseModules = useMemo(() => {
     return courseModules.length > 0 ? courseModules : defaultCourseModules;
-  }, [courseModules, moduleId]);
+  }, [courseModules, defaultCourseModules]);
   
   // Initialize expanded sections based on current path - Only run once or when currentPath changes
   React.useEffect(() => {

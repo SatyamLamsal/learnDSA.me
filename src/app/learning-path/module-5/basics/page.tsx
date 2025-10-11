@@ -19,12 +19,12 @@ export default function TreeBasicsPage() {
 
   return (
     <EnhancedModuleLayout
-      moduleId="module-6"
-      moduleTitle="Module 6: Trees"
+      moduleId="module-5"
+      moduleTitle="Module 5: Trees"
       moduleDescription="Hierarchical data structures fundamentals"
       sections={sections}
       enableScrollSpy
-      backUrl="/learning-path/module-6"
+      backUrl="/learning-path/module-5"
       estimatedTime="20 minutes"
       difficulty="Advanced"
       totalSections={sections.length}

@@ -77,9 +77,9 @@ export default function Module4Overview() {
       estimatedTime="75 minutes"
       difficulty="Intermediate"
       prevModuleUrl="/learning-path/module-3"
-      prevModuleTitle="Advanced Structures"
+      prevModuleTitle="Stacks & Queues"
       nextModuleUrl="/learning-path/module-5"
-      nextModuleTitle="Stacks & Queues"
+      nextModuleTitle="Trees & Hierarchical Structures"
     >
       {/* Overview content retained from previous implementation */}
       <div className="space-y-12 text-gray-700">
